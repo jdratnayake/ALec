@@ -1,0 +1,103 @@
+/*==============================================================================*/
+/*LEADERBOARD TABLE - START*/
+/*==============================================================================*/
+
+/* .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+} */
+
+.table-container{
+    display: flex;
+    justify-content: center;
+}
+
+.content-table {
+    border-collapse: collapse;
+    width: 85%;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table th{
+    padding: 12px 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+/*==============================================================================*/
+/*LEADERBOARD TABLE - END*/
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*LEADERBOARD VIEW BUTTON - START*/
+/*==============================================================================*/
+
+.button {
+    display: flex;
+    height: 40px;
+    padding: 0;
+    background: #009578;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #008168;
+}
+
+.button:active {
+    background: #006e58;
+}
+
+.button__text{
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    color: #fff;
+    height: 100%;
+}
+
+/*==============================================================================*/
+/*LEADERBOARD VIEW BUTTON - END*/
+/*==============================================================================*/
