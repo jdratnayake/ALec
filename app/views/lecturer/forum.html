@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ALec</title>
+
+    <!-- CSS File HOME-->
+    <link rel="stylesheet" href="/public/css/forum.css">
+
+    <!-- Shortcut Icon -->
+    <link rel="shortcut icon" href="/public/img/logo1.png">
+
+    <!-- **********CSS END********** -->
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- NAVIGATION BAR - START -->
+        <div class="sidebar-container">
+            <div class="siderbar ">
+                <div class="logo_content">
+                    <div class="logo">
+                        <div class="logo_name">ALec</div>
+                    </div>
+                    <i class="fas fa-bars" id="btn"></i>
+                </div>
+                <ul class="nav_list">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span class="links_name">Dashboard</span>
+                        </a>
+                        <span class="tooltip">Dashboard</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-question-circle"></i>
+                            <span class="links_name">Ask Question</span>
+                        </a>
+                        <span class="tooltip">Ask Question</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-graduation-cap"></i>
+                            <span class="links_name">My Courses</span>
+                        </a>
+                        <span class="tooltip">My Courses</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chart-bar"></i>
+                            <span class="links_name">Review</span>
+                        </a>
+                        <span class="tooltip">Review</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-comment-alt"></i>
+                            <span class="links_name">Forum</span>
+                        </a>
+                        <span class="tooltip">Forum</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-medal"></i>
+                            <span class="links_name">Leaderboard</span>
+                        </a>
+                        <span class="tooltip">Leaderboard</span>
+                    </li>
+
+
+                    <div class="profile_content">
+                        <div class="profile">
+                            <div class="profile_details">
+                                <img src="/public/img/profile-picture.jpg" alt="">
+                                <div class="name_job">
+                                    <div class="name">Louella Rhodes</div>
+                                    <div class="job">Lecturer</div>
+                                </div>
+                            </div>
+                            <i class="fas fa-sign-out-alt" id="log_out"></i>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!-- NAVIGATION BAR - END -->
+
+        <div class="home-content">
+
+            <div class="forum-container center">
+                <div class="forum-message">
+                    <h2>Discussion Forum for SCS2205</h2>
+
+                    <p>Please use this Discussion Forum to discuss any matters related to this course. All the students
+                        and the lecturers are in this list and anyone can post or reply to a message.</p>
+                </div>
+
+                <div class="discussion-list">
+                    <button>
+                        <span class="button-title">
+                            <i class="fas fa-plus"></i>
+
+                            <div class="space-tag"></div>
+
+                            <span class="text">
+                                Add New Topic
+                            </span>
+                        </span>
+                    </button>
+
+                    <div class="discussion-table-container">
+                        <ul class="discussion-table">
+                            <li class="table-header">
+                                <div class="col col-1">Discussion</div>
+                                <div class="col col-2">Started by</div>
+                                <div class="col col-3">Last post</div>
+                                <div class="col col-4 reply">Replies</div>
+                            </li>
+
+                            <li class="table-row">
+                                <div class="col col-1" data-label="Discussion">
+                                    <a href="#">
+                                        Will MAC addresses run out?
+                                    </a>
+                                </div>
+                                <div class="col col-2" data-label="Started by">
+                                    <div class="profile_img_info">
+                                        <div class="img">
+                                            <img src="/public/img/profile_pic.svg" alt="profile_pic">
+                                        </div>
+                                        <div class="info">
+                                            <p class="name">M F RIZWAN</p>
+                                            <p class="place"><span><i class="far fa-calendar-minus"></i></span>
+                                                24 Jul 2021
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col col-3" data-label="Last post">
+                                    <div class="profile_img_info">
+                                        <div class="img">
+                                            <img src="/public/img/profile_pic.svg" alt="profile_pic">
+                                        </div>
+                                        <div class="info">
+                                            <p class="name">M F RIZWAN</p>
+                                            <p class="place"><span><i class="far fa-calendar-minus"></i></span>
+                                                24 Jul 2021
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col col-4 reply-count" data-label="Replies">0</div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER - START -->
+
+            <footer class="sticky-footer">
+                <!-- <h2>Footer Stick to the Bottom</h2> -->
+                <!-- <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Ask Question</a></li>
+                    <li><a href="#">My Courses</a></li>
+                    <li><a href="#">Review</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul> -->
+                <p> © Copyright ALec 2021.</p>
+            </footer>
+
+            <!-- FOOTER - END -->
+
+        </div>
+
+    </div>
+
+    <div class="pop-up">
+
+    </div>
+
+    <div class="notification-container" onclick="showNotifycation()">
+        <i class="fas fa-bell bell-notification"></i>
+    </div>
+    </div>
+
+
+    <!-- FontAwesome Icon -->
+    <script src="https://kit.fontawesome.com/3220c9480a.js" crossorigin="anonymous"></script>
+
+    <!-- **********JavaScript START********** -->
+    <script src="/public/js/basic.js"></script>
+    <!-- **********JavaScript END********** -->
+
+</body>
+
+</html>
