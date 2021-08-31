@@ -1,0 +1,76 @@
+@import "./0_global_variables.scss";
+
+/*==============================================================================*/
+/*POP UP - START*/
+/*==============================================================================*/
+.pop-up{
+    display: none;
+    position: fixed;
+    bottom: $footer_height;
+    right: 0;
+    background-color: white;
+    width: 375px;
+    height: 576px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.show{
+    display: block;
+    z-index: 10;
+}
+/*==============================================================================*/
+/*POP UP - END*/
+/*==============================================================================*/
+
+
+/*==============================================================================*/
+/*NOTIFICATION CONTAINER - START*/
+/*==============================================================================*/
+
+.notification-container{
+    position: fixed;
+    bottom: 24px + $footer_height;
+    right: 24px;
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: $theme;
+    color: rgb(255, 255, 255);
+    /* padding: 20px;
+    margin: 10px;  */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .05);
+    transition: 200ms opacity ease;
+    z-index: 10;
+
+    /* padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .05);
+    transition: 200ms opacity ease;
+    
+    
+    
+    box-shadow: 0 12px 48px 4px rgb(0 0 0 / 12%); */
+
+}
+
+.bell-notification{
+    font-size: 20px;
+}
+
+.hide{
+    opacity: 0.3;
+}
+
+/*==============================================================================*/
+/*NOTIFICATION CONTAINER - END*/
+/*==============================================================================*/

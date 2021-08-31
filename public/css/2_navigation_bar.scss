@@ -1,0 +1,275 @@
+@import "./0_global_variables.scss";
+
+//LOCAL VARIABLES
+
+//sidebar OFF length
+$sidebar_min_len: 78px;
+
+//sidebar ON length
+$sidebar_max_len: 240px;
+
+/*==============================================================================*/
+/*NAVIGATION BAR - START*/
+/*==============================================================================*/
+.siderbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    /* width of the siderbar when toggle button is off */
+    width: $sidebar_min_len;
+    background: $theme;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+/* handles the width of the siderbar when toggle button is active */
+.siderbar.active{
+    width: $sidebar_max_len;
+}
+
+.logo_content{
+    cursor: pointer;
+}
+
+.siderbar .logo_content .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%; 
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.siderbar.active .logo_content .logo{
+    opacity: 1;
+    pointer-events: none;
+}
+
+.logo_content .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.logo_content .logo .logo_name{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.siderbar #btn{
+    position: absolute;
+   color: #fff; 
+   top: 6px;
+   left: 50%;
+   font-size: 20px;
+   height: 50px;
+   width: 50px;
+   text-align: center;
+   line-height: 50px;
+   transform: translateX(-50%);
+}
+
+.siderbar.active #btn{
+    left: 90%;
+}
+
+.siderbar ul{
+    margin-top: 20px;
+}
+
+.siderbar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.siderbar ul li .tooltip{
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center ;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.siderbar.active ul li .tooltip{
+    display: none;
+}
+
+.siderbar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+.siderbar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: #1d1b31;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #fff; 
+}
+
+.siderbar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.siderbar ul li a:hover{
+     color: #184e77;
+     background: #fff;
+}
+
+.siderbar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.siderbar .links_name{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.siderbar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.siderbar .profile_content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.siderbar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: $theme;
+    transition: all 0.4 ease;
+}
+
+.siderbar.active .profile_content .profile{
+    background: none;
+}
+
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.siderbar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.profile .profile_details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.profile .profile_details .name_job{
+    margin-left: 10px;
+}
+
+.profile .profile_details .name{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profile .profile_details .job{
+    font-size: 12px;
+}
+
+.profile #log_out{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4 ease;
+    background: $theme;
+}
+
+.siderbar.active .profile #log_out{
+    left: 88%;
+}
+
+.siderbar.active .profile #log_out{
+    background: none;
+}
+
+.siderbar.active ~ .home_content{
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+/*==============================================================================*/
+/*NAVIGATION BAR - END*/
+/*==============================================================================*/
+
+
+/*==============================================================================*/
+/*HOME CONTENT - START*/
+/*==============================================================================*/
+
+.home-content{
+    height: 100%;
+    width: calc(100% - #{$sidebar_min_len});
+    transition: all 0.5s ease;
+    margin-left: $sidebar_min_len;
+    padding-top: 45px;
+    /* background-color: #1d1b31; */
+}
+
+.home-content-expand{
+    width: calc(100% - #{$sidebar_max_len});
+    transition: all 0.5s ease;
+    margin-left: $sidebar_max_len;
+}
+
+/*==============================================================================*/
+/*HOME CONTENT - END*/
+/*==============================================================================*/

@@ -1,0 +1,31 @@
+/*==============================================================================*/
+/*FOOTER - START*/
+/*==============================================================================*/
+footer {
+  width: 100%;
+  background: #1ebb7f;
+  color: #fff;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  /* padding: 2em;  */
+  /* font-size: 1.2rem; */
+}
+
+footer p {
+  padding: 0;
+  margin: 1em 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.sticky-footer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100%;
+}
+
+/*==============================================================================*/
+/*FOOTER - END*/
+/*==============================================================================*/
+/*# sourceMappingURL=4_footer.css.map */
