@@ -1,0 +1,73 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+$heading_color: #1abc9c;
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.container{
+    .home-content{
+        .topic-container{
+            width: 80%;
+
+            h2{
+                padding: 15px;
+                text-align: center;
+                background: $heading_color;
+                color: white;
+                font-size: 30px;
+                font-weight: 600;
+            }
+
+            .topic{
+                .collapsible {
+                    background-color: #777;
+                    color: white;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 20px;
+
+                    &:hover{
+                        background-color: #555;
+                    }
+
+                    &::after{
+                        content: '\002B';
+                        color: white;
+                        font-size: 50px;
+                        font-weight: 300;
+                        float: right;
+                        margin-left: 5px;
+                    }
+                }
+
+                .active{
+                    background-color: #555;
+
+                    &::after{
+                        content: "\2212";
+                    }
+                }
+
+                .content {
+                    padding: 0 18px;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.2s ease-out;
+                    background-color: #f1f1f1;
+                }
+            }
+        }
+    }
+}
