@@ -1,3 +1,5 @@
+<?php $errors = $data['errors'] ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +25,7 @@
         </div>
 
         <div class="login-container">
-            <form action="index.html" id="loginForm">
+            <form method="post" action="<?php echo BASEURL . '/login/submit'; ?>" id="loginForm">
                 <img <?php srcIMG("profile_pic.svg") ?> alt="Profile picture" class="avatar">
 
                 <h2>Welcome</h2>
@@ -34,11 +36,11 @@
                     </div>
                     <div>
                         <h5>Email</h5>
-                        <input type="text" class="input" id="email" onfocusout="validateEmail()">
+                        <input type="text" class="input" id="email" onfocusout="validateEmail()" name="email">
 
                     </div>
                 </div>
-                <div class="helper-text" id="helper-email"><span></span></div>
+                <div class="helper-text" id="helper-email"><?php echo $errors['email']; ?></div>
 
                 <div class="input-div two" id="div-password">
                     <div class="i">
@@ -46,14 +48,14 @@
                     </div>
                     <div>
                         <h5>Password</h5>
-                        <input type="password" class="input" id="password" onfocusout="validateLoginPassword()">
+                        <input type="password" class="input" id="password" onfocusout="validateLoginPassword()" name="password">
                     </div>
                 </div>
-                <div class="helper-text" id="helper-password"><span></span></div>
+                <div class="helper-text" id="helper-password"><?php echo $errors['password']; ?></div>
 
                 <a href="#">Forgot Password</a>
 
-                <input type="submit" class="btn" value="Login">
+                <input type="submit" name="login" class="btn" value="Login">
             </form>
         </div>
     </div>

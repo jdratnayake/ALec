@@ -12,6 +12,29 @@ class Login extends AlecFramework
 
     public function index()
     {
-        $this->view("loginView");
+        //Initially no errors
+        $errors = array();
+        $errors['email'] = "";
+        $errors['password'] = "";
+
+        $data['errors'] = $errors;
+
+        $this->view("loginView", $data);
+    }
+
+    public function submit()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            //Initially no errors
+            $errors = array();
+            $errors['email'] = "";
+            $errors['password'] = "";
+
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            // echo $email;
+            // echo $password;
+        }
     }
 }
