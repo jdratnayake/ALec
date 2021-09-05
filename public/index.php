@@ -2,5 +2,8 @@
 
 session_start();
 
-include "../config/config.php";
-include "../system/init.php";
+//Databse configuration file
+include "../app/config.php";
+
+//Include autoloader and routing file
+include "../core/init.php";

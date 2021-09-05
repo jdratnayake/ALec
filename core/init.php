@@ -1,18 +1,21 @@
 <?php
 
+//Autoload function
+spl_autoload_register('loadClass');
+
 function loadClass($className)
 {
+    $className = strtolower($className);
     $path = "classes";
     $extension = ".php";
     $fullPath = $path . "/" . $className . $extension;
 
-    if (!file_exists($fullPath)) {
-        include $fullPath;
+    if (file_exists($fullPath)) {
+        return false;
     }
 
-    include "classes/$className";
+    include $fullPath;
 }
 
-spl_autoload_register("loadClass");
-
-$router = new router;
+//Create routing object
+$router = new Router;

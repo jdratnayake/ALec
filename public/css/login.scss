@@ -55,20 +55,29 @@ form h2{
     position: relative;
     display: grid;
     grid-template-columns: 7% 93%;
-    margin: 25px 0;
+    margin-top: 25px;
     padding: 5px 0;
     border-bottom: 2px solid #d9d9d9;
 }
 
+
+//Color styles for validation:- below two classes
 .input-div::after, .input-div::before{
     content: '';
     position: absolute;
     bottom: -2px;
     width: 0%;
     height: 2px;
-    background-color: $login_theme_color;
     transition: .3s;
 }
+
+// #div-email{
+//     border-bottom: 2px solid $login_theme_color;
+// }
+
+// #icon-email{
+//     color: $login_theme_color;
+// }
 
 .input-div::after{
     right: 50%;
@@ -76,10 +85,6 @@ form h2{
 
 .input-div::before{
     left: 50%;
-}
-
-.input-div.focus .i i{
-    color: $login_theme_color;
 }
 
 .input-div.focus div h5{
@@ -173,6 +178,12 @@ a:hover{
 
 .btn:hover{
     background-position: right;
+}
+
+//For error messages
+.helper-text{
+    text-align: left;
+    color: #f44336;
 }
 
 @media screen and (max-width: 1050px){
