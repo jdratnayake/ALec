@@ -24,17 +24,41 @@ class Login extends AlecFramework
 
     public function submit()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            //Initially no errors
-            $errors = array();
-            $errors['email'] = "";
-            $errors['password'] = "";
+        //Initially no errors
+        $errors = array();
+        $errors['email'] = "";
+        $errors['password'] = "";
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            //Get data from the form
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            // echo $email;
-            // echo $password;
+            //Form validation - start
+            if (empty($email)) {
+                $errors['email'] = "Email is required";
+            }
+
+            if (empty($password)) {
+                $errors['password'] = "Password is required";
+            }
+            //Form validation - end
+
+            if (!empty($email) && !empty($password)) {
+                $password = md5($password);
+
+                $user = $this->loginModel->passwordCheck($email, $password);
+
+                if ($user) {
+                    echo "Valid";
+                } else {
+                    echo "Invalid";
+                }
+            } else {
+                /* Regenerate Login Page With Errors */
+                $data['errors'] = $errors;
+                $this->view("loginView", $data);
+            }
         }
     }
 }
