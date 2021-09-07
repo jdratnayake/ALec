@@ -1,0 +1,302 @@
+/*Stylesheet of the create quiz page*/
+
+:root {
+    --main-color: #1FB880;
+    --light-color: white;
+    --color-grey: #a1a1a1;
+}
+
+* {
+    font-family: "Segoe UI", serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*!*should be removed*!*/
+/*.sidebar {*/
+/*    width: 240px;*/
+/*    position: fixed;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*    height: 100%;*/
+/*    background: var(--main-color);*/
+/*    z-index: 100;*/
+/*    transition: width 300ms;*/
+/*    overflow-y: auto;*/
+/*}*/
+.quiz-content {
+    height: 100%;
+    width: calc(100% - 78px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    /*position: absolute;*/
+    margin-left: 100px;
+}
+
+.quiz-content-expand {
+    width: calc(100% - 240px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-left: 240px;
+    background: cornflowerblue;
+}
+
+/*.quiz-content {*/
+/*    margin-left: 240px;*/
+/*    width: calc(100% - 240px);*/
+/*    margin-bottom: 0;*/
+/*}*/
+
+header {
+    padding-top: 5%;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.text {
+    border: 1px solid var(--color-grey);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 15px;
+    height: 0.05rem;
+}
+
+.form-content {
+    padding: 1rem;
+    width: 500px;
+    margin: auto;
+    /*border: 1px solid var(--main-color);*/
+}
+
+#ans1 {
+    display: none;
+}
+
+#form {
+    /*margin-bottom: 0.2rem;*/
+    /*border: 2px solid #1f4bc4;*/
+    border-radius: 4px;
+    padding: 0.5rem 0;
+}
+
+#form1 {
+    display: none;
+}
+
+.form-header {
+    margin: 0.5rem 0;
+    /*padding-right: 1rem;*/
+}
+
+.time {
+    width: 2rem;
+    margin-left: 4px;
+    height: min-content;
+}
+
+.question-content {
+    margin: 1rem 0;
+    padding: 0;
+    display: block;
+}
+
+.form-question {
+    margin-bottom: 1rem;
+    height: 4rem;
+    width: 100%; /*should be changed to resize with the window size*/
+}
+
+.answer {
+    display: inline-flex;
+}
+
+.form-answer {
+    width: 80%;
+    margin-bottom: 0.275rem;
+    margin-right: 8px;
+    padding-right: 215px;
+}
+
+.points {
+    width: 15%;
+    height: min-content;
+    margin-right: 4px;
+}
+
+.button {
+    color: var(--light-color);
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+}
+
+.plus {
+    padding: 4px 6px 4px 6px;
+}
+
+.save {
+    /*float: right;*/
+    width: 7rem;
+    margin: 15px 0 6px 390px;
+    padding: 4px;
+    color: var(--light-color);
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    /*margin-left: 320px;*/
+}
+
+.finish {
+    /*float: right;*/
+    width: 10rem;
+    height: 3rem;
+    /*margin: 6px 0;*/
+    /*padding: 4px;*/
+    color: var(--light-color);
+    background-color: var(--main-color);
+    /*border: 3px solid #15156f;*/
+    border-radius: 4px;
+    font-size: large;
+    font-weight: bold;
+}
+
+/*.buttonset {*/
+/*    margin-left: 190px;*/
+/*}*/
+.qtype {
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    cursor: pointer;
+    width: 10rem;
+    /*border-top: 5px solid var(--main-color);*/
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+#choicemcq {
+    border-top: 5px solid var(--main-color);
+}
+
+#choiceshort {
+    border-top: 5px solid var(--light-color);
+}
+
+#shortans {
+    display: none;
+}
+
+/*-----------------POPUP WINDOW-------------------------*/
+
+/* The Modal (background) */
+.savedetails {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.savedetails-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    height: 70%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.savedetails-header {
+    padding: 16px;
+    background-color: var(--main-color);
+    height: 2rem;
+    color: white;
+    font-size: large;
+}
+
+.savedetails-body {
+    padding: 16px;
+}
+
+.topic-text {
+    border: none;
+    border-bottom: 1px solid var(--color-grey);
+    margin-left: 4px;
+}
+
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
