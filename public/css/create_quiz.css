@@ -12,26 +12,44 @@
     padding: 0;
 }
 
-/*should be removed*/
-.sidebar {
-    width: 240px;
-    position: fixed;
-    left: 0;
-    top: 0;
+/*!*should be removed*!*/
+/*.sidebar {*/
+/*    width: 240px;*/
+/*    position: fixed;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*    height: 100%;*/
+/*    background: var(--main-color);*/
+/*    z-index: 100;*/
+/*    transition: width 300ms;*/
+/*    overflow-y: auto;*/
+/*}*/
+.quiz-content {
     height: 100%;
-    background: var(--main-color);
-    z-index: 100;
-    transition: width 300ms;
-    overflow-y: auto;
+    width: calc(100% - 78px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    /*position: absolute;*/
+    margin-left: 100px;
 }
 
-.quiz-content {
-    /*margin-left: 240px;*/
+.quiz-content-expand {
     width: calc(100% - 240px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-left: 240px;
+    background: cornflowerblue;
 }
+
+/*.quiz-content {*/
+/*    margin-left: 240px;*/
+/*    width: calc(100% - 240px);*/
+/*    margin-bottom: 0;*/
+/*}*/
 
 header {
     padding-top: 5%;
+    padding-bottom: 1rem;
 }
 
 h1 {

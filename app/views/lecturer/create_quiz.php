@@ -3,14 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+
+    <!-- Shortcut Icon -->
+    <link rel="shortcut icon" href="/public/img/logo1.png">
     <title>Create Quiz</title>
+
     <link rel="stylesheet" href="../../../public/css/create_quiz.css">
     <script src="../../../public/js/create_quiz.js"></script>
+
+    <link rel="stylesheet" href="../../../public/css/2_navigation_bar.css">
+    <link rel="stylesheet" href="../../../public/css/3_notification.css">
+    <link rel="stylesheet" href="../../../public/css/4_footer.css">
+
 </head>
 <body>
-<!--<div class="sidebar">-->
-<!--    ALec-->
-<!--</div>-->
+<div class="sidebar">
+    <!-- NAVIGATION BAR - START -->
+    <div class="sidebar-container">
+        <div class="siderbar ">
+            <div class="logo_content">
+                <div class="logo">
+                    <div class="logo_name">ALec</div>
+                </div>
+                <i class="fas fa-bars" id="btn"></i>
+            </div>
+            <ul class="nav_list">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="links_name">Ask Question</span>
+                    </a>
+                    <span class="tooltip">Ask Question</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-graduation-cap"></i>
+                        <span class="links_name">My Courses</span>
+                    </a>
+                    <span class="tooltip">My Courses</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="links_name">Review</span>
+                    </a>
+                    <span class="tooltip">Review</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-comment-alt"></i>
+                        <span class="links_name">Forum</span>
+                    </a>
+                    <span class="tooltip">Forum</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-medal"></i>
+                        <span class="links_name">Leaderboard</span>
+                    </a>
+                    <span class="tooltip">Leaderboard</span>
+                </li>
+
+
+                <div class="profile_content">
+                        <div class="profile profile_details">
+                            <img src="/public/img/profile-picture.jpg" alt="">
+                            <div class="name_job">
+                                <div class="name">Louella Rhodes</div>
+                                <div class="job">Lecturer</div>
+                            </div>
+                        </div>
+                        <i class="fas fa-sign-out-alt" id="log_out"></i>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <!-- NAVIGATION BAR - END -->
+
+</div>
 <div class="quiz-content">
     <header><h1>Create Quiz</h1></header>
     <div class="form-content">
@@ -109,6 +186,7 @@
                     <input type="number" class="points" name="point-quantity-5" min="-100"
                            max="100">points<br>
                 </div>
+
             </form>
             <!---->
             <form class="question-content " id="shortans2" method="post">
@@ -130,6 +208,16 @@
             <button class="finish" id="createquiz" onclick="getPopup()"> Create quiz </button>
         </div>
     </div>
+
+    <!-- NOTIFICATION - START -->
+    <div class="pop-up"> </div>
+
+    <div class="notification-container" onclick="showNotifycation()">
+        <i class="fas fa-bell bell-notification"></i>
+    </div>
+    <!-- NOTIFICATION - END -->
+
+    <!-- POP-UP WINDOW - START -->
 
     <!-- The Modal -->
     <div id="savedetails" class="savedetails">
@@ -161,8 +249,26 @@
 
     </div>
 
+    <!-- POP-UP WINDOW - END -->
+
+    <!-- FOOTER - START -->
+
+    <footer class="sticky-footer">
+        <p> © Copyright ALec 2021.</p>
+    </footer>
+
+    <!-- FOOTER - END -->
 
 </div>
+
+
+
+<!-- FontAwesome Icon -->
+<script src="https://kit.fontawesome.com/3220c9480a.js" crossorigin="anonymous"></script>
+
+<!-- **********JavaScript START********** -->
+<script src="/public/js/basic.js"></script>
+<!-- **********JavaScript END********** -->
 
 </body>
 </html>
