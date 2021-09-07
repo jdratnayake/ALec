@@ -419,6 +419,10 @@ footer p {
   padding: 10px;
 }
 
+.home-content {
+  padding-top: 20px;
+}
+
 .home-content .form-container form {
   width: 70%;
   padding: 15px 40px 40px;
@@ -433,7 +437,7 @@ footer p {
   color: #1ebb7f;
   text-align: center;
   font-size: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .home-content .form-container form input, .home-content .form-container form select {
@@ -488,6 +492,7 @@ footer p {
   color: #fff;
   margin-top: 10px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .home-content .form-container form input[type="submit"]:hover {

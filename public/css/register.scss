@@ -16,6 +16,7 @@ $input_box_size: 300px;
 
 .home-content{
     // vertical-align: center;
+    padding-top: 20px;
 
     .form-container{
         form {
@@ -30,7 +31,7 @@ $input_box_size: 300px;
                 color: $theme;
                 text-align: center;
                 font-size: 25px;
-                margin-bottom: 15px;
+                margin-bottom: 25px;
             }
 
             input, select {
@@ -79,6 +80,7 @@ $input_box_size: 300px;
                 color: #fff;
                 margin-top: 10px;
                 cursor: pointer;
+                margin-top: 20px;
     
                 &:hover{
                     background: $register_hover_color;
