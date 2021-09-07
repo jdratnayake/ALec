@@ -1,0 +1,90 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+$register_hover_color: #38d39f;
+$input_box_color: #e9fbf4;
+$input_box_size: 300px;
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+.home-content{
+    // vertical-align: center;
+
+    .form-container{
+        form {
+            width: 70%;
+            padding: 15px 40px 40px;
+            border-radius: 5px;
+            background-color: #fff;
+            margin: 4% auto;
+            box-shadow: 1px 7px 25px rgba(56, 211, 159, 0.3);
+
+            h2 {
+                color: $theme;
+                text-align: center;
+                font-size: 25px;
+                margin-bottom: 15px;
+            }
+
+            input, select {
+                border: 1px solid #ccc;
+                padding: 10px;
+                display: block;
+                width: $input_box_size;
+                box-sizing: border-box;
+                border-radius: 2px;
+                background-color: $input_box_color;
+            }
+
+            select{
+                outline: none!important;
+            }
+
+            .row{
+                display: flex;
+                flex-direction: row;
+                // justify-content: center;
+                justify-content: space-around;
+
+                .box {
+                    padding-bottom: 10px;
+        
+                    label {
+                        display: block;
+                        margin-bottom: 5px;
+                    }
+
+                    input[type=text]{
+                        outline: none;
+                    }
+
+                    .error {
+                        color: red;
+                        font-size: 90%;
+                    }
+                }
+            }
+
+            input[type="submit"] {
+                font-size: 110%;
+                font-weight: 100;
+                background: $theme;
+                color: #fff;
+                margin-top: 10px;
+                cursor: pointer;
+    
+                &:hover{
+                    background: $register_hover_color;
+                    border-color: $register_hover_color;
+                }
+            }
+        }
+    }
+}

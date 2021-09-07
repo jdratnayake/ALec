@@ -19,7 +19,10 @@ class Login extends AlecFramework
 
         $data['errors'] = $errors;
 
-        $this->view("loginView", $data);
+        // $this->view("loginView", $data);
+
+        //testing purpose: commen login view and include register view
+        $this->view("admin/register", $data);
     }
 
     public function submit()

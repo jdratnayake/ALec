@@ -27,3 +27,11 @@ function srcIMG($imgPath)
     $url = "src=" . BASEURL . "/public/img/" . $imgPath;
     echo $url;
 }
+
+
+// To link php files in view
+function linkPhp($phpPath)
+{
+    $url = "../app/views/components/" . $phpPath . ".php";
+    include $url;
+}
