@@ -35,22 +35,32 @@ class Login extends AlecFramework
             //Form validation - end
 
             if (!empty($email) && !empty($password)) {
-                $password = md5($password);
 
+                //Check login password
                 $user = $this->loginModel->passwordCheck($email, $password);
 
-                // if ($user) {
-                //     echo "Valid";
-                // } else {
-                //     echo "Invalid";
-                // }
+                if ($user) {
+                    $this->setSession("userId", $user["user_id"]);
+                    $this->setSession("type", $user["user_type"]);
+
+                    //Specify redirect path after sucessful login
+                    // $this->redirect("register");
+                    if ($user["user_type"] == "admin") {
+                    } else if ($user["user_type"] == "lec") {
+                    } else if ($user["user_type"] == "stu") {
+                    }
+                } else {
+                    //If login password is not matched
+                    $errors["password"] = "Invaild Login ! - Wrong User Name OR Password";
+                }
             } else {
                 /* Regenerate Login Page With Errors */
                 $data['errors'] = $errors;
                 $this->view("loginView", $data);
             }
-        } else {
-            $this->view("loginView", $data);
         }
+
+        $data['errors'] = $errors;
+        $this->view("loginView", $data);
     }
 }

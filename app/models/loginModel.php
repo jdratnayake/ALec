@@ -20,7 +20,7 @@ class LoginModel extends Database
         $row = mysqli_fetch_assoc($result);
 
 
-        if (!empty($row) && password_verify("{$password}ALEC", $row['pass'])) {
+        if (!empty($row) && password_verify($password, $row['pass'])) {
             return $row;
         }
     }

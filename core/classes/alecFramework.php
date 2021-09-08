@@ -39,4 +39,39 @@ class AlecFramework
             echo "<div style='margin:0;padding: 10px;background-color:silver;'>Sorry helper $helperName file not found </div>";
         }
     }
+
+    //Session management methods - start
+
+    public function setSession($sessionName, $sessionValue)
+    {
+        if (!empty($sessionName) && !empty($sessionValue)) {
+            $_SESSION[$sessionName] = $sessionValue;
+        }
+    }
+
+    public function getSession($sessionName)
+    {
+        if (!empty($sessionName)) {
+            return $_SESSION[$sessionName];
+        }
+    }
+
+    public function unsetSession($sessionName)
+    {
+        if (!empty($sessionName)) {
+            unset($_SESSION[$sessionName]);
+        }
+    }
+
+    public function destroy()
+    {
+        session_destroy();
+    }
+
+    //Session management methods - end
+
+    public function redirect($path)
+    {
+        header("location:" . BASEURL . "/" . $path);
+    }
 }

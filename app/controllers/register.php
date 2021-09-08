@@ -67,11 +67,11 @@ class Register extends AlecFramework
 
             if ($numberOfErrors == 0) {
                 //Encrypy password
-                $password = password_hash("{$password}ALEC", PASSWORD_DEFAULT);
+                $password = password_hash($password, PASSWORD_DEFAULT);
 
                 //Insert data
                 $this->registerModel->addUser($email, $regNo, $fName, $lName, $password, $type);
-                echo "<h1 align='center'>$password</h1>";
+                // echo "<h1 align='center'>$password</h1>";
             } else {
                 $data["errors"] = $errors;
 
