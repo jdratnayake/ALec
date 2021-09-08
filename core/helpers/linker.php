@@ -24,7 +24,7 @@ function shortIcon($iconPath)
 //To link images
 function srcIMG($imgPath)
 {
-    $url = "src=" . BASEURL . "/public/img/" . $imgPath;
+    $url = "src='" . BASEURL . "/public/img/" . $imgPath . "'";
     echo $url;
 }
 

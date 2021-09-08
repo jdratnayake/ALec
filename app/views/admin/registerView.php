@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php linkPhp("navigationBar"); ?>
+    <?php linkPhp("navigationBarAdmin"); ?>
 
     <!-- <div class="form-container">
         <form name="form" onsubmit="return validateForm()">
