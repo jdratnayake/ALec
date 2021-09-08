@@ -20,7 +20,7 @@ function changeId() {
     let shortId = 'select-short' + j.toString();
 
     let mcq = 'mcq' + j.toString();
-    let short = 'shortans' + j.toString();
+    let short = 'short-ans' + j.toString();
     j++;
 
     document.getElementById(mcqId).setAttribute("name", 'select-one' + j.toString());
@@ -31,7 +31,7 @@ function changeId() {
 
 
     document.getElementById(mcq).id = 'mcq' + j.toString();
-    document.getElementById(short).id = 'shortans' + j.toString();
+    document.getElementById(short).id = 'short-ans' + j.toString();
 
     document.getElementById(short).style.display = "none";
 
@@ -46,9 +46,9 @@ function onMcq1() {
         if (ele[i].checked) {
             if (ele[i].value === "MCQ") {
                 document.getElementById('mcq' + (j - 1).toString()).style.display = "block";
-                document.getElementById('shortans' + (j - 1).toString()).style.display = "none";
+                document.getElementById('short-ans' + (j - 1).toString()).style.display = "none";
             } else {
-                document.getElementById('shortans' + (j - 1).toString()).style.display = "block";
+                document.getElementById('short-ans' + (j - 1).toString()).style.display = "block";
                 document.getElementById('mcq' + (j - 1).toString()).style.display = "none";
             }
         }
@@ -62,21 +62,22 @@ function onMcq() {
         if (ele[i].checked) {
             if (ele[i].value === "MCQ") {
                 document.getElementById('mcq').style.display = "block";
-                document.getElementById('shortans').style.display = "none";
+                document.getElementById('short-ans').style.display = "none";
             } else {
-                document.getElementById('shortans').style.display = "block";
+                document.getElementById('short-ans').style.display = "block";
                 document.getElementById('mcq').style.display = "none";
             }
         }
     }
 }
 
+// GET POP-UP WINDOW
 function getPopup() {
     // Get the modal
-    const modal = document.getElementById("savedetails");
+    const modal = document.getElementById("save-details");
 
     // Get the button that opens the modal
-    const btn = document.getElementById("createquiz");
+    const btn = document.getElementById("create-quiz");
 
     // Get the <span> element that closes the modal
     const span = document.getElementsByClassName("close")[0];
@@ -97,6 +98,11 @@ function getPopup() {
             modal.style.display = "none";
         }
     }
+}
+
+// Load homepage
+function loadHomepage() {
+    location.replace("/app/views/lecturer/home.html")
 }
 
 
