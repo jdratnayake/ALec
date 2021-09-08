@@ -14,7 +14,7 @@
 
     <?php linkPhp("navigationBar"); ?>
 
-    <div class="form-container">
+    <!-- <div class="form-container">
         <form name="form" onsubmit="return validateForm()">
             <h2>Registration Form</h2>
 
@@ -70,11 +70,85 @@
                 <input type="submit" value="Register" class="center">
             </div>
         </form>
+    </div> -->
+
+    <div class="wrapper center">
+
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Lecturer</label>
+                <label for="signup" class="slide signup">Student</label>
+                <div class="slider-tab"></div>
+            </div>
+
+
+            <div class="form-inner">
+
+                <!-- LECTURER FORM START -->
+                <form action="#" class="login">
+                    <input type='hidden' name='type' value='<?php echo 1; ?>' />
+
+                    <div class="field">
+                        <input type="text" placeholder="Email Address">
+                        <div class="error" id="error"></div>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" placeholder="Registration No">
+                        <div class="error" id="error"></div>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" placeholder="First Name">
+                        <div class="error" id="error"></div>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" placeholder="Last Name">
+                        <div class="error" id="error"></div>
+                    </div>
+
+                    <div class="field">
+                        <input type="password" placeholder="Password">
+                        <div class="error" id="error"></div>
+                    </div>
+
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+                <!-- LECTURER FORM END -->
+
+                <!-- STUDENT FORM START -->
+                <form action="#" class="signup">
+                    <div class="field">
+                        <input type="text" placeholder="Email Address">
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Confirm password">
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+                <!-- STUDENT FORM END -->
+
+            </div>
+        </div>
     </div>
 
     <?php linkPhp("notification"); ?>
 
     <?php linkPhp("footer"); ?>
+
+    <?php linkJS("registerStyle"); ?>
 
 </body>
 
