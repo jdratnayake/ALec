@@ -11,6 +11,9 @@ class LoginModel extends Database
         $email = mysqli_real_escape_string($GLOBALS['db'], $email);
         $password = mysqli_real_escape_string($GLOBALS['db'], $password);
 
+        // echo $email;
+        // echo $password;
+
         //SQL part
         $sql = "SELECT * FROM user WHERE email='$email' LIMIT 1";
         $result = mysqli_query($GLOBALS['db'], $sql);

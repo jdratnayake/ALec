@@ -19,19 +19,6 @@ class Login extends AlecFramework
 
         $data['errors'] = $errors;
 
-        $this->view("loginView", $data);
-
-        //testing purpose: commen login view and include register view
-        // $this->view("admin/register", $data);
-    }
-
-    public function submit()
-    {
-        //Initially no errors
-        $errors = array();
-        $errors['email'] = "";
-        $errors['password'] = "";
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //Get data from the form
             $email = $_POST['email'];
@@ -52,16 +39,18 @@ class Login extends AlecFramework
 
                 $user = $this->loginModel->passwordCheck($email, $password);
 
-                if ($user) {
-                    echo "Valid";
-                } else {
-                    echo "Invalid";
-                }
+                // if ($user) {
+                //     echo "Valid";
+                // } else {
+                //     echo "Invalid";
+                // }
             } else {
                 /* Regenerate Login Page With Errors */
                 $data['errors'] = $errors;
                 $this->view("loginView", $data);
             }
+        } else {
+            $this->view("loginView", $data);
         }
     }
 }
