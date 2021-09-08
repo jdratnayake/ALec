@@ -1,3 +1,5 @@
+<?php $errors = $data['errors'] ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,32 +89,33 @@
             <div class="form-inner">
 
                 <!-- LECTURER FORM START -->
-                <form action="#" class="login">
-                    <input type='hidden' name='type' value='<?php echo 1; ?>' />
+                <form method="post" action="<?php echo BASEURL . '/register/index'; ?>" class="login">
+                    <!-- Used to identify user type -->
+                    <input type='hidden' name='type' value='2' />
 
                     <div class="field">
-                        <input type="text" placeholder="Email Address">
-                        <div class="error" id="error"></div>
+                        <input type="text" placeholder="Email Address" name="email">
+                        <div class="error" id="error"><?php echo $errors["email"] ?></div>
                     </div>
 
                     <div class="field">
-                        <input type="text" placeholder="Registration No">
-                        <div class="error" id="error"></div>
+                        <input type="text" placeholder="Registration No" name="regNo">
+                        <div class="error" id="error"><?php echo $errors["regNo"] ?></div>
                     </div>
 
                     <div class="field">
-                        <input type="text" placeholder="First Name">
-                        <div class="error" id="error"></div>
+                        <input type="text" placeholder="First Name" name="fName">
+                        <div class="error" id="error"><?php echo $errors["fName"] ?></div>
                     </div>
 
                     <div class="field">
-                        <input type="text" placeholder="Last Name">
-                        <div class="error" id="error"></div>
+                        <input type="text" placeholder="Last Name" name="lName">
+                        <div class="error" id="error"><?php echo $errors["lName"] ?></div>
                     </div>
 
                     <div class="field">
-                        <input type="password" placeholder="Password">
-                        <div class="error" id="error"></div>
+                        <input type="text" placeholder="Password" name="password">
+                        <div class="error" id="error"><?php echo $errors["password"] ?></div>
                     </div>
 
                     <div class="field btn">
