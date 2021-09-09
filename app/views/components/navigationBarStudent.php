@@ -49,7 +49,7 @@
                                 <div class="job">Lecturer</div>
                             </div>
                         </div>
-                        <i class="fas fa-sign-out-alt" id="log_out"></i>
+                        <i class="fas fa-sign-out-alt" id="log_out" onclick="window.location='<?php echo BASEURL . '/logout/index'; ?>'"></i>
                     </div>
                 </div>
             </ul>

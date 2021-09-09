@@ -74,11 +74,8 @@ class Register extends AlecFramework
                 // echo "<h1 align='center'>$password</h1>";
             } else {
                 $data["errors"] = $errors;
-
-                $this->view("admin/registerView", $data);
             }
-        } else {
-            $this->view("admin/registerView", $data);
         }
+        $this->view("admin/registerView", $data);
     }
 }
