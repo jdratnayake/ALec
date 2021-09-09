@@ -11,7 +11,7 @@
             </div>
             <ul class="nav_list">
                 <li>
-                    <a href="<?php echo BASEURL . '/lecturerDashboard/index'; ?>">
+                    <a href="<?php echo BASEURL . '/studentDashboard/index'; ?>">
                         <i class="fas fa-tachometer-alt"></i>
                         <span class="links_name">Dashboard</span>
                     </a>
@@ -19,24 +19,10 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="links_name">Ask Question</span>
-                    </a>
-                    <span class="tooltip">Ask Question</span>
-                </li>
-                <li>
-                    <a href="#">
                         <i class="fa fa-graduation-cap"></i>
                         <span class="links_name">My Courses</span>
                     </a>
                     <span class="tooltip">My Courses</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-chart-bar"></i>
-                        <span class="links_name">Review</span>
-                    </a>
-                    <span class="tooltip">Review</span>
                 </li>
                 <li>
                     <a href="#">

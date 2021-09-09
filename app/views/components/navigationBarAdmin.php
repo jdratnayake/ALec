@@ -11,7 +11,7 @@
             </div>
             <ul class="nav_list">
                 <li>
-                    <a href="<?php echo BASEURL . '/dashboard/index'; ?>">
+                    <a href="<?php echo BASEURL . '/adminDashboard/index'; ?>">
                         <i class="fas fa-tachometer-alt"></i>
                         <span class="links_name">Dashboard</span>
                     </a>

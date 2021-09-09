@@ -1,6 +1,6 @@
 <?php
 
-class Dashboard extends AlecFramework
+class LecturerDashboard extends AlecFramework
 {
     public function __construct()
     {
@@ -9,6 +9,6 @@ class Dashboard extends AlecFramework
 
     public function index()
     {
-        $this->view("admin/dashboardAdmin");
+        $this->view("lecturer/lecturerDashboardView");
     }
 }
