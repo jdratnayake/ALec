@@ -84,11 +84,12 @@
     </div>
     <!-- NAVIGATION BAR - END -->
     <div class="home-content">
-        <header><h1>Create Quiz</h1></header>
+
         <div class="form-content">
+            <header><h1>Create Quiz</h1></header>
             <form class="details" method="post">
                 <label for="quiz-name">Quiz name : </label>
-                <input type="text" class="text" placeholder="Quiz name" name="quiz-name"><br>
+                <input type="text" class="text" placeholder="Enter quiz name" name="quiz-name"><br>
                 <label for="quiz-dur">Quiz duration : </label>
                 <input type="number" class="time" name="quiz-dur" min="0" max="60"> hrs
                 <input type="number" class="time" name="quiz-dur" min="0" max="60"> mins
@@ -98,49 +99,51 @@
             <!--    First default question-->
             <div id="form">
                 <div class="form-header">
-                    <h4 id="qname" >Question 01</h4>
-                    <input type="radio" name="select-one" value="MCQ" onchange="return onMcq()" checked>
-                    <label for="MCQ">MCQ</label><br>
-                    <input type="radio" name="select-one" value="SHORT" onchange="return onMcq()">
-                    <label for="SHORT">Short Answer</label><br>
+                    <h4 id="qname">Question 01</h4>
+                    <div class="radio-inline">
+                        <input type="radio" name="select-one" value="MCQ" onchange="return onMcq()" checked>
+                        <label for="MCQ">MCQ</label>
+                        <input type="radio" name="select-one" value="SHORT" onchange="return onMcq()">
+                        <label for="SHORT">Short Answer</label>
+                    </div>
                 </div>
                 <form class="question-content " id="mcq" method="post">
-                    <input type="text" class="form-question" name="que" placeholder="Enter your question here"><br>
+                    <input type="text" class="form-question" name="que" placeholder="Enter your question here">
 
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                         <input type="number" class="points" name="point-quantity-2" min="-100"
                                max="100">points
                     </div>
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                         <input type="number" class="points" name="point-quantity-2" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                         <input type="number" class="points" name="point-quantity-2" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                         <input type="number" class="points" name="point-quantity-2" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                         <input type="number" class="points" name="point-quantity-2" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
 
                 </form>
 
                 <form class="question-content " id="short-ans" method="post">
-                    <input type="text" class="form-question" placeholder="Enter your question here"><br>
+                    <input type="text" class="form-question" placeholder="Enter your question here">
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter answer here"><br>
-                        <input type="number" class="points"  min="-100"
-                               max="100">points<br>
+                        <input type="text" class="form-answer" placeholder="Enter answer here">
+                        <input type="number" class="points" min="-100"
+                               max="100">points
                     </div>
                 </form>
             </div>
@@ -149,47 +152,49 @@
             <div id="form1">
                 <div class="form-header">
                     <h4 id="qname1"></h4>
-                    <input type="radio" name="select-one2" value="MCQ" id = "select-mcq2" onchange="onMcq1()" checked>
-                    <label for="MCQ">MCQ</label><br>
-                    <input type="radio" name="select-one2" value="SHORT" id = "select-short2" onchange="onMcq1()">
-                    <label for="SHORT">Short Answer</label><br>
+                    <div class="radio-inline">
+                        <input type="radio" name="select-one2" value="MCQ" id="select-mcq2" onchange="onMcq1()" checked>
+                        <label for="MCQ">MCQ</label>
+                        <input type="radio" name="select-one2" value="SHORT" id="select-short2" onchange="onMcq1()">
+                        <label for="SHORT">Short Answer</label>
+                    </div>
                 </div>
                 <form class="question-content " id="mcq2" method="post">
-                    <input type="text" class="form-question" placeholder="Enter your question here"><br>
+                    <input type="text" class="form-question" placeholder="Enter your question here">
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-1"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-1">
                         <input type="number" class="points" name="point-quantity-1" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2"><br>
-                        <input type="number" class="points"  name="point-quantity-2" min="-100"
-                               max="100">points<br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
+                        <input type="number" class="points" name="point-quantity-2" min="-100"
+                               max="100">points
                     </div>
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-3"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-3">
                         <input type="number" class="points" name="point-quantity-3" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-4"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-4">
                         <input type="number" class="points" name="point-quantity-4" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-5"><br>
+                        <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-5">
                         <input type="number" class="points" name="point-quantity-5" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
 
                 </form>
                 <!---->
                 <form class="question-content " id="short-ans2" method="post">
-                    <input type="text" class="form-question" placeholder="Enter your question here"><br>
+                    <input type="text" class="form-question" placeholder="Enter your question here">
                     <div class="answer">
-                        <input type="text" class="form-answer" placeholder="Enter answer here"><br>
+                        <input type="text" class="form-answer" placeholder="Enter answer here">
                         <input type="number" class="points" name="quantity" min="-100"
-                               max="100">points<br>
+                               max="100">points
                     </div>
                 </form>
             </div>
@@ -197,15 +202,14 @@
             <div id="new-question"></div>
             <input type="submit" name="submit" class="add" value="+ Add question" onclick="getQuestions()">
             <div class="button-set">
-                <button class="finish"> Save as draft </button>
-
+                <input type="submit" class="finish" value="Save as draft">
                 <!-- Trigger/Open The Modal -->
-                <button class="finish" id="create-quiz" onclick="getPopup()"> Create quiz </button>
+                <input type="submit" id="create-quiz" class="finish" value="Create quiz" onclick="getPopup()">
             </div>
         </div>
 
         <!-- NOTIFICATION - START -->
-        <div class="pop-up"> </div>
+        <div class="pop-up"></div>
 
         <div class="notification-container" onclick="showNotifycation()">
             <i class="fas fa-bell bell-notification"></i>
@@ -239,13 +243,13 @@
                         <input type="text" class="topic-text" placeholder="Enter topic name" name="optional"><br>
                     </p>
 
-                    <input type="submit" name="submit" class="finish" value="Done" onclick="loadHomepage()">
+                    <input type="submit" name="submit" class="done" value="Done" onclick="loadHomepage()">
                 </div>
             </div>
-
         </div>
 
         <!-- POP-UP WINDOW - END -->
+
 
         <!-- FOOTER - START -->
 
