@@ -231,6 +231,13 @@ $sidebar_max_len: 240px;
     text-align: center;
     transition: all 0.4 ease;
     background: $theme;
+    cursor: pointer;
+    
+    &:hover{
+        color: #184e77;
+        background: #fff;
+    }
+    
 }
 
 .siderbar.active .profile #log_out{

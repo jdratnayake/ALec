@@ -3,7 +3,7 @@
 class Router
 {
     //Default controller values
-    public $controller = "studentDashboard";
+    public $controller = "dashboard";
     public $method = "index";
     public $params = [];
 

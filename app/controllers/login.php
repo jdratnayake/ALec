@@ -44,11 +44,7 @@ class Login extends AlecFramework
                     $this->setSession("type", $user["user_type"]);
 
                     //Specify redirect path after sucessful login
-                    // $this->redirect("register");
-                    if ($user["user_type"] == "admin") {
-                    } else if ($user["user_type"] == "lec") {
-                    } else if ($user["user_type"] == "stu") {
-                    }
+                    $this->redirect("dashboard");
                 } else {
                     //If login password is not matched
                     $errors["password"] = "Invaild Login ! - Wrong User Name OR Password";

@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
     <?php linkPhp("navigationBarLecturer"); ?>
 
     <div class="navigation-item-container">
