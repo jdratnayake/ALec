@@ -126,16 +126,35 @@
                 <!-- LECTURER FORM END -->
 
                 <!-- STUDENT FORM START -->
-                <form action="#" class="signup">
+                <form method="post" action="<?php echo BASEURL . '/register/index'; ?>" class="login" id="registerForm1" onsubmit="validateAll1()">
+                    <!-- Used to identify user type -->
+                    <input type='hidden' name='type' value='3' />
+
                     <div class="field">
-                        <input type="text" placeholder="Email Address">
+                        <input type="text" placeholder="Email Address" name="email" id="email1" onfocusout="validateEmail1()">
+                        <div class="error" id="error"><?php echo $errors["email"] ?></div>
                     </div>
+
                     <div class="field">
-                        <input type="password" placeholder="Password">
+                        <input type="text" placeholder="Index No" name="regNo" id="regNo1" onfocusout="validateEmployeeNo1()">
+                        <div class="error" id="error"><?php echo $errors["regNo"] ?></div>
                     </div>
+
                     <div class="field">
-                        <input type="password" placeholder="Confirm password">
+                        <input type="text" placeholder="First Name" name="fName" id="fName1" onfocusout="validateFirstName1()">
+                        <div class="error" id="error"><?php echo $errors["fName"] ?></div>
                     </div>
+
+                    <div class="field">
+                        <input type="text" placeholder="Last Name" name="lName" id="lName1" onfocusout="validateLastName1()">
+                        <div class="error" id="error"><?php echo $errors["lName"] ?></div>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" placeholder="Password" name="password" id="password1" onfocusout="validatePassword1()">
+                        <div class="error" id="error"><?php echo $errors["password"] ?></div>
+                    </div>
+
                     <div class="field btn">
                         <div class="btn-layer"></div>
                         <input type="submit" value="Register">
@@ -153,7 +172,9 @@
 
     <?php linkJS("registerStyle"); ?>
 
-    <?php linkJS("registerValidation"); ?>
+    <?php linkJS("lecturerRegisterValidation"); ?>
+
+    <?php linkJS("studentRegisterValidation"); ?>
 
 </body>
 
