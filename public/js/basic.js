@@ -1,12 +1,6 @@
-let btn = document.querySelector("#btn");
-let siderbar = document.querySelector(".siderbar");
-// hansana
-let homecontent = document.querySelector(".home-content");
-
-
-btn.onclick = function () {
-    siderbar.classList.toggle("active");
-    homecontent.classList.toggle("home-content-expand");
+document.getElementById("btn").onclick = function () {
+    document.querySelector(".siderbar").classList.toggle("active");
+    document.querySelector(".home-content").classList.toggle("home-content-expand");
 }
 
 //notification
