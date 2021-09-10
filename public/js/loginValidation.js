@@ -15,6 +15,11 @@ loginForm.addEventListener('submit', function (event) {
     }
 });
 
+function validateAll() {
+    validateLoginPassword();
+    validateEmail();
+}
+
 function setValid(iconField, lineField, messageFiled) {
     iconField.style.color = validColor;
     lineField.style.borderBottomColor = validColor;

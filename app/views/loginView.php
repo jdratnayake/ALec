@@ -25,7 +25,7 @@
         </div>
 
         <div class="login-container">
-            <form method="post" action="<?php echo BASEURL . '/login/index'; ?>" id="loginForm">
+            <form method="post" action="<?php echo BASEURL . '/login/index'; ?>" id="loginForm" onsubmit="validateAll()">
                 <img <?php srcIMG("profile_pic.svg") ?> alt="Profile picture" class="avatar">
 
                 <h2>Welcome</h2>
