@@ -113,6 +113,8 @@
 
     <?php linkJS("basic") ?>
 
+    <?php linkJS("slideShow"); ?>
+
 </body>
 
 </html>

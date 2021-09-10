@@ -153,6 +153,7 @@
 
     <?php linkJS("registerStyle"); ?>
 
+    <?php linkJS("registerValidation"); ?>
 
 </body>
 
