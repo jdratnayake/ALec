@@ -89,32 +89,32 @@
             <div class="form-inner">
 
                 <!-- LECTURER FORM START -->
-                <form method="post" action="<?php echo BASEURL . '/register/index'; ?>" class="login">
+                <form method="post" action="<?php echo BASEURL . '/register/index'; ?>" class="login" id="registerForm" onsubmit="validateAll()">
                     <!-- Used to identify user type -->
                     <input type='hidden' name='type' value='2' />
 
                     <div class="field">
-                        <input type="text" placeholder="Email Address" name="email">
+                        <input type="text" placeholder="Email Address" name="email" id="email" onfocusout="validateEmail()">
                         <div class="error" id="error"><?php echo $errors["email"] ?></div>
                     </div>
 
                     <div class="field">
-                        <input type="text" placeholder="Registration No" name="regNo">
+                        <input type="text" placeholder="Employee No" name="regNo" id="regNo" onfocusout="validateEmployeeNo()">
                         <div class="error" id="error"><?php echo $errors["regNo"] ?></div>
                     </div>
 
                     <div class="field">
-                        <input type="text" placeholder="First Name" name="fName">
+                        <input type="text" placeholder="First Name" name="fName" id="fName" onfocusout="validateFirstName()">
                         <div class="error" id="error"><?php echo $errors["fName"] ?></div>
                     </div>
 
                     <div class="field">
-                        <input type="text" placeholder="Last Name" name="lName">
+                        <input type="text" placeholder="Last Name" name="lName" id="lName" onfocusout="validateLastName()">
                         <div class="error" id="error"><?php echo $errors["lName"] ?></div>
                     </div>
 
                     <div class="field">
-                        <input type="text" placeholder="Password" name="password">
+                        <input type="text" placeholder="Password" name="password" id="password" onfocusout="validatePassword()">
                         <div class="error" id="error"><?php echo $errors["password"] ?></div>
                     </div>
 
