@@ -2,7 +2,7 @@
 
 session_start();
 
-//Databse configuration file
+//Database configuration file
 include "../app/config.php";
 
 //Include autoloader and routing file
