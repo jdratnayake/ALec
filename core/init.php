@@ -6,9 +6,9 @@ spl_autoload_register('loadClass');
 function loadClass($className)
 {
     $className = strtolower($className);
-    $path = "classes";
+    $path = "../core/classes/";
     $extension = ".php";
-    $fullPath = $path . "/" . $className . $extension;
+    $fullPath = $path . $className . $extension;
 
     if (!file_exists($fullPath)) {
         return false;
