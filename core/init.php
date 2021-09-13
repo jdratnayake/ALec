@@ -10,7 +10,7 @@ function loadClass($className)
     $extension = ".php";
     $fullPath = $path . "/" . $className . $extension;
 
-    if (file_exists($fullPath)) {
+    if (!file_exists($fullPath)) {
         return false;
     }
 
