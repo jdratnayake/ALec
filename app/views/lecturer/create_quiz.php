@@ -33,9 +33,12 @@
     <?php linkPhp("navigationBarLecturer"); ?>
 
     <div class="form-content">
+        <!-- Quiz heading -->
         <header>
             <h1>Create Quiz</h1>
         </header>
+
+        <!-- Quiz basic details -->
         <form class="details" method="post">
             <label for="quiz-name">Quiz name : </label>
             <input type="text" class="text" placeholder="Enter quiz name" name="quiz-name"><br>
@@ -49,6 +52,8 @@
         <div id="form">
             <div class="form-header">
                 <h4 id="qname">Question 01</h4>
+
+                <!-- Select question type -->
                 <div class="radio-inline">
                     <input type="radio" name="select-one" value="MCQ" onchange="return onMcq()" checked>
                     <label for="MCQ">MCQ</label>
@@ -56,32 +61,46 @@
                     <label for="SHORT">Short Answer</label>
                 </div>
             </div>
+
+            <!-- MCQ question - START -->
             <form class="question-content " id="mcq" method="post">
+                <!-- Question -->
                 <input type="text" class="form-question" name="que" placeholder="Enter your question here">
 
+                <!-- Answers list - START -->
+                <div class="answer">
+                    <!-- Answer -->
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
+
+                    <!-- Answer points -->
+                    <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
+                </div>
+
                 <div class="answer">
                     <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                     <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
                 </div>
+
                 <div class="answer">
                     <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                     <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
                 </div>
+
                 <div class="answer">
                     <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                     <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
                 </div>
+
                 <div class="answer">
                     <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
                     <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
                 </div>
-                <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
-                    <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
-                </div>
+                <!-- Answers list - END -->
 
             </form>
+            <!-- MCQ question - END -->
 
+            <!-- Short question - START -->
             <form class="question-content " id="short-ans" method="post">
                 <input type="text" class="form-question" placeholder="Enter your question here">
                 <div class="answer">
@@ -89,6 +108,7 @@
                     <input type="number" class="points" min="-100" max="100">points
                 </div>
             </form>
+            <!-- Short question - END -->
         </div>
 
         <!--    Questions that get newly added-->

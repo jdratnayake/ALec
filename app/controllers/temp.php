@@ -11,4 +11,10 @@ class Temp extends AlecFramework
     {
         $this->view("lecturer/create_quiz");
     }
+
+    public function submit()
+    {
+
+        var_dump($_POST);
+    }
 }
