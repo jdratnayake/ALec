@@ -5,16 +5,18 @@
 @import "./4_footer.scss";
 
 //LOCAL VARIABLES
-//$table_color: #009879;
 $table_color: #1B3B56;
+$second_color: #009879;
+$light_color: white;
+$grey: darkgrey;
 $view_button_color: #009578;
 $view_button_hover_color: #008168;
 $view_button_active_color: #006e58;
 
 
 header {
-  background-color: #1B3B56;
-  color: white;
+  background-color: $table_color;
+  color: $light_color;
   padding: 15px;
   text-align: center;
   font-size: 30px;
@@ -37,18 +39,18 @@ header {
   float: right;
   font-size: 16px;
   max-width: 200px;
-  background-color: #009879;
-  border: 2px solid #009879;
+  background-color: $second_color;
+  border: 2px solid $second_color;
   border-radius: 5px;
-  color: white;
+  color: $light_color;
   font-weight: bold;
   padding: 10px 50px;
   margin: 2rem 0 0 auto;
 
   &:hover {
     //background-color: $table-color;
-    border: 2px solid #009879;
-    background-color: white;
+    border: 2px solid $second_color;
+    background-color: $light_color;
     color: #009879;
   }
 }
@@ -77,9 +79,9 @@ form.search-bar button {
   width: 20%;
   padding: 10px;
   background: #009879;
-  color: white;
+  color: $light_color;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 1px solid $grey;
   border-left: none;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
@@ -105,8 +107,8 @@ form.search-bar::after {
 /*==============================================================================*/
 
 .user-type {
-  background-color: white;
-  border: 2px solid darkgrey;
+  background-color: $light_color;
+  border: 2px solid $grey;
   margin: 30px 0 5px 0;
   width: fit-content;
   float: left;
@@ -118,16 +120,16 @@ form.search-bar::after {
   border: none;
   margin: 0;
   padding: 10px;
-  background-color: white;
+  background-color: $light_color;
 }
 
 .active-type {
-  background-color: #009879;
+  background-color: $second_color;
 }
 
 #lec {
-  border-left: 2px solid darkgrey;
-  border-right: 2px solid darkgrey;
+  border-left: 2px solid $grey;
+  border-right: 2px solid $grey;
 }
 
 
@@ -163,7 +165,7 @@ form.search-bar::after {
 
 .content-table thead tr {
   background-color: $table_color;
-  color: #ffffff;
+  color: $light_color;
   text-align: left;
   font-weight: bold;
 }
@@ -183,7 +185,7 @@ form.search-bar::after {
   border-bottom: 1px solid #dddddd;
 
   &:hover {
-    background-color: #fff;
+    background-color: $light_color;
     -webkit-transform: translateY(-4px);
     transform: translateY(-4px);
     box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
@@ -203,7 +205,6 @@ form.search-bar::after {
 
 .content-table tbody {
   font-weight: bold;
-  //color: $table_color;
 }
 
 /*==============================================================================*/
@@ -218,10 +219,7 @@ form.search-bar::after {
   display: flex;
   height: 40px;
   padding: 0;
-  //background: $view_button_color;
-  //border: none;
-  //outline: none;
-  background-color: white;
+  background-color: $light_color;
   border: 2px solid $table_color;
   border-radius: 5px;
   overflow: hidden;
@@ -232,24 +230,23 @@ form.search-bar::after {
 
   &:hover {
     background: $table_color;
-    color: #fff;
+    color: $light_color;
   }
 
   &:active {
     background: $table_color;
-    color: #fff;
+    color: $light_color;
   }
 
   &__text {
     display: inline-flex;
     align-items: center;
     padding: 0 24px;
-    //color: #fff;
     color: $table_color;
     height: 100%;
 
     &:hover {
-      color: white;
+      color: $light_color;
     }
   }
 
