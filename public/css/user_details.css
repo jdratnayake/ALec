@@ -407,7 +407,7 @@ header {
   font-size: 16px;
   max-width: 200px;
   background-color: #009879;
-  border: none;
+  border: 2px solid #009879;
   border-radius: 5px;
   color: white;
   font-weight: bold;
@@ -486,6 +486,8 @@ form.search-bar::after {
 
 .active-type {
   background-color: #009879;
+  border-radius: 5px 0 0 5px;
+  display: inline-flex;
 }
 
 #lec {
