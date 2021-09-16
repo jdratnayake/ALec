@@ -451,9 +451,15 @@ header {
 .add-button {
   float: right;
   font-size: 16px;
+<<<<<<< HEAD
   max-width: 250px;
   background-color: #00699A;
   border: none;
+=======
+  max-width: 200px;
+  background-color: #009879;
+  border: 2px solid #009879;
+>>>>>>> 5a0bf596f653d98df4ffef410d60459a2f3e0407
   border-radius: 5px;
   color: white;
   font-weight: bold;
@@ -494,7 +500,7 @@ form.search-bar button {
   background: #00699A;
   color: white;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 1px solid darkgrey;
   border-left: none;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
@@ -587,8 +593,13 @@ form.search-bar::after {
 }
 
 .content-table thead tr {
+<<<<<<< HEAD
   background-color: #00699A;
   color: #ffffff;
+=======
+  background-color: #1B3B56;
+  color: white;
+>>>>>>> 5a0bf596f653d98df4ffef410d60459a2f3e0407
   text-align: left;
   font-weight: bold;
 }
@@ -609,7 +620,7 @@ form.search-bar::after {
 }
 
 .content-table tbody tr:hover {
-  background-color: #fff;
+  background-color: white;
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0 inset;
@@ -651,14 +662,24 @@ form.search-bar::after {
 }
 
 .button:hover {
+<<<<<<< HEAD
   color: #fff;
   background: #008bcc;
   border: 2px solid #008bcc;
+=======
+  background: #1B3B56;
+  color: white;
+>>>>>>> 5a0bf596f653d98df4ffef410d60459a2f3e0407
 }
 
 .button:active {
+<<<<<<< HEAD
   background: #00699A;
   color: #fff;
+=======
+  background: #1B3B56;
+  color: white;
+>>>>>>> 5a0bf596f653d98df4ffef410d60459a2f3e0407
 }
 
 .button__text {
