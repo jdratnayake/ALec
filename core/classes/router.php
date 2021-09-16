@@ -4,7 +4,7 @@ class Router
 {
     //Default controller values
     // public $controller = "dashboard";
-    public $controller = "userDetails";
+    public $controller = "temp";
     public $method = "index";
     public $params = [];
 

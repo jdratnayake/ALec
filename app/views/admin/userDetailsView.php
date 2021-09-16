@@ -68,11 +68,16 @@
                         echo "<td>" . "Lecturer" . "</td>";
                     }
 
-                    echo "<td>
-                        <button type='button' class='button'>
-                            <span class='button__text'>View user</span>
-                        </button>
-                    </td>";
+                    echo "<td>";
+
+                    echo " <button type='button' class='button' onclick=location.href='";
+                    echo BASEURL . '/userDetails/userProfile';
+                    echo "'>";
+                    echo "<span class='button__text'>View user</span>";
+                    echo "</button>";
+
+                    echo "</td>";
+
                     echo "</tr>";
 
                     $count++;

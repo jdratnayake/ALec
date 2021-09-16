@@ -28,4 +28,9 @@ class userDetails extends AlecFramework
         $data["userDetails"] = $this->userModel->getStudentDetails();
         $this->view("admin/userDetailsView", $data);
     }
+
+    public function userProfile()
+    {
+        $this->view("admin/profileDetails");
+    }
 }

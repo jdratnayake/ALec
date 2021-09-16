@@ -10,11 +10,7 @@
 
     <title>ALec</title>
 
-    <?php linkCSS("1_main") ?>
-    <?php linkCSS("2_navigation_bar") ?>
-    <?php linkCSS("3_notification") ?>
-    <?php linkCSS("4_footer") ?>
-    <?php linkCSS("home") ?>
+
     <?php linkCSS("create_quiz") ?>
 
     <?php linkJS("create_quiz") ?>
