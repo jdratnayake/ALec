@@ -34,11 +34,13 @@ header {
   margin-top: 20px;
   height: 100%;
   float: left;
-  width: 13.5rem;
+  //width: 13.5rem;
+  width: 240px;
 
   img {
     width: 100%;
     margin: 0;
+    border-radius: 5px;
   }
 }
 
@@ -67,7 +69,8 @@ header {
 .right-bar {
   margin-top: 20px;
   height: 100%;
-  width: 73%;
+  //width: 73%;
+  width: 72%;
   float: right;
   overflow: hidden;
   display: grid;
@@ -115,7 +118,8 @@ header {
 .badges {
   overflow: scroll;
   overflow-x: hidden;
-  height: 10.3rem;
+  //height: 10.3rem;
+  height: 170px;
 
   span:first-child {
     display: block;

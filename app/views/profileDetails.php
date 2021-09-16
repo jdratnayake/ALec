@@ -32,7 +32,7 @@
             <div class="user-details-container">
 <!--                Left bar include the user profile picture, bio and the edit user and delete user buttons.-->
                 <div class="left-bar">
-                    <img <?php srcIMG("user-pic.jpg"); ?> alt="User image" >
+                    <img <?php srcIMG("user_avatar.png"); ?> alt="User image" >
                     <div class="bio">
                         <span><strong>Pansilu Gunaratna</strong></span>
                         <span>Student</span>
