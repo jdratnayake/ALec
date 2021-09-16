@@ -9,7 +9,8 @@ class Temp extends AlecFramework
 
     public function index()
     {
-        $this->view("lecturer/create_quiz");
+        $this->view("admin/userDetails");
+        // $this->view("lecturer/create_quiz");
     }
 
     public function submit()

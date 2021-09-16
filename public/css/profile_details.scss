@@ -1,0 +1,139 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+//LOCAL VARIABLES
+$main_color: #1B3B56;
+$light_color: #FFF;
+
+.details-content {
+  padding: 1rem;
+  width: 70%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  margin: auto auto 30px auto;
+  height: 100%;
+  background-color: #b7c8d64a;
+}
+
+header {
+  background-color: $main_color;
+  color: $light_color;
+  padding: 15px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: auto;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.left-bar {
+  margin-top: 20px;
+  height: 100%;
+  float: left;
+  width: 13.5rem;
+
+  img {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.buttons {
+  margin-top: 10.75rem;
+
+  button {
+    width: 100%;
+    height: 3rem;
+    margin-top: 5px;
+    background-color: $main_color;
+    color: $light_color;
+    border-radius: 5px;
+    border: 2px solid $main_color;
+    font-size: large;
+    font-weight: 400;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    &:hover {
+      background-color: $light_color;
+      color: $main_color;
+    }
+  }
+}
+
+.right-bar {
+  margin-top: 20px;
+  height: 100%;
+  width: 73%;
+  float: right;
+  overflow: hidden;
+  display: grid;
+}
+
+.bio {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #504f4f;
+  width: 15rem;
+
+
+  span:first-child {
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+  }
+}
+
+.pvt-details, .course-details, .badges {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #d0d0d0;
+  background-color: $light_color;
+
+  span:first-child {
+    font-weight: bold;
+    border-bottom: 2px solid $main_color;
+    width: inherit;
+    margin-bottom: 1rem;
+  }
+
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border: 1px solid $main_color;
+  }
+}
+
+.badges {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 10.3rem;
+
+  span:first-child {
+    display: block;
+    margin: 0;
+  }
+
+  span {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    align-content: center;
+  }
+
+  i {
+    color: black;
+    font-size: 4rem;
+    margin-right: 10px;
+  }
+}
+

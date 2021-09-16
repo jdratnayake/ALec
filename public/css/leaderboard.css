@@ -263,8 +263,8 @@ body {
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.4 ease;
+  transition: all 0.4 ease;
   background: #1ebb7f;
   cursor: pointer;
 }

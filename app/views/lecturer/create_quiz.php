@@ -6,17 +6,9 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
 
     <!-- Shortcut Icon -->
-    <link rel="shortcut icon" href="/public/img/logo1.png">
-    <title>Create Quiz</title>
+    <?php shortIcon("logo1.png"); ?>
 
-    <!-- <link rel="stylesheet" href="/public/css/create_quiz.css"> -->
-    <!-- <script src="/public/js/create_quiz.js"></script> -->
-
-    <!-- <link rel="stylesheet" href="/public/css/1_main.css">
-    <link rel="stylesheet" href="/public/css/2_navigation_bar.css">
-    <link rel="stylesheet" href="/public/css/3_notification.css">
-    <link rel="stylesheet" href="/public/css/4_footer.css">
-    <link rel="stylesheet" href="/public/css/home.css"> -->
+    <title>ALec</title>
 
     <?php linkCSS("1_main") ?>
     <?php linkCSS("2_navigation_bar") ?>
@@ -55,60 +47,117 @@
 
                 <!-- Select question type -->
                 <div class="radio-inline">
-                    <input type="radio" name="select-one" value="MCQ" onchange="return onMcq()" checked>
-                    <label for="MCQ">MCQ</label>
-                    <input type="radio" name="select-one" value="SHORT" onchange="return onMcq()">
-                    <label for="SHORT">Short Answer</label>
+                    <input type="radio" name="q1_type" value="value_mcq" onchange="return onMcq()" checked>
+                    <label for="value_mcq">MCQ</label>
+                    <input type="radio" name="q1_type" value="value_short" onchange="return onMcq()">
+                    <label for="value_short">Short Answer</label>
                 </div>
             </div>
-
-            <!-- MCQ question - START -->
-            <form class="question-content " id="mcq" method="post">
-                <!-- Question -->
-                <input type="text" class="form-question" name="que" placeholder="Enter your question here">
+            <div class="question-content " id="mcq">
+                <input type="text" class="form-question" placeholder="Enter your question here" name="q1_mcq" id="q1_mcq">
 
                 <!-- Answers list - START -->
                 <div class="answer">
-                    <!-- Answer -->
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
-
-                    <!-- Answer points -->
-                    <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q1_answer1" id="q1_answer1">
+                    <select id="q1_answer1_point" class="points" name="q1_answer1_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q1_answer1_point">points</label>
                 </div>
 
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
-                    <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q1_answer2" id="q1_answer2">
+                    <select id="q1_answer2_point" class="points" name="q1_answer2_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q1_answer2_point">points</label>
                 </div>
 
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
-                    <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q1_answer3" id="q1_answer3">
+                    <select id="q1_answer3_point" class="points" name="q1_answer3_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q1_answer3_point">points</label>
                 </div>
 
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
-                    <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q1_answer4" id="q1_answer4">
+                    <select id="q1_answer4_point" class="points" name="q1_answer4_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q1_answer4_point">points</label>
                 </div>
 
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
-                    <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q1_answer5" id="q1_answer5">
+                    <select id="q1_answer5_point" class="points" name="q1_answer5_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q1_answer5_point">points</label>
                 </div>
                 <!-- Answers list - END -->
 
-            </form>
-            <!-- MCQ question - END -->
+            </div>
 
-            <!-- Short question - START -->
-            <form class="question-content " id="short-ans" method="post">
-                <input type="text" class="form-question" placeholder="Enter your question here">
+            <div class="question-content " id="short-ans">
+                <input type="text" class="form-question" placeholder="Enter your question here" name="q1_short" id="q1_short">
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter answer here">
-                    <input type="number" class="points" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter answer here" name="q1_shortanswer" id="q1_shortanswer">
+                    <select id="q1_shortanswer_point" class="points" name="q1_shortanswer_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q1_shortanswer_point">points</label>
                 </div>
-            </form>
-            <!-- Short question - END -->
+            </div>
         </div>
 
         <!--    Questions that get newly added-->
@@ -116,44 +165,110 @@
             <div class="form-header">
                 <h4 id="qname1"></h4>
                 <div class="radio-inline">
-                    <input type="radio" name="select-one2" value="MCQ" id="select-mcq2" onchange="onMcq1()" checked>
-                    <label for="MCQ">MCQ</label>
-                    <input type="radio" name="select-one2" value="SHORT" id="select-short2" onchange="onMcq1()">
-                    <label for="SHORT">Short Answer</label>
+                    <input type="radio" name="q2_type" value="value_mcq" id="select-mcq2" onchange="onMcq1()" checked>
+                    <label for="value_mcq">MCQ</label>
+                    <input type="radio" name="q2_type" value="value_short" id="select-short2" onchange="onMcq1()">
+                    <label for="value_short">Short Answer</label>
                 </div>
             </div>
-            <form class="question-content " id="mcq2" method="post">
-                <input type="text" class="form-question" placeholder="Enter your question here">
+            <div class="question-content " id="mcq2">
+                <input type="text" class="form-question" placeholder="Enter your question here" name="q2_mcq" id="q2_mcq">
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-1">
-                    <input type="number" class="points" name="point-quantity-1" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q2_answer1" id="q2_answer1">
+                    <select id="q2_answer1_point" class="points" name="q2_answer1_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q2_answer1_point">points</label>
                 </div>
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-2">
-                    <input type="number" class="points" name="point-quantity-2" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q2_answer2" id="q2_answer2">
+                    <select id="q2_answer2_point" class="points" name="q2_answer2_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q2_answer2_point">points</label>
                 </div>
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-3">
-                    <input type="number" class="points" name="point-quantity-3" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q2_answer3" id="q2_answer3">
+                    <select id="q2_answer3_point" class="points" name="q2_answer3_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q2_answer3_point">points</label>
                 </div>
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-4">
-                    <input type="number" class="points" name="point-quantity-4" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q2_answer4" id="q2_answer4">
+                    <select id="q2_answer4_point" class="points" name="q2_answer4_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q2_answer4_point">points</label>
                 </div>
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="answer-5">
-                    <input type="number" class="points" name="point-quantity-5" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q2_answer5" id="q2_answer5">
+                    <select id="q2_answer5_point" class="points" name="q2_answer5_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q2_answer5_point">points</label>
                 </div>
 
-            </form>
+            </div>
             <!---->
-            <form class="question-content " id="short-ans2" method="post">
-                <input type="text" class="form-question" placeholder="Enter your question here">
+            <div class="question-content " id="short-ans2">
+                <input type="text" class="form-question" placeholder="Enter your question here" name="q2_short" id="q2_short">
                 <div class="answer">
-                    <input type="text" class="form-answer" placeholder="Enter answer here">
-                    <input type="number" class="points" name="quantity" min="-100" max="100">points
+                    <input type="text" class="form-answer" placeholder="Enter answer here" name="q2_shortanswer" id="q2_shortanswer">
+                    <select id="q2_shortanswer_point" class="points" name="q2_shortanswer_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q2_shortanswer_point">points</label>
                 </div>
-            </form>
+            </div>
         </div>
 
         <div id="new-question"></div>
@@ -198,9 +313,6 @@
     <?php linkPhp("notification"); ?>
 
     <?php linkPhp("footer"); ?>
-
-    <?php linkJS("basic") ?>
-
 
 </body>
 

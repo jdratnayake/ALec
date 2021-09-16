@@ -20,13 +20,13 @@
     <?php linkPhp("navigationBarAdmin"); ?>
     <div class="navigation-item-container">
 
-        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/register/index'; ?>'">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/register/index'; ?> ">
             <div class="row">
                 <i class="fas fa-user"></i>
             </div>
             <div class="row">
                 <div class="title">
-                    Create User
+                    Users
                 </div>
             </div>
         </div>
@@ -37,7 +37,18 @@
             </div>
             <div class="row">
                 <div class="title">
-                    Create Course
+                    Courses
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-tab">
+            <div class="row">
+                <i class="fa fa-certificate"></i>
+            </div>
+            <div class="row">
+                <div class="title">
+                    Badges
                 </div>
             </div>
         </div>
