@@ -3,7 +3,7 @@
 //To link CSS files
 function linkCSS($cssPath)
 {
-    $url = BASEURL . "/public/css/" . $cssPath . ".css?version=53";
+    $url = BASEURL . "/public/css/" . $cssPath . ".css?version=51";
     echo '<link rel="stylesheet" type="text/css" href="' . $url . '">';
 }
 

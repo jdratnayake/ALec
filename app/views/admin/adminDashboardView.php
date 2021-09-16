@@ -20,7 +20,7 @@
     <?php linkPhp("navigationBarAdmin"); ?>
     <div class="navigation-item-container">
 
-        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/register/index'; ?> ">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/userDetails/index'; ?>' ">
             <div class="row">
                 <i class="fas fa-user"></i>
             </div>

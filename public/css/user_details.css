@@ -538,6 +538,7 @@ form.search-bar::after {
   font-weight: 500;
   cursor: pointer;
   border-radius: 5px;
+  border: 1px solid #00699A;
 }
 
 .type:hover {
@@ -550,8 +551,8 @@ form.search-bar::after {
 }
 
 #lec {
-  border-left: 2px solid white;
-  border-right: 2px solid white;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 /*==============================================================================*/

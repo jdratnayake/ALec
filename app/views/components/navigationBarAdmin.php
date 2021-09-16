@@ -20,18 +20,24 @@
                 <li>
                     <a href="<?php echo BASEURL . '/register/index'; ?>">
                         <i class="fas fa-user"></i>
-                        <span class="links_name">Create User</span>
+                        <span class="links_name">User</span>
                     </a>
-                    <span class="tooltip">Create User</span>
+                    <span class="tooltip">User</span>
                 </li>
                 <li>
                     <a href="#">
                         <i class="fa fa-graduation-cap"></i>
-                        <span class="links_name">Create Courses</span>
+                        <span class="links_name">Courses</span>
                     </a>
-                    <span class="tooltip">Create Course</span>
+                    <span class="tooltip">Course</span>
                 </li>
-
+                <li>
+                    <a href="#">
+                        <i class="fa fa-certificate"></i>
+                        <span class="links_name">Badges</span>
+                    </a>
+                    <span class="tooltip">Badges</span>
+                </li>
 
                 <div class="profile_content">
                     <div class="profile">
