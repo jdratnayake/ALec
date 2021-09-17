@@ -12,7 +12,7 @@ $light_color: #FFF;
 
 .details-content {
   padding: 1rem;
-  width: 70%;
+  width: 80%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
   height: 87%;
@@ -48,10 +48,10 @@ header {
 }
 
 .buttons {
-  margin-top: 20px;
+  margin-top: 10px;
 
   button {
-    width: 80%;
+    width: 90%;
     height: 40px;
     margin-top: 10px;
     background-color: $main_color;
@@ -129,8 +129,12 @@ header {
   }
 }
 
+.pvt-details{
+  height: 140px;
+}
+
 .course-details{
-  height: 150px;
+  height: 140px;
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -141,7 +145,7 @@ header {
   overflow: scroll;
   overflow-x: hidden;
   //height: 10.3rem;
-  height: 170px;
+  height: 95px;
 
   span:first-child {
     display: block;

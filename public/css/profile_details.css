@@ -421,7 +421,7 @@ footer p {
 /*==============================================================================*/
 .details-content {
   padding: 1rem;
-  width: 70%;
+  width: 80%;
   -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
           box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
@@ -458,11 +458,11 @@ header {
 }
 
 .buttons {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .buttons button {
-  width: 80%;
+  width: 90%;
   height: 40px;
   margin-top: 10px;
   background-color: #00699A;
@@ -554,8 +554,12 @@ header {
   border: 1px solid #00699A;
 }
 
+.pvt-details {
+  height: 140px;
+}
+
 .course-details {
-  height: 150px;
+  height: 140px;
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -563,7 +567,7 @@ header {
 .badges {
   overflow: scroll;
   overflow-x: hidden;
-  height: 170px;
+  height: 95px;
 }
 
 .badges span:first-child {
