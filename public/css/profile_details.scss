@@ -5,16 +5,19 @@
 @import "./4_footer.scss";
 
 //LOCAL VARIABLES
-$main_color: #1B3B56;
+$main_color: $theme_second;
 $light_color: #FFF;
+
+
 
 .details-content {
   padding: 1rem;
   width: 70%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
-  height: 100%;
+  height: 87%;
   background-color: #b7c8d64a;
+  overflow-y: hidden;
 }
 
 header {
@@ -38,19 +41,19 @@ header {
   width: 240px;
 
   img {
-    width: 100%;
+    width: 90%;
     margin: 0;
     border-radius: 5px;
   }
 }
 
 .buttons {
-  margin-top: 10.75rem;
+  margin-top: 20px;
 
   button {
-    width: 100%;
-    height: 3rem;
-    margin-top: 5px;
+    width: 80%;
+    height: 40px;
+    margin-top: 10px;
     background-color: $main_color;
     color: $light_color;
     border-radius: 5px;
@@ -58,10 +61,21 @@ header {
     font-size: large;
     font-weight: 400;
     box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    cursor: pointer;
 
     &:hover {
-      background-color: $light_color;
-      color: $main_color;
+      background-color: $theme_second_hover;
+      border: 2px solid $theme_second_hover;
+    }
+  }
+
+  button:nth-child(2) {
+    background-color: $delete_button;
+    border: 2px solid $delete_button;
+
+    &:hover {
+      background-color: $delete_button_hover;
+      border: 2px solid $delete_button_hover;
     }
   }
 }
@@ -115,6 +129,14 @@ header {
   }
 }
 
+.course-details{
+  height: 150px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+
+
 .badges {
   overflow: scroll;
   overflow-x: hidden;
@@ -136,7 +158,7 @@ header {
 
   i {
     color: black;
-    font-size: 4rem;
+    font-size: 30px;
     margin-right: 10px;
   }
 }
