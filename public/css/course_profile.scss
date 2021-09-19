@@ -46,13 +46,37 @@ header {
   }
 }
 
-.buttons {
+.buttons-left{
+  display: inline-flex;
+
+  button{
+    margin-right: 5px;
+  }
+}
+
+.buttons-right{
+  button{
+    margin-top: 10px;
+  }
+  button:nth-child(2) {
+    background-color: $delete_button;
+    border: 2px solid $delete_button;
+
+    &:hover {
+      background-color: $delete_button_hover;
+      border: 2px solid $delete_button_hover;
+    }
+  }
+}
+
+.buttons-right, .buttons-left {
   margin-top: 10px;
+  width: max-content;
+  float: right;
 
   button {
-    width: 90%;
-    height: 40px;
-    margin-top: 10px;
+    width: 10rem;
+    padding: 5px;
     background-color: $main_color;
     color: $light_color;
     border-radius: 5px;
@@ -67,88 +91,39 @@ header {
       border: 2px solid $theme_second_hover;
     }
   }
-
-  button:nth-child(2) {
-    background-color: $delete_button;
-    border: 2px solid $delete_button;
-
-    &:hover {
-      background-color: $delete_button_hover;
-      border: 2px solid $delete_button_hover;
-    }
-  }
 }
 
-.right-bar {
-  margin-top: 20px;
-  height: 100%;
-  //width: 73%;
-  width: 72%;
-  float: right;
-  overflow: hidden;
-  display: grid;
-}
 
-.bio {
+
+
+.middle{
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  color: #504f4f;
-  width: 15rem;
-
-
-  span:first-child {
-    color: black;
-    font-weight: bold;
-    font-size: larger;
-  }
+  width: 100%;
+  padding: 10px;
 }
 
-.pvt-details, .course-details, .badges {
+.bottom {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   border: 1px solid #d0d0d0;
   background-color: $light_color;
-
-  span:first-child {
-    font-weight: bold;
-    border-bottom: 2px solid $main_color;
-    width: inherit;
-    margin-bottom: 1rem;
-  }
-
-  &:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    border: 1px solid $main_color;
-  }
-}
-
-.pvt-details{
-  height: 140px;
-}
-
-.course-details{
-  height: 140px;
   overflow: scroll;
   overflow-x: hidden;
-}
-
-
-
-.badges {
-  overflow: scroll;
-  overflow-x: hidden;
-  //height: 10.3rem;
-  height: 95px;
+  height: 290px;
 
   span:first-child {
     display: block;
-    margin: 0;
+    font-weight: bold;
+    border-bottom: 2px solid $main_color;
+    width: inherit;
+    margin-bottom: 15px;
   }
 
   span {
@@ -159,10 +134,16 @@ header {
     align-content: center;
   }
 
-  i {
-    color: black;
-    font-size: 30px;
-    margin-right: 10px;
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border: 1px solid $main_color;
   }
 }
+
+.top{
+  margin-top: 10px;
+}
+
+
+
 
