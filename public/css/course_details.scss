@@ -1,0 +1,264 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+//LOCAL VARIABLES
+// #1B3B56
+// #677381
+
+header, form.search-bar button{
+  background-color: $theme_second;
+  color: white;
+}
+
+header {
+  padding: 15px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: auto;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+form.search-bar button {
+  float: left;
+  width: 20%;
+  padding: 5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.details-container {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  flex-direction: column;
+  margin: auto;
+}
+
+.add-button {
+  float: right;
+  font-size: 16px;
+  max-width: 250px;
+  background-color: $theme_second;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  padding: 10px 50px;
+  margin: 2rem 0 0 auto;
+  border: 2px solid $theme_second;
+  cursor: pointer;
+
+  &:hover {
+    //background-color: $table-color;
+    background-color: $theme_second_hover;
+    border: 2px solid $theme_second_hover;
+    // color: $theme_second;
+  }
+}
+
+/*==============================================================================*/
+/*SEARCH BAR - START*/
+/*==============================================================================*/
+
+.search-bar {
+  max-width: 300px;
+  float: left;
+  margin-top: 10px;
+}
+
+form.search-bar input[type=text] {
+  padding: 5px 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-radius: 20px 0 0 20px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+
+
+form.search-bar button:hover {
+  background: $theme_second;
+}
+
+form.search-bar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*==============================================================================*/
+/*SEARCH BAR - END*/
+/*==============================================================================*/
+
+
+/*==============================================================================*/
+/*USER TYPE BAR - START*/
+/*==============================================================================*/
+
+.user-type {
+  border: 2px solid white;
+  margin: 30px 0 5px 0;
+  //width: fit-content;
+  float: left;
+  display: inline-flex;
+  border-radius: 5px;
+}
+
+.type {
+  margin-right: 5px;
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid $theme_second;
+  width: 6rem;
+  background-color: $theme_second;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color: $theme_second;
+  }
+}
+
+.active-type {
+  background-color: white;
+  color: $theme_second;
+}
+
+/*==============================================================================*/
+/*USER TYPE BAR - END*/
+/*==============================================================================*/
+
+
+/*==============================================================================*/
+/*USER DETAILS TABLE - START*/
+/*==============================================================================*/
+
+/* .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+} */
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.content-table {
+  border-collapse: collapse;
+  width: 85%;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+}
+
+.content-table thead tr {
+  background-color: $theme_second;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table th {
+  padding: 12px 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+
+  &:hover {
+    background-color: #fff;
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0 inset;
+
+  }
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid $theme_second;
+}
+
+.content-table tbody {
+  font-weight: bold;
+  //color: $theme_second;
+}
+
+/*==============================================================================*/
+/*USER DETAILS TABLE - END*/
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*USER DETAILS VIEW BUTTON - START*/
+/*==============================================================================*/
+
+.button {
+  display: flex;
+  height: 40px;
+  padding: 0;
+  background-color: $theme_second;
+  border: 2px solid $theme_second;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background: $theme_second_hover;
+    border: 2px solid $theme_second_hover;
+  }
+
+  &:active {
+    //background: $theme_second;
+    color: #fff;
+  }
+
+  &__text {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    //color: #fff;
+    color: white;
+    height: 100%;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+}
+
+
+/*==============================================================================*/
+/*USER DETAILS VIEW BUTTON - END*/
+/*==============================================================================*/

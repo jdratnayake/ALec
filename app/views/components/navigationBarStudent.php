@@ -46,7 +46,7 @@
                             <img <?php srcIMG("profile-picture.jpg") ?> alt="">
                             <div class="name_job">
                                 <div class="name">Louella Rhodes</div>
-                                <div class="job">Lecturer</div>
+                                <div class="job">Student</div>
                             </div>
                         </div>
                         <i class="fas fa-sign-out-alt" id="log_out" onclick="window.location='<?php echo BASEURL . '/logout/index'; ?>'"></i>
