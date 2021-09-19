@@ -223,18 +223,21 @@ form.search-bar::after {
   display: flex;
   height: 40px;
   padding: 0;
-  background-color: $theme_second;
-  border: 2px solid $theme_second;
-  border-radius: 5px;
-  overflow: hidden;
-  font-family: "Quicksand", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
+  //background-color: $theme_second;
+  //border: 2px solid $theme_second;
+  //border-radius: 5px;
+  //overflow: hidden;
+  //font-family: "Quicksand", sans-serif;
+  //font-size: 16px;
+  //font-weight: 500;
+  //cursor: pointer;
+  //
+  //&:hover {
+  //  color: #fff;
+  //  background: $theme_second_hover;
+  //}
 
   &:hover {
-    color: #fff;
-    background: $theme_second_hover;
     border: 2px solid $theme_second_hover;
   }
 
