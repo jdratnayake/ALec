@@ -37,21 +37,21 @@
                     <span>19000472</span>
                 </div>
                 <div class="buttons">
-                    <button type="button" name="edit-user" value="Edit user">Edit user</button>
-                    <button type="button" name="dlt-user" value="Delete user">Delete user</button>
+                    <button type="button" name="edit-user" value="Edit user">Edit User</button>
+                    <button type="button" name="dlt-user" value="Delete user">Delete User</button>
                 </div>
             </div>
 
             <!--                Right bar include small seperate boxes of user details, asigned courses and badges earned-->
             <div class="right-bar">
                 <div class="pvt-details">
-                    <span>User details</span>
-                    <span><strong>Full name : </strong>Pansilu Gunaratna</span>
+                    <span>User Details</span>
+                    <span><strong>Full Name : </strong>Pansilu Gunaratna</span>
                     <span><strong>Email : </strong>ppg@gmail.com</span>
-                    <span><strong>Telephone number : </strong>0812454777</span>
+                    <span><strong>Telephone No : </strong>0812454777</span>
                 </div>
                 <div class="course-details">
-                    <span>Course details</span>
+                    <span>Course Details</span>
                     <span>SCS2201 Data Structures and Algorithms III</span>
                     <span>SCS2202 Group Project I</span>
                     <span>SCS2203 Software Engineering III</span>
