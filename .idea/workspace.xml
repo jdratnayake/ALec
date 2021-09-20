@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a077044b-6918-4850-961c-115332704598" name="Default Changelist" comment="Few changes on course profile css">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/course_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/course_profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/course_profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/course_profile.scss" afterDir="false" />
     </list>
@@ -71,7 +70,7 @@
       <workItem from="1631862367694" duration="1507000" />
       <workItem from="1631940492048" duration="949000" />
       <workItem from="1632054638406" duration="10193000" />
-      <workItem from="1632135793397" duration="11341000" />
+      <workItem from="1632135793397" duration="11584000" />
     </task>
     <task id="LOCAL-00001" summary="add course details page">
       <created>1632060535976</created>
@@ -101,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632151126373</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Few changes on course profile css">
+      <created>1632152091419</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632152091419</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
