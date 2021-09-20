@@ -42,27 +42,77 @@ form.search-bar button {
   flex-direction: column;
   margin: auto;
 }
+//
+//.add-button {
+//  float: right;
+//  font-size: 16px;
+//  max-width: 250px;
+//  background-color: $theme_second;
+//  border-radius: 5px;
+//  color: white;
+//  font-weight: bold;
+//  padding: 10px 50px;
+//  margin: 2rem 0 0 auto;
+//  border: 2px solid $theme_second;
+//  cursor: pointer;
+//
+//  &:hover {
+//    //background-color: $table-color;
+//    background-color: $theme_second_hover;
+//    border: 2px solid $theme_second_hover;
+//    // color: $theme_second;
+//  }
+//}
 
-.add-button {
-  float: right;
-  font-size: 16px;
-  max-width: 250px;
-  background-color: $theme_second;
-  border-radius: 5px;
+
+/*==============================================================================*/
+/*DROPDOWN - START*/
+/*==============================================================================*/
+.dropbtn {
+  background-color: #4CAF50;
   color: white;
-  font-weight: bold;
-  padding: 10px 50px;
-  margin: 2rem 0 0 auto;
-  border: 2px solid $theme_second;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
   cursor: pointer;
-
-  &:hover {
-    //background-color: $table-color;
-    background-color: $theme_second_hover;
-    border: 2px solid $theme_second_hover;
-    // color: $theme_second;
-  }
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+/*==============================================================================*/
+/*DROPDOWN - END*/
+/*==============================================================================*/
 
 /*==============================================================================*/
 /*SEARCH BAR - START*/
@@ -101,7 +151,7 @@ form.search-bar::after {
 
 
 /*==============================================================================*/
-/*YEAR BAR - START*/
+/*USER TYPE BAR - START*/
 /*==============================================================================*/
 
 .year-type {
@@ -136,7 +186,7 @@ form.search-bar::after {
 }
 
 /*==============================================================================*/
-/*YEAR BAR - END*/
+/*USER TYPE BAR - END*/
 /*==============================================================================*/
 
 
@@ -205,7 +255,7 @@ form.search-bar::after {
         border-bottom: 2px solid $theme_second;
       }
 
-  }
+    }
   }
 }
 

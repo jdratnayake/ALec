@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a077044b-6918-4850-961c-115332704598" name="Default Changelist" comment="Few changes on course profile css">
+    <list default="true" id="a077044b-6918-4850-961c-115332704598" name="Default Changelist" comment="Update course profile, course details and add manage user">
+      <change afterPath="$PROJECT_DIR$/app/views/admin/manageUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/manage_user.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/manage_user.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/temp.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/temp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/courseDetailsView.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/courseDetailsView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/courseProfileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/courseProfileView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/course_details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/course_details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/course_details.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/course_details.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/course_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/course_profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/course_profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/course_profile.scss" afterDir="false" />
     </list>
@@ -27,11 +36,15 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0" />
   <component name="ProjectId" id="1xmH9GDQW1UKZrzshsgGk9GzSpG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -70,7 +83,7 @@
       <workItem from="1631862367694" duration="1507000" />
       <workItem from="1631940492048" duration="949000" />
       <workItem from="1632054638406" duration="10193000" />
-      <workItem from="1632135793397" duration="11584000" />
+      <workItem from="1632135793397" duration="19454000" />
     </task>
     <task id="LOCAL-00001" summary="add course details page">
       <created>1632060535976</created>
@@ -107,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632152091419</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update changes on course profile css">
+      <created>1632152383190</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632152383190</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,11 +146,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add essential pages" />
     <MESSAGE value="add course details page" />
     <MESSAGE value="Add course profile view" />
     <MESSAGE value="Improve course profile" />
     <MESSAGE value="Few changes on course profile css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Few changes on course profile css" />
+    <MESSAGE value="Update changes on course profile css" />
+    <MESSAGE value="Update course profile, course details and add manage user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update course profile, course details and add manage user" />
   </component>
 </project>

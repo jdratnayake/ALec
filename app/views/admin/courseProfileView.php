@@ -29,70 +29,48 @@
 
     <div class="user-details-container">
 
-<!--        First layer with edit, delete buttons-->
-            <div class="top">
-                <div class="buttons-right">
-                    <button type="button" name="edit-user" value="Edit user">Edit Course</button>
-                    <button type="button" name="dlt-user" value="Delete user">Delete Course</button>
-                </div>
-            </div>
-
-<!--        Second layer with manage users, badges buttons-->
-            <div class="middle">
-                <div class="buttons-left">
-                    <button type="button" name="edit-user" value="Edit user">Manage Users</button>
-                    <button type="button" name="dlt-user" value="Edit user">Badges</button>
-                </div>
-            </div>
-
-<!--        Third layer having course details -->
-            <div class="bottom">
-                <div>
-                    <span class="head">No.of students :</span>
-                    <span>298</span>
-                </div>
-                <div>
-                    <span class="head">Assigned Teachers :</span>
-                    <div class="tea">
-                        <span>Dr. HND Thilini</span>
-                        <span>Dr. MDJS Gunathilake</span>
-                    </div>
-                </div>
-                <div>
-                    <span class="head">Assigned Students : </span>
-                </div>
-                <div class="table">
-                    <table>
-                        <thead>
-                            <th>No.</th>
-                            <th>Reg No.</th>
-                            <th>Student Name</th>
-                        </thead>
-                        <tbody>
-                            <?php
-                            for($i=1; $i<10; $i++){
-                                echo "<tr>";
-                                echo '<td>'.$i."</td>";
-                                echo '<td id="userNo">2019/CS/00'.$i."</td>";
-                                echo "<td>Student Name ".$i."</td>";
-                                echo "<tr>";
-                            }
-                            for($i=10; $i<20; $i++){
-                                echo "<tr>";
-                                echo '<td>'.$i."</td>";
-                                echo '<td id="userNo">2019/CS/0'.$i."</td>";
-                                echo "<td>Student Name ".$i."</td>";
-                                echo "<tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-
+        <!--        First layer with edit, delete buttons-->
+        <div class="top">
+            <div class="buttons-right">
+                <button type="button" name="edit-user" value="Edit user">Edit Course</button>
+                <button type="button" name="dlt-user" value="Delete user">Delete Course</button>
             </div>
         </div>
 
+        <!--        Second layer with manage users, badges buttons-->
+        <div class="middle">
+            <div class="buttons-left">
+                <button type="button" name="edit-user" value="Edit user">Manage Users</button>
+                <button type="button" name="dlt-user" value="Edit user">Badges</button>
+            </div>
+        </div>
+
+        <!--        Third layer having course details -->
+        <div class="bottom">
+            <div>
+                <span class="head">Course Description : </span>
+                <div class="content">
+                    Introduces different data structures used in programming such as lists, stacks,
+                    and queues, trees, several types of linked lists and their applications and
+                    implementation.
+                </div>
+            </div>
+            <div>
+                <span class="head">Assigned Teachers :</span>
+                <div class="content">
+                    <span>Dr. HND Thilini</span>
+                    <span>Dr. MDJS Gunathilake</span>
+                </div>
+            </div>
+            <div>
+                <span class="head">No.of students :</span>
+                <span>298</span>
+            </div>
+
+        </div>
     </div>
+
+</div>
 
 
 <?php linkPhp("footer"); ?>

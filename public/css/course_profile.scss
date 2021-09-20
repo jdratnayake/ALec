@@ -8,36 +8,6 @@
 $main_color: $theme_second;
 $light_color: #FFF;
 
-/* ----------------------------------------------
-Scroll bar properties start
-------------------------------------------------- */
-
-/* width */
-::-webkit-scrollbar {
-  width: 20px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: red;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000;
-}
-
-/* ----------------------------------------------
-Scroll bar properties end
-------------------------------------------------- */
-
 .details-content {
   padding: 1rem;
   width: 80%;
@@ -61,12 +31,13 @@ header {
   border-radius: 5px;
 }
 
-.buttons-right{
+.buttons-right {
   display: inline-grid;
 
-  button{
+  button {
     margin-top: 10px;
   }
+
   button:nth-child(2) {
     background-color: $delete_button;
     border: 2px solid $delete_button;
@@ -101,20 +72,20 @@ header {
     }
   }
 
-  .buttons-left{
+  .buttons-left {
     display: inline-flex;
 
-    button{
+    button {
       margin-right: 5px;
     }
   }
 }
 
-.top{
+.top {
   margin-top: 10px;
 }
 
-.middle{
+.middle {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -122,12 +93,12 @@ header {
   padding: 10px;
 }
 
-.head{
-    display: block;
-    font-weight: bold;
-    border-bottom: 2px solid $main_color;
-    width: inherit;
-    margin-bottom: 15px;
+.head {
+  display: block;
+  font-weight: bold;
+  border-bottom: 2px solid $main_color;
+  width: inherit;
+  margin-bottom: 15px;
 }
 
 .bottom {
@@ -142,38 +113,9 @@ header {
   background-color: $light_color;
   height: 315px;
 
-  .tea{
+  .content {
     display: inline-grid;
-  }
-
-  .table{
-    height: 200px;
-    //overflow: scroll;
-    //overflow-x: hidden;
-    width: inherit;
-    width: -webkit-fill-available;
-
-    table{
-      width: inherit;
-      text-align: left;
-      margin-left: 10px;
-
-      thead{
-        display: block;
-        th{
-          width: 150px;
-        }
-      }
-      tbody{
-        display: block;
-        height: 75px;
-        overflow: auto;
-
-        td{
-          width: 150px;
-        }
-      }
-    }
+    margin: 10px;
   }
 
   span {
