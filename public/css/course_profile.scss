@@ -113,14 +113,19 @@ header {
   background-color: $light_color;
   height: 315px;
 
+  //span:nth-child(1){
+  //  background-color: #c62cc9;
+  //  color: #7ab376;
+  //}
+
   .tea{
     display: inline-grid;
   }
 
   .table{
     height: 200px;
-    overflow: scroll;
-    overflow-x: hidden;
+    //overflow: scroll;
+    //overflow-x: hidden;
     width: inherit;
     width: -webkit-fill-available;
 
@@ -128,6 +133,22 @@ header {
       width: inherit;
       text-align: left;
       margin-left: 10px;
+
+      thead{
+        display: block;
+        th{
+          width: 150px;
+        }
+      }
+      tbody{
+        display: block;
+        height: 85px;
+        overflow: auto;
+
+        td{
+          width: 150px;
+        }
+      }
     }
   }
 

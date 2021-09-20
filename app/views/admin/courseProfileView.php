@@ -28,34 +28,24 @@
     </div>
 
     <div class="user-details-container">
-        <!--                Left bar include the user profile picture, bio and the edit user and delete user buttons.-->
-<!--        <div class="left-bar">-->
-<!--            <img --><?php //srcIMG("user_avatar.png"); ?><!-- alt="User image">-->
-<!--            <div class="bio">-->
-<!--                <span><strong>Pansilu Gunaratna</strong></span>-->
-<!--                <span>Student</span>-->
-<!--                <span>19000472</span>-->
-<!--            </div>-->
-<!--            <div class="buttons">-->
-<!--                <button type="button" name="edit-user" value="Edit user">Edit User</button>-->
-<!--                <button type="button" name="dlt-user" value="Delete user">Delete User</button>-->
-<!--            </div>-->
-<!--        </div>-->
 
-        <!--                Right bar include small seperate boxes of user details, asigned courses and badges earned-->
-<!--        <div class="right-bar">-->
+<!--        First layer with edit, delete buttons-->
             <div class="top">
                 <div class="buttons-right">
                     <button type="button" name="edit-user" value="Edit user">Edit Course</button>
                     <button type="button" name="dlt-user" value="Delete user">Delete Course</button>
                 </div>
             </div>
+
+<!--        Second layer with manage users, badges buttons-->
             <div class="middle">
                 <div class="buttons-left">
                     <button type="button" name="edit-user" value="Edit user">Manage Users</button>
                     <button type="button" name="dlt-user" value="Edit user">Badges</button>
                 </div>
             </div>
+
+<!--        Third layer having course details -->
             <div class="bottom">
                 <div>
                     <span class="head">No.of students :</span>
@@ -68,16 +58,17 @@
                         <span>Dr. MDJS Gunathilake</span>
                     </div>
                 </div>
+                <div>
                     <span class="head">Assigned Students : </span>
-
-                    <div class="table">
-                        <table>
-                            <thead>
-                                <th>No.</th>
-                                <th>Reg No.</th>
-                                <th>Student Name</th>
-                            </thead>
-                            <tbody>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>No.</th>
+                            <th>Reg No.</th>
+                            <th>Student Name</th>
+                        </thead>
+                        <tbody>
                             <?php
                             for($i=1; $i<10; $i++){
                                 echo "<tr>";
@@ -94,9 +85,10 @@
                                 echo "<tr>";
                             }
                             ?>
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
 

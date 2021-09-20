@@ -484,8 +484,6 @@ header {
 }
 .bottom .table {
   height: 200px;
-  overflow: scroll;
-  overflow-x: hidden;
   width: inherit;
   width: -webkit-fill-available;
 }
@@ -493,6 +491,20 @@ header {
   width: inherit;
   text-align: left;
   margin-left: 10px;
+}
+.bottom .table table thead {
+  display: block;
+}
+.bottom .table table thead th {
+  width: 150px;
+}
+.bottom .table table tbody {
+  display: block;
+  height: 85px;
+  overflow: auto;
+}
+.bottom .table table tbody td {
+  width: 150px;
 }
 .bottom span {
   display: inline-flex;

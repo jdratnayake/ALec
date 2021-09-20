@@ -8,7 +8,7 @@
 // #1B3B56
 // #677381
 
-header, form.search-bar button{
+header, form.search-bar button {
   background-color: $theme_second;
   color: white;
 }
@@ -23,6 +23,7 @@ header {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
+
 form.search-bar button {
   float: left;
   width: 20%;
@@ -82,7 +83,6 @@ form.search-bar input[type=text] {
   width: 80%;
   background: #f1f1f1;
 }
-
 
 
 form.search-bar button:hover {
