@@ -381,188 +381,220 @@ footer p {
 /*==============================================================================*/
 /*FOOTER - END*/
 /*==============================================================================*/
-/*==============================================================================*/
-/*CARDS - START*/
-/*==============================================================================*/
-.center {
+header, form.search-bar button {
+  background-color: #00699A;
+  color: white;
+}
+
+header {
+  padding: 15px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
   margin: auto;
-  width: 50%;
-  padding: 10px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
 }
 
-.card-container {
-  display: grid;
-  position: relative;
-  width: 90%;
-  /* display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; */
-  grid-template-columns: auto auto auto;
-  justify-content: center;
-  grid-gap: 10px 50px;
-}
-
-.card-container .card {
-  position: relative;
+form.search-bar button {
+  float: left;
+  width: 20%;
+  padding: 5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
   cursor: pointer;
 }
 
-.card-container .card .face {
-  width: 300px;
-  height: 200px;
-  transition: 0.5s;
-}
-
-.card-container .card .face.face1 {
-  position: relative;
-  /* #009879 */
-  background: #45aaf2;
+.details-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 1;
-  transform: translateY(20px);
-  border-radius: 10px;
+  width: 85%;
+  flex-direction: column;
+  margin: auto;
 }
 
-.card-container .card:hover .face.face1 {
-  background: #3867d6;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  transform: translateY(0);
+.add-button {
+  float: right;
+  font-size: 16px;
+  max-width: 250px;
+  background-color: #00699A;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  padding: 10px 50px;
+  margin: 2rem 0 0 auto;
+  border: 2px solid #00699A;
+  cursor: pointer;
 }
-
-.card-container .card .face.face1 .content {
-  /* opacity: 0.8; */
-  transition: 0.8s;
-  text-align: center;
-}
-
-/* .card-container .card:hover .face.face1 .content{
-    opacity: 1;
-} */
-/* .card-container .card .face.face1 .content i{
-    font-size: 120px;
-    color: #ffffff;
-} */
-.card-container .card .face.face1 .content h2, h3 {
-  margin: 10px 0 0;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-weight: 500;
-  font-size: 2em;
-}
-
-.card-container .card .face.face1 .content h2 {
-  font-weight: 500;
-  font-size: 2em;
-}
-
-.card-container .card .face.face1 .content h3 {
-  font-size: 1.3em;
-  font-weight: 400;
-}
-
-/* .card-container .card .face.face1 .content h3:hover{
-    color: #fff;
-} */
-.card-container .card .face.face2 {
-  position: relative;
-  height: 30px;
-  background: #dfdfdf;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  /* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); */
-  transform: translateY(-95px);
-  border-radius: 10px;
-}
-
-.card-container .card:hover .face.face2 {
-  transform: translateY(0);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+.add-button:hover {
+  background-color: #008bcc;
+  border: 2px solid #008bcc;
 }
 
 /*==============================================================================*/
-/*CARDS - END*/
+/*SEARCH BAR - START*/
 /*==============================================================================*/
-/*==============================================================================*/
-/*PERCENTAGE LINE - START*/
-/*==============================================================================*/
-.percentage-container {
-  position: relative;
-  width: 312px;
+.search-bar {
+  max-width: 300px;
+  float: left;
+  margin-top: 10px;
 }
 
-.percentage-container .skills {
-  position: relative;
-  display: flex;
-  padding: 12px 10px 9px;
-  /* background: linear-gradient(#616161, 0%, #333 10%, #222); */
-  border-radius: 8px;
-  overflow: hidden;
-  /* border: 2px solid #000; */
-  transition: 0.5s;
+form.search-bar input[type=text] {
+  padding: 5px 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-radius: 20px 0 0 20px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
 }
 
-.percentage-container .skills::before {
+form.search-bar button:hover {
+  background: #00699A;
+}
+
+form.search-bar::after {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  /* background: rgba(255, 255, 255, .1); */
-  z-index: 10;
+  clear: both;
+  display: table;
 }
 
-.percentage-container .skills .subject-value {
-  position: relative;
-  width: 40px;
-  text-align: left;
-  color: #000;
-  margin-top: -2px;
-  text-transform: uppercase;
+/*==============================================================================*/
+/*SEARCH BAR - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*USER TYPE BAR - START*/
+/*==============================================================================*/
+.user-type {
+  border: 2px solid white;
+  margin: 30px 0 5px 0;
+  float: left;
+  display: inline-flex;
+  border-radius: 5px;
 }
 
-.percentage-container .skills .percent {
-  position: relative;
-  width: calc(100% - 0px);
-  height: 20px;
-  margin: 0 10px;
-  border-radius: 10px;
-  background: #ffffff;
-  /* box-shadow: inset 0 0 10px #000; */
+.type {
+  margin-right: 5px;
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #00699A;
+  width: 6rem;
+  background-color: #00699A;
+  color: white;
+}
+.type:hover {
+  background-color: white;
+  color: #00699A;
+}
+
+.active-type {
+  background-color: white;
+  color: #00699A;
+}
+
+/*==============================================================================*/
+/*USER TYPE BAR - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*USER DETAILS TABLE - START*/
+/*==============================================================================*/
+/* .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+} */
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.content-table {
+  border-collapse: collapse;
+  width: 85%;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
   overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
 }
 
-.percentage-container .skills .percent .progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
+.content-table thead tr {
+  background-color: #00699A;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table th {
+  padding: 12px 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:hover {
+  background-color: #fff;
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0 inset;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #00699A;
+}
+
+.content-table tbody {
+  font-weight: bold;
+}
+
+/*==============================================================================*/
+/*USER DETAILS TABLE - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*USER DETAILS VIEW BUTTON - START*/
+/*==============================================================================*/
+.button {
+  display: flex;
+  height: 40px;
+  padding: 0;
+}
+.button:hover {
+  border: 2px solid #008bcc;
+}
+.button:active {
+  color: #fff;
+}
+.button__text {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: white;
   height: 100%;
-  border-radius: 10px;
-  background: #1ebb7f;
-  /* box-shadow: inset 0 0 2px #000; */
-  animation: animate 4s ease-in-out forwards;
+}
+.button__text:hover {
+  color: white;
 }
 
-@keyframes animate {
-  from {
-    width: 0;
-  }
-}
 /*==============================================================================*/
-/*PERCENTAGE LINE - END*/
+/*USER DETAILS VIEW BUTTON - END*/
 /*==============================================================================*/
 
-/*# sourceMappingURL=course_page.css.map */
+/*# sourceMappingURL=course_details.css.map */

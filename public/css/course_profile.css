@@ -381,188 +381,125 @@ footer p {
 /*==============================================================================*/
 /*FOOTER - END*/
 /*==============================================================================*/
-/*==============================================================================*/
-/*CARDS - START*/
-/*==============================================================================*/
-.center {
+.details-content {
+  padding: 1rem;
+  width: 80%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  margin: auto auto 30px auto;
+  height: 87%;
+  background-color: #b7c8d64a;
+  overflow-y: hidden;
+}
+
+header {
+  background-color: #00699A;
+  color: #FFF;
+  padding: 15px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
   margin: auto;
-  width: 50%;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.left-bar {
+  margin-top: 20px;
+  height: 100%;
+  float: left;
+  width: 240px;
+}
+.left-bar img {
+  width: 90%;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.buttons-left {
+  display: inline-flex;
+}
+.buttons-left button {
+  margin-right: 5px;
+}
+
+.buttons-right button {
+  margin-top: 10px;
+}
+.buttons-right button:nth-child(2) {
+  background-color: #d63031;
+  border: 2px solid #d63031;
+}
+.buttons-right button:nth-child(2):hover {
+  background-color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+}
+
+.buttons-right, .buttons-left {
+  margin-top: 10px;
+  width: max-content;
+  float: right;
+}
+.buttons-right button, .buttons-left button {
+  width: 10rem;
+  padding: 5px;
+  background-color: #00699A;
+  color: #FFF;
+  border-radius: 5px;
+  border: 2px solid #00699A;
+  font-size: large;
+  font-weight: 400;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+}
+.buttons-right button:hover, .buttons-left button:hover {
+  background-color: #008bcc;
+  border: 2px solid #008bcc;
+}
+
+.middle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
   padding: 10px;
 }
 
-.card-container {
-  display: grid;
-  position: relative;
-  width: 90%;
-  /* display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; */
-  grid-template-columns: auto auto auto;
-  justify-content: center;
-  grid-gap: 10px 50px;
-}
-
-.card-container .card {
-  position: relative;
-  cursor: pointer;
-}
-
-.card-container .card .face {
-  width: 300px;
-  height: 200px;
-  transition: 0.5s;
-}
-
-.card-container .card .face.face1 {
-  position: relative;
-  /* #009879 */
-  background: #45aaf2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  transform: translateY(20px);
-  border-radius: 10px;
-}
-
-.card-container .card:hover .face.face1 {
-  background: #3867d6;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  transform: translateY(0);
-}
-
-.card-container .card .face.face1 .content {
-  /* opacity: 0.8; */
-  transition: 0.8s;
-  text-align: center;
-}
-
-/* .card-container .card:hover .face.face1 .content{
-    opacity: 1;
-} */
-/* .card-container .card .face.face1 .content i{
-    font-size: 120px;
-    color: #ffffff;
-} */
-.card-container .card .face.face1 .content h2, h3 {
-  margin: 10px 0 0;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-weight: 500;
-  font-size: 2em;
-}
-
-.card-container .card .face.face1 .content h2 {
-  font-weight: 500;
-  font-size: 2em;
-}
-
-.card-container .card .face.face1 .content h3 {
-  font-size: 1.3em;
-  font-weight: 400;
-}
-
-/* .card-container .card .face.face1 .content h3:hover{
-    color: #fff;
-} */
-.card-container .card .face.face2 {
-  position: relative;
-  height: 30px;
-  background: #dfdfdf;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  /* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); */
-  transform: translateY(-95px);
-  border-radius: 10px;
-}
-
-.card-container .card:hover .face.face2 {
-  transform: translateY(0);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-/*==============================================================================*/
-/*CARDS - END*/
-/*==============================================================================*/
-/*==============================================================================*/
-/*PERCENTAGE LINE - START*/
-/*==============================================================================*/
-.percentage-container {
-  position: relative;
-  width: 312px;
-}
-
-.percentage-container .skills {
-  position: relative;
-  display: flex;
-  padding: 12px 10px 9px;
-  /* background: linear-gradient(#616161, 0%, #333 10%, #222); */
-  border-radius: 8px;
-  overflow: hidden;
-  /* border: 2px solid #000; */
-  transition: 0.5s;
-}
-
-.percentage-container .skills::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.bottom {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
-  height: 50%;
-  /* background: rgba(255, 255, 255, .1); */
-  z-index: 10;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  border: 1px solid #d0d0d0;
+  background-color: #FFF;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 290px;
+}
+.bottom span:first-child {
+  display: block;
+  font-weight: bold;
+  border-bottom: 2px solid #00699A;
+  width: inherit;
+  margin-bottom: 15px;
+}
+.bottom span {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+  align-content: center;
+}
+.bottom:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border: 1px solid #00699A;
 }
 
-.percentage-container .skills .subject-value {
-  position: relative;
-  width: 40px;
-  text-align: left;
-  color: #000;
-  margin-top: -2px;
-  text-transform: uppercase;
+.top {
+  margin-top: 10px;
 }
 
-.percentage-container .skills .percent {
-  position: relative;
-  width: calc(100% - 0px);
-  height: 20px;
-  margin: 0 10px;
-  border-radius: 10px;
-  background: #ffffff;
-  /* box-shadow: inset 0 0 10px #000; */
-  overflow: hidden;
-}
-
-.percentage-container .skills .percent .progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 100%;
-  border-radius: 10px;
-  background: #1ebb7f;
-  /* box-shadow: inset 0 0 2px #000; */
-  animation: animate 4s ease-in-out forwards;
-}
-
-@keyframes animate {
-  from {
-    width: 0;
-  }
-}
-/*==============================================================================*/
-/*PERCENTAGE LINE - END*/
-/*==============================================================================*/
-
-/*# sourceMappingURL=course_page.css.map */
+/*# sourceMappingURL=course_profile.css.map */
