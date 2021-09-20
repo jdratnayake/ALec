@@ -9,7 +9,7 @@ class Temp extends AlecFramework
 
     public function index()
     {
-        $this->view("admin/manageUser");
+        $this->view("admin/courseProfileView");
     }
 }
 

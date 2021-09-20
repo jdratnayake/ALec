@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a077044b-6918-4850-961c-115332704598" name="Default Changelist" comment="Update course profile, course details and add manage user">
-      <change afterPath="$PROJECT_DIR$/public/css/manage_user.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/manageUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/manageUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/manage_user.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/manage_user.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/temp.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/temp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/courseProfileView.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/courseProfileView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/course_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/course_profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/course_profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/course_profile.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
       <workItem from="1631862367694" duration="1507000" />
       <workItem from="1631940492048" duration="949000" />
       <workItem from="1632054638406" duration="10193000" />
-      <workItem from="1632135793397" duration="22044000" />
+      <workItem from="1632135793397" duration="23280000" />
     </task>
     <task id="LOCAL-00001" summary="add course details page">
       <created>1632060535976</created>
@@ -127,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632164334535</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update course profile, course details and add manage user">
+      <created>1632166814324</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1632166814324</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

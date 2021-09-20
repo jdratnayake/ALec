@@ -56,10 +56,13 @@
                 </div>
             </div>
             <div>
-                <span class="head">Assigned Teachers :</span>
+                <span class="head">Assigned Lecturers :</span>
                 <div class="content">
                     <span>Dr. HND Thilini</span>
                     <span>Dr. MDJS Gunathilake</span>
+                    <span>
+                        <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Assign </a>
+                    </span>
                 </div>
             </div>
             <div>
