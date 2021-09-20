@@ -382,7 +382,7 @@ footer p {
 /*FOOTER - END*/
 /*==============================================================================*/
 header {
-  background-color: #00699A;
+  background-color: #00699a;
   color: white;
   padding: 15px;
   text-align: center;
@@ -406,14 +406,14 @@ header {
   float: right;
   font-size: 16px;
   max-width: 250px;
-  background-color: #00699A;
+  background-color: #00699a;
   border: none;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   padding: 10px 50px;
   margin: 2rem 0 0 auto;
-  border: 2px solid #00699A;
+  border: 2px solid #00699a;
   cursor: pointer;
 }
 .add-button:hover {
@@ -444,7 +444,7 @@ form.search-bar button {
   float: left;
   width: 20%;
   padding: 5px;
-  background: #00699A;
+  background: #00699a;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
@@ -454,7 +454,7 @@ form.search-bar button {
 }
 
 form.search-bar button:hover {
-  background: #00699A;
+  background: #00699a;
 }
 
 form.search-bar::after {
@@ -482,20 +482,20 @@ form.search-bar::after {
   border: none;
   margin: 0;
   padding: 10px;
-  background-color: #00699A;
+  background-color: #00699a;
   color: white;
   font-weight: 500;
   cursor: pointer;
   border-radius: 5px;
-  border: 1px solid #00699A;
+  border: 1px solid #00699a;
 }
 .type:hover {
   background-color: white;
-  color: #00699A;
+  color: #00699a;
 }
 
 .active-type {
-  background-color: #00699A;
+  background-color: #00699a;
 }
 
 #lec {
@@ -531,7 +531,7 @@ form.search-bar::after {
 }
 
 .content-table thead tr {
-  background-color: #00699A;
+  background-color: #00699a;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
@@ -563,7 +563,7 @@ form.search-bar::after {
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #00699A;
+  border-bottom: 2px solid #00699a;
 }
 
 .content-table tbody {
@@ -580,8 +580,8 @@ form.search-bar::after {
   display: flex;
   height: 40px;
   padding: 0;
-  background-color: #00699A;
-  border: 2px solid #00699A;
+  background-color: #00699a;
+  border: 2px solid #00699a;
   border-radius: 5px;
   overflow: hidden;
   font-family: "Quicksand", sans-serif;
@@ -595,7 +595,7 @@ form.search-bar::after {
   border: 2px solid #008bcc;
 }
 .button:active {
-  background: #00699A;
+  background: #00699a;
   color: #fff;
 }
 .button__text {

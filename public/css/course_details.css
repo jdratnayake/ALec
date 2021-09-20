@@ -382,7 +382,7 @@ footer p {
 /*FOOTER - END*/
 /*==============================================================================*/
 header, form.search-bar button {
-  background-color: #00699A;
+  background-color: #00699a;
   color: white;
 }
 
@@ -420,13 +420,13 @@ form.search-bar button {
   float: right;
   font-size: 16px;
   max-width: 250px;
-  background-color: #00699A;
+  background-color: #00699a;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   padding: 10px 50px;
   margin: 2rem 0 0 auto;
-  border: 2px solid #00699A;
+  border: 2px solid #00699a;
   cursor: pointer;
 }
 .add-button:hover {
@@ -454,7 +454,7 @@ form.search-bar input[type=text] {
 }
 
 form.search-bar button:hover {
-  background: #00699A;
+  background: #00699a;
 }
 
 form.search-bar::after {
@@ -483,19 +483,19 @@ form.search-bar::after {
   font-weight: 500;
   cursor: pointer;
   border-radius: 5px;
-  border: 1px solid #00699A;
+  border: 1px solid #00699a;
   width: 6rem;
-  background-color: #00699A;
+  background-color: #00699a;
   color: white;
 }
 .type:hover {
   background-color: white;
-  color: #00699A;
+  color: #00699a;
 }
 
 .active-type {
   background-color: white;
-  color: #00699A;
+  color: #00699a;
 }
 
 /*==============================================================================*/
@@ -526,7 +526,7 @@ form.search-bar::after {
 }
 
 .content-table thead tr {
-  background-color: #00699A;
+  background-color: #00699a;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
@@ -558,7 +558,7 @@ form.search-bar::after {
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #00699A;
+  border-bottom: 2px solid #00699a;
 }
 
 .content-table tbody {

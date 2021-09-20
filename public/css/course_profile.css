@@ -392,7 +392,7 @@ footer p {
 }
 
 header {
-  background-color: #00699A;
+  background-color: #00699a;
   color: #FFF;
   padding: 15px;
   text-align: center;
@@ -404,25 +404,9 @@ header {
   border-radius: 5px;
 }
 
-.left-bar {
-  margin-top: 20px;
-  height: 100%;
-  float: left;
-  width: 240px;
+.buttons-right {
+  display: inline-grid;
 }
-.left-bar img {
-  width: 90%;
-  margin: 0;
-  border-radius: 5px;
-}
-
-.buttons-left {
-  display: inline-flex;
-}
-.buttons-left button {
-  margin-right: 5px;
-}
-
 .buttons-right button {
   margin-top: 10px;
 }
@@ -443,10 +427,10 @@ header {
 .buttons-right button, .buttons-left button {
   width: 10rem;
   padding: 5px;
-  background-color: #00699A;
+  background-color: #00699a;
   color: #FFF;
   border-radius: 5px;
-  border: 2px solid #00699A;
+  border: 2px solid #00699a;
   font-size: large;
   font-weight: 400;
   box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -456,6 +440,16 @@ header {
   background-color: #008bcc;
   border: 2px solid #008bcc;
 }
+.buttons-right .buttons-left, .buttons-left .buttons-left {
+  display: inline-flex;
+}
+.buttons-right .buttons-left button, .buttons-left .buttons-left button {
+  margin-right: 5px;
+}
+
+.top {
+  margin-top: 10px;
+}
 
 .middle {
   display: inline-flex;
@@ -463,6 +457,14 @@ header {
   align-items: flex-start;
   width: 100%;
   padding: 10px;
+}
+
+.head {
+  display: block;
+  font-weight: bold;
+  border-bottom: 2px solid #00699a;
+  width: inherit;
+  margin-bottom: 15px;
 }
 
 .bottom {
@@ -475,16 +477,22 @@ header {
   margin: 10px 0;
   border: 1px solid #d0d0d0;
   background-color: #FFF;
+  height: 315px;
+}
+.bottom .tea {
+  display: inline-grid;
+}
+.bottom .table {
+  height: 200px;
   overflow: scroll;
   overflow-x: hidden;
-  height: 290px;
-}
-.bottom span:first-child {
-  display: block;
-  font-weight: bold;
-  border-bottom: 2px solid #00699A;
   width: inherit;
-  margin-bottom: 15px;
+  width: -webkit-fill-available;
+}
+.bottom .table table {
+  width: inherit;
+  text-align: left;
+  margin-left: 10px;
 }
 .bottom span {
   display: inline-flex;
@@ -495,11 +503,7 @@ header {
 }
 .bottom:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  border: 1px solid #00699A;
-}
-
-.top {
-  margin-top: 10px;
+  border: 1px solid #00699a;
 }
 
 /*# sourceMappingURL=course_profile.css.map */

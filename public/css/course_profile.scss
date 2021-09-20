@@ -32,29 +32,9 @@ header {
   border-radius: 5px;
 }
 
-.left-bar {
-  margin-top: 20px;
-  height: 100%;
-  float: left;
-  //width: 13.5rem;
-  width: 240px;
-
-  img {
-    width: 90%;
-    margin: 0;
-    border-radius: 5px;
-  }
-}
-
-.buttons-left{
-  display: inline-flex;
-
-  button{
-    margin-right: 5px;
-  }
-}
-
 .buttons-right{
+  display: inline-grid;
+
   button{
     margin-top: 10px;
   }
@@ -91,10 +71,19 @@ header {
       border: 2px solid $theme_second_hover;
     }
   }
+
+  .buttons-left{
+    display: inline-flex;
+
+    button{
+      margin-right: 5px;
+    }
+  }
 }
 
-
-
+.top{
+  margin-top: 10px;
+}
 
 .middle{
   display: inline-flex;
@@ -102,6 +91,14 @@ header {
   align-items: flex-start;
   width: 100%;
   padding: 10px;
+}
+
+.head{
+    display: block;
+    font-weight: bold;
+    border-bottom: 2px solid $main_color;
+    width: inherit;
+    margin-bottom: 15px;
 }
 
 .bottom {
@@ -114,16 +111,24 @@ header {
   margin: 10px 0;
   border: 1px solid #d0d0d0;
   background-color: $light_color;
-  overflow: scroll;
-  overflow-x: hidden;
-  height: 290px;
+  height: 315px;
 
-  span:first-child {
-    display: block;
-    font-weight: bold;
-    border-bottom: 2px solid $main_color;
+  .tea{
+    display: inline-grid;
+  }
+
+  .table{
+    height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
     width: inherit;
-    margin-bottom: 15px;
+    width: -webkit-fill-available;
+
+    table{
+      width: inherit;
+      text-align: left;
+      margin-left: 10px;
+    }
   }
 
   span {
@@ -140,9 +145,7 @@ header {
   }
 }
 
-.top{
-  margin-top: 10px;
-}
+
 
 
 

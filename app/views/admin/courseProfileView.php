@@ -57,7 +57,11 @@
                 </div>
             </div>
             <div class="bottom">
-                <div class="top">
+                <div>
+                    <span class="head">No.of students :</span>
+                    <span>298</span>
+                </div>
+                <div>
                     <span class="head">Assigned Teachers :</span>
                     <div class="tea">
                         <span>Dr. HND Thilini</span>
@@ -65,12 +69,34 @@
                     </div>
                 </div>
                     <span class="head">Assigned Students : </span>
-                    <table>
-                        <tr>Charith Anjana</tr>
-                        <tr>Janitha Ratnayake</tr>
-                        <tr>Pansilu Gunaratna</tr>
-                        <tr>Sumudu Wathsala</tr>
-                    </table>
+
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <th>No.</th>
+                                <th>Reg No.</th>
+                                <th>Student Name</th>
+                            </thead>
+                            <tbody>
+                            <?php
+                            for($i=1; $i<10; $i++){
+                                echo "<tr>";
+                                echo '<td>'.$i."</td>";
+                                echo '<td id="userNo">2019/CS/00'.$i."</td>";
+                                echo "<td>Student Name ".$i."</td>";
+                                echo "<tr>";
+                            }
+                            for($i=10; $i<20; $i++){
+                                echo "<tr>";
+                                echo '<td>'.$i."</td>";
+                                echo '<td id="userNo">2019/CS/0'.$i."</td>";
+                                echo "<td>Student Name ".$i."</td>";
+                                echo "<tr>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
             </div>
         </div>
 
