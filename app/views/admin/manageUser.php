@@ -9,7 +9,7 @@
     <title>ALec</title>
 
     <!-- CSS File HOME-->
-    <?php linkCSS("course_details"); ?>
+    <?php linkCSS("manage_user"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.png"); ?>
@@ -23,15 +23,16 @@
 <div class="details-container">
     <header>Manage Users</header>
 
-    <!--    Add user button-->
-<!--    <button class="add-button" >Assign user</button>-->
-    <div class="dropdown">
-        <button class="dropbtn add-button">Assign user</button>
-        <div class="dropdown-content">
-            <a href="#">Year 1</a>
-            <a href="#">Year 2</a>
-            <a href="#">Year 3</a>
-            <a href="#">Year 4</a>
+    <div class="top">
+        <!--    Assign user button-->
+        <div class="dropdown">
+            <button class="dropbtn">Assign user</button>
+            <div class="dropdown-content">
+                <a href="#">Year 1</a>
+                <a href="#">Year 2</a>
+                <a href="#">Year 3</a>
+                <a href="#">Year 4</a>
+            </div>
         </div>
     </div>
 
