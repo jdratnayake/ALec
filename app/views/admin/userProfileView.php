@@ -32,9 +32,9 @@
             <div class="left-bar">
                 <img <?php srcIMG("user_avatar.png"); ?> alt="User image">
                 <div class="bio">
-                    <span><strong>Pansilu Gunaratna</strong></span>
-                    <span>Student</span>
-                    <span>19000472</span>
+                    <span><strong><?php echo $data["userDetails"]["name"]; ?></strong></span>
+                    <span><?php echo $data["userDetails"]["type"]; ?></span>
+                    <span><?php echo $data["userDetails"]["regNo"]; ?></span>
                 </div>
                 <div class="buttons">
                     <button type="button" name="edit-user" value="Edit user">Edit User</button>
@@ -46,36 +46,34 @@
             <div class="right-bar">
                 <div class="pvt-details">
                     <span>User Details</span>
-                    <span><strong>Full Name : </strong>Pansilu Gunaratna</span>
-                    <span><strong>Email : </strong>ppg@gmail.com</span>
-                    <span><strong>Telephone No : </strong>0812454777</span>
+                    <span><strong>Full Name : </strong><?php echo $data["userDetails"]["name"]; ?></span>
+                    <span><strong>Email : </strong><?php echo $data["userDetails"]["email"]; ?></span>
+                    <span><strong>Telephone No : </strong><?php echo $data["userDetails"]["tele"]; ?></span>
                 </div>
+
                 <div class="course-details">
                     <span>Course Details</span>
-                    <span>SCS2201 Data Structures and Algorithms III</span>
-                    <span>SCS2202 Group Project I</span>
-                    <span>SCS2203 Software Engineering III</span>
-                    <span>SCS2204 Functional Programming</span>
-                    <span>SCS2205 Computer Networks I</span>
-                    <span>SCS2206 Mathematical Methods II</span>
-                    <span>SCS2207 Programming Language Concepts</span>
-                    <span>SCS2208 Rapid Application Development</span>
+                    <?php
+                    while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
+                        echo "<span>${row['course_name']}</span>";
+                    }
+                    ?>
                 </div>
-                <div class="badges">
-                    <span>Badges</span>
-                    <span>
-                        <i class="fa fa-certificate" aria-hidden="true"></i>
-                        SCS2201 - Best question
-                    </span>
-                    <span>
-                        <i class="fa fa-certificate" aria-hidden="true"></i>
-                        SCS2205 - Best question
-                    </span>
-                    <span>
-                        <i class="fa fa-certificate" aria-hidden="true"></i>
-                        SCS2206 - Best answer
-                    </span>
-                </div>
+
+                <?php
+                if ($data["userDetails"]["type"] == "Student") {
+                    echo "<div class='badges'>";
+                    echo "<span>Badges</span>";
+
+                    while ($row = mysqli_fetch_assoc($data["badgeDetails"])) {
+                        echo '<span> <i class="fa fa-certificate" aria-hidden="true"></i>';
+                        echo "<span>" . $row['badge_name'] . "</span>";
+                        echo "</span>";
+                    }
+
+                    echo "</div>";
+                }
+                ?>
             </div>
 
 

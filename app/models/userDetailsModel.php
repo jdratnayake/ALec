@@ -18,7 +18,7 @@ class userDetailsModel extends Database
         $result = mysqli_query($GLOBALS["db"], $query);
 
         if (mysqli_num_rows($result) > 0) {
-            return $result;
+            return mysqli_fetch_assoc($result);
         }
     }
 

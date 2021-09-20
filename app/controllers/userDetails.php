@@ -31,6 +31,6 @@ class userDetails extends AlecFramework
 
     public function userProfile()
     {
-        $this->view("admin/profileDetailsView");
+        $this->view("admin/userProfileView");
     }
 }

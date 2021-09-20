@@ -71,7 +71,7 @@
                     echo "<td>";
 
                     echo " <button type='button' class='button' onclick=location.href='";
-                    echo BASEURL . '/userDetails/userProfile';
+                    echo BASEURL . '/userProfile/index/' . $row["user_id"];
                     echo "'>";
                     echo "<span class='button__text'>View user</span>";
                     echo "</button>";
