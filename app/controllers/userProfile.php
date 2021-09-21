@@ -26,4 +26,10 @@ class UserProfile extends AlecFramework
 
         $this->view("admin/userProfileView", $data);
     }
+
+    public function deleteUser($user_id)
+    {
+        $this->userProfileModel->deleteUserDetails($user_id);
+        $this->redirect("userDetails");
+    }
 }

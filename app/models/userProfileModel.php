@@ -17,7 +17,7 @@ class UserProfileModel extends Database
 
     public function getUserDetails($user_id)
     {
-        $query = "SELECT concat(first_name, ' ', last_name) AS name, tele, email FROM user 
+        $query = "SELECT user_id, concat(first_name, ' ', last_name) AS name, tele, email FROM user 
         WHERE user_id='$user_id'";
         $result = mysqli_query($GLOBALS["db"], $query);
 
@@ -72,6 +72,14 @@ class UserProfileModel extends Database
         $query = "SELECT badge.badge_name FROM badge INNER JOIN badge_assign 
         WHERE badge.badge_id=badge_assign.badge_id AND
         badge_assign.student_id='$user_id'";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
+    }
+
+    public function deleteUserDetails($user_id)
+    {
+        $query = "DELETE FROM user where user_id='$user_id'";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;

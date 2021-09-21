@@ -37,8 +37,19 @@
                     <span><?php echo $data["userDetails"]["regNo"]; ?></span>
                 </div>
                 <div class="buttons">
-                    <button type="button" name="edit-user" value="Edit user">Edit User</button>
-                    <button type="button" name="dlt-user" value="Delete user">Delete User</button>
+                    <?php
+                    echo " <button type='button' name='edit-user' value='Edit user' onclick=location.href='";
+                    echo BASEURL . '/userEdit/index/' . $data["userDetails"]["user_id"];
+                    echo "'>";
+                    echo "Edit User</button>";
+                    ?>
+
+                    <?php
+                    echo " <button type='button' name='dlt-user' value='Delete user' onclick=location.href='";
+                    echo BASEURL . '/userProfile/deleteUser/' . $data["userDetails"]["user_id"];
+                    echo "'>";
+                    echo "Delete User</button>";
+                    ?>
                 </div>
             </div>
 

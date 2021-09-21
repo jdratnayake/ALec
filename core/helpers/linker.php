@@ -10,7 +10,7 @@ function linkCSS($cssPath)
 //To link JS files
 function linkJS($jsPath)
 {
-    $url = BASEURL . "/public/js/" . $jsPath . ".js";
+    $url = BASEURL . "/public/js/" . $jsPath . ".js?v=1";
     echo '<script src="' . $url . '"></script>';
 }
 
