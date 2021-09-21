@@ -18,107 +18,72 @@
 
 <body>
 
-<?php linkPhp("navigationBarAdmin"); ?>
+    <?php linkPhp("navigationBarAdmin"); ?>
 
-<div class="details-container">
-    <header>Courses</header>
+    <div class="details-container">
+        <header>Courses</header>
 
-    <!--    Add user button-->
-    <button class="add-button" >Add New Course</button>
+        <!--    Add user button-->
+        <button class="add-button">Add New Course</button>
 
-    <!--    Search bar     -->
-    <form class="search-bar">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
+        <!--    Search bar     -->
+        <form class="search-bar">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
 
-    <!--    Select user type-->
-    <div class="year-type">
-        <button class="type active-type" >All</button>
-        <button class="type" >1st year</button>
-        <button class="type" >2nd year</button>
-        <button class="type" >3rd year</button>
-        <button class="type" >4th year</button>
+        <!--    Select user type-->
+        <div class="year-type">
+            <!-- <button class="type active-type">All</button> -->
+            <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index' ?>'">All</button>
+            <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index' ?>'">1st year</button>
+            <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/2' ?>'">2nd year</button>
+            <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/3' ?>'">3rd year</button>
+            <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/4' ?>'">4th year</button>
+        </div>
     </div>
-</div>
 
-<div class="table-container">
-    <table class="content-table">
-        <thead>
-        <tr>
-            <th>No.</th>
-            <th>Course ID</th>
-            <th>Course name</th>
-            <th>No.of students</th>
-            <th> </th>
-        </tr>
-        </thead>
+    <div class="table-container">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Course name</th>
+                    <th>Year</th>
+                    <th>No.of students</th>
+                    <th> </th>
+                </tr>
+            </thead>
 
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>SCS 1201</td>
-            <td>Data Structures and Algorithms- I</td>
-            <td>298</td>
-            <td>
-                <button type='button' class='button'>
-                    <span class='button__text'>View course</span>
-                </button>
-            </td>
+            <tbody>
 
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>SCS 1202</td>
-            <td>Programming using C</td>
-            <td>298</td>
-            <td>
-                <button type='button' class='button'>
-                    <span class='button__text'>View course</span>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>SCS 1203</td>
-            <td>Database - I</td>
-            <td>298</td>
-            <td>
-                <button type='button' class='button'>
-                    <span class='button__text'>View course</span>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>SCS 1204</td>
-            <td>Discrete Mathematics- I</td>
-            <td>298</td>
-            <td>
-                <button type='button' class='button'>
-                    <span class='button__text'>View course</span>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>SCS 1205</td>
-            <td>Computer Systems</td>
-            <td>298</td>
-            <td>
-                <button type='button' class='button'>
-                    <span class='button__text'>View course</span>
-                </button>
-            </td>
-        </tr>
+                <?php
+                $count = 1;
+                while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
+                    echo "<tr>";
+                    echo " <td>" . $count . "</td>";
+                    echo " <td>" . $row["course_name"] . "</td>";
+                    echo " <td>" . $row["year"] . "</td>";
+                    echo " <td>" . $row["count"] . "</td>";
+                    echo "
+                    <td>
+                        <button type='button' class='button'>
+                            <span class='button__text'>View course</span>
+                        </button>
+                    </td>";
+                    echo "</tr>";
 
-        </tbody>
+                    $count++;
+                }
+                ?>
 
-    </table>
-</div>
+            </tbody>
 
-<?php linkPhp("footer"); ?>
+        </table>
+    </div>
 
-<?php linkPhp("notification"); ?>
+    <?php linkPhp("footer"); ?>
+
+    <?php linkPhp("notification"); ?>
 
 </body>
