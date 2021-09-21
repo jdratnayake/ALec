@@ -65,12 +65,15 @@
                     echo " <td>" . $row["course_name"] . "</td>";
                     echo " <td>" . $row["year"] . "</td>";
                     echo " <td>" . $row["count"] . "</td>";
-                    echo "
-                    <td>
-                        <button type='button' class='button'>
-                            <span class='button__text'>View course</span>
-                        </button>
-                    </td>";
+                    echo "<td>";
+
+                    echo " <button type='button' class='button' onclick=location.href='";
+                    echo BASEURL . '/courseProfile/index/' . $row["course_id"];
+                    echo "'>";
+                    echo "<span class='button__text'>View user</span>";
+                    echo "</button>";
+
+                    echo "</td>";
                     echo "</tr>";
 
                     $count++;
