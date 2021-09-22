@@ -14,6 +14,7 @@ class Temp extends AlecFramework
 
     public function submit()
     {
-        var_dump($_POST);
+//        var_dump($_POST);
+        var_dump(array_filter($_POST));
     }
 }

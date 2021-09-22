@@ -50,7 +50,7 @@ header {
     margin: auto auto 30px auto;
 }
 
-#short-ans, #ans1, #form1 {
+.short-ans {
     display: none;
 }
 
@@ -138,6 +138,9 @@ header {
     margin: auto;
 }
 
+.short-ans{
+    display: none;
+}
 /*-----------------POPUP WINDOW-------------------------*/
 
 /* The Modal (background) */

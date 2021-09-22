@@ -1,172 +1,148 @@
-let i = 2;
-let j = 2;
+class UI {
+    static addQuestion(i) {
+        const list = document.querySelector('form #form');
+        const row = document.createElement('div');
+        row.setAttribute('id', 'question_'+i);
+        row.setAttribute('class', 'question');
 
+        row.innerHTML = `
+            <div class="form-header">
+                <h4>Question ${i}</h4>
+                <input type="hidden" name="type" value="${i}">
+                <!-- Select question type -->
+                <div class="radio-inline" id=${i}>
+                    <input type="radio" value="value_mcq" name="q${i}_type" checked class="mcq">
+                    <label for="value_mcq">MCQ</label>
+                    <input type="radio" value="value_short" name="q${i}_type" class="short">
+                    <label for="value_short">Short Answer</label>
+                </div>
+            </div>
 
-function getQuestions() {
-    let quizNo = document.getElementById("qname1");
-    quizNo.innerHTML = "Question " + i.toString();
+            <div class="question-content " id="mcq_${i}">
+                <input type="text" class="form-question" placeholder="Enter your question here" name="q${i}_mcq">
 
-    let itm = document.getElementById("form1");
-    let cln = itm.cloneNode(true);
-    cln.id = "form" + i.toString();
-    document.getElementById("new-question").append(cln);
-    i = i + 1;
+                <!-- Answers list - START -->
+                <div class="answer">
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q${i}_answer1">
+                    <select id="q${i}_answer1_point" class="points" name="q1_answer1_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q${i}_answer1_point">points</label>
+                </div>
 
-    changeId();
-}
+                <div class="answer">
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q${i}_answer2">
+                    <select id="q${i}_answer2_point" class="points" name="q1_answer2_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q${i}_answer2_point">points</label>
+                </div>
 
-function changeId() {
-    let mcqId = 'select-mcq' + j.toString();
-    let shortId = 'select-short' + j.toString();
-    let answer1Id = 'q'+j.toString()+'_answer1';
-    let answer2Id = 'q'+j.toString()+'_answer2';
-    let answer3Id = 'q'+j.toString()+'_answer3';
-    let answer4Id = 'q'+j.toString()+'_answer4';
-    let answer5Id = 'q'+j.toString()+'_answer5';
+                <div class="answer">
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q${i}_answer3">
+                    <select id="q${i}_answer3_point" class="points" name="q1_answer3_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q${i}_answer3_point">points</label>
+                </div>
 
-    let shortAnswerId = 'q'+j.toString()+'_shortanswer';
+                <div class="answer">
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q${i}_answer4">
+                    <select id="q${i}_answer4_point" class="points" name="q1_answer4_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q${i}_answer4_point">points</label>
+                </div>
 
-    let questionId = 'q'+j.toString()+'_mcq';
-    let shortAnsQuestionId = 'q'+j.toString()+'_short';
+                <div class="answer">
+                    <input type="text" class="form-answer" placeholder="Enter your answer here" name="q${i}_answer5">
+                    <select id="q${i}_answer5_point" class="points" name="q1_answer5_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q${i}_answer5_point">points</label>
+                </div>
+                <!-- Answers list - END -->
+            </div>
 
-    let answer1pointId = 'q'+j.toString()+'_answer1_point';
-    let answer2pointId = 'q'+j.toString()+'_answer2_point';
-    let answer3pointId = 'q'+j.toString()+'_answer3_point';
-    let answer4pointId = 'q'+j.toString()+'_answer4_point';
-    let answer5pointId = 'q'+j.toString()+'_answer5_point';
-
-    let shortAnsPointId = 'q'+j.toString()+'_shortanswer_point';
-
-    let mcq = 'mcq' + j.toString();
-    let short = 'short-ans' + j.toString();
-    j++;
-
-    document.getElementById(mcqId).setAttribute("name", 'q' + j.toString() + '_type');
-    document.getElementById(mcqId).id = 'select-mcq' + j.toString();
-
-    document.getElementById(questionId).setAttribute("name", 'q'+j.toString()+'_mcq');
-    document.getElementById(questionId).id = 'q'+j.toString()+'_mcq';
-
-    document.getElementById(shortAnsQuestionId).setAttribute("name", 'q'+j.toString()+'_short');
-    document.getElementById(shortAnsQuestionId).id = 'q'+j.toString()+'_short';
-
-// change ids of answers
-    document.getElementById(answer1Id).setAttribute("name", 'q'+ j.toString()+ '_answer1');
-    document.getElementById(answer1Id).id = 'q' + j.toString() + '_answer1';
-
-    document.getElementById(answer2Id).setAttribute("name", 'q'+ j.toString()+ '_answer2');
-    document.getElementById(answer2Id).id = 'q' + j.toString() + '_answer2';
-
-    document.getElementById(answer3Id).setAttribute("name", 'q'+ j.toString()+ '_answer3');
-    document.getElementById(answer3Id).id = 'q' + j.toString() + '_answer3';
-
-    document.getElementById(answer4Id).setAttribute("name", 'q'+ j.toString()+ '_answer4');
-    document.getElementById(answer4Id).id = 'q' + j.toString() + '_answer4';
-
-    document.getElementById(answer5Id).setAttribute("name", 'q'+ j.toString()+ '_answer5');
-    document.getElementById(answer5Id).id = 'q' + j.toString() + '_answer5';
-
-    document.getElementById(shortAnswerId).setAttribute("name", 'q'+ j.toString()+ '_shortanswer');
-    document.getElementById(shortAnswerId).id = 'q' + j.toString() + '_shortanswer';
-
-// change ids of point inputs
-    document.getElementById(answer1pointId).setAttribute("name", 'q'+j.toString()+'_answer1_point');
-    document.getElementById(answer1pointId).id = 'q' + j.toString() + '_answer1_point';
-
-    document.getElementById(answer2pointId).setAttribute("name", 'q'+j.toString()+'_answer2_point');
-    document.getElementById(answer2pointId).id = 'q' + j.toString() + '_answer2_point';
-
-    document.getElementById(answer3pointId).setAttribute("name", 'q'+j.toString()+'_answer3_point');
-    document.getElementById(answer3pointId).id = 'q' + j.toString() + '_answer3_point';
-
-    document.getElementById(answer4pointId).setAttribute("name", 'q'+j.toString()+'_answer4_point');
-    document.getElementById(answer4pointId).id = 'q' + j.toString() + '_answer4_point';
-
-    document.getElementById(answer5pointId).setAttribute("name", 'q'+j.toString()+'_answer5_point');
-    document.getElementById(answer5pointId).id = 'q' + j.toString() + '_answer5_point';
-
-    document.getElementById(shortAnsPointId).setAttribute("name", 'q'+j.toString()+'_shortanswer_point');
-    document.getElementById(shortAnsPointId).id = 'q' + j.toString() + '_shortanswer_point';
-
-
-    document.getElementById(shortId).setAttribute("name", 'q' + j.toString() + '_type');
-    document.getElementById(shortId).id = 'select-short' + j.toString();
-
-    document.getElementById(mcq).id = 'mcq' + j.toString();
-    document.getElementById(short).id = 'short-ans' + j.toString();
-
-    document.getElementById(short).style.display = "none";
-
-}
-
-function onMcq1() {
-    let id = document.getElementById('qname1');
-    console.log(id.innerText);
-    document.getElementById('select-mcq'+i.toString()).checked = true;
-    let ele = document.getElementsByName('q' + (j - 1).toString()+ '_type');
-
-    for (let i = 0; i < ele.length; i++) {
-        if (ele[i].checked) {
-            if (ele[i].value === "value_mcq") {
-                document.getElementById('mcq' + (j - 1).toString()).style.display = "block";
-                document.getElementById('short-ans' + (j - 1).toString()).style.display = "none";
-            } else {
-                document.getElementById('short-ans' + (j - 1).toString()).style.display = "block";
-                document.getElementById('mcq' + (j - 1).toString()).style.display = "none";
-            }
-        }
+            <div class="question-content short-ans" id="shortans_${i}">
+                <input type="text" class="form-question" placeholder="Enter your question here" name="q${i}_short">
+                <div class="answer">
+                    <input type="text" class="form-answer" placeholder="Enter answer here" name="q${i}_shortanswer">
+                    <select id="q${i}_shortanswer_point" class="points" name="q${i}_shortanswer_point">
+                        <option value="100"> 100% </option>
+                        <option value="75"> 75% </option>
+                        <option value="50"> 50% </option>
+                        <option value="25"> 25% </option>
+                        <option value=" 0"> 0% </option>
+                        <option value="-25"> -25% </option>
+                        <option value="-50"> -50% </option>
+                        <option value="-75"> -75% </option>
+                        <option value="100">-100% </option>
+                    </select>
+                    <label for="q${i}_shortanswer_point">points</label>
+                </div>
+            </div>
+        `;
+        list.append(row);
     }
 }
+let i = 1;
 
-function onMcq() {
-    let ele = document.getElementsByName('q1_type');
+UI.addQuestion(i);
 
-    for (let i = 0; i < ele.length; i++) {
-        if (ele[i].checked) {
-            if (ele[i].value === "value_mcq") {
-                document.getElementById('mcq').style.display = "block";
-                document.getElementById('short-ans').style.display = "none";
-            } else {
-                document.getElementById('short-ans').style.display = "block";
-                document.getElementById('mcq').style.display = "none";
-            }
-        }
+document.querySelector('#add-question').addEventListener('click', () => {
+    i++;
+    UI.addQuestion(i);
+});
+
+
+document.querySelector('form').addEventListener('click', (e) => {
+    if(e.target.classList.contains('mcq') === true){
+        document.getElementById('shortans_'+e.target.parentElement.id).style.display = "none";
+        document.getElementById('mcq_'+e.target.parentElement.id).style.display = "block";
     }
-}
-
-// GET POP-UP WINDOW
-function getPopup() {
-    // Get the modal
-    const modal = document.getElementById("save-details");
-
-    // Get the button that opens the modal
-    const btn = document.getElementById("create-quiz");
-
-    // Get the <span> element that closes the modal
-    const span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function () {
-        modal.style.display = "block";
+    else if(e.target.classList.contains('short') === true){
+        document.getElementById('mcq_'+e.target.parentElement.id).style.display = "none";
+        document.getElementById('shortans_'+e.target.parentElement.id).style.display = "block";
     }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    }
-}
-
-// Load homepage
-function loadHomepage() {
-    location.replace("/app/views/lecturer/home.html")
-}
-
-
-
+});
