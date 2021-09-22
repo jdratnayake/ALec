@@ -19,31 +19,14 @@
     <div class="wrapper center">
 
         <div class="form-container">
-            <div class="slide-controls">
 
-                <?php
-                if ($data["userDetails"]["user_type"] == "stu") {
-                    echo '
-                    <input type="radio" name="slide" id="login" disabled>
-                    <input type="radio" name="slide" id="signup" checked>
-                    <label for="login" class="slide login" style="cursor: unset;"></label>
-                <label for="signup" class="slide signup" style="cursor: unset;">Edit Student</label>
-                    ';
-                } else if ($data["userDetails"]["user_type"] == "lec") {
-                    echo '
-                    <input type="radio" name="slide" id="login" checked>
-                    <input type="radio" name="slide" id="signup" disabled>
-                    <label for="login" class="slide login" style="cursor: unset;">Edit Lecturer</label>
-                    <label for="signup" class="slide signup" style="cursor: unset;"></label>
-                    ';
-                }
-                ?>
-
-                <!-- <label for="login" class="slide login" style="cursor: unset;">Edit Lecturer</label>
-                <label for="signup" class="slide signup" style="cursor: unset;">Edit Student</label> -->
-                <div class="slider-tab"></div>
-            </div>
-
+            <?php
+            if ($data["userDetails"]["user_type"] == "stu") {
+                echo '<h2>Edit Student</h2>';
+            } else if ($data["userDetails"]["user_type"] == "lec") {
+                echo '<h2>Edit Lecturer</h2>';
+            }
+            ?>
 
             <div class="form-inner">
 
