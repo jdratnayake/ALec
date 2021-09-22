@@ -36,7 +36,7 @@
         <div class="year-type">
             <!-- <button class="type active-type">All</button> -->
             <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index' ?>'">All</button>
-            <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index' ?>'">1st year</button>
+            <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/1' ?>'">1st year</button>
             <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/2' ?>'">2nd year</button>
             <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/3' ?>'">3rd year</button>
             <button class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/4' ?>'">4th year</button>

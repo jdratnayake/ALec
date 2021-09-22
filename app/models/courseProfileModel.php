@@ -25,4 +25,12 @@ class CourseProfileModel extends Database
 
         return mysqli_fetch_assoc($result)["num"];
     }
+
+    public function deleteCourse($course_id)
+    {
+        $query = "DELETE FROM course WHERE course_id='$course_id'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
+    }
 }

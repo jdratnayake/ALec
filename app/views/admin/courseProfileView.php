@@ -33,7 +33,12 @@
             <div class="top">
                 <div class="buttons-right">
                     <button type="button" name="edit-user" value="Edit user">Edit Course</button>
-                    <button type="button" name="dlt-user" value="Delete user">Delete Course</button>
+                    <?php
+                    echo " <button type='button' name='dlt-user' value='Delete user' onclick=location.href='";
+                    echo BASEURL . '/courseProfile/deleteCourse/' . $data["courseDetails"]["course_id"];
+                    echo "'>";
+                    echo "Delete Course</button>";
+                    ?>
                 </div>
             </div>
 

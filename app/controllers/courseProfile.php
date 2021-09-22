@@ -16,4 +16,10 @@ class CourseProfile extends AlecFramework
 
         $this->view("admin/courseProfileView", $data);
     }
+
+    public function deleteCourse($course_id)
+    {
+        $this->courseProfileModel->deleteCourse($course_id);
+        $this->redirect("courseDetails");
+    }
 }
