@@ -18,14 +18,14 @@
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL . '/register/index'; ?>">
+                    <a href="<?php echo BASEURL . '/userDetails/index'; ?>">
                         <i class="fas fa-user"></i>
                         <span class="links_name">User</span>
                     </a>
                     <span class="tooltip">User</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/courseDetails/index'; ?>">
                         <i class="fa fa-graduation-cap"></i>
                         <span class="links_name">Courses</span>
                     </a>

@@ -21,7 +21,7 @@
     <?php linkPhp("navigationBarAdmin"); ?>
 
     <div class="details-container">
-        <header>Courses</header>
+        <header>Course Details</header>
 
         <!--    Add user button-->
         <button class="add-button">Add New Course</button>
@@ -70,7 +70,7 @@
                     echo " <button type='button' class='button' onclick=location.href='";
                     echo BASEURL . '/courseProfile/index/' . $row["course_id"];
                     echo "'>";
-                    echo "<span class='button__text'>View user</span>";
+                    echo "<span class='button__text'>View Course</span>";
                     echo "</button>";
 
                     echo "</td>";

@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class="navigation-tab">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/courseDetails/index'; ?>' ">
             <div class="row">
                 <i class="fa fa-graduation-cap"></i>
             </div>
