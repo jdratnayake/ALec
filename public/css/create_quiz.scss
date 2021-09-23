@@ -5,247 +5,192 @@
 @import "./4_footer.scss";
 
 /*Stylesheet of the create quiz page*/
+$main_color: $theme_second;
+$main_hover: $theme_second_hover;
+$hover: #7697b3;
+$font_grey: #495057;
+$border_grey: lightgrey;
+$light: white;
 
-:root {
-    --main-color: #1FB880;
-    --light-color: white;
-    --color-grey: #a1a1a1;
-    --color-blue: #1B3B56;
-}
-
-header {
-    text-align: center;
-    padding-bottom: 1rem;
-}
-
-input {
-    border: 1px solid lightgrey;
-    border-radius: 4px;
-    border-bottom-width: 2px;
-}
-
-.text {
-    margin: 0 0 15px 4px;
-    padding: 4px 0 4px 8px;
-    height: 2rem;
-    width: 65%;
-}
-
-.time {
-    width: 3rem;
-    margin-left: 4px;
-    height: min-content;
-    padding-left: 4px;
-}
-
-header {
-    border-bottom: 5px solid var(--color-blue);
-    margin-bottom: 2rem;
-}
 
 .form-content {
-    padding: 1rem;
+    padding: 16px;
     width: 50%;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
     margin: auto auto 30px auto;
-}
 
-.short-ans {
-    display: none;
-}
-
-#form {
-    border-radius: 4px;
-}
-
-.form-header {
-    margin: 1.5rem 0;
-    border-top: 1px solid lightgrey;
-    padding-top: 1rem;
-}
-
-.radio-inline {
-    margin-top: 12px;
-}
-
-.form-question {
-    margin-bottom: 0.5rem;
-    height: 8rem;
-    width: 100%;
-    padding-left: 8px;
-    padding-bottom: 6rem;
-}
-
-.answer {
-    display: inline-flex;
-    width: 100%;
-}
-
-.form-answer {
-    width: 80%;
-    margin-bottom: 0.275rem;
-    margin-right: 8px;
-    padding: 2px 2px 2px 8px;
-    height: 2rem;
-}
-
-.points {
-    width: 10%;
-    margin-right: 4px;
-    padding: 2px 0 2px 8px;
-    height: 2rem;
-}
-
-.text:hover, .time:hover, .form-question:hover, .form-answer:hover, .points:hover {
-    border: none;
-    box-shadow: 0 0 5px #7697b3;
-}
-
-.add {
-    width: 8rem;
-    padding: 6px;
-    border-radius: 0 0 12px 12px;
-}
-
-.finish {
-    height: 4rem;
-    width: 49.6%;
-    margin: 5rem 0 0 0;
-    border-radius: 4px;
-    font-size: large;
-}
-
-.done{
-    margin-top: 2rem;
-    width: 12rem;
-    height: 3rem;
-}
-
-.add, .finish, .done {
-    border: none;
-    color: var(--light-color);
-    background-color: var(--main-color);
-    font-weight: bold;
-}
-
-.add:hover, .finish:hover, .done:hover {
-    border: 3px solid var(--main-color);
-    color: var(--main-color);
-    background-color: white;
-}
-
-.button-set {
-    margin: auto;
-}
-
-.short-ans{
-    display: none;
-}
-/*-----------------POPUP WINDOW-------------------------*/
-
-/* The Modal (background) */
-.save-details {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    -webkit-animation-name: fadeIn; /* Fade in the background */
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeIn;
-    animation-duration: 0.4s;
-}
-
-/* Modal Content */
-.save-details-content {
-    position: fixed;
-    bottom: 0;
-    background-color: #fefefe;
-    width: 100%;
-    height: 70%;
-    -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 0.4s;
-    animation-name: slideIn;
-    animation-duration: 0.4s
-}
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.save-details-header {
-    padding: 16px;
-    background-color: var(--main-color);
-    height: 4rem;
-    color: white;
-    font-size: large;
-}
-
-.save-details-body {
-    padding: 16px;
-}
-
-.topic-text {
-    border: none;
-    border-bottom: 1px solid var(--color-grey);
-    margin-left: 4px;
-}
-
-
-/* Add Animation */
-@-webkit-keyframes slideIn {
-    from {
-        bottom: -300px;
-        opacity: 0
+    header {
+        text-align: center;
+        padding-bottom: 16px;
+        border-bottom: 5px solid $main_color;
+        margin-bottom: 32px;
     }
-    to {
-        bottom: 0;
-        opacity: 1
-    }
-}
 
-@keyframes slideIn {
-    from {
-        bottom: -300px;
-        opacity: 0
+    .details{
+        margin-bottom: 10px;
+
+        #form {
+            border-radius: 4px;
+
+            .form-header {
+                margin: 24px 0;
+                border-top: 1px solid $border_grey;
+                padding-top: 16px;
+
+                .radio-inline {
+                    margin-top: 12px;
+                }
+            }
+        }
+
+        .add {
+            width: 128px;
+            padding: 6px;
+            border-radius: 0 0 12px 12px;
+            color: $light;
+            background-color: $main_color;
+            border: 3px solid $main_color;
+            font-weight: bold;
+
+            &:hover{
+                border: 3px solid $main_hover;
+                color: $main_hover;
+                background-color: $light;
+            }
+        }
+
+        .button-set {
+            margin-top: 60px;
+            //margin: auto;
+
+            .finish {
+                height: 48px;
+                width: 100%;
+                border-radius: 4px;
+                font-size: large;
+                border: none;
+                color: $light;
+                background-color: $main_color;
+                font-weight: bold;
+
+                &:hover{
+                    border: 3px solid $main_hover;
+                    color: $light;
+                    background-color: $main_hover;
+                }
+            }
+        }
     }
-    to {
-        bottom: 0;
-        opacity: 1
+
+    .short-ans {
+        display: none;
+    }
+
+    .form-group {
+        display: flex;
+        flex: 0 0 auto;
+        flex-flow: row wrap;
+        align-items: center;
+
+        textarea{
+            margin-bottom: 16px;
+            border: 1px solid $border_grey;
+            border-radius: 4px;
+            border-bottom-width: 2px;
+
+            &:hover{
+                border: none;
+                box-shadow: 0 0 5px $hover;
+            }
+        }
+
+        input {
+            border: 1px solid $border_grey;
+            border-radius: 4px;
+            border-bottom-width: 2px;
+
+            &:hover{
+                border: none;
+                box-shadow: 0 0 5px $hover;
+            }
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 6px 12px;
+            color: $font_grey;
+            background-color: $light;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-bottom-width: 2px;
+            border-radius: 4px;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            margin-top: 5px;
+
+            &:hover{
+                border: none;
+                box-shadow: 0 0 5px $hover;
+            }
+        }
+
+        .form-name{
+            padding-left: 16px;
+        }
+
+        .form-answer {
+            width: 80%;
+            margin-bottom: 5px;
+            margin-right: 8px;
+            padding: 6px 12px;
+            color: $font_grey;
+            background-color: $light;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            border-bottom-width: 2px;
+
+
+            &:hover{
+                border: none;
+                box-shadow: 0 0 5px $hover;
+            }
+        }
+
+        .points {
+            color: $font_grey;
+            width: 10%;
+            margin-right: 4px;
+            padding: 6px 0 6px 8px;
+            margin-bottom: 5px;
+            border: 1px solid $border_grey;
+            border-radius: 4px;
+            border-bottom-width: 2px;
+            margin-top: 1px;
+
+
+            &:hover{
+                border: none;
+                box-shadow: 0 0 5px $hover;
+            }
+        }
+    }
+
+
+    .row {
+        display: flex;
+
+        .col{
+            flex: 50%;
+            padding: 10px 10px 10px 0;
+        }
+
+        .col-end{
+            padding-right: 0;
+        }
     }
 }
 
-@-webkit-keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
-}
 
