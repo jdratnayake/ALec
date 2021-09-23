@@ -1,5 +1,6 @@
 *.css.map
 .vscode
 .metals
-temp.php
+.idea
 router.php
+temp.php
