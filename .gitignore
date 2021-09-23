@@ -1,7 +1,5 @@
 *.css.map
 .vscode
 .metals
-<<<<<<< HEAD
-=======
-.idea
->>>>>>> 1d869cd6a7eafd74576e44045ee91792a53b60a2
+temp.php
+router.php
