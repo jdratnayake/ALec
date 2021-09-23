@@ -1,3 +1,5 @@
+<?php $errors = $data['errors'] ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +27,7 @@
 
                     <div class="field" id="courseField">
                         <input type="text" placeholder="Course Name" name="c_name" id="c_name" onfocusout="validateCourseName()">
-                        <div class="error" id="error"></div>
+                        <div class="error" id="error"><?php echo $errors["name"]; ?></div>
                     </div>
 
                     <div class="field-long">
@@ -35,7 +37,7 @@
 
                     <div class="field">
                         <input type="text" placeholder="Year" name="c_year" id="c_year" onfocusout="validateCourseYear()">
-                        <div class="error" id="error"></div>
+                        <div class="error" id="error"><?php echo $errors["year"]; ?></div>
                     </div>
 
                     <div class="field btn">

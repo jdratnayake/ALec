@@ -24,7 +24,7 @@
         <header>Course Details</header>
 
         <!--    Add user button-->
-        <button class="add-button">Add New Course</button>
+        <button class="add-button" onclick="location.href='<?php echo BASEURL . '/addNewCourse/index' ?>'">Add New Course</button>
 
         <!--    Search bar     -->
         <form class="search-bar">
