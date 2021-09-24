@@ -18,7 +18,7 @@
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/createQuizDashboard/index'; ?>">
                         <i class="fas fa-question-circle"></i>
                         <span class="links_name">Ask Question</span>
                     </a>

@@ -20,7 +20,7 @@
 
     <div class="navigation-item-container">
 
-        <div class="navigation-tab">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/createQuizDashboard/index'; ?>' ">
             <div class="row">
                 <i class="fas fa-question-circle"></i>
             </div>
