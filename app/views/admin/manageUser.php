@@ -25,35 +25,28 @@
 
     <div class="top">
         <!--    Assign user button-->
-        <div class="dropdown">
-            <button class="dropbtn">Assign user</button>
-            <div class="dropdown-content">
-                <a href="#">Year 1</a>
-                <a href="#">Year 2</a>
-                <a href="#">Year 3</a>
-                <a href="#">Year 4</a>
-            </div>
-        </div>
+            <button id="assign-button" class="dropbtn" onclick="changeToRemove()">Assign user</button>
+            <button id="remove-button" class="dropbtn" onclick="changeToAssign()">Remove user</button>
     </div>
 
     <!--    Search bar     -->
     <form class="search-bar">
-        <input type="text" placeholder="Search.." name="search">
+        <label for="search_bar"></label>
+        <input id="search_bar" type="text" placeholder="Search.." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
 
     <!--    Select user type-->
-    <div class="year-type">
+    <div class="user-type">
         <button class="type active-type" >All</button>
-        <button class="type" >1st year</button>
-        <button class="type" >2nd year</button>
-        <button class="type" >3rd year</button>
-        <button class="type" >4th year</button>
+        <button class="type" >Lecturer</button>
+        <button class="type" >Student</button>
     </div>
 </div>
 
 <div class="table-container">
-    <table class="content-table">
+
+    <table class="content-table" id="remove-user">
         <thead>
         <tr>
             <th>No.</th>
@@ -78,27 +71,31 @@
         </tr>
 
         <tr>
-            <td>2</td>
-            <td>Sumudu</td>
-            <td>Wathsala</td>
-            <td>Student</td>
+            <td>6</td>
+            <td>Hirasha</td>
+            <td>Pooliyadda</td>
+            <td>Lecturer</td>
             <td>
                 <button type='button' class='button'>
                     <span class='button__text'>Remove User</span>
                 </button>
             </td>
         </tr>
+        </tbody>
+    </table>
+
+    <table class="content-table" id="assign-user">
+        <thead>
         <tr>
-            <td>3</td>
-            <td>Charith</td>
-            <td>Anjana</td>
-            <td>Student</td>
-            <td>
-                <button type='button' class='button'>
-                    <span class='button__text'>Remove User</span>
-                </button>
-            </td>
+            <th>No.</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>User type</th>
+            <th> </th>
         </tr>
+        </thead>
+
+        <tbody>
         <tr>
             <td>4</td>
             <td>Janitha</td>
@@ -106,19 +103,32 @@
             <td>Student</td>
             <td>
                 <button type='button' class='button'>
-                    <span class='button__text'>Remove User</span>
+                    <span class='button__text'>Assign User</span>
                 </button>
             </td>
         </tr>
-
+        <tr>
+            <td>5</td>
+            <td>Dinuni</td>
+            <td>Fernando</td>
+            <td>Lecturer</td>
+            <td>
+                <button type='button' class='button'>
+                    <span class='button__text'>Assign User</span>
+                </button>
+            </td>
+        </tr>
         </tbody>
 
     </table>
+
 </div>
 
 <?php linkPhp("footer"); ?>
 
 <?php linkPhp("notification"); ?>
+
+<?php linkJS("manageUser"); ?>
 
 </body>
 

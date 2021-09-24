@@ -5,8 +5,11 @@
 @import "./4_footer.scss";
 
 //LOCAL VARIABLES
-// #1B3B56
-// #677381
+$width: 390px;
+
+#remove-user{
+  display: none;
+}
 
 header, form.search-bar button {
   background-color: $theme_second;
@@ -43,63 +46,30 @@ form.search-bar button {
   margin: auto;
 }
 
-/*==============================================================================*/
-/*DROPDOWN - START*/
-/*==============================================================================*/
-
-.dropbtn {
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  max-width: 250px;
-  background-color: $theme_second;
-  border: 2px solid $theme_second;
-  border-radius: 5px;
-  font-weight: bold;
-  padding: 10px 50px;
-  margin: 2rem 0 0 auto;
-}
-
-.dropdown {
+.top{
+  float: right;
   position: relative;
   display: inline-block;
-  float: right;
 
-  &:hover {
-    .dropdown-content {
-      display: block;
-    }
+  button{
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      max-width: 250px;
+      background-color: $theme_second;
+      border: 2px solid $theme_second;
+      border-radius: 5px;
+      font-weight: bold;
+      padding: 10px 50px;
+      margin: 32px 0 0 5px;
+      float: right;
 
-    .dropbtn {
-      background-color: $theme_second_hover;
-      border: 2px solid $theme_second_hover;
-    }
-  }
-
-  &-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
-
-    a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    &:hover {
-      background-color: #f1f1f1
-    }
+      &:hover{
+        background-color: $theme_second_hover;
+        border: 2px solid $theme_second_hover;
+      }
   }
 }
-
-/*==============================================================================*/
-/*DROPDOWN - END*/
-/*==============================================================================*/
 
 /*==============================================================================*/
 /*SEARCH BAR - START*/
@@ -124,6 +94,11 @@ form.search-bar input[type=text] {
 
 form.search-bar button:hover {
   background: $theme_second;
+
+  &:hover {
+    color: #fff;
+    background: $theme_second_hover;
+  }
 }
 
 form.search-bar::after {
@@ -141,10 +116,9 @@ form.search-bar::after {
 /*USER TYPE BAR - START*/
 /*==============================================================================*/
 
-.year-type {
+.user-type {
   border: 2px solid white;
   margin: 30px 0 5px 0;
-  //width: fit-content;
   float: left;
   display: inline-flex;
   border-radius: 5px;
@@ -182,8 +156,13 @@ form.search-bar::after {
 /*==============================================================================*/
 
 .table-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .content-table {
