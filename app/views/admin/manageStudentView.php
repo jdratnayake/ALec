@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body onload="checkCookie()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
@@ -25,8 +25,8 @@
 
         <div class="top">
             <!--    Assign user button-->
-            <button id="remove-button" class="dropbtn" value="remove" onclick="location.href='<?php echo BASEURL . '/manageUser/assignUser/' . $data["courseId"] ?>'">Remove user</button>
-            <button id="assign-button" class="dropbtn active-type" value="assign" onclick="location.href='<?php echo BASEURL . '/manageUser/index/' . $data["courseId"] ?>'">Assign user</button>
+            <button id="remove-button" class="dropbtn" value="remove" onclick="location.href='<?php echo BASEURL . '/manageUser/assignUser/' . $data["courseId"] . '/' .  $data["type"]  ?>'">Remove Student</button>
+            <button id="assign-button" class="dropbtn active-type" value="assign" onclick="location.href='<?php echo BASEURL . '/manageUser/index/' . $data["courseId"] . '/' .  $data["type"] ?>'">Assign Student</button>
         </div>
 
         <!--    Search bar     -->
@@ -68,9 +68,9 @@
                     echo "<td>";
 
                     echo " <button type='button' class='button' onclick=location.href='";
-                    echo BASEURL . '/courseProfile/index/' . $row["user_id"];
+                    echo BASEURL . '/manageUser/' . strtolower($data["buttonName"]) . '/' . $data["courseId"] . '/' . $data["type"] . '/' . $row["user_id"];
                     echo "'>";
-                    echo "<span class='button__text'>Assign User</span>";
+                    echo "<span class='button__text'>" . $data["buttonName"] . "</span>";
                     echo "</button>";
 
                     echo "</td>";
@@ -89,6 +89,5 @@
 
     <?php linkPhp("notification"); ?>
 
-    <?php linkJS("lib/jquery-3.6.0.min"); ?>
-    <?php linkJS("manageUser"); ?>
+    <?php linkJS("manageStudent"); ?>
 </body>

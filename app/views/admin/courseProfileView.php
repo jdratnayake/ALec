@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body onload="deleteAllCookies()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
@@ -49,7 +49,14 @@
                     echo " <button type='button' name='edit-user' value='Edit user' onclick=location.href='";
                     echo BASEURL . '/manageUser/index/' . $data["courseDetails"]["course_id"];
                     echo "'>";
-                    echo "Manage Users</button>";
+                    echo "Lecturers</button>";
+                    ?>
+
+                    <?php
+                    echo " <button type='button' name='edit-user' value='Edit user' onclick=location.href='";
+                    echo BASEURL . '/manageUser/index/' . $data["courseDetails"]["course_id"] . '/stu';
+                    echo "'>";
+                    echo "Students</button>";
                     ?>
 
                     <button type="button" name="dlt-user" value="Edit user">Badges</button>
@@ -90,6 +97,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
+
+    <?php linkJS("courseProfile"); ?>
 
 </body>
 

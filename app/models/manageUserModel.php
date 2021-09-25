@@ -35,4 +35,26 @@ class ManageUserModel extends Database
 
         return $result;
     }
+
+    public function assignUser($courseId, $type, $userId)
+    {
+        if ($type == "lec") {
+            $query = "INSERT INTO course_registration_lec VALUES('$courseId', '$userId')";
+        } else if ($type == "stu") {
+            $query = "INSERT INTO course_registration_stu VALUES('$courseId', '$userId')";
+        }
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function removeUser($courseId, $type, $userId)
+    {
+        if ($type == "lec") {
+            $query = "DELETE FROM course_registration_lec WHERE course_id='$courseId' AND lecturer_id='$userId'";
+        } else if ($type == "stu") {
+            $query = "DELETE FROM course_registration_stu WHERE course_id='$courseId' AND student_id='$userId'";
+        }
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }
