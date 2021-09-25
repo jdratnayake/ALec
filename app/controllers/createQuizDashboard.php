@@ -10,15 +10,6 @@ class CreateQuizDashboard extends AlecFramework
 
     public function index()
     {
-        $userId = $this->getSession("userId");
-        $data["courseDetails"] = $this->createQuizDashboardModel->getCourseDetails($userId);
-
-
-        $this->view("lecturer/createQuizDashboardView", $data);
-    }
-
-    public function submit()
-    {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // var_dump(array_filter($_POST));
             $count = $_POST["type"];
@@ -65,7 +56,17 @@ class CreateQuizDashboard extends AlecFramework
                         !empty($_POST["q{$questionNo}_answer{$choiceNo}"])
                     ) {
                         $choice = $_POST["q{$questionNo}_answer{$choiceNo}"];
-                        $points = $_POST["q{$questionNo}_answer{$choiceNo}_point"];
+
+                        if (
+                            !isset($_POST["q{$questionNo}_answer{$choiceNo}_point"]) or
+                            empty($_POST["q{$questionNo}_answer{$choiceNo}_point"])
+                        ) {
+                            $points = "0";
+                        } else {
+                            $points = $_POST["q{$questionNo}_answer{$choiceNo}_point"];
+                        }
+
+
 
                         // echo "<h3 align = 'center'>" . $choiceNo . "</h1>";
                         // echo "<h3 align = 'center'>" . $choice . "</h1>";
@@ -80,6 +81,10 @@ class CreateQuizDashboard extends AlecFramework
                 }
             }
         }
+
+        $userId = $this->getSession("userId");
+        $data["courseDetails"] = $this->createQuizDashboardModel->getCourseDetails($userId);
+        $this->view("lecturer/createQuizDashboardView", $data);
     }
 
     public function topic($courseId)
