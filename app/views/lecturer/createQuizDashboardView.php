@@ -24,7 +24,7 @@
         </header>
 
         <!-- Quiz basic details -->
-        <form class="details" method="post" action='<?php echo BASEURL . "/temp/submit"; ?>'>
+        <form class="details" method="post" action='<?php echo BASEURL . "/createQuizDashboard/submit"; ?>'>
             <div>
                 <!-- select course drop down list -->
                 <div class="form-group details">
@@ -59,12 +59,12 @@
                     </div>
 
                     <div class="form-group col">
-                        <input type="number" class="form-control" placeholder="hrs" name="quiz-dur-hr" id="quiz-dur-hr" min="0" max="60">
+                        <input type="number" class="form-control" placeholder="hrs" name="quiz-dur-hr" id="quiz-dur-hr" value="0" min="0" max="60">
                         <label for="quiz-dur-hr"></label>
                     </div>
 
                     <div class="form-group col">
-                        <input type="number" class="form-control" placeholder="mins" name="quiz-dur-min" id="quiz-dur-min" min="0" max="60">
+                        <input type="number" class="form-control" placeholder="mins" name="quiz-dur-min" id="quiz-dur-min" value="0" min="0" max="60">
                         <label for="quiz-dur-min"></label>
                     </div>
 
