@@ -45,7 +45,13 @@
             <!--        Second layer with manage users, badges buttons-->
             <div class="middle">
                 <div class="buttons-left">
-                    <button type="button" name="edit-user" value="Edit user">Manage Users</button>
+                    <?php
+                    echo " <button type='button' name='edit-user' value='Edit user' onclick=location.href='";
+                    echo BASEURL . '/manageUser/index/' . $data["courseDetails"]["course_id"];
+                    echo "'>";
+                    echo "Manage Users</button>";
+                    ?>
+
                     <button type="button" name="dlt-user" value="Edit user">Badges</button>
                 </div>
             </div>
