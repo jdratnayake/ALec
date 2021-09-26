@@ -408,6 +408,9 @@ footer p {
 .form-content .details #form .form-header .radio-inline {
   margin-top: 12px;
 }
+.form-content .details #form .form-header .radio-inline label {
+  margin-right: 10px;
+}
 .form-content .details .add {
   width: 128px;
   padding: 6px;
@@ -525,5 +528,27 @@ footer p {
 .form-content .row .col-end {
   padding-right: 0;
 }
+
+/* ---------------------------------- CLOSE BUTTON START ------------------------------------- */
+.close-btn {
+  float: right;
+  background-color: white;
+  border: 5px solid #00699a;
+  border-radius: 64px;
+  color: #00699a;
+  padding: 0 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.close-btn:hover {
+  background-color: #008bcc;
+  border: 5px solid #008bcc;
+  color: white;
+  border-radius: 64px;
+}
+
+/* ---------------------------------- CLOSE BUTTON END ------------------------------------- */
 
 /*# sourceMappingURL=create_quiz.css.map */

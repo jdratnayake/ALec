@@ -1,4 +1,10 @@
 class UI {
+
+    static close(i){
+        const question = document.getElementById("question_"+i);
+        question.style.display = "none";
+    }
+
     static addQuestion(i) {
         const list = document.querySelector('form #form');
         const row = document.createElement('div');
@@ -7,8 +13,14 @@ class UI {
 
         row.innerHTML = `
             <div class="form-header">
+            
+<!--                close button-->
+            <button class="close-btn" onclick="close()"><i class="fa fa-close"></i></button>
+                
                 <h4>Question ${i}</h4>
                 <input type="hidden" name="type" value="${i}">
+                
+
                 
                 <!-- Select question type -->
                 <div class="radio-inline" id=${i}>
@@ -153,3 +165,4 @@ document.querySelector('form').addEventListener('click', (e) => {
         document.getElementById('shortans_'+e.target.parentElement.id).style.display = "block";
     }
 });
+

@@ -39,6 +39,10 @@ $light: white;
 
                 .radio-inline {
                     margin-top: 12px;
+
+                    label{
+                        margin-right: 10px;
+                    }
                 }
             }
         }
@@ -192,5 +196,25 @@ $light: white;
     }
 }
 
+/* ---------------------------------- CLOSE BUTTON START ------------------------------------- */
 
+.close-btn {
+    float: right;
+    background-color: $light;
+    border: 5px solid $theme_second;
+    border-radius: 64px;
+    color: $theme_second;
+    padding: 0 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
 
+/* Darker background on mouse-over */
+.close-btn:hover {
+    background-color: $theme_second_hover;
+    border: 5px solid $theme_second_hover;
+    color: $light;
+    border-radius: 64px;
+}
+
+/* ---------------------------------- CLOSE BUTTON END ------------------------------------- */

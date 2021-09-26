@@ -4,7 +4,9 @@
 @import "./3_notification.scss";
 @import "./4_footer.scss";
 
-$heading_color: #1abc9c;
+$primary_color: $theme_second;
+$primary_color_hover: $theme_second_hover;
+$light_color: #FFFFFF;
 
 .center {
     margin: auto;
@@ -20,15 +22,18 @@ $heading_color: #1abc9c;
             h2{
                 padding: 15px;
                 text-align: center;
-                background: $heading_color;
-                color: white;
+                background: $primary_color;
+                color: $light_color;
                 font-size: 30px;
                 font-weight: 600;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             }
 
             .topic{
                 .collapsible {
-                    background-color: #777;
+                    background-color: $primary_color;
                     color: white;
                     cursor: pointer;
                     padding: 18px;
@@ -37,14 +42,16 @@ $heading_color: #1abc9c;
                     text-align: left;
                     outline: none;
                     font-size: 20px;
+                    margin: 5px 0;
+                    border-radius: 8px;
 
                     &:hover{
-                        background-color: #555;
+                        background-color: $primary_color_hover;
                     }
 
                     &::after{
                         content: '\002B';
-                        color: white;
+                        color: $light_color;
                         font-size: 50px;
                         font-weight: 300;
                         float: right;
@@ -53,7 +60,8 @@ $heading_color: #1abc9c;
                 }
 
                 .active{
-                    background-color: #555;
+                    background-color: $primary_color_hover;
+                    border: 1px solid $primary_color;
 
                     &::after{
                         content: "\2212";
@@ -66,6 +74,7 @@ $heading_color: #1abc9c;
                     overflow: hidden;
                     transition: max-height 0.2s ease-out;
                     background-color: #f1f1f1;
+                    border-radius: 8px;
                 }
             }
         }
