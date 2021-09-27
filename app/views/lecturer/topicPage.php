@@ -25,9 +25,36 @@
                     <div class="content">
                         <span class="quiz-head">Quizzes</span>
                         <ul>
-                            <li>Quiz 1</li>
-                            <li>Quiz 2</li>
-                            <li>Quiz 3</li>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 1</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 2</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 3</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -35,10 +62,38 @@
                 <div class="topic">
                     <button class="collapsible">String Matching</button>
                     <div class="content">
+                        <span class="quiz-head">Quizzes</span>
                         <ul>
-                            <li>Quiz 1</li>
-                            <li>Quiz 2</li>
-                            <li>Quiz 3</li>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 1</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 2</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 3</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -47,9 +102,37 @@
                     <button class="collapsible">Linear Programming</button>
                     <div class="content">
                         <ul>
-                            <li>Quiz 1</li>
-                            <li>Quiz 2</li>
-                            <li>Quiz 3</li>
+                            <span class="quiz-head">Quizzes</span>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 1</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 2</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tooltip">
+                                    <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <span class="icon-tooltip">Edit quiz</span>
+                                </div>
+                                <div class="tooltip">
+                                    <a href="#">Quiz 3</a>
+                                    <span class="text-tooltip">View quiz</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>

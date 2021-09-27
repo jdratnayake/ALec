@@ -75,8 +75,73 @@ $light_color: #FFFFFF;
                     transition: max-height 0.2s ease-out;
                     background-color: #f1f1f1;
                     border-radius: 8px;
+
+                    .quiz-head{
+                        margin-top: 10px;
+                        font-size: 20px;
+                        font-weight: 400;
+                        border-bottom: 2px solid #b2b2b2;
+                        display: block;
+                    }
+                    ul{
+                        list-style-type:none;
+                        padding: 10px 10px 30px 10px;
+
+                        li{
+                            margin-bottom: 5px;
+                            i {margin-right: 5px;}
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+/* ----------------------TOOLTIP ON EDIT QUIZ AND VIEW QUIZ START------------------------- */
+
+.tooltip {
+    position: relative;
+    display: inline-flex;
+}
+
+.tooltip{
+    .icon-tooltip, .text-tooltip{
+        visibility: hidden;
+        width: 80px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        top: 100%;
+        left: 50%;
+        margin-left: -40px;
+        font-size: small;
+
+            /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.tooltip{
+    .icon-tooltip::after, .text-tooltip::after {
+        content: " ";
+        position: absolute;
+        bottom: 100%;  /* At the top of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+    }
+}
+
+.tooltip:hover{
+    .icon-tooltip, .text-tooltip {
+        visibility: visible;
+    }
+}
+
+/* ----------------------TOOLTIP ON EDIT QUIZ AND VIEW QUIZ END------------------------- */
