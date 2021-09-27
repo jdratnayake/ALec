@@ -46,29 +46,32 @@ class createQuizDashboardModel extends Database
         return mysqli_fetch_assoc($result)["quiz_id"];
     }
 
-    public function insertQuizQuestion($no, $quizId, $question, $questionType)
+    public function insertQuizQuestion($quizId, $question, $questionType)
     {
-        $no = mysqli_real_escape_string($GLOBALS["db"], $no);
         $quizId = mysqli_real_escape_string($GLOBALS["db"], $quizId);
         $question = mysqli_real_escape_string($GLOBALS["db"], $question);
         $questionType = mysqli_real_escape_string($GLOBALS["db"], $questionType);
         $successRate = "0";
 
-        $query = "INSERT INTO quiz_question(question_no, quiz_id, question, question_type, success_rate) VALUES ('$no', '$quizId', '$question', '$questionType', '$successRate')";
+        $query = "INSERT INTO quiz_question(question_no, quiz_id, question, question_type, success_rate) VALUES (NULL, '$quizId', '$question', '$questionType', '$successRate')";
 
         mysqli_query($GLOBALS["db"], $query);
+
+        $query = "SELECT question_no FROM quiz_question ORDER BY question_no DESC LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["question_no"];
     }
 
-    public function insertChoice($choiceNo, $questionNo, $quizId, $choice, $points)
+    public function insertChoice($questionId, $quizId, $choice, $points)
     {
-        $choiceNo = mysqli_real_escape_string($GLOBALS["db"], $choiceNo);
-        $questionNo = mysqli_real_escape_string($GLOBALS["db"], $questionNo);
+        $questionId = mysqli_real_escape_string($GLOBALS["db"], $questionId);
         $quizId = mysqli_real_escape_string($GLOBALS["db"], $quizId);
         $choice = mysqli_real_escape_string($GLOBALS["db"], $choice);
         $points = mysqli_real_escape_string($GLOBALS["db"], $points);
 
         $query = "INSERT INTO question_choice (choice_id, question_no, quiz_id, choice_name, points) VALUES 
-        ('$choiceNo', '$questionNo', '$quizId', '$choice', '$points')";
+        (NULL, '$questionId', '$quizId', '$choice', '$points')";
 
         mysqli_query($GLOBALS["db"], $query);
     }

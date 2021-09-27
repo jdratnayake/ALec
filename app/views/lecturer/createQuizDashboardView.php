@@ -92,10 +92,9 @@
 
     <?php linkPhp("footer"); ?>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
     <?php linkJS("create_quiz"); ?>
-    <?php linkJS("lib/jquery-3.6.0.min.js"); ?>
     <?php linkJS("createQuizTopic"); ?>
 </body>
 

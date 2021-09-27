@@ -46,7 +46,7 @@ class CreateQuizDashboard extends AlecFramework
                 // echo "<h3 align = 'center'>" . $questionType . "</h1>";
                 // echo "<h3 align = 'center'>" . $question . "</h1>";
 
-                $this->createQuizDashboardModel->insertQuizQuestion($questionNo, $quizId, $question, $questionType);
+                $questionId = $this->createQuizDashboardModel->insertQuizQuestion($quizId, $question, $questionType);
 
                 if ($questionType == "mcq") {
                     $choiceNo = 1;
@@ -71,13 +71,13 @@ class CreateQuizDashboard extends AlecFramework
                         // echo "<h3 align = 'center'>" . $choiceNo . "</h1>";
                         // echo "<h3 align = 'center'>" . $choice . "</h1>";
                         // echo "<h3 align = 'center'> points:" . $points . "</h1>";
-                        $this->createQuizDashboardModel->insertChoice($choiceNo, $questionNo, $quizId, $choice, $points);
+                        $this->createQuizDashboardModel->insertChoice($questionId, $quizId, $choice, $points);
                         $choiceNo++;
                     }
                 } else if ($questionType == "short ans") {
                     $choice = $_POST["q{$questionNo}_shortanswer"];
                     $points = $_POST["q{$questionNo}_shortanswer_point"];
-                    $this->createQuizDashboardModel->insertChoice("1", $questionNo, $quizId, $choice, $points);
+                    $this->createQuizDashboardModel->insertChoice($questionId, $quizId, $choice, $points);
                 }
             }
         }
