@@ -20,8 +20,6 @@ class UI {
                 <h4>Question ${i}</h4>
                 <input type="hidden" name="type" value="${i}">
                 
-
-                
                 <!-- Select question type -->
                 <div class="radio-inline" id=${i}>
                     <input type="radio" value="value_mcq" name="q${i}_type" checked class="mcq">

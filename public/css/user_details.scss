@@ -35,7 +35,6 @@ header {
   font-size: 16px;
   max-width: 250px;
   background-color: $theme_second;
-  border: none;
   border-radius: 5px;
   color: white;
   font-weight: bold;
@@ -114,7 +113,6 @@ form.search-bar::after {
 }
 
 .type {
-  border: none;
   margin: 0;
   padding: 10px;
   background-color: $theme_second;

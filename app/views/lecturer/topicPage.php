@@ -20,10 +20,16 @@
             <div class="topic-container center">
                 <h2>SCS2201 Data Structures and Algorithms III</h2>
 
+                <button class="add-topic" type="button" value="add-topic">Add topic</button>
+
                 <div class="topic">
-                    <button class="collapsible">Course Outline</button>
+                    <button class="collapsible">
+                        <span><i onclick="" class="fa fa-trash" aria-hidden="true"></i>
+                        Course Outline</span>
+                    </button>
+
                     <div class="content">
-                        <span class="quiz-head">Quizzes</span>
+                        <p class="quiz-head">Quizzes</p>
                         <ul>
                             <li>
                                 <div class="tooltip">
@@ -60,9 +66,13 @@
                 </div>
 
                 <div class="topic">
-                    <button class="collapsible">String Matching</button>
+                    <button class="collapsible">
+                        <span><i onclick="" class="fa fa-trash" aria-hidden="true"></i>
+                            String Matching</span>
+                    </button>
+
                     <div class="content">
-                        <span class="quiz-head">Quizzes</span>
+                        <p class="quiz-head">Quizzes</p>
                         <ul>
                             <li>
                                 <div class="tooltip">
@@ -99,10 +109,14 @@
                 </div>
 
                 <div class="topic">
-                    <button class="collapsible">Linear Programming</button>
+                    <button class="collapsible">
+                        <span><i onclick="" class="fa fa-trash" aria-hidden="true"></i>
+                            Linear Programming</span>
+                    </button>
+
                     <div class="content">
+                        <p class="quiz-head">Quizzes</p>
                         <ul>
-                            <span class="quiz-head">Quizzes</span>
                             <li>
                                 <div class="tooltip">
                                     <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>

@@ -4,8 +4,11 @@
 @import "./3_notification.scss";
 @import "./4_footer.scss";
 
-$primary_color: $theme_second;
-$primary_color_hover: $theme_second_hover;
+
+$blue_var_1: #005780;
+$blue_var_2: $theme_second;
+$blue_var_3: #007ab3;
+$blue_var_4: #008bcc;
 $light_color: #FFFFFF;
 
 .center {
@@ -22,7 +25,7 @@ $light_color: #FFFFFF;
             h2{
                 padding: 15px;
                 text-align: center;
-                background: $primary_color;
+                background: $blue_var_2;
                 color: $light_color;
                 font-size: 30px;
                 font-weight: 600;
@@ -31,22 +34,70 @@ $light_color: #FFFFFF;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             }
 
+            .add-topic{
+                background-color: $blue_var_1;
+                border: 2px solid $blue_var_1;
+                color: white;
+                float: right;
+                cursor: pointer;
+                font-size: 16px;
+                max-width: 250px;
+                border-radius: 5px;
+                font-weight: bold;
+                padding: 10px 50px;
+                margin: 32px 0 5px 0;
+
+                &:hover{
+                    background-color: $blue_var_3;
+                    border: 2px solid $blue_var_3;
+                    color: $light_color;
+                }
+            }
+
             .topic{
                 .collapsible {
-                    background-color: $primary_color;
+                    background-color: $blue_var_4;
+                    border: none;
                     color: white;
                     cursor: pointer;
                     padding: 18px;
                     width: 100%;
-                    border: none;
-                    text-align: left;
+                    text-align: justify;
                     outline: none;
                     font-size: 20px;
                     margin: 5px 0;
                     border-radius: 8px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    span{
+                        width: max-content;
+
+                        i{
+                            background-color: white;
+                            width: fit-content;
+                            border: 5px solid $blue_var_4;
+                            border-radius: 64px;
+                            padding: 12px;
+                            box-shadow: rgb(0 0 0 / 40%) 0 2px 4px,
+                                            rgb(0 0 0 / 30%) 0 7px 13px -3px,
+                                                rgb(0 0 0 / 20%) 0 -3px 0px inset;
+
+                            &:hover{
+                                box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+                            }
+                        }
+                    }
+                    .fa-trash{
+                        color: 	$blue_var_4;
+                        font-weight: bold;
+                        margin: auto 10px;
+                        cursor: pointer;
+                    }
 
                     &:hover{
-                        background-color: $primary_color_hover;
+                        background-color: $blue_var_3;
                     }
 
                     &::after{
@@ -60,8 +111,8 @@ $light_color: #FFFFFF;
                 }
 
                 .active{
-                    background-color: $primary_color_hover;
-                    border: 1px solid $primary_color;
+                    background-color: $blue_var_4;
+                    border: 1px solid $blue_var_2;
 
                     &::after{
                         content: "\2212";
@@ -110,7 +161,7 @@ $light_color: #FFFFFF;
         visibility: hidden;
         width: 80px;
         background-color: black;
-        color: #fff;
+        color: $light_color;
         text-align: center;
         border-radius: 6px;
         padding: 5px 0;

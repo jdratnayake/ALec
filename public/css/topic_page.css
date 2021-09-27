@@ -402,21 +402,62 @@ footer p {
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+.container .home-content .topic-container .add-topic {
+  background-color: #005780;
+  border: 2px solid #005780;
+  color: white;
+  float: right;
+  cursor: pointer;
+  font-size: 16px;
+  max-width: 250px;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 10px 50px;
+  margin: 32px 0 5px 0;
+}
+.container .home-content .topic-container .add-topic:hover {
+  background-color: #007ab3;
+  border: 2px solid #007ab3;
+  color: #FFFFFF;
+}
 .container .home-content .topic-container .topic .collapsible {
-  background-color: #00699a;
+  background-color: #008bcc;
+  border: none;
   color: white;
   cursor: pointer;
   padding: 18px;
   width: 100%;
-  border: none;
-  text-align: left;
+  text-align: justify;
   outline: none;
   font-size: 20px;
   margin: 5px 0;
   border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .home-content .topic-container .topic .collapsible span {
+  width: max-content;
+}
+.container .home-content .topic-container .topic .collapsible span i {
+  background-color: white;
+  width: fit-content;
+  border: 5px solid #008bcc;
+  border-radius: 64px;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0px inset;
+}
+.container .home-content .topic-container .topic .collapsible span i:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+}
+.container .home-content .topic-container .topic .collapsible .fa-trash {
+  color: #008bcc;
+  font-weight: bold;
+  margin: auto 10px;
+  cursor: pointer;
 }
 .container .home-content .topic-container .topic .collapsible:hover {
-  background-color: #008bcc;
+  background-color: #007ab3;
 }
 .container .home-content .topic-container .topic .collapsible::after {
   content: "+";
@@ -469,7 +510,7 @@ footer p {
   visibility: hidden;
   width: 80px;
   background-color: black;
-  color: #fff;
+  color: #FFFFFF;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
