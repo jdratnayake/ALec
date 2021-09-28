@@ -1,9 +1,9 @@
 class UI {
 
-    static close(i){
-        const question = document.getElementById("question_"+i);
-        question.style.display = "none";
-    }
+    // static close(i){
+    //     const question = document.getElementById("question_"+i);
+    //     question.style.display = "none";
+    // }
 
     static addQuestion(i) {
         const list = document.querySelector('form #form');
