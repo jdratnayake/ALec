@@ -4,6 +4,7 @@ class UserEdit extends AlecFramework
 {
     public function __construct()
     {
+        $this->authorization("admin");
         $this->helper("linker");
         $this->userEditModel = $this->model("userEditModel");
     }

@@ -4,6 +4,7 @@ class CreateQuizDashboard extends AlecFramework
 {
     public function __construct()
     {
+        // $this->authorization("lec");
         $this->helper("linker");
         $this->createQuizDashboardModel = $this->model("createQuizDashboardModel");
     }

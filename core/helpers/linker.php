@@ -3,14 +3,14 @@
 //To link CSS files
 function linkCSS($cssPath)
 {
-    $url = BASEURL . "/public/css/" . $cssPath . ".css?version=66";
+    $url = BASEURL . "/public/css/" . $cssPath . ".css?version=67";
     echo '<link rel="stylesheet" type="text/css" href="' . $url . '">';
 }
 
 //To link JS files
 function linkJS($jsPath)
 {
-    $url = BASEURL . "/public/js/" . $jsPath . ".js?v=3";
+    $url = BASEURL . "/public/js/" . $jsPath . ".js?v=6";
     echo '<script src="' . $url . '"></script>';
 }
 

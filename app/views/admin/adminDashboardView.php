@@ -15,7 +15,7 @@
     <?php shortIcon('logo1.png'); ?>
 </head>
 
-<body>
+<body onload="setDefaultCookies()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
     <div class="navigation-item-container">
@@ -93,6 +93,10 @@
     <?php linkJS("basic") ?>
 
     <?php linkJS("slideShow"); ?>
+
+    <?php linkJS("courseDetails"); ?>
+
+    <?php linkJS("adminDashboard"); ?>
 </body>
 
 </html>

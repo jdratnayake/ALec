@@ -4,6 +4,7 @@ class CourseDetails extends AlecFramework
 {
     public function __construct()
     {
+        $this->authorization("admin");
         $this->helper("linker");
         $this->courseDetailsModel = $this->model("courseDetailsModel");
     }

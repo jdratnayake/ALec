@@ -4,6 +4,7 @@ class AddNewCourse extends AlecFramework
 {
     public function __construct()
     {
+        $this->authorization("admin");
         $this->helper("linker");
         $this->addNewCourseModel = $this->model("addNewCourseModel");
     }

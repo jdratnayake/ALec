@@ -16,7 +16,7 @@
 
 </head>
 
-<body onload="deleteAllCookies()">
+<body onload="setDefaultCookieValues()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
 

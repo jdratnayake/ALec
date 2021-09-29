@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body onload="checkCookie()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
@@ -92,5 +92,7 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
+
+    <?php linkJS("userDetails"); ?>
 
 </body>
