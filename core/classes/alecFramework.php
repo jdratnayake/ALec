@@ -2,6 +2,22 @@
 
 class AlecFramework
 {
+    public function authorization(...$validTypes)
+    {
+        $userId = $this->getSession("userId");
+        $type = $this->getSession("type");
+
+        if (isset($userId) and isset($type)) {
+            foreach ($validTypes as $validType) {
+                if ($validType == $type) {
+                    return true;
+                }
+            }
+        }
+
+        $this->redirect("dashboard");
+    }
+
     public function view($viewName, $data = [])
     {
         $url = "../app/views/" . $viewName . ".php";

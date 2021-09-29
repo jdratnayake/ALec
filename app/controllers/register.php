@@ -6,6 +6,7 @@ class Register extends AlecFramework
 {
     public function __construct()
     {
+        $this->authorization("admin");
         $this->helper("linker");
         $this->registerModel = $this->model("registerModel");
     }
