@@ -94,6 +94,8 @@
 
     <?php linkJS("slideShow"); ?>
 
+    <?php linkJS("courseDetails"); ?>
+
     <?php linkJS("adminDashboard"); ?>
 </body>
 

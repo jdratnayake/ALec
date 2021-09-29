@@ -7,4 +7,5 @@ function setCookie(cname, cvalue, exdays) {
 
 function setDefaultCookies() {
     setCookie("buttonId", "all", 30);
+    setCookie("buttonIdCourse", "all", 30);
 }
