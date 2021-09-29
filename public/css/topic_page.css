@@ -286,17 +286,6 @@ body {
 /*HOME CONTENT - END*/
 /*==============================================================================*/
 /*==============================================================================*/
-/*BUTTON ACTIVE - START*/
-/*==============================================================================*/
-.active-type {
-  background-color: white;
-  color: #00699a;
-}
-
-/*==============================================================================*/
-/*BUTTON ACTIVE - END*/
-/*==============================================================================*/
-/*==============================================================================*/
 /*POP UP - START*/
 /*==============================================================================*/
 .pop-up {
@@ -424,7 +413,7 @@ footer p {
   border-radius: 5px;
   font-weight: bold;
   padding: 10px 50px;
-  margin: 32px 0 5px 0;
+  margin: 32px 0 5px 5px;
 }
 .container .home-content .topic-container .add-topic:hover {
   background-color: #007ab3;
@@ -449,8 +438,13 @@ footer p {
 }
 .container .home-content .topic-container .topic .collapsible span {
   width: max-content;
+  display: inline-flex;
+  align-items: center;
 }
-.container .home-content .topic-container .topic .collapsible span i {
+.container .home-content .topic-container .topic .collapsible span .hidden {
+  display: none;
+}
+.container .home-content .topic-container .topic .collapsible span .hidden i {
   background-color: white;
   width: fit-content;
   border: 5px solid #008bcc;
@@ -458,10 +452,10 @@ footer p {
   padding: 12px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0px inset;
 }
-.container .home-content .topic-container .topic .collapsible span i:hover {
+.container .home-content .topic-container .topic .collapsible span .hidden i:hover {
   box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
 }
-.container .home-content .topic-container .topic .collapsible .fa-trash {
+.container .home-content .topic-container .topic .collapsible .fa-trash, .container .home-content .topic-container .topic .collapsible .fa-pencil {
   color: #008bcc;
   font-weight: bold;
   margin: auto 10px;

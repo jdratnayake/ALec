@@ -45,7 +45,7 @@ $light_color: #FFFFFF;
                 border-radius: 5px;
                 font-weight: bold;
                 padding: 10px 50px;
-                margin: 32px 0 5px 0;
+                margin: 32px 0 5px 5px;
 
                 &:hover{
                     background-color: $blue_var_3;
@@ -53,6 +53,7 @@ $light_color: #FFFFFF;
                     color: $light_color;
                 }
             }
+
 
             .topic{
                 .collapsible {
@@ -73,23 +74,30 @@ $light_color: #FFFFFF;
 
                     span{
                         width: max-content;
+                        display: inline-flex;
+                        align-items: center;
 
-                        i{
-                            background-color: white;
-                            width: fit-content;
-                            border: 5px solid $blue_var_4;
-                            border-radius: 64px;
-                            padding: 12px;
-                            box-shadow: rgb(0 0 0 / 40%) 0 2px 4px,
-                                            rgb(0 0 0 / 30%) 0 7px 13px -3px,
-                                                rgb(0 0 0 / 20%) 0 -3px 0px inset;
+                        .hidden{
+                            display: none;
 
-                            &:hover{
-                                box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+                            i{
+                                background-color: white;
+                                width: fit-content;
+                                border: 5px solid $blue_var_4;
+                                border-radius: 64px;
+                                padding: 12px;
+                                box-shadow: rgb(0 0 0 / 40%) 0 2px 4px,
+                                rgb(0 0 0 / 30%) 0 7px 13px -3px,
+                                rgb(0 0 0 / 20%) 0 -3px 0px inset;
+
+                                &:hover{
+                                    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+                                }
                             }
                         }
+
                     }
-                    .fa-trash{
+                    .fa-trash, .fa-pencil{
                         color: 	$blue_var_4;
                         font-weight: bold;
                         margin: auto 10px;
