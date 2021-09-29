@@ -31,11 +31,11 @@
                     <label for="course">Course</label>
                     <select name="course" id="course" class="form-control">
                         <option value="null" selected>Select your course</option>
-<!--                        --><?php
-//                        while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
-//                            echo '<option value="' . $row["course_id"] . '">' . $row["course_name"] . '</option>';
-//                        }
-//                        ?>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
+                            echo '<option value="' . $row["course_id"] . '">' . $row["course_name"] . '</option>';
+                        }
+                        ?>
                     </select>
                 </div>
 
