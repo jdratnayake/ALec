@@ -36,9 +36,13 @@ class UI {
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
+                        <option value="33"> 33.33% </option>
                         <option value="25"> 25% </option>
-                        <option value=" 0" selected="selected"> 0% </option>
+                        <option value="20"> 20% </option>
+                        <option value=" 0" selected> 0% </option>
+                        <option value="-20"> -20% </option>
                         <option value="-25"> -25% </option>
+                        <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
                         <option value="100">-100% </option>
@@ -53,9 +57,13 @@ class UI {
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
+                        <option value="33"> 33.33% </option>
                         <option value="25"> 25% </option>
-                        <option value=" 0" selected="selected"> 0% </option>
+                        <option value="20"> 20% </option>
+                        <option value=" 0" selected> 0% </option>
+                        <option value="-20"> -20% </option>
                         <option value="-25"> -25% </option>
+                        <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
                         <option value="100">-100% </option>
@@ -70,9 +78,13 @@ class UI {
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
+                        <option value="33"> 33.33% </option>
                         <option value="25"> 25% </option>
-                        <option value=" 0" selected="selected"> 0% </option>
+                        <option value="20"> 20% </option>
+                        <option value=" 0" selected> 0% </option>
+                        <option value="-20"> -20% </option>
                         <option value="-25"> -25% </option>
+                        <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
                         <option value="100">-100% </option>
@@ -87,9 +99,13 @@ class UI {
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
+                        <option value="33"> 33.33% </option>
                         <option value="25"> 25% </option>
-                        <option value=" 0" selected="selected"> 0% </option>
+                        <option value="20"> 20% </option>
+                        <option value=" 0" selected> 0% </option>
+                        <option value="-20"> -20% </option>
                         <option value="-25"> -25% </option>
+                        <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
                         <option value="100">-100% </option>
@@ -104,9 +120,13 @@ class UI {
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
+                        <option value="33"> 33.33% </option>
                         <option value="25"> 25% </option>
-                        <option value=" 0" selected="selected"> 0% </option>
+                        <option value="20"> 20% </option>
+                        <option value=" 0" selected> 0% </option>
+                        <option value="-20"> -20% </option>
                         <option value="-25"> -25% </option>
+                        <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
                         <option value="100">-100% </option>
@@ -126,19 +146,10 @@ class UI {
                     <input type="text" class="form-answer short" placeholder="Enter answer here">
                     <select class="points short">
                         <option value="100"> 100% </option>
-                        <option value="75"> 75% </option>
-                        <option value="50"> 50% </option>
-                        <option value="25"> 25% </option>
-                        <option value=" 0" selected="selected"> 0% </option>
-                        <option value="-25"> -25% </option>
-                        <option value="-50"> -50% </option>
-                        <option value="-75"> -75% </option>
-                        <option value="100">-100% </option>
                     </select>
                     <label>points</label>
                 </div>
             </div>
-         
          
          `;
         for (let i = 1; i <= document.getElementsByClassName('question').length; i++) {
