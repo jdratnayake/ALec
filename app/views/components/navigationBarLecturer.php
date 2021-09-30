@@ -25,7 +25,7 @@
                     <span class="tooltip">Ask Question</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/lecturerCoursePage/index'; ?>">
                         <i class="fa fa-graduation-cap"></i>
                         <span class="links_name">My Courses</span>
                     </a>
