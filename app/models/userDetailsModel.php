@@ -12,23 +12,38 @@ class userDetailsModel extends Database
         }
     }
 
-    public function getLectureDetails()
+    public function getFilteredUserDetails($type)
     {
-        $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type = 'lec'";
+        if ($type == "all") {
+            $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type<>'admin'";
+        } else {
+            $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type = '$type'";
+        }
+
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        if (mysqli_num_rows($result) > 0) {
-            return $result;
-        }
-    }
+        $count = 1;
+        $output = "";
+        while ($row = mysqli_fetch_assoc($result)) {
 
-    public function getStudentDetails()
-    {
-        $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type = 'stu'";
-        $result = mysqli_query($GLOBALS["db"], $query);
+            $output .= "<tr>";
+            $output .= "<td>{$count}</td>";
+            $output .= "<td>{$row['first_name']}</td>";
+            $output .= "<td>{$row['last_name']}</td>";
 
-        if (mysqli_num_rows($result) > 0) {
-            return $result;
+            if ($row['user_type'] == "lec") {
+                $output .= "<td>Lecturer</td>";
+            } else if ($row['user_type'] == "stu") {
+                $output .= "<td>Student</td>";
+            }
+
+
+            $output .= "<td> <button type='button' class='button' onclick=location.href='http://localhost/ALec/userProfile/index/{$row['user_id']}'><span class='button__text'>View User</span></button></td>";
+            $output .= "</tr>";
+
+            $count++;
         }
+
+        return $output;
     }
 }

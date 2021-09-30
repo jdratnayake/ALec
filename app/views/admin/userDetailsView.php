@@ -16,12 +16,12 @@
 
 </head>
 
-<body onload="checkCookie()">
+<body>
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
     <div class="details-container">
-        <header><?php echo $data["headName"]; ?></header>
+        <header id="header-title">User Details</header>
 
         <!--    Add user button-->
         <!-- <input type="button" class="add-button" id="add-button" name="add-user" value="Add New User"> -->
@@ -35,9 +35,9 @@
 
         <!--    Select user type-->
         <div class="user-type">
-            <button id="all" class="type active-type" onclick="location.href='<?php echo BASEURL . '/userDetails/index' ?>'">All users</button>
-            <button id="lec" class="type" onclick="location.href='<?php echo BASEURL . '/userDetails/lecturer' ?>'">Lecturers</button>
-            <button id="stu" class="type" onclick="location.href='<?php echo BASEURL . '/userDetails/student' ?>'">Students</button>
+            <button id="all" class="type active-type">All users</button>
+            <button id="lec" class="type">Lecturers</button>
+            <button id="stu" class="type">Students</button>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody id="table-content">
 
                 <?php
                 $count = 1;
@@ -92,6 +92,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("userDetails"); ?>
 
