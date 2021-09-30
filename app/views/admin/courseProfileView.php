@@ -32,7 +32,13 @@
             <!--        First layer with edit, delete buttons-->
             <div class="top">
                 <div class="buttons-right">
-                    <button type="button" name="edit-user" value="Edit user">Edit Course</button>
+                    <?php
+                    echo " <button type='button' name='edit-user' value='Edit user' onclick=location.href='";
+                    echo BASEURL . '/courseEdit/index/' . $data["courseDetails"]["course_id"];
+                    echo "'>";
+                    echo "Edit Course</button>";
+                    ?>
+
                     <?php
                     echo " <button type='button' name='dlt-user' value='Delete user' onclick=location.href='";
                     echo BASEURL . '/courseProfile/deleteCourse/' . $data["courseDetails"]["course_id"];
