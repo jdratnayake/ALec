@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body onload="setDefaultCookies()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
@@ -95,6 +95,7 @@
 
     <?php linkPhp("notification"); ?>
 
+    <?php linkJS("adminDashboard"); ?>
 </body>
 
 </html>
