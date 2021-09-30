@@ -16,7 +16,7 @@
 
 </head>
 
-<body onload="checkCookie()">
+<body>
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
@@ -35,11 +35,11 @@
         <!--    Select user type-->
         <div class="year-type">
             <!-- <button class="type active-type">All</button> -->
-            <button id="all" class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index' ?>'">All</button>
-            <button id="one" class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/1' ?>'">1st year</button>
-            <button id="two" class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/2' ?>'">2nd year</button>
-            <button id="three" class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/3' ?>'">3rd year</button>
-            <button id="four" class="type" onclick="location.href='<?php echo BASEURL . '/courseDetails/index/4' ?>'">4th year</button>
+            <button id="all" class="type active-type">All</button>
+            <button id="one" class="type">1st year</button>
+            <button id="two" class="type">2nd year</button>
+            <button id="three" class="type">3rd year</button>
+            <button id="four" class="type">4th year</button>
         </div>
     </div>
 
@@ -55,7 +55,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody id="table-content">
 
                 <?php
                 $count = 1;
@@ -88,6 +88,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("courseDetails"); ?>
 

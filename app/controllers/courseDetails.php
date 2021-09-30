@@ -15,4 +15,9 @@ class CourseDetails extends AlecFramework
 
         $this->view("admin/courseDetailsView", $data);
     }
+
+    public function ajaxCourseDetails($year = "all")
+    {
+        echo $this->courseDetailsModel->ajaxGetCourseDetails($year);
+    }
 }
