@@ -201,7 +201,7 @@ $light: white;
     }
 }
 
-
+/* -------CLOSE BUTTON START------------- */
 
 .close {
     position: relative;
@@ -263,11 +263,13 @@ $light: white;
     }
 }
 
+/* -------CLOSE BUTTON END------------- */
+
+/* -------OPTION BUTTON START------------- */
+
 .option-input {
     -webkit-appearance: none;
     -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
     appearance: none;
     top: 13.33333px;
     right: 0;
@@ -318,3 +320,5 @@ $light: white;
 .option-input.radio::after {
     border-radius: 50%;
 }
+
+/* -------OPTION BUTTON END------------- */
