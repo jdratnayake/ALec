@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="navigation-tab">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/lecturerCoursePageForum/index'; ?>' ">
             <div class="row">
                 <i class="far fa-comment-alt"></i>
             </div>

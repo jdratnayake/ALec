@@ -39,7 +39,7 @@
                     <span class="tooltip">Review</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/lecturerCoursePageForum/index'; ?>">
                         <i class="far fa-comment-alt"></i>
                         <span class="links_name">Forum</span>
                     </a>
