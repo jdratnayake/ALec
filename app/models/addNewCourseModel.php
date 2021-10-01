@@ -20,5 +20,19 @@ class AddNewCourseModel extends Database
         $query = "INSERT INTO course(course_name, course_description, year) VALUES
                     ('$name', '$description', '$year')";
         mysqli_query($GLOBALS["db"], $query);
+
+        $query = "SELECT course_id FROM course ORDER BY course_id DESC LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return  mysqli_fetch_assoc($result)["course_id"];
+    }
+
+    public function addForum($name, $courseId)
+    {
+        $name = mysqli_real_escape_string($GLOBALS["db"], $name);
+
+        $query = "INSERT INTO forum(forum_name, course_Id) VALUES ('$name', '$courseId')";
+
+        mysqli_query($GLOBALS["db"], $query);
     }
 }
