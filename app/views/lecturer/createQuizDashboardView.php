@@ -59,17 +59,17 @@
                     </div>
 
                     <div class="form-group col">
-                        <input type="number" class="form-control" placeholder="hrs" name="quiz-dur-hr" id="quiz-dur-hr" value="0" min="0" max="60">
+                        <input type="number" class="form-control" placeholder="hrs" name="quiz-dur-hr" id="quiz-dur-hr" min="0" max="60">
                         <label for="quiz-dur-hr"></label>
                     </div>
 
                     <div class="form-group col">
-                        <input type="number" class="form-control" placeholder="mins" name="quiz-dur-min" id="quiz-dur-min" value="0" min="0" max="60">
+                        <input type="number" class="form-control" placeholder="mins" name="quiz-dur-min" id="quiz-dur-min" min="0" max="60">
                         <label for="quiz-dur-min"></label>
                     </div>
 
                     <div class="form-group col col-end">
-                        <input type="number" class="form-control" placeholder="secs" name="quiz-dur-sec" id="quiz-dur-sec" value="0" min="0" max="60">
+                        <input type="number" class="form-control" placeholder="secs" name="quiz-dur-sec" id="quiz-dur-sec" min="0" max="60">
                         <label for="quiz-dur-sec"></label>
                     </div>
                 </div>

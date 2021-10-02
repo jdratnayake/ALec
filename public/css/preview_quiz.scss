@@ -1,0 +1,88 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+/*Stylesheet of the display quiz page*/
+$main_color: $theme_second;
+$main_hover: $theme_second_hover;
+$answer_color: rgba(0,0,0,0.85);
+$answer_background: rgba(0, 0, 0, 0.05);
+$light: white;
+
+.form-content {
+  padding: 16px;
+  width: 51%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  margin: auto auto 30px auto;
+
+  header {
+    text-align: center;
+    padding-bottom: 16px;
+    border-bottom: 5px solid $main_color;
+    margin-bottom: 20px;
+  }
+  .quiz-name{
+    text-align: left;
+    margin-bottom: 25px;
+  }
+
+  .details{
+    margin-bottom: 10px;
+
+    .all-questions{
+      margin-left: 15px;
+
+      .question-container{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        .question{
+          margin-bottom: 18px;
+        }
+
+        li{
+          list-style-type: lower-alpha;
+          margin-left: 35px;
+        }
+
+        .answer{
+          border-radius: 290486px;
+          padding: 8px 16px;
+          margin: 0 18px 12px 18px;
+          background-color: $answer_background;
+          color: $answer_color;
+          border: transparent 1px solid;
+        }
+
+         .correct-answer{
+           margin: 18px 0;
+        }
+      }
+    }
+
+    .button-set {
+      margin-top: 60px;
+
+      .finish {
+        height: 48px;
+        width: 100%;
+        border-radius: 4px;
+        font-size: large;
+        border: none;
+        color: $light;
+        background-color: $main_color;
+        font-weight: bold;
+
+        &:hover{
+          border: 3px solid $main_hover;
+          color: $light;
+          background-color: $main_hover;
+        }
+      }
+    }
+  }
+  }
+
