@@ -102,13 +102,12 @@ $light: white;
         align-items: center;
 
         textarea{
-            margin-bottom: 16px;
+            margin-bottom: 2px;
             border: 1px solid $border_grey;
             border-radius: 4px;
             border-bottom-width: 2px;
 
             &:hover{
-                //border: none;
                 box-shadow: 0 0 5px $hover;
             }
         }
@@ -119,7 +118,6 @@ $light: white;
             border-bottom-width: 2px;
 
             &:hover{
-                //border: none;
                 box-shadow: 0 0 5px $hover;
             }
         }
@@ -186,6 +184,9 @@ $light: white;
         }
     }
 
+    .check{
+        margin-bottom: 20px;
+    }
 
     .row {
         display: flex;

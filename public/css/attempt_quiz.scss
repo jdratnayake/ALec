@@ -26,6 +26,13 @@ $light: white;
   .quiz-name{
     text-align: left;
     margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    span{float: right}
   }
 
   .details{
@@ -55,10 +62,18 @@ $light: white;
           background-color: $answer_background;
           color: $answer_color;
           border: transparent 1px solid;
-        }
+          cursor: pointer;
 
-         .correct-answer{
-           margin: 18px 0;
+          //&.is-selected {
+          //  border-color: rgba(black,0.25);
+          //  background-color: white;
+          //}
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          //&:active {
+          //  transform: scaleX(0.9);
+          //}
         }
       }
     }
@@ -67,19 +82,10 @@ $light: white;
 
 /* --------------BUTTON STYLES START----------------*/
 
-.edit{
-  max-width: 250px;
-  float: right;
-  padding: 5px 15px;
 
-  i{padding-right: 10px;}
-}
 .done{
   width: 100%;
   padding: 10px 50px;
-}
-
-.edit, .done {
   cursor: pointer;
   font-size: 16px;
   color: $light;
@@ -96,4 +102,24 @@ $light: white;
 }
 
 /* --------------BUTTON STYLES END----------------*/
+
+/* --------------QUIZ COMPLETED START----------------*/
+
+.quizCompleted {
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  text-align:center;
+
+  > .icon{
+    color: #FF5252;
+    font-size: 5rem;
+
+    .is-active{
+      color: #00E676;
+    }
+  }
+}
+
+/* --------------QUIZ COMPLETED END----------------*/
 
