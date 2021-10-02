@@ -62,27 +62,37 @@ $light: white;
         }
       }
     }
-
-    .button-set {
-      margin-top: 60px;
-
-      .finish {
-        height: 48px;
-        width: 100%;
-        border-radius: 4px;
-        font-size: large;
-        border: none;
-        color: $light;
-        background-color: $main_color;
-        font-weight: bold;
-
-        &:hover{
-          border: 3px solid $main_hover;
-          color: $light;
-          background-color: $main_hover;
-        }
-      }
-    }
   }
   }
+
+/* --------------BUTTON STYLES START----------------*/
+
+.edit{
+  max-width: 250px;
+  float: right;
+
+  i{padding-right: 10px;}
+}
+.done{
+  width: 100%;
+}
+
+.edit, .done {
+  cursor: pointer;
+  font-size: 16px;
+  color: $light;
+  background-color: $main_color;
+  border: 2px solid $main_color;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 50px;
+
+  &:hover{
+    border: 2px solid $main_hover;
+    color: $light;
+    background-color: $main_hover;
+  }
+}
+
+/* --------------BUTTON STYLES END----------------*/
 

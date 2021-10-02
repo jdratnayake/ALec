@@ -10,7 +10,7 @@
 
     <title>ALec</title>
 
-    <?php linkCSS("display_quiz") ?>
+    <?php linkCSS("preview_quiz") ?>
 
 </head>
 
@@ -22,6 +22,7 @@
     <header>
         <h2>SCS 1205 - Operating Systems</h2>
     </header>
+    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit quiz</button>
     <div class="quiz-name">
         <h2>Assignment 01</h2>
     </div>
@@ -55,9 +56,8 @@
             </li>
         </ol>
 
-        <div class="button-set">
-            <button type="submit" class="finish">Done</button>
-        </div>
+        <button type="submit" class="done">Done</button>
+
     </div>
 </div>
 
