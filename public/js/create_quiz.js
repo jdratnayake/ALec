@@ -28,6 +28,10 @@ class UI {
                     <textarea class="form-control mcq" rows="4" placeholder="Enter your question here"></textarea>
                 </div>
         
+<!--            check whether multiple answers or not-->
+                <input type="checkbox" class="check">
+                <label>multiple answers</label><br>
+                
                 <!-- Answers list - START -->
                 <!-- Answer 01 -->
                 <div class="form-group">
@@ -205,6 +209,14 @@ class UI {
         //Short Ans
         document.querySelectorAll('.form-answer.short')[i - 1].setAttribute('name', 'q' + i + '_shortanswer');
         document.querySelectorAll('.points.short')[i - 1].setAttribute('name', 'q' + i + '_shortanswer_point');
+
+        //Multiple Choice
+        if(document.querySelectorAll('.check')[i - 1].checked){
+            document.querySelectorAll('.check')[i - 1].setAttribute('value', 'true');
+        }
+        else{
+            document.querySelectorAll('.check')[i - 1].setAttribute('value', 'false');
+        }
     }
 }
 
