@@ -53,7 +53,7 @@
                 </div>
                 <div class="helper-text" id="helper-password"><?php echo $errors['password']; ?></div>
 
-                <a href="#">Forgot Password</a>
+                <a href="<?php echo BASEURL . "/passwordRecovery/enterEmail" ?>">Forgot Password</a>
 
                 <input type="submit" name="login" class="btn" value="Login">
             </form>
