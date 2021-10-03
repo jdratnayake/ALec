@@ -35,24 +35,46 @@
                     Which of the following is not an operating system?
                 </div>
                 <ol>
-                    <li class="answer">Windows</li>
-                    <li class="answer">Linux</li>
-                    <li class="answer">Oracle</li>
-                    <li class="answer">DOS</li>
+                    <li class="answer">
+                        Windows
+                        <div class="points">0%</div>
+                    </li>
+                    <li class="answer">
+                        Linux
+                        <div class="points">0%</div>
+                    </li>
+                    <li class="answer">
+                        Oracle
+                        <div class="points">100%</div>
+                    </li>
+                    <li class="answer">
+                        DOS
+                        <div class="points">0%</div>
+                    </li>
                 </ol>
-                <div class="correct-answer"><strong>Answer: </strong>c.) Oracle</div>
             </li>
             <li class="question-container">
                 <div class="question">
                     What is the maximum length of the filename in DOS?
                 </div>
                 <ol>
-                    <li class="answer">4</li>
-                    <li class="answer">5</li>
-                    <li class="answer">8</li>
-                    <li class="answer">12</li>
+                    <li class="answer">
+                        4
+                        <div class="points">0%</div>
+                    </li>
+                    <li class="answer">
+                        5
+                        <div class="points">0%</div>
+                    </li>
+                    <li class="answer">
+                        8
+                        <div class="points">100%</div>
+                    </li>
+                    <li class="answer">
+                        12
+                        <div class="points">0%</div>
+                    </li>
                 </ol>
-                <div class="correct-answer"><strong>Answer: </strong>c.) 8</div>
             </li>
         </ol>
 

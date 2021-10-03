@@ -424,8 +424,8 @@ footer p {
   color: rgba(0, 0, 0, 0.85);
   border: transparent 1px solid;
 }
-.form-content .details .all-questions .question-container .correct-answer {
-  margin: 18px 0;
+.form-content .details .all-questions .question-container .answer .points {
+  float: right;
 }
 
 /* --------------BUTTON STYLES START----------------*/

@@ -55,14 +55,15 @@ $light: white;
           background-color: $answer_background;
           color: $answer_color;
           border: transparent 1px solid;
+
+          .points{
+            float: right;
+          }
+        }
         }
 
-         .correct-answer{
-           margin: 18px 0;
-        }
       }
     }
-  }
 }
 
 /* --------------BUTTON STYLES START----------------*/
