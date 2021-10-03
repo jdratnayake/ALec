@@ -429,21 +429,7 @@ footer p {
 }
 
 /* --------------BUTTON STYLES START----------------*/
-.edit {
-  max-width: 250px;
-  float: right;
-  padding: 5px 15px;
-}
-.edit i {
-  padding-right: 10px;
-}
-
-.done {
-  width: 100%;
-  padding: 10px 50px;
-}
-
-.edit, .done {
+.edit, .done, .dlt {
   cursor: pointer;
   font-size: 16px;
   color: white;
@@ -452,10 +438,40 @@ footer p {
   font-weight: bold;
   border-radius: 5px;
 }
-.edit:hover, .done:hover {
+.edit:hover, .done:hover, .dlt:hover {
   border: 2px solid #008bcc;
   color: white;
   background-color: #008bcc;
+}
+
+.edit {
+  max-width: 250px;
+  float: right;
+  padding: 5px 15px;
+  margin-right: 5px;
+}
+.edit i {
+  padding-right: 10px;
+}
+
+.dlt {
+  max-width: 250px;
+  float: right;
+  padding: 5px 15px;
+  background-color: #d63031;
+  border: 2px solid #d63031;
+}
+.dlt i {
+  padding-right: 10px;
+}
+.dlt:hover {
+  background-color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+}
+
+.done {
+  width: 100%;
+  padding: 10px 50px;
 }
 
 /* --------------BUTTON STYLES END----------------*/

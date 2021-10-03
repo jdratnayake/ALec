@@ -68,19 +68,7 @@ $light: white;
 
 /* --------------BUTTON STYLES START----------------*/
 
-.edit{
-  max-width: 250px;
-  float: right;
-  padding: 5px 15px;
-
-  i{padding-right: 10px;}
-}
-.done{
-  width: 100%;
-  padding: 10px 50px;
-}
-
-.edit, .done {
+.edit, .done, .dlt {
   cursor: pointer;
   font-size: 16px;
   color: $light;
@@ -95,6 +83,35 @@ $light: white;
     background-color: $main_hover;
   }
 }
+
+.edit{
+  max-width: 250px;
+  float: right;
+  padding: 5px 15px;
+  margin-right: 5px;
+
+  i{padding-right: 10px;}
+}
+.dlt{
+  max-width: 250px;
+  float: right;
+  padding: 5px 15px;
+  background-color: $delete_button;
+  border: 2px solid $delete_button;
+
+  i{padding-right: 10px;}
+
+  &:hover{
+    background-color: $delete_button_hover;
+    border: 2px solid $delete_button_hover;
+  }
+}
+.done{
+  width: 100%;
+  padding: 10px 50px;
+}
+
+
 
 /* --------------BUTTON STYLES END----------------*/
 

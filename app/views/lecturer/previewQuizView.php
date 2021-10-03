@@ -22,12 +22,16 @@
     <header>
         <h2>SCS 1205 - Operating Systems</h2>
     </header>
+
+    <!-- Edit , delete buttons-->
+    <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete quiz</button>
     <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit quiz</button>
+
     <div class="quiz-name">
         <h2>Assignment 01</h2>
     </div>
 
-    <!-- Quiz basic details -->
+    <!-- Quiz questions and answers container -->
     <div class="details">
         <ol class="all-questions">
             <li class="question-container">
