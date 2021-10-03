@@ -29,7 +29,8 @@ class UI {
                 </div>
         
 <!--            check whether multiple answers or not-->
-                <input type="checkbox" class="check">
+                <input type="checkbox" class="check" value="true">
+                <input type="hidden" value="false" class="check_hidden">
                 <label>multiple answers</label><br>
                 
                 <!-- Answers list - START -->
@@ -211,11 +212,11 @@ class UI {
         document.querySelectorAll('.points.short')[i - 1].setAttribute('name', 'q' + i + '_shortanswer_point');
 
         //Multiple Choice
-        if(document.querySelectorAll('.check')[i - 1].checked){
-            document.querySelectorAll('.check')[i - 1].setAttribute('value', 'true');
-        }
-        else{
-            document.querySelectorAll('.check')[i - 1].setAttribute('value', 'false');
+        document.querySelectorAll('.check')[i - 1].setAttribute('name', 'quiz_' + i + '_check');
+        document.querySelectorAll('.check_hidden')[i - 1].setAttribute('name', 'quiz_' + i + '_check');
+
+        if (document.querySelectorAll('.check')[i - 1].checked) {
+            document.querySelectorAll('.check_hidden')[i - 1].disabled = true;
         }
     }
 }
