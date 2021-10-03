@@ -29,55 +29,67 @@
     </div>
 
     <!-- Quiz basic details -->
-    <form class="details" method="post">
+    <form class="details" method="post" id="form">
         <ol class="all-questions">
             <li class="question-container">
-                <div class="question">
-                    Which of the following is not an operating system?
+<!--                <div class="choice-que-1">-->
+<!--                    <div class="question">-->
+<!--                        Which of the following is not an operating system?-->
+<!--                    </div>-->
+<!--                    <ol>-->
+<!--                        <li class="answer">Windows</li>-->
+<!--                        <li class="answer">Linux</li>-->
+<!--                        <li class="answer">Oracle</li>-->
+<!--                        <li class="answer">DOS</li>-->
+<!--                    </ol>-->
+<!--                </div>-->
+                <div class="short-ans-1">
+                    <label for="short-1">When was the first operating system developed?</label>
+                    <input type="text" id="short-1">
                 </div>
-                <ol>
-                    <li class="answer" onclick="showChange()">Windows</li>
-                    <li class="answer">Linux</li>
-                    <li class="answer">Oracle</li>
-                    <li class="answer">DOS</li>
-                </ol>
             </li>
             <li class="question-container">
-                <div class="question">
-                    What is the maximum length of the filename in DOS?
+                <div class="choice-que-2">
+                    <div class="question">
+                        Which of the following is not an operating system?
+                    </div>
+                    <ol>
+                        <li class="answer">Windows</li>
+                        <li class="answer">Linux</li>
+                        <li class="answer">Oracle</li>
+                        <li class="answer">DOS</li>
+                    </ol>
                 </div>
-                <ol>
-                    <li class="answer">4</li>
-                    <li class="answer">5</li>
-                    <li class="answer">8</li>
-                    <li class="answer">12</li>
-                </ol>
+<!--                <div class="short-ans-2">-->
+<!--                    <label for="short-2">When was the first operating system developed?</label>-->
+<!--                    <input type="text" id="short-2">-->
+<!--                </div>-->
             </li>
         </ol>
 
-        <button type="submit" class="done" onclick="displayResults()">Submit</button>
+        <button type="submit" class="done" id="submit-btn">Submit</button>
 
     </form>
 
     <!--quizCompletedResult-->
-    <div class="quizCompleted has-text-centered">
+    <div class="quizCompleted has-text-centered" id="result">
 
         <!-- quizCompletedIcon: Achievement Icon -->
         <span class="icon">
 <!--                <i class="fa" :class="score()>3?'fa-check-circle-o is-active':'fa-times-circle'"></i>-->
-<!--      if(score<4): <i class="fa fa-times-circle is-active"></i>-->
-<!--            else-->
+            <!--      if(score<4): <i class="fa fa-times-circle is-active"></i>-->
+            <!--            else-->
             <i class="fa fa-check-circle-o is-active"></i>
         </span>
 
         <!--resultTitleBlock-->
         <h2 class="title">
-                You did a good job!
-<!--            You did {{ (score()>7?'an amazing':(score()<4?'a poor':'a good')) }} job!-->
+            You did a good job!
+            <!--            You did {{ (score()>7?'an amazing':(score()<4?'a poor':'a good')) }} job!-->
         </h2>
         <p class="subtitle">
-                Total score: 6/10
-<!--            Total score: {{ score() }} / {{ quiz.questions.length }}-->
+            Total score: 6/10
+            <!--            Total score: {{ score() }} / {{ quiz.questions.length }}-->
         </p>
         <br>
         <!--/resultTitleBlock-->
