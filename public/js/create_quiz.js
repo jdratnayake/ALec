@@ -10,7 +10,7 @@ class UI {
             <div class="form-header">
                 <h4 class="heading">Question 1</h4> 
 
-                <input type="hidden" name="type" value="1"> 
+                <input type="hidden" name="type" value="1" class="hidden_quiz_no"> 
 
                 <!-- Select question type -->
                 <div class="radio-inline">
@@ -29,8 +29,8 @@ class UI {
                 </div>
         
 <!--            check whether multiple answers or not-->
-                <input type="checkbox" class="check" value="true">
-                <input type="hidden" value="false" class="check_hidden">
+                <input type="hidden" class="check_hidden" value ="false">
+                <input type="checkbox" class="check" value = "true">
                 <label>multiple answers</label><br>
                 
                 <!-- Answers list - START -->
@@ -182,7 +182,7 @@ class UI {
         //Change Question no txt
         document.querySelectorAll('h4.heading')[i - 1].innerHTML = 'Question ' + i;
         //Set hidden attribute value
-        document.querySelectorAll('.question input[type="hidden"]')[i - 1].setAttribute('value', i);
+        document.querySelectorAll('.hidden_quiz_no')[i - 1].setAttribute('value', i);
         //Set Radio button values
         document.querySelectorAll('.radio-inline .mcq')[i - 1].setAttribute('name', 'q' + i + '_type');
         document.querySelectorAll('.radio-inline .short')[i - 1].setAttribute('name', 'q' + i + '_type');
@@ -212,12 +212,10 @@ class UI {
         document.querySelectorAll('.points.short')[i - 1].setAttribute('name', 'q' + i + '_shortanswer_point');
 
         //Multiple Choice
-        document.querySelectorAll('.check')[i - 1].setAttribute('name', 'quiz_' + i + '_check');
         document.querySelectorAll('.check_hidden')[i - 1].setAttribute('name', 'quiz_' + i + '_check');
+        document.querySelectorAll('.check')[i - 1].setAttribute('name', 'quiz_' + i + '_check');
 
-        if (document.querySelectorAll('.check')[i - 1].checked) {
-            document.querySelectorAll('.check_hidden')[i - 1].disabled = true;
-        }
+        document.querySelectorAll('.check_hidden')[i - 1].disabled = !!document.querySelectorAll('.check')[i - 1].checked;
     }
 }
 
