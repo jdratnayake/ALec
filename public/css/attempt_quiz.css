@@ -427,24 +427,32 @@ footer p {
 .form-content .details .all-questions .question-container .answer {
   border-radius: 290486px;
   padding: 8px 16px;
-  margin: 0 18px 12px 18px;
+  margin: 0 18px 12px 0;
   background-color: rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.85);
   border: transparent 1px solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   cursor: pointer;
 }
 .form-content .details .all-questions .question-container .answer:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.form-content .details .all-questions .question-container .short-ans-1 {
+.form-content .details .all-questions .question-container .short-ans {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
-.form-content .details .all-questions .question-container .short-ans-1 input {
+.form-content .details .all-questions .question-container .short-ans input {
   background-color: rgba(0, 0, 0, 0.05);
-  border: #008bcc 1px solid;
+  border: none;
   padding: 8px 16px;
-  margin-left: 20px;
+  border-radius: 290486px;
+  width: 50%;
+}
+.form-content .details .all-questions .question-container .short-ans input:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* --------------BUTTON STYLES START----------------*/
@@ -458,6 +466,7 @@ footer p {
   border: 2px solid #00699a;
   font-weight: bold;
   border-radius: 5px;
+  margin-top: 20px;
 }
 .done:hover {
   border: 2px solid #008bcc;
