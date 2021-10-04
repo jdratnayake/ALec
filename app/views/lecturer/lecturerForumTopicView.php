@@ -32,7 +32,7 @@ $courseCode = explode("-", $temp)[0];
         </div>
 
         <div class="discussion-list">
-            <button>
+            <button onclick="window.location='<?php echo BASEURL . '/askForumQuestion/index/' . $data["forumDetails"]["forum_id"]; ?>' ">
                 <span class="button-title">
                     <i class="fas fa-plus"></i>
 
