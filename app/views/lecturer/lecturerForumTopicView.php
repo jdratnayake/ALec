@@ -51,6 +51,7 @@ $courseCode = explode("-", $temp)[0];
                         <div class="col col-2">Started by</div>
                         <div class="col col-3">Last post</div>
                         <div class="col col-4 reply">Replies</div>
+<!--                        <div class="col col-5 vote">Votes</div>-->
                     </li>
 
                     <li class="table-row">
@@ -87,9 +88,20 @@ $courseCode = explode("-", $temp)[0];
                             </div>
                         </div>
 
-                        <div class="col col-4 reply-count" data-label="Replies">0</div>
-                    </li>
+                        <div class="col col-4 reply-count" data-label="Replies">
+                            <div class="val">0</div>
+                            <div class="vote">
+                                <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
 
+<!--                        <div class="col col-5 vote" data-label="Votes">-->
+<!--                                <i class="fa fa-caret-up" aria-hidden="true"></i>-->
+<!--                                <i class="fa fa-caret-down" aria-hidden="true"></i>-->
+<!--                        </div>-->
+
+                    </li>
 
                 </ul>
             </div>

@@ -409,9 +409,7 @@ footer p {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 0 2px;
-  margin-top: 40px;
-  margin-bottom: 25px;
+  margin: 40px 2px 25px 2px;
   cursor: pointer;
 }
 .forum-container .discussion-list button .button-title .space-tag {
@@ -446,7 +444,7 @@ footer p {
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .table-row {
   background-color: #ffffff;
-  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
   /*==============================================================================*/
   /*PROFILE CARD - START*/
   /*==============================================================================*/
@@ -489,6 +487,16 @@ footer p {
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .table-row .reply-count {
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.forum-container .discussion-list .discussion-table-container .discussion-table .table-row .reply-count .vote {
+  display: grid;
+  align-content: center;
+  font-size: 30px;
+  padding-left: 5px;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .col-1 {
   flex-basis: 50%;
@@ -500,7 +508,7 @@ footer p {
   flex-basis: 20%;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .col-4 {
-  flex-basis: 10%;
+  flex-basis: 8%;
 }
 @media all and (max-width: 767px) {
   .forum-container .discussion-list .discussion-table-container .discussion-table .table-header {
