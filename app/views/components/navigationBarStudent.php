@@ -18,14 +18,14 @@
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/studentCoursePage/index'; ?>">
                         <i class="fa fa-graduation-cap"></i>
                         <span class="links_name">My Courses</span>
                     </a>
                     <span class="tooltip">My Courses</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/studentCoursePageForum/index'; ?>">
                         <i class="far fa-comment-alt"></i>
                         <span class="links_name">Forum</span>
                     </a>

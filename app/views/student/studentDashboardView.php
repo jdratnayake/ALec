@@ -21,7 +21,7 @@
 
     <div class="navigation-item-container">
 
-        <div class="navigation-tab">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/studentCoursePage/index'; ?>' ">
             <div class="row">
                 <i class="fa fa-graduation-cap"></i>
             </div>
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="navigation-tab">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/studentCoursePageForum/index'; ?>' ">
             <div class="row">
                 <i class="far fa-comment-alt"></i>
             </div>
