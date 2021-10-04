@@ -11,6 +11,11 @@ class LecturerTopicPage extends AlecFramework
 
     public function index($courseId)
     {
-        $this->view("lecturer/lecturerTopicPageView");
+        $data["courseName"] = $this->lecturerTopicPageModel->getCourseName($courseId);
+        $data["topicDetails"] = $this->lecturerTopicPageModel->getTopicDetails($courseId);
+        $data["topicQuizSummary"] = $this->lecturerTopicPageModel->getQuizCount($courseId);
+        $data["quizDetails"] = $this->lecturerTopicPageModel->getQuizDetails($courseId);
+
+        $this->view("lecturer/lecturerTopicPageView", $data);
     }
 }
