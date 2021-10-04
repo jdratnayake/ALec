@@ -42,24 +42,31 @@ $light_color: white;
       label{
         width: 250px;
       }
-      .input-box{
+      .right-side{
         width: 100%;
         margin-bottom: 5px;
-        padding: 6px 12px;
-        color: #495057FF;
-        background-color: #FFFFFFFF;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        border-bottom-width: 2px;
 
-        &:hover{
-          //border-bottom-width: 2px;
-          box-shadow: 0 0 5px #7697B3FF;
+        .input-box{
+          width: 100%;
+          padding: 6px 12px;
+          color: #495057FF;
+          background-color: #FFFFFFFF;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: 4px;
+          transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+          border-bottom-width: 2px;
+
+          &:hover{
+            //border-bottom-width: 2px;
+            box-shadow: 0 0 5px #7697B3FF;
+          }
+        }
+        .error{
+          color: red;
+          font-size: 80%;
         }
       }
-
     }
   }
 
