@@ -32,6 +32,15 @@
     <form class="details" method="post" id="form">
         <ol class="all-questions">
             <li class="question-container">
+                <div class="question">
+                    Which of the following is not an operating system?
+                </div>
+                <ol>
+                    <li class="answer">Windows</li>
+                    <li class="answer">Linux</li>
+                    <li class="answer">Oracle</li>
+                    <li class="answer">DOS</li>
+                </ol>
 <!--                <div class="choice-que-1">-->
 <!--                    <div class="question">-->
 <!--                        Which of the following is not an operating system?-->
