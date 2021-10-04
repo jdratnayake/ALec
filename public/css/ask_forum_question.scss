@@ -38,13 +38,15 @@ $light_color: white;
 
     .form-group{
       display: flex;
+      margin-bottom: 10px;
 
       label{
         width: 250px;
       }
       .right-side{
         width: 100%;
-        margin-bottom: 5px;
+
+        input{margin-bottom: 5px;}
 
         .input-box{
           width: 100%;
@@ -55,16 +57,17 @@ $light_color: white;
           border: 1px solid #ced4da;
           border-radius: 4px;
           transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-          border-bottom-width: 2px;
+          //border-bottom-width: 2px;
 
           &:hover{
-            //border-bottom-width: 2px;
+            border-bottom-width: 2px;
             box-shadow: 0 0 5px #7697B3FF;
           }
         }
         .error{
           color: red;
           font-size: 80%;
+          padding-left: 5px;
         }
       }
     }

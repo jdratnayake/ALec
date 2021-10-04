@@ -29,14 +29,14 @@
             <label for="subject">Subject</label>
             <div class="right-side">
                 <input type="text" id="subject" class="input-box">
-                <div class="error" id="error">error</div>
+                <div class="error">error</div>
             </div>
         </div>
         <div class="form-group">
             <label for="question">Question</label>
             <div class="right-side">
-            <textarea name="question" id="question" cols="30" rows="10" class="input-box"></textarea>
-            <div class="error" id="error">error</div>
+                <textarea name="question" id="question" cols="30" rows="10" class="input-box"></textarea>
+                <div class="error">error</div>
             </div>
         </div>
 

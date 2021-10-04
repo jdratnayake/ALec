@@ -409,12 +409,15 @@ footer p {
 }
 .forum-container form .form-group {
   display: flex;
+  margin-bottom: 10px;
 }
 .forum-container form .form-group label {
   width: 250px;
 }
 .forum-container form .form-group .right-side {
   width: 100%;
+}
+.forum-container form .form-group .right-side input {
   margin-bottom: 5px;
 }
 .forum-container form .form-group .right-side .input-box {
@@ -426,14 +429,15 @@ footer p {
   border: 1px solid #ced4da;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-bottom-width: 2px;
 }
 .forum-container form .form-group .right-side .input-box:hover {
+  border-bottom-width: 2px;
   box-shadow: 0 0 5px #7697B3FF;
 }
 .forum-container form .form-group .right-side .error {
   color: red;
   font-size: 80%;
+  padding-left: 5px;
 }
 
 /* --------------BUTTON STYLES START----------------*/
