@@ -24,7 +24,7 @@
         </header>
 
         <!-- Quiz basic details -->
-        <form class="details" method="post" action='<?php echo BASEURL . "/test/submit"; ?>'>
+        <form class="details" method="post" action='<?php echo BASEURL . "/createQuizDashboard/index"; ?>'>
             <div>
                 <!-- select course drop down list -->
                 <div class="form-group details">

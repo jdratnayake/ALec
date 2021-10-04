@@ -13,6 +13,8 @@ class CreateQuizDashboard extends AlecFramework
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // var_dump(array_filter($_POST));
+            // return true;
+
             $count = $_POST["type"];
 
             $quizName = $_POST["quiz-name"];
@@ -37,7 +39,12 @@ class CreateQuizDashboard extends AlecFramework
                 $questionType = $_POST["q{$questionNo}_type"];
 
                 if ($questionType == "value_mcq") {
-                    $questionType = "mcq";
+                    if ($_POST["quiz_{$questionNo}_check"] == "true") {
+                        $questionType = "mcq-m";
+                    } else if ($_POST["quiz_{$questionNo}_check"] == "false") {
+                        $questionType = "mcq-s";
+                    }
+
                     $question = $_POST["q{$questionNo}_mcq"];
                 } else if ($questionType == "value_short") {
                     $questionType = "short ans";
@@ -49,7 +56,7 @@ class CreateQuizDashboard extends AlecFramework
 
                 $questionId = $this->createQuizDashboardModel->insertQuizQuestion($quizId, $question, $questionType);
 
-                if ($questionType == "mcq") {
+                if ($questionType == "mcq-s" || $questionType == "mcq-m") {
                     $choiceNo = 1;
 
                     while (

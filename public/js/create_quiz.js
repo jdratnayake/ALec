@@ -50,7 +50,7 @@ class UI {
                         <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
-                        <option value="100">-100% </option>
+                        <option value="-100">-100% </option>
                     </select>
                     <label>points</label>
                 </div>
@@ -71,7 +71,7 @@ class UI {
                         <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
-                        <option value="100">-100% </option>
+                        <option value="-100">-100% </option>
                     </select>
                     <label>points</label>
                 </div>
@@ -92,7 +92,7 @@ class UI {
                         <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
-                        <option value="100">-100% </option>
+                        <option value="-100">-100% </option>
                     </select>
                     <label>points</label>
                 </div>
@@ -113,7 +113,7 @@ class UI {
                         <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
-                        <option value="100">-100% </option>
+                        <option value="-100">-100% </option>
                     </select>
                     <label>points</label>
                 </div>
@@ -134,7 +134,7 @@ class UI {
                         <option value="-33"> -33.33% </option>
                         <option value="-50"> -50% </option>
                         <option value="-75"> -75% </option>
-                        <option value="100">-100% </option>
+                        <option value="-100">-100% </option>
                     </select>
                     <label>points</label>
                 </div>
@@ -224,22 +224,22 @@ UI.addQuestion();
 
 //Event Listener to Add Question
 document.getElementById('add-question').addEventListener('click', () => {
-        UI.addQuestion();
-    }
+    UI.addQuestion();
+}
 );
 //Event Listener to Remove Question
 document.getElementById('form').addEventListener('click', (e) => {
-        UI.removeQuestion(e.target);
-    }
+    UI.removeQuestion(e.target);
+}
 );
 //Event Listener to Toggle between MCQ and Short Ans
 document.querySelector('#form').addEventListener('click', (e) => {
-        if (e.target.classList.contains('mcq')) {
-            document.getElementById('shortans_' + e.target.parentElement.parentElement.parentElement.id).style.display = "none";
-            document.getElementById('mcq_' + e.target.parentElement.parentElement.parentElement.id).style.display = "block";
-        } else if (e.target.classList.contains('short')) {
-            document.getElementById('mcq_' + e.target.parentElement.parentElement.parentElement.id).style.display = "none";
-            document.getElementById('shortans_' + e.target.parentElement.parentElement.parentElement.id).style.display = "block";
-        }
+    if (e.target.classList.contains('mcq')) {
+        document.getElementById('shortans_' + e.target.parentElement.parentElement.parentElement.id).style.display = "none";
+        document.getElementById('mcq_' + e.target.parentElement.parentElement.parentElement.id).style.display = "block";
+    } else if (e.target.classList.contains('short')) {
+        document.getElementById('mcq_' + e.target.parentElement.parentElement.parentElement.id).style.display = "none";
+        document.getElementById('shortans_' + e.target.parentElement.parentElement.parentElement.id).style.display = "block";
     }
+}
 );
