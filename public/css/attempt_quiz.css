@@ -417,14 +417,14 @@ footer p {
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
-.form-content .details .all-questions .question-container .question {
+.form-content .details .all-questions .question-container .choice-que-1 .question {
   margin-bottom: 18px;
 }
-.form-content .details .all-questions .question-container li {
+.form-content .details .all-questions .question-container .choice-que-1 li {
   list-style-type: lower-alpha;
   margin-left: 35px;
 }
-.form-content .details .all-questions .question-container .answer {
+.form-content .details .all-questions .question-container .choice-que-1 .answer {
   border-radius: 290486px;
   padding: 8px 16px;
   margin: 0 18px 12px 18px;
@@ -433,8 +433,18 @@ footer p {
   border: transparent 1px solid;
   cursor: pointer;
 }
-.form-content .details .all-questions .question-container .answer:hover {
+.form-content .details .all-questions .question-container .choice-que-1 .answer:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+.form-content .details .all-questions .question-container .short-ans-1 {
+  display: flex;
+  align-items: center;
+}
+.form-content .details .all-questions .question-container .short-ans-1 input {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: #008bcc 1px solid;
+  padding: 8px 16px;
+  margin-left: 20px;
 }
 
 /* --------------BUTTON STYLES START----------------*/
@@ -457,17 +467,20 @@ footer p {
 
 /* --------------BUTTON STYLES END----------------*/
 /* --------------QUIZ COMPLETED START----------------*/
-.quizCompleted {
+#result {
   display: none;
+}
+
+.quizCompleted {
   width: 100%;
   padding: 1rem;
   text-align: center;
 }
-.quizCompleted > .icon {
+.quizCompleted .icon {
   color: #FF5252;
   font-size: 5rem;
 }
-.quizCompleted > .icon .is-active {
+.quizCompleted .icon .is-active {
   color: #00E676;
 }
 

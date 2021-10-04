@@ -1,18 +1,19 @@
-let click_ans = document.getElementsByClassName('.answer');
-// click_ans.addEventListener("click", showChange);
+document.querySelector('.all-questions').addEventListener('click', (e) => {
+    if(e.target.classList.contains('answer')){
+        if(e.target.style.backgroundColor === "white"){
+            e.target.style.backgroundColor = "rgba(0, 0, 0, 0.05)";
+            e.target.style.border = "transparent 1px solid";
+        }
+        else{
+            e.target.style.borderColor = "#008BCC";
+            e.target.style.backgroundColor = "white";
+        }
+    }
+});
 
-function showChange() {
-    click_ans.style.backgroundColor = "white";
-    click_ans.style.borderColor =  "rgba(black,0.25)";
-}
+document.querySelector('.done').addEventListener('click', (e) => {
+    if(e.target.classList.contains('done')){
+        e.target.style.display = "block";
+    }
+});
 
-let done = document.getElementsByClassName('done');
-// done.addEventListener("click", displayResults);
-
-function displayResults() {
-    let main_content = document.getElementsByClassName('details');
-    let next_content = document.getElementsByClassName('.quizCompleted');
-
-    next_content.style.display = "block";
-    main_content.style.display = "none";
-}
