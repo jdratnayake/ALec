@@ -56,3 +56,47 @@ document.getElementById("assign-button").addEventListener("click", function () {
 document.getElementById("remove-button").addEventListener("click", function () {
     setCookie("buttonIdStu", "remove-button", 30);
 });
+
+document.getElementById("search-form").addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+
+
+$(document).ready(function () {
+    // LIVE SEARCH START
+
+    function loadData(data, operation, type, courseId) {
+        $.ajax({
+            type: "GET",
+
+            url: "http://localhost/ALec/manageUser/search/" + data + "/" + operation + "/" + type + "/" + courseId,
+            dataType: "html",
+
+            success: function (response) {
+                $("#table-content").html(response);
+            }
+        })
+    }
+
+    $("#search").keyup(function () {
+        let search = $(this).val();
+        let operation = "Assign";
+        let type = $("#user-type").val();
+        let courseId = $("#course-id").val();
+
+        if ($("#remove-button").hasClass("active-type")) {
+            operation = "Remove";
+        }
+
+        // console.log(search);
+        // console.log(operation);
+        // console.log(type);
+        // console.log(courseId);
+
+        if (search != "") {
+            loadData(search, operation, type, courseId);
+        }
+    });
+
+    // LIVE SEARCH END
+})

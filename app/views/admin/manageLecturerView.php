@@ -26,13 +26,15 @@
         <div class="top">
             <!--    Assign user button-->
             <button id="remove-button" class="dropbtn" value="remove" onclick="location.href='<?php echo BASEURL . '/manageUser/assignUser/' . $data["courseId"] . '/' .  $data["type"]  ?>'">Remove Lecturer</button>
-            <button id="assign-button" class="dropbtn active-type" value="assign" onclick="location.href='<?php echo BASEURL . '/manageUser/index/' . $data["courseId"] . '/' .  $data["type"] ?>'">Assign Student</button>
+            <button id="assign-button" class="dropbtn active-type" value="assign" onclick="location.href='<?php echo BASEURL . '/manageUser/index/' . $data["courseId"] . '/' .  $data["type"] ?>'">Assign Lecturer</button>
         </div>
 
         <!--    Search bar     -->
-        <form class="search-bar">
+        <form class="search-bar" id="search-form">
+            <input type="hidden" id="user-type" value="lec">
+            <input type="hidden" id="course-id" value="<?php echo $data['courseId']; ?>">
             <label for="search_bar"></label>
-            <input id="search_bar" type="text" placeholder="Search.." name="search">
+            <input type="text" placeholder="Search.." name="search" id="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
 
@@ -51,7 +53,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody id="table-content">
                 <?php
                 $count = 1;
                 while ($row = mysqli_fetch_assoc($data["userDetails"])) {
@@ -88,6 +90,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("manageLecturer"); ?>
 </body>

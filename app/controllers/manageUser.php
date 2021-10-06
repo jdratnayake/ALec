@@ -54,4 +54,11 @@ class ManageUser extends AlecFramework
         $this->manageUserModel->removeUser($courseId, $type, $userId);
         $this->assignUser($courseId, $type);
     }
+
+    public function search($data, $operation, $type, $courseId)
+    {
+        if (!empty($data) and !empty($operation) and !empty($type)) {
+            echo $this->manageUserModel->getSearchResults($data, $operation, $type, $courseId);
+        }
+    }
 }
