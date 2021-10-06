@@ -21,6 +21,13 @@ class userDetails extends AlecFramework
         // $this->view("admin/userDetailsView", $data);
     }
 
+    public function search($data)
+    {
+        if (!empty($data)) {
+            echo $this->userModel->getSearchResults($data);
+        }
+    }
+
     public function userProfile()
     {
         $this->view("admin/userProfileView");

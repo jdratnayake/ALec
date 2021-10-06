@@ -28,8 +28,8 @@
         <button class="add-button" onclick="location.href='<?php echo BASEURL . '/register/index' ?>'">Add New User</button>
 
         <!--    Search bar     -->
-        <form class="search-bar">
-            <input type="text" placeholder="Search.." name="search">
+        <form class="search-bar" id="search-form">
+            <input type="text" placeholder="Search.." name="search" id="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
 
