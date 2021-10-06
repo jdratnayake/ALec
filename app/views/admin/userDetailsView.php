@@ -39,6 +39,17 @@
             <button id="lec" class="type">Lecturers</button>
             <button id="stu" class="type">Students</button>
         </div>
+
+        <div class="year-selection">
+            <label for="year">Select the year</label>
+            <select name="year" id="year">
+                <option value="all_year" selected>All years</option>
+                <option value="1st_year">1st year</option>
+                <option value="2nd_year">2nd year</option>
+                <option value="3rd_year">3rd year</option>
+                <option value="4th_year">4th year</option>
+            </select>
+        </div>
     </div>
 
     <div class="table-container">
