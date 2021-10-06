@@ -20,6 +20,21 @@
     <?php linkPhp("navigationBarAdmin"); ?>
     <div class="navigation-item-container">
 
+        <div class="navigation-tab" onclick="myFunction()">
+            <div class="row">
+                <i class="fa fa-rocket"></i>
+            </div>
+            <div class="row">
+                <div class="title">
+                    Quick access
+                </div>
+            </div>
+            <div class="dropdown-content" id="dropdown-content">
+                <a id="create-users-btn">Create multiple accounts</a>
+                <a href="#">Assign multiple accounts</a>
+            </div>
+        </div>
+
         <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/userDetails/index'; ?>' ">
             <div class="row">
                 <i class="fas fa-user"></i>
@@ -51,6 +66,31 @@
                     Badges
                 </div>
             </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="create-users-model" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Create multiple user accounts</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Enter .txt file with all the users<br><br>
+                        Note: Each user should be in a newline in the format indexNo emailAddress<br>
+                        eg: 1266786 John Silva
+                    </p>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        Upload file:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload file" name="submit" class="upload-btn">
+                    </form>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -95,6 +135,9 @@
     <?php linkJS("slideShow"); ?>
 
     <?php linkJS("courseDetails"); ?>
+
+    <?php linkJS("dashboard_boost");?>
+
 </body>
 
 </html>
