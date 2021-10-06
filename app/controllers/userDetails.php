@@ -21,6 +21,11 @@ class userDetails extends AlecFramework
         // $this->view("admin/userDetailsView", $data);
     }
 
+    public function year($year)
+    {
+        echo $this->userModel->getFilteredUserDetailsByYear($year);
+    }
+
     public function search($data)
     {
         if (!empty($data)) {
