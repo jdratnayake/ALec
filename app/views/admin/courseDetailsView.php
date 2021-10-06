@@ -27,8 +27,8 @@
         <button class="add-button" onclick="location.href='<?php echo BASEURL . '/addNewCourse/index' ?>'">Add New Course</button>
 
         <!--    Search bar     -->
-        <form class="search-bar">
-            <input type="text" placeholder="Search.." name="search">
+        <form class="search-bar" id="search-form" id="search">
+            <input type="text" placeholder="Search.." name="search" id="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
 

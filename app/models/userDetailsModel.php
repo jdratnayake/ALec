@@ -50,13 +50,11 @@ class userDetailsModel extends Database
     public function getSearchResults($data)
     {
         $data = mysqli_real_escape_string($GLOBALS["db"], $data);
-        $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE first_name LIKE '%$data%'";
+        $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE first_name LIKE '%$data%' OR
+        last_name LIKE '%$data%'
+        ";
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        if (mysqli_num_rows($result) == 0) {
-            $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE last_name LIKE '%$data%'";
-            $result = mysqli_query($GLOBALS["db"], $query);
-        }
 
         if (mysqli_num_rows($result) == 0) {
             $query = "SELECT user.user_id, first_name, last_name, user_type FROM user INNER JOIN lecturer ON
