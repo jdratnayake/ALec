@@ -72,7 +72,7 @@
 
             </ol>
 
-            <button type="submit" class="done">Done</button>
+            <button id="publish-btn"  type="submit" class="done">Publish</button>
 
         </div>
 
@@ -96,7 +96,7 @@
                             <input type="datetime-local" id="closedatetime" name="closedatetime">
                         </div>
 
-                        <input id="publish-btn" type="submit" value="Save" name="submit" class="upload-btn">
+                        <input type="submit" value="Save" name="submit" class="upload-btn">
                     </form>
                 </div>
             </div>
@@ -107,6 +107,8 @@
     <?php linkPhp("notification"); ?>
 
     <?php linkPhp("footer"); ?>
+
+    <?php linkJS("previewQuiz"); ?>
 
 </body>
 
