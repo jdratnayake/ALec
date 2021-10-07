@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="title">
-                    Quick access
+                    Quick Access
                 </div>
             </div>
             <div class="dropdown-content" id="dropdown-content">
@@ -74,16 +74,19 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Create Multiple User Accounts</h2>
                     <span class="close" id="close-one">&times;</span>
                     <h2>Create multiple user accounts</h2>
                 </div>
                 <div class="modal-body">
                     <p>
-                        Enter .txt file with all the users<br><br>
-                        Note: Each user should be in a newline in the format indexNo emailAddress<br>
-                        eg: 1266786 John Silva
+                        Enter .txt file with all the Students<br><br>
+                        Note: Each user should be in a newline in the format <br>
+                        FirstName LastName EmailAddress IndexNo<br>
+                        eg: Dinil Ratnayake dinilpansilu@gmail.com 19001411
                     </p>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
                         Upload file:
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <input type="submit" value="Upload file" name="submit" class="upload-btn">
@@ -181,9 +184,9 @@
 
     <?php linkJS("courseDetails"); ?>
 
-    <?php linkJS("dashboard_boost");?>
+    <?php linkJS("dashboard_boost"); ?>
 
-    <?php linkJS("dashboard_boost_modaltwo");?>
+    <?php linkJS("dashboard_boost_modaltwo"); ?>
 
 </body>
 

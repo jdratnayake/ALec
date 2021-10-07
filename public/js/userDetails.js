@@ -34,6 +34,7 @@ $(document).ready(function () {
         $("#lec").addClass("active-type");
         $("#stu").removeClass("active-type");
         $("#all").removeClass("active-type");
+        $("#year-selection").addClass("hidden-year");
 
         const temp = "lec";
         $('#header-title').text('Lecturer Details');
@@ -56,6 +57,7 @@ $(document).ready(function () {
         $("#stu").addClass("active-type");
         $("#lec").removeClass("active-type");
         $("#all").removeClass("active-type");
+        $("#year-selection").removeClass("hidden-year");
 
         const temp = "stu";
         $('#header-title').text('Student Details');
@@ -78,6 +80,7 @@ $(document).ready(function () {
         $("#all").addClass("active-type");
         $("#stu").removeClass("active-type");
         $("#lec").removeClass("active-type");
+        $("#year-selection").addClass("hidden-year");
 
         const temp = "all";
         $('#header-title').text('User Details');
@@ -90,6 +93,22 @@ $(document).ready(function () {
             // data: {
             //     courseId: temp
             // },
+            success: function (response) {
+                $("#table-content").html(response);
+            }
+        })
+    });
+
+    $("#year").change(function () {
+        let yearVal = $(this).children("option:selected").val();
+        // console.log(year);
+
+        $.ajax({
+            type: "GET",
+
+            url: "http://localhost/ALec/userDetails/year/" + yearVal,
+            dataType: "html",
+
             success: function (response) {
                 $("#table-content").html(response);
             }
