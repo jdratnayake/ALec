@@ -79,4 +79,14 @@ class AdminDashboard extends AlecFramework
             $this->index();
         }
     }
+
+    public function course()
+    {
+        echo $this->registerModel->getCourseDetails();
+    }
+
+    public function manageCourseParticiption()
+    {
+        var_dump($_POST);
+    }
 }

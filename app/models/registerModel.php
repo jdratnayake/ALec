@@ -54,4 +54,17 @@ class RegisterModel extends Database
 
         mysqli_query($GLOBALS['db'], $query);
     }
+
+    public function getCourseDetails()
+    {
+        $query = "SELECT course_id, course_name FROM course";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        $output = "";
+        while ($row = mysqli_fetch_assoc($result)) {
+            $output = $output . "<option value='" . $row["course_id"] . "'>" . $row["course_name"] . "</option>";
+        }
+
+        return $output;
+    }
 }

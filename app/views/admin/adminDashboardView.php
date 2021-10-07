@@ -105,7 +105,7 @@
                     <p>
                         Choose what you want to do<br><br>
                     </p>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo BASEURL . "/adminDashboard/manageCourseParticiption" ?>" method="post">
                         <div class="radio-btn">
                             <input type="radio" id="create-users" name="option" value="create-users">
                             <label for="create-users">Assign multiple users</label><br>
@@ -180,6 +180,8 @@
 
     <?php linkPhp("footer"); ?>
 
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
+
     <?php linkJS("basic") ?>
 
     <?php linkJS("slideShow"); ?>
@@ -190,6 +192,7 @@
 
     <?php linkJS("dashboard_boost_modaltwo"); ?>
 
+    <?php linkJS("adminDashboardCourseDisplay"); ?>
 </body>
 
 </html>
