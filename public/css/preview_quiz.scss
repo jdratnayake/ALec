@@ -153,18 +153,24 @@ $modal_color: #1ebb7f;
 
   .modal-body {
     padding: 16px;
+    display: flex;
+    justify-content: center;
 
     form{
       padding: 16px 0;
       display: inline-grid;
       justify-content: center;
-      justify-items: start;
+      justify-items: center;
 
-      input{
-        border: 1px solid $modal_color;
-        border-radius: 8px;
-        padding: 2px 15px;
-        margin: 2px;
+      .date-group{
+        margin-bottom: 10px;
+
+        input{
+          border: 1px solid $modal_color;
+          border-radius: 8px;
+          padding: 2px 15px;
+          margin: 2px;
+        }
       }
 
       .upload-btn{

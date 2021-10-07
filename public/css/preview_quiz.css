@@ -520,14 +520,19 @@ footer p {
 }
 .modal-content .modal-body {
   padding: 16px;
+  display: flex;
+  justify-content: center;
 }
 .modal-content .modal-body form {
   padding: 16px 0;
   display: inline-grid;
   justify-content: center;
-  justify-items: start;
+  justify-items: center;
 }
-.modal-content .modal-body form input {
+.modal-content .modal-body form .date-group {
+  margin-bottom: 10px;
+}
+.modal-content .modal-body form .date-group input {
   border: 1px solid #1ebb7f;
   border-radius: 8px;
   padding: 2px 15px;
