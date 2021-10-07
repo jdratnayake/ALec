@@ -291,6 +291,34 @@ $modal_color: #1ebb7f;
 
 
 
+/*==============================================================================*/
+/*YEAR SELECTION - START*/
+/*==============================================================================*/
+
+.year-selection, .course-selection{
+    margin: 10px 0 5px 0;
+    display: flex;
+
+    label{color: dimgrey;}
+
+    select{
+        border: 1px solid $theme_second;
+        padding: 2px 22px;
+        border-radius: 8px;
+
+        option{
+            &:hover{
+                background-color: #e8f8ff;
+            }
+        }
+    }
+}
+
+
+/*==============================================================================*/
+/*YEAR SELECTION - END*/
+/*==============================================================================*/
+
 
 
 

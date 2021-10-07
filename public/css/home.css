@@ -648,5 +648,27 @@ footer p {
 /*==============================================================================*/
 /*MODAL - END*/
 /*==============================================================================*/
+/*==============================================================================*/
+/*YEAR SELECTION - START*/
+/*==============================================================================*/
+.year-selection, .course-selection {
+  margin: 10px 0 5px 0;
+  display: flex;
+}
+.year-selection label, .course-selection label {
+  color: dimgrey;
+}
+.year-selection select, .course-selection select {
+  border: 1px solid #00699a;
+  padding: 2px 22px;
+  border-radius: 8px;
+}
+.year-selection select option:hover, .course-selection select option:hover {
+  background-color: #e8f8ff;
+}
+
+/*==============================================================================*/
+/*YEAR SELECTION - END*/
+/*==============================================================================*/
 
 /*# sourceMappingURL=home.css.map */

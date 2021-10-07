@@ -31,7 +31,7 @@
             </div>
             <div class="dropdown-content" id="dropdown-content">
                 <a id="create-users-btn">Create multiple accounts</a>
-                <a href="#">Assign multiple accounts</a>
+                <a id="manage-accounts-btn">Manage multiple accounts</a>
             </div>
         </div>
 
@@ -74,7 +74,7 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close">&times;</span>
+                    <span class="close" id="close-one">&times;</span>
                     <h2>Create multiple user accounts</h2>
                 </div>
                 <div class="modal-body">
@@ -87,6 +87,51 @@
                         Upload file:
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <input type="submit" value="Upload file" name="submit" class="upload-btn">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div id="manage-users-model" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="close-two">&times;</span>
+                    <h2>Manage multiple user accounts</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Choose what you want to do<br><br>
+                    </p>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input type="radio" id="create-users" name="option" value="create-users">
+                        <label for="create-users">Assign multiple users</label><br>
+                        <input type="radio" id="manage-users" name="option" value="manage-users">
+                        <label for="manage-users">Delete multiple users</label><br>
+
+                        <div class="year-selection">
+                            <label for="year">Select the year</label>
+                            <select name="year" id="year">
+                                <option value="all_year" selected>All years</option>
+                                <option value="1st_year">1st year</option>
+                                <option value="2nd_year">2nd year</option>
+                                <option value="3rd_year">3rd year</option>
+                                <option value="4th_year">4th year</option>
+                            </select>
+                        </div>
+
+                        <div class="course-selection">
+                            <label for="COURSE">Select the course module</label>
+                            <select name="COURSE" id="COURSE">
+                                <option value="course_00" selected>No course selected</option>
+                                <option value="course_01">course_01</option>
+                                <option value="course_02">course_02</option>
+                            </select>
+                        </div>
+
+                        <input type="submit" value="Submit" name="submit" class="upload-btn">
+
                     </form>
                 </div>
             </div>
@@ -137,6 +182,8 @@
     <?php linkJS("courseDetails"); ?>
 
     <?php linkJS("dashboard_boost");?>
+
+    <?php linkJS("dashboard_boost_modaltwo");?>
 
 </body>
 
