@@ -70,33 +70,36 @@
 
                 ?>
 
-                <!-- <li class='question-container'>
-                    <div class='question'>
-                        Which of the following is not an operating system?
-                    </div>
-                    <ol>
-                        <li class='answer'>
-                            Windows
-                            <div class='points'>0%</div>
-                        </li>
-                        <li class='answer'>
-                            Linux
-                            <div class='points'>0%</div>
-                        </li>
-                        <li class='answer'>
-                            Oracle
-                            <div class='points'>100%</div>
-                        </li>
-                        <li class='answer'>
-                            DOS
-                            <div class='points'>0%</div>
-                        </li>
-                    </ol>
-                </li> -->
-
             </ol>
 
             <button type="submit" class="done">Done</button>
+
+        </div>
+
+        <!-- The Modal -->
+        <div id="quiz-info-model" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Quiz details</h2>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="date-group">
+                            <label for="publishdatetime">Publish date and time:</label>
+                            <input type="datetime-local" id="publishdatetime" name="publishdatetime">
+                        </div>
+                        <div class="date-group">
+                            <label for="closedatetime">Close date and time:</label>
+                            <input type="datetime-local" id="closedatetime" name="closedatetime">
+                        </div>
+
+                        <input id="publish-btn" type="submit" value="Save" name="submit" class="upload-btn">
+                    </form>
+                </div>
+            </div>
 
         </div>
     </div>

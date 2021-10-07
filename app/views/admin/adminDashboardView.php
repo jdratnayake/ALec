@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <!-- The Modal -->
+        <!-- The Create Users Modal -->
         <div id="create-users-model" class="modal">
 
             <!-- Modal content -->
@@ -93,6 +93,8 @@
             </div>
 
         </div>
+
+        <!-- The Manage Users Modal -->
         <div id="manage-users-model" class="modal">
 
             <!-- Modal content -->

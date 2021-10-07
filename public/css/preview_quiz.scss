@@ -10,6 +10,7 @@ $main_hover: $theme_second_hover;
 $answer_color: rgba(0,0,0,0.85);
 $answer_background: rgba(0, 0, 0, 0.05);
 $light: white;
+$modal_color: #1ebb7f;
 
 .form-content {
   padding: 16px;
@@ -66,7 +67,9 @@ $light: white;
     }
 }
 
-/* --------------BUTTON STYLES START----------------*/
+/*==============================================================================*/
+/*BUTTON STYLES - START*/
+/*==============================================================================*/
 
 .edit, .done, .dlt {
   cursor: pointer;
@@ -111,7 +114,95 @@ $light: white;
   padding: 10px 50px;
 }
 
+/*==============================================================================*/
+/*BUTTON STYLES - END*/
+/*==============================================================================*/
 
 
-/* --------------BUTTON STYLES END----------------*/
+/*==============================================================================*/
+/*MODAL - START*/
+/*==============================================================================*/
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
+
+  .modal-header {
+    padding: 8px 16px;
+    background-color: $modal_color;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 16px;
+
+    form{
+      padding: 16px 0;
+      display: inline-grid;
+      justify-content: center;
+      justify-items: start;
+
+      input{
+        border: 1px solid $modal_color;
+        border-radius: 8px;
+        padding: 2px 15px;
+        margin: 2px;
+      }
+
+      .upload-btn{
+        background-color: $modal_color;
+        border: 2px solid $modal_color;
+        color: white;
+        padding: 8px 40px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 10px;
+        font-weight: 600;
+        margin-top: 25px;
+        font-size: 15px;
+
+        &:hover{
+          background-color: white;
+          color: $modal_color;
+        }
+      }
+    }
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*==============================================================================*/
+/*MODAL - END*/
+/*==============================================================================*/
