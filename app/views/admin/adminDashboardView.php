@@ -74,17 +74,15 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h2>Create Multiple User Accounts</h2>
                     <span class="close" id="close-one">&times;</span>
                     <h2>Create multiple user accounts</h2>
                 </div>
                 <div class="modal-body">
                     <p>
                         Enter .txt file with all the Students<br><br>
-                        Note: Each user should be in a newline in the format <br>
+                        Note: Each user should be in a newline in the below format<br>
                         FirstName LastName EmailAddress IndexNo<br>
-                        eg: Dinil Ratnayake dinilpansilu@gmail.com 19001411
+                        eg: Dinil Ratnayake diniljanitha@gmail.com 19001411
                     </p>
                     <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
                         Upload file:

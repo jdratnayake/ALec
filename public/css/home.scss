@@ -247,7 +247,7 @@ $modal_color: #1ebb7f;
 
         form{
             padding: 16px 0;
-            display: table-caption;
+            display: inline-grid;
 
             .upload-btn{
                 background-color: $modal_color;
@@ -299,7 +299,10 @@ $modal_color: #1ebb7f;
     margin: 10px 0 5px 0;
     display: flex;
 
-    label{color: dimgrey;}
+    label{
+        color: dimgrey;
+        margin-right: 5px;
+    }
 
     select{
         border: 1px solid $theme_second;
