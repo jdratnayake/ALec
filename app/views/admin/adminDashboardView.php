@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <!-- The Modal -->
+        <!-- The Create Users Modal -->
         <div id="create-users-model" class="modal">
 
             <!-- Modal content -->
@@ -80,9 +80,9 @@
                 <div class="modal-body">
                     <p>
                         Enter .txt file with all the Students<br><br>
-                        Note: Each user should be in a newline in the below format<br>
+                        Note: Each user should be in a newline in the below format<br><br>
                         FirstName LastName EmailAddress IndexNo<br>
-                        eg: Dinil Ratnayake diniljanitha@gmail.com 19001411
+                        &nbsp;&nbsp;&nbsp;eg: Dinil Ratnayake diniljanitha@gmail.com 19001411
                     </p>
                     <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
                         Upload file:
@@ -93,6 +93,8 @@
             </div>
 
         </div>
+
+        <!-- The Manage Users Modal -->
         <div id="manage-users-model" class="modal">
 
             <!-- Modal content -->
@@ -106,10 +108,14 @@
                         Choose what you want to do<br><br>
                     </p>
                     <form action="<?php echo BASEURL . "/adminDashboard/manageCourseParticiption" ?>" method="post">
-                        <input type="radio" id="create-users" name="option" value="create-users">
-                        <label for="create-users">Assign multiple users</label><br>
-                        <input type="radio" id="manage-users" name="option" value="manage-users">
-                        <label for="manage-users">Delete multiple users</label><br>
+                        <div class="radio-btn">
+                            <input type="radio" id="create-users" name="option" value="create-users">
+                            <label for="create-users">Assign multiple users</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="manage-users" name="option" value="manage-users">
+                            <label for="manage-users">Delete multiple users</label><br>
+                        </div>
 
                         <div class="year-selection">
                             <label for="year">Select the year</label>

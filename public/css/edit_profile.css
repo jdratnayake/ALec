@@ -381,197 +381,111 @@ footer p {
 /*==============================================================================*/
 /*FOOTER - END*/
 /*==============================================================================*/
-/*Stylesheet of the display quiz page*/
-.form-content {
-  padding: 16px;
-  width: 51%;
+.details-content {
+  padding: 1rem;
+  width: 80%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
-}
-.form-content header {
-  text-align: center;
-  padding-bottom: 16px;
-  border-bottom: 5px solid #00699a;
-  margin-bottom: 20px;
-}
-.form-content .quiz-name {
-  text-align: left;
-  margin-bottom: 25px;
-}
-.form-content .details {
-  margin-bottom: 10px;
-}
-.form-content .details .all-questions {
-  margin-left: 15px;
-}
-.form-content .details .all-questions .question-container {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-.form-content .details .all-questions .question-container .question {
-  margin-bottom: 18px;
-}
-.form-content .details .all-questions .question-container li {
-  list-style-type: lower-alpha;
-  margin-left: 35px;
-}
-.form-content .details .all-questions .question-container .answer {
-  border-radius: 290486px;
-  padding: 8px 16px;
-  margin: 0 18px 12px 18px;
-  background-color: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.85);
-  border: transparent 1px solid;
-}
-.form-content .details .all-questions .question-container .answer .points {
-  float: right;
+  height: 87%;
+  background-color: #b7c8d64a;
+  overflow-y: hidden;
 }
 
-/*==============================================================================*/
-/*BUTTON STYLES - START*/
-/*==============================================================================*/
-.edit, .done, .dlt {
-  cursor: pointer;
-  font-size: 16px;
-  color: white;
+header {
   background-color: #00699a;
-  border: 2px solid #00699a;
+  color: #FFF;
+  padding: 15px;
+  text-align: center;
+  font-size: 30px;
   font-weight: bold;
+  margin: auto;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
-.edit:hover, .done:hover, .dlt:hover {
-  border: 2px solid #008bcc;
-  color: white;
-  background-color: #008bcc;
+
+.left-bar {
+  margin-top: 20px;
+  height: 100%;
+  float: left;
+  width: 240px;
+}
+.left-bar img {
+  width: 112%;
+  margin: 0;
+  border-radius: 5px;
 }
 
-.edit {
-  max-width: 250px;
-  float: right;
-  padding: 5px 15px;
+.buttons {
+  padding: 2px 8px;
+  margin-top: 10px;
+  background-color: #00699a;
+  color: #FFF;
+  border-radius: 5px;
+  border: 2px solid #00699a;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+}
+.buttons i {
   margin-right: 5px;
 }
-.edit i {
-  padding-right: 10px;
+.buttons:hover {
+  background-color: #008bcc;
+  border: 2px solid #008bcc;
 }
 
-.dlt {
-  max-width: 250px;
+.right-bar {
+  margin-top: 20px;
+  width: 72%;
   float: right;
-  padding: 5px 15px;
-  background-color: #d63031;
-  border: 2px solid #d63031;
-}
-.dlt i {
-  padding-right: 10px;
-}
-.dlt:hover {
-  background-color: #ff6b6b;
-  border: 2px solid #ff6b6b;
+  overflow: hidden;
+  display: grid;
 }
 
-.done {
-  width: 100%;
-  padding: 10px 50px;
+.bio {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #504f4f;
+  width: 15rem;
 }
-
-/*==============================================================================*/
-/*BUTTON STYLES - END*/
-/*==============================================================================*/
-/*==============================================================================*/
-/*MODAL - START*/
-/*==============================================================================*/
-/* The Modal (background) */
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  border: 1px solid #888;
-  width: 40%;
-}
-.modal-content .modal-header {
-  padding: 8px 16px;
-  background-color: #1ebb7f;
-  color: white;
-}
-.modal-content .modal-body {
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-}
-.modal-content .modal-body form {
-  padding: 16px 0;
-  display: inline-grid;
-  justify-content: center;
-  justify-items: center;
-}
-.modal-content .modal-body form .date-group {
-  margin-bottom: 10px;
-}
-.modal-content .modal-body form .date-group input {
-  border: 1px solid #1ebb7f;
-  border-radius: 8px;
-  padding: 2px 15px;
-  margin: 2px;
-}
-.modal-content .modal-body form .upload-btn {
-  background-color: #1ebb7f;
-  border: 2px solid #1ebb7f;
-  color: white;
-  padding: 8px 40px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-top: 25px;
-  font-size: 15px;
-}
-.modal-content .modal-body form .upload-btn:hover {
-  background-color: white;
-  color: #1ebb7f;
-}
-
-/* The Close Button */
-.close {
-  color: #ffffff;
-  float: right;
-  font-size: 28px;
+.bio span:first-child {
+  color: black;
   font-weight: bold;
+  font-size: larger;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.pvt-details, .course-details, .miscel {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #d0d0d0;
+  background-color: #FFF;
+}
+.pvt-details span:first-child, .course-details span:first-child, .miscel span:first-child {
+  font-weight: bold;
+  border-bottom: 2px solid #00699a;
+  width: -webkit-fill-available;
+  margin-bottom: 1rem;
+}
+.pvt-details:hover, .course-details:hover, .miscel:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border: 1px solid #00699a;
 }
 
-/*==============================================================================*/
-/*MODAL - END*/
-/*==============================================================================*/
+.miscel {
+  width: 112%;
+  margin-top: 30px;
+  height: 130px;
+}
 
-/*# sourceMappingURL=preview_quiz.css.map */
+.course-details {
+  overflow-y: auto;
+  height: 280px;
+}
+
+/*# sourceMappingURL=edit_profile.css.map */
