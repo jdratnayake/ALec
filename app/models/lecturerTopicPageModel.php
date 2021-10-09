@@ -20,7 +20,7 @@ class LecturerTopicPageModel extends Database
 
     public function getQuizCount($courseId)
     {
-        $query = "SELECT course_topic.topic_id, COUNT(quiz_id) AS count FROM course_topic INNER JOIN quiz ON course_topic.topic_id=quiz.topic_id WHERE course_id='$courseId' GROUP BY course_topic.topic_id ORDER BY course_topic.topic_id";
+        $query = "SELECT course_topic.topic_id, COUNT(quiz_id) AS count FROM course_topic LEFT JOIN quiz ON course_topic.topic_id=quiz.topic_id WHERE course_id='$courseId' GROUP BY course_topic.topic_id ORDER BY course_topic.topic_id";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return $result;
