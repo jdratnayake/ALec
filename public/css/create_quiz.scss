@@ -138,11 +138,18 @@ $light: white;
             &:hover{
                 //border: none;
                 box-shadow: 0 0 5px $hover;
+                cursor: pointer;
             }
         }
 
         .form-name{
             padding-left: 16px;
+        }
+
+        .cursor-change{
+            &:hover{
+                cursor: text;
+            }
         }
 
         .form-answer {
@@ -160,7 +167,6 @@ $light: white;
 
 
             &:hover{
-                //border: none;
                 box-shadow: 0 0 5px $hover;
             }
         }
@@ -178,7 +184,6 @@ $light: white;
 
 
             &:hover{
-                //border: none;
                 box-shadow: 0 0 5px $hover;
             }
         }
@@ -192,13 +197,11 @@ $light: white;
         display: flex;
 
         .col{
-            flex: 50%;
-            padding: 10px 10px 10px 0;
+            flex: 100%;
+            padding: 10px 0 10px 0;
         }
 
-        .col-end{
-            padding-right: 0;
-        }
+        .col-end{padding-right: 0;}
     }
 }
 
@@ -214,7 +217,7 @@ $light: white;
     overflow: hidden;
 }
 .close:hover::before, .close:hover::after {
-    background: #40e0d0;
+    background: $main_color;
 }
 .close::before, .close::after {
     content: "";
@@ -293,7 +296,7 @@ $light: white;
     background: #9faab7;
 }
 .option-input:checked {
-    background: #40e0d0;
+    background: $main_color;
 }
 .option-input:checked::before {
     height: 30px;
@@ -309,7 +312,7 @@ $light: white;
     -webkit-animation: click-wave 0.65s;
     -moz-animation: click-wave 0.65s;
     animation: click-wave 0.65s;
-    background: #40e0d0;
+    background: $main_color;
     content: '';
     display: block;
     position: relative;
