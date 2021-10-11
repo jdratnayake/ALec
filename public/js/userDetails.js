@@ -7,6 +7,8 @@ $(document).ready(function () {
     // LIVE SEARCH START
 
     function loadData(data) {
+        data = data.trim().replace(/ /g, "_");
+
         $.ajax({
             type: "GET",
 
