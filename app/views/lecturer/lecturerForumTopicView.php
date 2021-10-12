@@ -47,14 +47,21 @@ $courseCode = explode("-", $temp)[0];
             <div class="discussion-table-container">
                 <ul class="discussion-table">
                     <li class="table-header">
+                        <div class="col col-4 reply"></div>
                         <div class="col col-1">Discussion</div>
                         <div class="col col-2">Started by</div>
                         <div class="col col-3">Last post</div>
-                        <div class="col col-4 reply">Replies</div>
-<!--                        <div class="col col-5 vote">Votes</div>-->
                     </li>
 
                     <li class="table-row">
+                        <div class="col col-4 reply-count" data-label="Replies">
+                            <div class="vote">
+                                <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                <div class="val">0</div>
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
                         <div class="col col-1" data-label="Discussion">
                             <a href="#">
                                 Will MAC addresses run out?
@@ -88,18 +95,12 @@ $courseCode = explode("-", $temp)[0];
                             </div>
                         </div>
 
-                        <div class="col col-4 reply-count" data-label="Replies">
-                            <div class="val">0</div>
-                            <div class="vote">
-                                <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                <i class="fa fa-caret-down" aria-hidden="true"></i>
-                            </div>
-                        </div>
 
-<!--                        <div class="col col-5 vote" data-label="Votes">-->
-<!--                                <i class="fa fa-caret-up" aria-hidden="true"></i>-->
-<!--                                <i class="fa fa-caret-down" aria-hidden="true"></i>-->
-<!--                        </div>-->
+
+                        <!--                        <div class="col col-5 vote" data-label="Votes">-->
+                        <!--                                <i class="fa fa-caret-up" aria-hidden="true"></i>-->
+                        <!--                                <i class="fa fa-caret-down" aria-hidden="true"></i>-->
+                        <!--                        </div>-->
 
                     </li>
 
