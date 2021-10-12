@@ -2,21 +2,14 @@
 
 class userDetailsModel extends Database
 {
-    public function getUserDetails()
-    {
-        $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type <> 'admin'";
-        $result = mysqli_query($GLOBALS["db"], $query);
-
-        if (mysqli_num_rows($result) > 0) {
-            return $result;
-        }
-    }
+    const DISPLAY_PAGINATION_COUNT = 10;
+    const RECORDS_PER_PAGE = 5;
 
     public function getFilteredUserDetails($type = "all", $page = 1)
     {
-        $displayedPaginationCount = 10;
+        $displayedPaginationCount = self::DISPLAY_PAGINATION_COUNT;
+        $recordPerPage = self::RECORDS_PER_PAGE;
 
-        $recordPerPage = 5;
         $startFrom = ($page - 1) * $recordPerPage;
 
 
@@ -32,9 +25,11 @@ class userDetailsModel extends Database
 
         if ($type == "all") {
             $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type<>'admin'
+            GROUP BY user.user_id
             LIMIT $startFrom, $recordPerPage";
         } else {
             $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type = '$type'
+            GROUP BY user.user_id
             LIMIT $startFrom, $recordPerPage";
         }
         $result = mysqli_query($GLOBALS["db"], $query);
@@ -63,6 +58,7 @@ class userDetailsModel extends Database
 
         $output .= "<form>
         <input type='hidden' id='actor' value='$type'>
+        <input type='hidden' id='yearValue' value='0'>
         <input type='hidden' id='displayValue' value='$displayedPaginationCount'>
         <input type='hidden' id='maxValue' value='$totalPages'>
         </form>";
@@ -70,8 +66,13 @@ class userDetailsModel extends Database
         return $output;
     }
 
-    public function getFilteredUserDetailsByYear($year)
+    public function getFilteredUserDetailsByYear($year, $page = 1)
     {
+        $displayedPaginationCount = self::DISPLAY_PAGINATION_COUNT;
+        $recordPerPage = self::RECORDS_PER_PAGE;
+
+        $startFrom = ($page - 1) * $recordPerPage;
+
         $year = mysqli_real_escape_string($GLOBALS["db"], $year);
 
         if ($year == "all") {
@@ -84,6 +85,26 @@ class userDetailsModel extends Database
             $query = "SELECT user.user_id, first_name, last_name, user_type FROM user 
             INNER JOIN student ON user.user_id=student.user_id
             WHERE index_no LIKE '$data%'";
+        }
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        $totalRecords = mysqli_num_rows($result);
+        $totalPages = ceil($totalRecords / $recordPerPage);
+
+        if ($year == "all") {
+            $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type='stu'
+            GROUP BY user.user_id
+            LIMIT $startFrom, $recordPerPage";
+        } else {
+            $year = (int)$year;
+            $currentYear = date("Y") % 100;
+            $data = $currentYear - $year;
+
+            $query = "SELECT user.user_id, first_name, last_name, user_type FROM user 
+            INNER JOIN student ON user.user_id=student.user_id
+            WHERE index_no LIKE '$data%'
+            GROUP BY user.user_id
+            LIMIT $startFrom, $recordPerPage";
         }
 
         $result = mysqli_query($GLOBALS["db"], $query);
@@ -109,6 +130,13 @@ class userDetailsModel extends Database
 
             $count++;
         }
+
+        $output .= "<form>
+        <input type='hidden' id='actor' value='stu'>
+        <input type='hidden' id='yearValue' value='$year'>
+        <input type='hidden' id='displayValue' value='$displayedPaginationCount'>
+        <input type='hidden' id='maxValue' value='$totalPages'>
+        </form>";
 
         return $output;
     }

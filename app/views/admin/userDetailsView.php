@@ -66,35 +66,6 @@
 
             <tbody id="table-content">
 
-                <?php
-                $count = 1;
-                while ($row = mysqli_fetch_assoc($data["userDetails"])) {
-                    echo "<tr>";
-                    echo "<td>" . $count . "</td>";
-                    echo "<td>" . $row["first_name"] . "</td>";
-                    echo "<td>" . $row["last_name"] . "</td>";
-                    if ($row["user_type"] === "stu") {
-                        echo "<td>" . "Student" . "</td>";
-                    } else if ($row["user_type"] === "lec") {
-                        echo "<td>" . "Lecturer" . "</td>";
-                    }
-
-                    echo "<td>";
-
-                    echo " <button type='button' class='button' onclick=location.href='";
-                    echo BASEURL . '/userProfile/index/' . $row["user_id"];
-                    echo "'>";
-                    echo "<span class='button__text'>View user</span>";
-                    echo "</button>";
-
-                    echo "</td>";
-
-                    echo "</tr>";
-
-                    $count++;
-                }
-                ?>
-
                 <!-- HIDDEN VARIABLES -->
                 <form>
                     <input type="hidden" id="actor" value="all">
@@ -129,4 +100,5 @@
 
     <?php linkJS("userDetails"); ?>
 
+    <?php linkJS("userDetailsSearch") ?>
 </body>

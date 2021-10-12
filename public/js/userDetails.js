@@ -1,35 +1,32 @@
-document.getElementById("search-form").addEventListener('submit', function (event) {
-    event.preventDefault();
-});
-
-
 $(document).ready(function () {
-    // LIVE SEARCH START
 
-    function loadData(data) {
-        data = data.trim().replace(/ /g, "_");
+    // INITIALLY DISPLAY ALL USER DETAILS - START
+    displayAllUserDetails();
 
-        $.ajax({
-            type: "GET",
+    function displayAllUserDetails() {
+        $("#actor").val("all");
+        colorTheLabel($("#all"));
+        $("#year-selection").addClass("hidden-year");
 
-            url: "http://localhost/ALec/userDetails/search/" + data,
-            dataType: "html",
-
-            success: function (response) {
-                $("#table-content").html(response);
-            }
-        })
+        getData($(".tag").first());
     }
+    // INITIALLY DISPLAY ALL USER DETAILS - END
 
-    $("#search").keyup(function () {
-        let search = $(this).val();
+    $("#all").click(function () {
+        $("#actor").val("all");
+        colorTheLabel(this);
+        $("#year-selection").addClass("hidden-year");
 
-        if (search != "") {
-            loadData(search);
-        }
+        getData($(".tag").first());
     });
 
-    // LIVE SEARCH END
+    $("#lec").click(function () {
+        $("#actor").val("lec");
+        colorTheLabel(this);
+        $("#year-selection").addClass("hidden-year");
+
+        getData($(".tag").first());
+    });
 
     $("#year").change(function () {
         let yearVal = $(this).children("option:selected").val();
@@ -43,30 +40,18 @@ $(document).ready(function () {
 
             success: function (response) {
                 $("#table-content").html(response);
+                createPaginationNos();
             }
         })
     });
 
-    $("#lec").click(function () {
-        $("#actor").val("lec");
-        colorTheLabel(this);
-        $("#year-selection").addClass("hidden-year");
 
-        getData($(".tag").first());
-    });
 
     $("#stu").click(function () {
+        $("#year").val("all");
         $("#actor").val("stu");
         colorTheLabel(this);
         $("#year-selection").removeClass("hidden-year");
-
-        getData($(".tag").first());
-    });
-
-    $("#all").click(function () {
-        $("#actor").val("all");
-        colorTheLabel(this);
-        $("#year-selection").addClass("hidden-year");
 
         getData($(".tag").first());
     });
@@ -79,7 +64,37 @@ $(document).ready(function () {
 
     $(document).on('click', 'a.tag', function (e) {
         e.preventDefault();
-        getData(this, 0);
+
+        const href = $(this).attr('href');
+
+        if (value == -1) {
+            console.log("Hi");
+        } else if (value == -2) {
+            console.log("Bye");
+        }
+
+        const actor = $("#actor").val();
+        const year = parseInt($("#yearValue").val());
+        const value = $(this).text();
+
+        // console.log(year);
+        // console.log(value);
+
+        if (actor == "stu" && year != 0) {
+            // console.log("OKay");
+            $.ajax({
+                type: "GET",
+
+                url: "http://localhost/ALec/userDetails/year/" + year + "/" + value,
+                dataType: "html",
+
+                success: function (response) {
+                    $("#table-content").html(response);
+                }
+            })
+        } else {
+            getData(this, 0);
+        }
 
         $('.tag').each(function () {
 
