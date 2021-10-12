@@ -62,16 +62,35 @@ $(document).ready(function () {
     //     getData(this);
     // });
 
-    $(document).on('click', 'a.tag', function (e) {
+    $(document).on('click', 'a.change', function (e) {
         e.preventDefault();
 
-        const href = $(this).attr('href');
+        const href = parseInt($(this).attr('href'));
 
-        if (value == -1) {
-            console.log("Hi");
-        } else if (value == -2) {
-            console.log("Bye");
+        if (href == -1) {
+            const start = $(".tag").first().text();
+
+            if (start != 1) {
+                $('.tag').each(function () {
+
+                    $(this).text(parseInt($(this).text()) - 1);
+                })
+            }
+        } else if (href == -2) {
+            const last = $(".tag").last().text();
+            const maxValue = parseInt($("#maxValue").val());
+
+            if (last < maxValue) {
+                $('.tag').each(function () {
+
+                    $(this).text(parseInt($(this).text()) + 1);
+                })
+            }
         }
+    });
+
+    $(document).on('click', 'a.tag', function (e) {
+        e.preventDefault();
 
         const actor = $("#actor").val();
         const year = parseInt($("#yearValue").val());
@@ -114,7 +133,11 @@ $(document).ready(function () {
             // $(element).addClass("active");
 
             const actor = $("#actor").val();
-            const value = $(element).text();
+            let value = $(element).text();
+
+            if (sig == 1) {
+                value = 1;
+            }
 
             // console.log(actor);
             // console.log(value);
@@ -174,12 +197,12 @@ $(document).ready(function () {
         // console.log(count);
 
         let txt = "";
-        $("#pagination").html('<a href="-1">&laquo;</a>');
+        $("#pagination").html('<a href="-1" class="change">&laquo;</a>');
         $("#pagination").append("<a href='#' class='tag active'>" + 1 + "</a>");
         for (let i = 2; i <= count; i++) {
             txt = "<a href='#' class='tag'>" + i + "</a>";
             $("#pagination").append(txt);
         }
-        $("#pagination").append('<a href="-2">&raquo;</a>');
+        $("#pagination").append('<a href="-2" class="change">&raquo;</a>');
     }
 })
