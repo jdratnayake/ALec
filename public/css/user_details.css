@@ -602,7 +602,7 @@ form.search-bar::after {
   overflow: hidden;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .content-table thead tr {
@@ -713,4 +713,43 @@ form.search-bar::after {
 .hidden-year {
   display: none;
 }
+
+/*==============================================================================*/
+/*PAGINATION - START*/
+/*==============================================================================*/
+.home-content .pagination-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 25px;
+}
+
+.home-content .pagination-container .pagination {
+  display: inline-block;
+}
+
+.home-content .pagination-container .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.home-content .pagination-container .pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.home-content .pagination-container .pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+/*==============================================================================*/
+/*PAGINATION - END*/
+/*==============================================================================*/
 /*# sourceMappingURL=user_details.css.map */

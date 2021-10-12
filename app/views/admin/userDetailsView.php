@@ -95,10 +95,31 @@
                 }
                 ?>
 
+                <!-- HIDDEN VARIABLES -->
+                <form>
+                    <input type="hidden" id="actor" value="all">
+                    <input type="hidden" id="displayValue" value="0">
+                    <input type="hidden" id="maxValue" value="0">
+                </form>
             </tbody>
 
         </table>
     </div>
+
+    <div class="pagination-container">
+        <div class="pagination" id="pagination">
+            <a href="-1">&laquo;</a>
+            <a href="#" class="tag active">1</a>
+            <a href="#" class="tag">2</a>
+            <a href="#" class="tag">3</a>
+            <a href="#" class="tag">4</a>
+            <a href="#" class="tag">5</a>
+            <a href="#" class="tag">6</a>
+            <a href="-2">&raquo;</a>
+        </div>
+    </div>
+
+
 
     <?php linkPhp("footer"); ?>
 

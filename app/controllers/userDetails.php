@@ -15,9 +15,9 @@ class userDetails extends AlecFramework
         $this->view("admin/userDetailsView", $data);
     }
 
-    public function user($type)
+    public function user($type, $page = 1)
     {
-        echo $this->userModel->getFilteredUserDetails($type);
+        echo $this->userModel->getFilteredUserDetails($type, $page);
         // $this->view("admin/userDetailsView", $data);
     }
 

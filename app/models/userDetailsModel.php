@@ -12,14 +12,31 @@ class userDetailsModel extends Database
         }
     }
 
-    public function getFilteredUserDetails($type)
+    public function getFilteredUserDetails($type = "all", $page = 1)
     {
+        $displayedPaginationCount = 10;
+
+        $recordPerPage = 5;
+        $startFrom = ($page - 1) * $recordPerPage;
+
+
         if ($type == "all") {
             $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type<>'admin'";
         } else {
             $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type = '$type'";
         }
+        $result = mysqli_query($GLOBALS["db"], $query);
+        $totalRecords = mysqli_num_rows($result);
+        $totalPages = ceil($totalRecords / $recordPerPage);
 
+
+        if ($type == "all") {
+            $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type<>'admin'
+            LIMIT $startFrom, $recordPerPage";
+        } else {
+            $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE user_type = '$type'
+            LIMIT $startFrom, $recordPerPage";
+        }
         $result = mysqli_query($GLOBALS["db"], $query);
 
         $count = 1;
@@ -43,6 +60,12 @@ class userDetailsModel extends Database
 
             $count++;
         }
+
+        $output .= "<form>
+        <input type='hidden' id='actor' value='$type'>
+        <input type='hidden' id='displayValue' value='$displayedPaginationCount'>
+        <input type='hidden' id='maxValue' value='$totalPages'>
+        </form>";
 
         return $output;
     }
