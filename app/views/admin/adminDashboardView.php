@@ -77,6 +77,9 @@
                     <span class="close" id="close-one">&times;</span>
                     <h2>Create multiple user accounts</h2>
                 </div>
+
+                <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download" . "'" ?>">Download</button>
+
                 <div class="modal-body">
                     <p>
                         Enter .txt file with all the Students<br><br>

@@ -29,10 +29,24 @@ class AdminDashboard extends AlecFramework
 
             $uploadTo = "acc_data/";
 
-            // checking the file type
-            if ($fileType != 'text/plain') {
-                $errors[] = 'Only .txt files are allowed.';
+            // checking the file type - START
+            $csv_mimetypes = array(
+                'text/csv',
+                'text/plain',
+                'application/csv',
+                'text/comma-separated-values',
+                'application/excel',
+                'application/vnd.ms-excel',
+                'application/vnd.msexcel',
+                'text/anytext',
+                'application/octet-stream',
+                'application/txt',
+            );
+
+            if (!in_array($fileType, $csv_mimetypes)) {
+                $errors[] = 'Only .txt and .csv files are allowed.';
             }
+            // checking the file type - END
 
             // checking file size
             if ($fileSize > 500000) {
@@ -47,37 +61,71 @@ class AdminDashboard extends AlecFramework
 
             //FILE PROCESS START
 
-            $fp = fopen($uploadTo . $fileName, "r");
+            if ($fileType == "text/plain") {
+                $fp = fopen($uploadTo . $fileName, "r");
 
-            while (($line = fgets($fp)) !== false) {
-                $data = explode(" ", $line);
+                while (($line = fgets($fp)) !== false) {
+                    $data = explode(" ", $line);
 
-                if (isset($data[0]) && isset($data[1]) && isset($data[2]) && isset($data[3])) {
-                    // echo $data["0"] . "<br>";
-                    // echo $data["1"] . "<br>";
-                    // echo $data["2"] . "<br>";
-                    // echo $data["3"] . "<br>";
+                    if (isset($data[0]) && isset($data[1]) && isset($data[2]) && isset($data[3])) {
+                        $data[0] = trim($data[0]);
+                        $data[1] = trim($data[1]);
+                        $data[2] = trim($data[2]);
+                        $data[3] = trim($data[3]);
 
-                    $data[0] = trim($data[0]);
-                    $data[1] = trim($data[1]);
-                    $data[2] = trim($data[2]);
-                    $data[3] = trim($data[3]);
+                        $password = password_hash($data["3"], PASSWORD_DEFAULT);
 
-                    $password = password_hash($data["3"], PASSWORD_DEFAULT);
-
-                    $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, "stu");
+                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, "stu");
+                    }
                 }
 
+                fclose($fp);
+            } else {
+                $fp = fopen($uploadTo . $fileName, "r");
+                //Remove Labels
+                fgetcsv($fp);
 
-                // print_r($data);
+                while (!feof($fp)) {
+                    $data = fgetcsv($fp);
+
+                    if (isset($data[0]) && isset($data[1]) && isset($data[2]) && isset($data[3])) {
+                        $data[0] = trim($data[0]);
+                        $data[1] = trim($data[1]);
+                        $data[2] = trim($data[2]);
+                        $data[3] = trim($data[3]);
+
+                        $password = password_hash($data["3"], PASSWORD_DEFAULT);
+
+                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, "stu");
+                    }
+                }
+
+                fclose($fp);
             }
-
-            fclose($fp);
 
             //FILE PROCESS END
 
             $this->index();
         }
+    }
+
+    public function download()
+    {
+        $url = BASEURL . "/public/download_data/List.csv";
+        $file_name = basename($url);
+
+        if (file_put_contents($file_name, file_get_contents($url))) {
+            echo "File downloaded successfully";
+        } else {
+            echo "File downloading failed.";
+        }
+
+
+        $file = "download_data/List.csv";
+        $type = filetype($file);
+        header("Content-Type: $type");
+        header('Content-Disposition: attachment; filename="List.csv"');
+        readfile($file);
     }
 
     public function course()
