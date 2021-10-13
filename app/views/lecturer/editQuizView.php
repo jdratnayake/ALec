@@ -33,8 +33,9 @@
         </div>
 
         <!-- Quiz basic details -->
-        <form class="details" method="post" id="form">
-            <input type="hidden" id="question-count" value="">
+        <form class="details" action="<?php echo BASEURL . "/editQuiz/submit/{$data['quizId']}" ?>" method="post" id="form">
+
+            <input type="hidden" name="question-count" value="">
 
             <ol class="all-questions">
 

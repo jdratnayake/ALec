@@ -10,6 +10,12 @@ class EditQuiz extends AlecFramework
 
     public function index($quizId)
     {
-        $this->view("lecturer/editQuizView");
+        $data["quizId"] = $quizId;
+        $this->view("lecturer/editQuizView", $data);
+    }
+
+    public function submit($quizId)
+    {
+        var_dump($_POST);
     }
 }
