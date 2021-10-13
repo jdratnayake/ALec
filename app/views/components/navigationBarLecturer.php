@@ -53,13 +53,12 @@
                     <span class="tooltip">Leaderboard</span>
                 </li>
 
-
                 <div class="profile_content">
                     <div class="profile">
                         <div class="profile_details">
                             <img <?php srcIMG("profile-picture.jpg") ?> alt="">
                             <div class="name_job">
-                                <div class="name">Louella Rhodes</div>
+                                <div class="name" onclick="">Louella Rhodes</div>
                                 <div class="job">Lecturer</div>
                             </div>
                         </div>

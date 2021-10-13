@@ -28,7 +28,7 @@ body {
   height: 100%;
   /* width of the siderbar when toggle button is off */
   width: 78px;
-  background: #1d3557;
+  background: #19345d;
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -187,7 +187,7 @@ body {
   position: relative;
   padding: 10px 6px;
   height: 60px;
-  background: #1d3557;
+  background: #19345d;
   transition: all 0.4 ease;
 }
 
@@ -239,7 +239,7 @@ body {
   border-radius: 12px;
   text-align: center;
   transition: all 0.4s ease;
-  background: #1d3557;
+  background: #19345d;
   cursor: pointer;
 }
 .profile #log_out:hover {
@@ -319,7 +319,7 @@ body {
   height: 56px;
   width: 56px;
   border-radius: 50%;
-  background-color: #1d3557;
+  background-color: #19345d;
   color: white;
   /* padding: 20px;
   margin: 10px;  */
@@ -383,7 +383,7 @@ footer p {
 /*==============================================================================*/
 header {
   background-color: white;
-  color: #1d3557;
+  color: #19345d;
   text-align: left;
   font-size: 32px;
   font-weight: bold;
@@ -542,9 +542,8 @@ form.search-bar::after {
   min-width: 400px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  margin-bottom: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
 }
 
 .content-table thead tr {
@@ -604,7 +603,7 @@ form.search-bar::after {
   border: 2px solid #4075bf;
 }
 .button:active {
-  background: #1d3557;
+  background: #19345d;
   color: #fff;
 }
 .button__text {
@@ -636,37 +635,28 @@ form.search-bar::after {
   display: none;
 }
 
-
 /*==============================================================================*/
 /*PAGINATION - START*/
 /*==============================================================================*/
 .home-content .pagination-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-bottom: 25px;
 }
-
 .home-content .pagination-container .pagination {
   display: inline-block;
 }
-
 .home-content .pagination-container .pagination a {
   color: black;
   float: left;
   padding: 8px 16px;
   text-decoration: none;
 }
-
 .home-content .pagination-container .pagination a.active {
   background-color: #4CAF50;
   color: white;
   border-radius: 5px;
 }
-
 .home-content .pagination-container .pagination a:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
@@ -675,4 +665,5 @@ form.search-bar::after {
 /*==============================================================================*/
 /*PAGINATION - END*/
 /*==============================================================================*/
+
 /*# sourceMappingURL=user_details.css.map */

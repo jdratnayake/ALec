@@ -490,6 +490,7 @@ footer p {
   background-color: #2B4F82;
   border: 3px solid #2B4F82;
   font-weight: bold;
+  cursor: pointer;
 }
 .add:hover {
   border: 3px solid #1d3557;
