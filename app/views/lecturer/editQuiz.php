@@ -43,6 +43,10 @@
                     <div class="button-set">
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
                     </div>
+<!--                check whether multiple answers or not-->
+                    <input type="hidden" class="check_hidden" value ="false">
+                    <input type="checkbox" class="check" value = "true">
+                    <label>multiple answers</label><br>
                     <ol>
                         <li class="answer">
                             <input type="text" value="Windows">
@@ -97,6 +101,10 @@
                     <div class="button-set">
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
                     </div>
+    <!--            check whether multiple answers or not-->
+                    <input type="hidden" class="check_hidden" value ="false">
+                    <input type="checkbox" class="check" value = "true">
+                    <label>multiple answers</label><br>
                     <ol>
                         <li class="answer">
                             <input type="text" value="Windows">
