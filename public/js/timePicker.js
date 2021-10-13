@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     tp.attach({
         target: "time-picker"
     });
@@ -35,6 +35,9 @@ const tp = {
             up.innerHTML = "&#65087;";
             up.className = "tp-up";
 
+            //Label for input
+            let lbl = document.createElement("label");
+
             // Current Value
             let val = document.createElement("input");
             val.type = "text";
@@ -42,12 +45,16 @@ const tp = {
             val.className = "tp-val";
             if (segment === "hr") {
                 val.value = "01";
+                lbl.innerHTML = "hrs";
             } else if (segment === "min") {
                 val.value = "00";
+                lbl.innerHTML = "min";
             } else {
                 val.value = "00";
+                lbl.innerHTML = "sec";
             }
             inst[segment] = val;
+
 
             // Down Button
             let down = document.createElement("div");
@@ -78,6 +85,7 @@ const tp = {
             // Append all the buttons
             box.appendChild(up);
             box.appendChild(val);
+            box.appendChild(lbl);
             box.appendChild(down);
             picker.appendChild(box);
         };
@@ -202,7 +210,7 @@ const tp = {
 };
 
 // (G) CREATE "DEFAULT" POPUP TIME PICKER ON LOAD
-window.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("DOMContentLoaded", function () {
     let pop = document.createElement("div");
     document.body.appendChild(pop);
     pop.id = "tp-pop";
