@@ -440,19 +440,15 @@ footer p {
 .form-content .details .all-questions .question-container .answer:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.form-content .details .all-questions .question-container .short-ans {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+.form-content .details .all-questions .question-container .answer input {
+  width: 80%;
 }
-.form-content .details .all-questions .question-container .short-ans .short-input {
-  background-color: rgba(0, 0, 0, 0.05);
-  border: none;
-  padding: 8px 16px;
-  border-radius: 290486px;
+.form-content .details .all-questions .question-container .answer .points {
+  width: 15%;
+  min-width: 70px;
 }
-.form-content .details .all-questions .question-container .short-ans .short-input:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+.form-content .details .all-questions .question-container .short-ans ul {
+  list-style-type: none;
 }
 
 /* --------------BUTTON STYLES START----------------*/

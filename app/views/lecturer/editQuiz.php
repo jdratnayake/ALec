@@ -11,6 +11,7 @@
     <title>ALec</title>
 
     <?php linkCSS("edit_quiz") ?>
+    <?php linkCSS("time_picker") ?>
 
 </head>
 
@@ -26,8 +27,8 @@
     <div class="quiz-name">
         <h2>Assignment 01</h2>
         <span>
-            <label for="duration">Duration</label>
-            <input id="duration" type="text" value="01 hrs :00 mins: 00 secs">
+            <label for="time-picker">Quiz Duration</label>
+            <input type="text" id="time-picker" class="form-control" placeholder="hrs:mins:secs"/>
         </span>
     </div>
 
@@ -45,18 +46,27 @@
                     <ol>
                         <li class="answer">
                             <input type="text" value="Windows">
+                            <input type="text" value="0%" class="points">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </li>
                         <li class="answer">
                             <input type="text" value="Linux">
+                            <input type="text" value="0%" class="points">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </li>
                         <li class="answer">
                             <input type="text" value="Oracle">
+                            <input type="text" value="0%" class="points">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </li>
                         <li class="answer">
                             <input type="text" value="DOS">
+                            <input type="text" value="0%" class="points">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                        <li class="answer">
+                            <input type="text" value="">
+                            <input type="text" value="0%" class="points">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </li>
                     </ol>
@@ -68,13 +78,19 @@
                     <div class="button-set">
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
                     </div>
-                    <input class="answer short-input"  type="text" id="short-answer-box" value="1950">
+                    <ul>
+                        <li class="answer short-input" id="short-answer-box">
+                            <input type="text" value="1950">
+                            <input type="text" value="100%" class="points">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                    </ul>
                 </div>
             </li>
             <li class="question-container">
                 <div class="multiple-choice">
                     <div class="question">
-                        Which of the following are not an operating systems?
+                        Which of the following are operating systems?
                     </div>
                     <div class="button-set">
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
@@ -82,18 +98,27 @@
                     <ol>
                         <li class="answer">
                             <input type="text" value="Windows">
+                            <input type="text" value="100%" class="points">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </li>
                         <li class="answer">
                             <input type="text" value="Linux">
+                            <input type="text" value="100%" class="points">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </li>
                         <li class="answer">
                             <input type="text" value="Oracle">
+                            <input type="text" value="100%" class="points">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </li>
                         <li class="answer">
                             <input type="text" value="DOS">
+                            <input type="text" value="0%" class="points">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                        <li class="answer">
+                            <input type="text" value="">
+                            <input type="text" value="" class="points">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </li>
                     </ol>
@@ -113,6 +138,7 @@
 
 <?php linkPhp("footer"); ?>
 
+<?php linkJS("timePicker"); ?>
 
 </body>
 

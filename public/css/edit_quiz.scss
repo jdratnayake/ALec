@@ -11,6 +11,7 @@ $answer_color: rgba(0, 0, 0, 0.85);
 $answer_background: rgba(0, 0, 0, 0.05);
 $light: white;
 
+
 .form-content {
   padding: 16px;
   width: 51%;
@@ -50,11 +51,7 @@ $light: white;
       margin-left: 15px;
 
       .question-container {
-        //margin-top: 10px;
-        //margin-bottom: 10px;
-        //padding-bottom: 10px;
 
-        //.choice-que-1{
         .question {
           margin-bottom: 5px;
         }
@@ -81,25 +78,20 @@ $light: white;
           &:hover {
             background-color: rgba(0, 0, 0, 0.1);
           }
-        }
-        //}
 
-        .short-ans{
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
+          input{width: 80%;}
 
-          .short-input{
-            background-color: $answer_background;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 290486px;
-
-            &:hover {
-              background-color: rgba(0, 0, 0, 0.1);
-            }
+          .points{
+            width: 15%;
+            min-width: 70px;
           }
         }
+
+
+        .short-ans{
+          ul{list-style-type:none;}
+        }
+
       }
     }
   }
