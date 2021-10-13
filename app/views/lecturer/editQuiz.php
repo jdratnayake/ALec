@@ -25,7 +25,10 @@
 
     <div class="quiz-name">
         <h2>Assignment 01</h2>
-        <span>Duration 01:00:00</span>
+        <span>
+            <label for="duration">Duration</label>
+            <input id="duration" type="text" value="01 hrs :00 mins: 00 secs">
+        </span>
     </div>
 
     <!-- Quiz basic details -->
@@ -33,47 +36,66 @@
         <ol class="all-questions">
             <li class="question-container">
                 <div class="single-choice">
-                    <div class="question editable">
+                    <div class="question">
                         Which of the following is not an operating system?
                     </div>
                     <div class="button-set">
-                        <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit question</button>
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
                     </div>
                     <ol>
-                        <li class="answer editable">Windows<i class="fa fa-times" aria-hidden="true"></i></li>
-                        <li class="answer editable">Linux<i class="fa fa-times" aria-hidden="true"></i></li>
-                        <li class="answer editable">Oracle<i class="fa fa-times" aria-hidden="true"></i></li>
-                        <li class="answer editable">DOS<i class="fa fa-times" aria-hidden="true"></i></li>
-                        <li class="answer editable">MAC<i class="fa fa-times" aria-hidden="true"></i></li>
+                        <li class="answer">
+                            <input type="text" value="Windows">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                        <li class="answer">
+                            <input type="text" value="Linux">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                        <li class="answer">
+                            <input type="text" value="Oracle">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                        <li class="answer">
+                            <input type="text" value="DOS">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
                     </ol>
                 </div>
             </li>
             <li class="question-container">
                 <div class="short-ans">
-                    <div class="question editable">When was the first operating system developed?</div>
+                    <div class="question">When was the first operating system developed?</div>
                     <div class="button-set">
-                        <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit question</button>
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
                     </div>
-                    <div class="answer short-input" id="short-answer-box">1950</div>
-<!--                    <input type="text" id="short-answer-box" value="1950">-->
+                    <input class="answer short-input"  type="text" id="short-answer-box" value="1950">
                 </div>
             </li>
             <li class="question-container">
                 <div class="multiple-choice">
-                    <div class="question editable">
+                    <div class="question">
                         Which of the following are not an operating systems?
                     </div>
                     <div class="button-set">
-                        <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit question</button>
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
                     </div>
                     <ol>
-                        <li class="answer editable">Windows<i class="fa fa-times" aria-hidden="true"></i></li>
-                        <li class="answer editable">Linux<i class="fa fa-times" aria-hidden="true"></i></li>
-                        <li class="answer editable">Oracle<i class="fa fa-times" aria-hidden="true"></i></li>
-                        <li class="answer editable">DOS<i class="fa fa-times" aria-hidden="true"></i></li>
+                        <li class="answer">
+                            <input type="text" value="Windows">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                        <li class="answer">
+                            <input type="text" value="Linux">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                        <li class="answer">
+                            <input type="text" value="Oracle">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
+                        <li class="answer">
+                            <input type="text" value="DOS">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </li>
                     </ol>
                 </div>
             </li>
@@ -91,7 +113,6 @@
 
 <?php linkPhp("footer"); ?>
 
-<?php linkJS("editQuiz"); ?>
 
 </body>
 
