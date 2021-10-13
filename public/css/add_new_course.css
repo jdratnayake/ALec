@@ -28,7 +28,7 @@ body {
   height: 100%;
   /* width of the siderbar when toggle button is off */
   width: 78px;
-  background: #1ebb7f;
+  background: #1d3557;
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -187,7 +187,7 @@ body {
   position: relative;
   padding: 10px 6px;
   height: 60px;
-  background: #1ebb7f;
+  background: #1d3557;
   transition: all 0.4 ease;
 }
 
@@ -238,8 +238,8 @@ body {
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
-  transition: all 0.4 ease;
-  background: #1ebb7f;
+  transition: all 0.4s ease;
+  background: #1d3557;
   cursor: pointer;
 }
 .profile #log_out:hover {
@@ -319,7 +319,7 @@ body {
   height: 56px;
   width: 56px;
   border-radius: 50%;
-  background-color: #1ebb7f;
+  background-color: #1d3557;
   color: white;
   /* padding: 20px;
   margin: 10px;  */
@@ -358,8 +358,8 @@ body {
 /*==============================================================================*/
 footer {
   width: 100%;
-  background: #1ebb7f;
-  color: #fff;
+  background: #eceff1;
+  color: #546e7a;
   display: grid;
   place-items: center;
   /* padding: 2em;  */
@@ -411,7 +411,7 @@ footer p {
   padding-left: 0;
   font-size: 20px;
   font-weight: 500;
-  border-bottom: 3px solid #1ebb7f;
+  border-bottom: 3px solid #1d3557;
 }
 .home-content .wrapper .form-container {
   width: 100%;
@@ -466,13 +466,13 @@ footer p {
   width: 300%;
   position: absolute;
   left: -100%;
-  background: #1ebb7f;
+  background: #1d3557;
   border-radius: 5px;
   transition: all 0.4s ease;
 }
 .home-content form .btn:hover .btn-layer {
   left: 0;
-  background: #1dd1a1;
+  background: #325C97;
 }
 .home-content form .btn input[type=submit] {
   z-index: 1;

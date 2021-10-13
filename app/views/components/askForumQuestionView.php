@@ -1,4 +1,4 @@
-<!--questioners' or repliers' identity should be hidden in the students' view-->
+<?php $errors = $data["errors"] ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,37 +27,41 @@
 
     ?>
 
-
-
     <div class="forum-container">
-        <header>Discussion Forum for SCS 2205</header>
+        <header>Discussion Forum For <?php echo $data["subjectCode"]; ?></header>
         <h2>New Discussion Topic</h2>
 
-        <form action="<?php echo BASEURL . "/askForumQuestion/submit"; ?>" method="post">
-
-            <input type="hidden" id="forumId" value="<?php echo $data["forumId"]; ?>">
+        <form action="<?php echo BASEURL . "/askForumQuestion/index/{$data['forumId']}"; ?>" method="post" id="topicSubmit" onsubmit="validateAll()">
 
             <div class="form-group">
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" class="input-box">
-
+                <div class="right-side">
+                    <input type="text" name="subject" id="subject" class="input-box" onfocusout="validateSubject()">
+                    <div class="error"><?php echo $errors["subject"]; ?></div>
+                </div>
             </div>
-
             <div class="form-group">
                 <label for="question">Question</label>
-                <textarea name="question" id="question" cols="30" rows="10" class="input-box"></textarea>
+                <div class="right-side">
+                    <textarea name="question" id="question" cols="30" rows="8" class="input-box" onfocusout="validateQuestion()"></textarea>
+                    <div class="error"><?php echo $errors["question"]; ?></div>
+                </div>
             </div>
 
-            <button type="submit" name="cancel" value="cancel" class="done cancel">Cancel</button>
-            <button type="submit" name="post" value="post" class="done">Post</button>
+            <button type="submit" value="submit" class="done">Post to forum</button>
 
         </form>
+
+        <button type="submit" value="submit" class="done cancel" onclick="<?php echo "location.href=" . "'" . BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] . "'" ?>">
+            Cancel</button>
 
     </div>
 
     <?php linkPhp("notification"); ?>
 
     <?php linkPhp("footer"); ?>
+
+    <?php linkJS("askForumQuestion") ?>
 
 </body>
 

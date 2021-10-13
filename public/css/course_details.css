@@ -28,7 +28,7 @@ body {
   height: 100%;
   /* width of the siderbar when toggle button is off */
   width: 78px;
-  background: #1ebb7f;
+  background: #1d3557;
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -187,7 +187,7 @@ body {
   position: relative;
   padding: 10px 6px;
   height: 60px;
-  background: #1ebb7f;
+  background: #1d3557;
   transition: all 0.4 ease;
 }
 
@@ -238,8 +238,8 @@ body {
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
-  transition: all 0.4 ease;
-  background: #1ebb7f;
+  transition: all 0.4s ease;
+  background: #1d3557;
   cursor: pointer;
 }
 .profile #log_out:hover {
@@ -319,7 +319,7 @@ body {
   height: 56px;
   width: 56px;
   border-radius: 50%;
-  background-color: #1ebb7f;
+  background-color: #1d3557;
   color: white;
   /* padding: 20px;
   margin: 10px;  */
@@ -358,8 +358,8 @@ body {
 /*==============================================================================*/
 footer {
   width: 100%;
-  background: #1ebb7f;
-  color: #fff;
+  background: #eceff1;
+  color: #546e7a;
   display: grid;
   place-items: center;
   /* padding: 2em;  */
@@ -381,31 +381,14 @@ footer p {
 /*==============================================================================*/
 /*FOOTER - END*/
 /*==============================================================================*/
-header, form.search-bar button {
-  background-color: #00699a;
-  color: white;
-}
-
 header {
-  padding: 15px;
-  text-align: center;
-  font-size: 30px;
+  background-color: white;
+  color: #1d3557;
+  text-align: left;
+  font-size: 32px;
   font-weight: bold;
-  margin: auto;
+  margin: 20px 0 20px 0;
   width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-}
-
-form.search-bar button {
-  float: left;
-  width: 20%;
-  padding: 5px;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  border-radius: 0 20px 20px 0;
-  cursor: pointer;
 }
 
 .details-container {
@@ -420,27 +403,31 @@ form.search-bar button {
   float: right;
   font-size: 16px;
   max-width: 250px;
-  background-color: #00699a;
+  background-color: #305890;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   padding: 10px 50px;
-  margin: 2rem 0 0 auto;
-  border: 2px solid #00699a;
+  margin: 0;
+  border: 2px solid #305890;
   cursor: pointer;
 }
 .add-button:hover {
-  background-color: #008bcc;
-  border: 2px solid #008bcc;
+  background-color: #4075bf;
+  border: 2px solid #4075bf;
+}
+
+.filter-container {
+  display: inline;
+  margin: 20px 0 5px 0;
 }
 
 /*==============================================================================*/
 /*SEARCH BAR - START*/
 /*==============================================================================*/
 .search-bar {
-  max-width: 300px;
+  width: 450px;
   float: left;
-  margin-top: 10px;
 }
 
 form.search-bar input[type=text] {
@@ -449,12 +436,25 @@ form.search-bar input[type=text] {
   border: 1px solid grey;
   border-radius: 20px 0 0 20px;
   float: left;
-  width: 80%;
+  width: 85%;
   background: #f1f1f1;
 }
 
+form.search-bar button {
+  float: left;
+  width: 15%;
+  padding: 5px;
+  background: #3662a1;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
 form.search-bar button:hover {
-  background: #00699a;
+  background: #4075bf;
 }
 
 form.search-bar::after {
@@ -483,26 +483,47 @@ form.search-bar::after {
   font-weight: 500;
   cursor: pointer;
   border-radius: 5px;
-  border: 1px solid #00699a;
+  border: 1px solid #3662a1;
   width: 6rem;
-  background-color: #00699a;
+  background-color: #3662a1;
   color: white;
 }
 .type:hover {
   background-color: white;
-  color: #00699a;
+  color: #3662a1;
 }
 
 .active-type {
   background-color: white;
-  color: #00699a;
+  color: #3662a1;
 }
 
 /*==============================================================================*/
 /*YEAR BAR - END*/
 /*==============================================================================*/
 /*==============================================================================*/
-/*USER DETAILS TABLE - START*/
+/*YEAR SELECTION - START*/
+/*==============================================================================*/
+.year-selection {
+  margin: 10px 0 5px 0;
+}
+.year-selection label {
+  color: dimgrey;
+}
+.year-selection select {
+  border: 1px solid #3662a1;
+  padding: 2px 22px;
+  border-radius: 8px;
+}
+.year-selection select option:hover {
+  background-color: #e8f8ff;
+}
+
+/*==============================================================================*/
+/*YEAR SELECTION - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*COURSE DETAILS TABLE - START*/
 /*==============================================================================*/
 /* .center {
     margin: auto;
@@ -525,7 +546,7 @@ form.search-bar::after {
   margin-bottom: 50px;
 }
 .content-table thead tr {
-  background-color: #00699a;
+  background-color: #274774;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
@@ -535,26 +556,19 @@ form.search-bar::after {
 }
 .content-table th {
   padding: 12px 15px;
-  font-size: 20px;
   font-weight: 500;
-}
-.content-table tbody {
-  font-weight: bold;
 }
 .content-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
 .content-table tbody tr:hover {
   background-color: #fff;
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
-  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0 inset;
 }
 .content-table tbody tr tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 .content-table tbody tr tr:last-of-type {
-  border-bottom: 2px solid #00699a;
+  border-bottom: 2px solid #274774;
 }
 
 /*==============================================================================*/
@@ -567,8 +581,8 @@ form.search-bar::after {
   display: flex;
   height: 40px;
   padding: 0;
-  background-color: #00699a;
-  border: 2px solid #00699a;
+  background-color: #305890;
+  border: 2px solid #305890;
   border-radius: 5px;
   overflow: hidden;
   font-family: "Quicksand", sans-serif;
@@ -578,10 +592,10 @@ form.search-bar::after {
 }
 .button:hover {
   color: #fff;
-  background: #008bcc;
+  background: #4075bf;
 }
 .button:hover {
-  border: 2px solid #008bcc;
+  border: 2px solid #4075bf;
 }
 .button:active {
   color: #fff;
@@ -591,12 +605,12 @@ form.search-bar::after {
   align-items: center;
   padding: 0 24px;
   color: #fff;
-  background-color: #00699a;
+  background-color: #305890;
   height: 100%;
 }
 .button__text:hover {
   color: white;
-  background-color: #008bcc;
+  background-color: #4075bf;
 }
 
 /*==============================================================================*/
@@ -607,7 +621,7 @@ form.search-bar::after {
 /*==============================================================================*/
 .active-type {
   background-color: white !important;
-  color: #00699a !important;
+  color: #3662a1 !important;
 }
 
 /*==============================================================================*/

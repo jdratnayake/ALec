@@ -47,13 +47,73 @@ $courseCode = explode("-", $temp)[0];
             <div class="discussion-table-container">
                 <ul class="discussion-table">
                     <li class="table-header">
+                        <div class="col col-4 reply"></div>
                         <div class="col col-1">Discussion</div>
                         <div class="col col-2">Started by</div>
                         <div class="col col-3">Last post</div>
-                        <div class="col col-4 reply">Replies</div>
                     </li>
 
-                    <li class="table-row">
+                    <?php
+                    while ($row = mysqli_fetch_assoc($data["topicDiscussionDetails"])) {
+                        $replyRow = mysqli_fetch_assoc($data["replyDiscussionDetails"]);
+
+                        echo
+                        "
+                        <li class='table-row'>
+                        <div class='col col-4 reply-count' data-label='Replies'>
+                            <div class='vote'>
+                                <i class='fa fa-caret-up' aria-hidden='true'></i>
+                                <div class='val'>0</div>
+                                <i class='fa fa-caret-down' aria-hidden='true'></i>
+                            </div>
+                        </div>
+
+                        <div class='col col-1' data-label='Discussion'>
+                            <a href='#'>
+                                {$row['subject']}
+                            </a>
+                        </div>
+                        <div class='col col-2' data-label='Started by'>
+                            <div class='profile_img_info'>
+                                <div class='img'>
+                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
+                                </div>
+                                <div class='info'>
+                                    <p class='name'>{$row['name']}</p>
+                                    <p class='place'>
+                                        {$row['post_time']}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col col-3' data-label='Last post'>
+                            <div class='profile_img_info'>
+                                <div class='img'>
+                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
+                                </div>
+                                <div class='info'>
+                                    <p class='name'>{$replyRow['name']}</p>
+                                    <p class='place'>
+                                        {$replyRow['post_time']}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                        ";
+                    }
+                    ?>
+
+                    <!-- <li class="table-row">
+                        <div class="col col-4 reply-count" data-label="Replies">
+                            <div class="vote">
+                                <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                <div class="val">0</div>
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
                         <div class="col col-1" data-label="Discussion">
                             <a href="#">
                                 Will MAC addresses run out?
@@ -62,11 +122,12 @@ $courseCode = explode("-", $temp)[0];
                         <div class="col col-2" data-label="Started by">
                             <div class="profile_img_info">
                                 <div class="img">
-                                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
+                                    <img <?php //srcIMG("profile_pic.svg"); 
+                                            ?> alt="profile_pic">
                                 </div>
                                 <div class="info">
                                     <p class="name">M F RIZWAN</p>
-                                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
+                                    <p class="place">
                                         24 Jul 2021
                                     </p>
                                 </div>
@@ -76,22 +137,21 @@ $courseCode = explode("-", $temp)[0];
                         <div class="col col-3" data-label="Last post">
                             <div class="profile_img_info">
                                 <div class="img">
-                                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
+                                    <img <?php //srcIMG("profile_pic.svg"); 
+                                            ?> alt="profile_pic">
                                 </div>
                                 <div class="info">
                                     <p class="name">M F RIZWAN</p>
-                                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
+                                    <p class="place">
                                         24 Jul 2021
                                     </p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col col-4 reply-count" data-label="Replies">0</div>
-                    </li>
-
+                    </li> -->
 
                 </ul>
+
             </div>
         </div>
     </div>

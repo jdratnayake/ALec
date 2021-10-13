@@ -60,15 +60,15 @@ $sidebar_max_len: 240px;
 
 .siderbar #btn{
     position: absolute;
-   color: #fff; 
-   top: 6px;
-   left: 50%;
-   font-size: 20px;
-   height: 50px;
-   width: 50px;
-   text-align: center;
-   line-height: 50px;
-   transform: translateX(-50%);
+    color: #fff;
+    top: 6px;
+    left: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
 }
 
 .siderbar.active #btn{
@@ -229,7 +229,7 @@ $sidebar_max_len: 240px;
     font-size: 20px;
     border-radius: 12px;
     text-align: center;
-    transition: all 0.4 ease;
+    transition: all 0.4s ease;
     background: $theme;
     cursor: pointer;
     

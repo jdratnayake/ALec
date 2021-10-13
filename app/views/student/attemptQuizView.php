@@ -32,38 +32,64 @@
     <form class="details" method="post" id="form">
         <ol class="all-questions">
             <li class="question-container">
-<!--                <div class="choice-que-1">-->
-<!--                    <div class="question">-->
-<!--                        Which of the following is not an operating system?-->
-<!--                    </div>-->
-<!--                    <ol>-->
-<!--                        <li class="answer">Windows</li>-->
-<!--                        <li class="answer">Linux</li>-->
-<!--                        <li class="answer">Oracle</li>-->
-<!--                        <li class="answer">DOS</li>-->
-<!--                    </ol>-->
-<!--                </div>-->
-                <div class="short-ans-1">
-                    <label for="short-1">When was the first operating system developed?</label>
-                    <input type="text" id="short-1">
-                </div>
-            </li>
-            <li class="question-container">
-                <div class="choice-que-2">
-                    <div class="question">
+                <div class="single-choice">
+                    <div class="q1 question">
                         Which of the following is not an operating system?
                     </div>
                     <ol>
-                        <li class="answer">Windows</li>
-                        <li class="answer">Linux</li>
-                        <li class="answer">Oracle</li>
-                        <li class="answer">DOS</li>
+                        <div class="answer">
+                            <input type="radio" id="scq-answer-1" name="q1" value="ans-1">
+                            <label for="scq-answer-1"><li>Windows</li></label>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" id="scq-answer-2" name="q1" value="ans-2">
+                            <label for="scq-answer-2"><li>Linux</li></label>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" id="scq-answer-3" name="q1" value="ans-3">
+                            <label for="scq-answer-3"><li>Oracle</li></label>
+                        </div>
+                        <div class="answer">
+                            <input type="radio" id="scq-answer-4" name="q1" value="ans-4">
+                            <label for="scq-answer-4"><li>DOS</li></label>
+                        </div>
                     </ol>
                 </div>
-<!--                <div class="short-ans-2">-->
-<!--                    <label for="short-2">When was the first operating system developed?</label>-->
-<!--                    <input type="text" id="short-2">-->
-<!--                </div>-->
+            </li>
+            <li class="question-container">
+                <div class="q2 multiple-choice">
+                    <div class="question">
+                        Which of the following are operating systems?
+                    </div>
+                    <ol>
+                        <div class="answer">
+                            <input type="checkbox" id="mcq-answer-1" name="q2" value="ans-1">
+                            <label for="mcq-answer-1"><li>Windows</li></label>
+                        </div>
+                        <div class="answer">
+                            <input type="checkbox" id="mcq-answer-2" name="q2" value="ans-2">
+                            <label for="mcq-answer-2"><li>Linux</li></label>
+                        </div>
+                        <div class="answer">
+                            <input type="checkbox" id="mcq-answer-3" name="q2" value="ans-3">
+                            <label for="mcq-answer-3"><li>Oracle</li></label>
+                        </div>
+                        <div class="answer">
+                            <input type="checkbox" id="mcq-answer-4" name="q2" value="ans-4">
+                            <label for="mcq-answer-4"><li>DOS</li></label>
+                        </div>
+
+<!--                        <li class="answer">Linux</li>-->
+<!--                        <li class="answer">Oracle</li>-->
+<!--                        <li class="answer">DOS</li>-->
+                    </ol>
+                </div>
+            </li>
+            <li class="question-container">
+                <div class="q3 short-ans">
+                    <label for="short-answer-box" class="question">When was the first operating system developed?</label>
+                    <input type="text" id="short-answer-box">
+                </div>
             </li>
         </ol>
 
@@ -103,7 +129,7 @@
 
 <?php linkPhp("footer"); ?>
 
-<?php linkJS("attemptQuiz"); ?>
+<?php //linkJS("attemptQuiz"); ?>
 
 </body>
 

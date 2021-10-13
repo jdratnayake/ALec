@@ -23,21 +23,34 @@
     <div class="details-container">
         <header id="header-title">User Details</header>
 
-        <!--    Add user button-->
-        <!-- <input type="button" class="add-button" id="add-button" name="add-user" value="Add New User"> -->
-        <button class="add-button" onclick="location.href='<?php echo BASEURL . '/register/index' ?>'">Add New User</button>
+        <div class="filter-container">
+            <!--    Search bar     -->
+            <form class="search-bar" id="search">
+                <label for="search"></label>
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
 
-        <!--    Search bar     -->
-        <form class="search-bar">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+            <!--    Select user type-->
+            <div class="user-type">
+                <button id="all" class="type active-type">All users</button>
+                <button id="lec" class="type">Lecturers</button>
+                <button id="stu" class="type">Students</button>
+            </div>
 
-        <!--    Select user type-->
-        <div class="user-type">
-            <button id="all" class="type active-type">All users</button>
-            <button id="lec" class="type">Lecturers</button>
-            <button id="stu" class="type">Students</button>
+            <!--    Add user button-->
+            <button class="add-button" onclick="location.href='<?php echo BASEURL . '/register/index' ?>'">Add New User</button>
+        </div>
+
+        <div class="year-selection hidden-year" id="year-selection">
+            <label for="year">Select the year</label>
+            <select name="year" id="year">
+                <option value="all" selected>All years</option>
+                <option value="1">1st year</option>
+                <option value="2">2nd year</option>
+                <option value="3">3rd year</option>
+                <option value="4">4th year</option>
+            </select>
         </div>
     </div>
 
@@ -55,39 +68,31 @@
 
             <tbody id="table-content">
 
-                <?php
-                $count = 1;
-                while ($row = mysqli_fetch_assoc($data["userDetails"])) {
-                    echo "<tr>";
-                    echo "<td>" . $count . "</td>";
-                    echo "<td>" . $row["first_name"] . "</td>";
-                    echo "<td>" . $row["last_name"] . "</td>";
-                    if ($row["user_type"] === "stu") {
-                        echo "<td>" . "Student" . "</td>";
-                    } else if ($row["user_type"] === "lec") {
-                        echo "<td>" . "Lecturer" . "</td>";
-                    }
-
-                    echo "<td>";
-
-                    echo " <button type='button' class='button' onclick=location.href='";
-                    echo BASEURL . '/userProfile/index/' . $row["user_id"];
-                    echo "'>";
-                    echo "<span class='button__text'>View user</span>";
-                    echo "</button>";
-
-                    echo "</td>";
-
-                    echo "</tr>";
-
-                    $count++;
-                }
-                ?>
-
+                <!-- HIDDEN VARIABLES -->
+                <form>
+                    <input type="hidden" id="actor" value="all">
+                    <input type="hidden" id="displayValue" value="0">
+                    <input type="hidden" id="maxValue" value="0">
+                </form>
             </tbody>
 
         </table>
     </div>
+
+    <div class="pagination-container">
+        <div class="pagination" id="pagination">
+            <a href="-1">&laquo;</a>
+            <a href="#" class="tag active">1</a>
+            <a href="#" class="tag">2</a>
+            <a href="#" class="tag">3</a>
+            <a href="#" class="tag">4</a>
+            <a href="#" class="tag">5</a>
+            <a href="#" class="tag">6</a>
+            <a href="-2">&raquo;</a>
+        </div>
+    </div>
+
+
 
     <?php linkPhp("footer"); ?>
 
@@ -97,4 +102,5 @@
 
     <?php linkJS("userDetails"); ?>
 
+    <?php linkJS("userDetailsSearch") ?>
 </body>

@@ -11,6 +11,7 @@
     <title>ALec</title>
 
     <?php linkCSS("create_quiz") ?>
+    <?php linkCSS("time_picker") ?>
 
 </head>
 
@@ -50,27 +51,13 @@
                 <!-- quiz details-->
                 <div class="form-group">
                     <label for="quiz-name">Quiz name</label>
-                    <input type="text" class="form-control form-name" placeholder="Enter quiz name" name="quiz-name" id="quiz-name">
+                    <input type="text" class="form-control form-name cursor-change" placeholder="Enter quiz name" name="quiz-name" id="quiz-name">
                 </div>
 
                 <div class="row">
                     <div class="form-group col">
                         <label>Quiz Duration</label>
-                    </div>
-
-                    <div class="form-group col">
-                        <input type="number" class="form-control" placeholder="hrs" name="quiz-dur-hr" id="quiz-dur-hr" min="0" max="60">
-                        <label for="quiz-dur-hr"></label>
-                    </div>
-
-                    <div class="form-group col">
-                        <input type="number" class="form-control" placeholder="mins" name="quiz-dur-min" id="quiz-dur-min" min="0" max="60">
-                        <label for="quiz-dur-min"></label>
-                    </div>
-
-                    <div class="form-group col col-end">
-                        <input type="number" class="form-control" placeholder="secs" name="quiz-dur-sec" id="quiz-dur-sec" min="0" max="60">
-                        <label for="quiz-dur-sec"></label>
+                        <input type="text" id="time-picker" class="form-control" placeholder="hrs:mins:secs"/>
                     </div>
                 </div>
             </div>
@@ -96,6 +83,9 @@
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
     <?php linkJS("create_quiz"); ?>
     <?php linkJS("createQuizTopic"); ?>
+
+    <?php linkJS("timePicker"); ?>
+
 </body>
 
 </html>

@@ -1,0 +1,82 @@
+@import "./0_global_variables.scss";
+
+$background-out:rgba(0, 0, 0, 0.7);
+//$background-in:#2d2d2d;
+$background-in: #ffffff;
+$input:#eee;
+$button_color:$theme;
+$button_color_hover:$theme_hover;
+
+
+/* (A) FOR THE POPUP TIME PICKER */
+#tp-pop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 999;
+  background: $background-out;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+#tp-pop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* (B) TIME PICKER ITSELF */
+.tp {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 320px;
+  background: $background-in;
+  border: 1px solid #000;
+}
+.tp-box > *::selection {
+  background: transparent;
+}
+#tp-pop .tp {
+  margin: 50vh auto 0 auto;
+  transform: translateY(-50%);
+}
+
+/* (C) HR + MIN + SEC */
+.tp-box {
+  width: 33%;
+  padding: 0 15px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.tp-up, .tp-down {
+  font-size: 32px;
+  font-weight: bold;
+  color: $button_color_hover;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.tp-val {
+  box-sizing: border-box;
+  width: 100%;
+  background: $input;
+  border: 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* (D) OK BUTTON */
+.tp-ok {
+  width: 100%;
+  background: $button_color;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 15px 0;
+  margin: 10px;
+  cursor: pointer;
+
+  &:hover{
+    background: $button_color_hover;
+  }
+}
