@@ -482,6 +482,21 @@ footer p {
   background-color: #ff6b6b;
 }
 
+.add {
+  width: 128px;
+  padding: 6px;
+  border-radius: 0 0 12px 12px;
+  color: white;
+  background-color: #2B4F82;
+  border: 3px solid #2B4F82;
+  font-weight: bold;
+}
+.add:hover {
+  border: 3px solid #1d3557;
+  color: #1d3557;
+  background-color: white;
+}
+
 .end-button-set {
   display: flex;
   justify-content: space-around;

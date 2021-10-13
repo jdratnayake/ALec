@@ -136,8 +136,11 @@
             </li>
         </ol>
 
+        <!-- Add Question Button -->
+        <input type="button" class="add" id="add-question" value="+ Add Question" />
+
         <div class="end-button-set">
-            <button type="button" class="done">Add question</button>
+<!--            <button type="button" class="done">Add question</button>-->
             <button type="submit" class="done" id="submit-btn">Save changes</button>
         </div>
 

@@ -133,6 +133,22 @@ $light: white;
   }
 }
 
+.add {
+  width: 128px;
+  padding: 6px;
+  border-radius: 0 0 12px 12px;
+  color: $light;
+  background-color: $main_color;
+  border: 3px solid $main_color;
+  font-weight: bold;
+
+  &:hover{
+    border: 3px solid $main_hover;
+    color: $main_hover;
+    background-color: $light;
+  }
+}
+
 .end-button-set{
   display: flex;
   justify-content: space-around;
