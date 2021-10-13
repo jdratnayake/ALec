@@ -1,15 +1,31 @@
 //GLOBAL VARIABLES
 
-$theme: #1ebb7f;
-//light color for hover
-$theme_hover: #1dd1a1;
 
-$theme_second: #00699a;
+$theme: #1d3557;
 //light color for hover
-$theme_second_hover: #008bcc;
+$theme_hover: #325C97;
+
+$theme_second: #2B4F82;
+$theme_second: #325C97;
+$theme_second: #2B4F82;
+//light color for hover
+//$theme_second_hover: #5472d3; //#008bcc
+$theme_second_hover: #1d3557;
+
+$table_head: #184e77;
+$table_head: #2B4F82;
+$table_head: #274774;
 
 $delete_button: #d63031;
 $delete_button_hover: #ff6b6b;
 
+//footer color
+$footer_color: #eceff1;
+$footer_fontcolor: #546e7a;
 //notification need this value as a variable
-$footer_height: 43px
+$footer_height: 43px;
+
+$action_button: #305890;
+$action_button_hover: #4075bf;
+$filter_button: #3662a1;
+$filter_button_hover:#4075bf;

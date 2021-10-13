@@ -20,7 +20,6 @@
 <?php linkPhp("navigationBarLecturer"); ?>
 
 <div class="forum-container">
-        <header>Discussion Forum for SCS 2205</header>
         <h2>Will MAC addresses run out?</h2>
 
         <div class="question">
@@ -34,6 +33,10 @@
                         24 Jul 2021
                     </p>
                 </div>
+                <div class="button-set">
+                    <button class="action-button" value="reply">Reply</button>
+                    <button class="action-button delete" value="delete-reply">Delete</button>
+                </div>
             </div>
 
             <p class="question-content">
@@ -42,6 +45,7 @@
                 This means that is highly unlikely for us to run out of MAC addresses anytime soon in the future.
                 If we run out of all possible MAC addresses, is it possible to have duplicates?
             </p>
+
         </div>
         <div class="answer">
             <div class="profile_img_info">
@@ -53,6 +57,10 @@
                     <p class="place"><span><i class="far fa-calendar-minus"></i></span>
                         24 Jul 2021
                     </p>
+                </div>
+                <div class="button-set">
+                    <button class="action-button" value="reply">Reply</button>
+                    <button class="action-button delete" value="delete-reply">Delete</button>
                 </div>
             </div>
 
@@ -64,6 +72,7 @@
                 These are some of the points that I think and I made a research on, and by research,
                 I mean a google search. Hope this helps guys, and if you have more valid points please do share.
             </p>
+
         </div>
         <div class="answer">
             <div class="profile_img_info">
@@ -76,6 +85,10 @@
                         24 Jul 2021
                     </p>
                 </div>
+                <div class="button-set">
+                    <button class="action-button" value="reply">Reply</button>
+                    <button class="action-button delete" value="delete-reply">Delete</button>
+                </div>
             </div>
             <p class="answer-content">
                 References: <br>
@@ -84,6 +97,7 @@
                 https://blog.michaelfmcnamara.com/2013/03/are-we-running-out-of-mac-addresses/
                 https://community.infosecinstitute.com/discussion/67301/do-manufacturers-recycle-mac-addresses
             </p>
+
         </div>
 </div>
 

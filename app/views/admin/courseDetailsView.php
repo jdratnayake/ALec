@@ -23,24 +23,39 @@
     <div class="details-container">
         <header>Course Details</header>
 
-        <!--    Add user button-->
-        <button class="add-button" onclick="location.href='<?php echo BASEURL . '/addNewCourse/index' ?>'">Add New Course</button>
+        <div class="filter-container">
+            <!--    Search bar     -->
+            <form class="search-bar" id="search">
+                <label for="search"></label>
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
 
-        <!--    Search bar     -->
-        <form class="search-bar" id="search-form" id="search">
-            <input type="text" placeholder="Search.." name="search" id="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+            <!--    Add user button-->
+            <button class="add-button" onclick="location.href='<?php echo BASEURL . '/addNewCourse/index' ?>'">Add New Course</button>
+        </div>
 
         <!--    Select user type-->
-        <div class="year-type">
+<!--        <div class="year-type">-->
             <!-- <button class="type active-type">All</button> -->
-            <button id="all" class="type active-type">All</button>
-            <button id="one" class="type">1st year</button>
-            <button id="two" class="type">2nd year</button>
-            <button id="three" class="type">3rd year</button>
-            <button id="four" class="type">4th year</button>
+<!--            <button id="all" class="type active-type">All</button>-->
+<!--            <button id="one" class="type">1st year</button>-->
+<!--            <button id="two" class="type">2nd year</button>-->
+<!--            <button id="three" class="type">3rd year</button>-->
+<!--            <button id="four" class="type">4th year</button>-->
+<!--        </div>-->
+
+        <div class="year-selection" id="year-selection">
+            <label for="year">Select the year</label>
+            <select name="year" id="year">
+                <option value="all" selected>All years</option>
+                <option value="1">1st year</option>
+                <option value="2">2nd year</option>
+                <option value="3">3rd year</option>
+                <option value="4">4th year</option>
+            </select>
         </div>
+
     </div>
 
     <div class="table-container">

@@ -1,7 +1,5 @@
 @import "./0_global_variables.scss";
 
-$footer_color: #1ebb7f;
-
 /*==============================================================================*/
 /*FOOTER - START*/
 /*==============================================================================*/
@@ -9,7 +7,7 @@ $footer_color: #1ebb7f;
 footer{
     width: 100%;
     background: $footer_color;
-    color: #fff; 
+    color: $footer_fontcolor;
     display: grid;
     place-items: center;
     /* padding: 2em;  */
