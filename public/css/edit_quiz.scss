@@ -65,6 +65,12 @@ $light: white;
             float: right;
             margin-top: 4px;
           }
+          .fa-times{
+            &:hover{
+              cursor: pointer;
+              color:$delete_button_hover;
+            }
+          }
         }
 
         .answer {
