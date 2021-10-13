@@ -52,7 +52,7 @@
                 "
                 <li>
                     <div class='tooltip'>
-                        <a href='#'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
+                        <a href='" . BASEURL . "/editQuiz/index/{$rowQuiz['quiz_id']}" . "'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
                         <span class='icon-tooltip'>Edit quiz</span>
                     </div>
                     <div class='tooltip'>
