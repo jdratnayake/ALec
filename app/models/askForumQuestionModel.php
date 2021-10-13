@@ -18,8 +18,8 @@ class askForumQuestionModel extends Database
         $subject = mysqli_real_escape_string($GLOBALS["db"], $subject);
         $question = mysqli_real_escape_string($GLOBALS["db"], $question);
 
-        $query = "INSERT INTO forum_topic(subject, question, post_time, forum_Id, user_id) VALUES
-                    ('$subject', '$question', NOW(), '$forumId', '$userId')";
+        $query = "INSERT INTO forum_topic(subject, question, post_time, forum_Id, user_id, updated_time) VALUES
+                    ('$subject', '$question', NOW(), '$forumId', '$userId', NOW())";
         mysqli_query($GLOBALS["db"], $query);
     }
 

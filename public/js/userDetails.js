@@ -1,102 +1,31 @@
-document.getElementById("search-form").addEventListener('submit', function (event) {
-    event.preventDefault();
-});
-
-
 $(document).ready(function () {
-    // LIVE SEARCH START
 
-    function loadData(data) {
-        $.ajax({
-            type: "GET",
+    // INITIALLY DISPLAY ALL USER DETAILS - START
+    displayAllUserDetails();
 
-            url: "http://localhost/ALec/userDetails/search/" + data,
-            dataType: "html",
-
-            success: function (response) {
-                $("#table-content").html(response);
-            }
-        })
-    }
-
-    $("#search").keyup(function () {
-        let search = $(this).val();
-
-        if (search != "") {
-            loadData(search);
-        }
-    });
-
-    // LIVE SEARCH END
-
-
-    $("#lec").click(function () {
-        $("#lec").addClass("active-type");
-        $("#stu").removeClass("active-type");
-        $("#all").removeClass("active-type");
+    function displayAllUserDetails() {
+        $("#actor").val("all");
+        colorTheLabel($("#all"));
         $("#year-selection").addClass("hidden-year");
 
-        const temp = "lec";
-        $('#header-title').text('Lecturer Details');
-
-        $.ajax({
-            type: "GET",
-
-            url: "http://localhost/ALec/userDetails/user/" + temp,
-            dataType: "html",
-            // data: {
-            //     courseId: temp
-            // },
-            success: function (response) {
-                $("#table-content").html(response);
-            }
-        })
-    });
-
-    $("#stu").click(function () {
-        $("#stu").addClass("active-type");
-        $("#lec").removeClass("active-type");
-        $("#all").removeClass("active-type");
-        $("#year-selection").removeClass("hidden-year");
-
-        const temp = "stu";
-        $('#header-title').text('Student Details');
-
-        $.ajax({
-            type: "GET",
-
-            url: "http://localhost/ALec/userDetails/user/" + temp,
-            dataType: "html",
-            // data: {
-            //     courseId: temp
-            // },
-            success: function (response) {
-                $("#table-content").html(response);
-            }
-        })
-    });
+        getData($(".tag").first());
+    }
+    // INITIALLY DISPLAY ALL USER DETAILS - END
 
     $("#all").click(function () {
-        $("#all").addClass("active-type");
-        $("#stu").removeClass("active-type");
-        $("#lec").removeClass("active-type");
+        $("#actor").val("all");
+        colorTheLabel(this);
         $("#year-selection").addClass("hidden-year");
 
-        const temp = "all";
-        $('#header-title').text('User Details');
+        getData($(".tag").first());
+    });
 
-        $.ajax({
-            type: "GET",
+    $("#lec").click(function () {
+        $("#actor").val("lec");
+        colorTheLabel(this);
+        $("#year-selection").addClass("hidden-year");
 
-            url: "http://localhost/ALec/userDetails/user/" + temp,
-            dataType: "html",
-            // data: {
-            //     courseId: temp
-            // },
-            success: function (response) {
-                $("#table-content").html(response);
-            }
-        })
+        getData($(".tag").first());
     });
 
     $("#year").change(function () {
@@ -111,70 +40,169 @@ $(document).ready(function () {
 
             success: function (response) {
                 $("#table-content").html(response);
+                createPaginationNos();
             }
         })
     });
+
+
+
+    $("#stu").click(function () {
+        $("#year").val("all");
+        $("#actor").val("stu");
+        colorTheLabel(this);
+        $("#year-selection").removeClass("hidden-year");
+
+        getData($(".tag").first());
+    });
+
+    // $('a').click(function (e) {
+    //     e.preventDefault()
+    //     console.log("Hi");
+    //     getData(this);
+    // });
+
+    $(document).on('click', 'a.change', function (e) {
+        e.preventDefault();
+
+        const href = parseInt($(this).attr('href'));
+
+        if (href == -1) {
+            const start = $(".tag").first().text();
+
+            if (start != 1) {
+                $('.tag').each(function () {
+
+                    $(this).text(parseInt($(this).text()) - 1);
+                })
+            }
+        } else if (href == -2) {
+            const last = $(".tag").last().text();
+            const maxValue = parseInt($("#maxValue").val());
+
+            if (last < maxValue) {
+                $('.tag').each(function () {
+
+                    $(this).text(parseInt($(this).text()) + 1);
+                })
+            }
+        }
+    });
+
+    $(document).on('click', 'a.tag', function (e) {
+        e.preventDefault();
+
+        const actor = $("#actor").val();
+        const year = parseInt($("#yearValue").val());
+        const value = $(this).text();
+
+        // console.log(year);
+        // console.log(value);
+
+        if (actor == "stu" && year != 0) {
+            // console.log("OKay");
+            $.ajax({
+                type: "GET",
+
+                url: "http://localhost/ALec/userDetails/year/" + year + "/" + value,
+                dataType: "html",
+
+                success: function (response) {
+                    $("#table-content").html(response);
+                }
+            })
+        } else {
+            getData(this, 0);
+        }
+
+        $('.tag').each(function () {
+
+            $(this).removeClass("active");
+        })
+
+        $(this).addClass("active");
+    });
+
+    function getData(element, sig = 1) {
+        // $('.tag').each(function () {
+        //     $(this).removeClass("active");
+        // })
+
+        if ($(element).attr('href') == "#") {
+            //Highlight the button
+            // $(element).addClass("active");
+
+            const actor = $("#actor").val();
+            let value = $(element).text();
+
+            if (sig == 1) {
+                value = 1;
+            }
+
+            // console.log(actor);
+            // console.log(value);
+
+            $.ajax({
+                type: "GET",
+
+                url: "http://localhost/ALec/userDetails/user/" + actor + "/" + value,
+                dataType: "html",
+                // data: {
+                //     courseId: temp
+                // },
+                success: function (response) {
+                    $("#table-content").html(response);
+
+                    if (sig == 1) {
+                        createPaginationNos();
+                    }
+                }
+            })
+        }
+    }
+
+    function resetNumbers() {
+        $('.tag').each(function () {
+            $(this).removeClass("active");
+        })
+
+        $('.tag').first().addClass("active");
+    }
+
+    function colorTheLabel(element) {
+        $("#all").removeClass("active-type");
+        $("#stu").removeClass("active-type");
+        $("#lec").removeClass("active-type");
+
+        $(element).addClass("active-type");
+    }
+
+    function createPaginationNos() {
+        const displayCount = parseInt($("#displayValue").val());
+        const maxValue = parseInt($("#maxValue").val());
+
+
+
+        let count = 0;
+
+        if (maxValue > displayCount) {
+            // console.log("OKay");
+            count = displayCount;
+        } else {
+            // console.log("No");
+            count = maxValue;
+        }
+        // console.log(maxValue);
+        // console.log(displayCount);
+        // console.log(count);
+
+        let txt = "";
+        $("#pagination").html('<a href="-1" class="change">&laquo;</a>');
+        $("#pagination").append("<a href='#' class='tag active'>" + 1 + "</a>");
+        for (let i = 2; i <= count; i++) {
+            txt = "<a href='#' class='tag'>" + i + "</a>";
+            $("#pagination").append(txt);
+        }
+        $("#pagination").append('<a href="-2" class="change">&raquo;</a>');
+    }
 })
-
-
-// const allBtn = document.getElementById("all");
-// const stuBtn = document.getElementById("stu");
-// const lecBtn = document.getElementById("lec");
-
-// allBtn.addEventListener('click', function () {
-//     setCookie("buttonId", "all", 30);
-// })
-
-// stuBtn.addEventListener('click', function () {
-//     setCookie("buttonId", "stu", 30);
-// })
-
-// lecBtn.addEventListener('click', function () {
-//     setCookie("buttonId", "lec", 30);
-// })
-
-// function setCookie(cname, cvalue, exdays) {
-//     const d = new Date();
-//     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-//     let expires = "expires=" + d.toGMTString();
-//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-// }
-
-// function getCookie(cname) {
-//     let name = cname + "=";
-//     let decodedCookie = decodeURIComponent(document.cookie);
-//     let ca = decodedCookie.split(';');
-//     for (let i = 0; i < ca.length; i++) {
-//         let c = ca[i];
-//         while (c.charAt(0) == ' ') {
-//             c = c.substring(1);
-//         }
-//         if (c.indexOf(name) == 0) {
-//             return c.substring(name.length, c.length);
-//         }
-//     }
-//     return "";
-// }
-
-// function checkCookie() {
-//     let idName = getCookie("buttonId");
-
-//     if (idName == "") {
-//         setCookie("buttonId", "all", 30);
-//         idName = "all"
-//     }
-
-//     if (idName == "all") {
-//         allBtn.classList.add("active-type");
-//         stuBtn.classList.remove("active-type");
-//         lecBtn.classList.remove("active-type");
-//     } else if (idName == "stu") {
-//         stuBtn.classList.add("active-type");
-//         allBtn.classList.remove("active-type");
-//         lecBtn.classList.remove("active-type");
-//     } else if (idName == "lec") {
-//         lecBtn.classList.add("active-type");
-//         stuBtn.classList.remove("active-type");
-//         allBtn.classList.remove("active-type");
-//     }
-// }

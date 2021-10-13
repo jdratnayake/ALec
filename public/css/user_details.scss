@@ -191,7 +191,7 @@ form.search-bar::after {
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .content-table thead tr {
@@ -303,3 +303,41 @@ form.search-bar::after {
 .hidden-year{
   display: none;
 }
+
+/*==============================================================================*/
+/*PAGINATION - START*/
+/*==============================================================================*/
+
+.home-content{
+  .pagination-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    
+    .pagination {
+      display: inline-block;
+    }
+    
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    
+    .pagination a.active {
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+    }
+    
+    .pagination a:hover:not(.active) {
+      background-color: #ddd;
+      border-radius: 5px;
+    }
+  }
+}
+
+/*==============================================================================*/
+/*PAGINATION - END*/
+/*==============================================================================*/

@@ -52,7 +52,8 @@
 
         </form>
 
-        <button type="submit" value="submit" class="done cancel">Cancel</button>
+        <button type="submit" value="submit" class="done cancel" onclick="<?php echo "location.href=" . "'" . BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] . "'" ?>">
+            Cancel</button>
 
     </div>
 

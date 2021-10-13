@@ -15,6 +15,7 @@ class askForumQuestion extends AlecFramework
         $errors["question"] = "";
 
         $data["forumId"] = $forumId;
+        $data["courseId"] = $this->askForumQuestionModel->getCourseId($forumId);
         $data["userType"] = $this->getSession("type");
         $data["subjectCode"] = $this->askForumQuestionModel->getSubjectCode($forumId);
 

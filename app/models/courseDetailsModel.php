@@ -57,14 +57,31 @@ class CourseDetailsModel extends Database
     {
         $data = mysqli_real_escape_string($GLOBALS["db"], $data);
 
+        $data = str_replace('_', ' ', $data);
+
         $query = "SELECT course.course_id, course.course_name, course.year, COUNT(course_registration_stu.course_id) AS count 
             FROM course LEFT JOIN course_registration_stu 
             ON course.course_id=course_registration_stu.course_id 
-            WHERE course_name LIKE '%$data%' OR
-            course_description LIKE '%$data%' OR
-            year LIKE '%$data%'
-            GROUP BY course.course_id";
+            WHERE course_name LIKE '%$data%' GROUP BY course.course_id";
+
         $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) == 0) {
+            $query = "SELECT course.course_id, course.course_name, course.year, COUNT(course_registration_stu.course_id) AS count 
+            FROM course LEFT JOIN course_registration_stu 
+            ON course.course_id=course_registration_stu.course_id 
+            WHERE course_description LIKE '%$data%' GROUP BY course.course_id";
+            $result = mysqli_query($GLOBALS["db"], $query);
+        }
+
+        if (mysqli_num_rows($result) == 0) {
+            $query = "SELECT course.course_id, course.course_name, course.year, COUNT(course_registration_stu.course_id) AS count 
+            FROM course LEFT JOIN course_registration_stu 
+            ON course.course_id=course_registration_stu.course_id 
+            WHERE year LIKE '%$data%'
+            GROUP BY course.course_id";
+            $result = mysqli_query($GLOBALS["db"], $query);
+        }
 
         $count = 1;
         $output = "";
