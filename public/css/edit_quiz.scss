@@ -51,6 +51,7 @@ $light: white;
       margin-left: 15px;
 
       .question-container {
+        margin-bottom: 30px;
 
         .question {
           margin-bottom: 5px;
@@ -66,6 +67,9 @@ $light: white;
             margin-top: 4px;
           }
           .fa-times{
+            margin-top: 8px;
+            font-size: larger;
+
             &:hover{
               cursor: pointer;
               color:$delete_button_hover;
@@ -94,6 +98,8 @@ $light: white;
           }
         }
       }
+
+
     }
   }
 }
@@ -142,6 +148,7 @@ $light: white;
   border: 3px solid $main_color;
   font-weight: bold;
   cursor: pointer;
+  margin-left: 15px;
 
   &:hover{
     border: 3px solid $main_hover;
@@ -152,12 +159,11 @@ $light: white;
 
 .end-button-set{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 
 .done {
-  width: 49%;
-  padding: 10px 50px;
+  padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
   color: $light;
@@ -178,6 +184,8 @@ $light: white;
 
 input{
   border: 2px solid $answer_background;
+  padding: 5px 0 5px 5px;
+  font-size: 16px;
 }
 
 .short-ans{
@@ -186,4 +194,9 @@ input{
 
 .short-input{
   list-style: none !important;
+}
+
+.radio-inline{
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
