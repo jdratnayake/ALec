@@ -141,6 +141,7 @@ $light: white;
   background-color: $main_color;
   border: 3px solid $main_color;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover{
     border: 3px solid $main_hover;
@@ -183,3 +184,6 @@ input{
   ul{list-style-type:none;}
 }
 
+.short-input{
+  list-style: none !important;
+}

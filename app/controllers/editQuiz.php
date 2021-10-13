@@ -8,7 +8,7 @@ class EditQuiz extends AlecFramework
         $this->helper("linker");
     }
 
-    public function index()
+    public function index($quizId)
     {
         $this->view("lecturer/editQuizView");
     }
