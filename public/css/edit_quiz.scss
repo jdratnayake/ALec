@@ -54,6 +54,7 @@ $light: white;
 
         .question {
           margin-bottom: 5px;
+          input{width: 100%}
         }
 
         li {
@@ -86,12 +87,6 @@ $light: white;
             min-width: 70px;
           }
         }
-
-
-        .short-ans{
-          ul{list-style-type:none;}
-        }
-
       }
     }
   }
@@ -158,5 +153,11 @@ $light: white;
 
 /* --------------BUTTON STYLES END----------------*/
 
+input{
+  border: 2px solid $answer_background;
+}
 
+.short-ans{
+  ul{list-style-type:none;}
+}
 

@@ -38,7 +38,7 @@
             <li class="question-container">
                 <div class="single-choice">
                     <div class="question">
-                        Which of the following is not an operating system?
+                        <input type="text" value="Which of the following is not an operating system?">
                     </div>
                     <div class="button-set">
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
@@ -74,7 +74,9 @@
             </li>
             <li class="question-container">
                 <div class="short-ans">
-                    <div class="question">When was the first operating system developed?</div>
+                    <div class="question">
+                        <input type="text" value="When was the first operating system developed?">
+                    </div>
                     <div class="button-set">
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
                     </div>
@@ -90,7 +92,7 @@
             <li class="question-container">
                 <div class="multiple-choice">
                     <div class="question">
-                        Which of the following are operating systems?
+                        <input type="text" value="Which of the following are operating systems?">
                     </div>
                     <div class="button-set">
                         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete question</button>
