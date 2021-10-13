@@ -35,4 +35,34 @@ class EditQuizModel extends Database
 
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function insertQuizQuestion($quizId, $question, $questionType)
+    {
+        $quizId = mysqli_real_escape_string($GLOBALS["db"], $quizId);
+        $question = mysqli_real_escape_string($GLOBALS["db"], $question);
+        $questionType = mysqli_real_escape_string($GLOBALS["db"], $questionType);
+        $successRate = "0";
+
+        $query = "INSERT INTO quiz_question(question_no, quiz_id, question, question_type, success_rate) VALUES (NULL, '$quizId', '$question', '$questionType', '$successRate')";
+
+        mysqli_query($GLOBALS["db"], $query);
+
+        $query = "SELECT question_no FROM quiz_question ORDER BY question_no DESC LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["question_no"];
+    }
+
+    public function insertChoice($questionId, $quizId, $choice, $points)
+    {
+        $questionId = mysqli_real_escape_string($GLOBALS["db"], $questionId);
+        $quizId = mysqli_real_escape_string($GLOBALS["db"], $quizId);
+        $choice = mysqli_real_escape_string($GLOBALS["db"], $choice);
+        $points = mysqli_real_escape_string($GLOBALS["db"], $points);
+
+        $query = "INSERT INTO question_choice (choice_id, question_no, quiz_id, choice_name, points) VALUES 
+        (NULL, '$questionId', '$quizId', '$choice', '$points')";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }

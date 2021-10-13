@@ -35,7 +35,7 @@
         <!-- Quiz basic details -->
         <form class="details" action="<?php echo BASEURL . "/editQuiz/submit/{$data['quizId']}" ?>" method="post" id="form">
 
-            <input type="hidden" name="new-question-count" value="0">
+            <input type="hidden" name="new-question-count" id="new-question-count" value="0">
 
             <ol class="all-questions">
 
@@ -117,8 +117,7 @@
                                     <li class='answer short-input' id='short-answer-box'>
                                         <input type='text' name='choice_$choiceRow[choice_id]'
                                         value='$choiceRow[choice_name]'>
-                                        <input type='text' name='points_$choiceRow[choice_id]'
-                                        value='100%' class='points'>
+                                        <input type='text' name='points_$choiceRow[choice_id]' value='100%' class='points'>
                                         <i class='fa fa-times' aria-hidden='true'></i>
                                     </li>
                                 </ul>

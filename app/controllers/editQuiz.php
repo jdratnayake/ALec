@@ -45,6 +45,42 @@ class EditQuiz extends AlecFramework
                     $this->editQuizModel->updateChoice($choiceRow["choice_id"], $choice, $points);
                 }
             }
+
+            $count = $_POST["new-question-count"];
+
+            for ($i = 1; $i <= $count; $i++) {
+                $question = $_POST["q_{$i}"];
+                $type = $_POST["{$i}_type"];
+
+                if ($type == "mcq") {
+                    if (isset($_POST["q_{$i}_type"])) {
+                        $type = "mcq-m";
+                    } else {
+                        $type = "mcq-s";
+                    }
+                }
+
+                $questionId = $this->editQuizModel->insertQuizQuestion($quizId, $question, $type);
+
+                if ($type == "short") {
+                    $choice = $_POST["q_{$i}_choice_1"];
+
+                    $this->editQuizModel->insertChoice($questionId, $quizId, $choice, 100);
+                } else if ($type == "mcq-m" or $type == "mcq-s") {
+                    $j = 1;
+
+                    while (isset($_POST["q_{$i}_choice_$j"]) && !empty($_POST["q_{$i}_choice_$j"])) {
+                        if (isset($_POST["q_{$i}_points_$j"]) && !empty($_POST["q_{$i}_points_$j"])) {
+                            $choice = chop($_POST["q_{$i}_choice_$j"]);
+                            $points = chop($_POST["q_{$i}_points_$j"], "%");
+
+                            $this->editQuizModel->insertChoice($questionId, $quizId, $choice, $points);
+                        }
+
+                        $j++;
+                    }
+                }
+            }
         }
 
         $this->index($quizId);
