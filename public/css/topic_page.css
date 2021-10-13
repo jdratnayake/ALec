@@ -29,7 +29,7 @@ body {
   height: 100%;
   /* width of the siderbar when toggle button is off */
   width: 78px;
-  background: #1ebb7f;
+  background: #19345d;
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -188,7 +188,7 @@ body {
   position: relative;
   padding: 10px 6px;
   height: 60px;
-  background: #1ebb7f;
+  background: #19345d;
   transition: all 0.4 ease;
 }
 
@@ -239,8 +239,8 @@ body {
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
-  transition: all 0.4 ease;
-  background: #1ebb7f;
+  transition: all 0.4s ease;
+  background: #19345d;
   cursor: pointer;
 }
 .profile #log_out:hover {
@@ -320,7 +320,7 @@ body {
   height: 56px;
   width: 56px;
   border-radius: 50%;
-  background-color: #1ebb7f;
+  background-color: #19345d;
   color: white;
   /* padding: 20px;
   margin: 10px;  */
@@ -359,8 +359,8 @@ body {
 /*==============================================================================*/
 footer {
   width: 100%;
-  background: #1ebb7f;
-  color: #fff;
+  background: #eceff1;
+  color: #546e7a;
   display: grid;
   place-items: center;
   /* padding: 2em;  */
@@ -394,7 +394,7 @@ footer p {
 .container .home-content .topic-container h2 {
   padding: 15px;
   text-align: center;
-  background: #00699a;
+  background: #2B4F82;
   color: #FFFFFF;
   font-size: 30px;
   font-weight: 600;
@@ -474,7 +474,7 @@ footer p {
 }
 .container .home-content .topic-container .topic .active {
   background-color: #008bcc;
-  border: 1px solid #00699a;
+  border: 1px solid #2B4F82;
 }
 .container .home-content .topic-container .topic .active::after {
   content: "−";

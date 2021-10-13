@@ -28,7 +28,7 @@ body {
   height: 100%;
   /* width of the siderbar when toggle button is off */
   width: 78px;
-  background: #1d3557;
+  background: #19345d;
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -187,7 +187,7 @@ body {
   position: relative;
   padding: 10px 6px;
   height: 60px;
-  background: #1d3557;
+  background: #19345d;
   transition: all 0.4 ease;
 }
 
@@ -239,7 +239,7 @@ body {
   border-radius: 12px;
   text-align: center;
   transition: all 0.4s ease;
-  background: #1d3557;
+  background: #19345d;
   cursor: pointer;
 }
 .profile #log_out:hover {
@@ -319,7 +319,7 @@ body {
   height: 56px;
   width: 56px;
   border-radius: 50%;
-  background-color: #1d3557;
+  background-color: #19345d;
   color: white;
   /* padding: 20px;
   margin: 10px;  */
@@ -392,7 +392,7 @@ footer p {
   overflow-x: hidden;
 }
 .forum-container h2 {
-  color: #1d3557;
+  color: #19345d;
   text-align: left;
   margin: 10px 0;
   font-size: 30px;

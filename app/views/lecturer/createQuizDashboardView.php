@@ -56,7 +56,7 @@
 
                 <div class="row">
                     <div class="form-group col">
-                        <label>Quiz Duration</label>
+                        <label for="time-picker">Quiz Duration</label>
                         <input type="text" id="time-picker" class="form-control" placeholder="hrs:mins:secs"/>
                     </div>
                 </div>

@@ -4,7 +4,8 @@
 @import "./3_notification.scss";
 @import "./4_footer.scss";
 
-$modal_color: #1ebb7f;
+$modal_color: $theme_hover;
+$light: #e0f7fa;
 
 /*==============================================================================*/
 /*SLIDE SHOW - START*/
@@ -132,8 +133,8 @@ $modal_color: #1ebb7f;
 /* navigation tab hover settings */
 .navigation-tab:hover{
     background-color: #fff;
-    color: green;
-    border: 2px solid green;
+    color: $theme;
+    border: 2px solid $theme;
     transition: all 0.5s ease;
 }
 
@@ -194,7 +195,7 @@ $modal_color: #1ebb7f;
                 display: block;
 
                 &:hover {
-                    background-color: #defaef;
+                    background-color: $light;
                     &:first-child{
                         border-radius: 10px 10px 0 0;
                     }

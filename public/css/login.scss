@@ -1,7 +1,8 @@
+@import "0_global_variables";
 @import "./1_main.scss";
 
 //LOCAL VARIABLES
-$login_theme_color: #38d39f;
+$login_theme_color: $theme;
 
 .wave{
     position: fixed;
