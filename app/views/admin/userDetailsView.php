@@ -23,21 +23,23 @@
     <div class="details-container">
         <header id="header-title">User Details</header>
 
-        <!--    Add user button-->
-        <!-- <input type="button" class="add-button" id="add-button" name="add-user" value="Add New User"> -->
-        <button class="add-button" onclick="location.href='<?php echo BASEURL . '/register/index' ?>'">Add New User</button>
+        <div class="filter-container">
+            <!--    Search bar     -->
+            <form class="search-bar" id="search">
+                <label for="search"></label>
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
 
-        <!--    Search bar     -->
-        <form class="search-bar" id="search-form">
-            <input type="text" placeholder="Search.." name="search" id="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+            <!--    Select user type-->
+            <div class="user-type">
+                <button id="all" class="type active-type">All users</button>
+                <button id="lec" class="type">Lecturers</button>
+                <button id="stu" class="type">Students</button>
+            </div>
 
-        <!--    Select user type-->
-        <div class="user-type">
-            <button id="all" class="type active-type">All users</button>
-            <button id="lec" class="type">Lecturers</button>
-            <button id="stu" class="type">Students</button>
+            <!--    Add user button-->
+            <button class="add-button" onclick="location.href='<?php echo BASEURL . '/register/index' ?>'">Add New User</button>
         </div>
 
         <div class="year-selection hidden-year" id="year-selection">
