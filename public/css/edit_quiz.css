@@ -229,6 +229,16 @@ body {
 .siderbar.active .profile .profile_details {
   opacity: 1;
   pointer-events: auto;
+  width: 76%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.siderbar.active .profile .profile_details:hover {
+  color: #184e77;
+  background: #fff;
+  border-radius: 10px;
 }
 
 .profile .profile_details img {

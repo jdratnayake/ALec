@@ -28,6 +28,13 @@ function srcIMG($imgPath)
     echo $url;
 }
 
+//To link profile pictures
+function srcProfileIMG($imgPath)
+{
+    $url = "src='" . BASEURL . "/public/pic_data/" . $imgPath . "'";
+    echo $url;
+}
+
 
 // To link php files in view
 function linkPhp($phpPath)
