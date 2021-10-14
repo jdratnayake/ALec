@@ -62,7 +62,6 @@ form {
 form h2 {
   font-size: 2.9rem;
   text-transform: uppercase;
-  margin: 15px 0;
   color: #333;
 }
 
@@ -79,7 +78,7 @@ form h2 {
   content: "";
   position: absolute;
   bottom: -2px;
-  width: 0%;
+  width: 0;
   height: 2px;
   transition: 0.3s;
 }
@@ -154,13 +153,14 @@ a {
   display: block;
   text-align: right;
   text-decoration: none;
-  color: #365dd3;
+  color: #325C97;
   font-size: 0.9rem;
   transition: 0.3s;
 }
 
 a:hover {
   color: #19345d;
+  text-decoration: underline;
 }
 
 .btn {
@@ -172,7 +172,7 @@ a:hover {
   font-size: 1.2rem;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #32be8f, #19345d, #32be8f);
+  background-image: linear-gradient(to right, #2B4F82, #19345d, #2B4F82);
   cursor: pointer;
   color: #fff;
   text-transform: uppercase;
