@@ -79,6 +79,15 @@
                 </div>
 
                 <div class="modal-body">
+                    <strong>User type:</strong>
+                    <div class="radio-btn">
+                        <input type="radio" id="lecturers" name="user-type" checked="checked">
+                        <label for="lecturers">Lecturers</label><br>
+
+                        <input type="radio" id="students" name="user-type">
+                        <label for="students">Students</label><br>
+                    </div>
+
                     <p>Use this format to enter details using .csv file</p>
                     <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download" . "'" ?>">Download template</button>
 
@@ -110,12 +119,23 @@
                 </div>
                 <div class="modal-body">
                     <form action="<?php echo BASEURL . "/adminDashboard/manageCourseParticiption" ?>" method="post">
+
+                        <strong>Action:</strong>
                         <div class="radio-btn">
-                            <input type="radio" id="assign-users" name="option" checked="checked">
+                            <input type="radio" id="assign-users" name="action" checked="checked">
                             <label for="assign-users">Assign multiple users</label><br>
 
-                            <input type="radio" id="delete-users" name="option">
+                            <input type="radio" id="delete-users" name="action">
                             <label for="delete-users">Delete multiple users</label><br>
+                        </div>
+
+                        <strong>User type:</strong>
+                        <div class="radio-btn">
+                            <input type="radio" id="lecturers" name="user-type" checked="checked">
+                            <label for="lecturers">Lecturers</label><br>
+
+                            <input type="radio" id="students" name="user-type">
+                            <label for="students">Students</label><br>
                         </div>
 
                         <div class="year-selection">
@@ -139,8 +159,6 @@
                         </div>
 
                         <input id="manage-users-btn" type="submit" value="Assign users" name="submit" class="upload-btn">
-<!--                        <input id="add-users-btn" type="submit" value="Assign users" name="submit" class="upload-btn">-->
-<!--                        <input id="delete-users-btn" type="submit" value="Delete users" name="submit" class="upload-btn">-->
 
                     </form>
                 </div>
