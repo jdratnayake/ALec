@@ -111,16 +111,6 @@ class AdminDashboard extends AlecFramework
 
     public function download()
     {
-        // $url = BASEURL . "/public/download_data/List.csv";
-        // $file_name = basename($url);
-
-        // if (file_put_contents($file_name, file_get_contents($url))) {
-        //     echo "File downloaded successfully";
-        // } else {
-        //     echo "File downloading failed.";
-        // }
-
-
         $file = "download_data/List.csv";
         $type = filetype($file);
         header("Content-Type: $type");

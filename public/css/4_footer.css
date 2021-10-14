@@ -3,8 +3,8 @@
 /*==============================================================================*/
 footer {
   width: 100%;
-  background: #1ebb7f;
-  color: #fff;
+  background: #eceff1;
+  color: #546e7a;
   display: -ms-grid;
   display: grid;
   place-items: center;

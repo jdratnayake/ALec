@@ -196,6 +196,15 @@ $sidebar_max_len: 240px;
 .siderbar.active .profile .profile_details{
     opacity: 1;
     pointer-events: auto;
+    width: 76%;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+    &:hover{
+        color: #184e77;
+        background: #fff;
+        border-radius: 10px;
+    }
 }
 
 
