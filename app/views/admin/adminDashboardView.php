@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="title">
-                    Quick Access
+                    Toolkit
                 </div>
             </div>
             <div class="dropdown-content" id="dropdown-content">
@@ -78,19 +78,21 @@
                     <h2>Create multiple user accounts</h2>
                 </div>
 
-                <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download" . "'" ?>">Download</button>
-
                 <div class="modal-body">
+                    <p>Use this format to enter details using .csv file</p>
+                    <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download" . "'" ?>">Download template</button>
+
+                    <br><br>
                     <p>
-                        Enter .txt file with all the Students<br><br>
-                        Note: Each user should be in a newline in the below format<br><br>
-                        FirstName LastName EmailAddress IndexNo<br>
-                        &nbsp;&nbsp;&nbsp;eg: Dinil Ratnayake diniljanitha@gmail.com 19001411
+                        Use this format to enter details using .txt file<br>
+                        &emsp;FirstName LastName EmailAddress IndexNo<br>
+                        &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
+                        <strong>Note:</strong>Each user should be in a newline<br><br>
                     </p>
                     <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
                         Upload file:
                         <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="submit" value="Upload file" name="submit" class="upload-btn">
+                        <input type="submit" value="Add users" name="submit" class="upload-btn">
                     </form>
                 </div>
             </div>
@@ -107,17 +109,13 @@
                     <h2>Manage multiple user accounts</h2>
                 </div>
                 <div class="modal-body">
-                    <p>
-                        Choose what you want to do<br><br>
-                    </p>
                     <form action="<?php echo BASEURL . "/adminDashboard/manageCourseParticiption" ?>" method="post">
                         <div class="radio-btn">
-                            <input type="radio" id="create-users" name="option" value="create-users">
-                            <label for="create-users">Assign multiple users</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="manage-users" name="option" value="manage-users">
-                            <label for="manage-users">Delete multiple users</label><br>
+                            <input type="radio" id="assign-users" name="option" checked="checked">
+                            <label for="assign-users">Assign multiple users</label><br>
+
+                            <input type="radio" id="delete-users" name="option">
+                            <label for="delete-users">Delete multiple users</label><br>
                         </div>
 
                         <div class="year-selection">
@@ -140,7 +138,9 @@
                             </select>
                         </div>
 
-                        <input type="submit" value="Submit" name="submit" class="upload-btn">
+                        <input id="manage-users-btn" type="submit" value="Assign users" name="submit" class="upload-btn">
+<!--                        <input id="add-users-btn" type="submit" value="Assign users" name="submit" class="upload-btn">-->
+<!--                        <input id="delete-users-btn" type="submit" value="Delete users" name="submit" class="upload-btn">-->
 
                     </form>
                 </div>
@@ -198,6 +198,8 @@
     <?php linkJS("dashboard_boost_modaltwo"); ?>
 
     <?php linkJS("adminDashboardCourseDisplay"); ?>
+
+    <?php linkJS("adminDashboardModal"); ?>
 </body>
 
 </html>

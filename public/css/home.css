@@ -29,7 +29,7 @@ body {
   height: 100%;
   /* width of the siderbar when toggle button is off */
   width: 78px;
-  background: #1ebb7f;
+  background: #19345d;
   padding: 6px 14px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -205,7 +205,7 @@ body {
   position: relative;
   padding: 10px 6px;
   height: 60px;
-  background: #1ebb7f;
+  background: #19345d;
   -webkit-transition: all 0.4 ease;
   transition: all 0.4 ease;
 }
@@ -229,6 +229,16 @@ body {
 .siderbar.active .profile .profile_details {
   opacity: 1;
   pointer-events: auto;
+  width: 76%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.siderbar.active .profile .profile_details:hover {
+  color: #184e77;
+  background: #fff;
+  border-radius: 10px;
 }
 
 .profile .profile_details img {
@@ -263,9 +273,9 @@ body {
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
-  -webkit-transition: all 0.4 ease;
-  transition: all 0.4 ease;
-  background: #1ebb7f;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #19345d;
   cursor: pointer;
 }
 
@@ -348,7 +358,7 @@ body {
   height: 56px;
   width: 56px;
   border-radius: 50%;
-  background-color: #1ebb7f;
+  background-color: #19345d;
   color: white;
   /* padding: 20px;
     margin: 10px;  */
@@ -394,8 +404,8 @@ body {
 /*==============================================================================*/
 footer {
   width: 100%;
-  background: #1ebb7f;
-  color: #fff;
+  background: #eceff1;
+  color: #546e7a;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -532,7 +542,7 @@ footer p {
 }
 
 .navigation-tab {
-  background: #1ebb7f;
+  background: #19345d;
   width: 165px;
   height: 160px;
   color: #fff;
@@ -544,8 +554,8 @@ footer p {
 /* navigation tab hover settings */
 .navigation-tab:hover {
   background-color: #fff;
-  color: green;
-  border: 2px solid green;
+  color: #19345d;
+  border: 2px solid #19345d;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -594,18 +604,18 @@ footer p {
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 10px;
-  border-bottom: 2px solid #1ebb7f;
+  border-bottom: 2px solid #19345d;
 }
 
 .dropdown-content a {
   color: black;
-  padding: 30px;
+  padding: 15px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #defaef;
+  background-color: rgba(54, 98, 159, 0.15);
 }
 
 .dropdown-content a:hover:first-child {
@@ -651,12 +661,12 @@ footer p {
   background-color: #fefefe;
   margin: auto;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
 }
 
 .modal-content .modal-header {
   padding: 8px 16px;
-  background-color: #1ebb7f;
+  background-color: #325C97;
   color: white;
 }
 
@@ -665,27 +675,32 @@ footer p {
 }
 
 .modal-content .modal-body form {
-  padding: 16px 0;
   display: -ms-inline-grid;
   display: inline-grid;
 }
 
+.modal-content .modal-body form .radio-btn {
+  margin-bottom: 10px;
+}
+
 .modal-content .modal-body form .upload-btn {
-  background-color: #1ebb7f;
-  border: 2px solid #1ebb7f;
+  background-color: #325C97;
+  border: 2px solid #325C97;
   color: white;
-  padding: 8px 40px;
+  padding: 8px 0;
   text-align: center;
   cursor: pointer;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 25px;
   font-size: 15px;
+  max-width: 150px;
 }
 
 .modal-content .modal-body form .upload-btn:hover {
-  background-color: white;
-  color: #1ebb7f;
+  color: white;
+  background-color: #19345d;
+  border: 2px solid #19345d;
 }
 
 /* The Close Button */
@@ -722,7 +737,7 @@ footer p {
 }
 
 .year-selection select, .course-selection select {
-  border: 1px solid #00699a;
+  border: 1px solid #2B4F82;
   padding: 2px 22px;
   border-radius: 8px;
 }

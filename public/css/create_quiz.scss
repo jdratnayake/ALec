@@ -60,6 +60,7 @@ $light: white;
             background-color: $main_color;
             border: 3px solid $main_color;
             font-weight: bold;
+            cursor: pointer;
 
             &:hover{
                 border: 3px solid $main_hover;
@@ -326,3 +327,4 @@ $light: white;
 }
 
 /* -------OPTION BUTTON END------------- */
+

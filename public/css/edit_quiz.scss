@@ -11,6 +11,7 @@ $answer_color: rgba(0, 0, 0, 0.85);
 $answer_background: rgba(0, 0, 0, 0.05);
 $light: white;
 
+
 .form-content {
   padding: 16px;
   width: 51%;
@@ -50,13 +51,11 @@ $light: white;
       margin-left: 15px;
 
       .question-container {
-        //margin-top: 10px;
-        //margin-bottom: 10px;
-        //padding-bottom: 10px;
+        margin-bottom: 30px;
 
-        //.choice-que-1{
         .question {
           margin-bottom: 5px;
+          input{width: 100%}
         }
 
         li {
@@ -66,6 +65,15 @@ $light: white;
           i{
             float: right;
             margin-top: 4px;
+          }
+          .fa-times{
+            margin-top: 8px;
+            font-size: larger;
+
+            &:hover{
+              cursor: pointer;
+              color:$delete_button_hover;
+            }
           }
         }
 
@@ -81,26 +89,17 @@ $light: white;
           &:hover {
             background-color: rgba(0, 0, 0, 0.1);
           }
-        }
-        //}
 
-        .short-ans{
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
+          input{width: 80%;}
 
-          .short-input{
-            background-color: $answer_background;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 290486px;
-
-            &:hover {
-              background-color: rgba(0, 0, 0, 0.1);
-            }
+          .points{
+            width: 15%;
+            min-width: 70px;
           }
         }
       }
+
+
     }
   }
 }
@@ -140,14 +139,31 @@ $light: white;
   }
 }
 
+.add {
+  width: 128px;
+  padding: 6px;
+  border-radius: 0 0 12px 12px;
+  color: $light;
+  background-color: $main_color;
+  border: 3px solid $main_color;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 15px;
+
+  &:hover{
+    border: 3px solid $main_hover;
+    color: $main_hover;
+    background-color: $light;
+  }
+}
+
 .end-button-set{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 
 .done {
-  width: 49%;
-  padding: 10px 50px;
+  padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
   color: $light;
@@ -166,5 +182,25 @@ $light: white;
 
 /* --------------BUTTON STYLES END----------------*/
 
+input{
+  border: 2px solid $answer_background;
+  padding: 5px 0 5px 5px;
+  font-size: 16px;
+}
 
+.short-ans{
+  ul{list-style-type:none;}
+}
 
+.short-input{
+  list-style: none !important;
+}
+
+.radio-inline{
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+#add-question{
+  font-size: 14px;
+}

@@ -12,6 +12,8 @@
 
     <?php linkCSS("preview_quiz") ?>
 
+    <?php linkCSS("time_picker") ?>
+
 </head>
 
 <body>
@@ -25,10 +27,11 @@
 
         <!-- Edit , delete buttons-->
         <button type="button" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete quiz</button>
-        <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit quiz</button>
+
+        <button type="button" onclick="<?php echo "location.href='" . BASEURL . "/editQuiz/index/{$data["quizDetails"]["quiz_id"]}" . "'"; ?>" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit quiz</button>
 
         <div class="quiz-name">
-            <h2><?php echo $data["quizName"]; ?></h2>
+            <h2><?php echo $data["quizDetails"]["quiz_name"]; ?></h2>
         </div>
 
         <!-- Quiz questions and answers container -->
@@ -72,7 +75,11 @@
 
             </ol>
 
-            <button id="publish-btn"  type="submit" class="done">Publish</button>
+            <input type="hidden" id="time-hr" value="<?php echo $data["quizDetails"]["hr"] ?>">
+            <input type="hidden" id="time-min" value="<?php echo $data["quizDetails"]["min"] ?>">
+            <input type="hidden" id="time-sec" value="<?php echo $data["quizDetails"]["sec"] ?>">
+
+            <button id="publish-btn" type="submit" class="done">Publish</button>
 
         </div>
 
@@ -86,7 +93,7 @@
                     <h2>Quiz details</h2>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo BASEURL . "/previewQuiz/submit/{$data['quizDetails']['quiz_id']}"; ?>" method="post" enctype="multipart/form-data">
                         <div class="date-group">
                             <label for="publishdatetime">Publish date and time:</label>
                             <input type="datetime-local" id="publishdatetime" name="publishdatetime">
@@ -95,7 +102,10 @@
                             <label for="closedatetime">Close date and time:</label>
                             <input type="datetime-local" id="closedatetime" name="closedatetime">
                         </div>
-
+                        <span>
+                            <label for="time-picker">Quiz Duration</label>
+                            <input type="text" name="time-picker" id="time-picker" class="form-control" placeholder="hrs:mins:secs" />
+                        </span>
                         <input type="submit" value="Save" name="submit" class="upload-btn">
                     </form>
                 </div>
@@ -109,6 +119,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("previewQuiz"); ?>
+
+    <?php linkJS("timePicker") ?>
 
 </body>
 

@@ -1,7 +1,8 @@
+@import "0_global_variables";
 @import "./1_main.scss";
 
 //LOCAL VARIABLES
-$login_theme_color: #38d39f;
+$login_theme_color: $theme;
 
 .wave{
     position: fixed;
@@ -47,7 +48,7 @@ form{
 form h2{
     font-size: 2.9rem;
     text-transform: uppercase;
-    margin: 15px 0;
+    //margin: 15px 0;
     color: #333;
 }
 
@@ -60,13 +61,12 @@ form h2{
     border-bottom: 2px solid #d9d9d9;
 }
 
-
 //Color styles for validation:- below two classes
 .input-div::after, .input-div::before{
     content: '';
     position: absolute;
     bottom: -2px;
-    width: 0%;
+    width: 0;
     height: 2px;
     transition: .3s;
 }
@@ -149,13 +149,14 @@ a{
     display: block;
     text-align: right;
     text-decoration: none;
-    color: #365dd3;
+    color: $theme_hover;
     font-size: 0.9rem;
     transition: .3s;
 }
 
 a:hover{
     color: $login_theme_color;
+    text-decoration: underline;
 }
 
 .btn{
@@ -167,7 +168,7 @@ a:hover{
     font-size: 1.2rem;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #32be8f, $login_theme_color, #32be8f);
+    background-image: linear-gradient(to right, #2B4F82, $login_theme_color, #2B4F82);
     cursor: pointer;
     color: #fff;
     text-transform: uppercase;

@@ -56,7 +56,7 @@
 .tp-up, .tp-down {
   font-size: 32px;
   font-weight: bold;
-  color: #1dd1a1;
+  color: #325C97;
   padding: 10px 0;
   cursor: pointer;
 }
@@ -75,7 +75,7 @@
 /* (D) OK BUTTON */
 .tp-ok {
   width: 100%;
-  background: #1ebb7f;
+  background: #19345d;
   color: #fff;
   border: 0;
   border-radius: 8px;
@@ -85,6 +85,6 @@
 }
 
 .tp-ok:hover {
-  background: #1dd1a1;
+  background: #325C97;
 }
 /*# sourceMappingURL=time_picker.css.map */
