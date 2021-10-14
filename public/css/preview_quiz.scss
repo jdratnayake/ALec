@@ -10,7 +10,7 @@ $main_hover: $theme_second_hover;
 $answer_color: rgba(0,0,0,0.85);
 $answer_background: rgba(0, 0, 0, 0.05);
 $light: white;
-$modal_color: #1ebb7f;
+$modal_color: $theme_hover;
 
 .form-content {
   padding: 16px;
@@ -186,8 +186,8 @@ $modal_color: #1ebb7f;
         font-size: 15px;
 
         &:hover{
-          background-color: white;
-          color: $modal_color;
+          background-color: $theme;
+          color: white;
         }
       }
     }

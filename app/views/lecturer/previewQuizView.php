@@ -12,6 +12,8 @@
 
     <?php linkCSS("preview_quiz") ?>
 
+    <?php linkCSS("time_picker") ?>
+
 </head>
 
 <body>
@@ -95,7 +97,10 @@
                             <label for="closedatetime">Close date and time:</label>
                             <input type="datetime-local" id="closedatetime" name="closedatetime">
                         </div>
-
+                        <span>
+                            <label for="time-picker">Quiz Duration</label>
+                            <input type="text" id="time-picker" class="form-control" placeholder="hrs:mins:secs" />
+                        </span>
                         <input type="submit" value="Save" name="submit" class="upload-btn">
                     </form>
                 </div>
@@ -109,6 +114,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("previewQuiz"); ?>
+
+    <?php linkJS("timePicker") ?>
 
 </body>
 
