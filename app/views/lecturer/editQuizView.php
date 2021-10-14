@@ -33,143 +33,102 @@
         </div>
 
         <!-- Quiz basic details -->
-        <form class="details" method="post" id="form">
-            <input type="hidden" id="question-count" value="">
+        <form class="details" action="<?php echo BASEURL . "/editQuiz/submit/{$data['quizId']}" ?>" method="post" id="form">
+
+            <input type="hidden" name="new-question-count" id="new-question-count" value="0">
 
             <ol class="all-questions">
 
-                <!-- Question 1 -->
-                <li class="question-container">
+                <?php
 
-                    <!-- Question type -->
-                    <input type="hidden" id="question-type" value="mcq">
+                while ($row = mysqli_fetch_assoc($data["quizQuestionSummary"])) {
+                    $questionType = $row["question_type"];
 
-                    <div class="single-choice">
+                    if ($questionType == "mcq-s" or $questionType == "mcq-m") {
 
-                        <!-- Question -->
-                        <div class="question">
-                            <input type="text" value="Which of the following is not an operating system?">
-                        </div>
+                        $question = str_replace("'", "&#39;", $row["question"]);
+                        $question = str_replace("'", "&#34;", $row["question"]);
 
-                        <!-- Delete Button -->
-                        <div class="button-set">
-                            <button type="button" class="dlt">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete question
-                            </button>
-                        </div>
+                        $checked = "";
 
-                        <!-- Multiple answer check -->
-                        <input type="checkbox" class="check" value="true">
-                        <label>multiple answers</label><br>
+                        if ($questionType == "mcq-m") {
+                            $checked = "checked";
+                        }
 
-                        <!-- Answer list -->
-                        <ol>
-                            <li class="answer">
-                                <input type="text" value="Windows">
-                                <input type="text" value="0%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                            <li class="answer">
-                                <input type="text" value="Linux">
-                                <input type="text" value="0%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                            <li class="answer">
-                                <input type="text" value="Oracle">
-                                <input type="text" value="0%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                            <li class="answer">
-                                <input type="text" value="DOS">
-                                <input type="text" value="0%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                            <li class="answer">
-                                <input type="text" value="">
-                                <input type="text" value="0%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                        </ol>
-                    </div>
-                </li>
+                        echo
+                        "'
+                        <li class='question-container'>
 
-                <li class="question-container">
+                            <div class='single-choice'>
 
-                    <!-- Question type -->
-                    <input type="hidden" id="question-type" value="short">
+                                <div class='question'>
+                                    <input type='text' name='q_$row[question_no]'
+                                    value='" . $question . "'>
+                                </div>
 
-                    <div class="short-ans">
+                                <div class='button-set'>
+                                    <button type='button' class='dlt'>
+                                        <i class='fa fa-trash' aria-hidden='true'></i> Delete question
+                                    </button>
+                                </div>
 
-                        <div class="question">
-                            <input type="text" value="When was the first operating system developed?">
-                        </div>
+                                <input type='checkbox' name='check_$row[question_no]' 
+                                class='check' value='true' $checked>
+                                <label>multiple answers</label><br>
+                        <ol>'";
 
-                        <div class="button-set">
-                            <button type="button" class="dlt">
-                                <i class="fa fa-trash" aria-hidden="true"></i>Delete question
-                            </button>
-                        </div>
+                        for ($i = 1; $i <= $row["count"]; $i++) {
+                            $choiceRow = mysqli_fetch_assoc($data["quizQuestionChoices"]);
 
-                        <ul>
-                            <li class="answer short-input" id="short-answer-box">
-                                <input type="text" value="1950">
-                                <input type="text" value="100%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                            echo
+                            "
+                                    <li class='answer'>
+                                        <input type='text' name='choice_$choiceRow[choice_id]' 
+                                        value='$choiceRow[choice_name]'>
+                                        <input type='text' name='points_$choiceRow[choice_id]'
+                                        value='$choiceRow[points]%' class='points'>
+                                        <i class='fa fa-times' aria-hidden='true'></i>
+                                    </li>
+                            ";
+                        }
 
-                <li class="question-container">
+                        echo "</ol></div></li>";
+                    } else if ($questionType == "short ans") {
+                        $choiceRow = mysqli_fetch_assoc($data["quizQuestionChoices"]);
 
-                    <!-- Question type -->
-                    <input type="hidden" id="question-type" value="short">
+                        echo
+                        "
+                        <li class='question-container'>
 
-                    <div class="multiple-choice">
+                            <div class='short-ans'>
 
-                        <div class="question">
-                            <input type="text" value="Which of the following are operating systems?">
-                        </div>
+                                <div class='question'>
+                                    <input type='text' name='q_$row[question_no]'
+                                    value='{$row["question"]}'>
+                                </div>
 
-                        <div class="button-set">
-                            <button type="button" class="dlt">
-                                <i class="fa fa-trash" aria-hidden="true"></i>Delete question
-                            </button>
-                        </div>
+                                <div class='button-set'>
+                                    <button type='button' class='dlt'>
+                                        <i class='fa fa-trash' aria-hidden='true'></i>Delete question
+                                    </button>
+                                </div>
 
+                                <ul>
+                                    <li class='answer short-input' id='short-answer-box'>
+                                        <input type='text' name='choice_$choiceRow[choice_id]'
+                                        value='$choiceRow[choice_name]'>
+                                        <input type='text' name='points_$choiceRow[choice_id]' value='100%' class='points'>
+                                        <i class='fa fa-times' aria-hidden='true'></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        ";
+                    }
+                }
 
-                        <input type="checkbox" class="check" value="true">
-                        <label>multiple answers</label><br>
+                ?>
 
-                        <ol>
-                            <li class="answer">
-                                <input type="text" value="Windows">
-                                <input type="text" value="100%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                            <li class="answer">
-                                <input type="text" value="Linux">
-                                <input type="text" value="100%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                            <li class="answer">
-                                <input type="text" value="Oracle">
-                                <input type="text" value="100%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                            <li class="answer">
-                                <input type="text" value="DOS">
-                                <input type="text" value="0%" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                            <li class="answer">
-                                <input type="text" value="">
-                                <input type="text" value="" class="points">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </li>
-                        </ol>
-                    </div>
-                </li>
             </ol>
 
             <!-- Add Question Button -->
