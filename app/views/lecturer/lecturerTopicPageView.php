@@ -52,10 +52,6 @@
                 "
                 <li>
                     <div class='tooltip'>
-                        <a href='" . BASEURL . "/editQuiz/index/{$rowQuiz['quiz_id']}" . "'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
-                        <span class='icon-tooltip'>Edit quiz</span>
-                    </div>
-                    <div class='tooltip'>
                         <a href='" . BASEURL . "/previewQuiz/index/{$rowQuiz['quiz_id']}" . "'>{$rowQuiz['quiz_name']}</a>
                         <span class='text-tooltip'>View quiz</span>
                     </div>

@@ -11,13 +11,13 @@ class PreviewQuizModel extends Database
         return mysqli_fetch_assoc($result)["course_name"];
     }
 
-    public function getQuizName($quizId)
+    public function getQuizDetails($quizId)
     {
-        $query = "SELECT quiz_name FROM quiz WHERE quiz_id='$quizId'";
+        $query = "SELECT quiz_id, quiz_name, HOUR(duration) AS hr, MINUTE(duration) AS min, SECOND(duration) AS sec FROM quiz WHERE quiz_id='$quizId' LIMIT 1";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        return mysqli_fetch_assoc($result)["quiz_name"];
+        return mysqli_fetch_assoc($result);
     }
 
     public function getQuizQuestionsSummary($quizId)
@@ -34,5 +34,17 @@ class PreviewQuizModel extends Database
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
+    }
+
+    public function updateDateTimeQuiz($quizId, $publishDateTime, $closeDateTime, $duration)
+    {
+        $publishDateTime = mysqli_real_escape_string($GLOBALS["db"], $publishDateTime);
+        $closeDateTime = mysqli_real_escape_string($GLOBALS["db"], $closeDateTime);
+        $duration = mysqli_real_escape_string($GLOBALS["db"], $duration);
+
+        $query = "UPDATE quiz SET published_date='$publishDateTime', close_date='$closeDateTime', 
+        duration='$duration', status='publish' WHERE quiz_id='$quizId'";
+
+        mysqli_query($GLOBALS["db"], $query);
     }
 }

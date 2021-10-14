@@ -13,7 +13,7 @@ const tp = {
 
         // (A1) CREATE NEW INSTANCE + "GET ID"
         let id = tp.instances.length;
-        tp.instances.push({wrap: wrapper});
+        tp.instances.push({ wrap: wrapper });
         let inst = tp.instances[id];
         if (target !== undefined) {
             inst.target = target;
@@ -193,9 +193,9 @@ const tp = {
                 // Get + set popup time
                 let cv = this.value;
                 if (cv === "") {
-                    tp.instances[0].hr.value = "00";
-                    tp.instances[0].min.value = "00";
-                    tp.instances[0].sec.value = "00";
+                    tp.instances[0].hr.value = document.getElementById("time-hr").value;
+                    tp.instances[0].min.value = document.getElementById("time-min").value;
+                    tp.instances[0].sec.value = document.getElementById("time-sec").value;
                 } else {
                     tp.instances[0].hr.value = cv.substring(0, 2);
                     tp.instances[0].min.value = cv.substring(3, 5);

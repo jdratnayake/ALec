@@ -12,10 +12,28 @@ class PreviewQuiz extends AlecFramework
     public function index($quizId)
     {
         $data["courseName"] = $this->previewQuizModel->getCourseName($quizId);
-        $data["quizName"] = $this->previewQuizModel->getQuizName($quizId);
+        $data["quizDetails"] = $this->previewQuizModel->getQuizDetails($quizId);
         $data["questions"] = $this->previewQuizModel->getQuizQuestionsSummary($quizId);
         $data["questionChoices"] = $this->previewQuizModel->getQuizQuestionChoices($quizId);
 
         $this->view("lecturer/previewQuizView", $data);
+    }
+
+    public function submit($quizId)
+    {
+        // var_dump($_POST);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $publishDateTime = str_replace("T", " ", $_POST["publishdatetime"]) . ":00";
+            $closeDateTime = str_replace("T", " ", $_POST["closedatetime"])  . ":00";
+            $duration = $_POST["time-picker"];
+
+            // echo $publishDateTime . "<br>";
+            // echo $closeDateTime . "<br>";
+            // echo $duration . "<br>";
+
+            $this->previewQuizModel->updateDateTimeQuiz($quizId, $publishDateTime, $closeDateTime, $duration);
+        }
+
+        $this->index($quizId);
     }
 }
