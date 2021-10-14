@@ -10,7 +10,7 @@
 
         <li class="table-row">
             <div class="col col-1" data-label="Quiz topic">
-                <a href="#" id="topic">Requirements Engineering</a>
+                <a class="topic" href="#">Requirements Engineering</a>
             </div>
             <div class="col col-2" data-label="Start time">
                 <p>10.30 am</p>
@@ -24,7 +24,7 @@
         </li>
         <li class="table-row">
             <div class="col col-1" data-label="Quiz topic">
-                <a href="#">OS Quiz - 01</a>
+                <a class="topic"  href="#">OS Quiz - 01</a>
             </div>
             <div class="col col-2" data-label="Start time">
                 <p>10.30 am</p>
