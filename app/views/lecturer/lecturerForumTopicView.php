@@ -24,6 +24,13 @@ $courseCode = explode("-", $temp)[0];
 
     <?php linkPhp("navigationBarLecturer"); ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/lecturerCoursePageForum/index">Forum Course Page</a></li>
+        <li>Discussion Forum <?php echo $courseCode; ?></li>
+    </ul>
+
     <div class="forum-container center">
         <div class="forum-message">
             <header>Discussion Forum For <?php echo $courseCode; ?></header>

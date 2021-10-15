@@ -18,6 +18,12 @@
 <body>
     <?php linkPhp("navigationBarLecturer"); ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li>Forum Course Page</li>
+    </ul>
+
     <!-- CARD LIST START -->
     <div class="card-container center">
 

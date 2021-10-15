@@ -477,7 +477,7 @@ footer p {
   border: none;
   color: white;
   cursor: pointer;
-  padding: 18px;
+  padding: 0 18px;
   width: 100%;
   text-align: justify;
   outline: none;

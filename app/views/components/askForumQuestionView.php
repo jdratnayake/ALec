@@ -27,6 +27,14 @@
 
     ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/lecturerCoursePageForum/index">Forum Course Page</a></li>
+        <li><a href="http://localhost/ALec/lecturerForumTopic/index/56">Discussion Forum <?php echo $data["subjectCode"]; ?></a></li>
+        <li>New discussion topic</li>
+    </ul>
+
     <div class="forum-container">
         <header>Discussion Forum For <?php echo $data["subjectCode"]; ?></header>
         <h2>New Discussion Topic</h2>

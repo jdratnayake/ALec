@@ -19,6 +19,14 @@
 
 <?php linkPhp("navigationBarLecturer"); ?>
 
+<!--    breadcrumb-->
+<ul class="breadcrumb">
+    <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+    <li><a href="http://localhost/ALec/lecturerCoursePageForum/index">Forum Course Page</a></li>
+    <li><a href="http://localhost/ALec/lecturerForumTopic/index/56">Discussion Forum SCS 1208</a></li>
+    <li>Forum discussion</li>
+</ul>
+
 <div class="forum-container">
         <h2>Will MAC addresses run out?</h2>
 

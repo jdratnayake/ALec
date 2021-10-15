@@ -71,8 +71,10 @@ $table_heading_color: $table_head;
                 }
                 
                 .table-header {
-                  background-color: #95A5A6;
+                  background-color: $table_head;
+                  color: white;
                   font-size: 14px;
+                  font-weight: bold;
                   text-transform: uppercase;
                   letter-spacing: 0.03em;
 
@@ -158,7 +160,7 @@ $table_heading_color: $table_head;
                     flex-basis: 40%;
                     margin: auto;
                     width: 60%;
-                    padding: 0;
+                    padding: 0 0 0 10px;
                 }
                 .col-2 {
                     flex-basis: 26%;

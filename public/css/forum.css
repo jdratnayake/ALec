@@ -481,8 +481,10 @@ footer p {
   margin-bottom: 25px;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .table-header {
-  background-color: #95A5A6;
+  background-color: #274774;
+  color: white;
   font-size: 14px;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -552,7 +554,7 @@ footer p {
   flex-basis: 40%;
   margin: auto;
   width: 60%;
-  padding: 0;
+  padding: 0 0 0 10px;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .col-2 {
   flex-basis: 26%;
