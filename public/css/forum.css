@@ -446,18 +446,17 @@ footer p {
 .forum-container .forum-message p {
   margin: 20px 0;
 }
-.forum-container .forum-message h2 {
-  padding: 15px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
+.forum-container .discussion-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .forum-container .discussion-list button {
-  background-color: #1abc9c;
+  background-color: #305890;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 8px 16px;
+  border-radius: 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -470,7 +469,7 @@ footer p {
   padding: 0 5px;
 }
 .forum-container .discussion-list button:hover {
-  background-color: #13a588;
+  background-color: #4075bf;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table-container {
   max-width: 1000px;
@@ -593,7 +592,7 @@ footer p {
     padding: 10px 0;
   }
   .forum-container .discussion-list .discussion-table-container .discussion-table .col:before {
-    color: #6C7A89;
+    color: #274774;
     padding-right: 10px;
     content: attr(data-label);
     flex-basis: 50%;

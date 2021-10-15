@@ -20,9 +20,7 @@
 
     <div class="form-content">
         <!-- Quiz heading -->
-        <header>
-            <h1>Create Quiz</h1>
-        </header>
+        <header>Create Quiz</header>
 
         <!-- Quiz basic details -->
         <form class="details" method="post" action='<?php echo BASEURL . "/createQuizDashboard/index"; ?>'>
@@ -70,7 +68,7 @@
             <input type="button" class="add" id="add-question" value="+ Add Question" />
 
             <div class="button-set">
-                <input type="submit" id="create-quiz" class="finish" value="Submit">
+                <input type="submit" id="create-quiz" class="finish" value="Create Quiz">
             </div>
         </form>
     </div>

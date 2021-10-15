@@ -26,7 +26,7 @@ $courseCode = explode("-", $temp)[0];
 
     <div class="forum-container center">
         <div class="forum-message">
-            <h2>Discussion Forum For <?php echo $courseCode; ?></h2>
+            <header>Discussion Forum For <?php echo $courseCode; ?></header>
 
             <p><?php echo $data["forumDetails"]["forum_description"]; ?></p>
         </div>

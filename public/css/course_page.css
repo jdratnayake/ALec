@@ -438,7 +438,7 @@ footer p {
 /*CARDS - START*/
 /*==============================================================================*/
 .center {
-  margin: auto;
+  margin: 5% auto;
   width: 50%;
   padding: 10px;
 }
@@ -470,7 +470,7 @@ footer p {
 .card-container .card .face.face1 {
   position: relative;
   /* #009879 */
-  background: #45aaf2;
+  background: #2B4F82;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -480,11 +480,7 @@ footer p {
 }
 
 .card-container .card:hover .face.face1 {
-  background: #3867d6;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  background: #1d3557;
   transform: translateY(0);
 }
 

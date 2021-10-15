@@ -5,15 +5,15 @@
 @import "./4_footer.scss";
 
 //LOCAL VARIABLES
-$card_color: #45aaf2;
-$card_hover_color: #3867d6;
+$card_color: $theme_second;
+$card_hover_color: $theme_second_hover;
 
 /*==============================================================================*/
 /*CARDS - START*/
 /*==============================================================================*/
 
 .center {
-    margin: auto;
+    margin: 5% auto;
     width: 50%;
     padding: 10px;
 }
@@ -56,12 +56,7 @@ $card_hover_color: #3867d6;
 
 .card-container .card:hover .face.face1{
     background: $card_hover_color;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
     transform: translateY(0);
-    
 }
 
 .card-container .card .face.face1 .content{
