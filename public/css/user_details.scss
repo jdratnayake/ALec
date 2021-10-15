@@ -5,16 +5,6 @@
 @import "./4_footer.scss";
 
 
-header {
-  background-color: white;
-  color: $theme;
-  text-align: left;
-  font-size: 32px;
-  font-weight: bold;
-  margin: 20px 0 20px 0;
-  width: 100%;
-}
-
 .details-container {
   display: flex;
   justify-content: center;
@@ -244,9 +234,6 @@ form.search-bar::after {
   display: flex;
   height: 40px;
   padding: 0;
-  //background: $view_button_color;
-  //border: none;
-  //outline: none;
   background-color: $action_button;
   border: 2px solid $action_button;
   border-radius: 5px;

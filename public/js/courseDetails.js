@@ -23,7 +23,7 @@ $(document).ready(function () {
     $("#search").keyup(function () {
         let search = $(this).val();
 
-        if (search != "") {
+        if (search !== "") {
             loadData(search);
         }
     });

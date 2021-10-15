@@ -20,6 +20,12 @@
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li>User details</li>
+    </ul>
+
     <div class="details-container">
         <header id="header-title">User Details</header>
 

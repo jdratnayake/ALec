@@ -11,6 +11,7 @@
     <title>ALec</title>
 
     <?php linkCSS("edit_quiz") ?>
+
     <?php linkCSS("time_picker") ?>
 
 </head>
@@ -151,6 +152,8 @@
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("editQuiz"); ?>
+
+    <?php linkJS("timePicker") ?>
 
 </body>
 

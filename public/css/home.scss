@@ -117,8 +117,7 @@ $light: rgba(54, 98, 159, 0.15);
     display: flex;
     justify-content: space-evenly;
     width: calc(100% - 240px);
-    margin: 0 auto;
-    //width: 95%;
+    margin: 3rem auto;
 }
 
 .navigation-tab{
@@ -247,11 +246,16 @@ $light: rgba(54, 98, 159, 0.15);
     .modal-body {
         padding: 16px;
 
-        form{
-            //padding: 16px 0;
-            display: inline-grid;
+        .radio-btn{
+            margin-bottom: 20px;
+            margin-left: 20px;
+            input, label, button{
+                cursor: pointer;
+            }
+        }
 
-            .radio-btn{ margin-bottom: 10px;}
+        form{
+            display: inline-grid;
 
             .upload-btn{
                 background-color: $modal_color;

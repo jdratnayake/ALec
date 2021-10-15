@@ -16,63 +16,12 @@
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
-    <!-- <div class="form-container">
-        <form name="form" onsubmit="return validateForm()">
-            <h2>Registration Form</h2>
-
-            <div class="row">
-                <div class="box">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                    <div class="error" id="error"></div>
-                </div>
-
-                <div class="box">
-                    <label for="regno">Registration No</label>
-                    <input type="text" name="regno" id="regno">
-                    <div class="error" id="error"></div>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="box">
-                    <label for="fname">First Name</label>
-                    <input type="text" name="fname" id="fname">
-                    <div class="error" id="error"></div>
-                </div>
-
-                <div class="box">
-                    <label for="lname">Last Name</label>
-                    <input type="text" name="lname" id="lname">
-                    <div class="error" id="error"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="box">
-                    <label>Type</label>
-                    <select name="type" id="type">
-                        <option>Lecturer</option>
-                        <option>Student</option>
-                    </select>
-                    <div class="error" id="error"></div>
-                </div>
-
-                <div class="box">
-                    <label for="password1">Password</label>
-                    <input type="text" name="password1" id="password1">
-                    <div class="error" id="error"></div>
-                </div>
-            </div>
-
-
-            <div class="box">
-                <input type="submit" value="Register" class="center">
-            </div>
-        </form>
-    </div> -->
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/userDetails/index">User details</a></li>
+        <li>Register user</li>
+    </ul>
 
     <div class="wrapper center">
 
@@ -94,26 +43,31 @@
                     <input type='hidden' name='type' value='2' />
 
                     <div class="field">
+                        <label for="email"></label>
                         <input type="text" placeholder="Email Address" name="email" id="email" onfocusout="validateEmail()">
                         <div class="error" id="error"><?php echo $errors["email"] ?></div>
                     </div>
 
                     <div class="field">
+                        <label for="regNo"></label>
                         <input type="text" placeholder="Employee No" name="regNo" id="regNo" onfocusout="validateEmployeeNo()">
                         <div class="error" id="error"><?php echo $errors["regNo"] ?></div>
                     </div>
 
                     <div class="field">
+                        <label for="fName"></label>
                         <input type="text" placeholder="First Name" name="fName" id="fName" onfocusout="validateFirstName()">
                         <div class="error" id="error"><?php echo $errors["fName"] ?></div>
                     </div>
 
                     <div class="field">
+                        <label for="lName"></label>
                         <input type="text" placeholder="Last Name" name="lName" id="lName" onfocusout="validateLastName()">
                         <div class="error" id="error"><?php echo $errors["lName"] ?></div>
                     </div>
 
                     <div class="field">
+                        <label for="password"></label>
                         <input type="text" placeholder="Password" name="password" id="password" onfocusout="validatePassword()">
                         <div class="error" id="error"><?php echo $errors["password"] ?></div>
                     </div>
@@ -131,26 +85,31 @@
                     <input type='hidden' name='type' value='3' />
 
                     <div class="field">
+                        <label for="email1"></label>
                         <input type="text" placeholder="Email Address" name="email" id="email1" onfocusout="validateEmail1()">
                         <div class="error" id="error"><?php echo $errors["email"] ?></div>
                     </div>
 
                     <div class="field">
+                        <label for="regNo1"></label>
                         <input type="text" placeholder="Index No" name="regNo" id="regNo1" onfocusout="validateEmployeeNo1()">
                         <div class="error" id="error"><?php echo $errors["regNo"] ?></div>
                     </div>
 
                     <div class="field">
+                        <label for="fName1"></label>
                         <input type="text" placeholder="First Name" name="fName" id="fName1" onfocusout="validateFirstName1()">
                         <div class="error" id="error"><?php echo $errors["fName"] ?></div>
                     </div>
 
                     <div class="field">
+                        <label for="lName1"></label>
                         <input type="text" placeholder="Last Name" name="lName" id="lName1" onfocusout="validateLastName1()">
                         <div class="error" id="error"><?php echo $errors["lName"] ?></div>
                     </div>
 
                     <div class="field">
+                        <label for="password1"></label>
                         <input type="text" placeholder="Password" name="password" id="password1" onfocusout="validatePassword1()">
                         <div class="error" id="error"><?php echo $errors["password"] ?></div>
                     </div>

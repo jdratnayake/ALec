@@ -10,6 +10,8 @@
 
     <!-- CSS file -->
     <?php linkCSS('home'); ?>
+    <?php linkCSS('active_quizzes_table'); ?>
+    <?php linkCSS('modal'); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon('logo1.png'); ?>
@@ -56,35 +58,13 @@
 
     </div>
 
-    <div class="slideshow-container">
-
-
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img <?php srcIMG("welcome_picture1.svg") ?> class="center-img">
-            <!-- <div class="text">Caption Text</div> -->
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img <?php srcIMG("welcome_picture2.svg") ?> class="center-img">
-            <!-- <div class="text">Caption Two</div> -->
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img <?php srcIMG("welcome_picture3.svg") ?> class="center-img">
-            <!-- <div class="text">Caption Three</div> -->
-        </div>
-
-    </div>
-    <br>
-
-    <div style="text-align:center">
+    <div class="divider">
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
     </div>
+
+    <?php linkPhp("../student/activeQuizzes"); ?>
 
     <?php linkPhp("notification"); ?>
 
@@ -93,6 +73,8 @@
     <?php linkJS("basic") ?>
 
     <?php linkJS("slideShow"); ?>
+
+    <?php linkJS("studentDashboardModal"); ?>
 
 </body>
 
