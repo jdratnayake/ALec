@@ -4,7 +4,6 @@
 @import "./3_notification.scss";
 @import "./4_footer.scss";
 
-$heading_color: #1abc9c;
 $button_color: $action_button;
 $button_hover_color: $action_button_hover;
 $table_heading_color: $table_head;
@@ -26,9 +25,6 @@ $table_heading_color: $table_head;
     }
 
     .discussion-list{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
 
         button{
             background-color: $button_color;
@@ -68,7 +64,7 @@ $table_heading_color: $table_head;
               .discussion-table {
                 li {
                   border-radius: 3px;
-                  padding: 25px 0px;
+                  padding: 25px 0;
                   display: flex;
                   justify-content: space-between;
                   margin-bottom: 25px;
@@ -130,7 +126,7 @@ $table_heading_color: $table_head;
 
                     a{
                         text-decoration: none;
-                        color: $heading_color;
+                        color: $theme;
                         font-weight: 500;
 
                         &:hover{
@@ -162,25 +158,25 @@ $table_heading_color: $table_head;
                     flex-basis: 40%;
                     margin: auto;
                     width: 60%;
-                    padding: 0px;
+                    padding: 0;
                 }
                 .col-2 {
                     flex-basis: 26%;
                     margin: auto;
                     width: 60%;
-                    padding: 0px;
+                    padding: 0;
                 }
                 .col-3 {
                     flex-basis: 26%;
                     margin: auto;
                     width: 60%;
-                    padding: 0px;
+                    padding: 0;
                 }
                 .col-4 {
                     flex-basis: 6%;
                     margin: auto;
                     width: 60%;
-                    padding: 0px;
+                    padding: 0;
                 }
                 
                 @media all and (max-width: 767px) {
