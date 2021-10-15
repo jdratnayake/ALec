@@ -81,25 +81,26 @@
                 <div class="modal-body">
                     <strong>User type:</strong>
                     <div class="radio-btn">
-                        <input type="radio" id="lecturers" name="user-type" checked="checked">
+                        <input type="radio" id="lecturers-create" name="user-type" checked="checked">
                         <label for="lecturers">Lecturers</label><br>
 
-                        <input type="radio" id="students" name="user-type">
+                        <input type="radio" id="students-create" name="user-type">
                         <label for="students">Students</label><br>
                     </div>
 
                     <p>Use this format to enter details using .csv file</p>
-                    <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download" . "'" ?>">Download template</button>
+                    <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/1" . "'" ?>" id="btn-create-download">Download template</button>
 
                     <br><br>
                     <p>
                         Use this format to enter details using .txt file<br>
-                        &emsp;FirstName LastName EmailAddress IndexNo<br>
+                        &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
                         &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
                         <strong>Note:</strong>Each user should be in a newline<br><br>
                     </p>
                     <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
                         Upload file:
+                        <input type="hidden" name="upload-user-type" value="2">
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <input type="submit" value="Add users" name="submit" class="upload-btn">
                     </form>
@@ -204,6 +205,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("adminDashboard"); ?>
 
     <?php linkJS("basic") ?>
 
