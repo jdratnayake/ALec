@@ -1,3 +1,4 @@
+// Create Multiple User Accounts - START
 $(document).ready(function () {
 
     $('#lecturers-create').click(function () {
@@ -17,3 +18,18 @@ $(document).ready(function () {
 function getLink(num) {
     return `location.href='http://localhost/ALec/adminDashboard/download/${num}'`;
 }
+// Create Multiple User Accounts - END
+
+// Manage Students Enrolment - START
+$(document).ready(function () {
+    $('#year-mode').click(function () {
+        $('#file-mode-div').hide();
+        $('#year-mode-div').show();
+    });
+
+    $('#file-mode').click(function () {
+        $('#year-mode-div').hide();
+        $('#file-mode-div').show();
+    });
+});
+// Manage Students Enrolment - END
