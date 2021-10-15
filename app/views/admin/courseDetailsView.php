@@ -20,7 +20,14 @@
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li>Course page</li>
+    </ul>
+
     <div class="details-container">
+
         <header>Course Details</header>
 
         <div class="filter-container">
@@ -34,16 +41,6 @@
             <!--    Add user button-->
             <button class="add-button" onclick="location.href='<?php echo BASEURL . '/addNewCourse/index' ?>'">Add New Course</button>
         </div>
-
-        <!--    Select user type-->
-<!--        <div class="year-type">-->
-            <!-- <button class="type active-type">All</button> -->
-<!--            <button id="all" class="type active-type">All</button>-->
-<!--            <button id="one" class="type">1st year</button>-->
-<!--            <button id="two" class="type">2nd year</button>-->
-<!--            <button id="three" class="type">3rd year</button>-->
-<!--            <button id="four" class="type">4th year</button>-->
-<!--        </div>-->
 
         <div class="year-selection" id="year-selection">
             <label for="year">Select the year</label>

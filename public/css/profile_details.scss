@@ -70,11 +70,12 @@ header {
 
   button:nth-child(2) {
     background-color: $delete_button;
-    border: 2px solid $delete_button;
+    border: $delete_button_border;
+    color: $delete_button_color;
 
     &:hover {
       background-color: $delete_button_hover;
-      border: 2px solid $delete_button_hover;
+      color: $delete_button_hover_color;
     }
   }
 }

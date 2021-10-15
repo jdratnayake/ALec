@@ -19,6 +19,16 @@ body {
   width: 100vw;
 }
 
+header {
+  background-color: white;
+  color: #19345d;
+  text-align: left;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0 20px 0;
+  width: 100%;
+}
+
 /*==============================================================================*/
 /*NAVIGATION BAR - START*/
 /*==============================================================================*/
@@ -207,6 +217,14 @@ body {
 .siderbar.active .profile .profile_details {
   opacity: 1;
   pointer-events: auto;
+  width: 76%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.siderbar.active .profile .profile_details:hover {
+  color: #184e77;
+  background: #fff;
+  border-radius: 10px;
 }
 
 .profile .profile_details img {
@@ -272,7 +290,7 @@ body {
   width: calc(100% - 78px);
   transition: all 0.5s ease;
   margin-left: 78px;
-  padding-top: 45px;
+  padding-top: 2px;
   /* background-color: #1d1b31; */
 }
 
@@ -353,6 +371,40 @@ body {
 
 /*==============================================================================*/
 /*NOTIFICATION CONTAINER - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*BREADCRUMB - START*/
+/*==============================================================================*/
+ul.breadcrumb {
+  padding: 4px 16px;
+  list-style: none;
+  background-color: #eeeeee61;
+  margin-bottom: 30px;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/ ";
+}
+
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/*==============================================================================*/
+/*BREADCRUMB - END*/
 /*==============================================================================*/
 /*==============================================================================*/
 /*FOOTER - START*/

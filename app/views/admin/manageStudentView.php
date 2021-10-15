@@ -20,6 +20,14 @@
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/courseDetails/index">Course page</a></li>
+        <li><a href="http://localhost/ALec/courseProfile/index/47">Course profile</a></li>
+        <li>Students</li>
+    </ul>
+
     <div class="details-container">
         <header><?php echo $data["courseName"] ?></header>
 
@@ -31,9 +39,11 @@
 
         <!--    Search bar     -->
         <form class="search-bar" id="search-form">
+            <label for="user-type"></label>
             <input type="hidden" id="user-type" value="stu">
+            <label for="course-id"></label>
             <input type="hidden" id="course-id" value="<?php echo $data['courseId']; ?>">
-            <label for="search_bar"></label>
+            <label for="search"></label>
             <input type="text" placeholder="Search.." name="search" id="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>

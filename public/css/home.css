@@ -19,6 +19,16 @@ body {
   width: 100vw;
 }
 
+header {
+  background-color: white;
+  color: #19345d;
+  text-align: left;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0 20px 0;
+  width: 100%;
+}
+
 /*==============================================================================*/
 /*NAVIGATION BAR - START*/
 /*==============================================================================*/
