@@ -446,18 +446,12 @@ footer p {
 .forum-container .forum-message p {
   margin: 20px 0;
 }
-.forum-container .forum-message h2 {
-  padding: 15px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
-}
 .forum-container .discussion-list button {
-  background-color: #1abc9c;
+  background-color: #305890;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 8px 16px;
+  border-radius: 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -470,7 +464,7 @@ footer p {
   padding: 0 5px;
 }
 .forum-container .discussion-list button:hover {
-  background-color: #13a588;
+  background-color: #4075bf;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table-container {
   max-width: 1000px;
@@ -481,14 +475,16 @@ footer p {
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table li {
   border-radius: 3px;
-  padding: 25px 0px;
+  padding: 25px 0;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .table-header {
-  background-color: #95A5A6;
+  background-color: #274774;
+  color: white;
   font-size: 14px;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -532,7 +528,7 @@ footer p {
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .table-row a {
   text-decoration: none;
-  color: #1abc9c;
+  color: #19345d;
   font-weight: 500;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .table-row a:hover {
@@ -558,25 +554,25 @@ footer p {
   flex-basis: 40%;
   margin: auto;
   width: 60%;
-  padding: 0px;
+  padding: 0 0 0 10px;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .col-2 {
   flex-basis: 26%;
   margin: auto;
   width: 60%;
-  padding: 0px;
+  padding: 0;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .col-3 {
   flex-basis: 26%;
   margin: auto;
   width: 60%;
-  padding: 0px;
+  padding: 0;
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .col-4 {
   flex-basis: 6%;
   margin: auto;
   width: 60%;
-  padding: 0px;
+  padding: 0;
 }
 @media all and (max-width: 767px) {
   .forum-container .discussion-list .discussion-table-container .discussion-table .table-header {
@@ -593,7 +589,7 @@ footer p {
     padding: 10px 0;
   }
   .forum-container .discussion-list .discussion-table-container .discussion-table .col:before {
-    color: #6C7A89;
+    color: #274774;
     padding-right: 10px;
     content: attr(data-label);
     flex-basis: 50%;

@@ -11,6 +11,8 @@
     <!-- CSS File HOME-->
     <?php linkCSS("user_details"); ?>
 
+    <?php linkCSS("5_pagination"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.png"); ?>
 

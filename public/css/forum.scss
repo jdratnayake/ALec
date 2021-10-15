@@ -4,17 +4,15 @@
 @import "./3_notification.scss";
 @import "./4_footer.scss";
 
-$heading_color: #1abc9c;
-$button_color: #1abc9c;
-$button_hover_color: #13a588;
-$table_heading_color: #6C7A89;
+$button_color: $action_button;
+$button_hover_color: $action_button_hover;
+$table_heading_color: $table_head;
 
 .center {
     margin: auto;
     width: 60%;
     padding: 10px;
 }
-
 
 .forum-container{
     width: 90%;
@@ -24,23 +22,16 @@ $table_heading_color: #6C7A89;
         p{
             margin: 20px 0;
         }
-        
-        h2{
-            padding: 15px;
-            text-align: center;
-            background: $heading_color;
-            color: white;
-            font-size: 30px;
-        }
     }
 
     .discussion-list{
-        
+
         button{
             background-color: $button_color;
             border: none;
             color: white;
-            padding: 15px 32px;
+            padding: 8px 16px;
+            border-radius: 5px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -73,15 +64,17 @@ $table_heading_color: #6C7A89;
               .discussion-table {
                 li {
                   border-radius: 3px;
-                  padding: 25px 0px;
+                  padding: 25px 0;
                   display: flex;
                   justify-content: space-between;
                   margin-bottom: 25px;
                 }
                 
                 .table-header {
-                  background-color: #95A5A6;
+                  background-color: $table_head;
+                  color: white;
                   font-size: 14px;
+                  font-weight: bold;
                   text-transform: uppercase;
                   letter-spacing: 0.03em;
 
@@ -135,7 +128,7 @@ $table_heading_color: #6C7A89;
 
                     a{
                         text-decoration: none;
-                        color: $heading_color;
+                        color: $theme;
                         font-weight: 500;
 
                         &:hover{
@@ -167,25 +160,25 @@ $table_heading_color: #6C7A89;
                     flex-basis: 40%;
                     margin: auto;
                     width: 60%;
-                    padding: 0px;
+                    padding: 0 0 0 10px;
                 }
                 .col-2 {
                     flex-basis: 26%;
                     margin: auto;
                     width: 60%;
-                    padding: 0px;
+                    padding: 0;
                 }
                 .col-3 {
                     flex-basis: 26%;
                     margin: auto;
                     width: 60%;
-                    padding: 0px;
+                    padding: 0;
                 }
                 .col-4 {
                     flex-basis: 6%;
                     margin: auto;
                     width: 60%;
-                    padding: 0px;
+                    padding: 0;
                 }
                 
                 @media all and (max-width: 767px) {

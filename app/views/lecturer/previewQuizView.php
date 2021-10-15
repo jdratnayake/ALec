@@ -19,6 +19,12 @@
 <body>
     <?php linkPhp("navigationBarLecturer"); ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb" style="margin-left: 5%">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li>Preview quiz</a></li>
+    </ul>
+
     <div class="form-content">
         <!-- Quiz heading -->
         <header>

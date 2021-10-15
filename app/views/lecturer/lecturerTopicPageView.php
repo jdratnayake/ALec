@@ -17,8 +17,15 @@
 
     <?php linkPhp("navigationBarLecturer") ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb" style="margin-left: 5%">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/lecturerCoursePage/index">Course Page</a></li>
+        <li><?php echo $data["courseName"]; ?></li>
+    </ul>
+
     <div class="topic-container center">
-        <h2><?php echo $data["courseName"]; ?></h2>
+        <header><?php echo $data["courseName"]; ?></header>
 
         <button id="edit-topic" class="add-topic edit-topic" type="button" value="edit-topic">Edit topic</button>
         <button id="exit-edit" class="add-topic exit-edit" type="button" value="exit-edit">Save</button>
