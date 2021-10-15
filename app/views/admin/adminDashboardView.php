@@ -30,8 +30,8 @@
                 </div>
             </div>
             <div class="dropdown-content" id="dropdown-content">
-                <a id="create-users-btn">Create multiple accounts</a>
-                <a id="manage-accounts-btn">Manage multiple accounts</a>
+                <a id="create-users-btn">Create Multiple Accounts</a>
+                <a id="manage-accounts-btn">Manage Students Enrolment</a>
             </div>
         </div>
 
@@ -75,31 +75,32 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" id="close-one">&times;</span>
-                    <h2>Create multiple user accounts</h2>
+                    <h2>Create Multiple User Accounts</h2>
                 </div>
 
                 <div class="modal-body">
                     <strong>User type:</strong>
                     <div class="radio-btn">
-                        <input type="radio" id="lecturers" name="user-type" checked="checked">
+                        <input type="radio" id="lecturers-create" name="user-type" checked="checked">
                         <label for="lecturers">Lecturers</label><br>
 
-                        <input type="radio" id="students" name="user-type">
+                        <input type="radio" id="students-create" name="user-type">
                         <label for="students">Students</label><br>
                     </div>
 
                     <p>Use this format to enter details using .csv file</p>
-                    <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download" . "'" ?>">Download template</button>
+                    <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/1" . "'" ?>" id="btn-create-download">Download template</button>
 
                     <br><br>
                     <p>
                         Use this format to enter details using .txt file<br>
-                        &emsp;FirstName LastName EmailAddress IndexNo<br>
+                        &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
                         &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
                         <strong>Note:</strong>Each user should be in a newline<br><br>
                     </p>
                     <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
                         Upload file:
+                        <input type="hidden" name="upload-user-type" value="2">
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <input type="submit" value="Add users" name="submit" class="upload-btn">
                     </form>
@@ -115,7 +116,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" id="close-two">&times;</span>
-                    <h2>Manage multiple user accounts</h2>
+                    <h2>Manage Students Enrolment</h2>
                 </div>
                 <div class="modal-body">
                     <form action="<?php echo BASEURL . "/adminDashboard/manageCourseParticiption" ?>" method="post">
@@ -129,16 +130,35 @@
                             <label for="delete-users">Delete multiple users</label><br>
                         </div>
 
-                        <strong>User type:</strong>
+                        <strong>Enrolment mode:</strong>
                         <div class="radio-btn">
-                            <input type="radio" id="lecturers" name="user-type" checked="checked">
-                            <label for="lecturers">Lecturers</label><br>
+                            <input type="radio" id="year-mode" name="user-type" checked="checked">
+                            <label for="lecturers">Year wise</label><br>
 
-                            <input type="radio" id="students" name="user-type">
-                            <label for="students">Students</label><br>
+                            <input type="radio" id="file-mode" name="user-type">
+                            <label for="students">File upload</label><br>
                         </div>
 
-                        <div class="year-selection">
+                        <div class="modal-body" id="file-mode-div" style="display: none;">
+                            <p>Use this format to enter details using .csv file</p>
+                            <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/1" . "'" ?>" id="btn-create-download">Download template</button>
+
+                            <br><br>
+                            <p>
+                                Use this format to enter details using .txt file<br>
+                                &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
+                                &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
+                                <strong>Note:</strong>Each user should be in a newline<br><br>
+                            </p>
+                            <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
+                                Upload file:
+                                <input type="hidden" name="upload-user-type" value="2">
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                <input type="submit" value="Add users" name="submit" class="upload-btn">
+                            </form>
+                        </div>
+
+                        <div class="year-selection" id="year-mode-div">
                             <label for="year">Select the year</label>
                             <select name="year" id="year">
                                 <option value="all_year" selected>All years</option>
@@ -204,6 +224,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("adminDashboard"); ?>
 
     <?php linkJS("basic") ?>
 

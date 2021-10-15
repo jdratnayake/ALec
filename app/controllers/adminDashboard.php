@@ -17,6 +17,10 @@ class AdminDashboard extends AlecFramework
     public function submit()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $type = $_POST["upload-user-type"];
+
+            // echo $type;
+            // return 0;
 
             // FILE UPLOAD START
 
@@ -75,7 +79,7 @@ class AdminDashboard extends AlecFramework
 
                         $password = password_hash($data["3"], PASSWORD_DEFAULT);
 
-                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, "stu");
+                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, $type);
                     }
                 }
 
@@ -96,7 +100,7 @@ class AdminDashboard extends AlecFramework
 
                         $password = password_hash($data["3"], PASSWORD_DEFAULT);
 
-                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, "stu");
+                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, $type);
                     }
                 }
 
@@ -109,12 +113,20 @@ class AdminDashboard extends AlecFramework
         }
     }
 
-    public function download()
+    public function download($num)
     {
-        $file = "download_data/List.csv";
+        if ($num == 1) {
+            $file = "download_data/Lecturer_List.csv";
+            header('Content-Disposition: attachment; filename="Lecturer_List.csv"');
+        } else if ($num == 2) {
+            $file = "download_data/Student_List.csv";
+            header('Content-Disposition: attachment; filename="Student_List.csv"');
+        }
+
+
         $type = filetype($file);
         header("Content-Type: $type");
-        header('Content-Disposition: attachment; filename="List.csv"');
+        // header('Content-Disposition: attachment; filename="List.csv"');
         readfile($file);
     }
 
