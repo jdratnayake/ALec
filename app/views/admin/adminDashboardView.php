@@ -31,7 +31,7 @@
             </div>
             <div class="dropdown-content" id="dropdown-content">
                 <a id="create-users-btn">Create Multiple Accounts</a>
-                <a id="manage-accounts-btn">Manage Students Enrolment</a>
+                <a id="manage-accounts-btn">Manage Students Enrollment</a>
             </div>
         </div>
 
@@ -82,10 +82,10 @@
                     <strong>User type:</strong>
                     <div class="radio-btn">
                         <input type="radio" id="lecturers-create" name="user-type" checked="checked">
-                        <label for="lecturers">Lecturers</label><br>
+                        <label for="lecturers-create">Lecturers</label><br>
 
                         <input type="radio" id="students-create" name="user-type">
-                        <label for="students">Students</label><br>
+                        <label for="students-create">Students</label><br>
                     </div>
 
                     <p>Use this format to enter details using .csv file</p>
@@ -116,7 +116,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" id="close-two">&times;</span>
-                    <h2>Manage Students Enrolment</h2>
+                    <h2>Manage Students Enrollment</h2>
                 </div>
                 <div class="modal-body">
                     <form action="<?php echo BASEURL . "/adminDashboard/manageCourseParticiption" ?>" method="post">
@@ -130,32 +130,13 @@
                             <label for="delete-users">Delete multiple users</label><br>
                         </div>
 
-                        <strong>Enrolment mode:</strong>
+                        <strong>Enrollment mode:</strong>
                         <div class="radio-btn">
                             <input type="radio" id="year-mode" name="user-type" checked="checked">
-                            <label for="lecturers">Year wise</label><br>
+                            <label for="year-mode">Year wise</label><br>
 
                             <input type="radio" id="file-mode" name="user-type">
-                            <label for="students">File upload</label><br>
-                        </div>
-
-                        <div class="modal-body" id="file-mode-div" style="display: none;">
-                            <p>Use this format to enter details using .csv file</p>
-                            <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/1" . "'" ?>" id="btn-create-download">Download template</button>
-
-                            <br><br>
-                            <p>
-                                Use this format to enter details using .txt file<br>
-                                &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
-                                &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
-                                <strong>Note:</strong>Each user should be in a newline<br><br>
-                            </p>
-                            <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
-                                Upload file:
-                                <input type="hidden" name="upload-user-type" value="2">
-                                <input type="file" name="fileToUpload" id="fileToUpload">
-                                <input type="submit" value="Add users" name="submit" class="upload-btn">
-                            </form>
+                            <label for="file-mode">File upload</label><br>
                         </div>
 
                         <div class="year-selection" id="year-mode-div">
@@ -178,7 +159,26 @@
                             </select>
                         </div>
 
-                        <input id="manage-users-btn" type="submit" value="Assign users" name="submit" class="upload-btn">
+                        <input id="manage-users-btn" type="submit" value="Add users" name="submit" class="assign-btn">
+
+                        <div class="modal-body enrollment-file-upload" id="file-mode-div" style="display: none;">
+                            <p>Use this format to enter details using .csv file</p>
+                            <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/1" . "'" ?>" id="btn-create-download">Download template</button>
+
+                            <br><br>
+                            <p>
+                                Use this format to enter details using .txt file<br>
+                                &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
+                                &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
+                                <strong>Note:</strong>Each user should be in a newline<br><br>
+                            </p>
+                            <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
+                                Upload file:
+                                <input type="hidden" name="upload-user-type" value="2">
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                <input type="submit" value="Enroll users" name="submit" class="upload-btn">
+                            </form>
+                        </div>
 
                     </form>
                 </div>
