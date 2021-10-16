@@ -519,12 +519,12 @@ footer p {
 }
 
 .cancel {
-  background-color: #a6a6a6;
-  border: 2px solid #a6a6a6;
+  background-color: darkgrey;
+  border: 2px solid darkgrey;
 }
 .cancel:hover {
-  border: 2px solid lightgray;
-  background-color: lightgray;
+  border: 2px solid #818080;
+  background-color: #818080;
 }
 
 /* --------------BUTTON STYLES END----------------*/

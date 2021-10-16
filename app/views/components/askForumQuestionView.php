@@ -29,9 +29,27 @@
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
-        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-        <li><a href="http://localhost/ALec/lecturerCoursePageForum/index">Forum Course Page</a></li>
-        <li><a href="http://localhost/ALec/lecturerForumTopic/index/56">Discussion Forum <?php echo $data["subjectCode"]; ?></a></li>
+        <li><a href="
+            <?php
+
+            if ($data["userType"] == "lec") {
+                echo BASEURL . "/lecturerDashboard/index";
+            } else if ($data["userType"] == "stu") {
+                echo BASEURL . "/studentDashboard/index";
+            }
+
+            ?>
+        ">Home</a></li>
+        <li><a href="
+        <?php
+            if ($data["userType"] == "lec") {
+                echo BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] ;
+            } else if ($data["userType"] == "stu") {
+                echo BASEURL . "/studentForumTopic/index/" . $data["courseId"] ;
+            }
+
+            ?>
+        ">Discussion Forum <?php echo $data["subjectCode"]; ?></a></li>
         <li>New discussion topic</li>
     </ul>
 
