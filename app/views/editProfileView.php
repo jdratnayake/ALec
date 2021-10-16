@@ -52,11 +52,6 @@
                     <span><?php echo $data["userDetails"]["user_type"] ?></span>
                     <span><?php echo $data["userDetails"]["reg_no"] ?></span>
                 </div>
-                <div class="miscel">
-                    <span>Miscellaneous</span>
-                    <span>Forum Posts</span>
-                    <span>Forum Discussions</span>
-                </div>
             </div>
 
             <!--    Right bar include small separate boxes of user details, assigned courses and badges earned-->
@@ -105,6 +100,11 @@
                         ";
                     }
                     ?>
+                </div>
+                <div class="miscel">
+                    <span>Miscellaneous</span>
+                    <span>Forum Posts</span>
+                    <span>Forum Discussions</span>
                 </div>
             </div>
         </div>

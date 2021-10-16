@@ -446,7 +446,6 @@ footer p {
   width: 80%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
-  height: 101%;
   background-color: #b7c8d64a;
   overflow-y: hidden;
 }
@@ -468,7 +467,7 @@ header {
   margin-top: 20px;
   height: 100%;
   float: left;
-  width: 240px;
+  width: 25%;
 }
 .left-bar img {
   width: 112%;
@@ -505,7 +504,7 @@ header {
 
 .right-bar {
   margin-top: 20px;
-  width: 72%;
+  width: 70%;
   float: right;
   overflow: hidden;
   display: grid;
@@ -547,14 +546,12 @@ header {
 }
 
 .miscel {
-  width: 112%;
-  margin-top: 30px;
   height: 130px;
 }
 
 .course-details {
   overflow-y: auto;
-  height: 280px;
+  height: 265px;
 }
 
 /*# sourceMappingURL=edit_profile.css.map */
