@@ -257,7 +257,7 @@ header {
   bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 50px;
+  min-width: 45px;
   line-height: 50px;
   font-size: 20px;
   border-radius: 12px;
@@ -265,6 +265,7 @@ header {
   transition: all 0.4s ease;
   background: #19345d;
   cursor: pointer;
+  height: 45px;
 }
 .profile #log_out:hover {
   color: #184e77;
@@ -273,10 +274,11 @@ header {
 
 .siderbar.active .profile #log_out {
   left: 88%;
-}
-
-.siderbar.active .profile #log_out {
   background: none;
+}
+.siderbar.active .profile #log_out:hover {
+  color: #184e77;
+  background: #fff;
 }
 
 .siderbar.active ~ .home_content {
@@ -452,8 +454,9 @@ footer p {
   margin-bottom: 32px;
 }
 .form-content .heading {
-  text-align: center;
-  font-size: 2rem;
+  text-align: left;
+  font-size: 25px;
+  margin-bottom: 15px;
 }
 .form-content .details {
   margin-bottom: 10px;
@@ -477,14 +480,14 @@ footer p {
   padding: 6px;
   border-radius: 0 0 12px 12px;
   color: white;
-  background-color: #2B4F82;
-  border: 3px solid #2B4F82;
+  background-color: #305890;
+  border: 3px solid #305890;
   font-weight: bold;
   cursor: pointer;
 }
 .form-content .details .add:hover {
-  border: 3px solid #1d3557;
-  color: #1d3557;
+  border: 3px solid #4075bf;
+  color: #4075bf;
   background-color: white;
 }
 .form-content .details .button-set {
@@ -493,7 +496,7 @@ footer p {
 .form-content .details .button-set .finish {
   height: 48px;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: large;
   border: none;
   color: white;
@@ -515,7 +518,7 @@ footer p {
   align-items: center;
 }
 .form-content .form-group textarea {
-  margin-bottom: 2px;
+  margin-bottom: 10px;
   border: 1px solid lightgrey;
   border-radius: 4px;
   border-bottom-width: 2px;
@@ -532,11 +535,11 @@ footer p {
   box-shadow: 0 0 5px #7697b3;
 }
 .form-content .form-group .form-control {
-  display: block;
   width: 100%;
+  display: block;
   padding: 6px 12px;
-  color: #495057;
-  background-color: white;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.05);
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-bottom-width: 2px;
@@ -559,8 +562,8 @@ footer p {
   margin-bottom: 5px;
   margin-right: 8px;
   padding: 6px 12px;
-  color: #495057;
-  background-color: white;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.05);
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -571,7 +574,7 @@ footer p {
   box-shadow: 0 0 5px #7697b3;
 }
 .form-content .form-group .points {
-  color: #495057;
+  color: rgba(0, 0, 0, 0.85);
   width: 10%;
   margin-right: 4px;
   padding: 6px 0 6px 8px;
@@ -583,9 +586,6 @@ footer p {
 }
 .form-content .form-group .points:hover {
   box-shadow: 0 0 5px #7697b3;
-}
-.form-content .check {
-  margin-bottom: 20px;
 }
 .form-content .row {
   display: flex;
@@ -600,13 +600,26 @@ footer p {
 
 /* -------CLOSE BUTTON START------------- */
 .close {
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #305890;
   position: relative;
-  left: 96%;
-  top: 78px;
+  left: 87%;
+  top: 123px;
   display: inline-flex;
-  width: 25px;
-  height: 25px;
   overflow: hidden;
+  padding: 0 10px;
+  cursor: pointer;
+  height: 40px;
+  align-items: center;
+}
+.close:hover {
+  color: white;
+  background-color: #1d3557;
+}
+.close .fa-times {
+  margin-right: 8px;
 }
 
 .close:hover::before, .close:hover::after {
@@ -614,14 +627,13 @@ footer p {
 }
 
 .close::before, .close::after {
-  content: "";
   position: absolute;
   height: 2px;
   width: 100%;
   top: 50%;
   left: 0;
   margin-top: -1px;
-  background: #495057;
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .close::before {
