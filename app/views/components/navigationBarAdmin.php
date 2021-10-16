@@ -42,9 +42,8 @@
                 <div class="profile_content">
                     <div class="profile">
                         <div class="profile_details">
-                            <img <?php srcIMG("profile-picture.jpg") ?> alt="">
+                            <img <?php srcIMG("profile_pic_blue.png") ?> alt="">
                             <div class="name_job">
-<!--                                <div class="name">Louella Rhodes</div>-->
                                 <div class="job">Admin</div>
                             </div>
                         </div>

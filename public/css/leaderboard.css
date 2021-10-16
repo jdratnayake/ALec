@@ -29,6 +29,13 @@ header {
   width: 100%;
 }
 
+.siderbar.active .profile .profile_details:hover {
+  /* color: #184e77; */
+  /* background: #fff; */
+  border-radius: 10px;
+  text-decoration: underline;
+}
+
 /*==============================================================================*/
 /*NAVIGATION BAR - START*/
 /*==============================================================================*/
@@ -222,9 +229,7 @@ header {
   cursor: pointer;
 }
 .siderbar.active .profile .profile_details:hover {
-  color: #184e77;
-  background: #fff;
-  border-radius: 10px;
+  text-decoration: underline;
 }
 
 .profile .profile_details img {

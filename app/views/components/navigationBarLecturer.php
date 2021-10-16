@@ -56,9 +56,9 @@
                 <div class="profile_content">
                     <div class="profile">
                         <div class="profile_details" onclick="<?php echo "location.href='" . BASEURL . "/editProfile/index" . "'"; ?>">
-                            <img <?php srcIMG("profile-picture.jpg") ?> alt="">
+                            <img <?php srcIMG("profile_pic_blue.png") ?> alt="">
                             <div class="name_job">
-                                <div class="name" onclick="">Louella Rhodes</div>
+                                <div class="name" onclick="">Lec ALec</div>
                                 <div class="job">Lecturer</div>
                             </div>
                         </div>

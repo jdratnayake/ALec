@@ -29,9 +29,7 @@
 
     <div class="details-content">
         <div class="header-container">
-            <header>
-                User Profile
-            </header>
+            <header>User Profile</header>
         </div>
 
         <div class="user-details-container">

@@ -63,6 +63,14 @@ header {
     }
 
 }
+.cancel{
+  background-color: darkgrey;
+  border-color: darkgrey;
+  &:hover{
+    background-color: #818080;
+    border-color: #818080;
+  }
+}
 
 .right-bar {
   margin-top: 20px;

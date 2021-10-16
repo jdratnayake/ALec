@@ -20,6 +20,12 @@
 
     <?php linkPhp("navigationBarLecturer"); ?>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li>Edit profile</li>
+    </ul>
+
     <div class="details-content">
         <div class="header-container">
             <header>
@@ -75,8 +81,14 @@
                             <input type="text" name="tele" value="<?php echo $data["userDetails"]["tele"]; ?>" class="" disabled>
                         </span>
 
-                        <input type="reset" value="Cancel" id="btn-cancel" style="display:none">
-                        <input type="submit" value="Save" id="btn-save" style="display:none">
+                        <div class="save-buttons">
+                            <button id="btn-save" type="submit" value="Save" class="buttons" style="display: none">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>Save
+                            </button>
+                            <button id="btn-cancel" type="reset" value="Cancel" class="buttons cancel" style="display: none">
+                                <i class="fa fa-ban" aria-hidden="true"></i>Cancel
+                            </button>
+                        </div>
 
                         <button class="buttons" id="btn-edit">
                             <i class="fa fa-pencil" aria-hidden="true"></i>Edit

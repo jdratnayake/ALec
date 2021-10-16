@@ -20,7 +20,7 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb" style="margin-left: 5%">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-        <li><a href="http://localhost/ALec/lecturerCoursePage/index">Course Page</a></li>
+        <li><a href="http://localhost/ALec/lecturerCoursePage/index">My Course</a></li>
         <li><?php echo $data["courseName"]; ?></li>
     </ul>
 

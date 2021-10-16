@@ -13,7 +13,7 @@ $light_color: #FFF;
   width: 80%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
-  height: 88%;
+  height: 80%;
   background-color: #b7c8d64a;
   overflow-y: hidden;
 }
@@ -113,8 +113,8 @@ header {
   margin: 10px 0;
   border: 1px solid #d0d0d0;
   background-color: $light_color;
-  height: 230px;
   overflow-y:auto;
+  height: 50%;
 
   .content {
     display: inline-grid;

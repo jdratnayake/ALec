@@ -8,6 +8,14 @@ $sidebar_min_len: 78px;
 //sidebar ON length
 $sidebar_max_len: 240px;
 
+.siderbar.active .profile .profile_details:hover {
+    /* color: #184e77; */
+    /* background: #fff; */
+    border-radius: 10px;
+    text-decoration: underline;
+}
+
+
 /*==============================================================================*/
 /*NAVIGATION BAR - START*/
 /*==============================================================================*/
@@ -201,9 +209,10 @@ $sidebar_max_len: 240px;
     cursor: pointer;
 
     &:hover{
-        color: #184e77;
-        background: #fff;
-        border-radius: 10px;
+        //color: #184e77;
+        //background: #fff;
+        //border-radius: 10px;
+        text-decoration: underline;
     }
 }
 
@@ -289,3 +298,25 @@ $sidebar_max_len: 240px;
 /*==============================================================================*/
 /*HOME CONTENT - END*/
 /*==============================================================================*/
+
+//.fa-sign-out-alt{
+//
+//    &:hover{
+//        border: 2px solid #fff;
+//    }
+//}
+
+//#log_out{
+//    //background: #184e77;
+//    //border: 2px solid #184e77;
+//    //color: #fff;
+//    background: #fff;
+//    border: 2px solid #fff;
+//    color: #fff;
+//}
+
+//#log_out:hover {
+//    background: #fff;
+//    border: 2px solid #fff;
+//    color: #fff;
+//}
