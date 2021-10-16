@@ -38,13 +38,13 @@
             <div class="left-bar">
                 <img <?php srcProfileIMG($data["userDetails"]["img"]); ?> alt="User image">
 
-                <button id="btn-upload">Change Picture</button>
+                <button id="btn-upload"  class="buttons"><i class="fa fa-id-badge" aria-hidden="true"></i>Change Picture</button>
 
                 <form action="<?php echo BASEURL . "/editProfile/upload" ?>" method="post" enctype="multipart/form-data" style="display:none" id="image-upload">
                     Upload file:
                     <input type="file" name="fileToUpload" id="fileToUpload">
-                    <button id="btn-upload-cancel">Cancel</button>
-                    <input type="submit" value="Upload Picture" name="submit" class="upload-btn">
+                    <button type="submit" value="upload-pic" class="buttons"><i class="fa fa-upload" aria-hidden="true"></i>Upload Picture</button>
+                    <button id="btn-upload-cancel" class="buttons cancel"><i class="fa fa-ban" aria-hidden="true"></i>Cancel</button>
                 </form>
 
                 <div class="bio">
@@ -65,20 +65,20 @@
                     <div class="pvt-details">
                         <span>User Details</span>
                         <span>
-                            <strong>First Name : </strong>
-                            <input type="text" name="fName" value="<?php echo $data["userDetails"]["first_name"]; ?>" class="" disabled>
+                            <label for="fName"><strong>First Name : </strong></label>
+                            <input type="text" id="fName" name="fName" value="<?php echo $data["userDetails"]["first_name"]; ?>" class="" disabled>
                         </span>
                         <span>
-                            <strong>Last Name : </strong>
-                            <input type="text" name="lName" value="<?php echo $data["userDetails"]["last_name"]; ?>" class="" disabled>
+                            <label for="lName"><strong>Last Name : </strong></label>
+                            <input type="text" id="lName" name="lName" value="<?php echo $data["userDetails"]["last_name"]; ?>" class="" disabled>
                         </span>
                         <span>
-                            <strong>Email : </strong>
-                            <input type="text" name="email" value="<?php echo $data["userDetails"]["email"]; ?>" class="" disabled>
+                            <label for="email"><strong>Email : </strong></label>
+                            <input type="text" id="email" name="email" value="<?php echo $data["userDetails"]["email"]; ?>" class="" disabled>
                         </span>
                         <span>
-                            <strong>Telephone No : </strong>
-                            <input type="text" name="tele" value="<?php echo $data["userDetails"]["tele"]; ?>" class="" disabled>
+                            <label for="tele"><strong>Telephone No : </strong></label>
+                            <input type="text" id="tele" name="tele" value="<?php echo $data["userDetails"]["tele"]; ?>" class="" disabled>
                         </span>
 
                         <div class="save-buttons">

@@ -257,7 +257,7 @@ header {
   bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 50px;
+  min-width: 45px;
   line-height: 50px;
   font-size: 20px;
   border-radius: 12px;
@@ -265,6 +265,7 @@ header {
   transition: all 0.4s ease;
   background: #19345d;
   cursor: pointer;
+  height: 45px;
 }
 .profile #log_out:hover {
   color: #184e77;
@@ -273,10 +274,11 @@ header {
 
 .siderbar.active .profile #log_out {
   left: 88%;
-}
-
-.siderbar.active .profile #log_out {
   background: none;
+}
+.siderbar.active .profile #log_out:hover {
+  color: #184e77;
+  background: #fff;
 }
 
 .siderbar.active ~ .home_content {
@@ -510,6 +512,7 @@ header {
 }
 
 .bio {
+  margin-top: 5px;
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -536,7 +539,6 @@ header {
 .pvt-details span:first-child, .course-details span:first-child, .miscel span:first-child {
   font-weight: bold;
   border-bottom: 2px solid #2B4F82;
-  width: -webkit-fill-available;
   margin-bottom: 1rem;
 }
 .pvt-details:hover, .course-details:hover, .miscel:hover {
