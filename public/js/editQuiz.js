@@ -11,13 +11,13 @@ $(document).ready(function () {
 
         const value = $(this).val();
 
-        if (value == "value_mcq") {
+        if (value === "value_mcq") {
             $(".question-container").last().remove();
             const num = parseInt($("#new-question-count").val()) - 1;
             $("#new-question-count").val(num);
 
             $(".all-questions").append(getMcqQuestion());
-        } else if (value == "value_short") {
+        } else if (value === "value_short") {
             $(".question-container").last().remove();
             const num = parseInt($("#new-question-count").val()) - 1;
             $("#new-question-count").val(num);
@@ -25,14 +25,6 @@ $(document).ready(function () {
             $(".all-questions").append(getShortAnswer());
         }
     });
-
-    // $('input[type=radio][name=type]').change(function () {
-    //     console.log("Hi");
-    // });
-
-    // $('input[name="type"]').change(function () {
-    //     alert('Radio Box has been changed!');
-    // });
 });
 
 const questionType =

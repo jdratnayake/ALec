@@ -507,6 +507,10 @@ header {
   margin-right: 5px;
 }
 
+.user-details-container {
+  height: 70vh;
+}
+
 .top {
   margin-top: 10px;
 }
@@ -538,7 +542,7 @@ header {
   border: 1px solid #d0d0d0;
   background-color: #FFF;
   overflow-y: auto;
-  height: 50%;
+  height: 50vh;
 }
 .bottom .content {
   display: inline-grid;

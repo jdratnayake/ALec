@@ -9,7 +9,6 @@
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
@@ -20,18 +19,11 @@
 
 /* (B) TIME PICKER ITSELF */
 .tp {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   max-width: 320px;
   background: #ffffff;
   border: 1px solid #000;
-}
-
-.tp-box > *::-moz-selection {
-  background: transparent;
 }
 
 .tp-box > *::selection {
@@ -40,8 +32,7 @@
 
 #tp-pop .tp {
   margin: 50vh auto 0 auto;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /* (C) HR + MIN + SEC */
@@ -49,8 +40,7 @@
   width: 33%;
   padding: 0 15px;
   text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .tp-up, .tp-down {
@@ -62,8 +52,7 @@
 }
 
 .tp-val {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   background: #eee;
   border: 0;
@@ -83,8 +72,8 @@
   margin: 10px;
   cursor: pointer;
 }
-
 .tp-ok:hover {
   background: #325C97;
 }
+
 /*# sourceMappingURL=time_picker.css.map */

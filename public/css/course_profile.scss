@@ -83,6 +83,8 @@ header {
   }
 }
 
+.user-details-container{height: 70vh;}
+
 .top {
   margin-top: 10px;
 }
@@ -114,7 +116,7 @@ header {
   border: 1px solid #d0d0d0;
   background-color: $light_color;
   overflow-y:auto;
-  height: 50%;
+  height: 50vh;
 
   .content {
     display: inline-grid;

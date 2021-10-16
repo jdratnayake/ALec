@@ -18,6 +18,11 @@
 
 <body>
 
+<!--    breadcrumb-->
+<ul class="breadcrumb">
+    <li><a href="http://localhost/ALec/login">Back to login</a></li>
+</ul>
+
     <div class="container">
         <div class="home-content">
             <div class="wrapper">
@@ -35,6 +40,7 @@
                             Please enter your email address to send an OTP.
 
                             <div class="field" id="courseField">
+                                <label for="email"></label>
                                 <input type="text" placeholder="Email" name="email" id="email" onfocusout="validateEmail()">
                                 <div class="error" id="error"><?php echo $errors["email"]; ?></div>
                             </div>
