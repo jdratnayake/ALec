@@ -47,6 +47,7 @@ class Login extends AlecFramework
                     $this->redirect("dashboard");
                 } else {
                     //If login password is not matched
+                    $data["email"] = $email;
                     $errors["password"] = "Invaild Login ! - Wrong User Name OR Password";
                 }
             } else {
