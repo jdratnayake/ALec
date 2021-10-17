@@ -193,9 +193,9 @@ const tp = {
                 // Get + set popup time
                 let cv = this.value;
                 if (cv === "") {
-                    tp.instances[0].hr.value = document.getElementById("time-hr").value;
-                    tp.instances[0].min.value = document.getElementById("time-min").value;
-                    tp.instances[0].sec.value = document.getElementById("time-sec").value;
+                    tp.instances[0].hr.value = 0;
+                    tp.instances[0].min.value = 0;
+                    tp.instances[0].sec.value = 0;
                 } else {
                     cv = cv.split(":");
 
