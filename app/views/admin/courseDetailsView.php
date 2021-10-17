@@ -34,7 +34,7 @@
             <!--    Search bar     -->
             <form class="search-bar" id="search">
                 <label for="search"></label>
-                <input type="text" placeholder="Search.." name="search" id="search">
+                <input type="text" placeholder="Search.." name="search" id="search-tag">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
 
