@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "0_global_variables.scss";
+@import "./4_footer.scss";
 
 *,
 *::before,
@@ -32,7 +33,7 @@ nav {
   z-index: 50;
   background-color: #fff;
   overflow: hidden;
-  box-shadow: 1px 7px 25px rgb(0 0 0 / 13%);
+  box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.13);
 }
 .nav-container {
   display: flex;
@@ -161,7 +162,7 @@ form input {
   font-weight:500;
 }
 footer {
-  box-shadow: 1px 7px 25px rgb(0 0 0 / 13%);
+  box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.13);
   background-color: $delete_button;
   opacity: 90%;
   color: #fff;

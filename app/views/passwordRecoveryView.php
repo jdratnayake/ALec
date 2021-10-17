@@ -64,6 +64,8 @@
 
     <!-- FontAwesome Icon -->
     <script src="https://kit.fontawesome.com/3220c9480a.js" crossorigin="anonymous"></script>
+
+    <?php linkJS("passwordRecovery") ?>
 </body>
 
 </html>

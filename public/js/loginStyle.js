@@ -1,5 +1,6 @@
 const inputs = document.querySelectorAll('.input');
 const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
 
 function focusFunc() {
     let parent = this.parentNode.parentNode;
@@ -23,9 +24,13 @@ if (emailInput.length != 0) {
     emailInput.parentNode.parentNode.classList.add('focus');
 }
 
+if (passwordInput.length != 0) {
+    passwordInput.parentNode.parentNode.classList.add('focus');
+}
+
 function forgotPassword() {
     let temp = "";
-    if (validateEmail()) {
+    if (emailInput.length != 0) {
         temp = emailInput.value;
     }
 

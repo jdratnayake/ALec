@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/3220c9480a.js" crossorigin="anonymous"></script>
     <title>Message</title>
-    <?php echo linkCSS("otp"); ?>
     <link rel="stylesheet" href="/Assets/css/flashMessages.css?version=1">
+    <?php linkCSS("otp"); ?>
 </head>
 
 <body>
