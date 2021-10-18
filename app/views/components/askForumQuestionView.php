@@ -41,6 +41,17 @@
             ?>
         ">Home</a></li>
         <li><a href="
+        http://localhost/ALec/lecturerCoursePageForum/index
+        <?php
+            if ($data["userType"] == "lec") {
+                echo BASEURL . "/lecturerCoursePageForum/index";
+            } else if ($data["userType"] == "stu") {
+                echo BASEURL . "/studentCoursePageForum/index";
+            }
+
+            ?>
+        ">Forum Course Page</a></li>
+        <li><a href="
         <?php
             if ($data["userType"] == "lec") {
                 echo BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] ;
