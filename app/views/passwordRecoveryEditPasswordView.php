@@ -18,6 +18,11 @@
 
 <body>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/login">Back to login</a></li>
+    </ul>
+
     <div class="container">
         <div class="home-content">
             <div class="wrapper">
@@ -31,11 +36,13 @@
                         <form method="post" action="<?php echo BASEURL . '/passwordRecovery/changePassword'; ?>" class="login" id="submit" onsubmit="validateAll()">
 
                             <div class="field" id="courseField">
+                                <label for="password1"></label>
                                 <input type="password" placeholder="Password" name="password1" id="password1" onfocusout="validatePassword1()">
                                 <div class="error" id="error"><?php echo $errors["password1"]; ?></div>
                             </div>
 
                             <div class="field" id="courseField">
+                                <label for="password2"></label>
                                 <input type="password" placeholder="Confirm Password" name="password2" id="password2" onfocusout="validatePassword2()">
                                 <div class="error" id="error"><?php echo $errors["password2"]; ?></div>
                             </div>

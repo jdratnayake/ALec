@@ -24,7 +24,7 @@
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/courseDetails/index">Course page</a></li>
-        <li><a href="http://localhost/ALec/courseProfile/index/47">Course profile</a></li>
+        <li><a href="<?php echo BASEURL . '/courseProfile/index/' . $data["courseId"]  ?> ">Course profile</a></li>
         <li>Lecturers</li>
     </ul>
 

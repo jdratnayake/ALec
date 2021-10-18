@@ -20,7 +20,7 @@
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/userDetails/index">User details</a></li>
-        <li><a href="http://localhost/ALec/userProfile/index/9">View user</a></li>
+        <li><a href="<?php echo BASEURL . '/userProfile/index/' . $data["userDetails"]["user_id"] ?> ">View user</a></li>
         <li>
             <?php
             if ($data["userDetails"]["user_type"] == "stu") {

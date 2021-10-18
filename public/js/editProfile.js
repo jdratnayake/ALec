@@ -9,7 +9,7 @@ $(document).ready(function () {
         $("#btn-cancel").show();
 
         $('input[type=text]').each(function () {
-            if ($(this).attr('name') != "email") {
+            if ($(this).attr('name') !== "email") {
                 $(this).prop("disabled", false);
             }
         })

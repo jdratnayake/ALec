@@ -20,7 +20,7 @@
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/userDetails/index">User details</a></li>
-        <li>Register user</li>
+        <li>Add user</li>
     </ul>
 
     <div class="wrapper center">
@@ -74,7 +74,7 @@
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Add user">
                     </div>
                 </form>
                 <!-- LECTURER FORM END -->
@@ -116,7 +116,7 @@
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Add user">
                     </div>
                 </form>
                 <!-- STUDENT FORM END -->

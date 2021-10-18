@@ -25,11 +25,13 @@ $(document).ready(function () {
     $('#year-mode').click(function () {
         $('#file-mode-div').hide();
         $('#year-mode-div').show();
+        $('#manage-users-btn').show();
     });
 
     $('#file-mode').click(function () {
         $('#year-mode-div').hide();
         $('#file-mode-div').show();
+        $('#manage-users-btn').hide();
     });
 });
 // Manage Students Enrolment - END

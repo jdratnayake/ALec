@@ -21,8 +21,11 @@ class CreateQuizDashboard extends AlecFramework
             $status = "false";
             $lecturerId = $this->getSession("userId");
             $topicId = $_POST["topic"];
-            $durHr = $_POST["quiz-dur-hr"];
-            $durMin = $_POST["quiz-dur-min"];
+
+            $quizDur = explode(":", $_POST["quiz-dur"]);
+
+            $durHr = $quizDur[0];
+            $durMin = $quizDur[1];
 
             // echo "<h3 align = 'center'>" . $count . "</h1>";
             // echo "<h3 align = 'center'>" . $lecturerId . "</h1>";

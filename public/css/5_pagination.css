@@ -2,24 +2,32 @@
 /*PAGINATION - START*/
 /*==============================================================================*/
 .home-content .pagination-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 25px;
 }
+
 .home-content .pagination-container .pagination {
   display: inline-block;
 }
+
 .home-content .pagination-container .pagination a {
   color: black;
   float: left;
   padding: 8px 16px;
   text-decoration: none;
 }
+
 .home-content .pagination-container .pagination a.active {
   background-color: #19345d;
   color: white;
   border-radius: 5px;
 }
+
 .home-content .pagination-container .pagination a:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
@@ -28,5 +36,4 @@
 /*==============================================================================*/
 /*PAGINATION - END*/
 /*==============================================================================*/
-
 /*# sourceMappingURL=5_pagination.css.map */

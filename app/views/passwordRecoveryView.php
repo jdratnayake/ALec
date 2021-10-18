@@ -18,6 +18,11 @@
 
 <body>
 
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/login">Back to login</a></li>
+    </ul>
+
     <div class="container">
         <div class="home-content">
             <div class="wrapper">
@@ -35,7 +40,8 @@
                             Please enter your email address to send an OTP.
 
                             <div class="field" id="courseField">
-                                <input type="text" placeholder="Email" name="email" id="email" onfocusout="validateEmail()">
+                                <label for="email"></label>
+                                <input type="text" placeholder="Email" name="email" id="email" value="<?php if (isset($data['email'])) echo $data['email']; ?>" onfocusout="validateEmail()">
                                 <div class="error" id="error"><?php echo $errors["email"]; ?></div>
                             </div>
 
@@ -58,6 +64,8 @@
 
     <!-- FontAwesome Icon -->
     <script src="https://kit.fontawesome.com/3220c9480a.js" crossorigin="anonymous"></script>
+
+    <?php linkJS("passwordRecovery") ?>
 </body>
 
 </html>
