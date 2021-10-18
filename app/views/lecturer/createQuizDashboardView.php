@@ -61,7 +61,7 @@
                 <div class="row">
                     <div class="form-group col">
                         <label for="time-picker">Quiz Duration</label>
-                        <input type="text" id="time-picker" class="form-control" placeholder="hrs:mins:secs"/>
+                        <input type="text" name="quiz-dur" id="time-picker" class="form-control" placeholder="hrs:mins:secs" />
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
     <?php linkJS("create_quiz"); ?>
     <?php linkJS("createQuizTopic"); ?>
 
-    <?php linkJS("timePicker"); ?>
+    <?php linkJS("timePickerQuiz"); ?>
 
 </body>
 

@@ -32,15 +32,19 @@
   border: 1px solid #888;
   width: 50%;
 }
+
 .modal-content .modal-header {
   padding: 8px 16px;
   background-color: #325C97;
   color: white;
 }
+
 .modal-content .modal-body {
   padding: 16px;
+  display: -ms-inline-grid;
   display: inline-grid;
 }
+
 .modal-content .modal-body .btn {
   background-color: #325C97;
   border: 2px solid #325C97;
@@ -54,6 +58,7 @@
   font-size: 15px;
   max-width: 150px;
 }
+
 .modal-content .modal-body .btn:hover {
   color: white;
   background-color: #19345d;
@@ -78,5 +83,4 @@
 /*==============================================================================*/
 /*MODAL - END*/
 /*==============================================================================*/
-
 /*# sourceMappingURL=modal.css.map */

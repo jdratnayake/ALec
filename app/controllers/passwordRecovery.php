@@ -2,128 +2,128 @@
 
 class PasswordRecovery extends AlecFramework
 {
-    public function __construct()
-    {
-        $this->helper("linker");
-        $this->passwordRecoveryModel = $this->model("passwordRecoveryModel");
+  public function __construct()
+  {
+    $this->helper("linker");
+    $this->passwordRecoveryModel = $this->model("passwordRecoveryModel");
+  }
+
+  public function enterEmail($email = "")
+  {
+    $errors["email"] = "";
+    $data["email"] = $email;
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $email = $_POST["email"];
+
+      if (empty($email)) {
+        $errors["email"] = "Email is required";
+      } else if (!($this->passwordRecoveryModel->emailCheck($email))) {
+        $errors["email"] = "Email is not exists";
+      }
+
+      $numberOfErrors = 0;
+      foreach ($errors as $key => $value) {
+
+        if ($value != "") {
+          $numberOfErrors++;
+        }
+      }
+
+      if ($numberOfErrors == 0) {
+        $otp = mt_rand(100000, 999999);
+        $this->setSession("otp", $otp);
+        $this->setSession("email", $email);
+
+        $this->sendOTP();
+
+        return true;
+      }
     }
 
-    public function enterEmail()
-    {
-        $errors["email"] = "";
+    $data["errors"] = $errors;
 
+    $this->view("passwordRecoveryView", $data);
+  }
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $email = $_POST["email"];
+  public function otpCheck()
+  {
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+      $input = $_POST["input1"] . $_POST["input2"] . $_POST["input3"] .
+        $_POST["input4"] . $_POST["input5"] . $_POST["input6"];
 
-            if (empty($email)) {
-                $errors["email"] = "Email is required";
-            } else if (!($this->passwordRecoveryModel->emailCheck($email))) {
-                $errors["email"] = "Email is not exists";
-            }
+      $otp = $this->getSession("otp");
 
-            $numberOfErrors = 0;
-            foreach ($errors as $key => $value) {
+      // echo $input . "<br>";
+      // echo $otp . "<br>";
 
-                if ($value != "") {
-                    $numberOfErrors++;
-                }
-            }
+      if ($otp == $input) {
+        $this->unsetSession("otp");
 
-            if ($numberOfErrors == 0) {
-                $otp = mt_rand(100000, 999999);
-                $this->setSession("otp", $otp);
-                $this->setSession("email", $email);
-
-                $this->sendOTP();
-
-                return true;
-            }
-        }
+        $errors["password1"] = "";
+        $errors["password2"] = "";
 
         $data["errors"] = $errors;
 
-        $this->view("passwordRecoveryView", $data);
+        $this->view("passwordRecoveryEditPasswordView", $data);
+      } else {
+        $data["error"] = "OTP Mismatched";
+
+        $this->view("otpView", $data);
+      }
     }
+  }
 
-    public function otpCheck()
-    {
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $input = $_POST["input1"] . $_POST["input2"] . $_POST["input3"] .
-                $_POST["input4"] . $_POST["input5"] . $_POST["input6"];
+  public function changePassword()
+  {
+    if ($_SERVER["REQUEST_METHOD"] = "POST") {
+      $errors["password1"] = "";
 
-            $otp = $this->getSession("otp");
+      $password1 = $_POST["password1"];
+      $password2 = $_POST["password2"];
 
-            // echo $input . "<br>";
-            // echo $otp . "<br>";
+      $errors["password1"] = "";
+      $errors["password2"] = "";
 
-            if ($otp == $input) {
-                $this->unsetSession("otp");
+      if (empty($password1)) {
+        $errors["password1"] = "Password is required";
+      }
 
-                $errors["password1"] = "";
-                $errors["password2"] = "";
+      if (empty($password1)) {
+        $errors["password2"] = "Confirm Password is required";
+      } else if ($password1 != $password2) {
+        $errors["password2"] = "Password Mismatched";
+      }
 
-                $data["errors"] = $errors;
+      $numberOfErrors = 0;
+      foreach ($errors as $key => $value) {
 
-                $this->view("passwordRecoveryEditPasswordView", $data);
-            } else {
-                $data["error"] = "OTP Mismatched";
-
-                $this->view("otpView", $data);
-            }
+        if ($value != "") {
+          $numberOfErrors++;
         }
-    }
+      }
 
-    public function changePassword()
-    {
-        if ($_SERVER["REQUEST_METHOD"] = "POST") {
-            $errors["password1"] = "";
-
-            $password1 = $_POST["password1"];
-            $password2 = $_POST["password2"];
-
-            $errors["password1"] = "";
-            $errors["password2"] = "";
-
-            if (empty($password1)) {
-                $errors["password1"] = "Password is required";
-            }
-
-            if (empty($password1)) {
-                $errors["password2"] = "Confirm Password is required";
-            } else if ($password1 != $password2) {
-                $errors["password2"] = "Password Mismatched";
-            }
-
-            $numberOfErrors = 0;
-            foreach ($errors as $key => $value) {
-
-                if ($value != "") {
-                    $numberOfErrors++;
-                }
-            }
-
-            if ($numberOfErrors == 0) {
-                $email = $this->getSession("email");
-                $this->unsetSession("email");
-
-                if ($this->passwordRecoveryModel->changePassword($email, $password1)) {
-                    $this->redirect("login");
-                }
-            } else {
-                $data["errors"] = $errors;
-
-                $this->view("passwordRecoveryEditPasswordView", $data);
-            }
-        }
-    }
-
-    public function sendOTP()
-    {
+      if ($numberOfErrors == 0) {
         $email = $this->getSession("email");
-        $otp = $this->getSession("otp");
+        $this->unsetSession("email");
 
-        $emailBody   = '
+        if ($this->passwordRecoveryModel->changePassword($email, $password1)) {
+          $this->redirect("login");
+        }
+      } else {
+        $data["errors"] = $errors;
+
+        $this->view("passwordRecoveryEditPasswordView", $data);
+      }
+    }
+  }
+
+  public function sendOTP()
+  {
+    $email = $this->getSession("email");
+    $otp = $this->getSession("otp");
+
+    $emailBody   = '
 		<html lang="en">
 
 <head>
@@ -278,15 +278,15 @@ class PasswordRecovery extends AlecFramework
 
 </html>';
 
-        $emailSubject = 'ALec: Change Password';
-        $header       = "From: alec.software.cooperation@gmail.com\r\nContent-Type: text/html;";
+    $emailSubject = 'ALec: Change Password';
+    $header       = "From: alec.software.cooperation@gmail.com\r\nContent-Type: text/html;";
 
-        $send_mail_result = mail($email, $emailSubject, $emailBody, $header);
+    $send_mail_result = mail($email, $emailSubject, $emailBody, $header);
 
-        $data["error"] = "";
+    $data["error"] = "";
 
-        $this->view("otpView", $data);
+    $this->view("otpView", $data);
 
-        return true;
-    }
+    return true;
+  }
 }

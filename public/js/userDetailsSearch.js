@@ -1,4 +1,4 @@
-document.getElementById("search-form").addEventListener('submit', function (event) {
+document.getElementById("search").addEventListener('submit', function (event) {
     event.preventDefault();
 });
 
@@ -21,11 +21,14 @@ $(document).ready(function () {
         })
     }
 
-    $("#search").keyup(function () {
+    $("#search-tag").keyup(function () {
         let search = $(this).val();
 
         if (search != "") {
+            $(".pagination-container").hide();
             loadData(search);
+        } else {
+            $(".pagination-container").show();
         }
     });
 

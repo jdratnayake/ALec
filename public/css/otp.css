@@ -1,10 +1,75 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*==============================================================================*/
+/*BREADCRUMB - START*/
+/*==============================================================================*/
+ul.breadcrumb {
+  padding: 4px 16px;
+  list-style: none;
+  background-color: #eeeeee61;
+  margin-bottom: 30px;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/*==============================================================================*/
+/*BREADCRUMB - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*FOOTER - START*/
+/*==============================================================================*/
+footer {
+  width: 100%;
+  background: #eceff1;
+  color: #546e7a;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  /* padding: 2em;  */
+  /* font-size: 1.2rem; */
+}
+
+footer p {
+  padding: 0;
+  margin: 1em 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.sticky-footer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100%;
+}
+
+/*==============================================================================*/
+/*FOOTER - END*/
+/*==============================================================================*/
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -31,18 +96,26 @@ ul {
 
 nav {
   width: 100%;
+  position: -webkit-sticky;
   position: sticky;
   z-index: 50;
   background-color: #fff;
   overflow: hidden;
-  box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.13);
+          box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.13);
 }
 
 .nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 6rem;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   padding: 0 4rem;
   margin: 0 auto;
@@ -50,14 +123,20 @@ nav {
 
 .horizontal-container {
   margin: auto;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1.5fr 3fr;
+  -ms-grid-columns: 1.5fr 3fr;
+      grid-template-columns: 1.5fr 3fr;
   width: 100%;
 }
 
 .cell {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .horizontal-container ul li i {
@@ -75,9 +154,15 @@ nav {
   font-size: 2rem;
   color: #fd461f;
   font-style: italic;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: left;
-  justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container {
@@ -90,18 +175,33 @@ nav {
   padding: 2rem;
   border-radius: 15px;
   background: white;
-  box-shadow: 0 3px 6px 0 #cacaca;
+  -webkit-box-shadow: 0 3px 6px 0 #cacaca;
+          box-shadow: 0 3px 6px 0 #cacaca;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .title {
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .title h3 {
@@ -136,14 +236,21 @@ nav {
   text-transform: uppercase;
   font-weight: 700;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 2rem;
   cursor: pointer;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   font-size: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .customBtn:hover {
@@ -164,7 +271,8 @@ form input {
   border-width: 0;
   background-color: #f6f6f6;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
 }
 
 .msg .text {
@@ -179,7 +287,8 @@ form input {
 }
 
 footer {
-  box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.13);
+          box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.13);
   background-color: #dd5555;
   opacity: 90%;
   color: #fff;
@@ -201,81 +310,79 @@ footer {
   .horizontal-container ul li a {
     font-size: 2rem;
   }
-
   .horizontal-container ul li i {
     font-size: 2.4rem;
   }
 }
+
 @media (max-width: 992px) {
   .horizontal-container ul li a {
     font-size: 2.2rem;
   }
-
   .horizontal-container ul li i {
     font-size: 2.4rem;
   }
 }
+
 @media (max-width: 768px) {
   .nav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     /* height: 8rem; */
   }
-
   .horizontal-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    grid-template-columns: 3fr 3fr;
+    -ms-grid-columns: 3fr 3fr;
+        grid-template-columns: 3fr 3fr;
   }
-
   .horizontal-container ul li a {
     font-size: 3rem;
   }
-
   .horizontal-container ul li i {
     font-size: 2.8rem;
   }
-
   footer {
     font-size: 0.8rem;
   }
 }
+
 @media (max-width: 576px) {
   .horizontal-container {
-    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
-
   .horizontal-container ul li a {
     font-size: 2rem;
     margin-left: 0;
   }
-
   .horizontal-container ul li i {
     font-size: 3rem;
   }
-
   .container {
     width: 90vw;
     margin: auto;
     margin-top: 6rem;
   }
-
   .title h5 {
     font-size: 0.8rem;
     text-align: center;
   }
-
   form input {
     display: inline-block;
     width: 40px;
     height: 40px;
   }
-
   .msg .text {
     color: #2c3e50;
     font-size: 0.7rem;
     padding-bottom: 0.8rem;
   }
-
   .customBtn {
     width: 100px;
     background: #305890;
@@ -288,18 +395,18 @@ footer {
     font-weight: 600;
     margin-top: 10px;
     cursor: pointer;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
     font-size: 0.8rem;
   }
-
   footer {
     font-size: 0.8rem;
   }
 }
+
 .error {
   padding-top: 10px;
   color: #dd5555;
   font-size: 90%;
 }
-
 /*# sourceMappingURL=otp.css.map */
