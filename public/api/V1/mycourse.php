@@ -7,10 +7,14 @@
 	$sql = '';
 	
 	if($user_Type=='stu'){
-		$sql = "SELECT course.course_id, course_name FROM course INNER JOIN course_registration_stu ON course.course_id=course_registration_stu.course_id WHERE student_id='$user_ID';";
+		$sql = "SELECT course.course_id, course_name FROM course 
+				INNER JOIN course_registration_stu ON course.course_id=course_registration_stu.course_id 
+				WHERE student_id='$user_ID';";
 	}
 	else if($user_Type=='lec'){
-		$sql = "SELECT course.course_id, course_name FROM course INNER JOIN course_registration_lec ON course.course_id=course_registration_lec.course_id WHERE lecturer_id='$user_ID';";		
+		$sql = "SELECT course.course_id, course_name FROM course 
+				INNER JOIN course_registration_lec ON course.course_id=course_registration_lec.course_id 
+				WHERE lecturer_id='$user_ID';";		
 	}
 	
 	if($sql){
