@@ -23,7 +23,7 @@
 <ul class="breadcrumb">
     <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
     <li><a href="http://localhost/ALec/lecturerCoursePageForum/index">Forum Course Page</a></li>
-    <li><a href="http://localhost/ALec/lecturerForumTopic/index/56">Discussion Forum SCS 1208</a></li>
+    <li><a href="http://localhost/ALec/lecturerForumTopic/index">Forum topic<</a></li>
     <li>Forum discussion</li>
 </ul>
 
@@ -42,7 +42,7 @@
                     </p>
                 </div>
                 <div class="button-set">
-                    <button class="action-button" value="reply">Reply</button>
+                    <button id="reply-btn" class="action-button" value="reply">Reply</button>
                     <button class="action-button delete" value="delete-reply">Delete</button>
                 </div>
             </div>
@@ -54,6 +54,26 @@
                 If we run out of all possible MAC addresses, is it possible to have duplicates?
             </p>
 
+        </div>
+
+        <div class="answer input-box" id="input-box" style="display: none">
+            <div class="profile_img_info">
+                <div class="img">
+                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
+                </div>
+                <div class="info">
+                    <p class="name">M F RIZWAN</p>
+                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
+                        24 Jul 2021
+                    </p>
+                </div>
+            </div>
+            <label for="input-text"></label>
+            <textarea id="input-text" class="answer-content" rows="10" cols="140" placeholder="Type your reply here..."></textarea>
+            <div class="button-set input-btns">
+                <button class="action-button" value="submit">Submit</button>
+                <button id="cancel-btn" class="action-button cancel" value="cancel">Cancel</button>
+            </div>
         </div>
         <div class="answer">
             <div class="profile_img_info">
@@ -67,7 +87,7 @@
                     </p>
                 </div>
                 <div class="button-set">
-                    <button class="action-button" value="reply">Reply</button>
+<!--                    <button class="action-button" value="reply">Reply</button>-->
                     <button class="action-button delete" value="delete-reply">Delete</button>
                 </div>
             </div>
@@ -94,7 +114,7 @@
                     </p>
                 </div>
                 <div class="button-set">
-                    <button class="action-button" value="reply">Reply</button>
+<!--                    <button class="action-button" value="reply">Reply</button>-->
                     <button class="action-button delete" value="delete-reply">Delete</button>
                 </div>
             </div>
@@ -112,6 +132,8 @@
 <?php linkPhp("notification"); ?>
 
 <?php linkPhp("footer"); ?>
+
+<?php linkJS("forumQuestionGetReplyBox"); ?>
 
 </body>
 

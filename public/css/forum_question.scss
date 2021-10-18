@@ -4,10 +4,8 @@
 @import "./3_notification.scss";
 @import "./4_footer.scss";
 
-$main_color: $theme_second;
-$button_hover_color: $theme_second_hover;
-$blue_background: #e8f8ff;
-$light_color: white;
+$box-border: #19345d9e;
+$border_grey: lightgrey;
 
 .forum-container{
   padding: 1rem;
@@ -15,7 +13,6 @@ $light_color: white;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
   height: 87%;
-  background-color: $blue_background;
   overflow: scroll;
   overflow-x: hidden;
 
@@ -28,10 +25,20 @@ $light_color: white;
     width: 100%;
   }
 
+  .input-box{
+    textarea{
+      max-width: -webkit-fill-available;
+      margin-bottom: 5px;
+      padding: 5px;
+      border: 1px solid $border_grey;
+      border-radius: 4px;
+    }
+  }
+
   .question, .answer{
     margin: 30px 0;
     width: 90%;
-    border: 3px solid #7bb0ca;
+    border: 3px solid $box-border;
     padding: 10px;
     border-radius: 8px;
 
@@ -84,7 +91,7 @@ $light_color: white;
       align-items: flex-start;
 
       .action-button{
-        border: none;
+        border: 2px solid $action_button;
         border-radius: 5px;
         float: right;
         padding: 4px 10px;
@@ -92,14 +99,42 @@ $light_color: white;
         color: white;
         margin-left: 5px;
         cursor: pointer;
+
+        &:hover{
+          background-color: $theme;
+          border-color: $theme ;
+        }
       }
       .delete{
         background-color: $delete_button;
+        border: $delete_button_border;
+
+        &:hover{
+          background-color: $delete_button_hover;
+          color: $delete_button_hover_color;
+          border: $delete_button_border;
+        }
       }
+      .cancel{
+        background-color: $cancel_button;
+        border-color: $cancel_button;
+        //color: white;
+
+        &:hover{
+          background-color: $cancel_button_hover;
+          border-color: $cancel_button_hover;
+          //color: $delete_button_hover_color;
+          //border: $delete_button_border;
+        }
+      }
+    }
+
+    .input-btns{
+      float: right;
     }
   }
   .question{
-    background-color: $light_color;
+    //background-color: $light_color;
 
     .question-content{
       margin-left: 64px;
@@ -107,7 +142,7 @@ $light_color: white;
   }
   .answer{
     margin-left: 10%;
-    background-color: #6b97b93d;
+    //background-color: #6b97b93d;
 
     .answer-content{
       margin-left: 64px;
