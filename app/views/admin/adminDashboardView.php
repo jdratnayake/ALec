@@ -123,39 +123,38 @@
 
                         <strong>Action:</strong>
                         <div class="radio-btn">
-                            <input type="radio" id="assign-users" name="action" checked="checked">
-                            <label for="assign-users">Assign multiple users</label><br>
+                            <input type="radio" id="assign-users" name="action" value="assign" checked="checked">
+                            <label for="assign-users">Assign multiple students</label><br>
 
-                            <input type="radio" id="delete-users" name="action">
-                            <label for="delete-users">Delete multiple users</label><br>
+                            <input type="radio" id="delete-users" value="remove" name="action">
+                            <label for="delete-users">Remove multiple students</label><br>
                         </div>
 
                         <strong>Enrollment mode:</strong>
                         <div class="radio-btn">
-                            <input type="radio" id="year-mode" name="user-type" checked="checked">
+                            <input type="radio" id="year-mode" name="user-type" value="year" checked="checked">
                             <label for="year-mode">Year wise</label><br>
 
-                            <input type="radio" id="file-mode" name="user-type">
+                            <input type="radio" id="file-mode" value="file" name="user-type">
                             <label for="file-mode">File upload</label><br>
                         </div>
 
                         <div class="year-selection" id="year-mode-div">
                             <label for="year">Select the year</label>
                             <select name="year" id="year">
-                                <option value="all_year" selected>All years</option>
-                                <option value="1st_year">1st year</option>
-                                <option value="2nd_year">2nd year</option>
-                                <option value="3rd_year">3rd year</option>
-                                <option value="4th_year">4th year</option>
+                                <option value="null" selected>No year selected</option>
+                                <option value="all">All years</option>
+                                <option value="1">1st year</option>
+                                <option value="2">2nd year</option>
+                                <option value="3">3rd year</option>
+                                <option value="4">4th year</option>
                             </select>
                         </div>
 
                         <div class="course-selection">
                             <label for="COURSE">Select the course module</label>
                             <select name="COURSE" id="COURSE">
-                                <option value="course_00" selected>No course selected</option>
-                                <option value="course_01">course_01</option>
-                                <option value="course_02">course_02</option>
+
                             </select>
                         </div>
 

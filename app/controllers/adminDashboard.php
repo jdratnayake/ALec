@@ -137,6 +137,41 @@ class AdminDashboard extends AlecFramework
 
     public function manageCourseParticiption()
     {
-        var_dump($_POST);
+        // var_dump($_POST);
+        // echo  . "<br>";
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $action = $_POST["action"];
+            $courseId = $_POST["COURSE"];
+
+            $mode = $_POST["user-type"];
+
+            if ($mode == "year") {
+                $year = $_POST["year"];
+
+                if ($action == "assign") {
+
+                    if ($year == "all") {
+                        for ($i = 1; $i <= 4; $i++) {
+                            $this->registerModel->assignStudentsYearWise($i, $courseId);
+                        }
+                    } else {
+                        $this->registerModel->assignStudentsYearWise($year, $courseId);
+                    }
+                } else if ($action == "remove") {
+
+                    if ($year == "all") {
+                        for ($i = 1; $i <= 4; $i++) {
+                            $this->registerModel->removeStudentsYearWise($year, $courseId);
+                        }
+                    } else {
+
+                        $this->registerModel->removeStudentsYearWise($year, $courseId);
+                    }
+                }
+            } else if ($mode == "file") {
+            }
+        }
+
+        $this->index();
     }
 }

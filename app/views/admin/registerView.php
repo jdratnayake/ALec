@@ -74,7 +74,7 @@
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Add user">
+                        <input type="submit" value="Add Lecturer">
                     </div>
                 </form>
                 <!-- LECTURER FORM END -->
@@ -116,7 +116,7 @@
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Add user">
+                        <input type="submit" value="Add Student">
                     </div>
                 </form>
                 <!-- STUDENT FORM END -->
