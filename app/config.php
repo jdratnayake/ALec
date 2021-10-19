@@ -1,7 +1,7 @@
 <?php
 
 // Database configuration details
-define("HOST", "localhost");
+const HOST = "localhost";
 define("USER", "root");
 define("DATABASE", "alec");
 define("PASSWORD", "");

@@ -7,7 +7,7 @@ class UI {
         row.setAttribute('class', 'question');
         row.innerHTML = `
 <!--            <span class="close rounded black close-btn"></span>-->
-            <button class="close close-btn finish"><i class="fa fa-times" aria-hidden="true"></i>Remove</button>
+            <button class="close close-btn finish"><i class="fa fa-times" aria-hidden="true"></i>Remove question</button>
             <div class="form-header">
                 <h4 class="heading">Question 1</h4> 
 

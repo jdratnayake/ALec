@@ -60,11 +60,80 @@ class RegisterModel extends Database
         $query = "SELECT course_id, course_name FROM course";
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        $output = "";
+        $output = "<option value='null' selected>No course selected</option>";
         while ($row = mysqli_fetch_assoc($result)) {
             $output = $output . "<option value='" . $row["course_id"] . "'>" . $row["course_name"] . "</option>";
         }
 
         return $output;
+    }
+
+    public function removeStudentsYearWise($year, $courseId)
+    {
+        $year = mysqli_real_escape_string($GLOBALS["db"], $year);
+        $courseId = mysqli_real_escape_string($GLOBALS["db"], $courseId);
+
+        $year = (int)$year;
+        $currentYear = date("Y") % 100;
+        $data = $currentYear - $year;
+
+        $query = "DELETE FROM course_registration_stu WHERE course_id='$courseId' AND student_id IN (SELECT user_id FROM course_registration_stu INNER JOIN student ON student_id=user_id WHERE index_no LIKE '$data%')";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function assignStudentsYearWise($year, $courseId)
+    {
+        $year = mysqli_real_escape_string($GLOBALS["db"], $year);
+        $courseId = mysqli_real_escape_string($GLOBALS["db"], $courseId);
+
+        //Remove specified year students from the course
+        $this->removeStudentsYearWise($year, $courseId);
+
+        $year = (int)$year;
+        $currentYear = date("Y") % 100;
+        $data = $currentYear - $year;
+
+        //Add all students to the course
+        $query = "INSERT INTO course_registration_stu(course_id, student_id) 
+        SELECT '$courseId' AS course_id, user_id FROM student WHERE index_no LIKE '$data%'";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function assignStudent($indexNo, $courseId)
+    {
+        $indexNo = mysqli_real_escape_string($GLOBALS["db"], $indexNo);
+        $courseId = mysqli_real_escape_string($GLOBALS["db"], $courseId);
+
+        //Get user id of the student
+        $query = "SELECT user_id FROM student WHERE index_no='$indexNo' LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+        $userId = mysqli_fetch_assoc($result)["user_id"];
+
+        $query = "SELECT * FROM course_registration_stu WHERE course_id='$courseId' AND student_id='$userId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) == 0) {
+            $query = "INSERT INTO course_registration_stu(course_id, student_id) VALUES ('$courseId', '$userId')";
+            mysqli_query($GLOBALS["db"], $query);
+        }
+    }
+
+    public function removeStudent($indexNo, $courseId)
+    {
+        $indexNo = mysqli_real_escape_string($GLOBALS["db"], $indexNo);
+        $courseId = mysqli_real_escape_string($GLOBALS["db"], $courseId);
+
+        //Get user id of the student
+        $query = "SELECT user_id FROM student WHERE index_no='$indexNo' LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) == 1) {
+            $userId = mysqli_fetch_assoc($result)["user_id"];
+
+            $query = "DELETE FROM course_registration_stu WHERE course_id='$courseId' AND student_id='$userId'";
+            mysqli_query($GLOBALS["db"], $query);
+        }
     }
 }

@@ -11,7 +11,7 @@ $light_color: #FFF;
 
 .details-content {
   padding: 1rem;
-  width: 80%;
+  width: 68%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
   background-color: #b7c8d64a;
@@ -124,6 +124,20 @@ header {
 .course-details{
   overflow-y: auto; //show the scrollbar only if the content overflows
   height: 265px;
+}
+
+.pvt-details{
+  .form-group{
+    width: 100%;
+    display: flex;
+    margin-bottom: 5px;
+
+    label{
+      font-weight: bold;
+      width: 155px;
+    }
+    input{width: -webkit-fill-available;}
+  }
 }
 
 

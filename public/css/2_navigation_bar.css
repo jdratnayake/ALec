@@ -17,7 +17,6 @@
   width: 78px;
   background: #19345d;
   padding: 6px 14px;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -32,17 +31,12 @@
 
 .siderbar .logo_content .logo {
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 50px;
   width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -71,8 +65,7 @@
   width: 50px;
   text-align: center;
   line-height: 50px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .siderbar.active #btn {
@@ -96,17 +89,14 @@
   position: absolute;
   left: 122px;
   top: 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 6px;
   height: 35px;
   width: 122px;
   background: #fff;
   line-height: 35px;
   text-align: center;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -webkit-transition: 0s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: 0s;
   opacity: 0;
   pointer-events: none;
@@ -118,7 +108,6 @@
 }
 
 .siderbar ul li:hover .tooltip {
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 1;
   top: 50%;
@@ -141,14 +130,9 @@
 
 .siderbar ul li a {
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   text-decoration: none;
-  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border-radius: 12px;
   white-space: nowrap;
@@ -170,7 +154,6 @@
 .siderbar .links_name {
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -192,7 +175,6 @@
   padding: 10px 6px;
   height: 60px;
   background: #19345d;
-  -webkit-transition: all 0.4 ease;
   transition: all 0.4 ease;
 }
 
@@ -201,12 +183,8 @@
 }
 
 .profile_content .profile .profile_details {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   opacity: 0;
   pointer-events: none;
   white-space: nowrap;
@@ -216,11 +194,9 @@
   opacity: 1;
   pointer-events: auto;
   width: 76%;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   cursor: pointer;
 }
-
 .siderbar.active .profile .profile_details:hover {
   text-decoration: underline;
 }
@@ -228,8 +204,7 @@
 .profile .profile_details img {
   height: 45px;
   width: 45px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 
@@ -250,19 +225,17 @@
   position: absolute;
   bottom: 5px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  min-width: 50px;
+  transform: translateX(-50%);
+  min-width: 45px;
   line-height: 50px;
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
-  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   background: #19345d;
   cursor: pointer;
+  height: 45px;
 }
-
 .profile #log_out:hover {
   color: #184e77;
   background: #fff;
@@ -270,10 +243,11 @@
 
 .siderbar.active .profile #log_out {
   left: 88%;
-}
-
-.siderbar.active .profile #log_out {
   background: none;
+}
+.siderbar.active .profile #log_out:hover {
+  color: #184e77;
+  background: #fff;
 }
 
 .siderbar.active ~ .home_content {
@@ -290,7 +264,6 @@
 .home-content {
   height: 100%;
   width: calc(100% - 78px);
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-left: 78px;
   padding-top: 2px;
@@ -299,7 +272,6 @@
 
 .home-content-expand {
   width: calc(100% - 240px);
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-left: 240px;
 }
@@ -307,4 +279,5 @@
 /*==============================================================================*/
 /*HOME CONTENT - END*/
 /*==============================================================================*/
+
 /*# sourceMappingURL=2_navigation_bar.css.map */

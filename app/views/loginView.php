@@ -61,13 +61,13 @@
                 </div>
                 <div class="helper-text" id="helper-password"><?php echo $errors['password']; ?></div>
 
-                <a href="javascript:forgotPassword()">Forgot Password</a>
+                <a href="javascript:forgotPassword()">Forgot Password ?</a>
 
                 <input type="submit" name="login" class="btn" value="Login">
             </form>
         </div>
     </div>
-
+    45
 
     <!-- Login validation and other related things -->
     <?php linkJS("loginValidation") ?>

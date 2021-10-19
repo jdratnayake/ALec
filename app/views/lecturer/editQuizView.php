@@ -75,7 +75,7 @@
 
                                 <div class='button-set'>
                                     <button type='button' class='dlt'>
-                                        <i class='fa fa-trash' aria-hidden='true'></i> Delete question
+                                        <i class='fa fa-trash' aria-hidden='true'></i>Delete question
                                     </button>
                                 </div>
 

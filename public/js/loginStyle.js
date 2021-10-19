@@ -20,13 +20,14 @@ inputs.forEach(input => {
     input.addEventListener('blur', blurFunc);
 })
 
-if (emailInput.length != 0) {
-    emailInput.parentNode.parentNode.classList.add('focus');
-}
 
-if (passwordInput.length != 0) {
-    passwordInput.parentNode.parentNode.classList.add('focus');
-}
+// if (emailInput.value.length != 0) {
+//     emailInput.parentNode.parentNode.classList.add('focus');
+// }
+
+// if (passwordInput.value.length != 0) {
+//     passwordInput.parentNode.parentNode.classList.add('focus');
+// }
 
 function forgotPassword() {
     let temp = "";

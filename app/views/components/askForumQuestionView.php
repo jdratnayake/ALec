@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="question">Question</label>
+                <label for="question">Description</label>
                 <div class="right-side">
                     <textarea name="question" id="question" cols="30" rows="8" class="input-box" onfocusout="validateQuestion()"></textarea>
                     <div class="error"><?php echo $errors["question"]; ?></div>
