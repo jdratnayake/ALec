@@ -31,6 +31,7 @@
             </div>
             <div class="dropdown-content" id="dropdown-content">
                 <a id="create-users-btn">Create Multiple Accounts</a>
+                <a id="delete-users-btn">Delete Multiple Accounts</a>
                 <a id="manage-accounts-btn">Manage Students Enrollment</a>
             </div>
         </div>
@@ -103,6 +104,47 @@
                         <input type="hidden" name="upload-user-type" value="2">
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <input type="submit" value="Add users" name="submit" class="upload-btn">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- The Delete Users Modal -->
+        <div id="delete-users-model" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="close-three">&times;</span>
+                    <h2>Delete Multiple User Accounts</h2>
+                </div>
+
+                <div class="modal-body">
+                    <strong>User type:</strong>
+                    <div class="radio-btn">
+                        <input type="radio" id="lecturers-delete" name="user-type" checked="checked">
+                        <label for="lecturers-delete">Lecturers</label><br>
+
+                        <input type="radio" id="students-delete" name="user-type">
+                        <label for="students-delete">Students</label><br>
+                    </div>
+
+                    <p>Use this format to delete details using .csv file</p>
+                    <button onclick="" id="btn-delete-download">Download template</button>
+
+                    <br><br>
+                    <p>
+                        Use this format to enter details using .txt file<br>
+                        &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
+                        &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
+                        <strong>Note:</strong>Each user should be in a newline<br><br>
+                    </p>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        Upload file:
+                        <input type="hidden" name="upload-user-type" value="2">
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Delete users" name="submit" class="upload-btn">
                     </form>
                 </div>
             </div>
@@ -232,9 +274,11 @@
 
     <?php linkJS("courseDetails"); ?>
 
-    <?php linkJS("dashboard_boost"); ?>
+    <?php linkJS("dashboardCreateUsers"); ?>
 
-    <?php linkJS("dashboard_boost_modaltwo"); ?>
+    <?php linkJS("dashboardDeleteUsers"); ?>
+
+    <?php linkJS("dashboardManageUsers"); ?>
 
     <?php linkJS("adminDashboardCourseDisplay"); ?>
 
