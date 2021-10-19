@@ -209,11 +209,11 @@ $light: white;
 
 .close {
     border-radius: 5px;
-    border: none;
-    color: white;
-    background-color: $action_button;
+    border: $delete_button_border;
+    color: $delete_button_color;
+    background-color: $delete_button;
     position: relative;
-    left: 87%;
+    left: 78%;
     top: 123px;
     display: inline-flex;
     overflow: hidden;
@@ -223,8 +223,8 @@ $light: white;
     align-items: center;
 
     &:hover{
-        color: $light;
-        background-color: $theme_second_hover;
+        color: $delete_button;
+        background-color: $delete_button_hover;
     }
     .fa-times{
         margin-right: 8px;

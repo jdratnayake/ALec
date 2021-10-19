@@ -59,20 +59,20 @@
                 <form action="<?php echo BASEURL . "/editProfile/submit" ?>" method="POST">
                     <div class="pvt-details">
                         <span>User Details</span>
-                        <span>
-                            <label for="fName"><strong>First Name : </strong></label>
+                        <span class="form-group">
+                            <label for="fName">First Name :</label>
                             <input type="text" id="fName" name="fName" value="<?php echo $data["userDetails"]["first_name"]; ?>" class="" disabled>
                         </span>
-                        <span>
-                            <label for="lName"><strong>Last Name : </strong></label>
+                        <span class="form-group">
+                            <label for="lName">Last Name :</label>
                             <input type="text" id="lName" name="lName" value="<?php echo $data["userDetails"]["last_name"]; ?>" class="" disabled>
                         </span>
-                        <span>
-                            <label for="email"><strong>Email : </strong></label>
+                        <span class="form-group">
+                            <label for="email">Email :</label>
                             <input type="text" id="email" name="email" value="<?php echo $data["userDetails"]["email"]; ?>" class="" disabled>
                         </span>
-                        <span>
-                            <label for="tele"><strong>Telephone No : </strong></label>
+                        <span class="form-group">
+                            <label for="tele">Telephone No :</label>
                             <input type="text" id="tele" name="tele" value="<?php echo $data["userDetails"]["tele"]; ?>" class="" disabled>
                         </span>
 

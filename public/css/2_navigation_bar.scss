@@ -242,7 +242,7 @@ $sidebar_max_len: 240px;
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
-    min-width: 50px;
+    min-width: 45px;
     line-height: 50px;
     font-size: 20px;
     border-radius: 12px;
@@ -250,6 +250,7 @@ $sidebar_max_len: 240px;
     transition: all 0.4s ease;
     background: $theme;
     cursor: pointer;
+    height: 45px;
     
     &:hover{
         color: #184e77;
@@ -257,13 +258,18 @@ $sidebar_max_len: 240px;
     }
     
 }
+//
+//.siderbar.active .profile #log_out{
+//
+//}
 
 .siderbar.active .profile #log_out{
     left: 88%;
-}
-
-.siderbar.active .profile #log_out{
     background: none;
+    &:hover{
+        color: #184e77;
+        background: #fff;
+    }
 }
 
 .siderbar.active ~ .home_content{
