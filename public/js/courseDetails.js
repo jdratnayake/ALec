@@ -24,7 +24,7 @@ $(document).ready(function () {
         let search = $(this).val();
 
         if (search !== "") {
-            console.log(search);
+            // console.log(search);
             loadData(search);
         }
     });
