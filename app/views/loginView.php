@@ -61,7 +61,7 @@
                 </div>
                 <div class="helper-text" id="helper-password"><?php echo $errors['password']; ?></div>
 
-                <a href="javascript:forgotPassword()">Forgot Password</a>
+                <a href="javascript:forgotPassword()">Forgot Password ?</a>
 
                 <input type="submit" name="login" class="btn" value="Login">
             </form>
