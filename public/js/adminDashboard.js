@@ -33,5 +33,9 @@ $(document).ready(function () {
         $('#file-mode-div').show();
         $('#manage-users-btn').hide();
     });
+
+    $("#btn-create-download-enrollment").click(function (event) {
+        event.preventDefault();
+    });
 });
 // Manage Students Enrolment - END

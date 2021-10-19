@@ -119,7 +119,7 @@
                     <h2>Manage Students Enrollment</h2>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo BASEURL . "/adminDashboard/manageCourseParticiption" ?>" method="post">
+                    <form action="<?php echo BASEURL . "/adminDashboard/manageCourseParticiption" ?>" method="post" enctype="multipart/form-data">
 
                         <strong>Action:</strong>
                         <div class="radio-btn">
@@ -162,21 +162,21 @@
 
                         <div class="modal-body enrollment-file-upload" id="file-mode-div" style="display: none;">
                             <p>Use this format to enter details using .csv file</p>
-                            <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/1" . "'" ?>" id="btn-create-download">Download template</button>
+                            <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/3" . "'" ?>" id="btn-create-download-enrollment">Download template</button>
 
                             <br><br>
                             <p>
                                 Use this format to enter details using .txt file<br>
-                                &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
-                                &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
-                                <strong>Note:</strong>Each user should be in a newline<br><br>
+                                &emsp;<span id="regNo">IndexNo</span><br>
+                                &emsp;eg: 19001411<br><br>
+                                <strong>Note:</strong>Each student should be in a newline<br><br>
                             </p>
-                            <form action="<?php echo BASEURL . "/adminDashboard/submit" ?>" method="post" enctype="multipart/form-data">
-                                Upload file:
-                                <input type="hidden" name="upload-user-type" value="2">
-                                <input type="file" name="fileToUpload" id="fileToUpload">
-                                <input type="submit" value="Enroll users" name="submit" class="upload-btn">
-                            </form>
+
+                            Upload file:
+                            <input type="hidden" name="upload-user-type" value="2">
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="submit" value="Enroll users" name="submit" class="upload-btn">
+
                         </div>
 
                     </form>
