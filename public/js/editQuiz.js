@@ -29,12 +29,13 @@ $(document).ready(function () {
 
 const questionType =
     `
-<div class="radio-inline">
-    <input type="radio" name="type" value="value_mcq" class="mcq option-input radio" checked="checked">
-    <label>MCQ</label>
-    <input type="radio" name="type" value="value_short" class="short option-input radio">
-    <label> Short Answer</label>
-</div> 
+<div class="new-question-container">   
+    <div class="radio-inline">
+        <input type="radio" name="type" value="value_mcq" class="mcq option-input radio" checked="checked">
+        <label>MCQ</label>
+        <input type="radio" name="type" value="value_short" class="short option-input radio">
+        <label> Short Answer</label>
+    </div> 
 `;
 
 function getMcqQuestion() {
@@ -54,7 +55,7 @@ function getMcqQuestion() {
             </div>
 
             <div class="button-set">
-                <button type="button" class="dlt">
+                <button type="button" class="dlt" onclick="deleteNewQuestion(this)">
                     <i class="fa fa-trash" aria-hidden="true"></i> Delete question
                 </button>
             </div>
@@ -91,6 +92,7 @@ function getMcqQuestion() {
             </ol>
         </div>
     </li>
+</div>      
 `;
 }
 
@@ -111,7 +113,7 @@ function getShortAnswer() {
             </div>
     
             <div class="button-set">
-                <button type="button" class="dlt">
+                <button type="button" class="dlt" onclick="deleteNewQuestion(this)>
                     <i class="fa fa-trash" aria-hidden="true"></i>Delete question
                 </button>
             </div>
@@ -125,5 +127,14 @@ function getShortAnswer() {
             </ul>
         </div>
     </li>
+</div> 
     `;
+}
+
+function deleteNewQuestion(e) {
+    const num = parseInt($("#new-question-count").val()) - 1;
+
+    $("#new-question-count").val(num);
+
+    $(e).closest('.new-question-container').remove();
 }

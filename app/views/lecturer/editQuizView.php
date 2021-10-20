@@ -33,10 +33,7 @@
 
         <div class="quiz-name">
             <h2>Assignment 01</h2>
-            <span>
-                <label for="time-picker">Quiz Duration</label>
-                <input type="text" id="time-picker" class="form-control" placeholder="hrs:mins:secs" />
-            </span>
+
         </div>
 
         <!-- Quiz basic details -->
@@ -153,13 +150,9 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkJS("timePicker"); ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("editQuiz"); ?>
-
-    <?php linkJS("timePicker") ?>
 
 </body>
 
