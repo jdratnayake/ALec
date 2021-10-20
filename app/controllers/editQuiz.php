@@ -26,11 +26,17 @@ class EditQuiz extends AlecFramework
             $quizQuestionChoices = $this->editQuizModel->getQuizQuestionChoices($quizId);
 
             while ($row = mysqli_fetch_assoc($quizQuestionSummary)) {
+
+                if (!isset($_POST["q_$row[question_no]"])) {
+                    $this->editQuizModel->deleteQuestion($row["question_no"]);
+                    continue;
+                }
+
                 $question = $_POST["q_$row[question_no]"];
-                $type = $type = "mcq-s";
+                $type = "mcq-s";
 
                 if (isset($_POST["check_$row[question_no]"])) {
-                    $type = $type = "mcq-m";
+                    $type = "mcq-m";
                 }
 
                 $this->editQuizModel->updateQuestion($row["question_no"], $question, $type);
@@ -39,6 +45,12 @@ class EditQuiz extends AlecFramework
 
                 for ($i = 1; $i <= $count; $i++) {
                     $choiceRow = mysqli_fetch_assoc($quizQuestionChoices);
+
+                    if (!isset($_POST["choice_$choiceRow[choice_id]"])) {
+                        $this->editQuizModel->deleteAnswer($choiceRow["choice_id"]);
+                        continue;
+                    }
+
                     $choice = $_POST["choice_$choiceRow[choice_id]"];
                     $points = $_POST["points_$choiceRow[choice_id]"];
 
@@ -52,6 +64,10 @@ class EditQuiz extends AlecFramework
                 $question = $_POST["q_{$i}"];
                 $type = $_POST["{$i}_type"];
 
+                // echo $question;
+                // echo $type;
+                // return 0;
+
                 if ($type == "mcq") {
                     if (isset($_POST["q_{$i}_type"])) {
                         $type = "mcq-m";
@@ -62,7 +78,7 @@ class EditQuiz extends AlecFramework
 
                 $questionId = $this->editQuizModel->insertQuizQuestion($quizId, $question, $type);
 
-                if ($type == "short") {
+                if ($type == "short ans") {
                     $choice = $_POST["q_{$i}_choice_1"];
 
                     $this->editQuizModel->insertChoice($questionId, $quizId, $choice, 100);
@@ -83,6 +99,8 @@ class EditQuiz extends AlecFramework
             }
         }
 
-        $this->index($quizId);
+        $this->redirect("editQuiz/index/{$quizId}");
+
+        // $this->index($quizId);
     }
 }

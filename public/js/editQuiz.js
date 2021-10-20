@@ -12,17 +12,21 @@ $(document).ready(function () {
         const value = $(this).val();
 
         if (value === "value_mcq") {
-            $(".question-container").last().remove();
+            $(this).closest('.new-question-container').find(".question-container").remove();
+
             const num = parseInt($("#new-question-count").val()) - 1;
             $("#new-question-count").val(num);
 
-            $(".all-questions").append(getMcqQuestion());
+            $(this).closest('.new-question-container').append(getMcqQuestion());;
+
         } else if (value === "value_short") {
-            $(".question-container").last().remove();
+            $(this).closest('.new-question-container').find(".question-container").remove();
+
             const num = parseInt($("#new-question-count").val()) - 1;
             $("#new-question-count").val(num);
 
-            $(".all-questions").append(getShortAnswer());
+            $(this).closest('.new-question-container').append(getShortAnswer());;
+
         }
     });
 });
@@ -104,7 +108,7 @@ function getShortAnswer() {
     return `
     <li class="question-container">
         <!-- Question type -->
-        <input type="hidden" name="${num}_type" id="question-type" value="short">
+        <input type="hidden" name="${num}_type" id="question-type" value="short ans">
     
         <div class="short-ans">
     
@@ -113,7 +117,7 @@ function getShortAnswer() {
             </div>
     
             <div class="button-set">
-                <button type="button" class="dlt" onclick="deleteNewQuestion(this)>
+                <button type="button" class="dlt" onclick="deleteNewQuestion(this)">
                     <i class="fa fa-trash" aria-hidden="true"></i>Delete question
                 </button>
             </div>
@@ -137,4 +141,12 @@ function deleteNewQuestion(e) {
     $("#new-question-count").val(num);
 
     $(e).closest('.new-question-container').remove();
+}
+
+function deleteOldQuestion(e) {
+    $(e).closest('.question-container').remove();
+}
+
+function deleteOldAnswer(e) {
+    $(e).closest('.answer').remove();
 }
