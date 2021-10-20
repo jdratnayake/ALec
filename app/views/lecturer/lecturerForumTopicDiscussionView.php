@@ -17,82 +17,133 @@
 
 <body>
 
-<?php linkPhp("navigationBarLecturer"); ?>
+    <?php linkPhp("navigationBarLecturer"); ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-    <li><a href="http://localhost/ALec/lecturerCoursePageForum/index">Forum Course Page</a></li>
-    <li><a href="http://localhost/ALec/lecturerForumTopic/index">Forum topic<</a></li>
-    <li>Forum discussion</li>
-</ul>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/lecturerCoursePageForum/index">Forum Course Page</a></li>
+        <li><a href="http://localhost/ALec/lecturerForumTopic/index">Forum topic</a>
+        </li>
+        <li>Forum discussion</li>
+    </ul>
 
-<div class="forum-container">
-        <h2>Will MAC addresses run out?</h2>
+    <div class="forum-container">
 
-        <div class="question">
-            <div class="profile_img_info">
-                <div class="img">
-                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
+        <?php
+
+        echo
+        "
+        <h2>{$data['topicDetail']['subject']}</h2>
+
+        <div class='question'>
+            <div class='profile_img_info'>
+                <div class='img'>
+                    <img ";
+
+        srcIMG('profile_pic.svg');
+
+        echo
+        " alt='profile_pic'>
                 </div>
-                <div class="info">
-                    <p class="name">M F RIZWAN</p>
-                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
-                        24 Jul 2021
-                    </p>
+                <div class='info'>
+                    <p class='name'>{$data['topicDetail']['name']}</p>
+                    <p class='place'> {$data['topicDetail']['post_time']} </p>
                 </div>
-                <div class="button-set">
-                    <button id="reply-btn" class="action-button" value="reply">Reply</button>
-                    <button class="action-button delete" value="delete-reply">Delete</button>
+
+                <div class='button-set'>
+                    <button id='reply-btn' class='action-button' value='reply'>Reply</button>
+                    <button class='action-button delete' value='delete-reply' " . "onclick=location.href='" . BASEURL . "/lecturerForumTopicDiscussion/deleteTopic/{$data['topicDetail']['topic_id']}" . "'" . " >Delete</button>
                 </div>
             </div>
-
-            <p class="question-content">
-                Will MAC addresses run out?
-                MAC address is 48-bits in length and can provide 281.5 trillion addresses.
-                This means that is highly unlikely for us to run out of MAC addresses anytime soon in the future.
-                If we run out of all possible MAC addresses, is it possible to have duplicates?
-            </p>
+            
+            <p class='question-content'> {$data['topicDetail']['question']} </p>
 
         </div>
+        ";
+
+        ?>
 
         <div class="answer input-box" id="input-box" style="display: none">
-            <div class="profile_img_info">
-                <div class="img">
-                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
+            <?php
+            echo
+            "
+            <div class='profile_img_info'>
+                <div class='img'>
+                    <img 
+            ";
+
+            srcIMG('profile_pic.svg');
+
+            echo
+            "       alt='profile_pic'>
                 </div>
-                <div class="info">
-                    <p class="name">M F RIZWAN</p>
-                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
-                        24 Jul 2021
-                    </p>
+                <div class='info'>
+                    <p class='name'>{$data["userDetail"]["name"]}</p>
+                    <p class='place'>{$data["userDetail"]["date"]}</p>
                 </div>
             </div>
+            ";
+            ?>
+
             <label for="input-text"></label>
-            <textarea id="input-text" class="answer-content" rows="10" cols="140" placeholder="Type your reply here..."></textarea>
-            <div class="button-set input-btns">
-                <button class="action-button" value="submit">Submit</button>
-                <button id="cancel-btn" class="action-button cancel" value="cancel">Cancel</button>
-            </div>
-        </div>
-        <div class="answer">
-            <div class="profile_img_info">
-                <div class="img">
-                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
+
+            <form action="<?php echo BASEURL . "/lecturerForumTopicDiscussion/submit/{$data['topicDetail']['topic_id']}" ?>" method="POST">
+                <textarea name="reply-text" id="input-text" class="answer-content" rows="10" cols="140" placeholder="Type your reply here..."></textarea>
+                <div class="button-set input-btns">
+                    <button class="action-button" value="submit">Submit</button>
+                    <button id="cancel-btn" class="action-button cancel" value="cancel">Cancel</button>
                 </div>
-                <div class="info">
-                    <p class="name">M F RIZWAN</p>
-                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
+            </form>
+        </div>
+
+        <?php
+
+        while ($row = mysqli_fetch_assoc($data["replyDetails"])) {
+            echo
+            "
+            <div class='answer'>
+                <div class='profile_img_info'>
+                    <div class='img'>
+                        <img ";
+            srcIMG('profile_pic.svg');
+            echo "alt='profile_pic'>
+                    </div>
+                    <div class='info'>
+                        <p class='name'>{$row["name"]}</p>
+                        <p class='place'>{$row["post_time"]}</p>
+                    </div>
+                    <div class='button-set'>
+                        <button class='action-button delete' value='delete-reply' " . "onclick=location.href='" . BASEURL . "/lecturerForumTopicDiscussion/deleteReply/{$row["reply_id"]}" . "'" . " >Delete</button>
+                    </div>
+                </div>
+
+                <p class='answer-content'>{$row["reply"]}</p>
+
+            </div>
+            ";
+        }
+
+        ?>
+
+        <!-- <div class='answer'>
+            <div class='profile_img_info'>
+                <div class='img'>
+                    <img <php srcIMG('profile_pic.svg'); ?> alt='profile_pic'>
+                </div>
+                <div class='info'>
+                    <p class='name'>M F RIZWAN</p>
+                    <p class='place'><span><i class='far fa-calendar-minus'></i></span>
                         24 Jul 2021
                     </p>
                 </div>
-                <div class="button-set">
-<!--                    <button class="action-button" value="reply">Reply</button>-->
-                    <button class="action-button delete" value="delete-reply">Delete</button>
+                <div class='button-set'>
+                    <button class='action-button' value='reply'>Reply</button>
+                    <button class='action-button delete' value='delete-reply'>Delete</button>
                 </div>
             </div>
 
-            <p class="answer-content">
+            <p class='answer-content'>
                 The requirement is for the MAC address to be unique within the local network,
                 as IPv4 is used to uniquely identify all devices, and since the IPv6 also supports this,
                 we could reuse MAC addresses, as they are not visible beyond the local network.
@@ -101,39 +152,15 @@
                 I mean a google search. Hope this helps guys, and if you have more valid points please do share.
             </p>
 
-        </div>
-        <div class="answer">
-            <div class="profile_img_info">
-                <div class="img">
-                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
-                </div>
-                <div class="info">
-                    <p class="name">M F RIZWAN</p>
-                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
-                        24 Jul 2021
-                    </p>
-                </div>
-                <div class="button-set">
-<!--                    <button class="action-button" value="reply">Reply</button>-->
-                    <button class="action-button delete" value="delete-reply">Delete</button>
-                </div>
-            </div>
-            <p class="answer-content">
-                References: <br>
-                https://stackoverflow.com/questions/44873804/will-mac-address-ever-run-out-of-combinations
-                https://www.quora.com/Are-MAC-addresses-going-to-run-out-in-a-few-years
-                https://blog.michaelfmcnamara.com/2013/03/are-we-running-out-of-mac-addresses/
-                https://community.infosecinstitute.com/discussion/67301/do-manufacturers-recycle-mac-addresses
-            </p>
+        </div> -->
 
-        </div>
-</div>
+    </div>
 
-<?php linkPhp("notification"); ?>
+    <?php linkPhp("notification"); ?>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-<?php linkJS("forumQuestionGetReplyBox"); ?>
+    <?php linkJS("forumQuestionGetReplyBox"); ?>
 
 </body>
 

@@ -76,7 +76,7 @@ $courseCode = explode("-", $temp)[0];
                         </div>
 
                         <div class='col col-1' data-label='Discussion'>
-                            <a href='" . BASEURL . "/lecturerForumTopicDiscussion/index" . "'>
+                            <a href='" . BASEURL . "/lecturerForumTopicDiscussion/index/{$row['topic_id']}" . "'>
                                 {$row['subject']}
                             </a>
                         </div>
