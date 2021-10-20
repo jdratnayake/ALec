@@ -13,6 +13,23 @@ $(document).ready(function () {
         $('#regNo').html("IndexNo");
         $('input[name=upload-user-type]').val('3');
     });
+
+    // Delete Multiple User Accounts - START
+
+    $('#lecturers-delete').click(function () {
+        $('#btn-delete-download').attr('onclick', getLink(4));
+        $('#regNo-del').html("LecturerNo");
+        $('input[name=upload-user-type]').val('2');
+    });
+
+
+    $('#students-delete').click(function () {
+        $('#btn-delete-download').attr('onclick', getLink(3));
+        $('#regNo-del').html("IndexNo");
+        $('input[name=upload-user-type]').val('3');
+    });
+
+    // Delete Multiple User Accounts - END
 });
 
 function getLink(num) {

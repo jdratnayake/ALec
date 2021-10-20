@@ -124,6 +124,9 @@ class AdminDashboard extends AlecFramework
         } else if ($num == 3) {
             $file = "download_data/StudentList.csv";
             header('Content-Disposition: attachment; filename="StudentList.csv"');
+        } else if ($num == 4) {
+            $file = "download_data/LecturerList.csv";
+            header('Content-Disposition: attachment; filename="LecturerList.csv"');
         }
 
 
@@ -274,5 +277,91 @@ class AdminDashboard extends AlecFramework
 
         //FILE PROCESS END
 
+    }
+
+    public function deleteUsers()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // lecturer = 2, student = 3
+            $type = $_POST["upload-user-type"];
+
+            // FILE UPLOAD START
+
+            date_default_timezone_set("Asia/Kolkata");
+
+            $fileName = date('Y-m-d_h-i-s', time()) . "_" . $_FILES['fileToUpload']['name'];
+            $fileType = $_FILES['fileToUpload']['type'];
+            $fileSize = $_FILES['fileToUpload']['size'];
+            $tempName = $_FILES['fileToUpload']['tmp_name'];
+
+            $uploadTo = "acc_data/";
+
+            // checking the file type - START
+            $csv_mimetypes = array(
+                'text/csv',
+                'text/plain',
+                'application/csv',
+                'text/comma-separated-values',
+                'application/excel',
+                'application/vnd.ms-excel',
+                'application/vnd.msexcel',
+                'text/anytext',
+                'application/octet-stream',
+                'application/txt',
+            );
+
+            if (!in_array($fileType, $csv_mimetypes)) {
+                $errors[] = 'Only .txt and .csv files are allowed.';
+            }
+            // checking the file type - END
+
+            // checking file size
+            if ($fileSize > 500000) {
+                $errors[] = 'File size should be less than 500kb.';
+            }
+
+            if (empty($errors)) {
+                $file_uploaded = move_uploaded_file($tempName, $uploadTo . $fileName);
+            }
+
+            // FILE UPLOAD END
+
+            //FILE PROCESS START
+
+            if ($fileType == "text/plain") {
+                $fp = fopen($uploadTo . $fileName, "r");
+
+                while (($line = fgets($fp)) !== false) {
+
+                    if (isset($line)) {
+                        $data = trim($line);
+
+                        $this->registerModel->deleteUser($data, $type);
+                    }
+                }
+
+                fclose($fp);
+            } else {
+                $fp = fopen($uploadTo . $fileName, "r");
+                //Remove Labels
+                fgetcsv($fp);
+
+                while (!feof($fp)) {
+                    $data = fgetcsv($fp);
+
+                    if (isset($data[0])) {
+                        $data = trim($data[0]);
+
+                        $this->registerModel->deleteUser($data, $type);
+                    }
+                }
+
+                fclose($fp);
+            }
+
+            //FILE PROCESS END
+
+            $this->redirect("adminDashboard/index");
+        }
     }
 }
