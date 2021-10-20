@@ -20,7 +20,7 @@
     <?php linkPhp("navigationBarAdmin"); ?>
     <div class="navigation-item-container">
 
-        <div class="navigation-tab" onclick="myFunction()">
+        <div class="navigation-tab" id="toolkit-btn">
             <div class="row">
                 <i class="fa fa-rocket"></i>
             </div>
@@ -32,7 +32,7 @@
             <div class="dropdown-content" id="dropdown-content">
                 <a class="model-btn">Create Multiple Accounts</a>
                 <a class="model-btn">Delete Multiple Accounts</a>
-                <a class="model-btn">Manage Students Enrollment</a>
+                <a class="model-btn" id="manage-accounts-btn">Manage Students Enrollment</a>
             </div>
         </div>
 
@@ -197,8 +197,8 @@
 
                         <div class="course-selection">
                             <label for="course">Select the course module</label>
-                            <select name="course" id="course">
-                                <option value="null" selected>No course selected</option>
+                            <select name="course" id="COURSE">
+                                <!-- <option value="null" selected>No course selected</option> -->
                             </select>
                         </div>
 
@@ -274,8 +274,6 @@
     <?php linkJS("basic") ?>
 
     <?php linkJS("slideShow"); ?>
-
-    <?php linkJS("courseDetails"); ?>
 
     <?php linkJS("dashboardToolkit"); ?>
 

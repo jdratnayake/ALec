@@ -1,12 +1,13 @@
-function myFunction() {
-    const x = document.getElementById("dropdown-content");
+$(document).ready(function () {
+    $("#toolkit-btn").click(function () {
+        if ($("#dropdown-content").css("display") == "none") {
+            $("#dropdown-content").css("display", "initial");
+        } else {
+            $("#dropdown-content").css("display", "none");
+        }
 
-    if (x.style.display === "none") {
-        x.style.display = "initial";
-    } else {
-        x.style.display = "none";
-    }
-}
+    });
+});
 
 //Open the relevant model when the user selects the option
 for (let i = 0; i < document.getElementsByClassName("modal").length; i++) {
