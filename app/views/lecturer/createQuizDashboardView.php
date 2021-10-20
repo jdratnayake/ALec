@@ -42,6 +42,8 @@
                         }
                         ?>
                     </select>
+
+                    <div class="error"></div>
                 </div>
 
                 <div class="form-group details">
@@ -50,18 +52,24 @@
                     <select name="topic" id="topic" class="form-control">
                         <option value="null" selected>Select your topic</option>
                     </select>
+
+                    <div class="error"></div>
                 </div>
 
                 <!-- quiz details-->
                 <div class="form-group">
                     <label for="quiz-name">Quiz name</label>
                     <input type="text" class="form-control form-name cursor-change" placeholder="Enter quiz name" name="quiz-name" id="quiz-name">
+
+                    <div class="error"></div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col">
                         <label for="time-picker">Quiz Duration</label>
                         <input type="text" name="quiz-dur" id="time-picker" class="form-control" placeholder="hrs:mins:secs" />
+
+                        <div class="error"></div>
                     </div>
                 </div>
             </div>
@@ -87,8 +95,8 @@
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
     <?php linkJS("create_quiz"); ?>
     <?php linkJS("createQuizTopic"); ?>
-
     <?php linkJS("timePickerQuiz"); ?>
+    <?php linkJS("createQuizValidation"); ?>
 
 </body>
 

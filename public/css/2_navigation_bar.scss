@@ -293,6 +293,11 @@ $sidebar_max_len: 240px;
     margin-left: $sidebar_min_len;
     padding-top: 2px;
     /* background-color: #1d1b31; */
+
+    .error{
+        color: red;
+        font-size: 80%;
+    }
 }
 
 .home-content-expand{
