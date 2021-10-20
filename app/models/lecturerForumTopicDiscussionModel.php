@@ -36,6 +36,13 @@ class LecturerForumTopicDiscussionModel extends Database
 
         $query = "INSERT INTO forum_reply(topic_id, reply, post_time, user_id) VALUES('$topicId', '$reply', NOW(), '$userId')";
         mysqli_query($GLOBALS["db"], $query);
+
+        $query = "SELECT reply_id FROM forum_reply GROUP BY reply_id DESC LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+        $replyId = mysqli_fetch_assoc($result)["reply_id"];
+
+        $query = "UPDATE forum_topic SET last_reply_id='$replyId'";
+        mysqli_query($GLOBALS["db"], $query);
     }
 
     public function deleteTopic($topicId)
