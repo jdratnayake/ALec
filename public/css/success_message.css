@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+.message-container {
+  font-family: "Lato", sans-serif;
+  margin: 10% auto;
+  width: 560px;
+  height: 290px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  perspective: 40px;
+  position: absolute;
+  left: 35%;
+  z-index: 5;
+}
+
+.close-btn {
+  background-color: white;
+  top: -4%;
+  right: -3%;
+  color: darkgray;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+}
+.close-btn:hover {
+  color: grey;
+}
+
+.face {
+  position: absolute;
+  top: 15%;
+  left: 42.5%;
+  z-index: 2;
+}
+.face .fa {
+  font-size: 5rem;
+}
+
+.message {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 40%;
+  top: 40%;
+}
+
+.alert {
+  font-weight: bolder;
+  margin-top: 15px;
+  color: #FCFCFC;
+  font-family: cursive;
+  font-size: large;
+}
+
+.success {
+  color: #305890;
+}
+
+.error {
+  color: #dd5555;
+}
+
+p {
+  margin-top: 0;
+  font-size: 0.8em;
+  font-weight: 100;
+  color: #5e5e5e;
+  letter-spacing: 1px;
+}
+
+span, h1 {
+  font-size: 0.9em;
+  font-weight: 100;
+  letter-spacing: 3px;
+  padding-top: 5px;
+  color: #FCFCFC;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.button-box {
+  position: absolute;
+  width: 50%;
+  border-radius: 20px;
+  top: 73%;
+  left: 25%;
+  outline: 0;
+  border: none;
+  box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
+  transition: all 0.5s ease-in-out;
+  padding: 16px 0;
+  cursor: pointer;
+}
+.button-box:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.blue-btn {
+  background-color: #305890;
+}
+.blue-btn:hover {
+  background-color: #3969ac;
+}
+
+.red-btn {
+  background-color: #dd5555;
+}
+.red-btn:hover {
+  background-color: #e26a6a;
+}
+
+/*# sourceMappingURL=success_message.css.map */
