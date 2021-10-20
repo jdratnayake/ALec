@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2021 at 09:36 AM
+-- Generation Time: Oct 20, 2021 at 09:52 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -317,10 +317,7 @@ CREATE TABLE `forum_reply` (
 --
 
 INSERT INTO `forum_reply` (`topic_id`, `reply_id`, `reply`, `post_time`, `user_id`) VALUES
-(18, 11, 'Well as I know FDM and TDM are two different techniques. FDM deals with modularizing the analogue signals and TDM deals with digital signals. Each has different bandwidth allocations techniques. FDM I\'m not quite familiar but somehow it allocate the bandwidth for each channel using a constant frequency and TDM its bit length. As I know packets comes under digital signal since because of we quantizing the analog to digital. (I think FDM doesn\'t have such packets but I\'m not quite sure).\r\n\r\nSo again if we consider the traffic of the channels then we introduce STDM for store-and-forward instead of TDM since in such case channels are not produce data to transfer in continuous manner. So we follow some statistical method. That is the place where we have packet switching. In TDM packets are gurranted hence its not necessary to do packet switching I guess. (All we have to do follow some round robin pattern).\r\n\r\nAnd when it comes to efficiencies it depends on the strength of the traffic. We have Aloha, and CSMA variations under STDM. (both deals with store-and-forward traffic). We have equation given that so the efficiency depends on the # of attempts(k) and # of channels(G) for store-and-', '2021-10-20 13:02:23', 101),
-(18, 14, 'I think I was confusing the trunk utilization efficiency with the overall efficiency.\r\n\r\nMy point was, using Packet switching is much more efficient than Circuit switching as I only compared those two. And, as I understood, packet switching uses TDM (or STDM as you have pointed out) and circuit switching uses FDM (it has no packets). The reference book makes a clear comparison between the two ways of transmitting data.\r\n\r\nHence I was comparing STDM with FDM.\r\n\r\nAnd yes, using STDM is more efficient than TDM for the points you mentioned. And in that case, using TDM instead of STDM would make the trunk utilization efficiency less. Therefore , Efficiency STDM > Efficiency TDM .\r\n\r\nBut what about STDM(or TDM) vs FDM? Is the circuit switching vs packet switching scenario applicable for this case? (That is, when we compare overall efficiency and not just trunk utilization)\r\n\r\nIn FDM too, resources or the allocated bandwidth cannot be used by any other channel even if there are no data being transmitted. \r\n\r\nSo considering the trunk utilization, my conclusion is as below. What do you think?\r\n\r\nEfficiency STDM > Efficiency TDM > Efficiency FDM    \r\n\r\nP.S. Thank you for participating in thi', '2021-10-20 13:04:49', 113),
-(18, 15, 'Thanks for starting a discussion on this. I think there is some confusion here.\r\n\r\nThere are many multiplexing (combining basic channels) techniques. FDM is a classical technique used in the analog era. OFDM is a modern variation of it. Wrt digital info, the typical approaches are TDM and StatTDM. In TDM, the time slots are permanently assigned to sources (channels): both the sender and receiver know the channels assigned to the time slot and they are synced. TDM has high utilisation when there is continuous activity on all channels, for eg for streaming data like digitised voice/video. If the source data is intermittent (as in browsing, db queries etc) then it is more efficient to assign channels on the multiplexed time axis, on demand to the sources. This is statTDM. When it is StatTDM, each data block must have a source/dest identifiers to uniquely identify a \'packet\' so that it will be picked up by the proper destination. For Poisson like data traffic STDM is more efficient (consider my example of waiting at a sequencing traffic light at mid night with no road traffic). Finally, you cannot compare FDM with TDM or STDM.', '2021-10-20 13:05:22', 101),
-(18, 16, '\r\nThank you for clearing the confusion sir. It was very helpful and I got a clear idea on this now.', '2021-10-20 13:05:42', 113);
+(19, 18, 'Well as I know FDM and TDM are two different techniques. FDM deals with modularizing the analogue signals and TDM deals with digital signals. Each has different bandwidth allocations techniques. FDM I\'m not quite familiar but somehow it allocate the bandwidth for each channel using a constant frequency and TDM its bit length. As I know packets comes under digital signal since because of we quantizing the analog to digital. (I think FDM doesn\'t have such packets but I\'m not quite sure).\r\n\r\nSo again if we consider the traffic of the channels then we introduce STDM for store-and-forward instead of TDM since in such case channels are not produce data to transfer in continuous manner. So we follow some statistical method. That is the place where we have packet switching. In TDM packets are gurranted hence its not necessary to do packet switching I guess. (All we have to do follow some round robin pattern).\r\n\r\nAnd when it comes to efficiencies it depends on the strength of the traffic. We have Aloha, and CSMA variations under STDM. (both deals with store-and-forward traffic). We have equation given that so the efficiency depends on the # of attempts(k) and # of channels(G) for store-and-', '2021-10-20 13:21:32', 113);
 
 -- --------------------------------------------------------
 
@@ -356,7 +353,7 @@ CREATE TABLE `forum_topic` (
 --
 
 INSERT INTO `forum_topic` (`topic_id`, `subject`, `question`, `post_time`, `forum_Id`, `user_id`, `last_reply_id`, `updated_time`) VALUES
-(18, 'If we use TDM for store-and-forward traffic, would the overall trunk utilization efficiency fall?', 'This is regarding the question in the exercises given in Dr.Nalin Ranasinghe\'s slides.\r\n\r\nTo my understanding, in TDM we use packet switching. Hence this reduces the delay between the sender and the receiver since the first packet from a long message can be forwarded before the second one has fully arrived. \r\n\r\nIf we use FDM, then according to store-and-forward transmission, the long message should arrive fully before sending it to the receiver\'s end. Forwarding a packet such as in the first case is not possible here. \r\n\r\nThe reference material (Computer Networks by Andrew S. Tanenbaum and David J. Wetherall - Page 161-164) compares circuit switching and packet switching. As I have understood, packet switching uses TDM and circuit switching which divides the whole bandwidth into trunks, uses FDM. It describes what happens in the event that both switching methods uses store-and-forward transmission. \r\n\r\nHence I thought that comparison would be applicable here.\r\n\r\nSo, overall, using TDM is more efficient for store-and-forward traffic. \r\n\r\nAnyone has any different ideas?', '2021-10-20 13:00:12', 19, 113, NULL, '2021-10-20 13:00:12');
+(19, 'If we use TDM for store-and-forward traffic, would the overall trunk utilization efficiency fall?', 'This is regarding the question in the exercises given in Dr.Nalin Ranasinghe\'s slides.\r\n\r\nTo my understanding, in TDM we use packet switching. Hence this reduces the delay between the sender and the receiver since the first packet from a long message can be forwarded before the second one has fully arrived. \r\n\r\nIf we use FDM, then according to store-and-forward transmission, the long message should arrive fully before sending it to the receiver\'s end. Forwarding a packet such as in the first case is not possible here. \r\n\r\nThe reference material (Computer Networks by Andrew S. Tanenbaum and David J. Wetherall - Page 161-164) compares circuit switching and packet switching. As I have understood, packet switching uses TDM and circuit switching which divides the whole bandwidth into trunks, uses FDM. It describes what happens in the event that both switching methods uses store-and-forward transmission. \r\n\r\nHence I thought that comparison would be applicable here.\r\n\r\nSo, overall, using TDM is more efficient for store-and-forward traffic. \r\n\r\nAnyone has any different ideas?', '2021-10-20 13:21:03', 19, 101, 18, '2021-10-20 13:21:03');
 
 -- --------------------------------------------------------
 
@@ -806,13 +803,13 @@ ALTER TABLE `forum`
 -- AUTO_INCREMENT for table `forum_reply`
 --
 ALTER TABLE `forum_reply`
-  MODIFY `reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `forum_topic`
 --
 ALTER TABLE `forum_topic`
-  MODIFY `topic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `topic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `question_choice`
