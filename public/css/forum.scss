@@ -36,7 +36,7 @@ $table_heading_color: $table_head;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 40px 2px 25px 2px;
+            margin: 40px 2px 25px 86%;
             cursor: pointer;
 
             .button-title{
@@ -150,6 +150,10 @@ $table_heading_color: $table_head;
                           font-size: 30px;
                           padding-left: 5px;
 
+                          .fa-caret-up{
+                            color: darkgray;
+                            cursor: pointer;
+                          }
                           .val{
                               font-size: 20px;
                           }
