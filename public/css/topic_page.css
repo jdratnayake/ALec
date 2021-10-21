@@ -300,6 +300,10 @@ header {
   padding-top: 2px;
   /* background-color: #1d1b31; */
 }
+.home-content .error {
+  color: red;
+  font-size: 80%;
+}
 
 .home-content-expand {
   width: calc(100% - 240px);
@@ -533,18 +537,47 @@ footer p {
 }
 .container .home-content .topic-container .topic .active {
   background-color: #008bcc;
-  border: 1px solid #2B4F82;
+  border: 1px solid #008bcc;
 }
 .container .home-content .topic-container .topic .active::after {
   content: "−";
 }
 .container .home-content .topic-container .topic .content {
-  padding: 0 18px;
+  padding: 0 8px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
   border-radius: 8px;
+}
+.container .home-content .topic-container .topic .content .button-set {
+  padding-top: 8px;
+}
+.container .home-content .topic-container .topic .content .button-set .edit-btn, .container .home-content .topic-container .topic .content .button-set .dlt-btn {
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 0.8em;
+}
+.container .home-content .topic-container .topic .content .button-set .edit-btn i, .container .home-content .topic-container .topic .content .button-set .dlt-btn i {
+  margin-right: 8px;
+}
+.container .home-content .topic-container .topic .content .button-set .edit-btn {
+  border: 2px solid #305890;
+  background-color: #305890;
+}
+.container .home-content .topic-container .topic .content .button-set .edit-btn:hover {
+  background-color: #4075bf;
+  border-color: #4075bf;
+}
+.container .home-content .topic-container .topic .content .button-set .dlt-btn {
+  background-color: #dd5555;
+  border: 2px solid #dd5555;
+}
+.container .home-content .topic-container .topic .content .button-set .dlt-btn:hover {
+  background-color: #f7d4d4a1;
+  color: #dd5555;
 }
 .container .home-content .topic-container .topic .content .quiz-head {
   margin-top: 10px;
@@ -552,6 +585,7 @@ footer p {
   font-weight: 400;
   border-bottom: 2px solid #b2b2b2;
   display: block;
+  padding: 0 10px;
 }
 .container .home-content .topic-container .topic .content ul {
   list-style-type: none;

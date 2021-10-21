@@ -208,24 +208,29 @@ $light: white;
 /* -------CLOSE BUTTON START------------- */
 
 .close {
-    border-radius: 5px;
-    border: $delete_button_border;
-    color: $delete_button_color;
-    background-color: $delete_button;
     position: relative;
-    left: 78%;
-    top: 123px;
+    top: 85px;
     display: inline-flex;
     overflow: hidden;
-    padding: 0 10px;
-    cursor: pointer;
     height: 40px;
     align-items: center;
+    width: 100%;
+    justify-content: flex-end;
 
-    &:hover{
-        color: $delete_button;
-        background-color: $delete_button_hover;
+    button{
+        border-radius: 5px;
+        border: 2px solid #dd5555;
+        color: white;
+        background-color: #dd5555;
+        cursor: pointer;
+        padding: 4px 8px;
+
+        &:hover{
+            color: $delete_button;
+            background-color: $delete_button_hover;
+        }
     }
+
     .fa-times{
         margin-right: 8px;
     }
