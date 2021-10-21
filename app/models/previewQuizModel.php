@@ -47,4 +47,16 @@ class PreviewQuizModel extends Database
 
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function deleteQuiz($quizId)
+    {
+        $query = "SELECT course.course_id FROM course INNER JOIN course_topic ON course.course_id=course_topic.course_id INNER JOIN quiz ON quiz.topic_id=course_topic.topic_id WHERE quiz_id='$quizId' LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+        $courseId =  mysqli_fetch_assoc($result)["course_id"];
+
+        $query = "DELETE FROM quiz WHERE quiz_id='$quizId'";
+        mysqli_query($GLOBALS["db"], $query);
+
+        return $courseId;
+    }
 }

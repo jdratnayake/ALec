@@ -71,12 +71,11 @@ $courseCode = explode("-", $temp)[0];
                             <div class='vote'>
                                 <i class='fa fa-caret-up' aria-hidden='true'></i>
                                 <div class='val'>0</div>
-                                <i class='fa fa-caret-down' aria-hidden='true'></i>
                             </div>
                         </div>
 
                         <div class='col col-1' data-label='Discussion'>
-                            <a href='#'>
+                            <a href='" . BASEURL . "/lecturerForumTopicDiscussion/index/{$row['topic_id']}" . "'>
                                 {$row['subject']}
                             </a>
                         </div>
@@ -112,51 +111,6 @@ $courseCode = explode("-", $temp)[0];
                     }
                     ?>
 
-                    <!-- <li class="table-row">
-                        <div class="col col-4 reply-count" data-label="Replies">
-                            <div class="vote">
-                                <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                <div class="val">0</div>
-                                <i class="fa fa-caret-down" aria-hidden="true"></i>
-                            </div>
-                        </div>
-
-                        <div class="col col-1" data-label="Discussion">
-                            <a href="#">
-                                Will MAC addresses run out?
-                            </a>
-                        </div>
-                        <div class="col col-2" data-label="Started by">
-                            <div class="profile_img_info">
-                                <div class="img">
-                                    <img <?php //srcIMG("profile_pic.svg"); 
-                                            ?> alt="profile_pic">
-                                </div>
-                                <div class="info">
-                                    <p class="name">M F RIZWAN</p>
-                                    <p class="place">
-                                        24 Jul 2021
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col col-3" data-label="Last post">
-                            <div class="profile_img_info">
-                                <div class="img">
-                                    <img <?php //srcIMG("profile_pic.svg"); 
-                                            ?> alt="profile_pic">
-                                </div>
-                                <div class="info">
-                                    <p class="name">M F RIZWAN</p>
-                                    <p class="place">
-                                        24 Jul 2021
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </li> -->
-
                 </ul>
 
             </div>
@@ -166,6 +120,8 @@ $courseCode = explode("-", $temp)[0];
     <?php linkPhp("notification"); ?>
 
     <?php linkPhp("footer"); ?>
+
+    <?php linkJS("forum"); ?>
 
 </body>
 

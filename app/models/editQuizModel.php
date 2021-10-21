@@ -65,4 +65,16 @@ class EditQuizModel extends Database
 
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function deleteQuestion($questionId)
+    {
+        $query = "DELETE FROM quiz_question WHERE question_no='$questionId'";
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function deleteAnswer($choiceId)
+    {
+        $query = "DELETE FROM question_choice WHERE choice_id='$choiceId'";
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }

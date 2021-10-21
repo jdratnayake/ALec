@@ -33,10 +33,7 @@
 
         <div class="quiz-name">
             <h2>Assignment 01</h2>
-            <span>
-                <label for="time-picker">Quiz Duration</label>
-                <input type="text" id="time-picker" class="form-control" placeholder="hrs:mins:secs" />
-            </span>
+
         </div>
 
         <!-- Quiz basic details -->
@@ -74,7 +71,7 @@
                                 </div>
 
                                 <div class='button-set'>
-                                    <button type='button' class='dlt'>
+                                    <button type='button' class='dlt' onclick='deleteOldQuestion(this)'>
                                         <i class='fa fa-trash' aria-hidden='true'></i>Delete question
                                     </button>
                                 </div>
@@ -94,7 +91,7 @@
                                         value='$choiceRow[choice_name]'>
                                         <input type='text' name='points_$choiceRow[choice_id]'
                                         value='$choiceRow[points]%' class='points'>
-                                        <i class='fa fa-times' aria-hidden='true'></i>
+                                        <i class='fa fa-times' aria-hidden='true' onclick='deleteOldAnswer(this)'></i>
                                     </li>
                             ";
                         }
@@ -115,7 +112,7 @@
                                 </div>
 
                                 <div class='button-set'>
-                                    <button type='button' class='dlt'>
+                                    <button type='button' class='dlt' onclick='deleteOldQuestion(this)'>
                                         <i class='fa fa-trash' aria-hidden='true'></i>Delete question
                                     </button>
                                 </div>
@@ -125,7 +122,7 @@
                                         <input type='text' name='choice_$choiceRow[choice_id]'
                                         value='$choiceRow[choice_name]'>
                                         <input type='text' name='points_$choiceRow[choice_id]' value='100%' class='points'>
-                                        <i class='fa fa-times' aria-hidden='true'></i>
+                                        
                                     </li>
                                 </ul>
                             </div>
@@ -153,13 +150,9 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkJS("timePicker"); ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("editQuiz"); ?>
-
-    <?php linkJS("timePicker") ?>
 
 </body>
 

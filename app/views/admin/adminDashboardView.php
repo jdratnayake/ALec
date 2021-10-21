@@ -20,7 +20,7 @@
     <?php linkPhp("navigationBarAdmin"); ?>
     <div class="navigation-item-container">
 
-        <div class="navigation-tab" onclick="myFunction()">
+        <div class="navigation-tab" id="toolkit-btn">
             <div class="row">
                 <i class="fa fa-rocket"></i>
             </div>
@@ -30,8 +30,9 @@
                 </div>
             </div>
             <div class="dropdown-content" id="dropdown-content">
-                <a id="create-users-btn">Create Multiple Accounts</a>
-                <a id="manage-accounts-btn">Manage Students Enrollment</a>
+                <a class="model-btn">Create Multiple Accounts</a>
+                <a class="model-btn">Delete Multiple Accounts</a>
+                <a class="model-btn" id="manage-accounts-btn">Manage Students Enrollment</a>
             </div>
         </div>
 
@@ -74,22 +75,23 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close" id="close-one">&times;</span>
+                    <span class="close">&times;</span>
                     <h2>Create Multiple User Accounts</h2>
                 </div>
 
                 <div class="modal-body">
                     <strong>User type:</strong>
                     <div class="radio-btn">
-                        <input type="radio" id="lecturers-create" name="user-type" checked="checked">
+                        <input type="radio" id="lecturers-create" name="user-type-create" checked="checked">
                         <label for="lecturers-create">Lecturers</label><br>
 
-                        <input type="radio" id="students-create" name="user-type">
+                        <input type="radio" id="students-create" name="user-type-create">
                         <label for="students-create">Students</label><br>
                     </div>
 
                     <p>Use this format to enter details using .csv file</p>
-                    <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/1" . "'" ?>" id="btn-create-download">Download template</button>
+                    <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/1" . "'" ?>" id="btn-create-download">Download template
+                    </button>
 
                     <br><br>
                     <p>
@@ -109,13 +111,55 @@
 
         </div>
 
+        <!-- The Delete Users Modal -->
+        <div id="delete-users-model" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Delete Multiple User Accounts</h2>
+                </div>
+
+                <div class="modal-body">
+                    <strong>User type:</strong>
+                    <div class="radio-btn">
+                        <input type="radio" id="lecturers-delete" name="user-type" checked="checked">
+                        <label for="lecturers-delete">Lecturers</label><br>
+
+                        <input type="radio" id="students-delete" name="user-type">
+                        <label for="students-delete">Students</label><br>
+                    </div>
+
+                    <p>Use this format to delete details using .csv file</p>
+                    <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/4" . "'" ?>" id="btn-delete-download"> Download template</button>
+
+                    <br><br>
+                    <p>
+                        Use this format to enter details using .txt file<br>
+                        &emsp;<span id="regNo-del">IndexNo</span><br>
+                        &emsp;eg: 19001411<br><br>
+                        <strong>Note:</strong>Each user should be in a newline<br><br>
+                    </p>
+                    <form action="<?php echo BASEURL . "/adminDashboard/deleteUsers" ?>" method="post" enctype="multipart/form-data">
+                        Upload file:
+                        <input type="hidden" name="upload-user-type" value="2">
+
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Delete users" name="submit" class="upload-btn">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
         <!-- The Manage Users Modal -->
         <div id="manage-users-model" class="modal">
 
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close" id="close-two">&times;</span>
+                    <span class="close">&times;</span>
                     <h2>Manage Students Enrollment</h2>
                 </div>
                 <div class="modal-body">
@@ -152,9 +196,9 @@
                         </div>
 
                         <div class="course-selection">
-                            <label for="COURSE">Select the course module</label>
-                            <select name="COURSE" id="COURSE">
-
+                            <label for="course">Select the course module</label>
+                            <select name="course" id="COURSE">
+                                <!-- <option value="null" selected>No course selected</option> -->
                             </select>
                         </div>
 
@@ -162,7 +206,8 @@
 
                         <div class="modal-body enrollment-file-upload" id="file-mode-div" style="display: none;">
                             <p>Use this format to enter details using .csv file</p>
-                            <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/3" . "'" ?>" id="btn-create-download-enrollment">Download template</button>
+                            <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/3" . "'" ?>" id="btn-create-download-enrollment">Download template
+                            </button>
 
                             <br><br>
                             <p>
@@ -230,11 +275,7 @@
 
     <?php linkJS("slideShow"); ?>
 
-    <?php linkJS("courseDetails"); ?>
-
-    <?php linkJS("dashboard_boost"); ?>
-
-    <?php linkJS("dashboard_boost_modaltwo"); ?>
+    <?php linkJS("dashboardToolkit"); ?>
 
     <?php linkJS("adminDashboardCourseDisplay"); ?>
 

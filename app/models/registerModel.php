@@ -136,4 +136,22 @@ class RegisterModel extends Database
             mysqli_query($GLOBALS["db"], $query);
         }
     }
+
+    public function deleteUser($userId, $type)
+    {
+        if ($type == 2) {
+            $query = "SELECT user.user_id FROM user INNER JOIN lecturer ON user.user_id=lecturer.user_id WHERE lecturer_no='$userId' LIMIT 1";
+        } else if ($type == 3) {
+            $query = "SELECT user.user_id FROM user INNER JOIN student ON user.user_id=student.user_id WHERE index_no='$userId' LIMIT 1";
+        }
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) == 1) {
+            $userId = mysqli_fetch_assoc($result)["user_id"];
+
+            $query = "DELETE FROM user WHERE user_id='$userId'";
+            mysqli_query($GLOBALS["db"], $query);
+        }
+    }
 }

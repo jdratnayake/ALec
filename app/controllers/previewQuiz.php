@@ -36,4 +36,11 @@ class PreviewQuiz extends AlecFramework
 
         $this->index($quizId);
     }
+
+    public function delete($quizId)
+    {
+        $courseId = $this->previewQuizModel->deleteQuiz($quizId);
+
+        $this->redirect("lecturerTopicPage/index/{$courseId}");
+    }
 }
