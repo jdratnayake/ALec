@@ -29,7 +29,7 @@
         <input type="hidden" id="question-count" value="1">
 
         <!-- Quiz heading -->
-        <header>Create Quiz <div class="error">sssss</div>
+        <header>Create Quiz <div class="error"></div>
         </header>
 
         <!-- Quiz basic details -->

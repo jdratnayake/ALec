@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-    courseName();
-    topicName();
-    quizName();
-    duration();
+    // courseName();
+    // topicName();
+    // quizName();
+    // duration();
 
     //Increament question count
     $("#add-question").click(function () {
