@@ -334,6 +334,7 @@ header {
 .home-content .error {
   color: red;
   font-size: 80%;
+  font-weight: normal;
 }
 
 .home-content-expand {

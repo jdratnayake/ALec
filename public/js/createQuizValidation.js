@@ -5,7 +5,21 @@ $(document).ready(function () {
     quizName();
     duration();
 
+    //Increament question count
+    $("#add-question").click(function () {
 
+        const count = parseInt($("#question-count").val());
+        $("#question-count").val(count + 1);
+
+    });
+
+    //decrement question count
+    $(".close-btn").click(function () {
+
+        const count = parseInt($("#question-count").val());
+        $("#question-count").val(count - 1);
+
+    });
 
     function courseName() {
         const value = $("#course").val();

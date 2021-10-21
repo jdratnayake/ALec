@@ -25,8 +25,12 @@
     </ul>
 
     <div class="form-content">
+        <!-- Hidden input tag to get question count -->
+        <input type="hidden" id="question-count" value="1">
+
         <!-- Quiz heading -->
-        <header>Create Quiz</header>
+        <header>Create Quiz <div class="error">sssss</div>
+        </header>
 
         <!-- Quiz basic details -->
         <form class="details" method="post" action='<?php echo BASEURL . "/createQuizDashboard/index"; ?>'>
