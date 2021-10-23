@@ -21,15 +21,14 @@
     <ul class="breadcrumb" style="margin-left: 5%">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/lecturerCoursePage/index">My Course</a></li>
-        <li><?php echo $data["courseName"]; ?></li>
+        <li><?php echo explode("-", $data["courseName"])[0]; ?></li>
     </ul>
 
     <div class="topic-container center">
         <header><?php echo $data["courseName"]; ?></header>
 
-        <button id="edit-topic" class="add-topic edit-topic" type="button" value="edit-topic">Edit topic</button>
-        <button id="exit-edit" class="add-topic exit-edit" type="button" value="exit-edit">Save</button>
-        <button class="add-topic" type="button" value="add-topic">Add topic</button>
+        <button class="add-topic" type="button" value="add-topic" onclick="location.href='<?php echo BASEURL . '/addTopic/index/' . $data['bread']['courseId'] ?>'">
+            Add topic</button>
 
         <?php
 
