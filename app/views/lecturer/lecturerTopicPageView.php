@@ -38,10 +38,6 @@
             "<div class='topic'>
                 <button class='collapsible'>
                     <span>
-                        <span class='hidden'>
-                            <i onclick='' class='fa fa-trash' aria-hidden='true'></i>
-                            <i onclick='' class='fa fa-pencil' aria-hidden='true'></i>
-                        </span>
                         {$row['topic_name']}
                     </span>
                 </button>
