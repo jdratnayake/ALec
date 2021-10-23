@@ -1,5 +1,4 @@
 <!--questioners' or repliers' identity should be hidden in the students' view-->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,9 +22,11 @@
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/lecturerCoursePageForum/index">Forum Course Page</a></li>
-        <li><a href="http://localhost/ALec/lecturerForumTopic/index">Forum topic</a>
+        <li>
+            <a href=" <?php echo BASEURL . "/lecturerForumTopic/index/" . $data['bread']['forumDetails']['course_Id'] ?>">
+                <?php echo "Discussion Forum " .  explode("-", $data['bread']['forumDetails']['forum_name'])[0] ?></a>
         </li>
-        <li>Forum discussion</li>
+        <li>Forum Discussion</li>
     </ul>
 
     <div class="forum-container">
