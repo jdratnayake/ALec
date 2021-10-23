@@ -431,6 +431,7 @@ ul.breadcrumb {
   list-style: none;
   background-color: #eeeeee61;
   margin-bottom: 30px;
+  margin-left: 0 !important;
 }
 
 ul.breadcrumb li {

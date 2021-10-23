@@ -11,6 +11,15 @@ class PreviewQuizModel extends Database
         return mysqli_fetch_assoc($result)["course_name"];
     }
 
+    public function getCourseDetails($quizId)
+    {
+        $query = "SELECT course.course_id, course_name FROM course INNER JOIN course_topic ON course.course_id=course_topic.course_id INNER JOIN quiz ON quiz.topic_id=course_topic.topic_id WHERE quiz_id='$quizId' LIMIT 1";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result);
+    }
+
     public function getQuizDetails($quizId)
     {
         $query = "SELECT quiz_id, quiz_name, HOUR(duration) AS hr, MINUTE(duration) AS min, SECOND(duration) AS sec FROM quiz WHERE quiz_id='$quizId' LIMIT 1";
