@@ -46,7 +46,7 @@ class ManageUser extends AlecFramework
     public function assign($courseId, $type = "lec", $userId)
     {
         $this->manageUserModel->assignUser($courseId, $type, $userId);
-        $this->index($courseId, $type);
+        $this->redirect("manageUser/index/{$courseId}/{$type}");
     }
 
     public function remove($courseId, $type = "lec", $userId)

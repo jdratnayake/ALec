@@ -41,7 +41,7 @@ class LecturerForumTopicDiscussionModel extends Database
         $result = mysqli_query($GLOBALS["db"], $query);
         $replyId = mysqli_fetch_assoc($result)["reply_id"];
 
-        $query = "UPDATE forum_topic SET last_reply_id='$replyId'";
+        $query = "UPDATE forum_topic SET last_reply_id='$replyId', updated_time=NOW() WHERE topic_id='$topicId'";
         mysqli_query($GLOBALS["db"], $query);
     }
 
