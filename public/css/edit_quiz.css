@@ -550,8 +550,8 @@ footer p {
   margin-right: 5px;
 }
 .dlt:hover {
-  color: white;
-  border: 2px solid #f7d4d4a1;
+  color: #dd5555;
+  border: 2px solid #dd5555;
   background-color: #f7d4d4a1;
 }
 

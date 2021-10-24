@@ -126,8 +126,8 @@ $light: white;
   i{margin-right: 5px;}
 
   &:hover {
-    color: $light;
-    border: 2px solid $delete_button_hover;
+    color: $delete_button;
+    border: 2px solid $delete_button;
     background-color: $delete_button_hover;
   }
 }
