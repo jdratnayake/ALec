@@ -36,11 +36,12 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
     <div class="form-content">
         <!-- Quiz heading -->
         <header>
-            SCS 1205 - Operating Systems
+            <h2>SCS 1205 - Operating Systems</h2>
         </header>
 
         <div class="quiz-name">
             <h2>Assignment 01</h2>
+
         </div>
 
         <!-- Quiz basic details -->
@@ -67,7 +68,7 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
                         }
 
                         echo
-                        "
+                        "'
                         <li class='question-container'>
 
                             <div class='single-choice'>
@@ -86,7 +87,7 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
                                 <input type='checkbox' name='check_$row[question_no]' 
                                 class='check' value='true' $checked>
                                 <label>multiple answers</label><br>
-                        <ol>";
+                        <ol>'";
 
                         for ($i = 1; $i <= $row["count"]; $i++) {
                             $choiceRow = mysqli_fetch_assoc($data["quizQuestionChoices"]);

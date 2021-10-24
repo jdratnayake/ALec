@@ -67,6 +67,7 @@
             </form>
         </div>
     </div>
+    45
 
     <!-- Login validation and other related things -->
     <?php linkJS("loginValidation") ?>
