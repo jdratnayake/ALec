@@ -21,15 +21,7 @@
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/userDetails/index">User details</a></li>
         <li><a href="<?php echo BASEURL . '/userProfile/index/' . $data["userDetails"]["user_id"] ?> ">View user</a></li>
-        <li>
-            <?php
-            if ($data["userDetails"]["user_type"] == "stu") {
-                echo 'Edit Student';
-            } else if ($data["userDetails"]["user_type"] == "lec") {
-                echo 'Edit Lecturer';
-            }
-            ?>
-        </li>
+        <li>Edit user</li>
     </ul>
 
     <div class="wrapper center">
@@ -45,6 +37,8 @@
             ?>
 
             <div class="form-inner">
+
+<!--                --><?php //linkPhp("successMessage"); ?>
 
                 <!-- LECTURER FORM START -->
                 <form method="post" action="<?php echo BASEURL . '/userEdit/index'; ?>" class="login" id="registerForm" onsubmit="validateAll()">
@@ -87,11 +81,9 @@
                         <div class="error" id="error"><?php echo $errors["password"] ?></div>
                     </div>
 
-
-
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Save changes">
                     </div>
                 </form>
                 <!-- LECTURER FORM END -->
@@ -140,7 +132,7 @@
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Save changes" id="save-btn">
                     </div>
                 </form>
                 <!-- STUDENT FORM END -->
@@ -148,6 +140,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- JS code -->
     <?php

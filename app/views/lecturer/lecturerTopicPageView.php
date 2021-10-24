@@ -28,7 +28,8 @@
         <header><?php echo $data["courseName"]; ?></header>
 
         <button class="add-topic" type="button" value="add-topic" onclick="location.href='<?php echo BASEURL . '/addTopic/index/' . $data['bread']['courseId'] ?>'">
-            Add topic</button>
+            Add topic
+        </button>
 
         <?php
 
@@ -42,6 +43,10 @@
                     </span>
                 </button>
                 <div class='content'>
+                <div class='button-set'>
+                    <button class='edit-btn'><i class='fa fa-pencil' aria-hidden='true'></i>Edit topic</button>
+                    <button class='dlt-btn'><i class='fa fa-trash' aria-hidden='true'></i>Delete topic</button>
+                </div>
                 <p class='quiz-head'>Quizzes</p>
                 <ul>";
 
@@ -68,57 +73,7 @@
 
         ?>
 
-        <!-- <div class="topic">
-            <button class="collapsible">
-                <span>
-                    <span class="hidden">
-                        <i onclick="" class="fa fa-trash" aria-hidden="true"></i>
-                        <i onclick="" class="fa fa-pencil" aria-hidden="true"></i>
-                    </span>
-                    Course Outline
-                </span>
-            </button>
-
-            <div class="content">
-                <p class="quiz-head">Quizzes</p>
-                <ul>
-                    <li>
-                        <div class="tooltip">
-                            <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                            <span class="icon-tooltip">Edit quiz</span>
-                        </div>
-                        <div class="tooltip">
-                            <a href="#">Quiz 1</a>
-                            <span class="text-tooltip">View quiz</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tooltip">
-                            <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                            <span class="icon-tooltip">Edit quiz</span>
-                        </div>
-                        <div class="tooltip">
-                            <a href="#">Quiz 2</a>
-                            <span class="text-tooltip">View quiz</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tooltip">
-                            <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                            <span class="icon-tooltip">Edit quiz</span>
-                        </div>
-                        <div class="tooltip">
-                            <a href="#">Quiz 3</a>
-                            <span class="text-tooltip">View quiz</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
-
     </div>
-
-
 
     <?php linkPhp("notification"); ?>
 

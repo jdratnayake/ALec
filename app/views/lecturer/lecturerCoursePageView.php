@@ -21,7 +21,7 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-        <li>Course Page</li>
+        <li>My courses</li>
     </ul>
 
     <!-- CARD LIST START -->
