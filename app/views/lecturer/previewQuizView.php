@@ -35,7 +35,7 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
     <div class="form-content">
         <!-- Quiz heading -->
         <header>
-            <h2><?php echo $data["courseName"]; ?></h2>
+            <?php echo $data["courseName"]; ?>
         </header>
 
         <!-- Edit , delete buttons-->

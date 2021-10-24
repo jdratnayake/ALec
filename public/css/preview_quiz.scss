@@ -102,12 +102,13 @@ $modal_color: $theme_hover;
   background-color: $delete_button;
   border: 2px solid $delete_button;
 
-  i{padding-right: 10px;}
-
   &:hover{
     background-color: $delete_button_hover;
-    border: 2px solid $delete_button_hover;
+    border: 2px solid $delete_button;
+    color: $delete_button;
   }
+
+  i{padding-right: 10px;}
 }
 .done{
   width: 100%;
