@@ -72,11 +72,12 @@ $light: white;
 
         .button-set {
             margin-top: 60px;
-            //margin: auto;
+            display: flex;
+            justify-content: space-between;
 
             .finish {
                 height: 48px;
-                width: 100%;
+                width: 49%;
                 border-radius: 5px;
                 font-size: large;
                 border: none;

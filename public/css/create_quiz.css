@@ -498,10 +498,12 @@ footer p {
 }
 .form-content .details .button-set {
   margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
 }
 .form-content .details .button-set .finish {
   height: 48px;
-  width: 100%;
+  width: 49%;
   border-radius: 5px;
   font-size: large;
   border: none;
