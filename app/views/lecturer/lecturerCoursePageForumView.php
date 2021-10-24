@@ -24,9 +24,10 @@
         <li>Forum Course Page</li>
     </ul>
 
+    <header>Forum Course Page</header>
+
     <!-- CARD LIST START -->
     <div class="card-container center">
-
 
         <?php
 

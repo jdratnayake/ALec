@@ -42,6 +42,10 @@
                     </span>
                 </button>
                 <div class='content'>
+                <div class='button-set'>
+                    <button class='edit-btn'><i class='fa fa-pencil' aria-hidden='true'></i>Edit topic</button>
+                    <button class='dlt-btn'><i class='fa fa-trash' aria-hidden='true'></i>Delete topic</button>
+                </div>
                 <p class='quiz-head'>Quizzes</p>
                 <ul>";
 

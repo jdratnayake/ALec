@@ -13,8 +13,14 @@ $card_hover_color: $theme_second_hover;
 /*==============================================================================*/
 
 .center {
-    margin: 5% auto;
+    margin: 3% auto 3%;
     width: 50%;
+    padding: 10px;
+}
+
+header{
+    width: 70%;
+    margin: 5% auto 0;
     padding: 10px;
 }
 

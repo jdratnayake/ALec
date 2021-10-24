@@ -24,6 +24,8 @@
         <li>Course Page</li>
     </ul>
 
+    <header>My courses</header>
+
     <!-- CARD LIST START -->
     <div class="card-container center">
 
