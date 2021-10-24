@@ -36,12 +36,11 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
     <div class="form-content">
         <!-- Quiz heading -->
         <header>
-            <h2>SCS 1205 - Operating Systems</h2>
+            SCS 1205 - Operating Systems
         </header>
 
         <div class="quiz-name">
             <h2>Assignment 01</h2>
-
         </div>
 
         <!-- Quiz basic details -->
