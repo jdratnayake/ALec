@@ -20,7 +20,7 @@
 
     <div class="navigation-item-container">
 
-        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/createQuizDashboard/index'; ?>' ">
+        <div class="navigation-tab" id="ask-question-btn">
             <div class="row">
                 <i class="fas fa-question-circle"></i>
             </div>
@@ -28,6 +28,10 @@
                 <div class="title">
                     Ask Question
                 </div>
+            </div>
+            <div class="dropdown-content" id="dropdown-content">
+                <a class="option-btn" onclick="window.location='<?php echo BASEURL . '/createQuizDashboard/index'; ?>' ">Create Quiz</a>
+                <a class="option-btn">Drafts</a>
             </div>
         </div>
 
@@ -114,6 +118,8 @@
     <?php linkJS("basic") ?>
 
     <?php linkJS("slideShow"); ?>
+
+    <?php linkJS("dashboardAskquestion"); ?>
 
 </body>
 

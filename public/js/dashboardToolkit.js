@@ -1,12 +1,10 @@
-$(document).ready(function () {
-    $("#toolkit-btn").click(function () {
-        if ($("#dropdown-content").css("display") == "none") {
-            $("#dropdown-content").css("display", "initial");
-        } else {
-            $("#dropdown-content").css("display", "none");
-        }
-
-    });
+document.getElementById("toolkit-btn").addEventListener("click", ()=>{
+    if (document.getElementById("dropdown-content").style.display === "none"){
+        document.getElementById("dropdown-content").style.display = "initial";
+    }
+    else{
+        document.getElementById("dropdown-content").style.display = "none";
+    }
 });
 
 //Open the relevant model when the user selects the option
