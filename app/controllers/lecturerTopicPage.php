@@ -11,6 +11,7 @@ class LecturerTopicPage extends AlecFramework
 
     public function index($courseId)
     {
+        $data["bread"]["courseId"] = $courseId;
         $data["courseName"] = $this->lecturerTopicPageModel->getCourseName($courseId);
         $data["topicDetails"] = $this->lecturerTopicPageModel->getTopicDetails($courseId);
         $data["topicQuizSummary"] = $this->lecturerTopicPageModel->getQuizCount($courseId);

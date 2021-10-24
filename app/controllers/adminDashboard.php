@@ -143,12 +143,13 @@ class AdminDashboard extends AlecFramework
 
     public function manageCourseParticiption()
     {
-        // var_dump($_POST);
-        // return 0;
-        // echo  . "<br>";
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            // var_dump($_POST);
+            // return 0;
+
             $action = $_POST["action"];
-            $courseId = $_POST["COURSE"];
+            $courseId = $_POST["course"];
 
             $mode = $_POST["user-type"];
 

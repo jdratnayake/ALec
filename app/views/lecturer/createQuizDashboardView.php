@@ -25,8 +25,12 @@
     </ul>
 
     <div class="form-content">
+        <!-- Hidden input tag to get question count -->
+        <input type="hidden" id="question-count" value="1">
+
         <!-- Quiz heading -->
-        <header>Create Quiz</header>
+        <header>Create Quiz <div class="error"></div>
+        </header>
 
         <!-- Quiz basic details -->
         <form class="details" method="post" action='<?php echo BASEURL . "/createQuizDashboard/index"; ?>'>
@@ -82,7 +86,9 @@
             <input type="button" class="add" id="add-question" value="+ Add Question" />
 
             <div class="button-set">
-                <input type="submit" id="create-quiz" class="finish" value="Create Quiz">
+                <input type="submit" id="create-quiz" name="create-quiz" class="finish" value="Create Quiz">
+                <br><br>
+                <input type="submit" id="draf-quiz" name="draft-quiz" class="finish" value="Draft">
             </div>
         </form>
     </div>
@@ -92,8 +98,8 @@
     <?php linkPhp("footer"); ?>
 
 
-    <?php linkJS("lib/jquery-3.6.0.min"); ?>
     <?php linkJS("create_quiz"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
     <?php linkJS("createQuizTopic"); ?>
     <?php linkJS("timePickerQuiz"); ?>
     <?php linkJS("createQuizValidation"); ?>

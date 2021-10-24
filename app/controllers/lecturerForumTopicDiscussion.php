@@ -11,6 +11,7 @@ class LecturerForumTopicDiscussion extends AlecFramework
 
     public function index($topicId)
     {
+        $data["bread"]["forumDetails"] = $this->lecturerForumTopicDiscussionModel->getForumDetails($topicId);
         $data["topicDetail"] = $this->lecturerForumTopicDiscussionModel->getTopicDetails($topicId);
         $data["userDetail"] = $this->lecturerForumTopicDiscussionModel->getUserDetails($this->getSession("userId"));
         $data["replyDetails"] = $this->lecturerForumTopicDiscussionModel->getReplyDetails($topicId);

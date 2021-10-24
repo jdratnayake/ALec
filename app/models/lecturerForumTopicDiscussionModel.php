@@ -2,6 +2,15 @@
 
 class LecturerForumTopicDiscussionModel extends Database
 {
+    public function getForumDetails($topicId)
+    {
+        $query = "SELECT forum.forum_id, forum_name, course_Id FROM forum_topic INNER JOIN forum ON forum_topic.forum_Id=forum.forum_id WHERE topic_id='$topicId' LIMIT 1";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result);
+    }
+
     public function getTopicDetails($topicId)
     {
         $query = "SELECT topic_id, subject, question, DATE_FORMAT(post_time, '%d %M %Y') AS post_time, forum_topic.user_id, CONCAT(first_name, ' ', last_name) AS name, user_type FROM forum_topic INNER JOIN user ON forum_topic.user_id=user.user_id WHERE topic_id='$topicId' LIMIT 1";
@@ -41,7 +50,7 @@ class LecturerForumTopicDiscussionModel extends Database
         $result = mysqli_query($GLOBALS["db"], $query);
         $replyId = mysqli_fetch_assoc($result)["reply_id"];
 
-        $query = "UPDATE forum_topic SET last_reply_id='$replyId'";
+        $query = "UPDATE forum_topic SET last_reply_id='$replyId', updated_time=NOW() WHERE topic_id='$topicId'";
         mysqli_query($GLOBALS["db"], $query);
     }
 

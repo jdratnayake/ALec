@@ -171,7 +171,7 @@ class UI {
     //Remove Question
     static removeQuestion(id) {
         if (id.classList.contains('close-btn')) {
-            id.parentElement.remove();
+            id.parentElement.parentElement.remove();
         }
         let len = document.getElementsByClassName('question').length;
         for (let i = 1; i <= len; i++) {

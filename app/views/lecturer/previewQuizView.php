@@ -1,3 +1,8 @@
+<?php
+$courseId = $data["bread"]["courseDetails"]["course_id"];
+$courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +27,9 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb" style="margin-left: 5%">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-        <li>Preview quiz</a></li>
+        <li><a href="http://localhost/ALec/lecturerCoursePage/index">My Course</a></li>
+        <li><a href="<?php echo BASEURL . "/lecturerTopicPage/index/" . $courseId ?>"><?php echo $courseName; ?></a></li>
+        <li>Preview Quiz</li>
     </ul>
 
     <div class="form-content">
