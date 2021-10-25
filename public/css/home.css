@@ -111,7 +111,7 @@ header {
   position: relative;
   height: 50px;
   width: 100%;
-  margin: 0 5px;
+  margin: 0;
   list-style: none;
   line-height: 50px;
 }
