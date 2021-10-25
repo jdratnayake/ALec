@@ -65,8 +65,10 @@
     </ul>
 
     <div class="forum-container">
-        <header>Discussion Forum For <?php echo $data["subjectCode"]; ?></header>
-        <h2>New Discussion Topic</h2>
+        <header>
+<!--            Discussion Forum For --><?php //echo $data["subjectCode"]; ?>
+            New Discussion Topic
+        </header>
 
         <form action="<?php echo BASEURL . "/askForumQuestion/index/{$data['forumId']}"; ?>" method="post" id="topicSubmit" onsubmit="validateAll()">
 
@@ -85,12 +87,14 @@
                 </div>
             </div>
 
+            <button type="submit" value="submit" class="done cancel"
+                    onclick="<?php echo "location.href=" . "'" . BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] . "'" ?>">
+                Cancel</button>
             <button type="submit" value="submit" class="done">Post to forum</button>
 
         </form>
 
-        <button type="submit" value="submit" class="done cancel" onclick="<?php echo "location.href=" . "'" . BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] . "'" ?>">
-            Cancel</button>
+
 
     </div>
 

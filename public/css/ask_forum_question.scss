@@ -6,8 +6,6 @@
 
 $main_color: $theme_second;
 $main_hover: $theme_second_hover;
-//$cancel_button: #a6a6a6;
-//$cancel_button_hover: lightgray;
 $blue_background: #e8f8ff;
 $light_color: white;
 
@@ -15,23 +13,8 @@ $light_color: white;
   padding: 1rem;
   width: 80%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-  margin: auto auto 30px auto;
-  height: 87%;
-  background-color: $blue_background;
-
-  header {
-    background-color: $main_color;
-    color: $light_color;
-    padding: 15px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    margin: auto;
-    width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-  }
-  h2{margin: 10px 0;}
+  margin: auto;
+  height: 75%;
 
   form{
     margin-top: 40px;
@@ -52,12 +35,12 @@ $light_color: white;
           width: 100%;
           padding: 6px 12px;
           color: #495057FF;
-          background-color: #FFFFFFFF;
+          background-color: rgba(0, 0, 0, 0.05);
           background-clip: padding-box;
           border: 1px solid #ced4da;
           border-radius: 4px;
           transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-          //border-bottom-width: 2px;
+          border-bottom-width: 2px;
 
           &:hover{
             border-bottom-width: 2px;
