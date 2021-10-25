@@ -303,6 +303,7 @@ header {
 .home-content .error {
   color: red;
   font-size: 80%;
+  font-weight: normal;
 }
 
 .home-content-expand {
@@ -391,6 +392,7 @@ ul.breadcrumb {
   list-style: none;
   background-color: #eeeeee61;
   margin-bottom: 30px;
+  margin-left: 0 !important;
 }
 
 ul.breadcrumb li {
@@ -476,7 +478,7 @@ footer p {
   border-radius: 5px;
   font-weight: bold;
   padding: 10px 50px;
-  margin: 32px 0 5px 5px;
+  margin: 40px 0 20px 0;
 }
 .container .home-content .topic-container .add-topic:hover {
   background-color: #007ab3;

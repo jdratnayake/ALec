@@ -27,6 +27,10 @@
     <div class="topic-container center">
         <header><?php echo $data["courseName"]; ?></header>
 
+        <p>
+            This is the course description...
+        </p>
+
         <button class="add-topic" type="button" value="add-topic" onclick="location.href='<?php echo BASEURL . '/addTopic/index/' . $data['bread']['courseId'] ?>'">
             Add topic</button>
 
