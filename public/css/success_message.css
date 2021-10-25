@@ -60,6 +60,7 @@
 
 .error-msg {
   color: #dd5555;
+  text-transform: uppercase;
 }
 
 .message-txt {
@@ -106,6 +107,8 @@
 
 .red-btn {
   background-color: #dd5555;
+  color: #FCFCFC;
+  font-weight: 100;
 }
 .red-btn:hover {
   background-color: #e26a6a;

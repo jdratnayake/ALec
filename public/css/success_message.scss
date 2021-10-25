@@ -73,6 +73,7 @@ $success_font: 'Lato', sans-serif;
 
 .error-msg {
   color: $error;
+  text-transform: uppercase;
 }
 
 .message-txt {
@@ -121,6 +122,8 @@ $success_font: 'Lato', sans-serif;
 
 .red-btn {
   background-color: $error;
+  color: $white;
+  font-weight: 100;
 
   &:hover {
     background-color: $error_sec;
