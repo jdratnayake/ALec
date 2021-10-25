@@ -87,7 +87,7 @@
 
             <div class="button-set">
                 <input type="submit" id="create-quiz" name="create-quiz" class="finish" value="Create Quiz">
-                <input type="submit" id="draf-quiz" name="draft-quiz" class="finish" value="Draft">
+                <input type="submit" id="draf-quiz" name="draft-quiz" class="finish" value="Save as Draft">
             </div>
         </form>
     </div>

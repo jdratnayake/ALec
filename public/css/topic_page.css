@@ -467,6 +467,9 @@ footer p {
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+.container .home-content .topic-container p {
+  color: gray;
+}
 .container .home-content .topic-container .add-topic {
   background-color: #005780;
   border: 2px solid #005780;
