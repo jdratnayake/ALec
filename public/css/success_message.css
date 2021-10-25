@@ -8,6 +8,7 @@
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   perspective: 40px;
+  position: absolute;
   left: 35%;
   z-index: 5;
   display: block;
@@ -36,7 +37,7 @@
   font-size: 5rem;
 }
 
-.message {
+.message-content {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -52,15 +53,16 @@
   font-size: large;
 }
 
-.success {
+.success-msg {
   color: #305890;
+  text-transform: uppercase;
 }
 
-.error {
+.error-msg {
   color: #dd5555;
 }
 
-p {
+.message-txt {
   margin-top: 0;
   font-size: 0.8em;
   font-weight: 100;
@@ -68,14 +70,11 @@ p {
   letter-spacing: 1px;
 }
 
-span, h1 {
-  font-size: 0.9em;
-  font-weight: 100;
+.tag-txt {
+  font-size: 1.1em;
   letter-spacing: 3px;
   padding-top: 5px;
-  color: #FCFCFC;
   padding-bottom: 5px;
-  text-transform: uppercase;
 }
 
 .button-box {
@@ -88,7 +87,7 @@ span, h1 {
   border: none;
   box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
   transition: all 0.5s ease-in-out;
-  padding: 16px 0;
+  padding: 12px 0;
   cursor: pointer;
 }
 .button-box:hover {
@@ -98,6 +97,8 @@ span, h1 {
 
 .blue-btn {
   background-color: #305890;
+  color: #FCFCFC;
+  font-weight: 100;
 }
 .blue-btn:hover {
   background-color: #3969ac;
