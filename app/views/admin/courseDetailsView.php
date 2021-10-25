@@ -21,7 +21,8 @@
 
     <?php linkPhp("navigationBarAdmin"); ?>
 
-    <?php linkPhp("successMessage"); ?>
+
+    <?php linkPhp("errorMessage"); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
