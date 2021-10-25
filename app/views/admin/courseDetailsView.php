@@ -8,6 +8,7 @@
 
     <title>ALec</title>
 
+    <?php linkCSS("success_message"); ?>
     <!-- CSS File HOME-->
     <?php linkCSS("course_details"); ?>
 
@@ -19,6 +20,8 @@
 <body>
 
     <?php linkPhp("navigationBarAdmin"); ?>
+
+    <?php linkPhp("successMessage"); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
