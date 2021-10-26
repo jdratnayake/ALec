@@ -1,10 +1,10 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -48,6 +48,7 @@ header {
   width: 78px;
   background: #19345d;
   padding: 6px 14px;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -62,12 +63,17 @@ header {
 
 .siderbar .logo_content .logo {
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 50px;
   width: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -96,7 +102,8 @@ header {
   width: 50px;
   text-align: center;
   line-height: 50px;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .siderbar.active #btn {
@@ -120,14 +127,17 @@ header {
   position: absolute;
   left: 122px;
   top: 0;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 6px;
   height: 35px;
   width: 122px;
   background: #fff;
   line-height: 35px;
   text-align: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0s;
   transition: 0s;
   opacity: 0;
   pointer-events: none;
@@ -139,6 +149,7 @@ header {
 }
 
 .siderbar ul li:hover .tooltip {
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 1;
   top: 50%;
@@ -161,9 +172,14 @@ header {
 
 .siderbar ul li a {
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-decoration: none;
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border-radius: 12px;
   white-space: nowrap;
@@ -185,6 +201,7 @@ header {
 .siderbar .links_name {
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -206,6 +223,7 @@ header {
   padding: 10px 6px;
   height: 60px;
   background: #19345d;
+  -webkit-transition: all 0.4 ease;
   transition: all 0.4 ease;
 }
 
@@ -214,8 +232,12 @@ header {
 }
 
 .profile_content .profile .profile_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0;
   pointer-events: none;
   white-space: nowrap;
@@ -225,9 +247,11 @@ header {
   opacity: 1;
   pointer-events: auto;
   width: 76%;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   cursor: pointer;
 }
+
 .siderbar.active .profile .profile_details:hover {
   text-decoration: underline;
 }
@@ -235,7 +259,8 @@ header {
 .profile .profile_details img {
   height: 45px;
   width: 45px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 12px;
 }
 
@@ -256,17 +281,20 @@ header {
   position: absolute;
   bottom: 5px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   min-width: 45px;
   line-height: 50px;
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   background: #19345d;
   cursor: pointer;
   height: 45px;
 }
+
 .profile #log_out:hover {
   color: #184e77;
   background: #fff;
@@ -276,6 +304,7 @@ header {
   left: 88%;
   background: none;
 }
+
 .siderbar.active .profile #log_out:hover {
   color: #184e77;
   background: #fff;
@@ -295,11 +324,13 @@ header {
 .home-content {
   height: 100%;
   width: calc(100% - 78px);
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-left: 78px;
   padding-top: 2px;
   /* background-color: #1d1b31; */
 }
+
 .home-content .error {
   color: red;
   font-size: 80%;
@@ -308,6 +339,7 @@ header {
 
 .home-content-expand {
   width: calc(100% - 240px);
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-left: 240px;
 }
@@ -353,24 +385,31 @@ header {
   background-color: #19345d;
   color: white;
   /* padding: 20px;
-  margin: 10px;  */
+    margin: 10px;  */
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-transition: 200ms opacity ease;
   transition: 200ms opacity ease;
   z-index: 10;
   /* padding: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, .05);
-  transition: 200ms opacity ease;
-
-
-
-  box-shadow: 0 12px 48px 4px rgb(0 0 0 / 12%); */
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .05);
+    transition: 200ms opacity ease;
+    
+    
+    
+    box-shadow: 0 12px 48px 4px rgb(0 0 0 / 12%); */
 }
 
 .bell-notification {
@@ -403,7 +442,7 @@ ul.breadcrumb li {
 ul.breadcrumb li + li:before {
   padding: 8px;
   color: black;
-  content: "/ ";
+  content: "/\00a0";
 }
 
 ul.breadcrumb li a {
@@ -426,6 +465,7 @@ footer {
   width: 100%;
   background: #eceff1;
   color: #546e7a;
+  display: -ms-grid;
   display: grid;
   place-items: center;
   /* padding: 2em;  */
@@ -440,6 +480,7 @@ footer p {
 }
 
 .sticky-footer {
+  position: -webkit-sticky;
   position: sticky;
   top: 100%;
 }
@@ -448,10 +489,17 @@ footer p {
 /*FOOTER - END*/
 /*==============================================================================*/
 .details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 85%;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto;
 }
 
@@ -468,6 +516,7 @@ footer p {
   border: 2px solid #305890;
   cursor: pointer;
 }
+
 .add-button:hover {
   background-color: #4075bf;
   border: 2px solid #4075bf;
@@ -528,8 +577,12 @@ form.search-bar::after {
 .user-type {
   border: none;
   margin-left: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   float: left;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   border-radius: 5px;
 }
@@ -544,6 +597,7 @@ form.search-bar::after {
   border-radius: 5px;
   border: 1px solid #3662a1;
 }
+
 .type:hover {
   background-color: white;
   color: #3662a1;
@@ -563,14 +617,17 @@ form.search-bar::after {
 .year-selection {
   margin: 10px 0 5px 0;
 }
+
 .year-selection label {
   color: dimgrey;
 }
+
 .year-selection select {
   border: 1px solid #3662a1;
   padding: 2px 22px;
   border-radius: 8px;
 }
+
 .year-selection select option:hover {
   background-color: #e8f8ff;
 }
@@ -587,8 +644,12 @@ form.search-bar::after {
     padding: 10px;
 } */
 .table-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .content-table {
@@ -598,7 +659,8 @@ form.search-bar::after {
   min-width: 400px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   margin-bottom: 25px;
 }
 
@@ -622,6 +684,7 @@ form.search-bar::after {
 .content-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
+
 .content-table tbody tr:hover {
   background-color: #fff;
 }
@@ -641,6 +704,8 @@ form.search-bar::after {
 /*USER DETAILS VIEW BUTTON - START*/
 /*==============================================================================*/
 .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 40px;
   padding: 0;
@@ -653,22 +718,30 @@ form.search-bar::after {
   font-weight: 500;
   cursor: pointer;
 }
+
 .button:hover {
   color: #fff;
   background: #4075bf;
   border: 2px solid #4075bf;
 }
+
 .button:active {
   background: #19345d;
   color: #fff;
 }
+
 .button__text {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 24px;
   color: white;
   height: 100%;
 }
+
 .button__text:hover {
   color: white;
 }
@@ -690,5 +763,4 @@ form.search-bar::after {
 .hidden-year {
   display: none;
 }
-
 /*# sourceMappingURL=user_details.css.map */

@@ -6,8 +6,10 @@
   height: 290px;
   background-color: white;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  perspective: 40px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  -webkit-perspective: 40px;
+          perspective: 40px;
   position: absolute;
   left: 35%;
   z-index: 5;
@@ -23,6 +25,7 @@
   cursor: pointer;
   position: absolute;
 }
+
 .close-btn:hover {
   color: grey;
 }
@@ -33,6 +36,7 @@
   left: 42.5%;
   z-index: 2;
 }
+
 .face .fa {
   font-size: 5rem;
 }
@@ -86,14 +90,19 @@
   left: 25%;
   outline: 0;
   border: none;
-  box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
-  transition: all 0.5s ease-in-out;
+  -webkit-box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
+          box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
   padding: 12px 0;
   cursor: pointer;
 }
+
 .button-box:hover {
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .blue-btn {
@@ -101,6 +110,7 @@
   color: #FCFCFC;
   font-weight: 100;
 }
+
 .blue-btn:hover {
   background-color: #3969ac;
 }
@@ -110,8 +120,8 @@
   color: #FCFCFC;
   font-weight: 100;
 }
+
 .red-btn:hover {
   background-color: #e26a6a;
 }
-
 /*# sourceMappingURL=success_message.css.map */

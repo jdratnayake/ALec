@@ -1,10 +1,10 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -48,6 +48,7 @@ header {
   width: 78px;
   background: #19345d;
   padding: 6px 14px;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -62,12 +63,17 @@ header {
 
 .siderbar .logo_content .logo {
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 50px;
   width: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -96,7 +102,8 @@ header {
   width: 50px;
   text-align: center;
   line-height: 50px;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .siderbar.active #btn {
@@ -120,14 +127,17 @@ header {
   position: absolute;
   left: 122px;
   top: 0;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 6px;
   height: 35px;
   width: 122px;
   background: #fff;
   line-height: 35px;
   text-align: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0s;
   transition: 0s;
   opacity: 0;
   pointer-events: none;
@@ -139,6 +149,7 @@ header {
 }
 
 .siderbar ul li:hover .tooltip {
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 1;
   top: 50%;
@@ -161,9 +172,14 @@ header {
 
 .siderbar ul li a {
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-decoration: none;
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border-radius: 12px;
   white-space: nowrap;
@@ -185,6 +201,7 @@ header {
 .siderbar .links_name {
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -206,6 +223,7 @@ header {
   padding: 10px 6px;
   height: 60px;
   background: #19345d;
+  -webkit-transition: all 0.4 ease;
   transition: all 0.4 ease;
 }
 
@@ -214,8 +232,12 @@ header {
 }
 
 .profile_content .profile .profile_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0;
   pointer-events: none;
   white-space: nowrap;
@@ -225,9 +247,11 @@ header {
   opacity: 1;
   pointer-events: auto;
   width: 76%;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   cursor: pointer;
 }
+
 .siderbar.active .profile .profile_details:hover {
   text-decoration: underline;
 }
@@ -235,7 +259,8 @@ header {
 .profile .profile_details img {
   height: 45px;
   width: 45px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 12px;
 }
 
@@ -256,17 +281,20 @@ header {
   position: absolute;
   bottom: 5px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   min-width: 45px;
   line-height: 50px;
   font-size: 20px;
   border-radius: 12px;
   text-align: center;
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   background: #19345d;
   cursor: pointer;
   height: 45px;
 }
+
 .profile #log_out:hover {
   color: #184e77;
   background: #fff;
@@ -276,6 +304,7 @@ header {
   left: 88%;
   background: none;
 }
+
 .siderbar.active .profile #log_out:hover {
   color: #184e77;
   background: #fff;
@@ -295,11 +324,13 @@ header {
 .home-content {
   height: 100%;
   width: calc(100% - 78px);
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-left: 78px;
   padding-top: 2px;
   /* background-color: #1d1b31; */
 }
+
 .home-content .error {
   color: red;
   font-size: 80%;
@@ -308,6 +339,7 @@ header {
 
 .home-content-expand {
   width: calc(100% - 240px);
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-left: 240px;
 }
@@ -353,24 +385,31 @@ header {
   background-color: #19345d;
   color: white;
   /* padding: 20px;
-  margin: 10px;  */
+    margin: 10px;  */
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-transition: 200ms opacity ease;
   transition: 200ms opacity ease;
   z-index: 10;
   /* padding: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, .05);
-  transition: 200ms opacity ease;
-
-
-
-  box-shadow: 0 12px 48px 4px rgb(0 0 0 / 12%); */
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .05);
+    transition: 200ms opacity ease;
+    
+    
+    
+    box-shadow: 0 12px 48px 4px rgb(0 0 0 / 12%); */
 }
 
 .bell-notification {
@@ -403,7 +442,7 @@ ul.breadcrumb li {
 ul.breadcrumb li + li:before {
   padding: 8px;
   color: black;
-  content: "/ ";
+  content: "/\00a0";
 }
 
 ul.breadcrumb li a {
@@ -426,6 +465,7 @@ footer {
   width: 100%;
   background: #eceff1;
   color: #546e7a;
+  display: -ms-grid;
   display: grid;
   place-items: center;
   /* padding: 2em;  */
@@ -440,6 +480,7 @@ footer p {
 }
 
 .sticky-footer {
+  position: -webkit-sticky;
   position: sticky;
   top: 100%;
 }
@@ -504,6 +545,7 @@ footer p {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
   transition: background-color 0.6s ease;
 }
 
@@ -521,32 +563,45 @@ footer p {
 
 @-webkit-keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: .4;
   }
   to {
     opacity: 1;
   }
 }
+
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: .4;
   }
   to {
     opacity: 1;
   }
 }
+
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {
     font-size: 11px;
   }
 }
+
+@media only screen and (max-width: 1366px) {
+  .slideshow-container .mySlides img {
+    height: 270px;
+  }
+}
+
 /*==============================================================================*/
 /*SLIDE SHOW - END*/
 /*==============================================================================*/
 .navigation-item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   width: calc(100% - 240px);
   margin: 3rem auto;
 }
@@ -566,6 +621,7 @@ footer p {
   background-color: #fff;
   color: #19345d;
   border: 2px solid #19345d;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -609,23 +665,28 @@ footer p {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 200px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 10px;
   border-bottom: 2px solid #19345d;
 }
+
 .dropdown-content a {
   color: black;
   padding: 15px;
   text-decoration: none;
   display: block;
 }
+
 .dropdown-content a:hover {
   background-color: rgba(54, 98, 159, 0.15);
 }
+
 .dropdown-content a:hover:first-child {
   border-radius: 10px 10px 0 0;
 }
+
 .dropdown-content a:hover:last-child {
   border-radius: 0 0 10px 10px;
 }
@@ -667,24 +728,31 @@ footer p {
   border: 1px solid #888;
   width: 50%;
 }
+
 .modal-content .modal-header {
   padding: 8px 16px;
   background-color: #325C97;
   color: white;
 }
+
 .modal-content .modal-body {
   padding: 16px;
 }
+
 .modal-content .modal-body .radio-btn {
   margin-bottom: 20px;
   margin-left: 20px;
 }
+
 .modal-content .modal-body .radio-btn input, .modal-content .modal-body .radio-btn label, .modal-content .modal-body .radio-btn button {
   cursor: pointer;
 }
+
 .modal-content .modal-body form {
+  display: -ms-inline-grid;
   display: inline-grid;
 }
+
 .modal-content .modal-body form .upload-btn {
   background-color: #325C97;
   border: 2px solid #325C97;
@@ -698,15 +766,24 @@ footer p {
   font-size: 15px;
   max-width: 150px;
 }
+
 .modal-content .modal-body form .upload-btn:hover {
   color: white;
   background-color: #19345d;
   border: 2px solid #19345d;
 }
+
 .modal-content .enrollment-file-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .assign-btn {
@@ -722,6 +799,7 @@ footer p {
   font-size: 15px;
   max-width: 150px;
 }
+
 .assign-btn:hover {
   color: white;
   background-color: #19345d;
@@ -751,17 +829,22 @@ footer p {
 /*==============================================================================*/
 .year-selection, .course-selection {
   margin: 10px 0 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .year-selection label, .course-selection label {
   color: dimgrey;
   margin-right: 5px;
 }
+
 .year-selection select, .course-selection select {
   border: 1px solid #2B4F82;
   padding: 2px 22px;
   border-radius: 8px;
 }
+
 .year-selection select option:hover, .course-selection select option:hover {
   background-color: #e8f8ff;
 }
@@ -769,5 +852,4 @@ footer p {
 /*==============================================================================*/
 /*YEAR SELECTION - END*/
 /*==============================================================================*/
-
 /*# sourceMappingURL=home.css.map */
