@@ -69,7 +69,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
 
-            url: "http://localhost/ALec/manageUser/search/" + data + "/" + operation + "/" + type + "/" + courseId,
+            url: "http://localhost/ALec/manageUser/search/" + operation + "/" + type + "/" + courseId + "/" + data,
             dataType: "html",
 
             success: function (response) {
@@ -88,9 +88,12 @@ $(document).ready(function () {
             operation = "Remove";
         }
 
-        if (search != "") {
-            loadData(search, operation, type, courseId);
-        }
+        // if (search != "") {
+        //     loadData(search, operation, type, courseId);
+        // }
+
+        loadData(search, operation, type, courseId);
+
     });
 
     // LIVE SEARCH END
