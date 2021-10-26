@@ -10,6 +10,7 @@
 
     <!-- CSS File HOME-->
     <?php linkCSS("course_profile"); ?>
+    <?php linkCSS("success_message"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.png"); ?>
@@ -19,6 +20,9 @@
 <body onload="setDefaultCookieValues()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
+
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
@@ -112,6 +116,8 @@
     <?php linkPhp("notification"); ?>
 
     <?php linkJS("courseProfile"); ?>
+
+    <?php linkJS("successMessage"); ?>
 
 </body>
 
