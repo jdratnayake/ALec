@@ -124,4 +124,47 @@
 .red-btn:hover {
   background-color: #e26a6a;
 }
+
+.button-boxes {
+  position: absolute;
+  top: 73%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.confirm-btn {
+  width: 150px;
+  margin: 0 5px;
+  padding: 10px 0;
+  font-size: 0.8em;
+  border-radius: 20px;
+  top: 73%;
+  outline: 0;
+  border: none;
+  -webkit-box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
+          box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.cancel-btn {
+  background-color: darkgrey;
+}
+
+.cancel-btn:hover {
+  background-color: #818080;
+}
 /*# sourceMappingURL=success_message.css.map */

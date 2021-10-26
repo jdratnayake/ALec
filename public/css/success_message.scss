@@ -130,4 +130,38 @@ $success_font: 'Lato', sans-serif;
   }
 }
 
+//Confirmation message styles
 
+.button-boxes{
+  position: absolute;
+  top: 73%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.confirm-btn{
+  width: 150px;
+  margin: 0 5px;
+  padding: 10px 0;
+  font-size: 0.8em;
+  border-radius: 20px;
+  top: 73%;
+  outline: 0;
+  border: none;
+  box-shadow: 2px 2px 10px rgba($dark, .5);
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all .3s ease-in-out;
+  }
+}
+
+.cancel-btn{
+  background-color: $cancel_button;
+  &:hover{
+    background-color: $cancel_button_hover;
+  }
+}
