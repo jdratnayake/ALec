@@ -118,7 +118,7 @@ header {
   position: relative;
   height: 50px;
   width: 100%;
-  margin: 0 5px;
+  margin: 0;
   list-style: none;
   line-height: 50px;
 }
@@ -334,6 +334,7 @@ header {
 .home-content .error {
   color: red;
   font-size: 80%;
+  font-weight: normal;
 }
 
 .home-content-expand {
@@ -430,6 +431,7 @@ ul.breadcrumb {
   list-style: none;
   background-color: #eeeeee61;
   margin-bottom: 30px;
+  margin-left: 0 !important;
 }
 
 ul.breadcrumb li {
@@ -581,13 +583,14 @@ footer p {
   border: 2px solid #dd5555;
 }
 
-.dlt i {
-  padding-right: 10px;
-}
-
 .dlt:hover {
   background-color: #f7d4d4a1;
-  border: 2px solid #f7d4d4a1;
+  border: 2px solid #dd5555;
+  color: #dd5555;
+}
+
+.dlt i {
+  padding-right: 10px;
 }
 
 .done {

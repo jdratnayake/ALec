@@ -118,7 +118,7 @@ header {
   position: relative;
   height: 50px;
   width: 100%;
-  margin: 0 5px;
+  margin: 0;
   list-style: none;
   line-height: 50px;
 }
@@ -334,6 +334,7 @@ header {
 .home-content .error {
   color: red;
   font-size: 80%;
+  font-weight: normal;
 }
 
 .home-content-expand {
@@ -430,6 +431,7 @@ ul.breadcrumb {
   list-style: none;
   background-color: #eeeeee61;
   margin-bottom: 30px;
+  margin-left: 0 !important;
 }
 
 ul.breadcrumb li {
@@ -491,27 +493,8 @@ footer p {
   width: 80%;
   -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
           box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-  margin: auto auto 30px auto;
-  height: 87%;
-  background-color: #e8f8ff;
-}
-
-.forum-container header {
-  background-color: #2B4F82;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
   margin: auto;
-  width: 100%;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-}
-
-.forum-container h2 {
-  margin: 10px 0;
+  height: 75%;
 }
 
 .forum-container form {
@@ -541,7 +524,7 @@ footer p {
   width: 100%;
   padding: 6px 12px;
   color: #495057FF;
-  background-color: #FFFFFFFF;
+  background-color: rgba(0, 0, 0, 0.05);
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -549,6 +532,7 @@ footer p {
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  border-bottom-width: 2px;
 }
 
 .forum-container form .form-group .right-side .input-box:hover {

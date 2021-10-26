@@ -68,7 +68,9 @@ class AlecFramework
     public function getSession($sessionName)
     {
         if (!empty($sessionName)) {
-            return $_SESSION[$sessionName];
+            if (isset($_SESSION[$sessionName])) {
+                return $_SESSION[$sessionName];
+            }
         }
     }
 

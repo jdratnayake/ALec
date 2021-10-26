@@ -11,6 +11,7 @@ class PreviewQuiz extends AlecFramework
 
     public function index($quizId)
     {
+        $data["bread"]["courseDetails"] = $this->previewQuizModel->getCourseDetails($quizId);
         $data["courseName"] = $this->previewQuizModel->getCourseName($quizId);
         $data["quizDetails"] = $this->previewQuizModel->getQuizDetails($quizId);
         $data["questions"] = $this->previewQuizModel->getQuizQuestionsSummary($quizId);

@@ -12,13 +12,18 @@ class CreateQuizDashboard extends AlecFramework
     public function index()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // var_dump(array_filter($_POST));
+            // var_dump($_POST);
             // return true;
+            if (isset($_POST["create-quiz"])) {
+                $status = "create";
+            } else if (isset($_POST["draft-quiz"])) {
+                $status = "draft";
+            }
+
 
             $count = $_POST["type"];
 
             $quizName = $_POST["quiz-name"];
-            $status = "false";
             $lecturerId = $this->getSession("userId");
             $topicId = $_POST["topic"];
 
@@ -90,6 +95,11 @@ class CreateQuizDashboard extends AlecFramework
                     $points = $_POST["q{$questionNo}_shortanswer_point"];
                     $this->createQuizDashboardModel->insertChoice($questionId, $quizId, $choice, $points);
                 }
+            }
+
+            if ($status == "create") {
+                $this->redirect("previewQuiz/index/{$quizId}");
+            } else if ($status == "draft") {
             }
         }
 

@@ -89,8 +89,14 @@ class UserEdit extends AlecFramework
 
             if ($numberOfErrors == 0) {
                 $this->userEditModel->updateUser($email, $regNo, $fName, $lName, $password, $user_id, $type, $passwordSignal);
+
+                if ($type == 2) {
+                    $this->setSession("successMessageStatus", 2);
+                } else if ($type == 3) {
+                    $this->setSession("successMessageStatus", 3);
+                }
+
                 $this->redirect("userProfile/index/${user_id}");
-                // echo "<h1 align='center'>$password</h1>";
             } else {
                 $data["errors"] = $errors;
             }

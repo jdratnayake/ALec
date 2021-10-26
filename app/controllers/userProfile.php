@@ -11,6 +11,19 @@ class UserProfile extends AlecFramework
 
     public function index($user_id)
     {
+        $data["success"] = "";
+
+        $successSignal = $this->getSession("successMessageStatus");
+
+        if (isset($successSignal)) {
+            if ($successSignal == "2") {
+                $data["success"] = "Lecturer Edited Successfully";
+            } else if ($successSignal == "3") {
+                $data["success"] = "Student Edited Successfully";
+            }
+            $this->unsetSession("successMessageStatus");
+        }
+
         $type = $this->userProfileModel->getType($user_id);
 
         //user details

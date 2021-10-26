@@ -34,6 +34,8 @@ $light_color: #FFFFFF;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             }
 
+            p{color: gray;}
+
             .add-topic{
                 background-color: $blue_var_1;
                 border: 2px solid $blue_var_1;
@@ -45,7 +47,7 @@ $light_color: #FFFFFF;
                 border-radius: 5px;
                 font-weight: bold;
                 padding: 10px 50px;
-                margin: 32px 0 5px 5px;
+                margin: 40px 0 20px 0;
 
                 &:hover{
                     background-color: $blue_var_3;
@@ -120,7 +122,7 @@ $light_color: #FFFFFF;
 
                 .active{
                     background-color: $blue_var_4;
-                    border: 1px solid $blue_var_2;
+                    border: 1px solid $blue_var_4;
 
                     &::after{
                         content: "\2212";
@@ -128,19 +130,48 @@ $light_color: #FFFFFF;
                 }
 
                 .content {
-                    padding: 0 18px;
+                    padding: 0 8px;
                     max-height: 0;
                     overflow: hidden;
                     transition: max-height 0.2s ease-out;
                     background-color: #f1f1f1;
                     border-radius: 8px;
 
+                    .button-set{
+                        padding-top: 8px;
+
+                        .edit-btn, .dlt-btn{
+                            color: white;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            padding: 2px 4px;
+                            font-size: 0.8em;
+                            i{margin-right: 8px;}
+                        }
+                        .edit-btn{
+                            border: 2px solid $action_button;
+                            background-color: $action_button;
+                            &:hover{
+                                background-color: $action_button_hover;
+                                border-color: $action_button_hover;
+                            }
+                        }
+                        .dlt-btn{
+                            background-color: $delete_button;
+                            border: $delete_button_border;
+                            &:hover{
+                                background-color: $delete_button_hover;
+                                color: $delete_button_hover_color;
+                            }
+                        }
+                    }
                     .quiz-head{
                         margin-top: 10px;
                         font-size: 20px;
                         font-weight: 400;
                         border-bottom: 2px solid #b2b2b2;
                         display: block;
+                        padding: 0 10px;
                     }
                     ul{
                         list-style-type:none;

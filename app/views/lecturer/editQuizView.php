@@ -1,3 +1,8 @@
+<?php
+$courseId = $data["bread"]["courseDetails"]["course_id"];
+$courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,18 +27,20 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb" style="margin-left: 5%">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-        <li>Edit quiz</a></li>
+        <li><a href="http://localhost/ALec/lecturerCoursePage/index">My Course</a></li>
+        <li><a href="<?php echo BASEURL . "/lecturerTopicPage/index/" . $courseId ?>"><?php echo $courseName; ?></a></li>
+        <li><a href="<?php echo BASEURL . "/previewQuiz/index/" . $data["quizId"] ?>"> Preview Quiz </a></li>
+        <li>Edit Quiz</li>
     </ul>
 
     <div class="form-content">
         <!-- Quiz heading -->
         <header>
-            <h2>SCS 1205 - Operating Systems</h2>
+            SCS 1205 - Operating Systems
         </header>
 
         <div class="quiz-name">
             <h2>Assignment 01</h2>
-
         </div>
 
         <!-- Quiz basic details -->

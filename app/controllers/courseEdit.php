@@ -45,6 +45,9 @@ class CourseEdit extends AlecFramework
             if ($numberOfErrors == 0) {
                 //Update data
                 $this->courseEditModel->updateCourse($id, $name, $description, $year);
+
+                $this->setSession("successMessageStatus", 1);
+
                 $this->redirect("courseProfile/index/{$id}");
             } else {
                 $data["errors"] = $errors;

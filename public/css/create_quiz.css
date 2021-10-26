@@ -118,7 +118,7 @@ header {
   position: relative;
   height: 50px;
   width: 100%;
-  margin: 0 5px;
+  margin: 0;
   list-style: none;
   line-height: 50px;
 }
@@ -334,6 +334,7 @@ header {
 .home-content .error {
   color: red;
   font-size: 80%;
+  font-weight: normal;
 }
 
 .home-content-expand {
@@ -430,6 +431,7 @@ ul.breadcrumb {
   list-style: none;
   background-color: #eeeeee61;
   margin-bottom: 30px;
+  margin-left: 0 !important;
 }
 
 ul.breadcrumb li {
@@ -548,11 +550,17 @@ footer p {
 
 .form-content .details .button-set {
   margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .form-content .details .button-set .finish {
   height: 48px;
-  width: 100%;
+  width: 49%;
   border-radius: 5px;
   font-size: large;
   border: none;
@@ -699,26 +707,32 @@ footer p {
 
 /* -------CLOSE BUTTON START------------- */
 .close {
-  border-radius: 5px;
-  border: 2px solid #dd5555;
-  color: white;
-  background-color: #dd5555;
   position: relative;
-  left: 78%;
-  top: 123px;
+  top: 85px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   overflow: hidden;
-  padding: 0 10px;
-  cursor: pointer;
   height: 40px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.close:hover {
+.close button {
+  border-radius: 5px;
+  border: 2px solid #dd5555;
+  color: white;
+  background-color: #dd5555;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.close button:hover {
   color: #dd5555;
   background-color: #f7d4d4a1;
 }

@@ -13,6 +13,7 @@
   position: absolute;
   left: 35%;
   z-index: 5;
+  display: block;
 }
 
 .close-btn {
@@ -40,7 +41,7 @@
   font-size: 5rem;
 }
 
-.message {
+.message-content {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -56,15 +57,17 @@
   font-size: large;
 }
 
-.success {
+.success-msg {
   color: #305890;
+  text-transform: uppercase;
 }
 
-.error {
+.error-msg {
   color: #dd5555;
+  text-transform: uppercase;
 }
 
-p {
+.message-txt {
   margin-top: 0;
   font-size: 0.8em;
   font-weight: 100;
@@ -72,14 +75,11 @@ p {
   letter-spacing: 1px;
 }
 
-span, h1 {
-  font-size: 0.9em;
-  font-weight: 100;
+.tag-txt {
+  font-size: 1.1em;
   letter-spacing: 3px;
   padding-top: 5px;
-  color: #FCFCFC;
   padding-bottom: 5px;
-  text-transform: uppercase;
 }
 
 .button-box {
@@ -94,7 +94,7 @@ span, h1 {
           box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
-  padding: 16px 0;
+  padding: 12px 0;
   cursor: pointer;
 }
 
@@ -107,6 +107,8 @@ span, h1 {
 
 .blue-btn {
   background-color: #305890;
+  color: #FCFCFC;
+  font-weight: 100;
 }
 
 .blue-btn:hover {
@@ -115,9 +117,54 @@ span, h1 {
 
 .red-btn {
   background-color: #dd5555;
+  color: #FCFCFC;
+  font-weight: 100;
 }
 
 .red-btn:hover {
   background-color: #e26a6a;
+}
+
+.button-boxes {
+  position: absolute;
+  top: 73%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.confirm-btn {
+  width: 150px;
+  margin: 0 5px;
+  padding: 10px 0;
+  font-size: 0.8em;
+  border-radius: 20px;
+  top: 73%;
+  outline: 0;
+  border: none;
+  -webkit-box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
+          box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.cancel-btn {
+  background-color: darkgrey;
+}
+
+.cancel-btn:hover {
+  background-color: #818080;
 }
 /*# sourceMappingURL=success_message.css.map */

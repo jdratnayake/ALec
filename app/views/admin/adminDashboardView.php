@@ -11,6 +11,8 @@
     <!-- CSS file -->
     <?php linkCSS('home'); ?>
 
+    <?php linkCSS("success_message"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon('logo1.png'); ?>
 </head>
@@ -18,6 +20,10 @@
 <body>
 
     <?php linkPhp("navigationBarAdmin"); ?>
+
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
+
     <div class="navigation-item-container">
 
         <div class="navigation-tab" id="toolkit-btn">
@@ -196,7 +202,7 @@
                         </div>
 
                         <div class="course-selection">
-                            <label for="course">Select the course module</label>
+                            <label for="COURSE">Select the course module</label>
                             <select name="course" id="COURSE">
                                 <!-- <option value="null" selected>No course selected</option> -->
                             </select>
@@ -239,19 +245,16 @@
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
             <img <?php srcIMG("welcome_picture1.svg") ?> class="center-img">
-            <!-- <div class="text">Caption Text</div> -->
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
             <img <?php srcIMG("welcome_picture2.svg") ?> class="center-img">
-            <!-- <div class="text">Caption Two</div> -->
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
             <img <?php srcIMG("welcome_picture3.svg") ?> class="center-img">
-            <!-- <div class="text">Caption Three</div> -->
         </div>
 
     </div>
@@ -280,6 +283,8 @@
     <?php linkJS("adminDashboardCourseDisplay"); ?>
 
     <?php linkJS("adminDashboardModal"); ?>
+
+    <?php linkJS("successMessage"); ?>
 </body>
 
 </html>

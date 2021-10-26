@@ -1,5 +1,12 @@
 <?php
 
+// 1-1 = lecturer insert
+// 1-2 = student insert
+// 2-1 = student enrollment
+// 2-2 = student remove
+// 3-1 = lecturer delete
+// 3-2 = student delete
+
 class AdminDashboard extends AlecFramework
 {
     public function __construct()
@@ -11,16 +18,35 @@ class AdminDashboard extends AlecFramework
 
     public function index()
     {
-        $this->view("admin/adminDashboardView");
+        $successSignal = $this->getSession("successMessageStatus");
+        $data["success"] = "";
+
+        if (isset($successSignal)) {
+            if ($successSignal == "1-1") {
+                $data["success"] = "Lecturers Were Added Successfully";
+            } else if ($successSignal == "1-2") {
+                $data["success"] = "Students Were Added Successfully";
+            } else if ($successSignal == "2-1") {
+                $data["success"] = "Students Were Added to Course Successfully";
+            } else if ($successSignal == "2-2") {
+                $data["success"] = "Students Were Removed from Course Successfully";
+            } else if ($successSignal == "3-1") {
+                $data["success"] = "Lecturers Were Deleted Successfully";
+            } else if ($successSignal == "3-2") {
+                $data["success"] = "Students Were Deleted Successfully";
+            }
+        }
+
+        $this->unsetSession("successMessageStatus");
+
+        $this->view("admin/adminDashboardView", $data);
     }
 
+    //User insertion
     public function submit()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $type = $_POST["upload-user-type"];
-
-            // echo $type;
-            // return 0;
 
             // FILE UPLOAD START
 
@@ -107,9 +133,14 @@ class AdminDashboard extends AlecFramework
                 fclose($fp);
             }
 
-            //FILE PROCESS END
+            if ($type == "2") {
+                $this->setSession("successMessageStatus", "1-1");
+            } else if ($type == "3") {
+                $this->setSession("successMessageStatus", "1-2");
+            }
 
-            $this->index();
+            //FILE PROCESS END
+            $this->redirect("adminDashboard/index");
         }
     }
 
@@ -143,12 +174,13 @@ class AdminDashboard extends AlecFramework
 
     public function manageCourseParticiption()
     {
-        // var_dump($_POST);
-        // return 0;
-        // echo  . "<br>";
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            // var_dump($_POST);
+            // return 0;
+
             $action = $_POST["action"];
-            $courseId = $_POST["COURSE"];
+            $courseId = $_POST["course"];
 
             $mode = $_POST["user-type"];
 
@@ -180,7 +212,13 @@ class AdminDashboard extends AlecFramework
             }
         }
 
-        $this->index();
+        if ($action == "assign") {
+            $this->setSession("successMessageStatus", "2-1");
+        } else if ($action == "remove") {
+            $this->setSession("successMessageStatus", "2-2");
+        }
+
+        $this->redirect("adminDashboard/index");
     }
 
     public function submitEnrollment($action, $courseId)
@@ -360,6 +398,12 @@ class AdminDashboard extends AlecFramework
             }
 
             //FILE PROCESS END
+
+            if ($type == 2) {
+                $this->setSession("successMessageStatus", "3-1");
+            } else if ($type == 3) {
+                $this->setSession("successMessageStatus", "3-2");
+            }
 
             $this->redirect("adminDashboard/index");
         }

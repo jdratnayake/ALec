@@ -3,7 +3,7 @@
 class userDetailsModel extends Database
 {
     const DISPLAY_PAGINATION_COUNT = 10;
-    const RECORDS_PER_PAGE = 5;
+    const RECORDS_PER_PAGE = 20;
 
     public function getFilteredUserDetails($type = "all", $page = 1)
     {
@@ -34,7 +34,8 @@ class userDetailsModel extends Database
         }
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        $count = 1;
+        //$startFrom initial value is zero
+        $count = $startFrom + 1;
         $output = "";
         while ($row = mysqli_fetch_assoc($result)) {
 
@@ -109,7 +110,7 @@ class userDetailsModel extends Database
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        $count = 1;
+        $count = $startFrom + 1;
         $output = "";
         while ($row = mysqli_fetch_assoc($result)) {
 

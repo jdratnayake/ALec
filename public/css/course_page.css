@@ -118,7 +118,7 @@ header {
   position: relative;
   height: 50px;
   width: 100%;
-  margin: 0 5px;
+  margin: 0;
   list-style: none;
   line-height: 50px;
 }
@@ -334,6 +334,7 @@ header {
 .home-content .error {
   color: red;
   font-size: 80%;
+  font-weight: normal;
 }
 
 .home-content-expand {
@@ -430,6 +431,7 @@ ul.breadcrumb {
   list-style: none;
   background-color: #eeeeee61;
   margin-bottom: 30px;
+  margin-left: 0 !important;
 }
 
 ul.breadcrumb li {
@@ -490,9 +492,15 @@ footer p {
 /*CARDS - START*/
 /*==============================================================================*/
 .center {
-  margin: 5% auto;
+  margin: 3% auto 3%;
   width: 50%;
   padding: 10px;
+}
+
+.header-div {
+  width: 100%;
+  margin: 5% auto 0 8%;
+  padding: 8px;
 }
 
 .card-container {

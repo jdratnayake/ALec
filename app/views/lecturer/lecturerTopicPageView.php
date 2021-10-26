@@ -21,15 +21,18 @@
     <ul class="breadcrumb" style="margin-left: 5%">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/lecturerCoursePage/index">My Course</a></li>
-        <li><?php echo $data["courseName"]; ?></li>
+        <li><?php echo explode("-", $data["courseName"])[0]; ?></li>
     </ul>
 
     <div class="topic-container center">
         <header><?php echo $data["courseName"]; ?></header>
 
-        <button id="edit-topic" class="add-topic edit-topic" type="button" value="edit-topic">Edit topic</button>
-        <button id="exit-edit" class="add-topic exit-edit" type="button" value="exit-edit">Save</button>
-        <button class="add-topic" type="button" value="add-topic">Add topic</button>
+        <p>
+            This is the course description...
+        </p>
+
+        <button class="add-topic" type="button" value="add-topic" onclick="location.href='<?php echo BASEURL . '/addTopic/index/' . $data['bread']['courseId'] ?>'">
+            Add topic</button>
 
         <?php
 
@@ -39,14 +42,14 @@
             "<div class='topic'>
                 <button class='collapsible'>
                     <span>
-                        <span class='hidden'>
-                            <i onclick='' class='fa fa-trash' aria-hidden='true'></i>
-                            <i onclick='' class='fa fa-pencil' aria-hidden='true'></i>
-                        </span>
                         {$row['topic_name']}
                     </span>
                 </button>
                 <div class='content'>
+                <div class='button-set'>
+                    <button class='edit-btn'><i class='fa fa-pencil' aria-hidden='true'></i>Edit topic</button>
+                    <button class='dlt-btn'><i class='fa fa-trash' aria-hidden='true'></i>Delete topic</button>
+                </div>
                 <p class='quiz-head'>Quizzes</p>
                 <ul>";
 

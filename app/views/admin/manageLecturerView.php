@@ -11,6 +11,8 @@
     <!-- CSS File HOME-->
     <?php linkCSS("manage_user"); ?>
 
+    <?php linkCSS("success_message"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.png"); ?>
 
@@ -19,6 +21,9 @@
 <body onload="checkCookie()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
+
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
@@ -102,4 +107,6 @@
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("manageLecturer"); ?>
+
+    <?php linkJS("successMessage"); ?>
 </body>

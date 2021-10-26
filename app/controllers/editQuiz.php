@@ -11,6 +11,7 @@ class EditQuiz extends AlecFramework
 
     public function index($quizId)
     {
+        $data["bread"]["courseDetails"] = $this->editQuizModel->getCourseDetails($quizId);
         $data["quizId"] = $quizId;
         $data["quizQuestionSummary"] = $this->editQuizModel->getQuizQuestionsSummary($quizId);
         $data["quizQuestionChoices"] = $this->editQuizModel->getQuizQuestionChoices($quizId);

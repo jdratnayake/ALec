@@ -10,6 +10,7 @@
 
     <!-- CSS File HOME-->
     <?php linkCSS("course_profile"); ?>
+    <?php linkCSS("success_message"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.png"); ?>
@@ -19,6 +20,9 @@
 <body onload="setDefaultCookieValues()">
 
     <?php linkPhp("navigationBarAdmin"); ?>
+
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
@@ -47,9 +51,10 @@
                     ?>
 
                     <?php
-                    echo " <button type='button' name='dlt-user' value='Delete user' onclick=location.href='";
-                    echo BASEURL . '/courseProfile/deleteCourse/' . $data["courseDetails"]["course_id"];
-                    echo "'>";
+                    $link = "'" .  "courseProfile/deleteCourse/" . $data["courseDetails"]["course_id"] . "'";
+
+                    echo
+                    '<button type="button" name="dlt-user" value="Delete user" onclick="deleteFunction(' . $link . ')">';
                     echo "Delete Course</button>";
                     ?>
                 </div>
@@ -106,12 +111,15 @@
 
     </div>
 
-
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
 
     <?php linkJS("courseProfile"); ?>
+
+    <?php linkJS("successMessage"); ?>
+
+    <?php linkJS("deleteMessage"); ?>
 
 </body>
 
