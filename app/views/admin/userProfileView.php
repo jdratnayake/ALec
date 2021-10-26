@@ -11,6 +11,8 @@
     <!-- CSS File HOME-->
     <?php linkCSS("profile_details"); ?>
 
+    <?php linkCSS("success_message"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.png"); ?>
 
@@ -19,6 +21,9 @@
 <body>
 
     <?php linkPhp("navigationBarAdmin"); ?>
+
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
@@ -99,6 +104,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
+
+    <?php linkJS("successMessage"); ?>
 </body>
 
 </html>
