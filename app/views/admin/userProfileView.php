@@ -55,8 +55,10 @@
                     ?>
 
                     <?php
-                    echo " <button type='button' name='dlt-user' value='Delete user' onclick=location.href='";
-                    echo BASEURL . '/userProfile/deleteUser/' . $data["userDetails"]["user_id"];
+                    $link = "'" .  "userProfile/deleteUser/" . $data["userDetails"]["user_id"] . "'";
+
+                    echo " <button type='button' name='dlt-user' value='Delete user' ";
+                    echo 'onclick="deleteFunction(' . $link . ')"';
                     echo "'>";
                     echo "Delete User</button>";
                     ?>
@@ -106,6 +108,8 @@
     <?php linkPhp("notification"); ?>
 
     <?php linkJS("successMessage"); ?>
+
+    <?php linkJS("deleteMessage"); ?>
 </body>
 
 </html>
