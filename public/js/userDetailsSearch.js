@@ -4,6 +4,14 @@ document.getElementById("search").addEventListener('submit', function (event) {
 
 
 $(document).ready(function () {
+    function colorTheLabel(element) {
+        $("#all").removeClass("active-type");
+        $("#stu").removeClass("active-type");
+        $("#lec").removeClass("active-type");
+
+        $(element).addClass("active-type");
+    }
+
     // LIVE SEARCH START
 
     function loadData(data) {
@@ -26,6 +34,13 @@ $(document).ready(function () {
 
         if (search != "") {
             $(".pagination-container").hide();
+            colorTheLabel("#all");
+
+            //Hide student drop down
+            if (!$("#year-selection").hasClass("hidden-year")) {
+                $("#year-selection").addClass("hidden-year");
+            }
+
             loadData(search);
         } else {
             $(".pagination-container").show();
