@@ -6,6 +6,10 @@ const subject = document.getElementById("subject");
 const question = document.getElementById("question");
 let regiter = document.getElementById("topicSubmit");
 
+document.getElementById("topic-post-cancel-btn").addEventListener("click", function (event) {
+    event.preventDefault();
+})
+
 regiter.addEventListener('submit', function (event) {
     event.preventDefault();
 

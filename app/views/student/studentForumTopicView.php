@@ -22,7 +22,7 @@ $courseCode = explode("-", $temp)[0];
 
 <body>
 
-    <?php linkPhp("navigationBarLecturer"); ?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">

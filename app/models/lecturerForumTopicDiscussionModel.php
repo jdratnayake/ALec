@@ -69,10 +69,32 @@ class LecturerForumTopicDiscussionModel extends Database
     {
         $query = "SELECT topic_id FROM forum_reply WHERE reply_id='$replyId' LIMIT 1";
         $result = mysqli_query($GLOBALS["db"], $query);
+        $topicId = mysqli_fetch_assoc($result)["topic_id"];
 
         $query = "DELETE FROM forum_reply WHERE reply_id='$replyId'";
         mysqli_query($GLOBALS["db"], $query);
 
-        return mysqli_fetch_assoc($result)["topic_id"];
+        $query = "SELECT * FROM forum_topic WHERE topic_id='$topicId' AND last_reply_id='$replyId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) == 1) {
+            $query = "SELECT * FROM forum_reply WHERE topic_id='$topicId' GROUP BY post_time DESC LIMIT 1";
+            $result = mysqli_query($GLOBALS["db"], $query);
+
+            if (mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_assoc($result);
+
+                $var1 = $row["reply_id"];
+                $var2 = $row["post_time"];
+
+                $query = "UPDATE forum_topic SET last_reply_id='$var1', updated_time='$var2' WHERE topic_id='$topicId'";
+            } else {
+                $query = "UPDATE forum_topic SET last_reply_id=NULL, updated_time=NULL WHERE topic_id='$topicId'";
+            }
+
+            mysqli_query($GLOBALS["db"], $query);
+        }
+
+        return $topicId;
     }
 }

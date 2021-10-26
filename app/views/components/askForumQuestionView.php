@@ -43,30 +43,31 @@
         <li><a href="
         http://localhost/ALec/lecturerCoursePageForum/index
         <?php
-            if ($data["userType"] == "lec") {
-                echo BASEURL . "/lecturerCoursePageForum/index";
-            } else if ($data["userType"] == "stu") {
-                echo BASEURL . "/studentCoursePageForum/index";
-            }
+        if ($data["userType"] == "lec") {
+            echo BASEURL . "/lecturerCoursePageForum/index";
+        } else if ($data["userType"] == "stu") {
+            echo BASEURL . "/studentCoursePageForum/index";
+        }
 
-            ?>
+        ?>
         ">Forum Course Page</a></li>
         <li><a href="
         <?php
-            if ($data["userType"] == "lec") {
-                echo BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] ;
-            } else if ($data["userType"] == "stu") {
-                echo BASEURL . "/studentForumTopic/index/" . $data["courseId"] ;
-            }
+        if ($data["userType"] == "lec") {
+            echo BASEURL . "/lecturerForumTopic/index/" . $data["courseId"];
+        } else if ($data["userType"] == "stu") {
+            echo BASEURL . "/studentForumTopic/index/" . $data["courseId"];
+        }
 
-            ?>
+        ?>
         ">Discussion Forum <?php echo $data["subjectCode"]; ?></a></li>
         <li>New discussion topic</li>
     </ul>
 
     <div class="forum-container">
         <header>
-<!--            Discussion Forum For --><?php //echo $data["subjectCode"]; ?>
+            <!--            Discussion Forum For --><?php //echo $data["subjectCode"]; 
+                                                    ?>
             New Discussion Topic
         </header>
 
@@ -87,10 +88,9 @@
                 </div>
             </div>
 
-            <button type="submit" value="submit" class="done cancel"
-                    onclick="<?php echo "location.href=" . "'" . BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] . "'" ?>">
+            <button type="submit" value="submit" class="done cancel" id="topic-post-cancel-btn" onclick="<?php echo "location.href=" . "'" . BASEURL . "/lecturerForumTopic/index/" . $data["courseId"] . "'" ?>">
                 Cancel</button>
-            <button type="submit" value="submit" class="done">Post to forum</button>
+            <button type="submit" value="submit" class="done">Post To Forum</button>
 
         </form>
 
