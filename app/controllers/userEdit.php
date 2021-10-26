@@ -30,27 +30,8 @@ class UserEdit extends AlecFramework
             $regNo = $_POST["regNo"];
             $fName = $_POST["fName"];
             $lName = $_POST["lName"];
-            $password = $_POST["password"];
             $user_id = $_POST["userID"];
             $type = $_POST["type"];
-
-            $passwordSignal = 0;
-            if (isset($_POST["changePassword"])) {
-                $passwordSignal = 1;
-
-                //Encrypy password
-                $password = password_hash($password, PASSWORD_DEFAULT);
-            }
-
-            // echo "<p align='center'>";
-            // echo $email . "<br>";
-            // echo $regNo . "<br>";
-            // echo $fName . "<br>";
-            // echo $lName . "<br>";
-            // echo $password . "<br>";
-            // echo $user_id . "<br>";
-            // echo $type . "<br>";
-            // echo "<p>";
 
             //Empty check
             if (empty($email)) $errors["email"] = "Email is required";
@@ -63,7 +44,6 @@ class UserEdit extends AlecFramework
             }
             if (empty($fName)) $errors["fName"] = "First Name is required";
             if (empty($lName)) $errors["lName"] = "Last Name is required";
-            if (isset($_POST["changePassword"]) and empty($password)) $errors["password"] = "Password is required";
 
             // Unique check
             if ($this->userEditModel->emailCheck($email, $user_id)) {
@@ -88,7 +68,7 @@ class UserEdit extends AlecFramework
             }
 
             if ($numberOfErrors == 0) {
-                $this->userEditModel->updateUser($email, $regNo, $fName, $lName, $password, $user_id, $type, $passwordSignal);
+                $this->userEditModel->updateUser($email, $regNo, $fName, $lName, $user_id, $type);
 
                 if ($type == 2) {
                     $this->setSession("successMessageStatus", 2);

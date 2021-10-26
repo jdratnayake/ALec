@@ -76,19 +76,6 @@
                         <div class="error" id="error"><?php echo $errors["lName"] ?></div>
                     </div>
 
-                    <div style="padding-top: 20px;">
-                        <input type="checkbox" name="changePassword" onclick="ShowHideDiv(this)" id="changePassword" value="1">
-                        <label for="changePassword">Change Password</label>
-                    </div>
-
-                    <div class="field" style="margin-top: 20px;">
-                        <label for="password">password</label>
-                        <input type="text" placeholder="Password" name="password" id="password" onfocusout="validatePassword()" style="display: none;">
-                        <div class="error" id="error"><?php echo $errors["password"] ?></div>
-                    </div>
-
-
-
                     <div class="field btn">
                         <div class="btn-layer"></div>
                         <input type="submit" value="Register">
@@ -125,18 +112,6 @@
                         <input type="text" placeholder="Last Name" name="lName" id="lName1" onfocusout="validateLastName1()" value='<?php echo $data["userDetails"]["last_name"]; ?>'>
                         <div class="error" id="error"><?php echo $errors["lName"] ?></div>
                     </div>
-
-                    <div style="padding-top: 20px;">
-                        <input type="checkbox" name="changePassword" onclick="ShowHideDiv1(this)" id="changePassword1" value="1">
-                        <label for="changePassword1">Change Password</label>
-                    </div>
-
-                    <div class="field">
-                        <label for="password1"></label>
-                        <input type="text" placeholder="Password" name="password" id="password1" onfocusout="validatePassword1()" style="display: none;">
-                        <div class="error" id="error"><?php echo $errors["password"] ?></div>
-                    </div>
-
 
                     <div class="field btn">
                         <div class="btn-layer"></div>

@@ -47,7 +47,7 @@ class UserEditModel extends Database
         return mysqli_fetch_assoc($result);
     }
 
-    public function updateUser($email, $regNo, $fName, $lName, $password, $user_id, $type, $passwordSignal)
+    public function updateUser($email, $regNo, $fName, $lName, $user_id, $type)
     {
         if ($type == 2) {
             $type = "lec";
@@ -56,13 +56,9 @@ class UserEditModel extends Database
         }
 
         //Update user data
-        if ($passwordSignal == 1) {
-            $query = "UPDATE user SET first_name='$fName', last_name='$lName', email='$email', pass='$password'
-                        WHERE user_id='$user_id'";
-        } else {
-            $query = "UPDATE user SET first_name='$fName', last_name='$lName', email='$email'
-                        WHERE user_id='$user_id'";
-        }
+        $query = "UPDATE user SET first_name='$fName', last_name='$lName', email='$email'
+                    WHERE user_id='$user_id'";
+
         mysqli_query($GLOBALS['db'], $query);
 
 
