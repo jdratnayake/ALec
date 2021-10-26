@@ -2,6 +2,7 @@
 
 // 1 = edit quiz
 // 2 = schedule quiz
+// 3 = new topic added
 
 class PreviewQuiz extends AlecFramework
 {
@@ -23,6 +24,8 @@ class PreviewQuiz extends AlecFramework
                 $data["success"] = "Quiz Edited Successfully";
             } else if ($successSignal == "2") {
                 $data["success"] = "Quiz Scheduled Successfully";
+            } else if ($successSignal == "3") {
+                $data["success"] = "New Topic Added Successfully";
             }
 
             $this->unsetSession("successMessageStatus");

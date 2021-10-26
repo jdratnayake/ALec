@@ -47,6 +47,8 @@ class AddTopic extends AlecFramework
                 $userId = $this->getSession("userId");
                 $this->addTopicModel->addNewTopic($courseId, $userId, $name, $description);
 
+                $this->setSession("successMessageStatus", 3);
+
                 $this->redirect("lecturerTopicPage/index/{$courseId}");
             } else {
                 $data["errors"] = $errors;
