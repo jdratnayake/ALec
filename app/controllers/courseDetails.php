@@ -11,6 +11,8 @@ class CourseDetails extends AlecFramework
 
     public function index($year = "all")
     {
+        $successSignal = $this->getSession("successMessageStatus");
+
         if (isset($successSignal) and $successSignal == "1") {
             $data["success"] = "Course Created Successfully";
             $this->unsetSession("successMessageStatus");

@@ -11,6 +11,8 @@
     <!-- CSS file -->
     <?php linkCSS('home'); ?>
 
+    <?php linkCSS("success_message"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon('logo1.png'); ?>
 </head>
@@ -18,6 +20,10 @@
 <body>
 
     <?php linkPhp("navigationBarAdmin"); ?>
+
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
+
     <div class="navigation-item-container">
 
         <div class="navigation-tab" id="toolkit-btn">
@@ -277,6 +283,8 @@
     <?php linkJS("adminDashboardCourseDisplay"); ?>
 
     <?php linkJS("adminDashboardModal"); ?>
+
+    <?php linkJS("successMessage"); ?>
 </body>
 
 </html>
