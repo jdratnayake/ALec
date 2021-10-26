@@ -8,13 +8,13 @@
 
     <title>ALec</title>
 
-    <?php linkCSS("success_message"); ?>
     <!-- CSS File HOME-->
     <?php linkCSS("course_details"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.png"); ?>
 
+    <?php linkCSS("success_message"); ?>
 </head>
 
 <body>
@@ -22,7 +22,8 @@
     <?php linkPhp("navigationBarAdmin"); ?>
 
 
-    <?php linkPhp("errorMessage"); ?>
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
@@ -108,5 +109,7 @@
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("courseDetails"); ?>
+
+    <?php linkJS("successMessage"); ?>
 
 </body>

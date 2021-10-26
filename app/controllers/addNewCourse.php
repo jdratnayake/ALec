@@ -45,6 +45,8 @@ class AddNewCourse extends AlecFramework
                 //Insert data
                 $courseId = $this->addNewCourseModel->addCourse($name, $description, $year);
                 $this->addNewCourseModel->addForum($name, $courseId);
+                $this->setSession("successMessageStatus", 1);
+                $this->redirect("courseDetails/index/all");
             } else {
                 $data["errors"] = $errors;
             }
