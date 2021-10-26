@@ -11,6 +11,16 @@ class PreviewQuiz extends AlecFramework
 
     public function index($quizId)
     {
+        $data["success"] = "";
+
+        $successSignal = $this->getSession("successMessageStatus");
+
+        if (isset($successSignal) and $successSignal == "1") {
+            $data["success"] = "Quiz Edited Successfully";
+            $this->unsetSession("successMessageStatus");
+        }
+
+
         $data["bread"]["courseDetails"] = $this->previewQuizModel->getCourseDetails($quizId);
         $data["courseName"] = $this->previewQuizModel->getCourseName($quizId);
         $data["quizDetails"] = $this->previewQuizModel->getQuizDetails($quizId);

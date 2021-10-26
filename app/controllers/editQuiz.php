@@ -100,8 +100,7 @@ class EditQuiz extends AlecFramework
             }
         }
 
-        $this->redirect("editQuiz/index/{$quizId}");
-
-        // $this->index($quizId);
+        $this->setSession("successMessageStatus", 1);
+        $this->redirect("previewQuiz/index/{$quizId}");
     }
 }

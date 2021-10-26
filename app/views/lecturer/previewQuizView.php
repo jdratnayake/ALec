@@ -26,6 +26,9 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
 <body>
     <?php linkPhp("navigationBarLecturer"); ?>
 
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
+
     <!--    breadcrumb-->
     <ul class="breadcrumb" style="margin-left: 5%">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
@@ -146,6 +149,8 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
     <?php linkJS("timePicker") ?>
 
     <?php linkJS("deleteMessage"); ?>
+
+    <?php linkJS("successMessage"); ?>
 
 </body>
 
