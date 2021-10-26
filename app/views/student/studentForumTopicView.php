@@ -22,7 +22,7 @@ $courseCode = explode("-", $temp)[0];
 
 <body>
 
-    <?php linkPhp("navigationBarStudent"); ?>
+    <?php linkPhp("navigationBarLecturer"); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
@@ -33,7 +33,7 @@ $courseCode = explode("-", $temp)[0];
 
     <div class="forum-container center">
         <div class="forum-message">
-            <h2>Discussion Forum For <?php echo $courseCode; ?></h2>
+            <header>Discussion Forum For <?php echo $courseCode; ?></header>
 
             <p><?php echo $data["forumDetails"]["forum_description"]; ?></p>
         </div>
@@ -57,48 +57,63 @@ $courseCode = explode("-", $temp)[0];
                         <div class="col col-1">Discussion</div>
                         <div class="col col-2">Started by</div>
                         <div class="col col-3">Last post</div>
-                        <div class="col col-4 reply">Replies</div>
                     </li>
 
-                    <li class="table-row">
-                        <div class="col col-1" data-label="Discussion">
-                            <a href="#">
-                                Will MAC addresses run out?
+                    <?php
+                    while ($row = mysqli_fetch_assoc($data["topicDiscussionDetails"])) {
+                        $replyRow = mysqli_fetch_assoc($data["replyDiscussionDetails"]);
+
+                        if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userId"]) {
+                            $row["name"] = "Anonymous";
+                        }
+
+                        if ($replyRow["user_type"] === "stu" and $replyRow["user_id"] !== $data["userId"]) {
+                            $replyRow["name"] = "Anonymous";
+                        }
+
+                        echo
+                        "
+                        <li class='table-row'>
+
+                        <div class='col col-1' data-label='Discussion'>
+                            <a href='" . BASEURL . "/studentForumTopicDiscussion/index/{$row['topic_id']}" . "'>
+                                {$row['subject']}
                             </a>
                         </div>
-                        <div class="col col-2" data-label="Started by">
-                            <div class="profile_img_info">
-                                <div class="img">
-                                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
+                        <div class='col col-2' data-label='Started by'>
+                            <div class='profile_img_info'>
+                                <div class='img'>
+                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
                                 </div>
-                                <div class="info">
-                                    <p class="name">M F RIZWAN</p>
-                                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
-                                        24 Jul 2021
+                                <div class='info'>
+                                    <p class='name'>{$row['name']}</p>
+                                    <p class='place'>
+                                        {$row['post_time']}
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col col-3" data-label="Last post">
-                            <div class="profile_img_info">
-                                <div class="img">
-                                    <img <?php srcIMG("profile_pic.svg"); ?> alt="profile_pic">
+                        <div class='col col-3' data-label='Last post'>
+                            <div class='profile_img_info'>
+                                <div class='img'>
+                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
                                 </div>
-                                <div class="info">
-                                    <p class="name">M F RIZWAN</p>
-                                    <p class="place"><span><i class="far fa-calendar-minus"></i></span>
-                                        24 Jul 2021
+                                <div class='info'>
+                                    <p class='name'>{$replyRow['name']}</p>
+                                    <p class='place'>
+                                        {$replyRow['post_time']}
                                     </p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col col-4 reply-count" data-label="Replies">0</div>
                     </li>
-
+                        ";
+                    }
+                    ?>
 
                 </ul>
+
             </div>
         </div>
     </div>
@@ -106,6 +121,8 @@ $courseCode = explode("-", $temp)[0];
     <?php linkPhp("notification"); ?>
 
     <?php linkPhp("footer"); ?>
+
+    <?php linkJS("forum"); ?>
 
 </body>
 
