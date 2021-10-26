@@ -4,87 +4,94 @@ use function PHPSTORM_META\type;
 
 class Register extends AlecFramework
 {
-    public function __construct()
-    {
-        $this->authorization("admin");
-        $this->helper("linker");
-        $this->registerModel = $this->model("registerModel");
-    }
+  public function __construct()
+  {
+    $this->authorization("admin");
+    $this->helper("linker");
+    $this->registerModel = $this->model("registerModel");
+  }
 
-    public function index()
-    {
-        $errors = array();
-        $errors["email"] = "";
-        $errors["regNo"] = "";
-        $errors["fName"] = "";
-        $errors["lName"] = "";
-        $errors["password"] = "";
+  public function index()
+  {
+    $data["success"] = "";
+    $errors = array();
+    $errors["email"] = "";
+    $errors["regNo"] = "";
+    $errors["fName"] = "";
+    $errors["lName"] = "";
+    $errors["password"] = "";
 
-        $data["errors"] = $errors;
+    $data["errors"] = $errors;
 
-        //Capture form data
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $email = $_POST["email"];
-            $regNo = $_POST["regNo"];
-            $fName = $_POST["fName"];
-            $lName = $_POST["lName"];
-            $password = $_POST["password"];
-            $type = $_POST["type"];
+    //Capture form data
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $email = $_POST["email"];
+      $regNo = $_POST["regNo"];
+      $fName = $_POST["fName"];
+      $lName = $_POST["lName"];
+      $password = $_POST["password"];
+      $type = $_POST["type"];
 
-            //Empty check
-            if (empty($email)) $errors["email"] = "Email is required";
-            if (empty($regNo)) {
-                if ($type == 2) {
-                    $errors["regNo"] = "Registration No is required";
-                } else if ($type == 3) {
-                    $errors["regNo"] = "Index No is required";
-                }
-            }
-            if (empty($fName)) $errors["fName"] = "First Name is required";
-            if (empty($lName)) $errors["lName"] = "Last Name is required";
-            if (empty($password)) $errors["password"] = "Password is required";
-
-            //Unique check
-            if ($this->registerModel->emailCheck($email)) {
-                $errors["email"] = "Email is already exists";
-            }
-
-            if ($this->registerModel->userNoCheck($type, $regNo)) {
-                if ($type == 2) {
-                    $errors["regNo"] = "Registration No is already exists";
-                } else if ($type == 3) {
-                    $errors["regNo"] = "Index No is already exists";
-                }
-            }
-
-            /* Count number of validation failures */
-            $numberOfErrors = 0;
-            foreach ($errors as $key => $value) {
-
-                if ($value != "") {
-                    $numberOfErrors++;
-                }
-            }
-
-            if ($numberOfErrors == 0) {
-                //Encrypy password
-                $passwordEncrypt = password_hash($password, PASSWORD_DEFAULT);
-
-                //Insert data
-                $this->registerModel->addUser($email, $regNo, $fName, $lName, $passwordEncrypt, $type);
-
-                //Send email
-                $this->sendConfirmation($email, $password);
-            } else {
-                $data["errors"] = $errors;
-            }
+      //Empty check
+      if (empty($email)) $errors["email"] = "Email is required";
+      if (empty($regNo)) {
+        if ($type == 2) {
+          $errors["regNo"] = "Registration No is required";
+        } else if ($type == 3) {
+          $errors["regNo"] = "Index No is required";
         }
-        $this->view("admin/registerView", $data);
-    }
+      }
+      if (empty($fName)) $errors["fName"] = "First Name is required";
+      if (empty($lName)) $errors["lName"] = "Last Name is required";
+      if (empty($password)) $errors["password"] = "Password is required";
 
-    public function sendConfirmation($email, $password)
-    {
-        $emailBody   = '
+      //Unique check
+      if ($this->registerModel->emailCheck($email)) {
+        $errors["email"] = "Email is already exists";
+      }
+
+      if ($this->registerModel->userNoCheck($type, $regNo)) {
+        if ($type == 2) {
+          $errors["regNo"] = "Registration No is already exists";
+        } else if ($type == 3) {
+          $errors["regNo"] = "Index No is already exists";
+        }
+      }
+
+      /* Count number of validation failures */
+      $numberOfErrors = 0;
+      foreach ($errors as $key => $value) {
+
+        if ($value != "") {
+          $numberOfErrors++;
+        }
+      }
+
+      if ($numberOfErrors == 0) {
+        //Encrypy password
+        $passwordEncrypt = password_hash($password, PASSWORD_DEFAULT);
+
+        //Insert data
+        $this->registerModel->addUser($email, $regNo, $fName, $lName, $passwordEncrypt, $type);
+
+        //Send email
+        $this->sendConfirmation($email, $password);
+
+        if ($type == 2) {
+          $data["success"] = "Lecturer Was Created Successfully";
+        } else if ($type == 3) {
+          $data["success"] = "Student Was Created Successfully";
+        }
+      } else {
+        $data["errors"] = $errors;
+      }
+    }
+    $this->view("admin/registerView", $data);
+  }
+
+  public function sendConfirmation($email, $password)
+  {
+    $emailBody   = '
 		<html lang="en">
 
 <head>
@@ -241,9 +248,9 @@ class Register extends AlecFramework
 
 </html>';
 
-        $emailSubject = 'ALec: Account Registration';
-        $header       = "From: alec.software.cooperation@gmail.com\r\nContent-Type: text/html;";
+    $emailSubject = 'ALec: Account Registration';
+    $header       = "From: alec.software.cooperation@gmail.com\r\nContent-Type: text/html;";
 
-        $send_mail_result = mail($email, $emailSubject, $emailBody, $header);
-    }
+    $send_mail_result = mail($email, $emailSubject, $emailBody, $header);
+  }
 }

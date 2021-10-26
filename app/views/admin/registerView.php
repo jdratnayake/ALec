@@ -9,12 +9,15 @@
 
     <?php linkCSS('register'); ?>
 
-    <!-- <script src="js/form.js"></script> -->
+    <?php linkCSS("success_message"); ?>
 </head>
 
 <body>
 
     <?php linkPhp("navigationBarAdmin"); ?>
+
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
@@ -134,6 +137,8 @@
     <?php linkJS("lecturerRegisterValidation"); ?>
 
     <?php linkJS("studentRegisterValidation"); ?>
+
+    <?php linkJS("successMessage"); ?>
 
 </body>
 
