@@ -11,24 +11,31 @@
     <title>ALec</title>
 
     <?php linkCSS("topic_page") ?>
+
+    <?php linkCSS("success_message"); ?>
 </head>
 
 <body>
 
     <?php linkPhp("navigationBarLecturer") ?>
 
+
+
+    <?php linkPhp("successMessage");
+    printSucessMsg($data["success"]); ?>
+
     <!--    breadcrumb-->
     <ul class="breadcrumb" style="margin-left: 5%">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/lecturerCoursePage/index">My Course</a></li>
-        <li><?php echo explode("-", $data["courseName"])[0]; ?></li>
+        <li><?php echo explode("-", $data["courseDetails"]["course_name"])[0]; ?></li>
     </ul>
 
     <div class="topic-container center">
-        <header><?php echo $data["courseName"]; ?></header>
+        <header><?php echo $data["courseDetails"]["course_name"]; ?></header>
 
         <p>
-            This is the course description...
+            <?php echo $data["courseDetails"]["course_description"]; ?>
         </p>
 
         <button class="add-topic" type="button" value="add-topic" onclick="location.href='<?php echo BASEURL . '/addTopic/index/' . $data['bread']['courseId'] ?>'">
@@ -63,7 +70,6 @@
                 <li>
                     <div class='tooltip'>
                         <a href='" . BASEURL . "/previewQuiz/index/{$rowQuiz['quiz_id']}" . "'>{$rowQuiz['quiz_name']}</a>
-                        <span class='text-tooltip'>View quiz</span>
                     </div>
                 </li>
                 ";
@@ -133,6 +139,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("topic_page"); ?>
+
+    <?php linkJS("successMessage"); ?>
 
 </body>
 

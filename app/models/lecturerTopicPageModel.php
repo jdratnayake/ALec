@@ -2,12 +2,12 @@
 
 class LecturerTopicPageModel extends Database
 {
-    public function getCourseName($courseId)
+    public function getCourseDetails($courseId)
     {
-        $query = "SELECT course_name FROM course WHERE course_id='$courseId' LIMIT 1";
+        $query = "SELECT course_name, course_description FROM course WHERE course_id='$courseId' LIMIT 1";
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        return mysqli_fetch_assoc($result)["course_name"];
+        return mysqli_fetch_assoc($result);
     }
 
     public function getTopicDetails($courseId)

@@ -177,7 +177,7 @@ function validateCourseName() {
 
 function validateCourseDescription() {
     console.log("hi");
-    if (!meetLength(courseDescription, 0, 200)) {
+    if (!meetLength(courseDescription, 0, 2000)) {
         return false;
     }
 
