@@ -1,5 +1,8 @@
 <?php
 
+// 1 = edit quiz
+// 2 = schedule quiz
+
 class PreviewQuiz extends AlecFramework
 {
     public function __construct()
@@ -15,11 +18,15 @@ class PreviewQuiz extends AlecFramework
 
         $successSignal = $this->getSession("successMessageStatus");
 
-        if (isset($successSignal) and $successSignal == "1") {
-            $data["success"] = "Quiz Edited Successfully";
+        if (isset($successSignal)) {
+            if ($successSignal == "1") {
+                $data["success"] = "Quiz Edited Successfully";
+            } else if ($successSignal == "2") {
+                $data["success"] = "Quiz Scheduled Successfully";
+            }
+
             $this->unsetSession("successMessageStatus");
         }
-
 
         $data["bread"]["courseDetails"] = $this->previewQuizModel->getCourseDetails($quizId);
         $data["courseName"] = $this->previewQuizModel->getCourseName($quizId);
@@ -45,7 +52,9 @@ class PreviewQuiz extends AlecFramework
             $this->previewQuizModel->updateDateTimeQuiz($quizId, $publishDateTime, $closeDateTime, $duration);
         }
 
-        $this->index($quizId);
+        $this->setSession("successMessageStatus", 2);
+
+        $this->redirect("previewQuiz/index/{$quizId}");
     }
 
     public function delete($quizId)
