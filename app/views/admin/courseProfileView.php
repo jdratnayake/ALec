@@ -51,9 +51,10 @@
                     ?>
 
                     <?php
-                    echo " <button type='button' name='dlt-user' value='Delete user' onclick=location.href='";
-                    echo BASEURL . '/courseProfile/deleteCourse/' . $data["courseDetails"]["course_id"];
-                    echo "'>";
+                    $link = "'" .  "courseProfile/deleteCourse/" . $data["courseDetails"]["course_id"] . "'";
+
+                    echo
+                    '<button type="button" name="dlt-user" value="Delete user" onclick="deleteFunction(' . $link . ')">';
                     echo "Delete Course</button>";
                     ?>
                 </div>
@@ -110,7 +111,6 @@
 
     </div>
 
-
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
@@ -118,6 +118,8 @@
     <?php linkJS("courseProfile"); ?>
 
     <?php linkJS("successMessage"); ?>
+
+    <?php linkJS("deleteMessage"); ?>
 
 </body>
 
