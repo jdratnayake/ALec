@@ -84,6 +84,7 @@ $light: white;
                 color: $light;
                 background-color: $theme_second;
                 font-weight: bold;
+                cursor: pointer;
 
                 &:hover{
                     border: 3px solid $theme_second_hover;

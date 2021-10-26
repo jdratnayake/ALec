@@ -567,6 +567,7 @@ footer p {
   color: white;
   background-color: #2B4F82;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .form-content .details .button-set .finish:hover {
