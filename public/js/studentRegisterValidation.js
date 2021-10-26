@@ -2,14 +2,12 @@ let email1 = document.getElementById("email1");
 let regNo1 = document.getElementById("regNo1");
 let fName1 = document.getElementById("fName1");
 let lName1 = document.getElementById("lName1");
-let password1 = document.getElementById("password1");
 let regiter1 = document.getElementById("registerForm1");
 
 regiter1.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (validateEmail1() && validateEmployeeNo1() && validateFirstName1() && validateLastName1()
-        && validatePassword1()) {
+    if (validateEmail1() && validateEmployeeNo1() && validateFirstName1() && validateLastName1()) {
         regiter1.submit();
     }
 })
@@ -19,7 +17,6 @@ function validateAll1() {
     validateEmployeeNo1();
     validateFirstName1();
     validateLastName1();
-    validatePassword1();
 }
 
 function validateEmail1() {
@@ -84,18 +81,6 @@ function validateLastName1() {
     }
 
     if (!meetLength(lName1, 4, 50)) {
-        return false;
-    }
-
-    return true;
-}
-
-function validatePassword1() {
-    if (checkIfEmpty(password1)) {
-        return false;
-    }
-
-    if (!meetLength(password1, 4, 100)) {
         return false;
     }
 

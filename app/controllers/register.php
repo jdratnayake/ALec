@@ -29,7 +29,7 @@ class Register extends AlecFramework
       $regNo = $_POST["regNo"];
       $fName = $_POST["fName"];
       $lName = $_POST["lName"];
-      $password = $_POST["password"];
+      $password = $regNo;
       $type = $_POST["type"];
 
       //Empty check
@@ -43,7 +43,6 @@ class Register extends AlecFramework
       }
       if (empty($fName)) $errors["fName"] = "First Name is required";
       if (empty($lName)) $errors["lName"] = "Last Name is required";
-      if (empty($password)) $errors["password"] = "Password is required";
 
       //Unique check
       if ($this->registerModel->emailCheck($email)) {

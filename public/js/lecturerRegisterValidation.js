@@ -6,14 +6,12 @@ let email = document.getElementById("email");
 let regNo = document.getElementById("regNo");
 let fName = document.getElementById("fName");
 let lName = document.getElementById("lName");
-let password = document.getElementById("password");
 let regiter = document.getElementById("registerForm");
 
 regiter.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (validateEmail() && validateEmployeeNo() && validateFirstName() && validateLastName()
-        && validatePassword()) {
+    if (validateEmail() && validateEmployeeNo() && validateFirstName() && validateLastName()) {
         regiter.submit();
     }
 })
@@ -23,7 +21,6 @@ function validateAll() {
     validateEmployeeNo();
     validateFirstName();
     validateLastName();
-    validatePassword();
 }
 
 // email.style.borderColor = invalidColor;
@@ -228,18 +225,6 @@ function validateLastName() {
     }
 
     if (!meetLength(lName, 4, 50)) {
-        return false;
-    }
-
-    return true;
-}
-
-function validatePassword() {
-    if (checkIfEmpty(password)) {
-        return false;
-    }
-
-    if (!meetLength(password, 4, 100)) {
         return false;
     }
 

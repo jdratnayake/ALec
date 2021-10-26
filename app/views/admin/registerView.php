@@ -69,12 +69,6 @@
                         <div class="error" id="error"><?php echo $errors["lName"] ?></div>
                     </div>
 
-                    <div class="field">
-                        <label for="password"></label>
-                        <input type="text" placeholder="Password" name="password" id="password" onfocusout="validatePassword()">
-                        <div class="error" id="error"><?php echo $errors["password"] ?></div>
-                    </div>
-
                     <div class="field btn">
                         <div class="btn-layer"></div>
                         <input type="submit" value="Add Lecturer">
@@ -109,12 +103,6 @@
                         <label for="lName1"></label>
                         <input type="text" placeholder="Last Name" name="lName" id="lName1" onfocusout="validateLastName1()">
                         <div class="error" id="error"><?php echo $errors["lName"] ?></div>
-                    </div>
-
-                    <div class="field">
-                        <label for="password1"></label>
-                        <input type="text" placeholder="Password" name="password" id="password1" onfocusout="validatePassword1()">
-                        <div class="error" id="error"><?php echo $errors["password"] ?></div>
                     </div>
 
                     <div class="field btn">
