@@ -19,6 +19,8 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
 
     <?php linkCSS("time_picker") ?>
 
+    <?php linkCSS("success_message"); ?>
+
 </head>
 
 <body>
@@ -39,7 +41,15 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
         </header>
 
         <!-- Edit , delete buttons-->
-        <button type="button" onclick="<?php echo "location.href='" . BASEURL . "/previewQuiz/delete/{$data["quizDetails"]["quiz_id"]}" . "'"; ?>" class="dlt"><i class="fa fa-trash" aria-hidden="true"></i>Delete quiz</button>
+
+        <?php
+        $link = "'" .  "previewQuiz/delete/" . $data["quizDetails"]["quiz_id"] . "'";
+
+        echo " <button type='button' class='dlt'";
+        echo 'onclick="deleteFunction(' . $link . ')"';
+        echo ">";
+        echo '<i class="fa fa-trash" aria-hidden="true"></i>' .  "Delete Quiz</button>";
+        ?>
 
         <button type="button" onclick="<?php echo "location.href='" . BASEURL . "/editQuiz/index/{$data["quizDetails"]["quiz_id"]}" . "'"; ?>" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit quiz</button>
 
@@ -134,6 +144,8 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
     <?php linkJS("previewQuiz"); ?>
 
     <?php linkJS("timePicker") ?>
+
+    <?php linkJS("deleteMessage"); ?>
 
 </body>
 
