@@ -10,7 +10,7 @@
     <title>ALec</title>
 
     <!-- CSS file -->
-    <?php linkCSS('password_recovery_edit_password'); ?>
+    <?php linkCSS('password_recovery'); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon('logo1.png'); ?>
@@ -28,28 +28,26 @@
             <div class="wrapper">
 
                 <div class="form-container">
-                    <div class="slide"> Enter New Password </div>
+                    <div class="slide"> Find Your Account </div>
 
                     <div class="form-inner">
 
                         <!-- FORM START -->
-                        <form method="post" action="<?php echo BASEURL . '/passwordRecovery/changePassword'; ?>" class="login" id="submit" onsubmit="validateAll()">
+                        <form method="post" action="<?php echo BASEURL . '/passwordRecovery/enterEmail'; ?>" class="login" id="sendForm">
+
+                            <br>
+
+                            Please enter your email address to send an OTP.
 
                             <div class="field" id="courseField">
-                                <label for="password1"></label>
-                                <input type="password" placeholder="Password" name="password1" id="password1" onfocusout="validatePassword1()">
-                                <div class="error" id="error"><?php echo $errors["password1"]; ?></div>
-                            </div>
-
-                            <div class="field" id="courseField">
-                                <label for="password2"></label>
-                                <input type="password" placeholder="Confirm Password" name="password2" id="password2" onfocusout="validatePassword2()">
-                                <div class="error" id="error"><?php echo $errors["password2"]; ?></div>
+                                <label for="email"></label>
+                                <input type="text" placeholder="Email" name="email" id="email" value="<?php if (isset($data['email'])) echo $data['email']; ?>" onfocusout="validateEmail()">
+                                <div class="error" id="error"><?php echo $errors["email"]; ?></div>
                             </div>
 
                             <div class="field btn">
                                 <div class="btn-layer"></div>
-                                <input type="submit" value="Submit">
+                                <input type="submit" value="Send">
                             </div>
                         </form>
                         <!-- FORM END -->
@@ -62,10 +60,12 @@
     </div>
 
 
-    <?php linkJS("passwordRecoveryEditPassword") ?>
+
 
     <!-- FontAwesome Icon -->
     <script src="https://kit.fontawesome.com/3220c9480a.js" crossorigin="anonymous"></script>
+
+    <?php linkJS("passwordRecovery") ?>
 </body>
 
 </html>
