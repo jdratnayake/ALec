@@ -24,4 +24,12 @@ class LoginModel extends Database
             return $row;
         }
     }
+
+    public function getUserAcoountStatus($userId)
+    {
+        $sql = "SELECT status FROM user WHERE user_id='$userId' LIMIT 1";
+        $result = mysqli_query($GLOBALS['db'], $sql);
+
+        return mysqli_fetch_assoc($result)["status"];
+    }
 }

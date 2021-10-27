@@ -33,7 +33,7 @@
                     <div class="form-inner">
 
                         <!-- FORM START -->
-                        <form method="post" action="<?php echo BASEURL . '/passwordRecovery/changePassword'; ?>" class="login" id="submit" onsubmit="validateAll()">
+                        <form method="post" action="<?php echo BASEURL . '/initialPasswordReset/changePassword/' . $data["userId"]; ?>" class="login" id="submit" onsubmit="validateAll()">
 
                             <div class="field" id="courseField">
                                 <label for="password1"></label>

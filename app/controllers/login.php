@@ -40,11 +40,20 @@ class Login extends AlecFramework
                 $user = $this->loginModel->passwordCheck($email, $password);
 
                 if ($user) {
+                    //get account status
+                    $status = $this->loginModel->getUserAcoountStatus($user["user_id"]);
+
+                    if ($status == "0") {
+                        $this->redirect("initialPasswordReset/index/" . $user["user_id"]);
+                    }
+
                     $this->setSession("userId", $user["user_id"]);
                     $this->setSession("type", $user["user_type"]);
 
-                    //Specify redirect path after sucessful login
-                    $this->redirect("dashboard");
+                    if ($status == "1") {
+                        //Specify redirect path after sucessful login
+                        $this->redirect("dashboard");
+                    }
                 } else {
                     //If login password is not matched
                     $data["email"] = $email;
