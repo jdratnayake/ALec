@@ -34,7 +34,7 @@
         <?php
 
         if ($data['topicDetail']["user_type"] === "stu" and $data['topicDetail']["user_id"] !== $data["userDetail"]["user_id"]) {
-            $row["name"] = "Anonymous";
+            $data['topicDetail']['name'] = "Anonymous";
         }
 
         echo
