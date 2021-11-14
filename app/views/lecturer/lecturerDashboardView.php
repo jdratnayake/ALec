@@ -20,6 +20,17 @@
 
     <div class="navigation-item-container">
 
+        <div class="navigation-tab">
+            <div class="row">
+                <i class="fa fa-bar-chart"></i>
+            </div>
+            <div class="row">
+                <div class="title">
+                    Create poll
+                </div>
+            </div>
+        </div>
+
         <div class="navigation-tab" id="ask-question-btn">
             <div class="row">
                 <i class="fas fa-question-circle"></i>
