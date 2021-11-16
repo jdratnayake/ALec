@@ -110,7 +110,10 @@
                         Upload file:
                         <input type="hidden" name="upload-user-type" value="2">
                         <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="submit" value="Add users" name="submit" class="upload-btn">
+                        <div class="button-set">
+                            <input type="submit" value="Create Accounts" name="submit" class="upload-btn">
+                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -152,7 +155,10 @@
                         <input type="hidden" name="upload-user-type" value="2">
 
                         <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="submit" value="Delete users" name="submit" class="upload-btn">
+                        <div class="button-set">
+                            <input type="submit" value="Delete Accounts" name="submit" class="upload-btn">
+                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -208,10 +214,13 @@
                             </select>
                         </div>
 
-                        <input id="manage-users-btn" type="submit" value="Add users" name="submit" class="assign-btn">
+                        <div class="button-set">
+                            <input id="manage-users-btn" type="submit" value="Remove Students" name="submit" class="assign-btn">
+                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                        </div>
 
                         <div class="modal-body enrollment-file-upload" id="file-mode-div" style="display: none;">
-                            <p>Use this format to enter details using .csv file</p>
+                            <p>Use this template to enter details using .csv file</p>
                             <button onclick="<?php echo "location.href=" . "'" . BASEURL . "/adminDashboard/download/3" . "'" ?>" id="btn-create-download-enrollment">Download template
                             </button>
 

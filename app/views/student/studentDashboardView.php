@@ -23,6 +23,17 @@
 
     <div class="navigation-item-container">
 
+        <div class="navigation-tab">
+            <div class="row">
+                <i class="fa fa-bar-chart"></i>
+            </div>
+            <div class="row">
+                <div class="title">
+                    Polls
+                </div>
+            </div>
+        </div>
+
         <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/studentCoursePage/index'; ?>' ">
             <div class="row">
                 <i class="fa fa-graduation-cap"></i>
@@ -58,11 +69,12 @@
 
     </div>
 
-    <div class="divider">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
+    <hr>
+<!--    <div class="divider">-->
+<!--        <span class="dot"></span>-->
+<!--        <span class="dot"></span>-->
+<!--        <span class="dot"></span>-->
+<!--    </div>-->
 
     <div class="active-quizzes-container">
         <ul class="quiz-table">
@@ -135,6 +147,13 @@
 
             </div>
         </div>
+    </div>
+
+    <!--    Available poll indicator-->
+    <div class="pop-up"></div>
+
+    <div class="notification-container" onclick="showNotifycation()" style="margin-bottom: 65px">
+        <i class="fa fa-bar-chart" style="font-weight: 900; font-size: 22px;"></i>
     </div>
 
     <?php linkPhp("notification"); ?>

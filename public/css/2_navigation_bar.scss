@@ -145,7 +145,7 @@ $sidebar_max_len: 240px;
     align-items: center;
     text-decoration: none;
     transition: all 0.4s ease;
-    border-radius: 12px;
+    border-radius: 10px;
     white-space: nowrap;
 }
 
@@ -157,7 +157,7 @@ $sidebar_max_len: 240px;
 .siderbar ul li i{
     height: 50px;
     min-width: 50px;
-    border-radius: 12px;
+    border-radius: 10px;
     line-height: 50px;
     text-align: center;
 }
@@ -186,7 +186,7 @@ $sidebar_max_len: 240px;
     padding: 10px 6px;
     height: 60px;
     background: $theme;
-    transition: all 0.4 ease;
+    transition: all 0.4s ease;
 }
 
 .siderbar.active .profile_content .profile{
@@ -209,9 +209,6 @@ $sidebar_max_len: 240px;
     cursor: pointer;
 
     &:hover{
-        //color: #184e77;
-        //background: #fff;
-        //border-radius: 10px;
         text-decoration: underline;
     }
 }
@@ -221,7 +218,7 @@ $sidebar_max_len: 240px;
     height: 45px;
     width: 45px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .profile .profile_details .name_job{
@@ -245,7 +242,7 @@ $sidebar_max_len: 240px;
     min-width: 45px;
     line-height: 50px;
     font-size: 20px;
-    border-radius: 12px;
+    border-radius: 10px;
     text-align: center;
     transition: all 0.4s ease;
     background: $theme;

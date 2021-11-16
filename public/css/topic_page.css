@@ -165,7 +165,7 @@ header {
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  border-radius: 12px;
+  border-radius: 10px;
   white-space: nowrap;
 }
 
@@ -177,7 +177,7 @@ header {
 .siderbar ul li i {
   height: 50px;
   min-width: 50px;
-  border-radius: 12px;
+  border-radius: 10px;
   line-height: 50px;
   text-align: center;
 }
@@ -206,7 +206,7 @@ header {
   padding: 10px 6px;
   height: 60px;
   background: #19345d;
-  transition: all 0.4 ease;
+  transition: all 0.4s ease;
 }
 
 .siderbar.active .profile_content .profile {
@@ -236,7 +236,7 @@ header {
   height: 45px;
   width: 45px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .profile .profile_details .name_job {
@@ -260,7 +260,7 @@ header {
   min-width: 45px;
   line-height: 50px;
   font-size: 20px;
-  border-radius: 12px;
+  border-radius: 10px;
   text-align: center;
   transition: all 0.4s ease;
   background: #19345d;

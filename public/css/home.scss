@@ -7,6 +7,7 @@
 $modal_color: $theme_hover;
 $modal_color_hover: $theme;
 $light: rgba(54, 98, 159, 0.15);
+$light_color: white;
 
 /*==============================================================================*/
 /*SLIDE SHOW - START*/
@@ -72,6 +73,18 @@ $light: rgba(54, 98, 159, 0.15);
 
 .active-dot {
     background-color: #717171;
+}
+
+hr{
+    width: 400px;
+    display: block;
+    //color: #bbb;
+    //background-color: #bbb;
+    height: 2px;
+    border: none;
+    border-radius: 8px;
+    margin: 70px auto;
+    background-image: linear-gradient(to right, #bbb , #19345d , #bbb);
 }
 
 /* Fading animation */
@@ -241,7 +254,7 @@ $light: rgba(54, 98, 159, 0.15);
     background-color: #fefefe;
     margin: auto;
     border: 1px solid #888;
-    width: 50%;
+    width: 43%;
 
     .modal-header {
         padding: 8px 16px;
@@ -270,7 +283,7 @@ $light: rgba(54, 98, 159, 0.15);
                 padding: 4px 8px;
                 text-align: center;
                 cursor: pointer;
-                border-radius: 10px;
+                border-radius: 8px;
                 font-weight: 500;
                 margin-top: 25px;
                 font-size: 15px;
@@ -281,6 +294,15 @@ $light: rgba(54, 98, 159, 0.15);
                     background-color: $modal_color_hover;
                     border: 2px solid $modal_color_hover;
                 }
+            }
+            .cancel{
+                    background-color: $cancel_button;
+                    border: 2px solid $cancel_button;
+
+                    &:hover {
+                        border: 2px solid $cancel_button_hover;
+                        background-color: $cancel_button_hover;
+                    }
             }
         }
     }
