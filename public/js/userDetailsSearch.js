@@ -43,6 +43,7 @@ $(document).ready(function () {
 
             loadData(search);
         } else {
+            loadData(search);
             $(".pagination-container").show();
         }
     });

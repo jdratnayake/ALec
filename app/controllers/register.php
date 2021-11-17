@@ -70,8 +70,15 @@ class Register extends AlecFramework
         //Encrypy password
         $passwordEncrypt = password_hash($password, PASSWORD_DEFAULT);
 
-        //Insert data
-        $this->registerModel->addUser($email, $regNo, $fName, $lName, $passwordEncrypt, $type);
+        if ($type == 2) {
+          //Insert data
+          $this->registerModel->addUser($email, $regNo, $fName, $lName, $passwordEncrypt, $type);
+        } else if ($type == 3) {
+          $randomName = $this->getRandomName();
+          $randomFirstName = explode(" ", $randomName)[0];
+          $randomLastName = explode(" ", $randomName)[1];
+          $this->registerModel->addUser($email, $regNo, $fName, $lName, $passwordEncrypt, $type, $randomFirstName, $randomLastName);
+        }
 
         //Send email
         $this->sendConfirmation($email, $password);
@@ -86,6 +93,34 @@ class Register extends AlecFramework
       }
     }
     $this->view("admin/registerView", $data);
+  }
+
+  public function getRandomName()
+  {
+    $fNameFile = fopen("download_data/firstNames.txt", "r") or die("Unable To Open File!");
+    $lNameFile = fopen("download_data/lastNames.txt", "r") or die("Unable To Open File!");
+
+    $firstNames = array();
+    $lastNames = array();
+
+    while (!feof($fNameFile)) {
+      array_push($firstNames, str_replace(' ', '', fgets($fNameFile)));
+      array_push($lastNames, str_replace(' ', '', fgets($lNameFile)));
+    }
+
+    fclose($fNameFile);
+    fclose($lNameFile);
+
+    $count = 1;
+
+    do {
+      $num1 = mt_rand() % 100;
+      $num2 = mt_rand() % 100;
+      $name = $firstNames[$num1] . " " . $lastNames[$num2];
+      $count++;
+    } while (($this->registerModel->checkRandomName($firstNames[$num1], $lastNames[$num2])) && ($count <= 100));
+
+    return $name;
   }
 
   public function sendConfirmation($email, $password)

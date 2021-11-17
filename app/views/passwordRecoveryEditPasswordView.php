@@ -13,7 +13,7 @@
     <?php linkCSS('password_recovery_edit_password'); ?>
 
     <!-- Shortcut Icon -->
-    <?php shortIcon('logo1.png'); ?>
+    <?php shortIcon('logo1.jpg'); ?>
 </head>
 
 <body>

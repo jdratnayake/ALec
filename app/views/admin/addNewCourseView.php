@@ -6,6 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>ALec</title>
+	
+	<!-- Shortcut Icon -->
+    <?php shortIcon("logo1.jpg"); ?>
 
     <?php linkCSS('add_new_course'); ?>
 

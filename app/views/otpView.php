@@ -12,6 +12,9 @@
     <title>Message</title>
     <link rel="stylesheet" href="/Assets/css/flashMessages.css?version=1">
     <?php linkCSS("otp"); ?>
+	
+	<!-- Shortcut Icon -->
+    <?php shortIcon('logo1.jpg'); ?>
 </head>
 
 <body>

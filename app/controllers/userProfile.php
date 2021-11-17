@@ -31,6 +31,11 @@ class UserProfile extends AlecFramework
         $data["userDetails"]["regNo"] = $this->userProfileModel->getRegistrationNo($user_id, $type);
         $data["userDetails"]["type"] = $type == "lec" ? "Lecturer" : "Student";
 
+        //if user is a student then get his random name
+        if ($type == "stu") {
+            $data["userDetails"]["randomName"] = $this->userProfileModel->getRandomName($user_id);
+        }
+
         //course details
         $data["courseDetails"] = $this->userProfileModel->getCourseDetails($user_id, $type);
 

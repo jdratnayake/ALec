@@ -29,7 +29,7 @@ class RegisterModel extends Database
         return mysqli_fetch_assoc($result);
     }
 
-    public function addUser($email, $regNo, $fName, $lName, $password, $type)
+    public function addUser($email, $regNo, $fName, $lName, $password, $type, $randomFirstName = "", $randomLastName = "")
     {
         if ($type == 2) {
             $type = "lec";
@@ -49,7 +49,7 @@ class RegisterModel extends Database
         if ($type == "lec") {
             $query = "INSERT INTO lecturer VALUES ('$userId', '$regNo')";
         } else if ($type == "stu") {
-            $query = "INSERT INTO student VALUES ('$userId', '$regNo')";
+            $query = "INSERT INTO student VALUES ('$userId', '$regNo', '$randomFirstName', '$randomLastName')";
         }
 
         mysqli_query($GLOBALS['db'], $query);
@@ -153,5 +153,13 @@ class RegisterModel extends Database
             $query = "DELETE FROM user WHERE user_id='$userId'";
             mysqli_query($GLOBALS["db"], $query);
         }
+    }
+
+    public function checkRandomName($fName, $lName)
+    {
+        $query = "SELECT * FROM student WHERE random_first_name='$fName' AND random_last_name='$lName' LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_num_rows($result) == 1;
     }
 }

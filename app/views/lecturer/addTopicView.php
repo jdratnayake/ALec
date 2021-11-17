@@ -11,6 +11,8 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
     <meta charset="UTF-8">
     <title>ALec</title>
 
+	<?php shortIcon("logo1.jpg"); ?>
+
     <?php linkCSS('add_new_course'); ?>
 
 </head>

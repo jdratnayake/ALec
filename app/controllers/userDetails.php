@@ -27,9 +27,7 @@ class userDetails extends AlecFramework
 
     public function search($data)
     {
-        if (!empty($data)) {
-            echo $this->userModel->getSearchResults($data);
-        }
+        echo $this->userModel->getSearchResults($data);
     }
 
     public function userProfile()

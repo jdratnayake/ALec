@@ -27,6 +27,14 @@ class UserProfileModel extends Database
         }
     }
 
+    public function getRandomName($user_id)
+    {
+        $query = "SELECT CONCAT(random_first_name, ' ', random_last_name) AS name FROM student WHERE user_id='$user_id' LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["name"];
+    }
+
     public function getRegistrationNo($user_id, $type)
     {
         if ($type == "lec") {

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ALec</title>
+    <title>View User</title>
 
     <!-- CSS File HOME-->
     <?php linkCSS("profile_details"); ?>
@@ -16,7 +16,7 @@
     <?php linkCSS("success_message"); ?>
 
     <!-- Shortcut Icon -->
-    <?php shortIcon("logo1.png"); ?>
+    <?php shortIcon("logo1.jpg"); ?>
 
 </head>
 
@@ -30,8 +30,8 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-        <li><a href="http://localhost/ALec/userDetails/index">User details</a></li>
-        <li>View user</li>
+        <li><a href="http://localhost/ALec/userDetails/index">User Details</a></li>
+        <li>View User</li>
     </ul>
 
     <div class="details-content">
@@ -103,6 +103,11 @@
                 <div class="pvt-details">
                     <span>User Details</span>
                     <span><strong>Full Name : </strong><?php echo $data["userDetails"]["name"]; ?></span>
+                    <?php
+                    if ($data["userDetails"]["type"] == "Student") {
+                        echo "<span><strong>Random Name : </strong> {$data["userDetails"]["randomName"]} </span>";
+                    }
+                    ?>
                     <span><strong>Email : </strong><?php echo $data["userDetails"]["email"]; ?></span>
                     <span><strong>Telephone No : </strong><?php echo $data["userDetails"]["tele"]; ?></span>
                 </div>
