@@ -5,9 +5,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Simple HTML Form</title>
-	
-	<!-- Shortcut Icon -->
+    <title>
+        <?php
+        if ($data["userDetails"]["user_type"] == "stu") {
+            echo 'Edit Student';
+        } else if ($data["userDetails"]["user_type"] == "lec") {
+            echo 'Edit Lecturer';
+        }
+        ?>
+    </title>
+
+    <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
 
     <?php linkCSS('register'); ?>
@@ -22,8 +30,8 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-        <li><a href="http://localhost/ALec/userDetails/index">User details</a></li>
-        <li><a href="<?php echo BASEURL . '/userProfile/index/' . $data["userDetails"]["user_id"] ?> ">View user</a></li>
+        <li><a href="http://localhost/ALec/userDetails/index">User Details</a></li>
+        <li><a href="<?php echo BASEURL . '/userProfile/index/' . $data["userDetails"]["user_id"] ?> ">View User</a></li>
         <li>
             <?php
             if ($data["userDetails"]["user_type"] == "stu") {

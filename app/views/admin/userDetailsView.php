@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ALec</title>
+    <title>User Details</title>
 
     <!-- CSS File HOME-->
     <?php linkCSS("user_details"); ?>
@@ -25,7 +25,7 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-        <li>User details</li>
+        <li>User Details</li>
     </ul>
 
     <div class="details-container">

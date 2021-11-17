@@ -5,9 +5,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Simple HTML Form</title>
-	
-	<!-- Shortcut Icon -->
+    <title>Add User</title>
+
+    <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
 
     <?php linkCSS('register'); ?>
@@ -25,8 +25,8 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-        <li><a href="http://localhost/ALec/userDetails/index">User details</a></li>
-        <li>Add user</li>
+        <li><a href="http://localhost/ALec/userDetails/index">User Details</a></li>
+        <li>Add User</li>
     </ul>
 
     <div class="wrapper center">
