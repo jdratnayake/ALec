@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Shortcut Icon -->
-    <?php shortIcon("logo1.png"); ?>
+    <?php shortIcon("logo1.jpg"); ?>
 
     <title>ALec</title>
 

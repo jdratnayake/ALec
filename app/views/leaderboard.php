@@ -12,7 +12,7 @@
     <?php linkCSS("leaderboard"); ?>
 
     <!-- Shortcut Icon -->
-    <link rel="shortcut icon" href="/public/img/logo1.png">
+    <link rel="shortcut icon" href="/public/img/logo1.jpg">
 
     <!-- **********CSS END********** -->
 </head>

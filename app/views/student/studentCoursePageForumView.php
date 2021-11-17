@@ -9,7 +9,7 @@
     <title>My Courses</title>
 
     <!-- Shortcut Icon -->
-    <?php shortIcon("logo1.png"); ?>
+    <?php shortIcon("logo1.jpg"); ?>
 
     <?php linkCSS("course_page") ?>
 

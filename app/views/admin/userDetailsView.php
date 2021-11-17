@@ -14,7 +14,7 @@
     <?php linkCSS("5_pagination"); ?>
 
     <!-- Shortcut Icon -->
-    <?php shortIcon("logo1.png"); ?>
+    <?php shortIcon("logo1.jpg"); ?>
 
 </head>
 

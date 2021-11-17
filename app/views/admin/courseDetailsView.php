@@ -12,7 +12,7 @@
     <?php linkCSS("course_details"); ?>
 
     <!-- Shortcut Icon -->
-    <?php shortIcon("logo1.png"); ?>
+    <?php shortIcon("logo1.jpg"); ?>
 
     <?php linkCSS("success_message"); ?>
 </head>

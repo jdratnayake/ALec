@@ -11,6 +11,9 @@
     <?php shortIcon("logo1.png"); ?>
 
     <title>ALec</title>
+	
+	<!-- Shortcut Icon -->
+    <?php shortIcon('logo1.jpg'); ?>
 
     <?php linkCSS("ask_forum_question") ?>
 </head>

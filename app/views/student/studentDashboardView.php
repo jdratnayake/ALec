@@ -14,7 +14,7 @@
     <?php linkCSS('modal'); ?>
 
     <!-- Shortcut Icon -->
-    <?php shortIcon('logo1.png'); ?>
+    <?php shortIcon('logo1.jpg'); ?>
 </head>
 
 <body>

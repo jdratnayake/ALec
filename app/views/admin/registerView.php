@@ -6,6 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple HTML Form</title>
+	
+	<!-- Shortcut Icon -->
+    <?php shortIcon("logo1.jpg"); ?>
 
     <?php linkCSS('register'); ?>
 

@@ -13,7 +13,7 @@ $courseCode = explode("-", $temp)[0];
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Shortcut Icon -->
-    <?php shortIcon("logo1.png"); ?>
+    <?php shortIcon("logo1.jpg"); ?>
 
     <title>ALec</title>
 
