@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#toolkit-btn").click(function () {
-        if ($("#dropdown-content").css("display") == "none") {
+        if ($("#dropdown-content").css("display") === "none") {
             $("#dropdown-content").css("display", "initial");
         } else {
             $("#dropdown-content").css("display", "none");

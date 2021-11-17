@@ -7,29 +7,33 @@
 //LOCAL VARIABLES
 $main_color: $theme_second;
 $light_color: #FFF;
+$background_color: #b7c8d64a;
 
+$modal_color: $theme_hover;
+$modal_color_hover: $theme;
 
 .details-content {
   padding: 1rem;
   width: 80%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-  margin: auto auto 30px auto;
-  height: 87%;
-  background-color: #b7c8d64a;
+  margin: 5% auto auto auto;
+  //margin: auto auto 30px auto;
+  //height: 87%;
+  background-color: $background_color;
   overflow-y: hidden;
 }
 
 header {
-  background-color: $main_color;
-  color: $light_color;
-  padding: 15px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: auto;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
+  background-color: $background_color;
+//  color: $light_color;
+//  padding: 15px;
+//  text-align: center;
+//  font-size: 30px;
+//  font-weight: bold;
+//  margin: auto;
+//  width: 100%;
+//  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+//  border-radius: 5px;
 }
 
 .left-bar {
@@ -165,4 +169,127 @@ header {
     margin-right: 10px;
   }
 }
+
+/*==============================================================================*/
+/*MODAL - START*/
+/*==============================================================================*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 43%;
+
+  .modal-header {
+    padding: 8px 16px;
+    background-color: $modal_color;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 16px;
+
+    .radio-btn{
+      margin-bottom: 20px;
+      margin-left: 20px;
+      input, label, button{
+        cursor: pointer;
+      }
+    }
+
+    form{
+      display: inline-grid;
+
+      .upload-btn{
+        background-color: $modal_color;
+        border: 2px solid $modal_color;
+        color: white;
+        padding: 4px 8px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 500;
+        margin-top: 25px;
+        font-size: 15px;
+        max-width: 150px;
+
+        &:hover{
+          color: white;
+          background-color: $modal_color_hover;
+          border: 2px solid $modal_color_hover;
+        }
+      }
+      .cancel{
+        background-color: $cancel_button;
+        border: 2px solid $cancel_button;
+
+        &:hover {
+          border: 2px solid $cancel_button_hover;
+          background-color: $cancel_button_hover;
+        }
+      }
+    }
+  }
+
+  .enrollment-file-upload{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.assign-btn{
+  background-color: $modal_color;
+  border: 2px solid $modal_color;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-top: 25px;
+  font-size: 15px;
+  max-width: 150px;
+
+  &:hover{
+    color: white;
+    background-color: $modal_color_hover;
+    border: 2px solid $modal_color_hover;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*==============================================================================*/
+/*MODAL - END*/
+/*==============================================================================*/
 

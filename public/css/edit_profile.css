@@ -451,22 +451,13 @@ footer p {
   padding: 1rem;
   width: 68%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-  margin: auto auto 30px auto;
+  margin: 5% auto auto auto;
   background-color: #b7c8d64a;
   overflow-y: hidden;
 }
 
 header {
-  background-color: #2B4F82;
-  color: #FFF;
-  padding: 15px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: auto;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
+  background-color: #b7c8d64a;
 }
 
 .left-bar {

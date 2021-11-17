@@ -11,6 +11,8 @@
     <!-- CSS File HOME-->
     <?php linkCSS("profile_details"); ?>
 
+<!--    --><?php //linkCSS("modal_styles"); ?>
+
     <?php linkCSS("success_message"); ?>
 
     <!-- Shortcut Icon -->
@@ -62,10 +64,41 @@
                     echo "'>";
                     echo "Delete User</button>";
                     ?>
+
+                    <button id="modal-btn">Assign Courses</button>
                 </div>
             </div>
 
-            <!--                Right bar include small seperate boxes of user details, asigned courses and badges earned-->
+            <!-- Course Selection Modal -->
+            <div id="course-selection-modal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>All courses available</h2>
+                    </div>
+
+                    <div class="modal-body">
+                        <strong>Courses:</strong>
+
+                        <p>Use this format to enter details using .csv file</p>
+                        <button onclick="" id="btn-create-download">Download template
+                        </button>
+
+                        <br><br>
+                        <p>
+                            Use this format to enter details using .txt file<br>
+                            &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
+                            &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
+                            <strong>Note:</strong>Each user should be in a newline<br><br>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right bar include small separate boxes of user details, assigned courses and badges earned-->
             <div class="right-bar">
                 <div class="pvt-details">
                     <span>User Details</span>
@@ -106,6 +139,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
+
+    <?php linkPhp("userProfileModal"); ?>
 
     <?php linkJS("successMessage"); ?>
 

@@ -7,28 +7,28 @@
 //LOCAL VARIABLES
 $main_color: $theme_second;
 $light_color: #FFF;
-
+$background_color: #b7c8d64a;
 
 .details-content {
   padding: 1rem;
   width: 68%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-  margin: auto auto 30px auto;
-  background-color: #b7c8d64a;
+  margin: 5% auto auto auto;
+  background-color: $background_color;
   overflow-y: hidden;
 }
 
 header {
-  background-color: $main_color;
-  color: $light_color;
-  padding: 15px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: auto;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
+  background-color: $background_color;
+//  color: $light_color;
+//  padding: 15px;
+//  text-align: center;
+//  font-size: 30px;
+//  font-weight: bold;
+//  margin: auto;
+//  width: 100%;
+//  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+//  border-radius: 5px;
 }
 
 .left-bar {
