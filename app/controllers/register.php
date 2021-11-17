@@ -111,11 +111,14 @@ class Register extends AlecFramework
     fclose($fNameFile);
     fclose($lNameFile);
 
+    $count = 1;
+
     do {
       $num1 = mt_rand() % 100;
       $num2 = mt_rand() % 100;
       $name = $firstNames[$num1] . " " . $lastNames[$num2];
-    } while ($this->registerModel->checkRandomName($firstNames[$num1], $lastNames[$num2]));
+      $count++;
+    } while (($this->registerModel->checkRandomName($firstNames[$num1], $lastNames[$num2])) && ($count <= 100));
 
     return $name;
   }
