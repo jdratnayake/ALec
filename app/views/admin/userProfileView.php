@@ -11,7 +11,7 @@
     <!-- CSS File HOME-->
     <?php linkCSS("profile_details"); ?>
 
-<!--    --><?php //linkCSS("modal_styles"); ?>
+    <?php linkCSS("modal_styles"); ?>
 
     <?php linkCSS("success_message"); ?>
 
@@ -75,24 +75,29 @@
                 <!-- Modal content -->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="close">&times;</span>
-                        <h2>All courses available</h2>
+                        <span id="close" class="close">&times;</span>
+                        <h2>Course Selection</h2>
                     </div>
 
                     <div class="modal-body">
-                        <strong>Courses:</strong>
+                        <label for="courses"><strong>Select Course:</strong></label>
+                        <select name="course" id="courses" class="selection-box">
+                            <option value="default" selected>Select a course</option>
+                            <option value="sub1">SCS 1201 - Data Structures and Algorithms - I</option>
+                            <option value="sub2">SCS 1208 - Data Structures and Algorithms - II</option>
+                            <option value="sub3">SCS 2201 - Data Structures and Algorithms - III</option>
+                        </select>
 
-                        <p>Use this format to enter details using .csv file</p>
-                        <button onclick="" id="btn-create-download">Download template
-                        </button>
+<!--                    List of assigned courses-->
+                        <ul style="list-style-type:none;" class="assigned-courses">
+                            <li class="assigned-course">SCS 2213 - Electronics and Physical Computing
+                                <span class="remove-course">&times;</span></li>
+                            <li class="assigned-course">SCS 2214 - Information system security
+                                <span class="remove-course">&times;</span></li>
+                            <li class="assigned-course">ENH 2201 - Enhancement III
+                                <span class="remove-course">&times;</span></li>
+                        </ul>
 
-                        <br><br>
-                        <p>
-                            Use this format to enter details using .txt file<br>
-                            &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
-                            &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
-                            <strong>Note:</strong>Each user should be in a newline<br><br>
-                        </p>
                     </div>
                 </div>
 
@@ -108,6 +113,7 @@
                         echo "<span><strong>Random Name : </strong> {$data["userDetails"]["randomName"]} </span>";
                     }
                     ?>
+                    <span><strong>Given Name : </strong>Buckingham Staples</span>
                     <span><strong>Email : </strong><?php echo $data["userDetails"]["email"]; ?></span>
                     <span><strong>Telephone No : </strong><?php echo $data["userDetails"]["tele"]; ?></span>
                 </div>
@@ -137,7 +143,6 @@
                 ?>
             </div>
 
-
         </div>
     </div>
 
@@ -145,7 +150,7 @@
 
     <?php linkPhp("notification"); ?>
 
-    <?php linkPhp("userProfileModal"); ?>
+    <?php linkJS("userProfileModal"); ?>
 
     <?php linkJS("successMessage"); ?>
 

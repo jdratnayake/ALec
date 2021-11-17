@@ -546,10 +546,6 @@ header {
   border: 1px solid #2B4F82;
 }
 
-.pvt-details {
-  height: 140px;
-}
-
 .course-details {
   height: 240px;
   overflow: auto;
@@ -577,126 +573,30 @@ header {
   margin-right: 10px;
 }
 
-/*==============================================================================*/
-/*MODAL - START*/
-/*==============================================================================*/
-/* The Modal (background) */
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  border: 1px solid #888;
-  width: 43%;
-}
-.modal-content .modal-header {
-  padding: 8px 16px;
-  background-color: #325C97;
-  color: white;
-}
 .modal-content .modal-body {
-  padding: 16px;
+  margin: 20px 0;
 }
-.modal-content .modal-body .radio-btn {
-  margin-bottom: 20px;
-  margin-left: 20px;
+.modal-content .modal-body .assigned-courses {
+  margin: 20px 0;
 }
-.modal-content .modal-body .radio-btn input, .modal-content .modal-body .radio-btn label, .modal-content .modal-body .radio-btn button {
-  cursor: pointer;
+.modal-content .modal-body .assigned-courses .assigned-course {
+  background-color: #325c9733;
+  border: 2px solid white;
+  border-radius: 16px;
+  padding: 6px 12px;
 }
-.modal-content .modal-body form {
-  display: inline-grid;
-}
-.modal-content .modal-body form .upload-btn {
-  background-color: #325C97;
-  border: 2px solid #325C97;
-  color: white;
-  padding: 4px 8px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: 500;
-  margin-top: 25px;
-  font-size: 15px;
-  max-width: 150px;
-}
-.modal-content .modal-body form .upload-btn:hover {
-  color: white;
-  background-color: #19345d;
-  border: 2px solid #19345d;
-}
-.modal-content .modal-body form .cancel {
-  background-color: darkgrey;
-  border: 2px solid darkgrey;
-}
-.modal-content .modal-body form .cancel:hover {
-  border: 2px solid #818080;
-  background-color: #818080;
-}
-.modal-content .enrollment-file-upload {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.assign-btn {
-  background-color: #325C97;
-  border: 2px solid #325C97;
-  color: white;
-  padding: 4px 8px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: 500;
-  margin-top: 25px;
-  font-size: 15px;
-  max-width: 150px;
-}
-.assign-btn:hover {
-  color: white;
-  background-color: #19345d;
-  border: 2px solid #19345d;
-}
-
-/* The Close Button */
-.close {
-  color: #ffffff;
+.modal-content .modal-body .assigned-courses .assigned-course .remove-course {
   float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
   cursor: pointer;
 }
-
-/*==============================================================================*/
-/*MODAL - END*/
-/*==============================================================================*/
+.modal-content .selection-box {
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 15px;
+  padding: 4px 8px;
+}
 
 /*# sourceMappingURL=profile_details.css.map */

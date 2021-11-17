@@ -11,6 +11,8 @@
     <!-- CSS file -->
     <?php linkCSS('home'); ?>
 
+    <?php linkCSS("modal_styles"); ?>
+
     <?php linkCSS("success_message"); ?>
 
     <!-- Shortcut Icon -->
