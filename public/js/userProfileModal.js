@@ -23,8 +23,10 @@ $(document).ready(function () {
         const newTag = "<option value='" + $(this).parent().find('.course-id').val() + "'>" + $(this).parent().find('.course-name').html() + "</option>"
         $("#courses").append(newTag);
 
-        //Append course id
-        $("#current-removed-courses").val($("#current-removed-courses").val() + " " + $(this).parent().find('.course-id').val());
+
+        let courses = $("#current-assigned-courses").val();
+        courses = courses.replace($(this).parent().find('.course-id').val(), "");
+        $("#current-assigned-courses").val(courses);
 
         $(this).parent().remove();
     })

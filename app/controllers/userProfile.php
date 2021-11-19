@@ -65,24 +65,19 @@ class UserProfile extends AlecFramework
         // var_dump($_POST);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $assignCourses = $_POST["current-assigned-courses"];
-            $removeCourses = $_POST["current-removed-courses"];
 
             $assignCourses = trim($assignCourses);
-            $removeCourses = trim($removeCourses);
 
             $assignCourses = explode(" ", $assignCourses);
-            $removeCourses = explode(" ", $removeCourses);
 
             $assignCourses = array_unique($assignCourses);
-            $removeCourses = array_unique($removeCourses);
 
-            $courses = array_diff($assignCourses, $removeCourses);
 
-            foreach ($removeCourses as $courseId) {
-                $this->userProfileModel->removeFromCourses($user_id, $type, $courseId);
-            }
 
-            foreach ($courses as $courseId) {
+            $this->userProfileModel->removeFromCourses($user_id, $type);
+
+
+            foreach ($assignCourses as $courseId) {
                 $this->userProfileModel->addToCourses($user_id, $type, $courseId);
             }
 
