@@ -20,6 +20,8 @@ class UserProfile extends AlecFramework
                 $data["success"] = "Lecturer Edited Successfully";
             } else if ($successSignal == "3") {
                 $data["success"] = "Student Edited Successfully";
+            } else if ($successSignal == "4") {
+                $data["success"] = "Course Selection Changed Successfully";
             }
             $this->unsetSession("successMessageStatus");
         }
@@ -74,13 +76,17 @@ class UserProfile extends AlecFramework
             $assignCourses = array_unique($assignCourses);
             $removeCourses = array_unique($removeCourses);
 
-            foreach ($assignCourses as $courseId) {
-                $this->userProfileModel->addToCourses($user_id, $type, $courseId);
-            }
+            $courses = array_diff($assignCourses, $removeCourses);
 
             foreach ($removeCourses as $courseId) {
                 $this->userProfileModel->removeFromCourses($user_id, $type, $courseId);
             }
+
+            foreach ($courses as $courseId) {
+                $this->userProfileModel->addToCourses($user_id, $type, $courseId);
+            }
+
+            $this->setSession("successMessageStatus", 4);
         }
 
         $this->redirect("userProfile/index/{$user_id}");

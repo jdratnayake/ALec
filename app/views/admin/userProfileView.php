@@ -144,10 +144,9 @@ $assignedCourses = "";
                     <span><strong>Full Name : </strong><?php echo $data["userDetails"]["name"]; ?></span>
                     <?php
                     if ($data["userDetails"]["type"] == "Student") {
-                        echo "<span><strong>Random Name : </strong> {$data["userDetails"]["randomName"]} </span>";
+                        echo "<span><strong>Given Name : </strong> {$data["userDetails"]["randomName"]} </span>";
                     }
                     ?>
-                    <span><strong>Given Name : </strong>Buckingham Staples</span>
                     <span><strong>Email : </strong><?php echo $data["userDetails"]["email"]; ?></span>
                     <span><strong>Telephone No : </strong><?php echo $data["userDetails"]["tele"]; ?></span>
                 </div>
