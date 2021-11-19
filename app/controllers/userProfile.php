@@ -26,6 +26,9 @@ class UserProfile extends AlecFramework
 
         $type = $this->userProfileModel->getType($user_id);
 
+        //Store user id
+        $data["userId"] = $user_id;
+
         //user details
         $data["userDetails"] = $this->userProfileModel->getUserDetails($user_id);
         $data["userDetails"]["regNo"] = $this->userProfileModel->getRegistrationNo($user_id, $type);
@@ -53,5 +56,33 @@ class UserProfile extends AlecFramework
     {
         $this->userProfileModel->deleteUserDetails($user_id);
         $this->redirect("userDetails");
+    }
+
+    public function assignCourse($user_id, $type)
+    {
+        // var_dump($_POST);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $assignCourses = $_POST["current-assigned-courses"];
+            $removeCourses = $_POST["current-removed-courses"];
+
+            $assignCourses = trim($assignCourses);
+            $removeCourses = trim($removeCourses);
+
+            $assignCourses = explode(" ", $assignCourses);
+            $removeCourses = explode(" ", $removeCourses);
+
+            $assignCourses = array_unique($assignCourses);
+            $removeCourses = array_unique($removeCourses);
+
+            foreach ($assignCourses as $courseId) {
+                $this->userProfileModel->addToCourses($user_id, $type, $courseId);
+            }
+
+            foreach ($removeCourses as $courseId) {
+                $this->userProfileModel->removeFromCourses($user_id, $type, $courseId);
+            }
+        }
+
+        $this->redirect("userProfile/index/{$user_id}");
     }
 }

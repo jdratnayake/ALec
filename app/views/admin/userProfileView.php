@@ -1,5 +1,5 @@
 <?php
-$assignedCourses = array();
+$assignedCourses = "";
 ?>
 
 <!DOCTYPE html>
@@ -106,12 +106,14 @@ $assignedCourses = array();
                             $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
 
                             foreach ($courseDetails as $row) {
-                                array_push($assignedCourses, $row['course_id']);
+                                $assignedCourses = $assignedCourses . " " . $row['course_id'];
 
                                 echo
                                 "
-                                <li class='assigned-course'>{$row['course_name']}
-                                <span class='remove-course'>&times;</span>
+                                <li class='assigned-course'>
+                                    <input type='hidden' class='course-id' value='{$row['course_id']}'>
+                                    <span class='course-name'> {$row['course_name']} </span>
+                                    <span class='remove-course'>&times;</span>
                                 </li>
                                 ";
                             }
@@ -123,6 +125,14 @@ $assignedCourses = array();
                         </ul>
 
                     </div>
+
+                    <form action="<?php echo BASEURL . "/userProfile/assignCourse/" . $data["userId"] . "/" .  $data["userDetails"]["type"] ?>" method="POST">
+                        <input type="hidden" name="current-assigned-courses" id="current-assigned-courses" value="<?php echo $assignedCourses; ?>">
+
+                        <input type="hidden" name="current-removed-courses" id="current-removed-courses" value="">
+
+                        <input type="submit" value="Apply">
+                    </form>
                 </div>
 
             </div>
@@ -174,6 +184,8 @@ $assignedCourses = array();
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notification"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("userProfileModal"); ?>
 

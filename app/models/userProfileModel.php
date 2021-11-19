@@ -109,4 +109,46 @@ class UserProfileModel extends Database
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
     }
+
+    public function addToCourses($user_id, $type, $courseId)
+    {
+        if ($type == "Lecturer") {
+            $query = "SELECT * FROM course_registration_lec WHERE course_id='$courseId' AND lecturer_id='$user_id'";
+            $result = mysqli_query($GLOBALS["db"], $query);
+
+            if (mysqli_num_rows($result) === 0) {
+                $query = "INSERT INTO course_registration_lec VALUES('$courseId', '$user_id')";
+                mysqli_query($GLOBALS["db"], $query);
+            }
+        } else if ($type == "Student") {
+            $query = "SELECT * FROM course_registration_stu WHERE course_id='$courseId' AND student_id='$user_id'";
+            $result = mysqli_query($GLOBALS["db"], $query);
+
+            if (mysqli_num_rows($result) === 0) {
+                $query = "INSERT INTO course_registration_stu VALUES('$courseId', '$user_id')";
+                mysqli_query($GLOBALS["db"], $query);
+            }
+        }
+    }
+
+    public function removeFromCourses($user_id, $type, $courseId)
+    {
+        if ($type == "Lecturer") {
+            $query = "SELECT * FROM course_registration_lec WHERE course_id='$courseId' AND lecturer_id='$user_id'";
+            $result = mysqli_query($GLOBALS["db"], $query);
+
+            if (mysqli_num_rows($result) === 1) {
+                $query = "DELETE FROM course_registration_lec WHERE course_id='$courseId' AND lecturer_id='$user_id'";
+                mysqli_query($GLOBALS["db"], $query);
+            }
+        } else if ($type == "Student") {
+            $query = "SELECT * FROM course_registration_stu WHERE course_id='$courseId' AND student_id='$user_id'";
+            $result = mysqli_query($GLOBALS["db"], $query);
+
+            if (mysqli_num_rows($result) === 1) {
+                $query = "DELETE FROM course_registration_stu WHERE course_id='$courseId' AND student_id='$user_id'";
+                mysqli_query($GLOBALS["db"], $query);
+            }
+        }
+    }
 }
