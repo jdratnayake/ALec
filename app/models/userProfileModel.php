@@ -59,13 +59,30 @@ class UserProfileModel extends Database
     public function getCourseDetails($user_id, $type)
     {
         if ($type == "lec") {
-            $query = "SELECT course.course_name FROM course INNER JOIN course_registration_lec 
+            $query = "SELECT course.course_id, course.course_name FROM course INNER JOIN course_registration_lec 
             WHERE course.course_id=course_registration_lec.course_id AND 
             course_registration_lec.lecturer_id='$user_id'";
         } else if ($type == "stu") {
-            $query = "SELECT course.course_name FROM course INNER JOIN course_registration_stu 
+            $query = "SELECT course.course_id, course.course_name FROM course INNER JOIN course_registration_stu 
             WHERE course.course_id=course_registration_stu.course_id AND 
             course_registration_stu.student_id='$user_id'";
+        }
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
+    }
+
+    public function getUnAssignedCourseDetails($user_id, $type)
+    {
+        if ($type == "lec") {
+            $query = "SELECT course_id, course_name FROM course WHERE course_id NOT IN (SELECT course.course_id FROM course INNER JOIN course_registration_lec 
+            WHERE course.course_id=course_registration_lec.course_id AND 
+            course_registration_lec.lecturer_id='$user_id')";
+        } else if ($type == "stu") {
+            $query = "SELECT course_id, course_name FROM course WHERE course_id NOT IN (SELECT course.course_id FROM course INNER JOIN course_registration_stu 
+            WHERE course.course_id=course_registration_stu.course_id AND 
+            course_registration_stu.student_id='$user_id')";
         }
 
         $result = mysqli_query($GLOBALS["db"], $query);

@@ -1,3 +1,7 @@
+<?php
+$assignedCourses = array();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,19 +87,39 @@
                         <label for="courses"><strong>Select Course:</strong></label>
                         <select name="course" id="courses" class="selection-box">
                             <option value="default" selected>Select a course</option>
-                            <option value="sub1">SCS 1201 - Data Structures and Algorithms - I</option>
-                            <option value="sub2">SCS 1208 - Data Structures and Algorithms - II</option>
-                            <option value="sub3">SCS 2201 - Data Structures and Algorithms - III</option>
+
+                            <?php
+                            while ($row = mysqli_fetch_assoc($data["unAssignedCourseDetails"])) {
+                                echo
+                                "
+                                <option value='{$row['course_id']}'>{$row['course_name']}</option>
+                                ";
+                            }
+                            ?>
+
+                            <!-- <option value="sub1">SCS 1201 - Data Structures and Algorithms - I</option> -->
                         </select>
 
-<!--                    List of assigned courses-->
+                        <!--                    List of assigned courses-->
                         <ul style="list-style-type:none;" class="assigned-courses">
-                            <li class="assigned-course">SCS 2213 - Electronics and Physical Computing
-                                <span class="remove-course">&times;</span></li>
-                            <li class="assigned-course">SCS 2214 - Information system security
-                                <span class="remove-course">&times;</span></li>
-                            <li class="assigned-course">ENH 2201 - Enhancement III
-                                <span class="remove-course">&times;</span></li>
+                            <?php
+                            $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
+
+                            foreach ($courseDetails as $row) {
+                                array_push($assignedCourses, $row['course_id']);
+
+                                echo
+                                "
+                                <li class='assigned-course'>{$row['course_name']}
+                                <span class='remove-course'>&times;</span>
+                                </li>
+                                ";
+                            }
+                            ?>
+
+                            <!-- <li class="assigned-course">SCS 2214 - Information system security
+                                <span class="remove-course">&times;</span>
+                            </li> -->
                         </ul>
 
                     </div>
@@ -121,8 +145,9 @@
                 <div class="course-details">
                     <span>Course Details</span>
                     <?php
-                    while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
-                        echo "<span>${row['course_name']}</span>";
+
+                    foreach ($courseDetails as $row) {
+                        echo "<span>{$row['course_name']}</span>";
                     }
                     ?>
                 </div>

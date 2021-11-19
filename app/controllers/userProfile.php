@@ -39,6 +39,9 @@ class UserProfile extends AlecFramework
         //course details
         $data["courseDetails"] = $this->userProfileModel->getCourseDetails($user_id, $type);
 
+        //Not assigned course details
+        $data["unAssignedCourseDetails"] = $this->userProfileModel->getUnAssignedCourseDetails($user_id, $type);
+
         //batch details
         $data["badgeDetails"] = $this->userProfileModel->getBadgeDetails($user_id);
 

@@ -1,5 +1,5 @@
 //When the user clicks assign courses button, open the model
-document.getElementById("modal-btn").addEventListener("click",()=>{
+document.getElementById("modal-btn").addEventListener("click", () => {
     document.getElementById("course-selection-modal").style.display = "block";
 })
 
@@ -16,10 +16,3 @@ window.addEventListener("click", (event) => {
         }
     }
 });
-
-for (let i = 0; i < document.getElementsByClassName("assigned-course").length; i++) {
-    document.getElementsByClassName("remove-course")[i].addEventListener("click", ()=>{
-            document.getElementsByClassName("assigned-course")[i].style.display = "none";
-    })
-}
-
