@@ -447,10 +447,10 @@ footer p {
 /*==============================================================================*/
 /*FOOTER - END*/
 /*==============================================================================*/
-/*Stylesheet of the create quiz page*/
+/*Stylesheet of the create badge page*/
 .form-content {
   padding: 16px;
-  width: 51%;
+  width: 50%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
 }
@@ -462,73 +462,30 @@ footer p {
 .form-content .details {
   margin-bottom: 10px;
 }
-.form-content .details #form {
-  border-radius: 4px;
-}
-.form-content .details #form .form-header {
-  margin: 24px 0;
-  border-top: 1px solid lightgrey;
-  padding-top: 16px;
-}
-.form-content .details #form .form-header .radio-inline {
-  margin-top: 0;
-}
-.form-content .details #form .form-header .radio-inline label {
-  margin-right: 10px;
-}
-.form-content .details .add {
-  width: 128px;
-  padding: 6px;
-  border-radius: 0 0 12px 12px;
-  color: white;
-  background-color: #305890;
-  border: 3px solid #305890;
-  font-weight: bold;
-  cursor: pointer;
-}
-.form-content .details .add:hover {
-  border: 3px solid #4075bf;
-  color: #4075bf;
-  background-color: white;
-}
 .form-content .details .button-set {
-  margin-top: 60px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }
 .form-content .details .button-set .finish {
-  height: 48px;
-  width: 49%;
+  padding: 6px 12px;
   border-radius: 5px;
-  font-size: large;
+  font-size: 20px;
   border: none;
   color: white;
   background-color: #2B4F82;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
 }
 .form-content .details .button-set .finish:hover {
-  border: 3px solid #1d3557;
   color: white;
   background-color: #1d3557;
 }
-.form-content .short-ans {
-  display: none;
-}
 .form-content .form-group {
   display: flex;
-  flex: 0 0 auto;
-  flex-flow: row wrap;
   align-items: center;
-}
-.form-content .form-group textarea {
+  justify-content: space-between;
   margin-bottom: 10px;
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-  border-bottom-width: 2px;
-}
-.form-content .form-group textarea:hover {
-  box-shadow: 0 0 5px #7697b3;
 }
 .form-content .form-group input {
   border: 1px solid lightgrey;
@@ -538,12 +495,17 @@ footer p {
 .form-content .form-group input:hover {
   box-shadow: 0 0 5px #7697b3;
 }
+.form-content .form-group .form-control-label {
+  width: 20%;
+}
+.form-content .form-group .badge-label {
+  margin-top: 10px;
+}
 .form-content .form-group .form-control {
-  width: 100%;
+  width: 95%;
   display: block;
   padding: 6px 12px;
   color: rgba(0, 0, 0, 0.85);
-  background-color: rgba(0, 0, 0, 0.05);
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-bottom-width: 2px;
@@ -555,134 +517,11 @@ footer p {
   box-shadow: 0 0 5px #7697b3;
   cursor: pointer;
 }
-.form-content .form-group .form-name {
+.form-content .form-group .form-input {
   padding-left: 16px;
 }
-.form-content .form-group .cursor-change:hover {
+.form-content .form-group .form-input:hover {
   cursor: text;
 }
-.form-content .form-group .form-answer {
-  width: 80%;
-  margin-bottom: 5px;
-  margin-right: 8px;
-  padding: 6px 12px;
-  color: rgba(0, 0, 0, 0.85);
-  background-color: rgba(0, 0, 0, 0.05);
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-bottom-width: 2px;
-}
-.form-content .form-group .form-answer:hover {
-  box-shadow: 0 0 5px #7697b3;
-}
-.form-content .form-group .points {
-  color: rgba(0, 0, 0, 0.85);
-  width: 10%;
-  margin-right: 4px;
-  padding: 6px 0 6px 8px;
-  margin-bottom: 5px;
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-  border-bottom-width: 2px;
-  margin-top: 1px;
-}
-.form-content .form-group .points:hover {
-  box-shadow: 0 0 5px #7697b3;
-}
-.form-content .row {
-  display: flex;
-}
-.form-content .row .col {
-  flex: 100%;
-  padding: 10px 0 10px 0;
-}
-.form-content .row .col-end {
-  padding-right: 0;
-}
 
-/* -------CLOSE BUTTON START------------- */
-.close {
-  position: relative;
-  top: 85px;
-  display: inline-flex;
-  overflow: hidden;
-  height: 40px;
-  align-items: center;
-  width: 100%;
-  justify-content: flex-end;
-}
-.close button {
-  border-radius: 5px;
-  border: 2px solid #dd5555;
-  color: white;
-  background-color: #dd5555;
-  cursor: pointer;
-  padding: 4px 8px;
-}
-.close button:hover {
-  color: #dd5555;
-  background-color: #f7d4d4a1;
-}
-.close .fa-times {
-  margin-right: 8px;
-}
-
-.close:hover::before, .close:hover::after {
-  background: #2B4F82;
-}
-
-.close::before, .close::after {
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  top: 50%;
-  left: 0;
-  margin-top: -1px;
-  background: rgba(0, 0, 0, 0.85);
-}
-
-.close::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.close::after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.close.black::before, .close.black::after {
-  height: 3px;
-  margin-top: 0;
-}
-
-.close.rounded::before, .close.rounded::after {
-  border-radius: 5px;
-}
-
-@keyframes click-wave {
-  0% {
-    height: 30px;
-    width: 30px;
-    opacity: 0.35;
-    position: relative;
-  }
-  100% {
-    height: 200px;
-    width: 200px;
-    margin-left: -80px;
-    margin-top: -80px;
-    opacity: 0;
-  }
-}
-/* -------CLOSE BUTTON END------------- */
-
-/*# sourceMappingURL=create_quiz.css.map */
+/*# sourceMappingURL=create_badge.css.map */
