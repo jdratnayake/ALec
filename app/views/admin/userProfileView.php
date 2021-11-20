@@ -128,8 +128,7 @@ $assignedCourses = "";
 
                     <form action="<?php echo BASEURL . "/userProfile/assignCourse/" . $data["userId"] . "/" .  $data["userDetails"]["type"] ?>" method="POST">
                         <input type="hidden" name="current-assigned-courses" id="current-assigned-courses" value="<?php echo $assignedCourses; ?>">
-
-                        <input type="submit" value="Apply">
+                        <input type="submit" value="Apply" class="apply-button">
                     </form>
                 </div>
 

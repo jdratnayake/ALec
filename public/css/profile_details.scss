@@ -17,23 +17,12 @@ $modal_color_hover: $theme;
   width: 80%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: 5% auto auto auto;
-  //margin: auto auto 30px auto;
-  //height: 87%;
   background-color: $background_color;
   overflow-y: hidden;
 }
 
 header {
   background-color: $background_color;
-//  color: $light_color;
-//  padding: 15px;
-//  text-align: center;
-//  font-size: 30px;
-//  font-weight: bold;
-//  margin: auto;
-//  width: 100%;
-//  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-//  border-radius: 5px;
 }
 
 .left-bar {
@@ -133,16 +122,10 @@ header {
   }
 }
 
-//.pvt-details{
-//  height: 140px;
-//}
-
 .course-details{
   height: 240px;
   overflow: auto;
 }
-
-
 
 .badges {
   overflow: scroll;
@@ -170,9 +153,12 @@ header {
   }
 }
 
+/*--------------------------MODAL STYLES START------------------------- */
+
 .modal-content{
+  padding-bottom: 56px;
   .modal-body{
-    margin: 20px 0;
+    margin-top: 20px;
 
     .assigned-courses{
       margin: 20px 0;
@@ -201,4 +187,26 @@ header {
     padding: 4px 8px;
   }
 }
+
+.apply-button{
+  width: 20%;
+  height: 40px;
+  margin-right: 18px;
+  background-color: $main_color;
+  color: $light_color;
+  border-radius: 5px;
+  border: 2px solid $main_color;
+  font-size: large;
+  font-weight: 400;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+  float: right;
+
+  &:hover {
+    background-color: $theme_second_hover;
+    border: 2px solid $theme_second_hover;
+  }
+}
+
+/*--------------------------MODAL STYLES END------------------------- */
 
