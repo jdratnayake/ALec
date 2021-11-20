@@ -1,8 +1,8 @@
 //selecting all required elements
 const dropArea = document.querySelector(".drag-area"),
-    dragText = dropArea.querySelector("header"),
-    button = dropArea.querySelector("button"),
-    input = dropArea.querySelector("input");
+    dragText = dropArea.querySelector(".header"),
+    button = dropArea.querySelector(".browse-file"),
+    input = dropArea.querySelector(".input-image");
 let file; //global variable to use inside multiple functions
 
 button.onclick = ()=>{
@@ -45,8 +45,7 @@ function showFile(){
         let fileReader = new FileReader(); //creating new FileReader object
         fileReader.onload = ()=>{
             let fileURL = fileReader.result; //passing user file source in fileURL variable
-            let imgTag = `<img src="${fileURL}" alt="image">`; //creating an img tag and passing user selected file source inside src attribute
-            dropArea.innerHTML = imgTag; //adding that created img tag inside dropArea container
+            dropArea.innerHTML = `<img src="${fileURL}" alt="image">`; //create img tag, pass file source to src attribute and add to dropArea container
         }
         fileReader.readAsDataURL(file);
     }else{

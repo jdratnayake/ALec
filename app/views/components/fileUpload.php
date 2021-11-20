@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
     <?php linkCSS("fileUpload") ?>
 </head>
 <body>
@@ -9,11 +10,10 @@
     <div class="icon">
         <i class="fa fa-cloud-upload" aria-hidden="true"></i>
     </div>
-<!--    <header>Drag & Drop to Upload File</header>-->
-    <span>Drag & Drop to Upload File</span>
+    <span class="header">Drag & Drop to Upload File</span>
     <span>OR</span>
-    <button>Browse File</button>
-    <input type="file" hidden>
+    <button class="browse-file">Browse File</button>
+    <input type="file" hidden class="input-image">
   </div>
 
   <?php linkJS("fileUpload") ?>
