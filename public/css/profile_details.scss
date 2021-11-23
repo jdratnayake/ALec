@@ -188,6 +188,13 @@ header {
   }
 }
 
+.fa-trash{
+  color: $main_color;
+  &:hover{
+    color: $theme-second_hover;
+  }
+}
+
 .apply-button{
   width: 20%;
   height: 40px;

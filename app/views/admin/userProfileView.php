@@ -113,11 +113,13 @@ $assignedCourses = "";
                                 <li class='assigned-course'>
                                     <input type='hidden' class='course-id' value='{$row['course_id']}'>
                                     <span class='course-name'> {$row['course_name']} </span>
-                                    <span class='remove-course'>&times;</span>
+                                    <span class='remove-course'><i class='fa fa-trash' aria-hidden='true'></i></span>
                                 </li>
                                 ";
                             }
                             ?>
+
+<!--                        <i class="fa fa-trash" aria-hidden="true"></i>-->
 
                             <!-- <li class="assigned-course">SCS 2214 - Information system security
                                 <span class="remove-course">&times;</span>
@@ -128,7 +130,7 @@ $assignedCourses = "";
 
                     <form action="<?php echo BASEURL . "/userProfile/assignCourse/" . $data["userId"] . "/" .  $data["userDetails"]["type"] ?>" method="POST">
                         <input type="hidden" name="current-assigned-courses" id="current-assigned-courses" value="<?php echo $assignedCourses; ?>">
-                        <input type="submit" value="Apply" class="apply-button">
+                        <input type="submit" value="Okay" class="apply-button">
                     </form>
                 </div>
 
