@@ -43,7 +43,7 @@ header {
 }
 
 .drag-area.active {
-  border: 2px solid #19345d;
+  border: none;
 }
 
 .drag-area .icon {
@@ -77,11 +77,26 @@ header {
   margin-bottom: 10px;
 }
 
-.drag-area img {
-  height: 100%;
-  width: 100%;
+.drag-area .input-img {
+  height: 50%;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.drag-area .image-close {
+  color: #19345d;
+  z-index: 10;
+  align-self: flex-end;
+  padding: 0;
+  border: none;
+  background-color: white;
+  margin: 0;
+  font-size: 30px;
+}
+.drag-area .image-close:hover {
+  background-color: #fff;
+  color: #19345d;
+  border-color: #19345d;
 }
 
 /*# sourceMappingURL=fileUpload.css.map */

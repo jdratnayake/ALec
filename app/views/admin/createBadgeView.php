@@ -51,7 +51,7 @@
                         ?>
                     </select>
 
-                    <div class="error"></div>
+                    <div class="error">Error Occurred</div>
                 </div>
 
                 <div class="course-display">
@@ -72,7 +72,7 @@
                     <label for="badge-name" class="form-control-label">Badge name</label>
                     <input type="text" class="form-control form-input" placeholder="Enter badge name" name="badge-name" id="badge-name">
 
-                    <div class="error"></div>
+                    <div class="error">Error Occurred</div>
                 </div>
 
                 <!-- badge description-->
@@ -80,7 +80,7 @@
                     <label for="badge-description" class="form-control-label">Badge description</label>
                     <input type="text" class="form-control form-input" placeholder="Enter badge description" name="badge-description" id="badge-description">
 
-                    <div class="error"></div>
+                    <div class="error">Error Occurred</div>
                 </div>
 
                 <!-- badge points-->
@@ -88,7 +88,7 @@
                     <label for="badge-points" class="form-control-label">Badge points</label>
                     <input type="text" class="form-control form-input" placeholder="Enter no.of points for the badge" name="badge-points" id="badge-points">
 
-                    <div class="error"></div>
+                    <div class="error">Error Occurred</div>
                 </div>
 
                 <!-- badge image-->

@@ -523,6 +523,9 @@ footer p {
 .form-content .form-group .form-input:hover {
   cursor: text;
 }
+.form-content .form-group .error {
+  display: block;
+}
 .form-content #all-courses-selection-message {
   margin-left: 25%;
   color: #73d861;
