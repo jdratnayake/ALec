@@ -59,11 +59,11 @@ function validatePoints() {
 
 function validateFile() {
     if (fileTag.value == "") {
-        document.getElementById(input - list).lastChild.lastChild.innerHTML = "Image must not be empty";
+        document.getElementById("input-list").lastElementChild.lastElementChild.innerHTML = "Image must not be empty";
         return false;
     }
 
-    document.getElementById(input - list).lastChild.lastChild.innerHTML = "";
+    document.getElementById("input-list").lastElementChild.lastElementChild.innerHTML = "";
     return true;
 }
 
