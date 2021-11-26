@@ -8,7 +8,7 @@
 $main_color: $theme_second;
 $main_hover: $theme_second_hover;
 $hover: #7697b3;
-$font_grey: rgba(0,0,0,0.85);
+$font_grey: rgba(0, 0, 0, 0.85);
 $border_grey: lightgrey;
 $light: white;
 
@@ -25,7 +25,7 @@ $light: white;
     margin-bottom: 32px;
   }
 
-  .details{
+  .details {
     margin-bottom: 10px;
 
     .button-set {
@@ -43,7 +43,7 @@ $light: white;
         font-weight: 500;
         cursor: pointer;
 
-        &:hover{
+        &:hover {
           color: $light;
           background-color: $theme_second_hover;
         }
@@ -62,15 +62,16 @@ $light: white;
       border-radius: 4px;
       border-bottom-width: 2px;
 
-      &:hover{
+      &:hover {
         box-shadow: 0 0 5px $hover;
       }
     }
 
-    .form-control-label{
-      width: 20%;
+    .form-control-label {
+      width: 30%;
     }
-    .badge-label{
+
+    .badge-label {
       margin-top: 10px;
     }
 
@@ -86,17 +87,39 @@ $light: white;
       transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       margin-top: 5px;
 
-      &:hover{
+      &:hover {
         box-shadow: 0 0 5px $hover;
         cursor: pointer;
       }
     }
 
-    .form-input{
+    .form-input {
       padding-left: 16px;
 
-      &:hover{
+      &:hover {
         cursor: text;
+      }
+    }
+
+  }
+
+  #all-courses-selection-message{
+    margin-left: 25%;
+    color: #73d861;
+  }
+
+  .selected-courses {
+    margin: 20px 0;
+
+    .selected-course {
+      background-color: #325c9733;
+      border: 2px solid white;
+      border-radius: 16px;
+      padding: 6px 12px;
+
+      .remove-course {
+        float: right;
+        cursor: pointer;
       }
     }
   }

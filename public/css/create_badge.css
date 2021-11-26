@@ -496,7 +496,7 @@ footer p {
   box-shadow: 0 0 5px #7697b3;
 }
 .form-content .form-group .form-control-label {
-  width: 20%;
+  width: 30%;
 }
 .form-content .form-group .badge-label {
   margin-top: 10px;
@@ -522,6 +522,23 @@ footer p {
 }
 .form-content .form-group .form-input:hover {
   cursor: text;
+}
+.form-content #all-courses-selection-message {
+  margin-left: 25%;
+  color: #73d861;
+}
+.form-content .selected-courses {
+  margin: 20px 0;
+}
+.form-content .selected-courses .selected-course {
+  background-color: #325c9733;
+  border: 2px solid white;
+  border-radius: 16px;
+  padding: 6px 12px;
+}
+.form-content .selected-courses .selected-course .remove-course {
+  float: right;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=create_badge.css.map */
