@@ -52,7 +52,7 @@ $light: white;
   }
 
   .form-group {
-    display: flex;
+    //display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -73,6 +73,14 @@ $light: white;
 
     .badge-label {
       margin-top: 10px;
+    }
+
+    .form-line{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%;
     }
 
     .form-control {
@@ -102,7 +110,8 @@ $light: white;
     }
 
     .error{
-      display: block;
+      //display: block;
+      margin-left: 25%;
     }
 
   }
@@ -113,7 +122,7 @@ $light: white;
   }
 
   .selected-courses {
-    margin: 20px 0;
+    margin: 10px 0;
 
     .selected-course {
       background-color: #325c9733;
