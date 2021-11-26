@@ -1,3 +1,7 @@
+<?php
+$errors = $data["errors"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,14 +35,16 @@
         <header>Create Badge</header>
 
         <!-- Badge details -->
-        <form action="<?php echo BASEURL . "/createBadge/submit" ?>" method="post" class="details" enctype="multipart/form-data">
-            <div>
+        <form action="<?php echo BASEURL . "/createBadge/index" ?>" method="post" class="details" enctype="multipart/form-data" id="registerBadgeForm" onsubmit="validateAll()">
+
+            <div id="input-list">
                 <!-- select course drop down list -->
                 <div class="form-group">
                     <label for="course" class="form-control-label">Course name</label>
-                    <select name="course" id="course" class="form-control">
-                        <option value="null" selected>Select your course</option>
-                        <option value="all-courses-selection" id="all-courses-selection">All courses</option>
+                    <select name="course" id="course" class="form-control" onfocusout="validateCourse()">
+                        <option value="null" selected>Select Your Course</option>
+                        <option value="all">All Courses</option>
+
                         <?php
 
                         while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
@@ -49,30 +55,26 @@
                         }
 
                         ?>
-                    </select>
 
-                    <div class="error">Error Occurred</div>
+                    </select>
+                    <input type="hidden" id="course-id-list" value="" name="course-id-list">
+
+                    <div class="error"><?php echo $errors["courseName"] ?></div>
                 </div>
 
                 <div class="course-display">
-                    <div id="all-courses-selection-message" style="display: none">All courses selected</div>
                     <!-- List of selected courses-->
-                    <ul style="list-style-type: none; display: none" class="selected-courses" id="selected-courses">
-                        <li class="selected-course">SCS 2214 - Information system security
-                            <span class="remove-course">&times;</i></span>
-                        </li>
-                        <li class="selected-course">SCS 2213 - Electronics and PC
-                            <span class="remove-course">&times;</i></span>
-                        </li>
+                    <ul style="list-style-type: none" class="selected-courses" id="selected-courses">
+
                     </ul>
                 </div>
 
                 <!-- badge name-->
                 <div class="form-group">
                     <label for="badge-name" class="form-control-label">Badge name</label>
-                    <input type="text" class="form-control form-input" placeholder="Enter badge name" name="badge-name" id="badge-name">
+                    <input type="text" class="form-control form-input" placeholder="Enter badge name" name="badge-name" id="badge-name" onfocusout="validateBadgeName()">
 
-                    <div class="error">Error Occurred</div>
+                    <div class="error"><?php echo $errors["badgeName"] ?></div>
                 </div>
 
                 <!-- badge description-->
@@ -80,20 +82,21 @@
                     <label for="badge-description" class="form-control-label">Badge description</label>
                     <input type="text" class="form-control form-input" placeholder="Enter badge description" name="badge-description" id="badge-description">
 
-                    <div class="error">Error Occurred</div>
+                    <div class="error"></div>
                 </div>
 
                 <!-- badge points-->
                 <div class="form-group">
                     <label for="badge-points" class="form-control-label">Badge points</label>
-                    <input type="text" class="form-control form-input" placeholder="Enter no.of points for the badge" name="badge-points" id="badge-points">
+                    <input type="number" class="form-control form-input" placeholder="Enter no.of points for the badge" name="badge-points" id="badge-points" value="0" onfocusout="validatePoints()">
 
-                    <div class="error">Error Occurred</div>
+                    <div class="error"><?php echo $errors["points"] ?></div>
                 </div>
 
                 <!-- badge image-->
                 <div class="form-group">
                     <label for="badge-image" class="form-control-label badge-label">Badge image</label>
+                    <div class="error"><?php echo $errors["image"] ?></div>
                 </div>
 
             </div>
@@ -111,11 +114,13 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkJS("createBadge") ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
+    <?php linkJS("createBadge") ?>
+
     <?php linkJS("fileUpload") ?>
+
+    <?php linkJS("badgeValidation") ?>
 
 </body>
 

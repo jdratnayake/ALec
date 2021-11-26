@@ -6,5 +6,5 @@
   <span class="header" id="drag-area-temp-2">Drag & Drop to Upload File</span>
   <span id="drag-area-temp-3">OR</span>
   <button type="button" class="browse-file" id="drag-area-temp-4">Browse File</button>
-  <input type="file" hidden class="input-image" name="fileToUpload" id="input-image">
+  <input type="file" hidden class="input-image" name="fileToUpload" id="fileToUpload">
 </div>

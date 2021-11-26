@@ -32,7 +32,7 @@
                     <span class="tooltip">Course</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/createBadge/index'; ?>">
                         <i class="fa fa-certificate"></i>
                         <span class="links_name">Badges</span>
                     </a>
