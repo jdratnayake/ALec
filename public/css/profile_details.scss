@@ -189,9 +189,9 @@ header {
 }
 
 .fa-trash{
-  color: $main_color;
+  color: $delete_button;
   &:hover{
-    color: $theme-second_hover;
+    color: #c21e1e;
   }
 }
 
