@@ -49,12 +49,13 @@ function showFile() {
             document.getElementById("image-close-btn").style.display = "block";
 
             //Hide unwanted html elements
+            document.getElementById("drag-area").style.border = "none";
             document.getElementById("drag-area-temp-1").style.display = "none";
             document.getElementById("drag-area-temp-2").style.display = "none";
             document.getElementById("drag-area-temp-3").style.display = "none";
             document.getElementById("drag-area-temp-4").style.display = "none";
 
-            dropArea.insertAdjacentHTML("afterend", `<img src="${fileURL}" id="image" alt="image" width="100%">`);//create img tag, pass file source to src attribute and add to dropArea container
+            dropArea.insertAdjacentHTML("afterend", `<img src="${fileURL}" id="input-image" alt="image" width="100%">`);//create img tag, pass file source to src attribute and add to dropArea container
 
         }
         fileReader.readAsDataURL(file);
@@ -67,7 +68,7 @@ function showFile() {
 
 //Remove image when user clicks on the close button
 document.getElementById("image-close-btn").addEventListener('click',()=>{
-    document.getElementById("image").style.display = "none";
+    document.getElementById("input-image").style.display = "none";
     document.getElementById("image-close-btn").style.display = "none";
     document.getElementById("drag-area").style.border = "2px dashed #19345D";
 
