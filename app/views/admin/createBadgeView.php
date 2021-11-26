@@ -39,6 +39,7 @@
                     <select name="course" id="course" class="form-control">
                         <option value="null" selected>Select your course</option>
                         <option value="all-courses-selection" id="all-courses-selection">All courses</option>
+
                         <?php
 
                         while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
@@ -49,6 +50,7 @@
                         }
 
                         ?>
+
                     </select>
 
                     <div class="error"></div>
@@ -111,9 +113,9 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkJS("createBadge") ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("createBadge") ?>
 
     <?php linkJS("fileUpload") ?>
 
