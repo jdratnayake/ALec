@@ -11,9 +11,9 @@ let regiter = document.getElementById("registerBadgeForm");
 regiter.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // if (validateEmail1() && validateEmployeeNo1() && validateFirstName1() && validateLastName1()) {
-    //     regiter1.submit();
-    // }
+    if (validateCourse() && validateBadgeName() && validatePoints() && validateFile()) {
+        regiter.submit();
+    }
 })
 
 function validateAll() {
@@ -47,23 +47,23 @@ function validateBadgeName() {
 
 function validatePoints() {
     if (points.value == "0") {
-        points.nextElementSibling.innerHTML = "Points must not be zero";
+        points.parentElement.nextElementSibling.innerHTML = "Points must not be zero";
         points.style.borderColor = invalidColor;
         return false;
     }
 
-    points.nextElementSibling.innerHTML = "";
+    points.parentElement.nextElementSibling.innerHTML = "";
     points.style.borderColor = validColor;
     return true
 }
 
 function validateFile() {
     if (fileTag.value == "") {
-        document.getElementById("input-list").lastElementChild.lastElementChild.innerHTML = "Image must not be empty";
+        fileTag.parentElement.nextElementSibling.innerHTML = "Image must not be empty";
         return false;
     }
 
-    document.getElementById("input-list").lastElementChild.lastElementChild.innerHTML = "";
+    fileTag.parentElement.nextElementSibling.innerHTML = "";
     return true;
 }
 
@@ -72,12 +72,12 @@ function validateFile() {
 
 function setValid(field) {
     field.style.borderColor = validColor;
-    field.nextElementSibling.innerHTML = "";
+    field.parentElement.nextElementSibling.innerHTML = "";
 }
 
 function setInvalid(field, message) {
     field.style.borderColor = invalidColor;
-    field.nextElementSibling.innerHTML = message;
+    field.parentElement.nextElementSibling.innerHTML = message;
 }
 
 // EMPTY CHECK START
