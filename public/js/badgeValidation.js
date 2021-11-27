@@ -38,7 +38,7 @@ function validateBadgeName() {
         return false;
     }
 
-    if (!matchWithRegEx(/^[a-zA-Z0-9_]+$/, badgeName, "Badge name must contain letters and numbers only")) {
+    if (!matchWithRegEx(/^[a-zA-Z\s]*$/, badgeName, "Badge name must contain letters and numbers only")) {
         return false;
     }
 
