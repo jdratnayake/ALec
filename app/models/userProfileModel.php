@@ -122,12 +122,12 @@ class UserProfileModel extends Database
         mysqli_query($GLOBALS["db"], $query);
     }
 
-    public function removeFromCourses($user_id, $type)
+    public function removeFromCourses($user_id, $type, $courseId)
     {
         if ($type == "Lecturer") {
-            $query = "DELETE FROM course_registration_lec WHERE lecturer_id='$user_id'";
+            $query = "DELETE FROM course_registration_lec WHERE lecturer_id='$user_id' AND course_id='$courseId'";
         } else if ($type == "Student") {
-            $query = "DELETE FROM course_registration_stu WHERE student_id='$user_id'";
+            $query = "DELETE FROM course_registration_stu WHERE student_id='$user_id' AND course_id='$courseId'";
         }
 
         mysqli_query($GLOBALS["db"], $query);

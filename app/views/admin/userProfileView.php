@@ -25,7 +25,6 @@ $assignedCourses = "";
 </head>
 
 <body>
-
     <?php linkPhp("navigationBarAdmin"); ?>
 
     <?php linkPhp("successMessage");
@@ -119,7 +118,7 @@ $assignedCourses = "";
                             }
                             ?>
 
-<!--                        <i class="fa fa-trash" aria-hidden="true"></i>-->
+                            <!--                        <i class="fa fa-trash" aria-hidden="true"></i>-->
 
                             <!-- <li class="assigned-course">SCS 2214 - Information system security
                                 <span class="remove-course">&times;</span>
@@ -128,10 +127,12 @@ $assignedCourses = "";
 
                     </div>
 
-                    <form action="<?php echo BASEURL . "/userProfile/assignCourse/" . $data["userId"] . "/" .  $data["userDetails"]["type"] ?>" method="POST">
-                        <input type="hidden" name="current-assigned-courses" id="current-assigned-courses" value="<?php echo $assignedCourses; ?>">
-                        <input type="submit" value="Okay" class="apply-button">
-                    </form>
+                    <!-- Store user ID -->
+                    <input type="hidden" id="user-id" value="<?php echo $data["userId"]; ?>">
+                    <!-- Store user type -->
+                    <input type="hidden" id="user-type" value="<?php echo $data["userDetails"]["type"]; ?>">
+                    <!-- Okay button in delete -->
+                    <input type="button" value="Okay" class="apply-button">
                 </div>
 
             </div>
@@ -185,11 +186,11 @@ $assignedCourses = "";
 
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("userProfileModal"); ?>
-
     <?php linkJS("successMessage"); ?>
 
     <?php linkJS("deleteMessage"); ?>
+
+    <?php linkJS("userProfileModal"); ?>
 </body>
 
 </html>

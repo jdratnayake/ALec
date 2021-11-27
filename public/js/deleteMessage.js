@@ -1,11 +1,6 @@
-
-
 function deleteFunction(link) {
-    document.body.innerHTML = deleteMessage(link) + document.body.innerHTML;
+    document.body.insertAdjacentHTML('afterbegin', deleteMessage(link));
 }
-
-
-
 
 function deleteMessage(link) {
     const output = `
@@ -28,5 +23,5 @@ function deleteMessage(link) {
 }
 
 function deleteCloseMessage() {
-    document.getElementById("delete-box").style.display = "none";
+    document.getElementById("delete-box").remove();
 }
