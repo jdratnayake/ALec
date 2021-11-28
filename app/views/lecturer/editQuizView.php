@@ -58,7 +58,7 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
                     if ($questionType == "mcq-s" or $questionType == "mcq-m") {
 
                         $question = str_replace("'", "&#39;", $row["question"]);
-                        $question = str_replace("'", "&#34;", $row["question"]);
+                        $question = str_replace('"', "&#34;", $question);
 
                         $checked = "";
 

@@ -20,8 +20,6 @@ class UserProfile extends AlecFramework
                 $data["success"] = "Lecturer Edited Successfully";
             } else if ($successSignal == "3") {
                 $data["success"] = "Student Edited Successfully";
-            } else if ($successSignal == "4") {
-                $data["success"] = "Course Selection Changed Successfully";
             }
             $this->unsetSession("successMessageStatus");
         }
@@ -60,30 +58,13 @@ class UserProfile extends AlecFramework
         $this->redirect("userDetails");
     }
 
-    public function assignCourse($user_id, $type)
+    public function assignCourse($user_id, $courseId, $type)
     {
-        // var_dump($_POST);
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $assignCourses = $_POST["current-assigned-courses"];
+        $this->userProfileModel->addToCourses($user_id, $type, $courseId);
+    }
 
-            $assignCourses = trim($assignCourses);
-
-            $assignCourses = explode(" ", $assignCourses);
-
-            $assignCourses = array_unique($assignCourses);
-
-
-
-            $this->userProfileModel->removeFromCourses($user_id, $type);
-
-
-            foreach ($assignCourses as $courseId) {
-                $this->userProfileModel->addToCourses($user_id, $type, $courseId);
-            }
-
-            $this->setSession("successMessageStatus", 4);
-        }
-
-        $this->redirect("userProfile/index/{$user_id}");
+    public function removeCourse($userId, $courseId, $type)
+    {
+        $this->userProfileModel->removeFromCourses($userId, $type, $courseId);
     }
 }
