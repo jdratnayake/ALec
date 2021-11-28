@@ -21,19 +21,54 @@ class AttemptQuiz extends AlecFramework
 
     public function submit($quizId)
     {
-        $marks = 0;
+        $totakMarks = 0;
 
-        // var_dump($_POST);
+        var_dump($_POST);
+        return 0;
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $quizQuestions = $this->attemptQuizMarksModel->getQuestionDetails($quizId);
+            //Preprocess - START
+            $questionIdString = $_POST["questionIdString"];
+            $questionTypeString = $_POST["questionTypeString"];
 
-            while ($question = mysqli_fetch_assoc($quizQuestions)) {
-                $id = $question["question_no"];
-                $type = $question["question_type"];
+            $questionIdString = trim($questionIdString, "_");
+            $questionTypeString = trim($questionTypeString, "_");
 
-                if ($type == "mcq-s") {
-                } else if ($type == "mcq-m") {
-                } else if ($type == "short ans") {
+            $questionIdString = explode("_", $questionIdString);
+            $questionTypeString = explode("_", $questionTypeString);
+            //Preprocess - END
+
+            for ($i = 0; $i < sizeof($questionIdString); $i++) {
+                $questionId = $questionIdString[$i];
+                $questionType = $questionTypeString[$i];
+
+                if ($questionType == "mcq-s") {
+                    $choiceId = $_POST[$questionId];
+                    $questionMarks = $this->attemptQuizMarksModel->getChoiceMark($choiceId);
+                } else if ($questionType == "mcq-m") {
+                    $choiceIdList = $this->attemptQuizMarksModel->getChoiceIds($questionId);
+
+                    $questionMarks = 0;
+
+                    while ($row = mysqli_fetch_assoc($choiceIdList)) {
+                        if (isset($_POST[$row["choice_id"]])) {
+                            $questionMarks += $this->attemptQuizMarksModel->getChoiceMark($row["choice_id"]);
+                        }
+                    }
+                } else if ($questionType == "short ans") {
+                    $choiceId = $_POST[$questionId];
+                    $choiceName = $this->attemptQuizMarksModel->getShortAnswerChoice($choiceId);
+                    $choiceName = strtolower($choiceName);
+                    $choiceName = trim($choiceName, " ");
+
+                    $givenChoiceName = strtolower($_POST[$questionId]);
+                    $givenChoiceName = trim($givenChoiceName, " ");
+
+                    if ($choiceName == $givenChoiceName) {
+                        $questionMarks = 100;
+                    } else {
+                        $questionMarks = 0;
+                    }
                 }
             }
         }

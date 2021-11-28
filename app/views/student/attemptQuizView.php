@@ -65,6 +65,10 @@
                     array_push($quizArray, $questionArray);
                 }
 
+                //Question summary string
+                $questionIdString = "";
+                $questionTypeString = "";
+
                 //Shuffle part
 
                 //Shuffle questions
@@ -77,6 +81,9 @@
                     $questionId = $questionObject[1];
                     $type = $questionObject[2];
                     $choiceArray = $questionObject[3];
+
+                    $questionIdString .= "_" . $questionId;
+                    $questionTypeString .= "_" . $type;
 
                     //Shiffle choices
                     shuffle($choiceArray);
@@ -157,6 +164,10 @@
 
                     echo "</li>";
                 }
+
+                echo "<input type='hidden' name='questionIdString' value='" . $questionIdString . "'>";
+                echo "<input type='hidden' name='questionTypeString' value='" . $questionTypeString . "'>";
+
                 ?>
 
             </ol>
