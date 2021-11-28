@@ -29,7 +29,7 @@
         </div>
 
         <!-- Quiz basic details -->
-        <form class="details" method="post" id="form">
+        <form class="details" method="post" id="form" action="<?php echo BASEURL . '/attemptQuiz/submit/' . $data["quizDetails"]["quiz_id"]; ?>">
             <ol class="all-questions">
                 <?php
                 //Quiz array - Multi Dementional

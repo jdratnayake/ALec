@@ -1,6 +1,6 @@
 <?php
 
-class AttemptQuizModel extends Database
+class AttemptQuizViewModel extends Database
 {
     public function getQuizDetails($quizId)
     {
