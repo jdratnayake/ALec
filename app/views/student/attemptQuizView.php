@@ -42,8 +42,9 @@
                     $question = str_replace("'", "&#39;", $questionRow["question"]);
                     $question = str_replace('"', "&#34;", $question);
 
-                    //Push the question and type of the question to the array
+                    //Push the question, question id and type of the question to the array
                     array_push($questionArray, $question);
+                    array_push($questionArray, $questionRow["question_no"]);
                     array_push($questionArray, $questionRow["question_type"]);
 
                     //choice array
@@ -73,8 +74,9 @@
                     echo "<li class='question-container'>";
 
                     $question = $questionObject[0];
-                    $type = $questionObject[1];
-                    $choiceArray = $questionObject[2];
+                    $questionId = $questionObject[1];
+                    $type = $questionObject[2];
+                    $choiceArray = $questionObject[3];
 
                     //Shiffle choices
                     shuffle($choiceArray);
@@ -91,14 +93,14 @@
 
                         foreach ($choiceArray as $choiceObject) {
                             $id = $choiceObject[0];
-                            $choice = $choiceObject[2];
+                            $choice = $choiceObject[1];
 
                             echo
                             "
                             <div class='answer'>
-                                <input type='radio' id='scq-answer-1' name='q1' value='ans-1'>
-                                <label for='scq-answer-1'>
-                                    <li>Windows</li>
+                                <input type='radio' id='{$id}' name='{$questionId}' value='{$id}'>
+                                <label for='{$id}'>
+                                    <li>{$choice}</li>
                                 </label>
                             </div>
                             ";
@@ -110,90 +112,53 @@
                         </div>
                         ";
                     } else if ($type == "mcq-m") {
+                        echo
+                        "
+                        <div class='multiple-choice'>
+                        <div class='question'>
+                            {$question}
+                        </div>
+                        <ol>
+                        ";
+
+                        foreach ($choiceArray as $choiceObject) {
+                            $id = $choiceObject[0];
+                            $choice = $choiceObject[1];
+
+                            echo
+                            "
+                            <div class='answer'>
+                                <input type='checkbox' id='{$id}' name='{$id}' value='{$id}'>
+                                <label for='{$id}'>
+                                    <li>{$choice}</li>
+                                </label>
+                            </div>
+                            ";
+                        }
+
+                        echo
+                        "
+                        </ol>
+                        </div>
+                        ";
                     } else if ($type == "short ans") {
+                        $id = $choiceArray[0][0];
+
+                        echo
+                        "
+                        <div class='short-ans'>
+                            <label for='{$id}' class='question'>
+                            {$question}
+                            </label>
+                            <input type='text' id='{$id}' name='$questionId'>
+                        </div>
+                        ";
                     }
 
                     echo "</li>";
                 }
                 ?>
 
-                <!-- <li class='question-container'> -->
-                <!-- <div class='single-choice'>
-                    <div class='question'>
-                        Which of the following is not an operating system?
-                    </div>
-                    <ol> -->
-                <div class='answer'>
-                    <input type='radio' id='scq-answer-1' name='q1' value='ans-1'>
-                    <label for='scq-answer-1'>
-                        <li>Windows</li>
-                    </label>
-                </div>
-                <div class='answer'>
-                    <input type='radio' id='scq-answer-2' name='q1' value='ans-2'>
-                    <label for='scq-answer-2'>
-                        <li>Linux</li>
-                    </label>
-                </div>
-                <div class='answer'>
-                    <input type='radio' id='scq-answer-3' name='q1' value='ans-3'>
-                    <label for='scq-answer-3'>
-                        <li>Oracle</li>
-                    </label>
-                </div>
-                <div class='answer'>
-                    <input type='radio' id='scq-answer-4' name='q1' value='ans-4'>
-                    <label for='scq-answer-4'>
-                        <li>DOS</li>
-                    </label>
-                </div>
-                <!-- </ol>
-                </div> -->
-                <!-- </li> -->
-
-                <!-- <li class='question-container'> -->
-                <div class='multiple-choice'>
-                    <div class='question'>
-                        Which of the following are operating systems?
-                    </div>
-                    <ol>
-                        <div class='answer'>
-                            <input type='checkbox' id='mcq-answer-1' name='q2' value='ans-1'>
-                            <label for='mcq-answer-1'>
-                                <li>Windows</li>
-                            </label>
-                        </div>
-                        <div class='answer'>
-                            <input type='checkbox' id='mcq-answer-2' name='q2' value='ans-2'>
-                            <label for='mcq-answer-2'>
-                                <li>Linux</li>
-                            </label>
-                        </div>
-                        <div class='answer'>
-                            <input type='checkbox' id='mcq-answer-3' name='q2' value='ans-3'>
-                            <label for='mcq-answer-3'>
-                                <li>Oracle</li>
-                            </label>
-                        </div>
-                        <div class='answer'>
-                            <input type='checkbox' id='mcq-answer-4' name='q2' value='ans-4'>
-                            <label for='mcq-answer-4'>
-                                <li>DOS</li>
-                            </label>
-                        </div>
-
-                        <!--                        <li class='answer'>Linux</li>-->
-                        <!--                        <li class='answer'>Oracle</li>-->
-                        <!--                        <li class='answer'>DOS</li>-->
-                    </ol>
-                </div>
-                <!-- </li> -->
-                <!-- <li class='question-container'> -->
-                <div class='short-ans'>
-                    <label for='short-answer-box' class='question'>When was the first operating system developed?</label>
-                    <input type='text' id='short-answer-box'>
-                </div>
-                <!-- </li> -->
             </ol>
 
             <button type="submit" class="done" id="submit-btn">Submit</button>
