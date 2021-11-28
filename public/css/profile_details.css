@@ -554,7 +554,7 @@ header {
 .badges {
   overflow: scroll;
   overflow-x: hidden;
-  height: 95px;
+  display: block;
 }
 .badges span:first-child {
   display: block;
@@ -571,6 +571,11 @@ header {
   color: black;
   font-size: 30px;
   margin-right: 10px;
+}
+
+.badge-image {
+  width: 10rem;
+  margin: 5px;
 }
 
 /*--------------------------MODAL STYLES START------------------------- */

@@ -162,6 +162,7 @@ $assignedCourses = "";
                 </div>
 
                 <?php
+                $image1 = srcIMG("BadgeQuestioner.png");
                 if ($data["userDetails"]["type"] == "Student") {
                     echo "<div class='badges'>";
                     echo "<span>Badges</span>";
@@ -169,12 +170,18 @@ $assignedCourses = "";
                     while ($row = mysqli_fetch_assoc($data["badgeDetails"])) {
                         echo '<span> <i class="fa fa-certificate" aria-hidden="true"></i>';
                         echo "<span>" . $row['badge_name'] . "</span>";
+                        echo " <img  $image1 alt='Badge image' class='badge-image'> ";
                         echo "</span>";
                     }
 
                     echo "</div>";
                 }
                 ?>
+
+<!--            Badge Images-->
+                <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge image" class="badge-image">
+                <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge image" class="badge-image">
+
             </div>
 
         </div>
