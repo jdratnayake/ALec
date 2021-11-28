@@ -573,6 +573,10 @@ header {
   margin-right: 10px;
 }
 
+.badge-image {
+  width: 10rem;
+}
+
 /*--------------------------MODAL STYLES START------------------------- */
 .modal-content {
   padding-bottom: 56px;
