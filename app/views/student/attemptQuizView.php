@@ -31,80 +31,137 @@
         <!-- Quiz basic details -->
         <form class="details" method="post" id="form">
             <ol class="all-questions">
-                <li class="question-container">
-                    <div class="single-choice">
-                        <div class="q1 question">
+                <?php
+                //Quiz array - Multi Dementional
+                $quizArray = array();
+
+                while ($questionRow = mysqli_fetch_assoc($data["questions"])) {
+                    //Question array
+                    $questionArray = array();
+
+                    $question = str_replace("'", "&#39;", $questionRow["question"]);
+                    $question = str_replace('"', "&#34;", $question);
+
+                    //Push the question and type of the question to the array
+                    array_push($questionArray, $question);
+                    array_push($questionArray, $questionRow["question_type"]);
+
+                    //choice array
+                    $choiceArray = array();
+
+                    $choiceCount = $questionRow["count"];
+
+                    for ($i = 0; $i < $choiceCount; $i++) {
+                        $choiceRow = mysqli_fetch_assoc($data["choices"]);
+
+                        $choiceId = $choiceRow["choice_id"];
+                        $choice = $choiceRow["choice_name"];
+
+                        array_push($choiceArray, array($choiceId, $choice));
+                    }
+
+                    array_push($questionArray, $choiceArray);
+                    array_push($quizArray, $questionArray);
+                }
+
+                //Shuffle part
+
+                //Shuffle questions
+                shuffle($quizArray);
+
+                foreach ($quizArray as $questionObject) {
+
+
+                    $question = $questionObject[0];
+                    $type = $questionObject[1];
+                    $choiceArray = $questionObject[2];
+
+
+
+                    //Shiffle choices
+                    shuffle($choiceArray);
+
+                    foreach ($choiceArray as $choiceObject) {
+                        $id = $choiceObject[0];
+                        $choice = $choiceObject[2];
+                    }
+                }
+                ?>
+
+                <li class='question-container'>
+                    <div class='single-choice'>
+                        <div class='question'>
                             Which of the following is not an operating system?
                         </div>
                         <ol>
-                            <div class="answer">
-                                <input type="radio" id="scq-answer-1" name="q1" value="ans-1">
-                                <label for="scq-answer-1">
+                            <div class='answer'>
+                                <input type='radio' id='scq-answer-1' name='q1' value='ans-1'>
+                                <label for='scq-answer-1'>
                                     <li>Windows</li>
                                 </label>
                             </div>
-                            <div class="answer">
-                                <input type="radio" id="scq-answer-2" name="q1" value="ans-2">
-                                <label for="scq-answer-2">
+                            <div class='answer'>
+                                <input type='radio' id='scq-answer-2' name='q1' value='ans-2'>
+                                <label for='scq-answer-2'>
                                     <li>Linux</li>
                                 </label>
                             </div>
-                            <div class="answer">
-                                <input type="radio" id="scq-answer-3" name="q1" value="ans-3">
-                                <label for="scq-answer-3">
+                            <div class='answer'>
+                                <input type='radio' id='scq-answer-3' name='q1' value='ans-3'>
+                                <label for='scq-answer-3'>
                                     <li>Oracle</li>
                                 </label>
                             </div>
-                            <div class="answer">
-                                <input type="radio" id="scq-answer-4" name="q1" value="ans-4">
-                                <label for="scq-answer-4">
+                            <div class='answer'>
+                                <input type='radio' id='scq-answer-4' name='q1' value='ans-4'>
+                                <label for='scq-answer-4'>
                                     <li>DOS</li>
                                 </label>
                             </div>
                         </ol>
                     </div>
                 </li>
-                <li class="question-container">
-                    <div class="q2 multiple-choice">
-                        <div class="question">
+                <li class='question-container'>
+                    <div class='multiple-choice'>
+                        <div class='question'>
                             Which of the following are operating systems?
                         </div>
                         <ol>
-                            <div class="answer">
-                                <input type="checkbox" id="mcq-answer-1" name="q2" value="ans-1">
-                                <label for="mcq-answer-1">
+                            <div class='answer'>
+                                <input type='checkbox' id='mcq-answer-1' name='q2' value='ans-1'>
+                                <label for='mcq-answer-1'>
                                     <li>Windows</li>
                                 </label>
                             </div>
-                            <div class="answer">
-                                <input type="checkbox" id="mcq-answer-2" name="q2" value="ans-2">
-                                <label for="mcq-answer-2">
+                            <div class='answer'>
+                                <input type='checkbox' id='mcq-answer-2' name='q2' value='ans-2'>
+                                <label for='mcq-answer-2'>
                                     <li>Linux</li>
                                 </label>
                             </div>
-                            <div class="answer">
-                                <input type="checkbox" id="mcq-answer-3" name="q2" value="ans-3">
-                                <label for="mcq-answer-3">
+                            <div class='answer'>
+                                <input type='checkbox' id='mcq-answer-3' name='q2' value='ans-3'>
+                                <label for='mcq-answer-3'>
                                     <li>Oracle</li>
                                 </label>
                             </div>
-                            <div class="answer">
-                                <input type="checkbox" id="mcq-answer-4" name="q2" value="ans-4">
-                                <label for="mcq-answer-4">
+                            <div class='answer'>
+                                <input type='checkbox' id='mcq-answer-4' name='q2' value='ans-4'>
+                                <label for='mcq-answer-4'>
                                     <li>DOS</li>
                                 </label>
                             </div>
 
-                            <!--                        <li class="answer">Linux</li>-->
-                            <!--                        <li class="answer">Oracle</li>-->
-                            <!--                        <li class="answer">DOS</li>-->
+                            <!--                        <li class='answer'>Linux</li>-->
+                            <!--                        <li class='answer'>Oracle</li>-->
+                            <!--                        <li class='answer'>DOS</li>-->
                         </ol>
                     </div>
                 </li>
-                <li class="question-container">
-                    <div class="q3 short-ans">
-                        <label for="short-answer-box" class="question">When was the first operating system developed?</label>
-                        <input type="text" id="short-answer-box">
+                <li class='question-container'>
+                    <div class='short-ans'>
+                        <label for='short-answer-box' class='question'>When was the first operating system developed?</label>
+                        <input type='text' id='short-answer-box'>
                     </div>
                 </li>
             </ol>
