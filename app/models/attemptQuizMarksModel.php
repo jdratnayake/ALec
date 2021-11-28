@@ -23,11 +23,11 @@ class AttemptQuizMarksModel extends Database
         return $reuslt;
     }
 
-    public function getShortAnswerChoice($choiceId)
+    public function getShortAnswerChoice($questionId)
     {
-        $choiceId = mysqli_real_escape_string($GLOBALS["db"], $choiceId);
+        $questionId = mysqli_real_escape_string($GLOBALS["db"], $questionId);
 
-        $query = "SELECT choice_name FROM question_choice WHERE choice_id='$choiceId' LIMIT 1";
+        $query = "SELECT choice_name FROM question_choice WHERE question_no='$questionId' LIMIT 1";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 

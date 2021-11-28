@@ -23,9 +23,6 @@ class AttemptQuiz extends AlecFramework
     {
         $totakMarks = 0;
 
-        var_dump($_POST);
-        return 0;
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //Preprocess - START
             $questionIdString = $_POST["questionIdString"];
@@ -63,8 +60,7 @@ class AttemptQuiz extends AlecFramework
                         }
                     }
                 } else if ($questionType == "short ans") {
-                    $choiceId = $_POST[$questionId];
-                    $choiceName = $this->attemptQuizMarksModel->getShortAnswerChoice($choiceId);
+                    $choiceName = $this->attemptQuizMarksModel->getShortAnswerChoice($questionId);
                     $choiceName = strtolower($choiceName);
                     $choiceName = trim($choiceName, " ");
 
@@ -78,10 +74,13 @@ class AttemptQuiz extends AlecFramework
                     }
                 }
 
+                //calculate sucess rate
+                $sucessRate = $this->attemptQuizMarksModel->getSucessRate($questionId);
+
                 //Add positive marks to the success_rate column in quiz_question
                 if ($questionMarks > 0) {
                     //calculate sucess rate
-                    $sucessRate = $this->attemptQuizMarksModel->getSucessRate($questionId) + $questionMarks;
+                    $sucessRate += $questionMarks;
 
                     $this->attemptQuizMarksModel->updateSucessRate($questionId, $sucessRate);
                 }
@@ -97,9 +96,9 @@ class AttemptQuiz extends AlecFramework
 
             //Insert student attempt record
             $userId = $this->getSession("userId");
-            $this->attemptQuizMarksModel->increaseNoOfAttempts($userId, $quizId, $totakMarks);
+            $this->attemptQuizMarksModel->insertAttempt($userId, $quizId, $totakMarks);
 
-            //Output
+            //Output - Testing
             var_dump($questionIdString);
             echo "<br><br><br>";
             var_dump($sucessRateArray);
