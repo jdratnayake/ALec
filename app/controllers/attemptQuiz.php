@@ -38,6 +38,13 @@ class AttemptQuiz extends AlecFramework
             $questionTypeString = explode("_", $questionTypeString);
             //Preprocess - END
 
+            //To store question marks and sucess rate
+            $questionMarksArray = array();
+            $sucessRateArray = array();
+
+            $totalMarks = 0;
+            $attemptCount = $this->attemptQuizMarksModel->getAttemptCount($quizId) + 1;
+
             for ($i = 0; $i < sizeof($questionIdString); $i++) {
                 $questionId = $questionIdString[$i];
                 $questionType = $questionTypeString[$i];
@@ -70,7 +77,34 @@ class AttemptQuiz extends AlecFramework
                         $questionMarks = 0;
                     }
                 }
+
+                //Add positive marks to the success_rate column in quiz_question
+                if ($questionMarks > 0) {
+                    //calculate sucess rate
+                    $sucessRate = $this->attemptQuizMarksModel->getSucessRate($questionId) + $questionMarks;
+
+                    $this->attemptQuizMarksModel->updateSucessRate($questionId, $sucessRate);
+                }
+
+                //calculate sucess precentage
+                $precentage = ($sucessRate / $attemptCount);
+
+                $totakMarks += $questionMarks;
+
+                array_push($sucessRateArray, $precentage);
+                array_push($questionMarksArray, $questionMarks);
             }
+
+            //Insert student attempt record
+            $userId = $this->getSession("userId");
+            $this->attemptQuizMarksModel->increaseNoOfAttempts($userId, $quizId, $totakMarks);
+
+            //Output
+            var_dump($questionIdString);
+            echo "<br><br><br>";
+            var_dump($sucessRateArray);
+            echo "<br><br><br>";
+            var_dump($questionMarksArray);
         }
     }
 }
