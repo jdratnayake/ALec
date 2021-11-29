@@ -76,6 +76,15 @@
 
         <form action="<?php echo BASEURL . "/askForumQuestion/index/{$data['forumId']}"; ?>" method="post" id="topicSubmit" onsubmit="validateAll()">
 
+<!--        Toggle button to toggle between real name and random name-->
+            <div class="toggle-btn">
+                <label for="name-toggle">Stay Anonymous</label>
+                <div class="switch">
+                    <input type="checkbox" checked id="name-toggle">
+                    <span class="slider round"></span>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="subject">Subject</label>
                 <div class="right-side">

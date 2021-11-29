@@ -16,7 +16,7 @@ $errors = $data["errors"];
 
     <?php linkCSS("create_badge") ?>
 
-    <?php linkCSS("fileUpload") ?>
+    <?php linkCSS("file_upload") ?>
 
 </head>
 
