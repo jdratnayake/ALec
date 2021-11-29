@@ -90,6 +90,15 @@
             ";
             ?>
 
+            <!--        Toggle button to toggle between real name and random name-->
+            <div class="toggle-btn">
+                <span class="toggle-label">Use Random Name</span>
+                <label for="name-toggle"  class="switch">
+                    <input type="checkbox" checked id="name-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
             <label for="input-text"></label>
 
             <form action="<?php echo BASEURL . "/studentForumTopicDiscussion/submit/{$data['topicDetail']['topic_id']}" ?>" method="POST">

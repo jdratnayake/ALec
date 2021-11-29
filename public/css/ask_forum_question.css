@@ -525,9 +525,11 @@ footer p {
 .toggle-btn {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
-.toggle-btn label {
+.toggle-btn .toggle-label {
   margin-right: 8px;
 }
 
