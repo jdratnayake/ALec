@@ -56,9 +56,9 @@ class AttemptQuizMarksModel extends Database
         return mysqli_fetch_assoc($result)["success_rate"];
     }
 
-    public function insertAttempt($userId, $quizId, $marks)
+    public function updateAttempt($userId, $quizId, $marks)
     {
-        $query = "INSERT INTO quiz_attempt(student_id, quiz_id, marks) VALUES('$userId', '$quizId', '$marks')";
+        $query = "UPDATE quiz_attempt SET marks='$marks' WHERE student_id='$userId' AND quiz_id='$quizId'";
 
         mysqli_query($GLOBALS["db"], $query);
     }

@@ -12,10 +12,13 @@ class AttemptQuiz extends AlecFramework
 
     public function index($quizId)
     {
+        $userId = $this->getSession("userId");
+        $this->attemptQuizViewModel->insertAttempt($userId, $quizId);
+
         $data["quizDetails"] = $this->attemptQuizViewModel->getQuizDetails($quizId);
         $data["questions"] = $this->attemptQuizViewModel->getQuizQuestionsSummary($quizId);
         $data["choices"] = $this->attemptQuizViewModel->getQuizQuestionChoices($quizId);
-
+        $data["closeTime"] = $this->attemptQuizViewModel->getClosingTime($userId, $quizId);
         $this->view("student/attemptQuizView", $data);
     }
 
@@ -96,7 +99,7 @@ class AttemptQuiz extends AlecFramework
 
             //Insert student attempt record
             $userId = $this->getSession("userId");
-            $this->attemptQuizMarksModel->insertAttempt($userId, $quizId, $totakMarks);
+            $this->attemptQuizMarksModel->updateAttempt($userId, $quizId, $totakMarks);
 
             //Output - Testing
             var_dump($questionIdString);

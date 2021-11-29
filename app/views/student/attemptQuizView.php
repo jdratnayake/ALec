@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php linkPhp("navigationBarLecturer"); ?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
     <div class="form-content">
         <!-- Quiz heading -->
@@ -25,7 +25,9 @@
 
         <div class="quiz-name">
             <h2><?php echo $data["quizDetails"]["quiz_name"]; ?></h2>
-            <span>Duration 01:00:00</span>
+
+            <input type="hidden" id="close-time" value="<?php echo $data["closeTime"]; ?>">
+            <span id="count-down-time"></span>
         </div>
 
         <!-- Quiz basic details -->
@@ -208,8 +210,7 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php //linkJS("attemptQuiz"); 
-    ?>
+    <?php linkJS("attemptQuiz"); ?>
 
 </body>
 
