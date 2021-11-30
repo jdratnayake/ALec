@@ -1,0 +1,98 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+//LOCAL VARIABLES
+$main_color: $theme_second;
+$light_color: #FFF;
+
+.details-content {
+  padding: 1rem;
+  width: 70%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  margin: auto auto 30px auto;
+  height: 80%;
+  overflow: hidden;
+
+  .header-container{
+    header{
+      margin: 20px 10px;
+    }
+    .course-label{
+      font-weight: 400;
+      color: #2B4F82;
+      margin-left: 25px;
+    }
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    .add-btn {
+      padding: 6px 12px;
+      background-color: $main_color;
+      color: $light_color;
+      border-radius: 5px;
+      border: 2px solid $main_color;
+      font-size: 16px;
+      font-weight: bold;
+      //box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $theme_second_hover;
+        border: 2px solid $theme_second_hover;
+      }
+    }
+  }
+
+  .session-details-container{
+    height: 60vh;
+    overflow: auto;
+
+    .sessions{
+      display: grid;
+      padding-bottom: 2rem;
+      margin-left: 10px;
+
+      .session{
+        display: flex;
+        align-items: center;
+        background-color: #2b4f820d;
+        border-radius: 5px;
+        margin: 5px 0;
+        padding: 20px 10px;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+/*==============================================================================*/
+/*SEARCH BAR - START*/
+/*==============================================================================*/
+
+.search-bar {
+  width: 450px;
+  margin-left: 10px;
+}
+
+form.search-bar input[type=text] {
+  padding: 5px 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  float: left;
+  width: 85%;
+  background: #f1f1f1;
+}
+
+/*==============================================================================*/
+/*SEARCH BAR - END*/
+/*==============================================================================*/
+

@@ -22,11 +22,11 @@
 
         <div class="navigation-tab">
             <div class="row">
-                <i class="fa fa-bar-chart"></i>
+                <i class="fa fa-server" aria-hidden="true"></i>
             </div>
             <div class="row">
                 <div class="title">
-                    Create poll
+                    Sessions
                 </div>
             </div>
         </div>

@@ -455,28 +455,73 @@ footer p {
   height: 80%;
   overflow: hidden;
 }
-
-header {
+.details-content .header-container header {
+  margin: 20px 10px;
+}
+.details-content .header-container .course-label {
+  font-weight: 400;
+  color: #2B4F82;
   margin-left: 25px;
 }
-
-.badge-details-container {
-  height: 70vh;
+.details-content .button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.details-content .button-container .add-btn {
+  padding: 6px 12px;
+  background-color: #2B4F82;
+  color: #FFF;
+  border-radius: 5px;
+  border: 2px solid #2B4F82;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.details-content .button-container .add-btn:hover {
+  background-color: #1d3557;
+  border: 2px solid #1d3557;
+}
+.details-content .session-details-container {
+  height: 60vh;
   overflow: auto;
 }
-.badge-details-container .badges {
+.details-content .session-details-container .sessions {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding-bottom: 25px;
+  padding-bottom: 2rem;
+  margin-left: 10px;
 }
-.badge-details-container .badges .badge {
+.details-content .session-details-container .sessions .session {
   display: flex;
   align-items: center;
-  margin-right: 20px;
-}
-.badge-details-container .badges .badge img {
-  width: 10rem;
-  margin: 10px;
+  background-color: #2b4f820d;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 20px 10px;
+  justify-content: space-between;
 }
 
-/*# sourceMappingURL=display_course_badges.css.map */
+/*==============================================================================*/
+/*SEARCH BAR - START*/
+/*==============================================================================*/
+.search-bar {
+  width: 450px;
+  margin-left: 10px;
+}
+
+form.search-bar input[type=text] {
+  padding: 5px 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  float: left;
+  width: 85%;
+  background: #f1f1f1;
+}
+
+/*==============================================================================*/
+/*SEARCH BAR - END*/
+/*==============================================================================*/
+
+/*# sourceMappingURL=display_sessions.css.map */
