@@ -70,11 +70,6 @@
     </div>
 
     <hr>
-<!--    <div class="divider">-->
-<!--        <span class="dot"></span>-->
-<!--        <span class="dot"></span>-->
-<!--        <span class="dot"></span>-->
-<!--    </div>-->
 
     <div class="active-quizzes-container">
         <ul class="quiz-table">
@@ -109,20 +104,6 @@
             ";
             }
             ?>
-            <!-- <li class="table-row">
-            <div class="col col-1" data-label="Quiz topic">
-                <a class="topic"  href="#">OS Quiz - 01</a>
-            </div>
-            <div class="col col-2" data-label="Start time">
-                <p>10.30 am</p>
-            </div>
-            <div class="col col-3" data-label="End time">
-                <p>11.30 am</p>
-            </div>
-            <div class="col col-4" data-label="Duration">
-                <p>01 hrs: 00 mins : 00 secs</p>
-            </div>
-        </li> -->
         </ul>
     </div>
 
@@ -147,13 +128,6 @@
 
             </div>
         </div>
-    </div>
-
-    <!--    Available poll indicator-->
-    <div class="pop-up"></div>
-
-    <div class="notification-container" onclick="showNotifycation()" style="margin-bottom: 65px">
-        <i class="fa fa-bar-chart" style="font-weight: 900; font-size: 22px;"></i>
     </div>
 
     <?php linkPhp("notification"); ?>

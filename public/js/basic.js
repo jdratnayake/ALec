@@ -4,7 +4,7 @@ document.getElementById("btn").onclick = function () {
 }
 
 //notification
-function showNotifycation() {
+function showNotification() {
     document.querySelector(".pop-up").classList.toggle("show");
     document.querySelector(".notification-container").classList.toggle("hide");
 }
