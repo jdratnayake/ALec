@@ -35,8 +35,7 @@
             <!--    Search bar     -->
             <form class="search-bar" id="search">
                 <label for="search-tag"></label>
-                <input type="text" placeholder="Search.." name="search" id="search-tag">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Search.. &#xF002;" name="search" id="search-tag" style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
             </form>
 
             <!--    Select user type-->
