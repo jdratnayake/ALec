@@ -18,6 +18,13 @@
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
+                    <a href="#">
+                        <i class="fa fa-server"></i>
+                        <span class="links_name">Sessions</span>
+                    </a>
+                    <span class="tooltip">Sessions</span>
+                </li>
+                <li>
                     <a href="<?php echo BASEURL . '/createQuizDashboard/index'; ?>">
                         <i class="fas fa-question-circle"></i>
                         <span class="links_name">Ask Question</span>

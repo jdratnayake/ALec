@@ -18,6 +18,13 @@
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
+                    <a href="#">
+                        <i class="fa fa-server"></i>
+                        <span class="links_name">Sessions</span>
+                    </a>
+                    <span class="tooltip">Sessions</span>
+                </li>
+                <li>
                     <a href="<?php echo BASEURL . '/studentCoursePage/index'; ?>">
                         <i class="fa fa-graduation-cap"></i>
                         <span class="links_name">My Courses</span>
