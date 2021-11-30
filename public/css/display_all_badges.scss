@@ -1,0 +1,75 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+//LOCAL VARIABLES
+$main_color: $theme_second;
+$light_color: #FFF;
+
+.details-content {
+    padding: 1rem;
+    width: 70%;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+    margin: auto auto 30px auto;
+    height: 80%;
+    overflow: hidden;
+
+    .header-container{
+        header{
+            margin-left: 25px;
+        }
+        .course-label{
+            font-weight: 400;
+            color: #2B4F82;
+            margin-left: 25px;
+        }
+    }
+
+    .button-container{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+
+        .add-btn {
+            padding: 6px 12px;
+            background-color: $main_color;
+            color: $light_color;
+            border-radius: 5px;
+            border: 2px solid $main_color;
+            font-size: large;
+            font-weight: 400;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $theme_second_hover;
+                border: 2px solid $theme_second_hover;
+            }
+        }
+    }
+
+    .badge-details-container{
+        height: 70vh;
+        overflow: auto;
+
+        .badges{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding-bottom: 8rem;
+
+            .badge{
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+
+                img{
+                    width: 10rem;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
+

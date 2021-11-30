@@ -9,7 +9,7 @@
     <title>Course Badges</title>
 
     <!-- CSS File HOME-->
-    <?php linkCSS("display_course_badges"); ?>
+    <?php linkCSS("display_all_badges"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
@@ -22,16 +22,17 @@
 <!--    breadcrumb-->
 <ul class="breadcrumb">
     <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-    <li><a href="http://localhost/ALec/courseDetails/index">Course Details</a></li>
-    <li><a href="#">Course Profile</a></li>
     <li>Badges</li>
 </ul>
 
 <div class="details-content">
     <div class="header-container">
         <header>Badges</header>
+        <h3 class="course-label">SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I</h3>
     </div>
-
+    <div class="button-container">
+        <button type="button" value="Add Badge" class="add-btn">Add Badge</button>
+    </div>
     <div class="badge-details-container">
         <div class="badges">
             <div class="badge">
@@ -69,5 +70,7 @@
 </body>
 
 </html>
+
+
 
 

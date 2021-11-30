@@ -19,9 +19,7 @@
 
     <div class="form-content">
         <!-- Quiz heading -->
-        <header>
-            <h2><?php echo $data["quizDetails"]["course_name"]; ?></h2>
-        </header>
+        <header><?php echo $data["quizDetails"]["course_name"]; ?></header>
 
         <div class="quiz-name">
             <h2><?php echo $data["quizDetails"]["quiz_name"]; ?></h2>
