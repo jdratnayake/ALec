@@ -9,7 +9,7 @@
     <title>Course Badges</title>
 
     <!-- CSS File HOME-->
-    <?php linkCSS("display_all_badges"); ?>
+    <?php linkCSS("display_badges"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
