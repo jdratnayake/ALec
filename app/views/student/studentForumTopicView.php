@@ -63,12 +63,15 @@ $courseCode = explode("-", $temp)[0];
                     while ($row = mysqli_fetch_assoc($data["topicDiscussionDetails"])) {
                         $replyRow = mysqli_fetch_assoc($data["replyDiscussionDetails"]);
 
-                        if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userId"]) {
-                            $row["name"] = "Anonymous";
+                        $name = $row["name"];
+                        $replyName = $replyRow["name"];
+
+                        if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userId"] and $row["random_status"] === "T") {
+                            $name = $row["random_name"];
                         }
 
-                        if ($replyRow["user_type"] === "stu" and $replyRow["user_id"] !== $data["userId"]) {
-                            $replyRow["name"] = "Anonymous";
+                        if ($replyRow["user_type"] === "stu" and $replyRow["user_id"] !== $data["userId"] and $replyRow["random_status"] === "T") {
+                            $replyName = $replyRow["random_name"];
                         }
 
                         echo
@@ -86,7 +89,7 @@ $courseCode = explode("-", $temp)[0];
                                     <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
                                 </div>
                                 <div class='info'>
-                                    <p class='name'>{$row['name']}</p>
+                                    <p class='name'>{$name}</p>
                                     <p class='place'>
                                         {$row['post_time']}
                                     </p>
@@ -100,7 +103,7 @@ $courseCode = explode("-", $temp)[0];
                                     <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
                                 </div>
                                 <div class='info'>
-                                    <p class='name'>{$replyRow['name']}</p>
+                                    <p class='name'>{$replyName}</p>
                                     <p class='place'>
                                         {$replyRow['post_time']}
                                     </p>
