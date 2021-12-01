@@ -11,8 +11,8 @@
     <?php shortIcon("logo1.png"); ?>
 
     <title>ALec</title>
-	
-	<!-- Shortcut Icon -->
+
+    <!-- Shortcut Icon -->
     <?php shortIcon('logo1.jpg'); ?>
 
     <?php linkCSS("ask_forum_question") ?>
@@ -77,13 +77,21 @@
         <form action="<?php echo BASEURL . "/askForumQuestion/index/{$data['forumId']}"; ?>" method="post" id="topicSubmit" onsubmit="validateAll()">
 
             <!--        Toggle button to toggle between real name and random name-->
-            <div class="toggle-btn">
-                <span class="toggle-label">Use Random Name</span>
-                <label for="name-toggle"  class="switch">
-                    <input type="checkbox" checked id="name-toggle">
-                    <span class="slider round"></span>
+            <?php
+            if ($data["userType"] == "stu") {
+                echo
+                "
+                <div class='toggle-btn'>
+                <span class='toggle-label'>Use Random Name</span>
+                <label for='name-toggle' class='switch'>
+                    <input type='checkbox' checked id='name-toggle'>
+                    <span class='slider round'></span>
                 </label>
-            </div>
+                </div>
+                ";
+            }
+            ?>
+
 
             <div class="form-group">
                 <label for="subject">Subject</label>
