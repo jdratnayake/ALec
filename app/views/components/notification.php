@@ -77,9 +77,8 @@
                     <span>5 minutes ago</span>
                 </div>
                 <div class="read-status">
-<!--                    <i class="fa fa-circle" aria-hidden="true"></i>-->
-<!--                    <span class="tooltip">Mark as read</span>-->
-<!--                    read message-->
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    <span class="tooltip">Mark as read</span>
                 </div>
             </div>
             <div class="note">
