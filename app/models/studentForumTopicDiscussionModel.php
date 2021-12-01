@@ -37,13 +37,13 @@ class StudentForumTopicDiscussionModel extends Database
         return $result;
     }
 
-    public function insertReply($topicId, $reply, $userId)
+    public function insertReply($topicId, $reply, $userId, $randomStatus)
     {
         $topicId = mysqli_real_escape_string($GLOBALS["db"], $topicId);
         $reply = mysqli_real_escape_string($GLOBALS["db"], $reply);
         $userId = mysqli_real_escape_string($GLOBALS["db"], $userId);
 
-        $query = "INSERT INTO forum_reply(topic_id, reply, post_time, user_id) VALUES('$topicId', '$reply', NOW(), '$userId')";
+        $query = "INSERT INTO forum_reply(topic_id, reply, post_time, user_id, random_status) VALUES('$topicId', '$reply', NOW(), '$userId', '$randomStatus')";
         mysqli_query($GLOBALS["db"], $query);
 
         $query = "SELECT reply_id FROM forum_reply GROUP BY reply_id DESC LIMIT 1";

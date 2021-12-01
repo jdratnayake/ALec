@@ -37,7 +37,11 @@ class askForumQuestion extends AlecFramework
             if ($numberOfErrors == 0) {
                 $userId = $this->getSession("userId");
 
-                $result = $this->askForumQuestionModel->addTopicDetails($subject, $question, $forumId, $userId);
+                if (isset($_POST["name-toggle"])) {
+                    $result = $this->askForumQuestionModel->addTopicDetails($subject, $question, $forumId, $userId, "T");
+                } else {
+                    $result = $this->askForumQuestionModel->addTopicDetails($subject, $question, $forumId, $userId, "F");
+                }
 
 
                 $courseId = $this->askForumQuestionModel->getCourseId($forumId);

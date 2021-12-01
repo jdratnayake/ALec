@@ -25,7 +25,11 @@ class StudentForumTopicDiscussion extends AlecFramework
             $reply = $_POST["reply-text"];
             $userId = $this->getSession("userId");
 
-            $this->studentForumTopicDiscussionModel->insertReply($topicId, $reply, $userId);
+            if (isset($_POST["name-toggle"])) {
+                $this->studentForumTopicDiscussionModel->insertReply($topicId, $reply, $userId, "T");
+            } else {
+                $this->studentForumTopicDiscussionModel->insertReply($topicId, $reply, $userId, "F");
+            }
         }
 
         $this->redirect("studentForumTopicDiscussion/index/{$topicId}");

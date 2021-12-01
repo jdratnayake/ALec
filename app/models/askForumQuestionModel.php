@@ -13,13 +13,13 @@ class askForumQuestionModel extends Database
         return $code;
     }
 
-    public function addTopicDetails($subject, $question, $forumId, $userId)
+    public function addTopicDetails($subject, $question, $forumId, $userId, $randomStatus)
     {
         $subject = mysqli_real_escape_string($GLOBALS["db"], $subject);
         $question = mysqli_real_escape_string($GLOBALS["db"], $question);
 
-        $query = "INSERT INTO forum_topic(subject, question, post_time, forum_Id, user_id, updated_time) VALUES
-                    ('$subject', '$question', NOW(), '$forumId', '$userId', NOW())";
+        $query = "INSERT INTO forum_topic(subject, question, post_time, forum_Id, user_id, random_status, updated_time) VALUES
+                    ('$subject', '$question', NOW(), '$forumId', '$userId', '$randomStatus', NOW())";
         mysqli_query($GLOBALS["db"], $query);
     }
 

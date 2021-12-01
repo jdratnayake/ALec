@@ -84,7 +84,7 @@
                 <div class='toggle-btn'>
                 <span class='toggle-label'>Use Random Name</span>
                 <label for='name-toggle' class='switch'>
-                    <input type='checkbox' checked id='name-toggle'>
+                    <input type='checkbox' id='name-toggle' name='name-toggle' checked>
                     <span class='slider round'></span>
                 </label>
                 </div>
