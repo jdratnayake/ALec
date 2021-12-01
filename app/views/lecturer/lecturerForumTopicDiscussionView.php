@@ -31,6 +31,8 @@
 
     <div class="forum-container">
 
+        <input type="hidden" id="points-given-reply-ids" value="<?php echo $data["pointsGivenReply"]; ?>">
+
         <?php
 
         echo
@@ -121,9 +123,20 @@
                 
                 <div class='answer-row'>
                     <div class='vote'>
+                    ";
+
+            if ($row["user_type"] == "stu") {
+                echo
+                "
+                        <input type='hidden' value='{$row["reply_id"]}'>
                         <i class='fa fa-caret-up' aria-hidden='true'></i>
-                        <div class='val'>0</div>
-                    </div>
+                        <div class='val'>{$row["points"]}</div>
+                ";
+            }
+
+            echo
+            "
+                </div>
     
                     <p class='answer-content'>{$row["reply"]}</p>
                 </div>
@@ -141,9 +154,11 @@
 
     <?php linkPhp("footer"); ?>
 
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
+
     <?php linkJS("forumQuestionGetReplyBox"); ?>
 
-    <?php linkJS("forumGivePoints"); ?>
+    <?php linkJS("forumGivePointsReply"); ?>
 
 </body>
 
