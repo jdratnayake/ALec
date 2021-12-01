@@ -69,7 +69,7 @@
 
     </div>
 
-    <hr>
+    <hr class="division-divider">
 
     <div class="active-quizzes-container">
         <ul class="quiz-table">
