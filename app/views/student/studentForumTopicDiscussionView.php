@@ -33,7 +33,7 @@
 
         <?php
 
-        if ($data['topicDetail']["user_type"] === "stu" and $data['topicDetail']["user_id"] !== $data["userDetail"]["user_id"] and $data["userDetail"]["random_status"] === "T") {
+        if ($data['topicDetail']["user_type"] === "stu" and $data['topicDetail']["user_id"] !== $data["userDetail"]["user_id"] and $data['topicDetail']["random_status"] === "T") {
             $name = $data['topicDetail']['random_name'];
         } else {
             $name = $data['topicDetail']['name'];
@@ -118,7 +118,7 @@
 
         while ($row = mysqli_fetch_assoc($data["replyDetails"])) {
 
-            if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userDetail"]["user_id"] and $data["userDetail"]["random_status"] == "T") {
+            if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userDetail"]["user_id"] and $row["random_status"] == "T") {
                 $name = $row["random_name"];
             } else {
                 $name = $row["name"];
