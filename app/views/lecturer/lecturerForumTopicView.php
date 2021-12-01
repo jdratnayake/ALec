@@ -121,7 +121,7 @@ $courseCode = explode("-", $temp)[0];
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkJS("forum"); ?>
+    <?php linkJS("forumGivePoints"); ?>
 
 </body>
 

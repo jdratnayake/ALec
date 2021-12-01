@@ -118,42 +118,22 @@
                         <button class='action-button delete' value='delete-reply' " . "onclick=location.href='" . BASEURL . "/lecturerForumTopicDiscussion/deleteReply/{$row["reply_id"]}" . "'" . " >Delete</button>
                     </div>
                 </div>
-
-                <p class='answer-content'>{$row["reply"]}</p>
+                
+                <div class='answer-row'>
+                    <div class='vote'>
+                        <i class='fa fa-caret-up' aria-hidden='true'></i>
+                        <div class='val'>0</div>
+                    </div>
+    
+                    <p class='answer-content'>{$row["reply"]}</p>
+                </div>
+                
 
             </div>
             ";
         }
 
         ?>
-
-        <!-- <div class='answer'>
-            <div class='profile_img_info'>
-                <div class='img'>
-                    <img <php srcIMG('profile_pic.svg'); ?> alt='profile_pic'>
-                </div>
-                <div class='info'>
-                    <p class='name'>M F RIZWAN</p>
-                    <p class='place'><span><i class='far fa-calendar-minus'></i></span>
-                        24 Jul 2021
-                    </p>
-                </div>
-                <div class='button-set'>
-                    <button class='action-button' value='reply'>Reply</button>
-                    <button class='action-button delete' value='delete-reply'>Delete</button>
-                </div>
-            </div>
-
-            <p class='answer-content'>
-                The requirement is for the MAC address to be unique within the local network,
-                as IPv4 is used to uniquely identify all devices, and since the IPv6 also supports this,
-                we could reuse MAC addresses, as they are not visible beyond the local network.
-
-                These are some of the points that I think and I made a research on, and by research,
-                I mean a google search. Hope this helps guys, and if you have more valid points please do share.
-            </p>
-
-        </div> -->
 
     </div>
 
@@ -162,6 +142,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("forumQuestionGetReplyBox"); ?>
+
+    <?php linkJS("forumGivePoints"); ?>
 
 </body>
 
