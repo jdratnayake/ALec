@@ -33,8 +33,10 @@
 
         <?php
 
-        if ($data['topicDetail']["user_type"] === "stu" and $data['topicDetail']["user_id"] !== $data["userDetail"]["user_id"]) {
-            $data['topicDetail']['name'] = "Anonymous";
+        if ($data['topicDetail']["user_type"] === "stu" and $data['topicDetail']["user_id"] !== $data["userDetail"]["user_id"] and $data["userDetail"]["random_status"] === "T") {
+            $name = $data['topicDetail']['random_name'];
+        } else {
+            $name = $data['topicDetail']['name'];
         }
 
         echo
@@ -52,7 +54,7 @@
         " alt='profile_pic'>
                 </div>
                 <div class='info'>
-                    <p class='name'>{$data['topicDetail']['name']}</p>
+                    <p class='name'>{$name}</p>
                     <p class='place'> {$data['topicDetail']['post_time']} </p>
                 </div>
 
@@ -90,18 +92,20 @@
             ";
             ?>
 
-            <!--        Toggle button to toggle between real name and random name-->
-            <div class="toggle-btn">
-                <span class="toggle-label">Use Random Name</span>
-                <label for="name-toggle"  class="switch">
-                    <input type="checkbox" checked id="name-toggle">
-                    <span class="slider round"></span>
-                </label>
-            </div>
+
 
             <label for="input-text"></label>
 
             <form action="<?php echo BASEURL . "/studentForumTopicDiscussion/submit/{$data['topicDetail']['topic_id']}" ?>" method="POST">
+                <!--        Toggle button to toggle between real name and random name-->
+                <div class="toggle-btn">
+                    <span class="toggle-label">Use Random Name</span>
+                    <label for="name-toggle" class="switch">
+                        <input type="checkbox" id="name-toggle" name="name-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
                 <textarea name="reply-text" id="input-text" class="answer-content" rows="10" cols="140" placeholder="Type your reply here..."></textarea>
                 <div class="button-set input-btns">
                     <button class="action-button" value="submit">Submit</button>
@@ -113,8 +117,11 @@
         <?php
 
         while ($row = mysqli_fetch_assoc($data["replyDetails"])) {
-            if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userDetail"]["user_id"]) {
-                $row["name"] = "Anonymous";
+
+            if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userDetail"]["user_id"] and $data["userDetail"]["random_status"] == "T") {
+                $name = $row["random_name"];
+            } else {
+                $name = $row["name"];
             }
 
             echo
@@ -127,7 +134,7 @@
             echo "alt='profile_pic'>
                     </div>
                     <div class='info'>
-                        <p class='name'>{$row["name"]}</p>
+                        <p class='name'>{$name}</p>
                         <p class='place'>{$row["post_time"]}</p>
                     </div>
                 </div>
