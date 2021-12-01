@@ -650,6 +650,9 @@ footer p {
   padding: 20px 10px;
   justify-content: space-between;
 }
+.details-content .session-details-container .sessions .session .publish-status {
+  cursor: pointer;
+}
 
 /*==============================================================================*/
 /*SEARCH BAR - START*/

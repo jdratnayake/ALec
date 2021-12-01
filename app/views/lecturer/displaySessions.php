@@ -44,11 +44,17 @@
             <span class="session-label">Active</span>
             <div class="session">
                 <span>Session 1</span>
-                <span><i class="fa fa-eye" aria-hidden="true"></i></span>
+                <span>
+                    <i class="fa fa-eye publish-status" aria-hidden="true"></i>
+                    <i class="fa fa-eye-slash publish-status" aria-hidden="true" style="display: none"></i>
+                </span>
             </div>
             <div class="session">
                 <span>Session 2</span>
-                <span><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                <span>
+                    <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
+                    <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
+                </span>
             </div>
         </div>
 <!--    Division of other sessions-->
@@ -56,19 +62,31 @@
             <span class="session-label">Recent</span>
             <div class="session">
                 <span>Session 1</span>
-                <span><i class="fa fa-eye" aria-hidden="true"></i></span>
+                <span>
+                    <i class="fa fa-eye publish-status" aria-hidden="true"></i>
+                    <i class="fa fa-eye-slash publish-status" aria-hidden="true" style="display: none"></i>
+                </span>
             </div>
             <div class="session">
                 <span>Session 2</span>
-                <span><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                <span>
+                    <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
+                    <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
+                </span>
             </div>
             <div class="session">
                 <span>Session 3</span>
-                <span><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                <span>
+                    <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
+                    <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
+                </span>
             </div>
             <div class="session">
                 <span>Session 4</span>
-                <span><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                <span>
+                    <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
+                    <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
+                </span>
             </div>
         </div>
     </div>
@@ -77,6 +95,8 @@
 <?php linkPhp("footer"); ?>
 
 <?php linkPhp("notification"); ?>
+
+<?php linkJS("displaySessions"); ?>
 
 </body>
 
