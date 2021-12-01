@@ -137,7 +137,7 @@ $courseCode = explode("-", $temp)[0];
 
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("forum"); ?>
+    <?php linkJS("forumGivePoints"); ?>
 
 </body>
 

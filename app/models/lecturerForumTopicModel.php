@@ -38,7 +38,7 @@ class LecturerForumTopicModel extends Database
         $query = "SELECT DISTINCT topic_id FROM forum_topic_points WHERE lecturer_id='$userId' AND topic_id IN(SELECT DISTINCT topic_id FROM forum_topic WHERE forum_Id='$forumId')";
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        $output = mysqli_fetch_assoc($result)["topic_id"];
+        $output = "";
 
         while ($row = mysqli_fetch_assoc($result)) {
             $output = $output . " " . $row["topic_id"];

@@ -135,7 +135,6 @@ $border_grey: lightgrey;
     }
   }
   .question{
-    //background-color: $light_color;
 
     .question-content{
       margin-left: 64px;
@@ -143,10 +142,30 @@ $border_grey: lightgrey;
   }
   .answer{
     margin-left: 10%;
-    //background-color: #6b97b93d;
 
-    .answer-content{
-      margin-left: 64px;
+    .answer-row{
+      display: flex;
+      align-items: center;
+
+      .vote{
+        display: grid;
+        align-content: center;
+        font-size: 30px;
+        justify-items: center;
+        margin-left: 16px;
+
+        .fa-caret-up{
+          color: darkgray;
+          cursor: pointer;
+        }
+        .val{
+          font-size: 20px;
+        }
+      }
+
+      .answer-content{
+        margin-left: 30px;
+      }
     }
   }
 }
