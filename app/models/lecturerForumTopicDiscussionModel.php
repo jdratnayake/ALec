@@ -30,11 +30,25 @@ class LecturerForumTopicDiscussionModel extends Database
 
     public function getReplyDetails($topicId)
     {
-        $query = "SELECT reply_id, reply, DATE_FORMAT(post_time, '%d %M %Y') AS post_time, user.user_id, CONCAT(first_name, ' ', last_name) AS name, user_type, img FROM forum_reply INNER JOIN user ON forum_reply.user_id=user.user_id WHERE topic_id='$topicId' GROUP BY post_time";
+        $query = "SELECT reply_id, reply, points, DATE_FORMAT(post_time, '%d %M %Y') AS post_time, user.user_id, CONCAT(first_name, ' ', last_name) AS name, user_type, img FROM forum_reply INNER JOIN user ON forum_reply.user_id=user.user_id WHERE topic_id='$topicId' GROUP BY post_time";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return $result;
+    }
+
+    public function getPointsGivenReply($userId, $topicId)
+    {
+        $query = "SELECT DISTINCT reply_id FROM forum_reply_points WHERE lecturer_id='$userId' AND reply_id IN(SELECT DISTINCT reply_id FROM forum_reply WHERE topic_id='$topicId')";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        $output = "";
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $output = $output . " " . $row["reply_id"];
+        }
+
+        return $output;
     }
 
     public function insertReply($topicId, $reply, $userId)
@@ -96,5 +110,16 @@ class LecturerForumTopicDiscussionModel extends Database
         }
 
         return $topicId;
+    }
+
+    public function changeMarksReply($userId, $replyId, $signal)
+    {
+        if ($signal == "0") {
+            $query = "DELETE FROM forum_reply_points WHERE lecturer_id='$userId' AND reply_id='$replyId'";
+        } else if ($signal == "1") {
+            $query = "INSERT INTO forum_reply_points(lecturer_id, reply_id) VALUES('$userId', '$replyId')";
+        }
+
+        mysqli_query($GLOBALS["db"], $query);
     }
 }

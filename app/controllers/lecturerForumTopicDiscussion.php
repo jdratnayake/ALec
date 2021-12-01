@@ -13,8 +13,12 @@ class LecturerForumTopicDiscussion extends AlecFramework
     {
         $data["bread"]["forumDetails"] = $this->lecturerForumTopicDiscussionModel->getForumDetails($topicId);
         $data["topicDetail"] = $this->lecturerForumTopicDiscussionModel->getTopicDetails($topicId);
-        $data["userDetail"] = $this->lecturerForumTopicDiscussionModel->getUserDetails($this->getSession("userId"));
+
+        $userId = $this->getSession("userId");
+
+        $data["userDetail"] = $this->lecturerForumTopicDiscussionModel->getUserDetails($userId);
         $data["replyDetails"] = $this->lecturerForumTopicDiscussionModel->getReplyDetails($topicId);
+        $data["pointsGivenReply"]  = $this->lecturerForumTopicDiscussionModel->getPointsGivenReply($userId, $topicId);
 
         $this->view("lecturer/lecturerForumTopicDiscussionView", $data);
     }
@@ -43,5 +47,11 @@ class LecturerForumTopicDiscussion extends AlecFramework
         $topicId = $this->lecturerForumTopicDiscussionModel->deleteReply($replyId);
 
         $this->redirect("lecturerForumTopicDiscussion/index/{$topicId}");
+    }
+
+    public function toggleMarksReply($replyId, $signal)
+    {
+        $userId = $this->getSession("userId");
+        $this->lecturerForumTopicDiscussionModel->changeMarksReply($userId, $replyId, $signal);
     }
 }

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function colorButtons() {
-        let topicIds = $("#points-given-topic-ids").val().trim().split(" ");
+        let topicIds = $("#points-given-reply-ids").val().trim().split(" ");
 
         $('.fa-caret-up').each(function (i, obj) {
             const id = $(obj).prev().val();
@@ -14,7 +14,7 @@ $(document).ready(function () {
     colorButtons();
 
     $(document).on("click", ".fa-caret-up", function () {
-        const topicId = $(this).prev().val();
+        const replyId = $(this).prev().val();
         let signal;
         const pointsTag = $(this).next();
         const marks = parseInt(pointsTag.text());
@@ -34,7 +34,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
 
-            url: "http://localhost/ALec/lecturerForumTopic/toggleMarksTopic/" + topicId + "/" + signal
+            url: "http://localhost/ALec/lecturerForumTopicDiscussion/toggleMarksReply/" + replyId + "/" + signal
         })
     });
 });

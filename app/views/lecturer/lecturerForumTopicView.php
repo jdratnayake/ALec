@@ -53,6 +53,9 @@ $courseCode = explode("-", $temp)[0];
 
             <div class="discussion-table-container">
                 <ul class="discussion-table">
+
+                    <input type="hidden" id="points-given-topic-ids" value="<?php echo $data["pointsGivenTopics"]; ?>">
+
                     <li class="table-header">
                         <div class="col col-4 reply"></div>
                         <div class="col col-1">Discussion</div>
@@ -69,8 +72,19 @@ $courseCode = explode("-", $temp)[0];
                         <li class='table-row'>
                         <div class='col col-4 reply-count' data-label='Replies'>
                             <div class='vote'>
-                                <i class='fa fa-caret-up' aria-hidden='true'></i>
-                                <div class='val'>0</div>
+                        ";
+
+                        if ($row["user_type"] === "stu") {
+                            echo
+                            "
+                            <input type='hidden' value='{$row['topic_id']}'>
+                            <i class='fa fa-caret-up' aria-hidden='true'></i>
+                            <div class='val'>{$row['points']}</div>
+                            ";
+                        }
+
+                        echo
+                        "
                             </div>
                         </div>
 
@@ -120,6 +134,8 @@ $courseCode = explode("-", $temp)[0];
     <?php linkPhp("notification"); ?>
 
     <?php linkPhp("footer"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("forumGivePoints"); ?>
 
