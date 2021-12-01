@@ -33,8 +33,10 @@
 
         <?php
 
-        if ($data['topicDetail']["user_type"] === "stu" and $data['topicDetail']["user_id"] !== $data["userDetail"]["user_id"]) {
-            $data['topicDetail']['name'] = "Anonymous";
+        if ($data['topicDetail']["user_type"] === "stu" and $data['topicDetail']["user_id"] !== $data["userDetail"]["user_id"] and $data["userDetail"]["random_status"] === "T") {
+            $name = $data['topicDetail']['random_name'];
+        } else {
+            $name = $data['topicDetail']['name'];
         }
 
         echo
@@ -52,7 +54,7 @@
         " alt='profile_pic'>
                 </div>
                 <div class='info'>
-                    <p class='name'>{$data['topicDetail']['name']}</p>
+                    <p class='name'>{$name}</p>
                     <p class='place'> {$data['topicDetail']['post_time']} </p>
                 </div>
 
@@ -116,8 +118,10 @@
 
         while ($row = mysqli_fetch_assoc($data["replyDetails"])) {
 
-            if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userDetail"]["user_id"]) {
-                $row["name"] = "Anonymous";
+            if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userDetail"]["user_id"] and $data["userDetail"]["random_status"] == "T") {
+                $name = $row["random_name"];
+            } else {
+                $name = $row["name"];
             }
 
             echo
@@ -130,7 +134,7 @@
             echo "alt='profile_pic'>
                     </div>
                     <div class='info'>
-                        <p class='name'>{$row["name"]}</p>
+                        <p class='name'>{$name}</p>
                         <p class='place'>{$row["post_time"]}</p>
                     </div>
                 </div>

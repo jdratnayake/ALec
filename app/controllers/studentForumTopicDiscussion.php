@@ -11,9 +11,11 @@ class StudentForumTopicDiscussion extends AlecFramework
 
     public function index($topicId)
     {
+        $userId = $this->getSession("userId");
+
         $data["bread"]["forumDetails"] = $this->studentForumTopicDiscussionModel->getForumDetails($topicId);
         $data["topicDetail"] = $this->studentForumTopicDiscussionModel->getTopicDetails($topicId);
-        $data["userDetail"] = $this->studentForumTopicDiscussionModel->getUserDetails($this->getSession("userId"));
+        $data["userDetail"] = $this->studentForumTopicDiscussionModel->getUserDetails($userId);
         $data["replyDetails"] = $this->studentForumTopicDiscussionModel->getReplyDetails($topicId);
 
         $this->view("student/studentForumTopicDiscussionView", $data);
