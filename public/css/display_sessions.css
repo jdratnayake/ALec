@@ -665,7 +665,7 @@ footer p {
 form.search-bar input[type=text] {
   padding: 5px 20px;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 1px solid #ccc;
   border-radius: 20px;
   float: left;
   width: 85%;

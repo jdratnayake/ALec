@@ -13,7 +13,6 @@ $light_color: #FFF;
   width: 70%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
-  height: 80%;
   overflow: hidden;
 
   .header-container{
@@ -29,11 +28,11 @@ $light_color: #FFF;
 
   .button-container{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+    justify-content: flex-end;
     align-items: center;
+    margin: 20px 0;
 
-    .add-btn {
+    .save-btn {
       padding: 6px 12px;
       background-color: $main_color;
       color: $light_color;
@@ -52,13 +51,54 @@ $light_color: #FFF;
   }
 
   .session-details-container{
-    height: 60vh;
-    overflow: auto;
 
-    .sessions{
-      display: grid;
+    .session-name-container{
+      display: flex;
+      align-items: center;
       padding-bottom: 2rem;
       margin-left: 10px;
+
+      label{
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      input{
+        width: 25rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 4px 8px;
+        border-bottom-width: 2px;
+        font-family: FontAwesome, Poppins,sans-serif;
+        font-style: normal;
+      }
+    }
+
+    .sessions{
+      padding-bottom: 2rem;
+      margin-left: 10px;
+
+      .add-btn {
+        padding: 3px 6px;
+        background-color: $light_color;
+        color: $main_color;
+        border-radius: 5px;
+        border: 2px solid $main_color;
+        font-size: 12px;
+        font-weight: bold;
+        float: right;
+        cursor: pointer;
+
+        .fa-plus{margin-right: 5px;}
+
+        &:hover {
+          background-color: $theme_second_hover;
+          border: 2px solid $theme_second_hover;
+          color: $light_color;
+        }
+      }
+
+      .session-label{font-weight: bold;}
 
       .session{
         display: flex;
@@ -66,35 +106,13 @@ $light_color: #FFF;
         background-color: #2b4f820d;
         border-radius: 5px;
         margin: 5px 0;
-        padding: 20px 10px;
-        justify-content: space-between;
+        padding: 10px;
 
         .publish-status{cursor: pointer}
       }
+
+      .inactive{color: #ccc;}
     }
   }
 }
-
-/*==============================================================================*/
-/*SEARCH BAR - START*/
-/*==============================================================================*/
-
-.search-bar {
-  width: 450px;
-  margin-left: 10px;
-}
-
-form.search-bar input[type=text] {
-  padding: 5px 20px;
-  font-size: 17px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  float: left;
-  width: 85%;
-  background: #f1f1f1;
-}
-
-/*==============================================================================*/
-/*SEARCH BAR - END*/
-/*==============================================================================*/
 

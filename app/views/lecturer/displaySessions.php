@@ -33,7 +33,8 @@
         <!--    Search bar     -->
         <form class="search-bar" id="search">
             <label for="search-tag"></label>
-            <input type="text" placeholder="Search.. &#xF002;" name="search" id="search-tag" style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
+            <input type="text" placeholder="Search.. &#xF002;" name="search" id="search-tag"
+                   style="font-family: FontAwesome, Poppins,sans-serif; font-style: normal; font-size: 15px">
         </form>
 <!--        Add Session Button-->
         <button type="button" value="Add New Session" class="add-btn">Add New Session</button>
