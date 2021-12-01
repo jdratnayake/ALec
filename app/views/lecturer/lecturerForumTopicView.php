@@ -54,7 +54,7 @@ $courseCode = explode("-", $temp)[0];
             <div class="discussion-table-container">
                 <ul class="discussion-table">
 
-                    <input type="hidden" id="points-given-course-ids" value="<?php echo $data["pointsGivenTopics"]; ?>">
+                    <input type="hidden" id="points-given-topic-ids" value="<?php echo $data["pointsGivenTopics"]; ?>">
 
                     <li class="table-header">
                         <div class="col col-4 reply"></div>

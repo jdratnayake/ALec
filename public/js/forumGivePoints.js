@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function colorButtons() {
-        let topicIds = $("#points-given-course-ids").val().trim().split(" ");
+        let topicIds = $("#points-given-topic-ids").val().trim().split(" ");
 
         $('.fa-caret-up').each(function (i, obj) {
             const id = $(obj).prev().val();
