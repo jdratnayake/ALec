@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Create session</title>
+    <title>Live Forum</title>
 
     <!-- CSS File HOME-->
     <?php linkCSS("live_forum"); ?>
