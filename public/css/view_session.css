@@ -605,11 +605,13 @@ footer p {
 }
 .details-content .header-container header {
   margin: 20px 10px;
+  align-items: center;
+  display: flex;
 }
-.details-content .header-container .course-label {
-  font-weight: 400;
-  color: #2B4F82;
-  margin-left: 25px;
+.details-content .header-container .fa-circle {
+  font-size: 20px;
+  margin-left: 10px;
+  color: #4caf50;
 }
 .details-content .button-container {
   display: flex;
@@ -617,7 +619,7 @@ footer p {
   align-items: center;
   margin: 20px 0;
 }
-.details-content .button-container .save-btn {
+.details-content .button-container .main-btn {
   padding: 6px 12px;
   background-color: #2B4F82;
   color: #FFF;
@@ -626,29 +628,14 @@ footer p {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  margin-left: 5px;
 }
-.details-content .button-container .save-btn:hover {
+.details-content .button-container .main-btn .fa-play {
+  margin-right: 5px;
+}
+.details-content .button-container .main-btn:hover {
   background-color: #1d3557;
   border: 2px solid #1d3557;
-}
-.details-content .session-details-container .session-name-container {
-  display: flex;
-  align-items: center;
-  padding-bottom: 2rem;
-  margin-left: 10px;
-}
-.details-content .session-details-container .session-name-container label {
-  margin-right: 10px;
-  font-weight: bold;
-}
-.details-content .session-details-container .session-name-container input {
-  width: 25rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 4px 8px;
-  border-bottom-width: 2px;
-  font-family: FontAwesome, Poppins, sans-serif;
-  font-style: normal;
 }
 .details-content .session-details-container .sessions {
   padding-bottom: 2rem;
@@ -676,6 +663,9 @@ footer p {
 .details-content .session-details-container .sessions .session-label {
   font-weight: bold;
 }
+.details-content .session-details-container .sessions .session-label a {
+  text-decoration: none;
+}
 .details-content .session-details-container .sessions .session {
   display: flex;
   align-items: center;
@@ -683,9 +673,24 @@ footer p {
   border-radius: 5px;
   margin: 5px 0;
   padding: 10px;
+  justify-content: space-between;
+}
+.details-content .session-details-container .sessions .session .vote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details-content .session-details-container .sessions .session .vote .fa-thumbs-o-up {
+  font-size: 24px;
+}
+.details-content .session-details-container .sessions .session .vote .votes-count {
+  font-size: small;
+}
+.details-content .session-details-container .sessions .session .publish-status {
+  cursor: pointer;
 }
 .details-content .session-details-container .sessions .inactive {
   color: #ccc;
 }
 
-/*# sourceMappingURL=create_session.css.map */
+/*# sourceMappingURL=view_session.css.map */

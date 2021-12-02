@@ -18,11 +18,13 @@ $light_color: #FFF;
   .header-container{
     header{
       margin: 20px 10px;
+      align-items: center;
+      display: flex;
     }
-    .course-label{
-      font-weight: 400;
-      color: #2B4F82;
-      margin-left: 25px;
+    .fa-circle{
+      font-size: 20px;
+      margin-left: 10px;
+      color: #4caf50;
     }
   }
 
@@ -32,7 +34,7 @@ $light_color: #FFF;
     align-items: center;
     margin: 20px 0;
 
-    .save-btn {
+    .main-btn {
       padding: 6px 12px;
       background-color: $main_color;
       color: $light_color;
@@ -40,8 +42,10 @@ $light_color: #FFF;
       border: 2px solid $main_color;
       font-size: 16px;
       font-weight: bold;
-      //box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       cursor: pointer;
+      margin-left: 5px;
+
+      .fa-play{margin-right: 5px;}
 
       &:hover {
         background-color: $theme_second_hover;
@@ -51,28 +55,6 @@ $light_color: #FFF;
   }
 
   .session-details-container{
-
-    .session-name-container{
-      display: flex;
-      align-items: center;
-      padding-bottom: 2rem;
-      margin-left: 10px;
-
-      label{
-        margin-right: 10px;
-        font-weight: bold;
-      }
-
-      input{
-        width: 25rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 4px 8px;
-        border-bottom-width: 2px;
-        font-family: FontAwesome, Poppins,sans-serif;
-        font-style: normal;
-      }
-    }
 
     .sessions{
       padding-bottom: 2rem;
@@ -98,7 +80,10 @@ $light_color: #FFF;
         }
       }
 
-      .session-label{font-weight: bold;}
+      .session-label{
+        font-weight: bold;
+        a{text-decoration: none;}
+      }
 
       .session{
         display: flex;
@@ -107,6 +92,17 @@ $light_color: #FFF;
         border-radius: 5px;
         margin: 5px 0;
         padding: 10px;
+        justify-content: space-between;
+
+        .vote{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .fa-thumbs-o-up{font-size: 24px;}
+          .votes-count{font-size: small;}
+        }
+
+        .publish-status{cursor: pointer}
       }
 
       .inactive{color: #ccc;}
