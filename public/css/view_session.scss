@@ -44,8 +44,9 @@ $light_color: #FFF;
       font-weight: bold;
       cursor: pointer;
       margin-left: 5px;
+      display: block;
 
-      .fa-play{margin-right: 5px;}
+      .fa-play, .fa-stop{margin-right: 5px;}
 
       &:hover {
         background-color: $theme_second_hover;
