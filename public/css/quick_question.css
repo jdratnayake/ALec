@@ -610,6 +610,11 @@ footer p {
 .details-content .header-container header {
   margin: 20px 10px;
 }
+.details-content .header-container i {
+  cursor: pointer;
+  font-size: 20px;
+  color: #2B4F82;
+}
 .details-content .button-container {
   display: flex;
   justify-content: flex-end;
@@ -625,6 +630,7 @@ footer p {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  width: 140px;
 }
 .details-content .button-container .cancel-btn:hover {
   background-color: #818080;
