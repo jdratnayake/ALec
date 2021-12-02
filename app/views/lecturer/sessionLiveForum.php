@@ -80,6 +80,7 @@
         </div>
         <label for="new-question"></label>
         <input type="text" name="new-question" id="new-question" placeholder="Add your question here... &#xF040;">
+        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
     </div>
 
     <div class="button-container">
