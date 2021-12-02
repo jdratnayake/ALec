@@ -1,0 +1,107 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+//LOCAL VARIABLES
+$main_color: $theme_second;
+$light_color: #FFF;
+
+.details-content {
+  padding: 1rem;
+  width: 70%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  margin: auto auto 30px auto;
+  overflow: hidden;
+
+  .header-container{
+    display: flex;
+    align-items: center;
+
+    header{margin: 20px 10px;}
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0;
+
+    .cancel-btn {
+      padding: 6px 12px;
+      background-color: $cancel_button;
+      color: $light_color;
+      border-radius: 5px;
+      border: 2px solid $cancel_button;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $cancel_button_hover;
+        border: 2px solid $cancel_button_hover;
+      }
+    }
+  }
+
+  .questions{
+      padding-bottom: 2rem;
+      margin-left: 10px;
+
+      .question{
+        display: flex;
+        align-items: center;
+        background-color: #2b4f820d;
+        border-radius: 20px;
+        margin: 5px 0;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    }
+
+  .custom-question-container{
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
+    margin-left: 10px;
+
+    label{
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    input{
+      width: 25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 4px 8px;
+      border-bottom-width: 2px;
+      font-family: FontAwesome, Poppins,sans-serif;
+      font-style: normal;
+    }
+  }
+
+  .custom-btn {
+    padding: 4px 8px;
+    //background-color: $theme_second;
+    //color: $light_color;
+    background-color: $light_color;
+    color: $theme_second;
+    border-radius: 5px;
+    border: 2px solid $theme_second;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 10px;
+
+    i{margin-right: 5px;}
+
+    &:hover {
+      background-color: $theme_second;
+      border: 2px solid $theme_second;
+      color: $light_color;
+    }
+  }
+}
+
