@@ -9,24 +9,17 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-
 .active-quizzes-container .quiz-table {
   max-width: 1200px;
   margin: 20px auto;
 }
-
 .active-quizzes-container .quiz-table li {
   border-radius: 3px;
   padding: 25px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 5px;
 }
-
 .active-quizzes-container .quiz-table .table-header {
   background-color: #274774;
   color: white;
@@ -34,59 +27,45 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-
 .active-quizzes-container .quiz-table .table-header .reply {
   text-align: center;
 }
-
 .active-quizzes-container .quiz-table .table-row {
   background-color: #ffffff;
-  -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
 }
-
 .active-quizzes-container .quiz-table .table-row a {
   text-decoration: none;
   color: #274774;
   font-weight: 500;
 }
-
 .active-quizzes-container .quiz-table .table-row a:hover {
   text-decoration: underline;
 }
-
 .active-quizzes-container .quiz-table .col-1 {
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  flex-basis: 40%;
   margin: auto;
   width: 60%;
   padding: 0 0 0 20px;
 }
-
 .active-quizzes-container .quiz-table .col-2 {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  flex-basis: 20%;
   margin: auto;
   width: 60%;
   padding: 0;
 }
-
 .active-quizzes-container .quiz-table .col-3 {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  flex-basis: 20%;
   margin: auto;
   width: 60%;
   padding: 0;
 }
-
 .active-quizzes-container .quiz-table .col-4 {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  flex-basis: 20%;
   margin: auto;
   width: 60%;
   padding: 0;
 }
-
 @media all and (max-width: 767px) {
   .active-quizzes-container .quiz-table .table-header {
     display: none;
@@ -95,12 +74,9 @@
     display: block;
   }
   .active-quizzes-container .quiz-table .col {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   .active-quizzes-container .quiz-table .col {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     padding: 10px 0;
   }
@@ -108,8 +84,7 @@
     color: #274774;
     padding-right: 10px;
     content: attr(data-label);
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    flex-basis: 50%;
     text-align: right;
   }
 }
@@ -126,4 +101,5 @@
 .btn {
   margin: auto;
 }
+
 /*# sourceMappingURL=active_quizzes_table.css.map */
