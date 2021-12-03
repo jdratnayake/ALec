@@ -33,9 +33,17 @@
             Open Text Poll Question
         </div>
         <div class="content">
-            <!--            open text poll question-->
-            <label for="question"></label>
-            <input type="text" class="session" placeholder="Enter your question here..." id="question">
+            <div class="first-row">
+                <div class="time-input">
+                    <label for="time-input">Time:</label>
+                    <input type="text" id="time-input" placeholder="hrs:mins:secs">
+                </div>
+            </div>
+            <div class="div-question">
+                <!--            open text poll question-->
+                <label for="question"></label>
+                <input type="text" class="session" placeholder="Enter your question here..." id="question">
+            </div>
         </div>
 
         <div class="button-container">

@@ -38,6 +38,54 @@ $light_color: #FFF;
       width: 98%;
       margin: 10px auto;
 
+      .first-row {
+        display: flex;
+        align-items: center;
+        margin: 5px auto;
+        width: 95%;
+        justify-content: space-between;
+
+        .option-btn {
+          background: none;
+          padding: 0;
+          display: flex;
+          align-items: center;
+
+          #option-mcq, #option-TF {
+            padding: 5px;
+            width: 150px;
+            border: 2px solid $main_color;
+            cursor: pointer;
+            text-align: center;
+          }
+
+          #option-mcq {
+            background-color: $main_color;
+            color: $light_color;
+            border-radius: 20px 0 0 20px;
+          }
+
+          #option-TF {
+            background-color: $light_color;
+            color: $main_color;
+            border-radius: 0 20px 20px 0;
+          }
+        }
+
+        .time-input {
+          label {
+            margin-right: 5px;
+          }
+
+          input {
+            border: 1px solid #ccc;
+            border-bottom-width: 2px;
+            border-radius: 5px;
+            padding: 5px 10px;
+          }
+        }
+      }
+
       .mcq, .tf {
         width: 100%;
       }
@@ -57,31 +105,6 @@ $light_color: #FFF;
         margin-bottom: 15px;
       }
 
-      .option-btn {
-        background: none;
-        padding: 0;
-        margin: 20px auto;
-
-        #option-mcq, #option-TF {
-          padding: 5px;
-          width: 150px;
-          border: 2px solid $main_color;
-          cursor: pointer;
-          text-align: center;
-        }
-
-        #option-mcq {
-          background-color: $main_color;
-          color: $light_color;
-          border-radius: 20px 0 0 20px;
-        }
-
-        #option-TF {
-          background-color: $light_color;
-          color: $main_color;
-          border-radius: 0 20px 20px 0;
-        }
-      }
 
     }
 

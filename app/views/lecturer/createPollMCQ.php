@@ -33,10 +33,17 @@
             Multiple Choice Poll Question
         </div>
         <div class="content">
-            <!--            option selection button-->
-            <div class="session option-btn">
-                <div class="left" id="option-mcq">MCQ</div>
-                <div class="right" id="option-TF">TRUE/FALSE</div>
+
+            <div class="first-row">
+                <!--            option selection button-->
+                <div class="option-btn">
+                    <div class="left" id="option-mcq">MCQ</div>
+                    <div class="right" id="option-TF">TRUE/FALSE</div>
+                </div>
+                <div class="time-input">
+                    <label for="time-input">Time:</label>
+                    <input type="text" id="time-input" placeholder="hrs:mins:secs">
+                </div>
             </div>
 
             <!--            mcq type poll questions-->

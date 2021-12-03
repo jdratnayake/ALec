@@ -625,7 +625,26 @@ footer p {
   width: 98%;
   margin: 10px auto;
 }
-.details-content .container .content .session {
+.details-content .container .content .first-row {
+  display: flex;
+  align-items: center;
+  margin: 5px auto;
+  width: 95%;
+  justify-content: flex-end;
+}
+.details-content .container .content .first-row .time-input label {
+  margin-right: 5px;
+}
+.details-content .container .content .first-row .time-input input {
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.details-content .container .content .div-question {
+  width: 100%;
+}
+.details-content .container .content .div-question .session {
   display: flex;
   align-items: center;
   background-color: #2b4f820d;
