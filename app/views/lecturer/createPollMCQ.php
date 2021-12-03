@@ -35,15 +35,42 @@
         <div class="content">
             <!--            option selection button-->
             <div class="session option-btn">
-                <div class="left">MCQ</div>
-                <div class="right">TRUE/FALSE</div>
+                <div class="left" id="option-mcq">MCQ</div>
+                <div class="right" id="option-TF">TRUE/FALSE</div>
             </div>
 
-            <div class="session">Question</div>
-            <div class="session">Answer 1</div>
-            <div class="session">Answer 2</div>
-            <div class="session">Answer 3</div>
-            <div class="session">Answer 4</div>
+<!--            mcq type poll questions-->
+            <div class="mcq" id="div-mcq">
+                <label for="question"></label>
+                <input type="text" class="session question" placeholder="Enter your question here..." id="question">
+
+                <label for="answer-1"></label>
+                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-1">
+
+                <label for="answer-2"></label>
+                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-2">
+
+                <label for="answer-3"></label>
+                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-3">
+
+                <label for="answer-4"></label>
+                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-4">
+
+                <label for="answer-5"></label>
+                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-5">
+            </div>
+
+<!--            true false type poll questions-->
+            <div class="tf" id="div-tf" style="display: none">
+                <label for="question"></label>
+                <input type="text" class="session question" placeholder="Enter your question here..." id="question">
+
+                <label for="true"></label>
+                <input type="text" class="session" placeholder="True" id="true" readonly>
+
+                <label for="false"></label>
+                <input type="text" class="session" placeholder="False" id="false" readonly>
+            </div>
 
         </div>
 
@@ -57,6 +84,8 @@
 <?php linkPhp("footer"); ?>
 
 <?php linkPhp("notification"); ?>
+
+<?php linkJS("createPollMcq"); ?>
 
 </body>
 

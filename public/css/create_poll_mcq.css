@@ -598,10 +598,9 @@ footer p {
 /*==============================================================================*/
 .details-content {
   padding: 1rem;
-  border: 2px solid #00e6ee;
   width: 50%;
   height: fit-content;
-  margin: 5% auto;
+  margin: 2% auto;
 }
 .details-content .container {
   width: 100%;
@@ -615,7 +614,7 @@ footer p {
   padding: 20px;
   border-radius: 12px 12px 0 0;
   text-align: left;
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 .details-content .container .content {
@@ -626,33 +625,40 @@ footer p {
   width: 98%;
   margin: 10px auto;
 }
+.details-content .container .content .mcq, .details-content .container .content .tf {
+  width: 100%;
+}
 .details-content .container .content .session {
   display: flex;
   align-items: center;
   background-color: #2b4f820d;
   border-radius: 5px;
   margin: 5px auto;
-  padding: 5px 10px;
+  padding: 10px;
   width: 95%;
+  border: none;
+}
+.details-content .container .content .question {
+  margin-bottom: 15px;
 }
 .details-content .container .content .option-btn {
   background: none;
   padding: 0;
   margin: 20px auto;
 }
-.details-content .container .content .option-btn .left, .details-content .container .content .option-btn .right {
+.details-content .container .content .option-btn #option-mcq, .details-content .container .content .option-btn #option-TF {
   padding: 5px;
   width: 150px;
   border: 2px solid #2B4F82;
   cursor: pointer;
   text-align: center;
 }
-.details-content .container .content .option-btn .left {
+.details-content .container .content .option-btn #option-mcq {
   background-color: #2B4F82;
   color: #FFF;
   border-radius: 20px 0 0 20px;
 }
-.details-content .container .content .option-btn .right {
+.details-content .container .content .option-btn #option-TF {
   background-color: #FFF;
   color: #2B4F82;
   border-radius: 0 20px 20px 0;
