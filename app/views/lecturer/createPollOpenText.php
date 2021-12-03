@@ -34,8 +34,8 @@
         </div>
         <div class="content">
             <!--            open text poll question-->
-                <label for="question"></label>
-                <input type="text" class="session" placeholder="Enter your question here..." id="question">
+            <label for="question"></label>
+            <input type="text" class="session" placeholder="Enter your question here..." id="question">
         </div>
 
         <div class="button-container">
