@@ -14,14 +14,14 @@ $light_color: #FFF;
   margin: auto auto 30px auto;
   height: 80%;
 
-  .container{
+  .container {
     margin: 5% auto;
     width: 600px;
     height: 400px;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
 
-    .heading{
+    .heading {
       background-color: $main_color;
       color: $light_color;
       padding: 20px;
@@ -31,25 +31,26 @@ $light_color: #FFF;
       font-weight: 600;
     }
 
-    .content{
+    .content {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
 
-      .col{
+      .col {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         margin: 4rem 3rem;
 
-        img{
+        img {
           width: 120px;
           padding-bottom: 10px;
           cursor: pointer;
         }
-        label{
+
+        label {
           font-weight: 500;
           color: $main_color;
         }

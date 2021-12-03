@@ -43,12 +43,18 @@ $light_color: #FFF;
       padding: 10px;
       justify-content: space-between;
 
-      .vote{
+      .vote {
         display: flex;
         flex-direction: column;
         align-items: center;
-        .fa-thumbs-o-up{font-size: 24px;}
-        .votes-count{font-size: small;}
+
+        .fa-thumbs-o-up {
+          font-size: 24px;
+        }
+
+        .votes-count {
+          font-size: small;
+        }
       }
     }
   }
@@ -61,7 +67,7 @@ $light_color: #FFF;
     flex-wrap: wrap;
     justify-content: space-between;
 
-    .toggle-btn{
+    .toggle-btn {
       margin: 5px;
     }
 
@@ -76,7 +82,7 @@ $light_color: #FFF;
       align-items: center;
     }
 
-    i{
+    i {
       color: $main_color;
       font-size: 30px;
       margin-right: 10px;

@@ -34,25 +34,26 @@
     <div class="session-details-container">
         <div class="session-name-container">
             <label for="session-name" class="session-label">Session Name</label>
-            <input type="text" name="session-name" id="session-name" placeholder="Enter your session name here... &#xF040;" ">
+            <input type="text" name="session-name" id="session-name"
+                   placeholder="Enter your session name here... &#xF040;" ">
         </div>
         <div class="sessions">
             <span class="session-label">Quick Questions</span>
-<!--        Add Quick Question Button-->
+            <!--        Add Quick Question Button-->
             <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
             <span class="session">What's the best piece of advice you've ever been given?</span>
             <span class="session">What's the best piece of advice?</span>
         </div>
         <div class="sessions">
             <span class="session-label">Poll Questions</span>
-<!--        Add Quick Question Button-->
+            <!--        Add Quick Question Button-->
             <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
             <span class="session inactive">No questions to show</span>
         </div>
     </div>
 
     <div class="button-container">
-<!--        Save Session Button-->
+        <!--        Save Session Button-->
         <button type="button" value="Create Session" class="save-btn">Create Session</button>
     </div>
 </div>

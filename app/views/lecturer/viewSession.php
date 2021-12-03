@@ -33,18 +33,18 @@
         </header>
     </div>
     <div class="button-container">
-<!--        Start Session Button-->
+        <!--        Start Session Button-->
         <button type="button" value="Start Session" class="main-btn" id="start-session" style="display: none">
             <i class="fa fa-play" aria-hidden="true"></i>
             Start Session
         </button>
-<!--        End Session Button-->
+        <!--        End Session Button-->
         <button type="button" value="End Session" class="main-btn" id="end-session" style="display: block">
             <i class="fa fa-stop" aria-hidden="true"></i>
             End Session
         </button>
 
-<!--        New Session Button-->
+        <!--        New Session Button-->
         <button type="button" value="Add New Session" class="main-btn">Add New Session</button>
     </div>
     <div class="session-details-container">

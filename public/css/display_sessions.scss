@@ -16,18 +16,19 @@ $light_color: #FFF;
   height: 80%;
   overflow: hidden;
 
-  .header-container{
-    header{
+  .header-container {
+    header {
       margin: 20px 10px;
     }
-    .course-label{
+
+    .course-label {
       font-weight: 400;
       color: #2B4F82;
       margin-left: 25px;
     }
   }
 
-  .button-container{
+  .button-container {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
@@ -51,16 +52,16 @@ $light_color: #FFF;
     }
   }
 
-  .session-details-container{
+  .session-details-container {
     height: 60vh;
     overflow: auto;
 
-    .sessions{
+    .sessions {
       display: grid;
       padding-bottom: 2rem;
       margin-left: 10px;
 
-      .session{
+      .session {
         display: flex;
         align-items: center;
         background-color: #2b4f820d;
@@ -69,7 +70,9 @@ $light_color: #FFF;
         padding: 20px 10px;
         justify-content: space-between;
 
-        .publish-status{cursor: pointer}
+        .publish-status {
+          cursor: pointer
+        }
       }
     }
   }

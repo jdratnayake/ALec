@@ -39,7 +39,7 @@
                 <div class="right" id="option-TF">TRUE/FALSE</div>
             </div>
 
-<!--            mcq type poll questions-->
+            <!--            mcq type poll questions-->
             <div class="mcq" id="div-mcq">
                 <label for="question"></label>
                 <input type="text" class="session question" placeholder="Enter your question here..." id="question">
@@ -60,7 +60,7 @@
                 <input type="text" class="session" placeholder="Enter your answer here..." id="answer-5">
             </div>
 
-<!--            true false type poll questions-->
+            <!--            true false type poll questions-->
             <div class="tf" id="div-tf" style="display: none">
                 <label for="question"></label>
                 <input type="text" class="session question" placeholder="Enter your question here..." id="question">

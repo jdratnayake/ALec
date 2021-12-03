@@ -15,20 +15,21 @@ $light_color: #FFF;
   margin: auto auto 30px auto;
   overflow: hidden;
 
-  .header-container{
-    header{
+  .header-container {
+    header {
       margin: 20px 10px;
       align-items: center;
       display: flex;
     }
-    .fa-circle{
+
+    .fa-circle {
       font-size: 20px;
       margin-left: 10px;
       color: #4caf50;
     }
   }
 
-  .button-container{
+  .button-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -46,7 +47,9 @@ $light_color: #FFF;
       margin-left: 5px;
       display: block;
 
-      .fa-play, .fa-stop{margin-right: 5px;}
+      .fa-play, .fa-stop {
+        margin-right: 5px;
+      }
 
       &:hover {
         background-color: $theme_second_hover;
@@ -55,9 +58,9 @@ $light_color: #FFF;
     }
   }
 
-  .session-details-container{
+  .session-details-container {
 
-    .sessions{
+    .sessions {
       padding-bottom: 2rem;
       margin-left: 10px;
 
@@ -72,7 +75,9 @@ $light_color: #FFF;
         float: right;
         cursor: pointer;
 
-        .fa-plus{margin-right: 5px;}
+        .fa-plus {
+          margin-right: 5px;
+        }
 
         &:hover {
           background-color: $theme_second_hover;
@@ -81,12 +86,15 @@ $light_color: #FFF;
         }
       }
 
-      .session-label{
+      .session-label {
         font-weight: bold;
-        a{text-decoration: none;}
+
+        a {
+          text-decoration: none;
+        }
       }
 
-      .session{
+      .session {
         display: flex;
         align-items: center;
         background-color: #2b4f820d;
@@ -95,18 +103,28 @@ $light_color: #FFF;
         padding: 10px;
         justify-content: space-between;
 
-        .vote{
+        .vote {
           display: flex;
           flex-direction: column;
           align-items: center;
-          .fa-thumbs-o-up{font-size: 24px;}
-          .votes-count{font-size: small;}
+
+          .fa-thumbs-o-up {
+            font-size: 24px;
+          }
+
+          .votes-count {
+            font-size: small;
+          }
         }
 
-        .publish-status{cursor: pointer}
+        .publish-status {
+          cursor: pointer
+        }
       }
 
-      .inactive{color: #ccc;}
+      .inactive {
+        color: #ccc;
+      }
     }
   }
 }

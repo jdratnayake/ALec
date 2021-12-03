@@ -15,18 +15,19 @@ $light_color: #FFF;
   margin: auto auto 30px auto;
   overflow: hidden;
 
-  .header-container{
-    header{
+  .header-container {
+    header {
       margin: 20px 10px;
     }
-    .course-label{
+
+    .course-label {
       font-weight: 400;
       color: #2B4F82;
       margin-left: 25px;
     }
   }
 
-  .button-container{
+  .button-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -50,31 +51,31 @@ $light_color: #FFF;
     }
   }
 
-  .session-details-container{
+  .session-details-container {
 
-    .session-name-container{
+    .session-name-container {
       display: flex;
       align-items: center;
       padding-bottom: 2rem;
       margin-left: 10px;
 
-      label{
+      label {
         margin-right: 10px;
         font-weight: bold;
       }
 
-      input{
+      input {
         width: 25rem;
         border: 1px solid #ccc;
         border-radius: 4px;
         padding: 4px 8px;
         border-bottom-width: 2px;
-        font-family: FontAwesome, Poppins,sans-serif;
+        font-family: FontAwesome, Poppins, sans-serif;
         font-style: normal;
       }
     }
 
-    .sessions{
+    .sessions {
       padding-bottom: 2rem;
       margin-left: 10px;
 
@@ -89,7 +90,9 @@ $light_color: #FFF;
         float: right;
         cursor: pointer;
 
-        .fa-plus{margin-right: 5px;}
+        .fa-plus {
+          margin-right: 5px;
+        }
 
         &:hover {
           background-color: $theme_second_hover;
@@ -98,9 +101,11 @@ $light_color: #FFF;
         }
       }
 
-      .session-label{font-weight: bold;}
+      .session-label {
+        font-weight: bold;
+      }
 
-      .session{
+      .session {
         display: flex;
         align-items: center;
         background-color: #2b4f820d;
@@ -109,7 +114,9 @@ $light_color: #FFF;
         padding: 10px;
       }
 
-      .inactive{color: #ccc;}
+      .inactive {
+        color: #ccc;
+      }
     }
   }
 }

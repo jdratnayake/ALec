@@ -38,7 +38,9 @@ $light_color: #FFF;
       width: 98%;
       margin: 10px auto;
 
-      .mcq, .tf{width: 100%;}
+      .mcq, .tf {
+        width: 100%;
+      }
 
       .session {
         display: flex;
@@ -50,7 +52,10 @@ $light_color: #FFF;
         width: 95%;
         border: none;
       }
-      .question{margin-bottom: 15px;}
+
+      .question {
+        margin-bottom: 15px;
+      }
 
       .option-btn {
         background: none;
