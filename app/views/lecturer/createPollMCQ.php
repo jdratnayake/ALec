@@ -30,7 +30,7 @@
 <div class="details-content">
     <div class="container">
         <div class="heading">
-            Create Multiple Choice Question
+            Multiple Choice Poll Question
         </div>
         <div class="content">
             <!--            option selection button-->
@@ -76,7 +76,7 @@
 
         <div class="button-container">
             <!--        Save Session Button-->
-            <button type="button" value="Create Session" class="save-btn">Create Session</button>
+            <button type="button" value="Create Session" class="save-btn">Save Question</button>
         </div>
     </div>
 </div>
