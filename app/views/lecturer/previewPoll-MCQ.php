@@ -1,3 +1,4 @@
+<!--Preview poll mcq - lecturer view-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,35 +44,35 @@
             </div>
 
             <div class="questions-container">
-                <!--            open text poll question-->
-                <label for="question"></label>
-                <input type="text" class="session question" placeholder="Enter your question here..." id="question">
-
-                <!--            open text poll question-->
-                <label for="answer-1"></label>
-                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-1">
-
-                <!--            open text poll question-->
-                <label for="answer-2"></label>
-                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-2">
-
-                <!--            open text poll question-->
-                <label for="answer-3"></label>
-                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-3">
-
-                <!--            open text poll question-->
-                <label for="answer-4"></label>
-                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-4">
-
-                <!--            open text poll question-->
-                <label for="answer-5"></label>
-                <input type="text" class="session" placeholder="Enter your answer here..." id="answer-5">
+                <span class="question">
+                    Which is not a property of a transaction?
+                </span>
+                <span class="answer">
+                    <input type="radio" id="answer-1" name="answer">
+                    <label for="answer-1">Atomicity</label>
+                </span>
+                <span class="answer">
+                    <input type="radio" id="answer-2" name="answer">
+                    <label for="answer-2">Inclusion</label>
+                </span>
+                <span class="answer">
+                    <input type="radio" id="answer-3" name="answer">
+                    <label for="answer-3">Consistency</label>
+                </span>
+                <span class="answer">
+                    <input type="radio" id="answer-4" name="answer">
+                    <label for="answer-4">Durability</label>
+                </span>
+                <span class="answer">
+                    <input type="radio" id="answer-5" name="answer">
+                    <label for="answer-5">Durability</label>
+                </span>
             </div>
         </div>
 
         <div class="button-container">
             <!--        Save Session Button-->
-            <button type="button" value="Create Session" class="save-btn">Save Question</button>
+            <button type="button" value="Create Session" class="save-btn">Done</button>
         </div>
     </div>
 </div>

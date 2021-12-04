@@ -1,3 +1,4 @@
+<!--Preview poll open-text - lecturer view-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,14 +43,16 @@
                 <p> secs remaining</p>
             </div>
 
-            <!--            open text poll question-->
-            <label for="question"></label>
-            <input type="text" class="session" placeholder="Enter your question here..." id="question">
+            <div class="questions-container">
+                <!--            open text poll question-->
+                <label for="question">What was your dream job as a child?</label>
+                <input type="text" class="question" placeholder="Enter your answer here..." id="question">
+            </div>
         </div>
 
         <div class="button-container">
             <!--        Save Session Button-->
-            <button type="button" value="Create Session" class="save-btn">Save Question</button>
+            <button type="button" value="Create Session" class="save-btn">Done</button>
         </div>
     </div>
 </div>
