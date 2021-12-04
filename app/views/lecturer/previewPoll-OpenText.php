@@ -34,10 +34,14 @@
             Open Text Poll Question
         </div>
         <div class="content">
-            <div class="time">
-                <div class="time-bar"></div>
+            <div class="bar-div">
+                <div id="time-bar" class="time-bar" style="width: 100%"></div>
             </div>
-            <p id="time-display">40 secs remaining</p>
+            <div class="time-div">
+                <p id="time-display">60</p>
+                <p> secs remaining</p>
+            </div>
+
             <!--            open text poll question-->
             <label for="question"></label>
             <input type="text" class="session" placeholder="Enter your question here..." id="question">
@@ -55,6 +59,8 @@
 <?php linkPhp("notification"); ?>
 
 <?php linkJS("createPollMcq"); ?>
+
+<?php linkJS("timeBar"); ?>
 
 </body>
 

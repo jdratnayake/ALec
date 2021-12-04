@@ -20,7 +20,6 @@ $light_color: #FFF;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
 
-
     .heading {
       background-color: $main_color;
       color: $light_color;
@@ -39,7 +38,9 @@ $light_color: #FFF;
       width: 98%;
       margin: 10px auto;
 
-      .time {
+      /*--------------------- Time progress bar styles - start ----------------------------*/
+
+      .bar-div {
         margin: 5px auto;
         width: 95%;
         border-radius: 18px;
@@ -47,18 +48,24 @@ $light_color: #FFF;
 
         .time-bar {
           height: 20px;
-          width: 20%;
           color: $light_color;
           background-color: rgba(25, 52, 93, 1);
           border-radius: 18px;
         }
       }
 
-      #time-display{
-        width: 95%;
-        margin: auto;
+      .time-div{
+        display: flex;
+        align-items: center;
         font-size: small;
+        margin: auto 12px;
+
+        #time-display{
+          margin: auto 5px;
+        }
       }
+
+      /*--------------------- Time progress bar styles - end ----------------------------*/
 
       .session {
         display: flex;

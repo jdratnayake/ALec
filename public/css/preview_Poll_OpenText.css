@@ -624,24 +624,29 @@ footer p {
   align-items: flex-start;
   width: 98%;
   margin: 10px auto;
+  /*--------------------- Time progress bar styles - start ----------------------------*/
+  /*--------------------- Time progress bar styles - end ----------------------------*/
 }
-.details-content .container .content .time {
+.details-content .container .content .bar-div {
   margin: 5px auto;
   width: 95%;
   border-radius: 18px;
   background-color: #ccc;
 }
-.details-content .container .content .time .time-bar {
+.details-content .container .content .bar-div .time-bar {
   height: 20px;
-  width: 20%;
   color: #FFF;
   background-color: #19345d;
   border-radius: 18px;
 }
-.details-content .container .content #time-display {
-  width: 95%;
-  margin: auto;
+.details-content .container .content .time-div {
+  display: flex;
+  align-items: center;
   font-size: small;
+  margin: auto 12px;
+}
+.details-content .container .content .time-div #time-display {
+  margin: auto 5px;
 }
 .details-content .container .content .session {
   display: flex;
