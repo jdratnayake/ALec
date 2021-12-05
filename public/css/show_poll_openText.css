@@ -1,0 +1,707 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  background-color: white;
+  color: #19345d;
+  text-align: left;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0 20px 0;
+  width: 100%;
+}
+
+.siderbar.active .profile .profile_details:hover {
+  /* color: #184e77; */
+  /* background: #fff; */
+  border-radius: 10px;
+  text-decoration: underline;
+}
+
+/*==============================================================================*/
+/*NAVIGATION BAR - START*/
+/*==============================================================================*/
+.siderbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* width of the siderbar when toggle button is off */
+  width: 78px;
+  background: #19345d;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+}
+
+/* handles the width of the siderbar when toggle button is active */
+.siderbar.active {
+  width: 240px;
+}
+
+.logo_content {
+  cursor: pointer;
+}
+
+.siderbar .logo_content .logo {
+  color: #fff;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.siderbar.active .logo_content .logo {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.logo_content .logo i {
+  font-size: 28px;
+  margin-right: 5px;
+}
+
+.logo_content .logo .logo_name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.siderbar #btn {
+  position: absolute;
+  color: #fff;
+  top: 6px;
+  left: 50%;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+
+.siderbar.active #btn {
+  left: 90%;
+}
+
+.siderbar ul {
+  margin-top: 20px;
+}
+
+.siderbar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+  line-height: 50px;
+}
+
+.siderbar ul li .tooltip {
+  position: absolute;
+  left: 122px;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 122px;
+  background: #fff;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.siderbar.active ul li .tooltip {
+  display: none;
+}
+
+.siderbar ul li:hover .tooltip {
+  transition: all 0.5s ease;
+  opacity: 1;
+  top: 50%;
+}
+
+.siderbar ul li input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background: #1d1b31;
+  padding-left: 50px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.siderbar ul li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.siderbar ul li a:hover {
+  color: #184e77;
+  background: #fff;
+}
+
+.siderbar ul li i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 10px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.siderbar .links_name {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.siderbar.active .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.siderbar .profile_content {
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.siderbar .profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background: #19345d;
+  transition: all 0.4s ease;
+}
+
+.siderbar.active .profile_content .profile {
+  background: none;
+}
+
+.profile_content .profile .profile_details {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.siderbar.active .profile .profile_details {
+  opacity: 1;
+  pointer-events: auto;
+  width: 76%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.siderbar.active .profile .profile_details:hover {
+  text-decoration: underline;
+}
+
+.profile .profile_details img {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.profile .profile_details .name_job {
+  margin-left: 10px;
+}
+
+.profile .profile_details .name {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.profile .profile_details .job {
+  font-size: 12px;
+}
+
+.profile #log_out {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 45px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.4s ease;
+  background: #19345d;
+  cursor: pointer;
+  height: 45px;
+}
+.profile #log_out:hover {
+  color: #184e77;
+  background: #fff;
+}
+
+.siderbar.active .profile #log_out {
+  left: 88%;
+  background: none;
+}
+.siderbar.active .profile #log_out:hover {
+  color: #184e77;
+  background: #fff;
+}
+
+.siderbar.active ~ .home_content {
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
+/*==============================================================================*/
+/*NAVIGATION BAR - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*HOME CONTENT - START*/
+/*==============================================================================*/
+.home-content {
+  height: 100%;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  margin-left: 78px;
+  padding-top: 2px;
+  /* background-color: #1d1b31; */
+}
+.home-content .error {
+  color: red;
+  font-size: 80%;
+  font-weight: normal;
+}
+
+.home-content-expand {
+  width: calc(100% - 240px);
+  transition: all 0.5s ease;
+  margin-left: 240px;
+}
+
+/*==============================================================================*/
+/*HOME CONTENT - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*POP UP - START*/
+/*==============================================================================*/
+.pop-up {
+  display: none;
+  position: fixed;
+  bottom: 43px;
+  right: 0;
+  background-color: white;
+  width: 375px;
+  height: 576px;
+  border-radius: 10px;
+  margin: 20px;
+  border: 1px solid #ddd;
+}
+.pop-up .heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5px 5px 10px;
+}
+.pop-up .heading .pop-up-heading {
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.pop-up .heading-divider {
+  background-color: #ccc;
+}
+.pop-up .notification-details {
+  overflow: auto;
+  height: 496px;
+}
+.pop-up .notification-details .notes {
+  padding-top: 10px;
+}
+.pop-up .notification-details .notes .note-label {
+  margin: 5px 20px;
+  color: darkgrey;
+}
+.pop-up .notification-details .notes .note {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+}
+.pop-up .notification-details .notes .note img {
+  width: 50px;
+}
+.pop-up .notification-details .notes .note .text {
+  font-size: 12px;
+  padding: 10px;
+  width: 275px;
+}
+.pop-up .notification-details .notes .note .read-status {
+  font-size: 10px;
+  color: #1b83cd;
+  width: 25px;
+  text-align: right;
+}
+.pop-up .notification-details .notes .note .read-status .fa-circle {
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+  z-index: 10;
+}
+
+/*==============================================================================*/
+/*POP UP - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*NOTIFICATION CONTAINER - START*/
+/*==============================================================================*/
+.notification-container {
+  position: fixed;
+  bottom: 67px;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  background-color: #19345d;
+  color: white;
+  /* padding: 20px;
+  margin: 10px;  */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: 200ms opacity ease;
+  z-index: 10;
+  /* padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, .05);
+  transition: 200ms opacity ease;
+
+
+
+  box-shadow: 0 12px 48px 4px rgb(0 0 0 / 12%); */
+}
+
+.bell-notification {
+  font-size: 20px;
+}
+
+.hide {
+  opacity: 0.3;
+}
+
+/*==============================================================================*/
+/*NOTIFICATION CONTAINER - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*TOGGLE BUTTON STYLES - START*/
+/*==============================================================================*/
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.toggle-btn .toggle-label {
+  margin-right: 8px;
+  font-size: small;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2B4F82;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2B4F82;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*==============================================================================*/
+/*TOGGLE BUTTON STYLES - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*TOOLTIP STYLES - START*/
+/*==============================================================================*/
+.notes .note .read-status .tooltip {
+  display: none;
+  position: static;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 25px;
+  width: 80px;
+  background: #fff;
+  line-height: 25px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  cursor: pointer;
+}
+
+.notes .note .read-status:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+
+/*==============================================================================*/
+/*TOOLTIP STYLES - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*BREADCRUMB - START*/
+/*==============================================================================*/
+ul.breadcrumb {
+  padding: 4px 16px;
+  list-style: none;
+  background-color: #eeeeee61;
+  margin-bottom: 30px;
+  margin-left: 0 !important;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/ ";
+}
+
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/*==============================================================================*/
+/*BREADCRUMB - END*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*FOOTER - START*/
+/*==============================================================================*/
+footer {
+  width: 100%;
+  background: #eceff1;
+  color: #546e7a;
+  display: grid;
+  place-items: center;
+  /* padding: 2em;  */
+  /* font-size: 1.2rem; */
+}
+
+footer p {
+  padding: 0;
+  margin: 1em 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.sticky-footer {
+  position: sticky;
+  top: 100%;
+}
+
+/*==============================================================================*/
+/*FOOTER - END*/
+/*==============================================================================*/
+.details-content {
+  padding: 1rem;
+  width: 50%;
+  height: fit-content;
+  margin: 5% auto;
+}
+.details-content .container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+}
+.details-content .container .heading {
+  background-color: #2B4F82;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 12px 12px 0 0;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.details-content .container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 98%;
+  margin: 10px auto;
+}
+.details-content .container .content .questions-container {
+  width: 95%;
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+.details-content .container .content .questions-container .participant-row {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.details-content .container .content .questions-container .question {
+  margin: 10px 0;
+}
+.details-content .container .content .questions-container .answer-container {
+  margin-top: 10px;
+  width: 100%;
+  overflow: auto;
+  max-height: 250px;
+  padding-right: 10px;
+}
+.details-content .container .content .questions-container .answer-container .row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.details-content .container .content .questions-container .answer-container .row .answer-label {
+  width: 25%;
+  font-size: 15px;
+}
+.details-content .container .content .questions-container .answer-container .row .answer {
+  margin: 5px 0;
+  border: 1px solid rgba(43, 79, 130, 0.2);
+  border-radius: 20px;
+  width: 65%;
+}
+.details-content .container .content .questions-container .answer-container .row .answer .answer-progress {
+  background-color: rgba(43, 79, 130, 0.3);
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+.details-content .container .content .questions-container .answer-container .row .answer .pressed {
+  background-color: rgba(43, 79, 130, 0.6);
+}
+.details-content .container .content .questions-container .answer-container .row .percentage {
+  width: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+.details-content .container .button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 98%;
+  margin: 10px auto;
+  padding: 10px;
+}
+.details-content .container .button-container .save-btn {
+  padding: 6px 36px;
+  background-color: #2B4F82;
+  color: #FFF;
+  border-radius: 5px;
+  border: 2px solid #2B4F82;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+}
+.details-content .container .button-container .save-btn:hover {
+  background-color: #1d3557;
+  border: 2px solid #1d3557;
+}
+
+/*# sourceMappingURL=show_poll_openText.css.map */
