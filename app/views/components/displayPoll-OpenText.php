@@ -1,4 +1,4 @@
-<!--Preview poll mcq - lecturer view-->
+<!--Preview poll open-text - lecturer view-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +10,7 @@
     <title>Preview Poll</title>
 
     <!-- CSS File HOME-->
-    <?php linkCSS("preview_Poll_MCQ"); ?>
+    <?php linkCSS("display_Poll_OpenText"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
@@ -18,21 +18,29 @@
 </head>
 
 <body>
-<?php linkPhp("navigationBarLecturer"); ?>
+
+<?php
+
+    if ($data["userType"] == "lec") {
+        linkPhp("navigationBarLecturer");
+    } else if ($data["userType"] == "stu") {
+        linkPhp("navigationBarStudent");
+    }
+
+?>
 
 <!--    breadcrumb-->
 <ul class="breadcrumb">
     <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
     <li><a href="#">Sessions</a></li>
     <li><a href="#">New Poll Question</a></li>
-    <li><a href="#">Create MCQ Question</a></li>
+    <li><a href="#">Create Open Text Question</a></li>
     <li>Preview Poll</li>
 </ul>
 
 <div class="details-content">
     <div class="container">
         <div class="heading">
-            Open Text Poll Question
         </div>
         <div class="content">
             <div class="bar-div">
@@ -44,29 +52,9 @@
             </div>
 
             <div class="questions-container">
-                <span class="question">
-                    Which is not a property of a transaction?
-                </span>
-                <span class="answer">
-                    <input type="radio" id="answer-1" name="answer">
-                    <label for="answer-1">Atomicity</label>
-                </span>
-                <span class="answer">
-                    <input type="radio" id="answer-2" name="answer">
-                    <label for="answer-2">Inclusion</label>
-                </span>
-                <span class="answer">
-                    <input type="radio" id="answer-3" name="answer">
-                    <label for="answer-3">Consistency</label>
-                </span>
-                <span class="answer">
-                    <input type="radio" id="answer-4" name="answer">
-                    <label for="answer-4">Durability</label>
-                </span>
-                <span class="answer">
-                    <input type="radio" id="answer-5" name="answer">
-                    <label for="answer-5">Durability</label>
-                </span>
+                <!--            open text poll question-->
+                <label for="question">What was your dream job as a child?</label>
+                <input type="text" class="question" placeholder="Enter your answer here..." id="question">
             </div>
         </div>
 
@@ -88,7 +76,6 @@
 </body>
 
 </html>
-
 
 
 

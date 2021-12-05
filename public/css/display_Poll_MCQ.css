@@ -600,7 +600,7 @@ footer p {
   padding: 1rem;
   width: 50%;
   height: fit-content;
-  margin: 10% auto;
+  margin: 8% auto;
 }
 .details-content .container {
   width: 100%;
@@ -611,11 +611,12 @@ footer p {
 .details-content .container .heading {
   background-color: #2B4F82;
   color: #FFF;
-  padding: 20px;
+  padding: 10px;
   border-radius: 12px 12px 0 0;
   text-align: left;
   font-size: 1.5rem;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 .details-content .container .content {
   display: flex;
@@ -650,17 +651,16 @@ footer p {
 }
 .details-content .container .content .questions-container {
   width: 100%;
-  margin: 15px;
+  margin: 0 15px;
   display: flex;
   flex-direction: column;
 }
 .details-content .container .content .questions-container .question {
   margin: 10px 0;
-  width: 95%;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border-bottom-width: 2px;
+}
+.details-content .container .content .questions-container .answer {
+  margin-bottom: 5px;
+  margin-left: 15px;
 }
 .details-content .container .button-container {
   display: flex;
@@ -686,4 +686,4 @@ footer p {
   border: 2px solid #1d3557;
 }
 
-/*# sourceMappingURL=preview_Poll_OpenText.css.map */
+/*# sourceMappingURL=display_Poll_MCQ.css.map */

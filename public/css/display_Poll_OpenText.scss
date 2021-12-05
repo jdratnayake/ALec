@@ -12,7 +12,7 @@ $light_color: #FFF;
   padding: 1rem;
   width: 50%;
   height: fit-content;
-  margin: 8% auto;
+  margin: 10% auto;
 
   .container {
     width: 100%;
@@ -23,11 +23,12 @@ $light_color: #FFF;
     .heading {
       background-color: $main_color;
       color: $light_color;
-      padding: 20px;
+      padding: 10px;
       border-radius: 12px 12px 0 0;
       text-align: left;
       font-size: 1.5rem;
       font-weight: 600;
+      margin-bottom: 20px;
     }
 
     .content {
@@ -69,18 +70,21 @@ $light_color: #FFF;
 
       .questions-container{
         width: 100%;
-        margin: 0 15px;
+        margin: 15px;
         display: flex;
         flex-direction: column;
 
         .question{
           margin: 10px 0;
+          width: 95%;
+          border: 1px solid #ccc;
+          padding: 5px 10px;
+          border-radius: 5px;
+          border-bottom-width: 2px;
         }
-        .answer{
-          margin-bottom: 5px;
-          margin-left: 15px;
-        }
+
       }
+
     }
 
     .button-container {
