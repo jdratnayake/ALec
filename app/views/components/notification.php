@@ -101,9 +101,9 @@
                     <span>12 hours ago</span>
                 </div>
                 <div class="read-status">
-<!--                    <i class="fa fa-circle" aria-hidden="true"></i>-->
-<!--                    <span class="tooltip">Mark as read</span>-->
-<!--                    read message-->
+                    <!--                    <i class="fa fa-circle" aria-hidden="true"></i>-->
+                    <!--                    <span class="tooltip">Mark as read</span>-->
+                    <!--                    read message-->
                 </div>
             </div>
         </div>
@@ -113,3 +113,4 @@
 <div class="notification-container" onclick="showNotification()">
     <i class="fas fa-bell bell-notification"></i>
 </div>
+<div class="active-status">2</div>

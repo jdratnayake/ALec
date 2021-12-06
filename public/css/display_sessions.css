@@ -359,6 +359,9 @@ header {
   display: flex;
   align-items: center;
 }
+.pop-up .notification-details .notes .note:hover {
+  background-color: rgba(137, 186, 255, 0.12);
+}
 .pop-up .notification-details .notes .note img {
   width: 50px;
 }
@@ -366,6 +369,7 @@ header {
   font-size: 12px;
   padding: 10px;
   width: 275px;
+  cursor: pointer;
 }
 .pop-up .notification-details .notes .note .read-status {
   font-size: 10px;
@@ -388,6 +392,20 @@ header {
 /*==============================================================================*/
 /*NOTIFICATION CONTAINER - START*/
 /*==============================================================================*/
+.active-status {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  z-index: 12;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 103px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+}
+
 .notification-container {
   position: fixed;
   bottom: 67px;
@@ -397,8 +415,6 @@ header {
   border-radius: 50%;
   background-color: #19345d;
   color: white;
-  /* padding: 20px;
-  margin: 10px;  */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -407,15 +423,6 @@ header {
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: 200ms opacity ease;
   z-index: 10;
-  /* padding: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, .05);
-  transition: 200ms opacity ease;
-
-
-
-  box-shadow: 0 12px 48px 4px rgb(0 0 0 / 12%); */
 }
 
 .bell-notification {
