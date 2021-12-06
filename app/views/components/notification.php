@@ -6,7 +6,7 @@
         <div class="toggle-btn">
             <span class="toggle-label">Only show unread</span>
             <label class="switch">
-                <input type="checkbox" id="name-toggle">
+                <input type="checkbox" id="unread-name-toggle" value="bike">
                 <span class="slider round"></span>
             </label>
         </div>
