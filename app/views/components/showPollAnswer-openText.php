@@ -18,7 +18,7 @@
 
 <body>
 
-    <?php linkPhp("navigationBarStudent"); ?>
+<?php linkPhp("navigationBarStudent"); ?>
 
 <?php
 //
@@ -180,19 +180,19 @@
         <div class="button-container">
             <!--        Save Session Button-->
             <button type="button" value="Create Session" class="save-btn">Done</button>
-<!--            --><?php
-//
-//            if ($data["userType"] == "lec") {
-//                ?>
-<!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
-<!--                --><?php
-//            } else if ($data["userType"] == "stu") {
-//                ?>
-<!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
-<!--                --><?php
-//            }
-//
-//            ?>
+            <!--            --><?php
+            //
+            //            if ($data["userType"] == "lec") {
+            //                ?>
+            <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
+            <!--                --><?php
+            //            } else if ($data["userType"] == "stu") {
+            //                ?>
+            <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
+            <!--                --><?php
+            //            }
+            //
+            //            ?>
 
         </div>
     </div>
@@ -201,10 +201,6 @@
 <?php linkPhp("footer"); ?>
 
 <?php linkPhp("notification"); ?>
-
-<?php linkJS("createPollMcq"); ?>
-
-<?php linkJS("timeBar"); ?>
 
 </body>
 

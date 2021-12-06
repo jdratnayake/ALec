@@ -39,25 +39,25 @@ $light_color: #FFF;
       width: 98%;
       margin: 10px auto;
 
-      .questions-container{
+      .questions-container {
         width: 95%;
         margin: 0 15px;
         display: flex;
         flex-direction: column;
 
-        .question{
+        .question {
           margin: 10px 0;
           color: #2B4F82;
           font-weight: 500;
         }
 
-        .answer-container{
+        .answer-container {
           width: 100%;
           overflow: auto;
           max-height: 320px;
           padding-right: 10px;
 
-          .row{
+          .row {
             width: 100%;
           }
         }

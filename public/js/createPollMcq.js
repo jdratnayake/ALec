@@ -3,8 +3,8 @@ let tf = document.getElementById("option-TF");
 let div_mcq = document.getElementById("div-mcq");
 let div_tf = document.getElementById("div-tf");
 
-mcq.addEventListener("click",()=>{
-    if(div_mcq.style.display === "none"){
+mcq.addEventListener("click", () => {
+    if (div_mcq.style.display === "none") {
         div_mcq.style.display = "block";
         div_tf.style.display = "none";
         mcq.style.backgroundColor = "#2B4F82";
@@ -14,8 +14,8 @@ mcq.addEventListener("click",()=>{
     }
 });
 
-tf.addEventListener("click",()=>{
-    if(div_tf.style.display === "none"){
+tf.addEventListener("click", () => {
+    if (div_tf.style.display === "none") {
         div_tf.style.display = "block";
         div_mcq.style.display = "none";
         tf.style.backgroundColor = "#2B4F82";

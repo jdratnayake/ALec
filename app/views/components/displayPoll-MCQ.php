@@ -20,11 +20,11 @@
 
 <?php
 
-    if ($data["userType"] == "lec") {
-        linkPhp("navigationBarLecturer");
-    } else if ($data["userType"] == "stu") {
-        linkPhp("navigationBarStudent");
-    }
+if ($data["userType"] == "lec") {
+    linkPhp("navigationBarLecturer");
+} else if ($data["userType"] == "stu") {
+    linkPhp("navigationBarStudent");
+}
 
 ?>
 
@@ -87,8 +87,6 @@
 <?php linkPhp("footer"); ?>
 
 <?php linkPhp("notification"); ?>
-
-<?php linkJS("createPollMcq"); ?>
 
 <?php linkJS("timeBar"); ?>
 

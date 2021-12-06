@@ -1,8 +1,8 @@
-window.addEventListener('DOMContentLoaded',()=>{
+window.addEventListener('DOMContentLoaded', () => {
     move();
 });
 
-function move(){
+function move() {
     let elem = document.getElementById("time-bar");
     let time = document.getElementById("time-display");
     let width = 100;
@@ -14,7 +14,7 @@ function move(){
         } else {
             width--;
             elem.style.width = width + '%';
-            time.innerHTML = (width * 60 / 100)  + ' ';
+            time.innerHTML = (width * 60 / 100) + ' ';
         }
     }
 }

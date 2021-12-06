@@ -55,26 +55,26 @@ $light_color: #FFF;
         }
       }
 
-      .time-div{
+      .time-div {
         display: flex;
         align-items: center;
         font-size: small;
         margin: auto 12px;
 
-        #time-display{
+        #time-display {
           margin: auto 5px;
         }
       }
 
       /*--------------------- Time progress bar styles - end ----------------------------*/
 
-      .questions-container{
+      .questions-container {
         width: 100%;
         margin: 15px;
         display: flex;
         flex-direction: column;
 
-        .question{
+        .question {
           margin: 10px 0;
           width: 95%;
           border: 1px solid #ccc;

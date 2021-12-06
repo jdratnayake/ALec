@@ -39,31 +39,31 @@ $light_color: #FFF;
       width: 98%;
       margin: 10px auto;
 
-      .questions-container{
+      .questions-container {
         width: 95%;
         margin: 0 15px;
         display: flex;
         flex-direction: column;
 
-        .participant-row{
+        .participant-row {
           display: flex;
           justify-content: flex-end;
           flex-direction: column;
           align-items: flex-end;
         }
 
-        .question{
+        .question {
           margin: 10px 0;
         }
 
-        .answer-container{
+        .answer-container {
           margin-top: 10px;
           width: 100%;
           overflow: auto;
           max-height: 250px;
           padding-right: 10px;
 
-          .row{
+          .row {
             width: 100%;
             display: flex;
             flex-direction: row;
@@ -72,28 +72,29 @@ $light_color: #FFF;
             justify-content: space-between;
             cursor: pointer;
 
-            .answer-label{
+            .answer-label {
               width: 25%;
               font-size: 15px;
             }
 
-            .answer{
+            .answer {
               margin: 5px 0;
               border: 1px solid rgba(43, 79, 130, 0.2);
               border-radius: 20px;
               width: 65%;
 
-              .answer-progress{
+              .answer-progress {
                 background-color: rgba(43, 79, 130, 0.3);
                 border-radius: 20px;
                 padding: 6px 12px;
               }
-              .pressed{
+
+              .pressed {
                 background-color: rgba(43, 79, 130, 0.6);
               }
             }
 
-            .percentage{
+            .percentage {
               width: 5%;
               display: flex;
               justify-content: flex-end;
