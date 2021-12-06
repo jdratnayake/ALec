@@ -24,18 +24,3 @@ tf.addEventListener("click",()=>{
         mcq.style.color = "#2B4F82";
     }
 });
-
-// function changeOption(){
-//     if(mcq.style.backgroundColor === "#2B4F82" || tf.style.backgroundColor === "#FFFFFF"){
-//         mcq.style.backgroundColor = "#FFFFFF";
-//         mcq.style.color = "#2B4F82";
-//         tf.style.backgroundColor = "#2B4F82";
-//         tf.style.color = "#FFFFFF";
-//     }
-//     else{
-//         tf.style.backgroundColor = "#FFFFFF";
-//         tf.style.color = "#2B4F82";
-//         mcq.style.backgroundColor = "#2B4F82";
-//         mcq.style.color = "#FFFFFF";
-//     }
-// }
