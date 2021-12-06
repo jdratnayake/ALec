@@ -134,6 +134,8 @@
 
     <?php linkJS("dashboardAskquestion"); ?>
 
+    <?php linkJS("notification") ?>
+
 </body>
 
 </html>
