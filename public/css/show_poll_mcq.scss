@@ -12,7 +12,7 @@ $light_color: #FFF;
   padding: 1rem;
   width: 50%;
   height: fit-content;
-  margin: 8% auto;
+  margin: 5% auto;
 
   .container {
     width: 100%;
@@ -23,11 +23,12 @@ $light_color: #FFF;
     .heading {
       background-color: $main_color;
       color: $light_color;
-      padding: 20px;
+      padding: 10px;
       border-radius: 12px 12px 0 0;
       text-align: left;
       font-size: 1.5rem;
       font-weight: 600;
+      margin-bottom: 20px;
     }
 
     .content {
@@ -38,47 +39,47 @@ $light_color: #FFF;
       width: 98%;
       margin: 10px auto;
 
-      /*--------------------- Time progress bar styles - start ----------------------------*/
-
-      .bar-div {
-        margin: 5px auto;
+      .questions-container {
         width: 95%;
-        border-radius: 18px;
-        background-color: #ccc;
-
-        .time-bar {
-          height: 20px;
-          color: $light_color;
-          background-color: rgba(25, 52, 93, 1);
-          border-radius: 18px;
-        }
-      }
-
-      .time-div{
-        display: flex;
-        align-items: center;
-        font-size: small;
-        margin: auto 12px;
-
-        #time-display{
-          margin: auto 5px;
-        }
-      }
-
-      /*--------------------- Time progress bar styles - end ----------------------------*/
-
-      .questions-container{
-        width: 100%;
         margin: 0 15px;
         display: flex;
         flex-direction: column;
 
-        .question{
+        .participant-row {
+          display: flex;
+          justify-content: flex-end;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+
+        .question {
           margin: 10px 0;
         }
-        .answer{
-          margin-bottom: 5px;
-          margin-left: 15px;
+
+        .row {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: space-between;
+
+          .answer {
+            margin: 5px 0;
+            border: 1px solid rgba(43, 79, 130, 0.2);
+            border-radius: 20px;
+            width: 93%;
+
+            .answer-progress {
+              background-color: rgba(43, 79, 130, 0.3);
+              border-radius: 20px;
+              padding: 6px 12px;
+            }
+
+            .pressed {
+              background-color: rgba(43, 79, 130, 0.6);
+            }
+          }
         }
       }
     }

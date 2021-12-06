@@ -12,7 +12,7 @@ $light_color: #FFF;
   padding: 1rem;
   width: 50%;
   height: fit-content;
-  margin: 10% auto;
+  margin: 8% auto;
 
   .container {
     width: 100%;
@@ -23,11 +23,12 @@ $light_color: #FFF;
     .heading {
       background-color: $main_color;
       color: $light_color;
-      padding: 20px;
+      padding: 10px;
       border-radius: 12px 12px 0 0;
       text-align: left;
       font-size: 1.5rem;
       font-weight: 600;
+      margin-bottom: 20px;
     }
 
     .content {
@@ -54,36 +55,34 @@ $light_color: #FFF;
         }
       }
 
-      .time-div{
+      .time-div {
         display: flex;
         align-items: center;
         font-size: small;
         margin: auto 12px;
 
-        #time-display{
+        #time-display {
           margin: auto 5px;
         }
       }
 
       /*--------------------- Time progress bar styles - end ----------------------------*/
 
-      .questions-container{
+      .questions-container {
         width: 100%;
-        margin: 15px;
+        margin: 0 15px;
         display: flex;
         flex-direction: column;
 
-        .question{
+        .question {
           margin: 10px 0;
-          width: 95%;
-          border: 1px solid #ccc;
-          padding: 5px 10px;
-          border-radius: 5px;
-          border-bottom-width: 2px;
         }
 
+        .answer {
+          margin-bottom: 5px;
+          margin-left: 15px;
+        }
       }
-
     }
 
     .button-container {

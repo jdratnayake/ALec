@@ -600,7 +600,7 @@ footer p {
   padding: 1rem;
   width: 50%;
   height: fit-content;
-  margin: 8% auto;
+  margin: 5% auto;
 }
 .details-content .container {
   width: 100%;
@@ -611,11 +611,12 @@ footer p {
 .details-content .container .heading {
   background-color: #2B4F82;
   color: #FFF;
-  padding: 20px;
+  padding: 10px;
   border-radius: 12px 12px 0 0;
   text-align: left;
   font-size: 1.5rem;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 .details-content .container .content {
   display: flex;
@@ -624,42 +625,60 @@ footer p {
   align-items: flex-start;
   width: 98%;
   margin: 10px auto;
-  /*--------------------- Time progress bar styles - start ----------------------------*/
-  /*--------------------- Time progress bar styles - end ----------------------------*/
-}
-.details-content .container .content .bar-div {
-  margin: 5px auto;
-  width: 95%;
-  border-radius: 18px;
-  background-color: #ccc;
-}
-.details-content .container .content .bar-div .time-bar {
-  height: 20px;
-  color: #FFF;
-  background-color: #19345d;
-  border-radius: 18px;
-}
-.details-content .container .content .time-div {
-  display: flex;
-  align-items: center;
-  font-size: small;
-  margin: auto 12px;
-}
-.details-content .container .content .time-div #time-display {
-  margin: auto 5px;
 }
 .details-content .container .content .questions-container {
-  width: 100%;
+  width: 95%;
   margin: 0 15px;
   display: flex;
   flex-direction: column;
 }
+.details-content .container .content .questions-container .participant-row {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .details-content .container .content .questions-container .question {
   margin: 10px 0;
 }
-.details-content .container .content .questions-container .answer {
-  margin-bottom: 5px;
-  margin-left: 15px;
+.details-content .container .content .questions-container .answer-container {
+  margin-top: 10px;
+  width: 100%;
+  overflow: auto;
+  max-height: 250px;
+  padding-right: 10px;
+}
+.details-content .container .content .questions-container .answer-container .row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.details-content .container .content .questions-container .answer-container .row .answer-label {
+  width: 25%;
+  font-size: 15px;
+}
+.details-content .container .content .questions-container .answer-container .row .answer {
+  margin: 5px 0;
+  border: 1px solid rgba(43, 79, 130, 0.2);
+  border-radius: 20px;
+  width: 65%;
+}
+.details-content .container .content .questions-container .answer-container .row .answer .answer-progress {
+  background-color: rgba(43, 79, 130, 0.3);
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+.details-content .container .content .questions-container .answer-container .row .answer .pressed {
+  background-color: rgba(43, 79, 130, 0.6);
+}
+.details-content .container .content .questions-container .answer-container .row .percentage {
+  width: 5%;
+  display: flex;
+  justify-content: flex-end;
 }
 .details-content .container .button-container {
   display: flex;
@@ -685,4 +704,4 @@ footer p {
   border: 2px solid #1d3557;
 }
 
-/*# sourceMappingURL=preview_Poll_MCQ.css.map */
+/*# sourceMappingURL=show_poll_openText.css.map */

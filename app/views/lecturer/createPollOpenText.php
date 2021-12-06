@@ -57,8 +57,6 @@
 
 <?php linkPhp("notification"); ?>
 
-<?php linkJS("createPollMcq"); ?>
-
 </body>
 
 </html>

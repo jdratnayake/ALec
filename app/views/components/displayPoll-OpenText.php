@@ -10,7 +10,7 @@
     <title>Preview Poll</title>
 
     <!-- CSS File HOME-->
-    <?php linkCSS("preview_Poll_OpenText"); ?>
+    <?php linkCSS("display_Poll_OpenText"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
@@ -18,7 +18,16 @@
 </head>
 
 <body>
-<?php linkPhp("navigationBarLecturer"); ?>
+
+<?php
+
+if ($data["userType"] == "lec") {
+    linkPhp("navigationBarLecturer");
+} else if ($data["userType"] == "stu") {
+    linkPhp("navigationBarStudent");
+}
+
+?>
 
 <!--    breadcrumb-->
 <ul class="breadcrumb">
@@ -32,7 +41,6 @@
 <div class="details-content">
     <div class="container">
         <div class="heading">
-            Open Text Poll Question
         </div>
         <div class="content">
             <div class="bar-div">
@@ -60,8 +68,6 @@
 <?php linkPhp("footer"); ?>
 
 <?php linkPhp("notification"); ?>
-
-<?php linkJS("createPollMcq"); ?>
 
 <?php linkJS("timeBar"); ?>
 
