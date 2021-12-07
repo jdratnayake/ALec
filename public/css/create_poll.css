@@ -403,7 +403,8 @@ header {
   bottom: 103px;
   right: 20px;
   height: 20px;
-  width: 20px;
+  width: fit-content;
+  padding: 0 6px;
 }
 
 .notification-container {

@@ -105,7 +105,8 @@ $main_color: $theme_second;
   bottom: 60px + $footer_height;
   right: 20px;
   height: 20px;
-  width: 20px;
+  width: fit-content;
+  padding: 0 6px;
 }
 
 .notification-container {

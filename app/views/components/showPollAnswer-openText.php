@@ -40,6 +40,12 @@
 </ul>
 
 <div class="details-content">
+
+    <div class="controller-container">
+        Go to Live Forum
+        <p>3</p>
+    </div>
+
     <div class="container">
         <div class="heading"></div>
 

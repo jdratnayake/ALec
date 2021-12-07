@@ -19,14 +19,14 @@
 <body>
 
 <?php
-
-if ($data["userType"] == "lec") {
-    linkPhp("navigationBarLecturer");
-} else if ($data["userType"] == "stu") {
-    linkPhp("navigationBarStudent");
-}
-
-?>
+//
+//if ($data["userType"] == "lec") {
+//    linkPhp("navigationBarLecturer");
+//} else if ($data["userType"] == "stu") {
+//    linkPhp("navigationBarStudent");
+//}
+//
+//?>
 
 <!--    breadcrumb-->
 <ul class="breadcrumb">
@@ -38,6 +38,12 @@ if ($data["userType"] == "lec") {
 </ul>
 
 <div class="details-content">
+
+    <div class="controller-container">
+        Go to Live Forum
+        <p>3</p>
+    </div>
+
     <div class="container">
         <div class="heading"></div>
 
@@ -52,16 +58,16 @@ if ($data["userType"] == "lec") {
                 </span>
                 <div class="row">
                     <div class="answer">
-                        <div class="answer-progress pressed" style="width: 4%">Inclusion</div>
+                        <div class="answer-progress pressed" style="width: 8%">Inclusion</div>
                     </div>
-                    4%
+                    8%
                 </div>
 
                 <div class="row">
                     <div class="answer">
-                        <div class="answer-progress" style="width: 3%">Atomicity</div>
+                        <div class="answer-progress" style="width: 83%">Atomicity</div>
                     </div>
-                    3%
+                    83%
                 </div>
 
                 <div class="row">
@@ -90,19 +96,19 @@ if ($data["userType"] == "lec") {
 
         <div class="button-container">
             <!--        Save Session Button-->
-            <?php
-
-            if ($data["userType"] == "lec") {
-                ?>
-                <button type="button" value="Create Session" class="save-btn">Done</button>
-                <?php
-            } else if ($data["userType"] == "stu") {
-                ?>
-                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>
-                <?php
-            }
-
-            ?>
+            <!--            --><?php
+            //
+            //            if ($data["userType"] == "lec") {
+            //                ?>
+            <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
+            <!--                --><?php
+            //            } else if ($data["userType"] == "stu") {
+            //                ?>
+            <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
+            <!--                --><?php
+            //            }
+            //
+            //            ?>
 
         </div>
     </div>

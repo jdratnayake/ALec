@@ -12,7 +12,32 @@ $light_color: #FFF;
   padding: 1rem;
   width: 50%;
   height: fit-content;
-  margin: 8% auto;
+  margin: 5% auto;
+
+  .controller-container {
+    background-color: rgb(2 117 216 / 25%);
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 6px 12px;
+    width: fit-content;
+    cursor: pointer;
+
+    p {
+      position: fixed;
+      left: 545px;
+      top: 19%;
+      background-color: red;
+      color: white;
+      height: 20px;
+      width: fit-content;
+      font-size: 12px;
+      padding: 0 6px;
+      text-align: center;
+      z-index: 12;
+      border-radius: 10px;
+    }
+  }
+
 
   .container {
     width: 100%;

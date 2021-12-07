@@ -15,6 +15,27 @@ $light_color: #FFF;
   margin: auto auto 30px auto;
   overflow: hidden;
 
+  .q-count {
+    position: relative;
+    top: 35px;
+    left: 106px;
+    background-color: red;
+    width: fit-content;
+    padding: 0 6px;
+    color: white;
+    font-size: 12px;
+    border-radius: 100%;
+  }
+
+  .controller-container {
+    background-color: rgb(2 117 216 / 25%);
+    border-radius: 20px;
+    margin: 20px 10px;
+    padding: 6px 12px;
+    width: fit-content;
+    cursor: pointer;
+  }
+
   .header-container {
     display: flex;
     align-items: center;
@@ -88,29 +109,6 @@ $light_color: #FFF;
       margin-right: 10px;
       margin-top: 8px;
       cursor: pointer;
-    }
-  }
-
-  .button-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 20px 0;
-
-    .return-btn {
-      padding: 6px 12px;
-      background-color: $main_color;
-      color: $light_color;
-      border-radius: 5px;
-      border: 2px solid $main_color;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $theme_second_hover;
-        border: 2px solid $theme_second_hover;
-      }
     }
   }
 }

@@ -28,6 +28,11 @@
 </ul>
 
 <div class="details-content">
+    <p class="q-count">3</p>
+    <div class="controller-container">
+        Go to Polls
+    </div>
+
     <div class="header-container">
         <header>Live Forum</header>
     </div>
@@ -81,11 +86,6 @@
         <label for="new-question"></label>
         <input type="text" name="new-question" id="new-question" placeholder="Add your question here... &#xF040;">
         <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-    </div>
-
-    <div class="button-container">
-        <!--        Cancel Button-->
-        <button type="button" value="Create Session" class="return-btn">Return to session</button>
     </div>
 </div>
 

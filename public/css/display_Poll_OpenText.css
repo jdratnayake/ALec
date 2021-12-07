@@ -403,7 +403,8 @@ header {
   bottom: 103px;
   right: 20px;
   height: 20px;
-  width: 20px;
+  width: fit-content;
+  padding: 0 6px;
 }
 
 .notification-container {
@@ -607,7 +608,29 @@ footer p {
   padding: 1rem;
   width: 50%;
   height: fit-content;
-  margin: 10% auto;
+  margin: 5% auto;
+}
+.details-content .controller-container {
+  background-color: rgba(2, 117, 216, 0.25);
+  border-radius: 20px;
+  margin: 20px 0;
+  padding: 6px 12px;
+  width: fit-content;
+  cursor: pointer;
+}
+.details-content .controller-container p {
+  position: fixed;
+  left: 545px;
+  top: 19%;
+  background-color: red;
+  color: white;
+  height: 20px;
+  width: fit-content;
+  font-size: 12px;
+  padding: 0 6px;
+  text-align: center;
+  z-index: 12;
+  border-radius: 10px;
 }
 .details-content .container {
   width: 100%;

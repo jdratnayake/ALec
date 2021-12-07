@@ -20,14 +20,14 @@
 <body>
 
 <?php
-
-if ($data["userType"] == "lec") {
-    linkPhp("navigationBarLecturer");
-} else if ($data["userType"] == "stu") {
-    linkPhp("navigationBarStudent");
-}
-
-?>
+//
+//if ($data["userType"] == "lec") {
+//    linkPhp("navigationBarLecturer");
+//} else if ($data["userType"] == "stu") {
+//    linkPhp("navigationBarStudent");
+//}
+//
+//?>
 
 <!--    breadcrumb-->
 <ul class="breadcrumb">
@@ -39,6 +39,12 @@ if ($data["userType"] == "lec") {
 </ul>
 
 <div class="details-content">
+
+    <div class="controller-container">
+        Go to Live Forum
+        <p>3</p>
+    </div>
+
     <div class="container">
         <div class="heading">
         </div>
