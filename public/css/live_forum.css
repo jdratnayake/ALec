@@ -662,6 +662,7 @@ footer p {
 }
 .details-content .questions .question .vote .fa-thumbs-o-up {
   font-size: 24px;
+  cursor: pointer;
 }
 .details-content .questions .question .vote .votes-count {
   font-size: small;
