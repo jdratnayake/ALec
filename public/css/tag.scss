@@ -6,6 +6,7 @@
 
 $button_color: #305890;
 $table_heading_color: $table_head;
+$light_color: #FFF;
 
 .center {
   margin: auto;
@@ -54,7 +55,7 @@ $table_heading_color: $table_head;
 
 
   button {
-    background-color: white;
+    background-color: $light_color;
     border: 2px solid $button_color;
     color: $button_color;
     padding: 5px 10px;
@@ -75,13 +76,45 @@ $table_heading_color: $table_head;
 
     &:hover {
       background-color: $button_color;
-      color: white;
+      color: $light_color;
     }
   }
 
-  /*==============================================================================*/
-  /*SEARCH BAR - START*/
-  /*==============================================================================*/
+
+  /*--------------------------MODAL STYLES - START------------------------- */
+
+  .modal-content{
+    width: 35%;
+
+    .modal-body{
+      width: 100%;
+
+      .input-row{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 5px;
+        width: 100%;
+
+        .tag-input-label{
+          width: 140px;
+          font-weight: 500;
+        }
+        .tag-input{
+          border: 1px solid #ccc;
+          border-bottom-width: 2px;
+          padding: 6px 12px;
+          border-radius: 5px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /*--------------------------MODAL STYLES - END------------------------- */
+
+
+  /*--------------------------SEARCH BAR - START------------------------- */
 
   .search-bar {
     width: 450px;
@@ -98,9 +131,7 @@ $table_heading_color: $table_head;
     background: #f1f1f1;
   }
 
-  /*==============================================================================*/
-  /*SEARCH BAR - END*/
-  /*==============================================================================*/
+  /*--------------------------SEARCH BAR - END------------------------- */
 
   .discussion-list {
 
@@ -124,7 +155,7 @@ $table_heading_color: $table_head;
 
         .table-header {
           background-color: $table_head;
-          color: white;
+          color: $light_color;
           font-size: 14px;
           font-weight: bold;
           text-transform: uppercase;

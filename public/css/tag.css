@@ -612,12 +612,10 @@ footer p {
 
 .forum-container {
   width: 90%;
-  /*==============================================================================*/
-  /*SEARCH BAR - START*/
-  /*==============================================================================*/
-  /*==============================================================================*/
-  /*SEARCH BAR - END*/
-  /*==============================================================================*/
+  /*--------------------------MODAL STYLES - START------------------------- */
+  /*--------------------------MODAL STYLES - END------------------------- */
+  /*--------------------------SEARCH BAR - START------------------------- */
+  /*--------------------------SEARCH BAR - END------------------------- */
 }
 .forum-container .forum-message p {
   margin: 20px 0;
@@ -648,7 +646,7 @@ footer p {
   cursor: pointer;
 }
 .forum-container button {
-  background-color: white;
+  background-color: #FFF;
   border: 2px solid #305890;
   color: #305890;
   padding: 5px 10px;
@@ -666,7 +664,31 @@ footer p {
 }
 .forum-container button:hover {
   background-color: #305890;
-  color: white;
+  color: #FFF;
+}
+.forum-container .modal-content {
+  width: 35%;
+}
+.forum-container .modal-content .modal-body {
+  width: 100%;
+}
+.forum-container .modal-content .modal-body .input-row {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 5px;
+  width: 100%;
+}
+.forum-container .modal-content .modal-body .input-row .tag-input-label {
+  width: 140px;
+  font-weight: 500;
+}
+.forum-container .modal-content .modal-body .input-row .tag-input {
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  width: 100%;
 }
 .forum-container .search-bar {
   width: 450px;
@@ -697,7 +719,7 @@ footer p {
 }
 .forum-container .discussion-list .discussion-table-container .discussion-table .table-header {
   background-color: #274774;
-  color: white;
+  color: #FFF;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
