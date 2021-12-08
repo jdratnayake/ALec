@@ -18,6 +18,9 @@
     <title>Tags</title>
 
     <?php linkCSS("tag") ?>
+
+    <?php linkCSS("modal") ?>
+
 </head>
 
 <body>
@@ -59,11 +62,40 @@
 
                 <span class="space-tag"></span>
 
-                <span class="text">
+                <span class="text" id="add-tag-btn">
                     Add New Tag
                 </span>
             </span>
         </button>
+
+        <!-- Course Selection Modal -->
+        <div id="tag-details-modal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="close" class="close">&times;</span>
+                    <h2>Add New Tag</h2>
+                </div>
+
+                <div class="modal-body">
+                    <div class="input-row">
+                        <label class="tag-input-label" for="tag-name">Tag name:</label>
+                        <input type="text" id="tag-name" class="tag-input">
+                    </div>
+
+                    <!--                <div class="input-row">-->
+                    <!--                    <label class="tag-input-label" for="tag-desc"><strong>Tag description:</strong></label>-->
+                    <!--                    <textarea class="tag-input" name="tag-desc" id="tag-desc" cols="30" rows="5"></textarea>-->
+                    <!--                </div>-->
+
+                    <!-- Okay button in delete -->
+                    <input type="button" value="Create Tag" class="btn" id="create-tag-btn">
+
+                </div>
+            </div>
+
+        </div>
 
         <!--    Search bar     -->
         <form class="search-bar" id="search">
@@ -95,19 +127,18 @@
                                     <p class='place'> 10.20</p>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class='col col-3' data-label='Last post'>
-                            <div class='profile_img_info'>
-                                <div class='img'>
-                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
-                                </div>
-                                <div class='info'>
-                                    <p class='name'>J K TRAIN</p>
-                                    <p class='place'>11.35</p>
+                            <div class='col col-3' data-label='Last post'>
+                                <div class='profile_img_info'>
+                                    <div class='img'>
+                                        <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
+                                    </div>
+                                    <div class='info'>
+                                        <p class='name'>J K TRAIN</p>
+                                        <p class='place'>11.35</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </li>
                 </ul>
 
@@ -120,6 +151,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("forum"); ?>
+
+    <?php linkJS("add-tag-modal"); ?>
 
 </body>
 
