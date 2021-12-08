@@ -56,6 +56,17 @@
             </div>
         </div>
 
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/tags/index'; ?>' ">
+            <div class="row">
+                <i class="fas fa-tags"></i>
+            </div>
+            <div class="row">
+                <div class="title">
+                    Tags
+                </div>
+            </div>
+        </div>
+
         <div class="navigation-tab">
             <div class="row">
                 <i class="fas fa-medal"></i>

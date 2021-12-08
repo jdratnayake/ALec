@@ -22,102 +22,104 @@
 
 <body>
 
-<?php linkPhp("navigationBarStudent"); ?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/studentDashboard/index">Home</a></li>
-    <li><a href="#">Tags</a></li>
-</ul>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/studentDashboard/index">Home</a></li>
+        <li><a href="#">Tags</a></li>
+    </ul>
 
-<div class="forum-container center">
-    <div class="forum-message">
-        <header>Tags</header>
-    </div>
+    <div class="forum-container center">
+        <div class="forum-message">
+            <header>Tags</header>
+        </div>
 
-    <span class="container-label">All Tags</span>
-    <div class="tags-container">
-        <p>machine learning<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>python<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>dev<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>machine learning<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>python<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>dev<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>machine learning<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>python<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>dev<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>machine learning<i class="fa fa-times" aria-hidden="true"></i></p>
-        <p>python<i class="fa fa-times" aria-hidden="true"></i></p>
-    </div>
+        <span class="container-label">All Tags</span>
+        <div class="tags-container">
+            <?php
+            while ($row = mysqli_fetch_assoc($data["tagNames"])) {
+                echo
+                "
+                <p>
+                {$row["tag_name"]}
+                <input type='hidden' value='{$row["tag_id"]}'>
+                <i class='fa fa-times' aria-hidden='true'></i>
+                </p>
+                ";
+            }
+            ?>
 
-    <button>
-                <span class="button-title">
-                    <i class="fas fa-plus"></i>
+            <!-- <p>machine learning<i class="fa fa-times" aria-hidden="true"></i></p> -->
+        </div>
 
-                    <span class="space-tag"></span>
+        <button>
+            <span class="button-title">
+                <i class="fas fa-plus"></i>
 
-                    <span class="text">
-                        Add New Tag
-                    </span>
+                <span class="space-tag"></span>
+
+                <span class="text">
+                    Add New Tag
                 </span>
-    </button>
+            </span>
+        </button>
 
-    <!--    Search bar     -->
-    <form class="search-bar" id="search">
-        <label for="search-tag"></label>
-        <input type="text" placeholder="Search.. &#xF002;" name="search" id="search-tag"
-               style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
-    </form>
+        <!--    Search bar     -->
+        <form class="search-bar" id="search">
+            <label for="search-tag"></label>
+            <input type="text" placeholder="Search.. &#xF002;" name="search" id="search-tag" style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
+        </form>
 
-    <div class="discussion-list">
-        <div class="discussion-table-container">
-            <ul class="discussion-table">
-                <li class="table-header">
-                    <div class="col col-1">Discussion</div>
-                    <div class="col col-2">Started by</div>
-                    <div class="col col-3">Last post</div>
-                </li>
+        <div class="discussion-list">
+            <div class="discussion-table-container">
+                <ul class="discussion-table">
+                    <li class="table-header">
+                        <div class="col col-1">Discussion</div>
+                        <div class="col col-2">Started by</div>
+                        <div class="col col-3">Last post</div>
+                    </li>
 
-                <li class='table-row'>
+                    <li class='table-row'>
 
-                    <div class='col col-1' data-label='Discussion'>
-                        <a href="#">DATA STRUCTURES AND ALGORITHMS - I</a>
-                    </div>
-                    <div class='col col-2' data-label='Started by'>
-                        <div class='profile_img_info'>
-                            <div class='img'>
-                                <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
-                            </div>
-                            <div class='info'>
-                                <p class='name'>P K PEREIRA</p>
-                                <p class='place'> 10.20</p>
+                        <div class='col col-1' data-label='Discussion'>
+                            <a href="#">DATA STRUCTURES AND ALGORITHMS - I</a>
+                        </div>
+                        <div class='col col-2' data-label='Started by'>
+                            <div class='profile_img_info'>
+                                <div class='img'>
+                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
+                                </div>
+                                <div class='info'>
+                                    <p class='name'>P K PEREIRA</p>
+                                    <p class='place'> 10.20</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class='col col-3' data-label='Last post'>
-                        <div class='profile_img_info'>
-                            <div class='img'>
-                                <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
-                            </div>
-                            <div class='info'>
-                                <p class='name'>J K TRAIN</p>
-                                <p class='place'>11.35</p>
+                        <div class='col col-3' data-label='Last post'>
+                            <div class='profile_img_info'>
+                                <div class='img'>
+                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
+                                </div>
+                                <div class='info'>
+                                    <p class='name'>J K TRAIN</p>
+                                    <p class='place'>11.35</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
 
+            </div>
         </div>
     </div>
-</div>
 
-<?php linkPhp("notification"); ?>
+    <?php linkPhp("notification"); ?>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-<?php linkJS("forum"); ?>
+    <?php linkJS("forum"); ?>
 
 </body>
 

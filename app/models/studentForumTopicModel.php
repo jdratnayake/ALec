@@ -18,7 +18,7 @@ class StudentForumTopicModel extends Database
         INNER JOIN user ON forum_topic.user_id=user.user_id
         LEFT JOIN student ON student.user_id=user.user_id
         WHERE forum_Id='$forumId'
-        GROUP BY updated_time DESC";
+        ORDER BY updated_time DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
@@ -33,7 +33,7 @@ class StudentForumTopicModel extends Database
         LEFT JOIN user ON user.user_id=forum_reply.user_id
         LEFT JOIN student ON student.user_id=user.user_id
         WHERE forum_Id='$forumId'
-        GROUP BY updated_time DESC";
+        ORDER BY updated_time DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 

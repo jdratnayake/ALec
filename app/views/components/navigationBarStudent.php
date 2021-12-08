@@ -39,6 +39,13 @@
                     <span class="tooltip">Forum</span>
                 </li>
                 <li>
+                    <a href="<?php echo BASEURL . '/tags/index'; ?>">
+                        <i class="fas fa-tags"></i>
+                        <span class="links_name">Forum</span>
+                    </a>
+                    <span class="tooltip">Tags</span>
+                </li>
+                <li>
                     <a href="#">
                         <i class="fas fa-medal"></i>
                         <span class="links_name">Leaderboard</span>
