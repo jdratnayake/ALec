@@ -15,23 +15,11 @@ class Tags extends AlecFramework
 
         $data["tagNames"] = $this->tagsModel->getTagNames($userId);
 
-        //Create the search pattern
-        $searchValues = $this->tagsModel->getTagNames($userId);
-        $topicSearchValues = "";
-        $replySearchValues = "";
-
-        while ($row = mysqli_fetch_assoc($searchValues)) {
-            $tagName = $row["tag_name"];
-
-            $topicSearchValues = $topicSearchValues . " " . "question LIKE %" . $tagName . "% OR";
-            $replySearchValues = $replySearchValues . " " . "reply LIKE %" . $tagName . "% OR";
-        }
-
-        echo $topicSearchValues . "<br>";
-        echo $replySearchValues;
-
-        return 0;
-
         $this->view("student/tagView", $data);
+    }
+
+    public function submit()
+    {
+        var_dump($_POST);
     }
 }

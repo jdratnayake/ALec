@@ -56,13 +56,13 @@
             <!-- <p>machine learning<i class="fa fa-times" aria-hidden="true"></i></p> -->
         </div>
 
-        <button>
+        <button id="add-tag-btn">
             <span class="button-title">
                 <i class="fas fa-plus"></i>
 
                 <span class="space-tag"></span>
 
-                <span class="text" id="add-tag-btn">
+                <span class="text">
                     Add New Tag
                 </span>
             </span>
@@ -79,18 +79,14 @@
                 </div>
 
                 <div class="modal-body">
-                    <div class="input-row">
-                        <label class="tag-input-label" for="tag-name">Tag name:</label>
-                        <input type="text" id="tag-name" class="tag-input">
-                    </div>
+                    <form action="<?php echo BASEURL . "/tags/submit"; ?>" method="post">
+                        <div class="input-row">
+                            <label class="tag-input-label" for="tag-name">Tag name:</label>
+                            <input type="text" id="tag-name" name="tag-name" class="tag-input">
+                        </div>
 
-                    <!--                <div class="input-row">-->
-                    <!--                    <label class="tag-input-label" for="tag-desc"><strong>Tag description:</strong></label>-->
-                    <!--                    <textarea class="tag-input" name="tag-desc" id="tag-desc" cols="30" rows="5"></textarea>-->
-                    <!--                </div>-->
-
-                    <!-- Okay button in delete -->
-                    <input type="button" value="Create Tag" class="btn" id="create-tag-btn">
+                        <input type="submit" value="Create Tag" class="btn" id="create-tag-btn">
+                    </form>
 
                 </div>
             </div>
@@ -127,18 +123,19 @@
                                     <p class='place'> 10.20</p>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class='col col-3' data-label='Last post'>
-                                <div class='profile_img_info'>
-                                    <div class='img'>
-                                        <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
-                                    </div>
-                                    <div class='info'>
-                                        <p class='name'>J K TRAIN</p>
-                                        <p class='place'>11.35</p>
-                                    </div>
+                        <div class='col col-3' data-label='Last post'>
+                            <div class='profile_img_info'>
+                                <div class='img'>
+                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
+                                </div>
+                                <div class='info'>
+                                    <p class='name'>J K TRAIN</p>
+                                    <p class='place'>11.35</p>
                                 </div>
                             </div>
+                        </div>
                     </li>
                 </ul>
 
