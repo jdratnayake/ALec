@@ -13,6 +13,7 @@ class Tags extends AlecFramework
     {
         $userId = $this->getSession("userId");
 
+        $data["userId"] = $userId;
         $data["tagNames"] = $this->tagsModel->getTagNames($userId);
 
         $this->view("student/tagView", $data);
@@ -33,5 +34,12 @@ class Tags extends AlecFramework
     public function deleteTag($tagId)
     {
         $this->tagsModel->deleteTag($tagId);
+        $this->redirect("tags/index");
+    }
+
+    public function uniqueCheck($userId, $tagName)
+    {
+        $tagName = str_replace("_", " ", trim($tagName, " "));
+        echo $this->tagsModel->validateTagName($userId, $tagName);
     }
 }

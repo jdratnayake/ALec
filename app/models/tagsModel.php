@@ -25,4 +25,16 @@ class TagsModel extends Database
         $query = "DELETE FROM tag WHERE tag_id='$tagId'";
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function validateTagName($userId, $tagName)
+    {
+        $query = "SELECT * FROM tag WHERE tag_name='$tagName' AND student_id='$userId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) === 0) {
+            return "1";
+        } else {
+            return "0";
+        }
+    }
 }

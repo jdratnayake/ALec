@@ -2,12 +2,8 @@ $(document).ready(function () {
     $(".tag-element").click(function () {
         const tagId = $(this).find("input").val();
 
-        $.ajax({
-            type: "GET",
+        const link = "tags/deleteTag/" + tagId;
 
-            url: "http://localhost/ALec/tags/deleteTag/" + tagId
-        })
-
-        $(this).remove();
+        deleteFunction(link);
     });
 });

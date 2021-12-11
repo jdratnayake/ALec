@@ -21,9 +21,13 @@
 
     <?php linkCSS("modal") ?>
 
+    <?php linkCSS("success_message"); ?>
+
 </head>
 
 <body>
+
+    <input type="hidden" id="userId" value="<?php echo $data["userId"]; ?>">
 
     <?php linkPhp("navigationBarStudent"); ?>
 
@@ -79,10 +83,10 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="<?php echo BASEURL . "/tags/submit"; ?>" method="post">
+                    <form action="<?php echo BASEURL . "/tags/submit"; ?>" method="post" id="tag-form" onsubmit="validateAll()">
                         <div class="input-row">
                             <label class="tag-input-label" for="tag-name">Tag name:</label>
-                            <input type="text" id="tag-name" name="tag-name" class="tag-input">
+                            <input type="text" id="tag-name" name="tag-name" class="tag-input" onfocusout="validateAll()">
                             <div class="error"></div>
                         </div>
 
@@ -149,6 +153,8 @@
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("deleteMessage"); ?>
 
     <?php linkJS("add-tag-modal"); ?>
 

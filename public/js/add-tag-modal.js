@@ -8,11 +8,6 @@ document.getElementById("close").addEventListener("click", () => {
     document.getElementById("tag-details-modal").style.display = "none";
 })
 
-//When the user clicks the create tag button, close it
-document.getElementById("create-tag-btn").addEventListener("click", () => {
-    document.getElementById("tag-details-modal").style.display = "none";
-})
-
 //When the user clicks anywhere outside of the modal, close it
 window.addEventListener("click", (event) => {
     if (event.target.classList.contains("modal")) {
