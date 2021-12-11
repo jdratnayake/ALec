@@ -73,6 +73,7 @@ class Tags extends AlecFramework
 
             $this->tagsModel->createTag($userId, $tagName);
 
+            $_POST["tag-name"] = "";
             $this->redirect("tags/index");
         }
     }

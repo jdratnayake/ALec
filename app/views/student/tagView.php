@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="<?php echo BASEURL . "/tags/submit"; ?>" method="post" id="tag-form" onsubmit="validateAll()">
+                    <form action="<?php echo BASEURL . "/tags/submit"; ?>" method="post" id="tag-form">
                         <div class="input-row">
                             <label class="tag-input-label" for="tag-name">Tag name:</label>
                             <input type="text" id="tag-name" name="tag-name" class="tag-input" onfocusout="validateAll()">
