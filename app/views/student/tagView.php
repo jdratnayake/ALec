@@ -186,6 +186,8 @@
 
     <?php linkJS("tagValidation"); ?>
 
+    <?php linkJS("forumSearch"); ?>
+
     <?php linkJS("deleteTag"); ?>
 
 </body>
