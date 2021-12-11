@@ -44,7 +44,7 @@
             while ($row = mysqli_fetch_assoc($data["tagNames"])) {
                 echo
                 "
-                <p>
+                <p class='tag-element'>
                 {$row["tag_name"]}
                 <input type='hidden' value='{$row["tag_id"]}'>
                 <i class='fa fa-times' aria-hidden='true'></i>
@@ -83,6 +83,7 @@
                         <div class="input-row">
                             <label class="tag-input-label" for="tag-name">Tag name:</label>
                             <input type="text" id="tag-name" name="tag-name" class="tag-input">
+                            <div class="error"></div>
                         </div>
 
                         <input type="submit" value="Create Tag" class="btn" id="create-tag-btn">
@@ -147,9 +148,13 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkJS("forum"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("add-tag-modal"); ?>
+
+    <?php linkJS("tagValidation"); ?>
+
+    <?php linkJS("deleteTag"); ?>
 
 </body>
 

@@ -20,6 +20,18 @@ class Tags extends AlecFramework
 
     public function submit()
     {
-        var_dump($_POST);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $userId = $this->getSession("userId");
+            $tagName = $_POST["tag-name"];
+
+            $this->tagsModel->createTag($userId, $tagName);
+
+            $this->redirect("tags/index");
+        }
+    }
+
+    public function deleteTag($tagId)
+    {
+        $this->tagsModel->deleteTag($tagId);
     }
 }
