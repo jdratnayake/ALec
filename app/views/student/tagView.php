@@ -113,10 +113,29 @@
                         <div class="col col-3">Last post</div>
                     </li>
 
-                    <li class='table-row'>
+                    <?php
+                    while ($row = mysqli_fetch_assoc($data["topicDiscussionDetails"])) {
+                        $replyRow = mysqli_fetch_assoc($data["replyDiscussionDetails"]);
+
+                        $name = $row["name"];
+                        $replyName = $replyRow["name"];
+
+                        if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userId"] and $row["random_status"] === "T") {
+                            $name = $row["random_name"];
+                        }
+
+                        if ($replyRow["user_type"] === "stu" and $replyRow["user_id"] !== $data["userId"] and $replyRow["random_status"] === "T") {
+                            $replyName = $replyRow["random_name"];
+                        }
+
+                        echo
+                        "
+                        <li class='table-row'>
 
                         <div class='col col-1' data-label='Discussion'>
-                            <a href="#">DATA STRUCTURES AND ALGORITHMS - I</a>
+                            <a href='" . BASEURL . "/studentForumTopicDiscussion/index/{$row['topic_id']}" . "'>
+                                {$row['subject']}
+                            </a>
                         </div>
                         <div class='col col-2' data-label='Started by'>
                             <div class='profile_img_info'>
@@ -124,8 +143,10 @@
                                     <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
                                 </div>
                                 <div class='info'>
-                                    <p class='name'>P K PEREIRA</p>
-                                    <p class='place'> 10.20</p>
+                                    <p class='name'>{$name}</p>
+                                    <p class='place'>
+                                        {$row['post_time']}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -136,12 +157,17 @@
                                     <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
                                 </div>
                                 <div class='info'>
-                                    <p class='name'>J K TRAIN</p>
-                                    <p class='place'>11.35</p>
+                                    <p class='name'>{$replyName}</p>
+                                    <p class='place'>
+                                        {$replyRow['post_time']}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </li>
+                        ";
+                    }
+                    ?>
                 </ul>
 
             </div>

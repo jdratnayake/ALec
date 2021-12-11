@@ -10,8 +10,43 @@ class TagsModel extends Database
         return $result;
     }
 
-    public function getTopicDiscussionDetails()
+    public function getTopicDiscussionDetails($userId, $topicSearchValues, $topicSubjectValues, $replySearchValues)
     {
+        $query = "SELECT DISTINCT forum_topic.topic_id, subject, DATE_FORMAT(forum_topic.post_time, '%d %M %Y') AS post_time, 
+        CONCAT(first_name, ' ', last_name) AS name, forum_topic.random_status, CONCAT(random_first_name, ' ', random_last_name) AS random_name, user.user_id, user_type
+        FROM forum_topic
+        LEFT JOIN forum_reply ON forum_topic.topic_id=forum_reply.topic_id 
+        INNER JOIN user ON forum_topic.user_id=user.user_id
+        LEFT JOIN student ON student.user_id=user.user_id
+        WHERE forum_Id IN(SELECT DISTINCT forum_id FROM course_registration_stu INNER JOIN forum ON course_registration_stu.course_Id=forum.course_Id WHERE student_id='$userId') AND (
+        $topicSearchValues OR
+        $topicSubjectValues OR
+        $replySearchValues)
+        ORDER BY updated_time DESC";
+
+        // echo $query;
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
+    }
+
+    public function getReplyDiscussionDetails($userId, $topicSearchValues, $topicSubjectValues, $replySearchValues)
+    {
+        $query = "SELECT CONCAT(first_name, ' ', last_name) AS name, forum_reply.random_status, CONCAT(random_first_name, ' ', random_last_name) AS random_name, DATE_FORMAT(forum_reply.post_time, '%d %M %Y') AS post_time, user.user_id, user_type
+        FROM forum_topic
+        LEFT JOIN forum_reply ON forum_topic.last_reply_id=forum_reply.reply_id
+        LEFT JOIN user ON user.user_id=forum_reply.user_id
+        LEFT JOIN student ON student.user_id=user.user_id
+        WHERE forum_Id IN(SELECT DISTINCT forum_id FROM course_registration_stu INNER JOIN forum ON course_registration_stu.course_Id=forum.course_Id WHERE student_id='$userId') AND (
+        $topicSearchValues OR
+        $topicSubjectValues OR
+        $replySearchValues)
+        ORDER BY updated_time DESC";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
     }
 
     public function createTag($userId, $tagName)
