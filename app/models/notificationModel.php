@@ -13,9 +13,9 @@ class NotificationModel extends Database
     public function getNotificationDetails($userId, $isToday)
     {
         if ($isToday === "1") {
-            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)=DATE(NOW())";
+            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)=DATE(NOW()) ORDER BY date DESC";
         } else if ($isToday === "0") {
-            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)<>DATE(NOW())";
+            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)<>DATE(NOW()) ORDER BY date DESC";
         }
 
         $results = mysqli_query($GLOBALS["db"], $query);
@@ -26,9 +26,9 @@ class NotificationModel extends Database
     public function getUnreadNotificationDetails($userId, $isToday)
     {
         if ($isToday === "1") {
-            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)=DATE(NOW()) AND notification_status='F'";
+            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)=DATE(NOW()) AND notification_status='F' ORDER BY date DESC";
         } else if ($isToday === "0") {
-            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)<>DATE(NOW()) AND notification_status='F'";
+            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)<>DATE(NOW()) AND notification_status='F' ORDER BY date DESC";
         }
 
         $results = mysqli_query($GLOBALS["db"], $query);
