@@ -13,7 +13,6 @@
     </div>
     <!--    horizontal line-->
     <hr class="heading-divider">
-
     <div class="notification-details">
         <!-- <div class="notes">
             <span class="note-label">Today</span>

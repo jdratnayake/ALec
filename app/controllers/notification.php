@@ -9,6 +9,13 @@ class Notification extends AlecFramework
         $this->notificationModel = $this->model("notificationModel");
     }
 
+    public function readNotification($notificationId)
+    {
+        $userId = $this->getSession("userId");
+
+        $this->notificationModel->updateUserNotification($userId, $notificationId);
+    }
+
     public function notificationCount()
     {
         $userId = $this->getSession("userId");
@@ -63,9 +70,12 @@ class Notification extends AlecFramework
             $message = $row["subject"];
             $courseName = $row["description"];
             $notificationId = $row["notification_id"];
+            $path = $row["url"];
+            $id = "notification-" . $notificationId;
 
             $output .=
                 "
+            <a href='{$path}' style='all: unset;' id='notification-link'>
             <div class='note'>
                 <img src='{$imagePath}'>
                 <div class='text'>
@@ -73,12 +83,26 @@ class Notification extends AlecFramework
                     <span>{$courseName}</span> <br>
                     <span>13 hours ago</span>
                 </div>
-                <div class='read-status'>
-                    <input type='hidden' value='{$notificationId}'>
+                <div class='read-status' id='{$id}'>
+                ";
+
+            if ($row["notification_status"] == "F") {
+                $output .=
+                    "
                     <i class='fa fa-circle' aria-hidden='true'></i>
-                    <span class='tooltip'>Mark as read</span>
+                    <object>
+                        <a href='javascript:readNotification({$notificationId})'style='all: unset;'>
+                            <span class='tooltip'>Mark as read</span>
+                        </a>
+                    </object>
+                    ";
+            }
+
+            $output .=
+                "
                 </div>
             </div>
+            </a>
             ";
         }
 

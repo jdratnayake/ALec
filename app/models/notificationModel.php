@@ -22,4 +22,11 @@ class NotificationModel extends Database
 
         return $results;
     }
+
+    public function updateUserNotification($userId, $notificationId)
+    {
+        $query = "UPDATE notification_user SET notification_status='T' WHERE user_id='$userId' AND notification_id='$notificationId'";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }
