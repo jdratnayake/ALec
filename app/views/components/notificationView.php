@@ -15,9 +15,9 @@
     <hr class="heading-divider">
 
     <div class="notification-details">
-        <div class="notes">
+        <!-- <div class="notes">
             <span class="note-label">Today</span>
-            <!-- <div class="note">
+            <div class="note">
                 <img <?php srcIMG("session_favicon.png"); ?>>
                 <div class="text">
                     <span><b>New session started</b></span> <br>
@@ -29,8 +29,8 @@
                     <span class="tooltip">Mark as read</span>
                 </div>
 
-            </div> -->
-            <!-- <div class="note">
+            </div>
+            <div class="note">
                 <img <?php srcIMG("question_mark.png"); ?>>
                 <div class="text">
                     <span><b>Strings and operations quiz started</b></span> <br>
@@ -41,7 +41,7 @@
                     <i class="fa fa-circle" aria-hidden="true"></i>
                     <span class="tooltip">Mark as read</span>
                 </div>
-            </div> -->
+            </div>
             <div class="note">
                 <img <?php srcIMG("profile_pic.svg"); ?>>
                 <div class="text">
@@ -54,7 +54,7 @@
                     <span class="tooltip">Mark as read</span>
                 </div>
             </div>
-            <!-- <div class="note">
+            <div class="note">
                 <img <?php srcIMG("BadgeQuestioner.png"); ?>>
                 <div class="text">
                     <span><b>You received a new badge</b></span> <br>
@@ -65,7 +65,7 @@
                     <i class="fa fa-circle" aria-hidden="true"></i>
                     <span class="tooltip">Mark as read</span>
                 </div>
-            </div> -->
+            </div>
         </div>
         <div class="notes">
             <span class="note-label">Old</span>
@@ -103,7 +103,7 @@
                 <div class="read-status">
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
