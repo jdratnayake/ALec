@@ -75,6 +75,22 @@ class LecturerForumTopicDiscussion extends AlecFramework
     public function toggleMarksReply($replyId, $signal)
     {
         $userId = $this->getSession("userId");
+
         $this->lecturerForumTopicDiscussionModel->changeMarksReply($userId, $replyId, $signal);
+
+        if ($signal == "1") {
+            $topicId = $this->lecturerForumTopicDiscussionModel->getTopicId($replyId);
+            $courseId = $this->notificationBasicModel->getCourseId($topicId);
+
+            $courseName = $this->notificationBasicModel->getCourseName($courseId);
+            $postTime = $this->lecturerForumTopicDiscussionModel->getMarksGivenTime($userId, $replyId);
+
+            $userName = $this->notificationBasicModel->getUserRealName($userId);
+            $message = "You received points from " . $userName;
+
+            $studentLink = BASEURL . "/studentForumTopicDiscussion/index/{$topicId}";
+
+            $this->lecturerForumTopicDiscussionModel->setForumTopicNotificationStudentSingle($courseName, $studentLink, $postTime, $replyId, $message);
+        }
     }
 }
