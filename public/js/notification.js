@@ -5,6 +5,18 @@ $(document).ready(function () {
     //Update unread message count periodically
     setInterval(getUnReadCount, 3000);
 
+    function getUnReadCount() {
+        $.ajax({
+            type: "GET",
+
+            url: "http://localhost/ALec/notification/notificationCount/",
+            dataType: "html",
+            success: function (response) {
+                $(".active-status").html(response);
+            }
+        })
+    }
+
     // $("#unread-name-toggle").change(function () {
     //     if ($(this).is(":checked")) {
     //         console.log("T");
@@ -19,18 +31,4 @@ $(document).ready(function () {
     //         console.log("Hi");
     //     }
     // });
-
-
-
-    function getUnReadCount() {
-        $.ajax({
-            type: "GET",
-
-            url: "http://localhost/ALec/notification/notificationCount/",
-            dataType: "html",
-            success: function (response) {
-                $(".active-status").html(response);
-            }
-        })
-    }
 });

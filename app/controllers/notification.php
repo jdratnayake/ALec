@@ -15,4 +15,14 @@ class Notification extends AlecFramework
 
         echo $this->notificationModel->getNotificationCount($userId);
     }
+
+    public function updateNotification()
+    {
+        $userId = $this->getSession("userId");
+    }
+
+    public function getNotificationTags()
+    {
+        $images = array();
+    }
 }
