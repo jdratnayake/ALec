@@ -130,16 +130,30 @@
                 <div class='profile_img_info'>
                     <div class='img'>
                         <img ";
+
             srcIMG('profile_pic.svg');
+
             echo "alt='profile_pic'>
                     </div>
                     <div class='info'>
                         <p class='name'>{$name}</p>
                         <p class='place'>{$row["post_time"]}</p>
                     </div>
+                    
                 </div>
+                
+                <div class='answer-row'>
+                    <div class='vote'>
+                    
+                        <input type='hidden' value='54'>
+                        <i class='fa fa-caret-up' aria-hidden='true'></i>
+                        <div class='val'>{$row["points"]}</div>
+                
+                    </div>
 
-                <p class='answer-content'>{$row["reply"]}</p>
+                    <p class='answer-content'>{$row["reply"]}</p>
+                </div>
+                
 
             </div>
             ";

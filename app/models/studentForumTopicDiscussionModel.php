@@ -30,7 +30,7 @@ class StudentForumTopicDiscussionModel extends Database
 
     public function getReplyDetails($topicId)
     {
-        $query = "SELECT reply_id, reply, DATE_FORMAT(post_time, '%d %M %Y') AS post_time, user.user_id, random_status, CONCAT(first_name, ' ', last_name) AS name, CONCAT(random_first_name, ' ', random_last_name) AS random_name, user_type, img FROM forum_reply INNER JOIN user ON forum_reply.user_id=user.user_id LEFT JOIN student ON student.user_id=user.user_id WHERE topic_id='$topicId' GROUP BY post_time";
+        $query = "SELECT reply_id, reply, DATE_FORMAT(post_time, '%d %M %Y') AS post_time, user.user_id, random_status, CONCAT(first_name, ' ', last_name) AS name, CONCAT(random_first_name, ' ', random_last_name) AS random_name, user_type, img, points FROM forum_reply INNER JOIN user ON forum_reply.user_id=user.user_id LEFT JOIN student ON student.user_id=user.user_id WHERE topic_id='$topicId' GROUP BY post_time";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
