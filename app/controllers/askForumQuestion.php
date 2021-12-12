@@ -38,13 +38,32 @@ class askForumQuestion extends AlecFramework
                 $userId = $this->getSession("userId");
 
                 if (isset($_POST["name-toggle"])) {
-                    $result = $this->askForumQuestionModel->addTopicDetails($subject, $question, $forumId, $userId, "T");
+                    $row = $this->askForumQuestionModel->addTopicDetails($subject, $question, $forumId, $userId, "T");
                 } else {
-                    $result = $this->askForumQuestionModel->addTopicDetails($subject, $question, $forumId, $userId, "F");
+                    $row = $this->askForumQuestionModel->addTopicDetails($subject, $question, $forumId, $userId, "F");
                 }
 
+                $topicId = $row["topic_id"];
+                $postTime = $row["post_time"];
+
+                $studentLink = BASEURL . "/studentForumTopicDiscussion/index/{$topicId}";
+                $lecturerLink = BASEURL . "/lecturerForumTopicDiscussion/index/{$topicId}";
+
+
+                //Get the display name of the student
+                if (isset($_POST["name-toggle"])) {
+                    $userName = $this->askForumQuestionModel->getStudentRandomName($userId);
+                } else {
+                    $userName = $this->askForumQuestionModel->getUserRealName($userId);
+                }
 
                 $courseId = $this->askForumQuestionModel->getCourseId($forumId);
+
+                $courseName = $this->askForumQuestionModel->getCourseName($courseId);
+
+                $this->askForumQuestionModel->setForumTopicNotificationStudent($userName, $courseName, $studentLink, $postTime, $courseId);
+
+                $this->askForumQuestionModel->setForumTopicNotificationLecturer($userName, $courseName, $lecturerLink, $postTime, $courseId);
 
                 if ($data["userType"] == "lec") {
                     $this->redirect("lecturerForumTopic/index/{$courseId}");
