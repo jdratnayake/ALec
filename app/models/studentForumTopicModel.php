@@ -13,7 +13,7 @@ class StudentForumTopicModel extends Database
     public function getTopicDiscussionDetails($forumId)
     {
         $query = "SELECT topic_id, subject, DATE_FORMAT(post_time, '%d %M %Y') AS post_time, 
-        CONCAT(first_name, ' ', last_name) AS name, random_status, CONCAT(random_first_name, ' ', random_last_name) AS random_name, user.user_id, user_type
+        CONCAT(first_name, ' ', last_name) AS name, random_status, CONCAT(random_first_name, ' ', random_last_name) AS random_name, user.user_id, user_type, points
         FROM forum_topic 
         INNER JOIN user ON forum_topic.user_id=user.user_id
         LEFT JOIN student ON student.user_id=user.user_id

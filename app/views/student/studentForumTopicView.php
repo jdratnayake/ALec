@@ -76,8 +76,24 @@ $courseCode = explode("-", $temp)[0];
 
                         echo
                         "
-                        <li class='table-row'>
+                        <li class='table-row'>";
 
+                        if ($row["user_type"] === "stu") {
+                            echo
+                            "
+                            <div class='col col-4 reply-count' data-label='Replies'>
+                            <div class='vote'>
+                        
+                            <i class='fa fa-caret-up' aria-hidden='true'></i>
+                            <div class='val'>{$row['points']}</div>
+                            
+                            </div>
+                            </div>
+                            ";
+                        }
+
+                        echo
+                        "
                         <div class='col col-1' data-label='Discussion'>
                             <a href='" . BASEURL . "/studentForumTopicDiscussion/index/{$row['topic_id']}" . "'>
                                 {$row['subject']}
