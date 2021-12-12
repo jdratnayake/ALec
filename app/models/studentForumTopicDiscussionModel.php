@@ -52,6 +52,12 @@ class StudentForumTopicDiscussionModel extends Database
 
         $query = "UPDATE forum_topic SET last_reply_id='$replyId', updated_time=NOW() WHERE topic_id='$topicId'";
         mysqli_query($GLOBALS["db"], $query);
+
+        //Get reply id
+        $query = "SELECT reply_id, post_time FROM forum_reply ORDER BY reply_id DESC LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
     }
 
     public function deleteTopic($topicId)

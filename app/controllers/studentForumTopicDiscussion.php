@@ -28,10 +28,17 @@ class StudentForumTopicDiscussion extends AlecFramework
             $userId = $this->getSession("userId");
 
             if (isset($_POST["name-toggle"])) {
-                $this->studentForumTopicDiscussionModel->insertReply($topicId, $reply, $userId, "T");
+                $row = $this->studentForumTopicDiscussionModel->insertReply($topicId, $reply, $userId, "T");
             } else {
-                $this->studentForumTopicDiscussionModel->insertReply($topicId, $reply, $userId, "F");
+                $row = $this->studentForumTopicDiscussionModel->insertReply($topicId, $reply, $userId, "F");
             }
+
+            // Notification - START
+            $replyId = $row["reply_id"];
+            $postTime = $row["post_time"];
+
+
+            // Notification - END
         }
 
         $this->redirect("studentForumTopicDiscussion/index/{$topicId}");

@@ -7,6 +7,7 @@ class askForumQuestion extends AlecFramework
         $this->authorization("lec", "stu");
         $this->helper("linker");
         $this->askForumQuestionModel = $this->model("askForumQuestionModel");
+        $this->notificationBasicModel = $this->model("notificationBasicModel");
     }
 
     public function index($forumId)
@@ -43,6 +44,8 @@ class askForumQuestion extends AlecFramework
                     $row = $this->askForumQuestionModel->addTopicDetails($subject, $question, $forumId, $userId, "F");
                 }
 
+                // Notification - START
+
                 $topicId = $row["topic_id"];
                 $postTime = $row["post_time"];
 
@@ -52,18 +55,22 @@ class askForumQuestion extends AlecFramework
 
                 //Get the display name of the student
                 if (isset($_POST["name-toggle"])) {
-                    $userName = $this->askForumQuestionModel->getStudentRandomName($userId);
+                    $userName = $this->notificationBasicModel->getStudentRandomName($userId);
                 } else {
-                    $userName = $this->askForumQuestionModel->getUserRealName($userId);
+                    $userName = $this->notificationBasicModel->getUserRealName($userId);
                 }
+
+                $message = $userName . " started a new forum discussion";
 
                 $courseId = $this->askForumQuestionModel->getCourseId($forumId);
 
-                $courseName = $this->askForumQuestionModel->getCourseName($courseId);
+                $courseName = $this->notificationBasicModel->getCourseName($courseId);
 
-                $this->askForumQuestionModel->setForumTopicNotificationStudent($userName, $courseName, $studentLink, $postTime, $courseId);
+                $this->notificationBasicModel->setForumTopicNotificationStudent($courseName, $studentLink, $postTime, $courseId, $message);
 
-                $this->askForumQuestionModel->setForumTopicNotificationLecturer($userName, $courseName, $lecturerLink, $postTime, $courseId);
+                $this->notificationBasicModel->setForumTopicNotificationLecturer($courseName, $lecturerLink, $postTime, $courseId, $message);
+
+                // Notification - END
 
                 if ($data["userType"] == "lec") {
                     $this->redirect("lecturerForumTopic/index/{$courseId}");
