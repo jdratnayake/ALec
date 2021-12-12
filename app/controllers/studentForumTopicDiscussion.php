@@ -7,6 +7,7 @@ class StudentForumTopicDiscussion extends AlecFramework
         $this->authorization("stu");
         $this->helper("linker");
         $this->studentForumTopicDiscussionModel = $this->model("studentForumTopicDiscussionModel");
+        $this->notificationBasicModel = $this->model("notificationBasicModel");
     }
 
     public function index($topicId)
@@ -34,9 +35,24 @@ class StudentForumTopicDiscussion extends AlecFramework
             }
 
             // Notification - START
-            $replyId = $row["reply_id"];
-            $postTime = $row["post_time"];
+            //Get the display name of the user
+            if (isset($_POST["name-toggle"])) {
+                $userName = $this->notificationBasicModel->getStudentRandomName($userId);
+            } else {
+                $userName = $this->notificationBasicModel->getUserRealName($userId);
+            }
 
+            $courseId = $this->notificationBasicModel->getCourseId($topicId);
+            $courseName = $this->notificationBasicModel->getCourseName($courseId);
+            $postTime = $row["post_time"];
+            $message = $userName . " replied to forum disscussion";
+
+            $studentLink = BASEURL . "/studentForumTopicDiscussion/index/{$topicId}";
+            $lecturerLink = BASEURL . "/lecturerForumTopicDiscussion/index/{$topicId}";
+
+            $this->notificationBasicModel->setForumTopicNotificationStudent($courseName, $studentLink, $postTime, $courseId, $message);
+
+            $this->notificationBasicModel->setForumTopicNotificationLecturer($courseName, $lecturerLink, $postTime, $courseId, $message);
 
             // Notification - END
         }

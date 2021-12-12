@@ -57,7 +57,7 @@ class StudentForumTopicDiscussionModel extends Database
         $query = "SELECT reply_id, post_time FROM forum_reply ORDER BY reply_id DESC LIMIT 1";
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        return $result;
+        return mysqli_fetch_assoc($result);
     }
 
     public function deleteTopic($topicId)

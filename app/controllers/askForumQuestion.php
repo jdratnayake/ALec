@@ -53,7 +53,7 @@ class askForumQuestion extends AlecFramework
                 $lecturerLink = BASEURL . "/lecturerForumTopicDiscussion/index/{$topicId}";
 
 
-                //Get the display name of the student
+                //Get the display name of the user
                 if (isset($_POST["name-toggle"])) {
                     $userName = $this->notificationBasicModel->getStudentRandomName($userId);
                 } else {

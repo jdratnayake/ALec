@@ -26,6 +26,14 @@ class NotificationBasicModel extends Database
         return mysqli_fetch_assoc($result)["course_name"];
     }
 
+    public function getCourseId($topicId)
+    {
+        $query = "SELECT course_id FROM forum_topic INNER JOIN forum ON forum_topic.forum_Id=forum.forum_Id WHERE topic_id='$topicId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["course_id"];
+    }
+
     public function setForumTopicNotificationStudent($courseName, $studentLink, $postTime, $courseId, $message)
     {
         $query = "INSERT INTO notification(notification_type, subject, description, url, date) VALUES('1', '$message', '$courseName', '$studentLink', '$postTime')";
@@ -45,10 +53,8 @@ class NotificationBasicModel extends Database
         }
     }
 
-    public function setForumTopicNotificationLecturer($userName, $courseName, $lecturerLink, $postTime, $courseId)
+    public function setForumTopicNotificationLecturer($courseName, $lecturerLink, $postTime, $courseId, $message)
     {
-        $message = $userName . " started a new forum discussion";
-
         $query = "INSERT INTO notification(notification_type, subject, description, url, date) VALUES('1', '$message', '$courseName', '$lecturerLink', '$postTime')";
         mysqli_query($GLOBALS["db"], $query);
 
