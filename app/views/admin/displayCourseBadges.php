@@ -64,7 +64,7 @@
 
 <?php linkPhp("footer"); ?>
 
-<?php linkPhp("notification"); ?>
+<?php linkPhp("notificationView"); ?>
 
 </body>
 

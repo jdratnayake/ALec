@@ -77,7 +77,7 @@
 
     </div>
 
-    <?php linkPhp("notification"); ?>
+    <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
 

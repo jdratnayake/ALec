@@ -140,7 +140,7 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
         </div>
     </div>
 
-    <?php linkPhp("notification"); ?>
+    <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
 

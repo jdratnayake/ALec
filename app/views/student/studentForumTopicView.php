@@ -121,7 +121,7 @@ $courseCode = explode("-", $temp)[0];
         </div>
     </div>
 
-    <?php linkPhp("notification"); ?>
+    <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
 

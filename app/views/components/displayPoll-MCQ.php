@@ -92,7 +92,7 @@
 
 <?php linkPhp("footer"); ?>
 
-<?php linkPhp("notification"); ?>
+<?php linkPhp("notificationView"); ?>
 
 <?php linkJS("timeBar"); ?>
 
