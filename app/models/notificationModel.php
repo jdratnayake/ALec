@@ -23,6 +23,19 @@ class NotificationModel extends Database
         return $results;
     }
 
+    public function getUnreadNotificationDetails($userId, $isToday)
+    {
+        if ($isToday === "1") {
+            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)=DATE(NOW()) AND notification_status='F'";
+        } else if ($isToday === "0") {
+            $query = "SELECT * FROM notification_user INNER JOIN notification ON notification_user.notification_id=notification.notification_id WHERE user_id='$userId' AND DATE(date)<>DATE(NOW()) AND notification_status='F'";
+        }
+
+        $results = mysqli_query($GLOBALS["db"], $query);
+
+        return $results;
+    }
+
     public function updateUserNotification($userId, $notificationId)
     {
         $query = "UPDATE notification_user SET notification_status='T' WHERE user_id='$userId' AND notification_id='$notificationId'";

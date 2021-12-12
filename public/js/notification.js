@@ -13,7 +13,31 @@ $(document).ready(function () {
         }
     });
 
+    readNotification = function (notificationId) {
+        const tagId = `#notification-${notificationId}`;
 
+        $.ajax({
+            type: "GET",
+
+            url: "http://localhost/ALec/notification/readNotification/" + notificationId,
+            dataType: "html",
+        })
+
+        $(tagId).empty();
+
+        if ($("#unread-name-toggle").is(":checked")) {
+            updateUnreadNotificationList();
+        }
+    }
+
+    $("#unread-name-toggle").change(function () {
+        if ($(this).is(":checked")) {
+            updateUnreadNotificationList();
+        } else {
+            updateNotificationList();
+        }
+
+    });
 
     function getUnReadCount() {
         $.ajax({
@@ -44,26 +68,15 @@ $(document).ready(function () {
         })
     }
 
-
-    readNotification = function (notificationId) {
-        const tagId = `#notification-${notificationId}`;
-
+    function updateUnreadNotificationList() {
         $.ajax({
             type: "GET",
 
-            url: "http://localhost/ALec/notification/readNotification/" + notificationId,
+            url: "http://localhost/ALec/notification/getUnreadNotification/",
             dataType: "html",
+            success: function (response) {
+                $(".notification-details").html(response);
+            }
         })
-
-        $(tagId).empty();
     }
-
-    // $("#unread-name-toggle").change(function () {
-    //     if ($(this).is(":checked")) {
-    //         console.log("T");
-    //     } else {
-    //         console.log("F");
-    //     }
-
-    // });
 });

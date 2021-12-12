@@ -36,6 +36,19 @@ class Notification extends AlecFramework
         echo $output;
     }
 
+    public function getUnreadNotification()
+    {
+        $userId = $this->getSession("userId");
+
+        $todayNotification = $this->notificationModel->getUnreadNotificationDetails($userId, "1");
+        $oldNotification = $this->notificationModel->getUnreadNotificationDetails($userId, "0");
+
+        $output = $this->getNotificationTags($todayNotification, "1");
+        $output .= $this->getNotificationTags($oldNotification, "0");
+
+        echo $output;
+    }
+
     public function getNotificationTags($result, $isToday)
     {
         if ($isToday === "1") {
