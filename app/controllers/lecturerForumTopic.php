@@ -7,6 +7,7 @@ class LecturerForumTopic extends AlecFramework
         $this->authorization("lec");
         $this->helper("linker");
         $this->lecturerForumTopicModel = $this->model("lecturerForumTopicModel");
+        $this->notificationBasicModel = $this->model("notificationBasicModel");
     }
 
     public function index($courseId)
@@ -33,5 +34,19 @@ class LecturerForumTopic extends AlecFramework
     {
         $userId = $this->getSession("userId");
         $this->lecturerForumTopicModel->changeMarksTopic($userId, $topicId, $signal);
+
+        if ($signal == "1") {
+            $courseId = $this->notificationBasicModel->getCourseId($topicId);
+
+            $courseName = $this->notificationBasicModel->getCourseName($courseId);
+            $postTime = $this->lecturerForumTopicModel->getMarksGivenTime($userId, $topicId);
+
+            $userName = $this->notificationBasicModel->getUserRealName($userId);
+            $message = "You received points from " . $userName;
+
+            $studentLink = BASEURL . "/studentForumTopicDiscussion/index/{$topicId}";
+
+            $this->lecturerForumTopicModel->setForumTopicNotificationStudentSingle($courseName, $studentLink, $postTime, $topicId, $message);
+        }
     }
 }

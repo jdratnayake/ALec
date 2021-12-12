@@ -54,9 +54,35 @@ class LecturerForumTopicModel extends Database
         if ($signal == "0") {
             $query = "DELETE FROM forum_topic_points WHERE lecturer_id='$userId' AND topic_id='$topicId'";
         } else if ($signal == "1") {
-            $query = "INSERT INTO forum_topic_points(lecturer_id, topic_id) VALUES('$userId', '$topicId')";
+            $query = "INSERT INTO forum_topic_points(lecturer_id, topic_id, time) VALUES('$userId', '$topicId', NOW())";
         }
 
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function getMarksGivenTime($userId, $topicId)
+    {
+        $query = "SELECT time FROM forum_topic_points WHERE lecturer_id='$userId' AND topic_id='$topicId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["time"];
+    }
+
+    public function setForumTopicNotificationStudentSingle($courseName, $studentLink, $postTime, $topicId, $message)
+    {
+        $query = "INSERT INTO notification(notification_type, subject, description, url, date) VALUES('1', '$message', '$courseName', '$studentLink', '$postTime')";
+        mysqli_query($GLOBALS["db"], $query);
+
+        $query = "SELECT notification_id FROM notification ORDER BY notification_id DESC LIMIT 1";
+        $result = mysqli_query($GLOBALS["db"], $query);
+        $notificationId = mysqli_fetch_assoc($result)["notification_id"];
+
+        $query = "SELECT user_id FROM forum_topic WHERE topic_id='$topicId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+
+        $userId = mysqli_fetch_assoc($result)["user_id"];
+        $query = "INSERT INTO notification_user(user_id, notification_id) VALUES('$userId', '$notificationId')";
         mysqli_query($GLOBALS["db"], $query);
     }
 }
