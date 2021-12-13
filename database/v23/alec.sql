@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2021 at 01:33 PM
+-- Generation Time: Dec 13, 2021 at 01:35 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -347,13 +347,6 @@ CREATE TABLE `forum_reply` (
   `random_status` char(1) NOT NULL DEFAULT 'F' COMMENT '	T = Random name must not be displayed	'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `forum_reply`
---
-
-INSERT INTO `forum_reply` (`topic_id`, `reply_id`, `reply`, `points`, `post_time`, `user_id`, `random_status`) VALUES
-(55, 60, '1234', 0, '2021-12-13 17:20:20', 1497, 'T');
-
 -- --------------------------------------------------------
 
 --
@@ -397,13 +390,6 @@ CREATE TABLE `forum_topic` (
   `updated_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `forum_topic`
---
-
-INSERT INTO `forum_topic` (`topic_id`, `subject`, `question`, `points`, `post_time`, `forum_Id`, `user_id`, `random_status`, `last_reply_id`, `updated_time`) VALUES
-(55, 'If we use TDM for store-and-forward traffic, would the overall trunk utilization efficiency fall?', 'Janitha Devin Ratnayake\r\n', 1, '2021-12-13 17:18:15', 28, 1497, 'T', 60, '2021-12-13 17:20:21');
-
 -- --------------------------------------------------------
 
 --
@@ -415,13 +401,6 @@ CREATE TABLE `forum_topic_points` (
   `topic_id` int(11) NOT NULL,
   `time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `forum_topic_points`
---
-
-INSERT INTO `forum_topic_points` (`lecturer_id`, `topic_id`, `time`) VALUES
-(883, 55, '2021-12-13 17:18:49');
 
 --
 -- Triggers `forum_topic_points`
@@ -470,29 +449,6 @@ CREATE TABLE `notification` (
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `notification`
---
-
-INSERT INTO `notification` (`notification_id`, `notification_type`, `subject`, `description`, `url`, `date`) VALUES
-(40, '1', 'Thor\r\n London\r\n started a new forum discussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/54', '2021-12-12 14:43:08'),
-(41, '1', 'Thor\r\n London\r\n started a new forum discussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/lecturerForumTopicDiscussion/index/54', '2021-12-12 14:43:08'),
-(42, '1', 'You received points from Lec ALec', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/54', '2021-12-12 14:43:40'),
-(43, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/54', '2021-12-12 14:44:16'),
-(44, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/lecturerForumTopicDiscussion/index/54', '2021-12-12 14:44:16'),
-(45, '1', 'You received points from Lec ALec', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/54', '2021-12-12 14:44:23'),
-(46, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/54', '2021-12-13 17:10:14'),
-(47, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/lecturerForumTopicDiscussion/index/54', '2021-12-13 17:10:14'),
-(48, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/54', '2021-12-13 17:11:57'),
-(49, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/lecturerForumTopicDiscussion/index/54', '2021-12-13 17:11:57'),
-(50, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/54', '2021-12-13 17:12:05'),
-(51, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/lecturerForumTopicDiscussion/index/54', '2021-12-13 17:12:05'),
-(52, '1', 'Thor\r\n London\r\n started a new forum discussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/55', '2021-12-13 17:18:15'),
-(53, '1', 'Thor\r\n London\r\n started a new forum discussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/lecturerForumTopicDiscussion/index/55', '2021-12-13 17:18:15'),
-(54, '1', 'You received points from Lec ALec', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/55', '2021-12-13 17:18:49'),
-(55, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/studentForumTopicDiscussion/index/55', '2021-12-13 17:20:20'),
-(56, '1', 'Thor\r\n London\r\n replied to forum disscussion', 'SCS 2212 - Automata Theory', 'http://localhost/ALec/lecturerForumTopicDiscussion/index/55', '2021-12-13 17:20:20');
-
 -- --------------------------------------------------------
 
 --
@@ -504,43 +460,6 @@ CREATE TABLE `notification_user` (
   `notification_id` int(11) NOT NULL,
   `notification_status` char(1) NOT NULL DEFAULT 'F' COMMENT 'F = Not seen the notification'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `notification_user`
---
-
-INSERT INTO `notification_user` (`user_id`, `notification_id`, `notification_status`) VALUES
-(883, 41, 'F'),
-(883, 44, 'F'),
-(883, 47, 'F'),
-(883, 49, 'F'),
-(883, 51, 'T'),
-(883, 53, 'F'),
-(883, 56, 'F'),
-(885, 41, 'F'),
-(885, 44, 'F'),
-(885, 47, 'F'),
-(885, 49, 'F'),
-(885, 51, 'F'),
-(885, 53, 'F'),
-(885, 56, 'F'),
-(1494, 40, 'F'),
-(1494, 43, 'F'),
-(1494, 46, 'F'),
-(1494, 48, 'F'),
-(1494, 50, 'F'),
-(1494, 52, 'F'),
-(1494, 55, 'F'),
-(1497, 40, 'T'),
-(1497, 42, 'T'),
-(1497, 43, 'T'),
-(1497, 45, 'T'),
-(1497, 46, 'T'),
-(1497, 48, 'F'),
-(1497, 50, 'T'),
-(1497, 52, 'F'),
-(1497, 54, 'F'),
-(1497, 55, 'F');
 
 -- --------------------------------------------------------
 
