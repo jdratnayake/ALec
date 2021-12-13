@@ -140,6 +140,10 @@ $courseCode = explode("-", $temp)[0];
     <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
+	
+	<?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("notification") ?>
 
     <?php linkJS("forum"); ?>
 

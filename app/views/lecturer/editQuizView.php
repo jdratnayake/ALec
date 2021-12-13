@@ -159,6 +159,8 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
 
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
+    <?php linkJS("notification") ?>
+
     <?php linkJS("editQuiz"); ?>
 
 </body>

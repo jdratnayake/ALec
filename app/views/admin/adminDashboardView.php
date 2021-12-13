@@ -283,6 +283,8 @@
 
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
+    <?php linkJS("notification") ?>
+
     <?php linkJS("adminDashboard"); ?>
 
     <?php linkJS("basic") ?>
