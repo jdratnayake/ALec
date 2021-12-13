@@ -88,7 +88,7 @@ class Notification extends AlecFramework
 
             $output .=
                 "
-            <a href='{$path}' style='all: unset;' id='notification-link'>
+            <a href='javascript:goToPage({$notificationId})' id='notification-link-{$notificationId}' data-value='{$path}' style='all: unset;'>
             <div class='note'>
                 <img src='{$imagePath}'>
                 <div class='text'>

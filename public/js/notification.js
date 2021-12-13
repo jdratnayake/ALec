@@ -1,4 +1,5 @@
 let readNotification;
+let goToPage;
 
 $(document).ready(function () {
     //Initially update the unread message count
@@ -28,6 +29,14 @@ $(document).ready(function () {
         if ($("#unread-name-toggle").is(":checked")) {
             updateUnreadNotificationList();
         }
+    }
+
+    goToPage = function (notificationId) {
+        const tagId = `#notification-link-${notificationId}`;
+        readNotification(notificationId);
+        const link = $(tagId).attr("data-value");
+
+        window.location = link;
     }
 
     $("#unread-name-toggle").change(function () {
