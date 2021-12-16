@@ -80,6 +80,7 @@ $courseCode = explode("-", $temp)[0];
                             <input type='hidden' value='{$row['topic_id']}'>
                             <i class='fa fa-caret-up' aria-hidden='true'></i>
                             <div class='val'>{$row['points']}</div>
+                            <div class='val-unit'>pts</div>
                             ";
                         }
 
