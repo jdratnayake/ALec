@@ -33,23 +33,28 @@
 
     <div class="session-details-container">
         <div class="session-name-container">
+            <label for="course-name" class="session-label">Course Name</label>
+            <input type="text" name="course-name" id="course-name"
+                   placeholder="Enter your course name here... &#xF040;" ">
+        </div>
+        <div class="session-name-container">
             <label for="session-name" class="session-label">Session Name</label>
             <input type="text" name="session-name" id="session-name"
                    placeholder="Enter your session name here... &#xF040;" ">
         </div>
-        <div class="sessions">
-            <span class="session-label">Quick Questions</span>
+<!--        <div class="sessions">-->
+<!--            <span class="session-label">Quick Questions</span>-->
             <!--        Add Quick Question Button-->
-            <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
-            <span class="session">What's the best piece of advice you've ever been given?</span>
-            <span class="session">What's the best piece of advice?</span>
-        </div>
-        <div class="sessions">
-            <span class="session-label">Poll Questions</span>
+<!--            <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>-->
+<!--            <span class="session">What's the best piece of advice you've ever been given?</span>-->
+<!--            <span class="session">What's the best piece of advice?</span>-->
+<!--        </div>-->
+<!--        <div class="sessions">-->
+<!--            <span class="session-label">Poll Questions</span>-->
             <!--        Add Quick Question Button-->
-            <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
-            <span class="session inactive">No questions to show</span>
-        </div>
+<!--            <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>-->
+<!--            <span class="session inactive">No questions to show</span>-->
+<!--        </div>-->
     </div>
 
     <div class="button-container">
