@@ -27,40 +27,31 @@
 </ul>
 
 <div class="details-content">
-    <div class="header-container">
-        <header>New Session</header>
-    </div>
-
-    <div class="session-details-container">
-        <div class="session-name-container">
-            <label for="course-name" class="session-label">Course Name</label>
-            <input type="text" name="course-name" id="course-name"
-                   placeholder="Enter your course name here... &#xF040;" ">
-        </div>
-        <div class="session-name-container">
-            <label for="session-name" class="session-label">Session Name</label>
-            <input type="text" name="session-name" id="session-name"
-                   placeholder="Enter your session name here... &#xF040;" ">
-        </div>
-<!--        <div class="sessions">-->
-<!--            <span class="session-label">Quick Questions</span>-->
-            <!--        Add Quick Question Button-->
-<!--            <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>-->
-<!--            <span class="session">What's the best piece of advice you've ever been given?</span>-->
-<!--            <span class="session">What's the best piece of advice?</span>-->
+<!--    <div class="header-container">-->
+<!--        <header>New Session</header>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="session-details-container">-->
+<!--        <div class="session-name-container">-->
+<!--            <label for="course-name" class="session-label">Course Name</label>-->
+<!--            <select class="input" name="course-name" id="course-name">-->
+<!--                <option value="default">No course selected</option>-->
+<!--                <option value="course-1">Data Structures and Algorithms - I</option>-->
+<!--                <option value="course-2">Data Structures and Algorithms - II</option>-->
+<!--                <option value="course-3">Data Structures and Algorithms - III</option>-->
+<!--            </select>-->
 <!--        </div>-->
-<!--        <div class="sessions">-->
-<!--            <span class="session-label">Poll Questions</span>-->
-            <!--        Add Quick Question Button-->
-<!--            <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>-->
-<!--            <span class="session inactive">No questions to show</span>-->
+<!--        <div class="session-name-container">-->
+<!--            <label for="session-name" class="session-label">Session Name</label>-->
+<!--            <input class="input" type="text" name="session-name" id="session-name"-->
+<!--                   placeholder="Enter your session name here... &#xF040;" ">-->
 <!--        </div>-->
-    </div>
-
-    <div class="button-container">
-        <!--        Save Session Button-->
-        <button type="button" value="Create Session" class="save-btn">Create Session</button>
-    </div>
+<!--    </div>-->
+<!---->
+<!--    <div class="button-container">-->
+<!--        <!--        Save Session Button-->-->
+<!--        <button type="button" value="Create Session" class="save-btn">Create Session</button>-->
+<!--    </div>-->
 </div>
 
 <?php linkPhp("footer"); ?>
@@ -69,7 +60,7 @@
 
 <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("notification") ?>
+<?php linkJS("notification") ?>
 
 </body>
 

@@ -606,7 +606,7 @@ footer p {
 /*==============================================================================*/
 .details-content {
   padding: 1rem;
-  width: 70%;
+  width: 40%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: 10% auto;
   overflow: hidden;
@@ -646,10 +646,10 @@ footer p {
   margin-left: 10px;
 }
 .details-content .session-details-container .session-name-container label {
-  width: 125px;
+  width: 140px;
   font-weight: bold;
 }
-.details-content .session-details-container .session-name-container input {
+.details-content .session-details-container .session-name-container .input {
   width: 25rem;
   border: 1px solid #ccc;
   border-radius: 4px;

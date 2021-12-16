@@ -11,6 +11,8 @@
     <!-- CSS File HOME-->
     <?php linkCSS("display_sessions"); ?>
 
+    <?php linkCSS("modal_styles"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
 
@@ -37,8 +39,9 @@
                    style="font-family: FontAwesome, Poppins,sans-serif; font-style: normal; font-size: 15px">
         </form>
         <!--        Add Session Button-->
-        <button type="button" value="Add New Session" class="add-btn">Add New Session</button>
+        <button type="button" value="Add New Session" class="add-btn" id="add-session-btn">Add New Session</button>
     </div>
+
     <div class="session-details-container">
         <!--    Division of Active sessions-->
         <div class="sessions">
@@ -91,6 +94,38 @@
             </div>
         </div>
     </div>
+
+    <!-- Add Session Modal -->
+    <div id="add-session-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="close" class="close">&times;</span>
+                <h2>New Session</h2>
+            </div>
+
+            <div class="session-details">
+                <div class="session-name-container">
+                    <label for="course-name" class="session-label">Course Name</label>
+                    <select class="input" name="course-name" id="course-name">
+                        <option value="default">No course selected</option>
+                        <option value="course-1">Data Structures and Algorithms - I</option>
+                        <option value="course-2">Data Structures and Algorithms - II</option>
+                        <option value="course-3">Data Structures and Algorithms - III</option>
+                    </select>
+                </div>
+                <div class="session-name-container">
+                    <label for="session-name" class="session-label">Session Name</label>
+                    <input class="input" type="text" name="session-name" id="session-name"
+                           placeholder="Enter your session name here... &#xF040;" ">
+                </div>
+            </div>
+
+            <div class="modal-button-container">
+                <!--        Save Session Button-->
+                <button type="button" value="Create Session" class="create-btn">Create Session</button>
+            </div>
 </div>
 
 <?php linkPhp("footer"); ?>
@@ -99,9 +134,11 @@
 
 <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("notification") ?>
+<?php linkJS("notification") ?>
 
 <?php linkJS("displaySessions"); ?>
+
+<?php linkJS("addSessionModal"); ?>
 
 </body>
 

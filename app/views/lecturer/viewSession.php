@@ -44,8 +44,6 @@
             End Session
         </button>
 
-        <!--        New Session Button-->
-        <button type="button" value="Add New Session" class="main-btn">Add New Session</button>
     </div>
     <div class="session-details-container">
         <div class="sessions">
