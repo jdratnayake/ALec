@@ -20,7 +20,7 @@
 
     <div class="navigation-item-container">
 
-        <div class="navigation-tab">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/createSession/index'; ?>' ">
             <div class="row">
                 <i class="fa fa-server" aria-hidden="true"></i>
             </div>
