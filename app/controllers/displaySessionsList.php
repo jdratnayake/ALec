@@ -13,6 +13,8 @@ class DisplaySessionsList extends AlecFramework
     {
         $userId = $this->getSession("userId");
         $data["selectedCourses"] = $this->displaySessionsListModel->getSelectedCourses($userId);
+        $data["activeSessions"] = $this->displaySessionsListModel->getActiveSessions($userId);
+        $data["inActiveSessions"] = $this->displaySessionsListModel->getNotActiveSessions($userId);
 
         $errors = array();
         $errors["courseId"] = "";

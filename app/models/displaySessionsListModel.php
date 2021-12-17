@@ -10,6 +10,23 @@ class DisplaySessionsListModel extends Database
         return $result;
     }
 
+    public function getActiveSessions($userId)
+    {
+        $query = "SELECT session_id, session_name FROM session WHERE lecturer_id='$userId' AND status='T' ORDER BY create_date DESC";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
+    }
+
+    public function getNotActiveSessions($userId)
+    {
+        $query = "SELECT session_id, session_name FROM session WHERE lecturer_id='$userId' AND status='F' ORDER BY create_date DESC";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
+    }
+
+
     public function createSession($sessionName, $userId, $courseId)
     {
         $query = "INSERT INTO session(session_name, create_date, lecturer_id, course_id) VALUES('$sessionName', NOW(), '$userId', '$courseId')";

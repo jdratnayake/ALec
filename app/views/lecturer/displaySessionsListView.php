@@ -49,52 +49,58 @@ $errors = $data["errors"];
             <!--    Division of Active sessions-->
             <div class="sessions">
                 <span class="session-label">Active</span>
-                <div class="session">
+
+                <?php
+                while ($row = mysqli_fetch_assoc($data["activeSessions"])) {
+                    echo
+                    "
+                    <div class='session' onclick=\"window.location='http://localhost/ALec/viewSession/index/{$row['session_id']}' \">
+                        <span>{$row['session_name']}</span>
+                        <span>
+                            <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                            <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
+                        </span>
+                    </div>
+                    ";
+                }
+                ?>
+
+                <!-- <div class='session'>
                     <span>Session 1</span>
                     <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true" style="display: none"></i>
+                        <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                        <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
                     </span>
-                </div>
-                <div class="session">
-                    <span>Session 2</span>
-                    <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
-                    </span>
-                </div>
+                </div> -->
             </div>
+
             <!--    Division of other sessions-->
             <div class="sessions">
                 <span class="session-label">Recent</span>
-                <div class="session">
+
+                <?php
+                while ($row = mysqli_fetch_assoc($data["inActiveSessions"])) {
+                    echo
+                    "
+                    <div class='session' onclick=\"window.location='http://localhost/ALec/viewSession/index/{$row['session_id']}' \">
+                        <span>{$row['session_name']}</span>
+                        <span>
+                            <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                            <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
+                        </span>
+                    </div>
+                    ";
+                }
+                ?>
+
+                <!-- <div class='session'>
                     <span>Session 1</span>
                     <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true" style="display: none"></i>
+                        <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                        <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
                     </span>
-                </div>
-                <div class="session">
-                    <span>Session 2</span>
-                    <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="session">
-                    <span>Session 3</span>
-                    <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="session">
-                    <span>Session 4</span>
-                    <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
-                    </span>
-                </div>
+                </div> -->
+
             </div>
         </div>
 
