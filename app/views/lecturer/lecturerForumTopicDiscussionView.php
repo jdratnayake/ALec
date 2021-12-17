@@ -131,6 +131,7 @@
                         <input type='hidden' value='{$row["reply_id"]}'>
                         <i class='fa fa-caret-up' aria-hidden='true'></i>
                         <div class='val'>{$row["points"]}</div>
+                        <div class='val-unit'>pts</div>
                 ";
             }
 

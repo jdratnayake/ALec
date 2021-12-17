@@ -18,7 +18,7 @@
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/displaySessionsList/index'; ?>">
                         <i class="fa fa-server"></i>
                         <span class="links_name">Sessions</span>
                     </a>

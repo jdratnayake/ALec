@@ -606,9 +606,9 @@ footer p {
 /*==============================================================================*/
 .details-content {
   padding: 1rem;
-  width: 70%;
+  width: 40%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-  margin: auto auto 30px auto;
+  margin: 10% auto;
   overflow: hidden;
 }
 .details-content .header-container header {
@@ -646,54 +646,17 @@ footer p {
   margin-left: 10px;
 }
 .details-content .session-details-container .session-name-container label {
-  margin-right: 10px;
+  width: 140px;
   font-weight: bold;
 }
-.details-content .session-details-container .session-name-container input {
+.details-content .session-details-container .session-name-container .input {
   width: 25rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 6px 12px;
   border-bottom-width: 2px;
   font-family: FontAwesome, Poppins, sans-serif;
   font-style: normal;
-}
-.details-content .session-details-container .sessions {
-  padding-bottom: 2rem;
-  margin-left: 10px;
-}
-.details-content .session-details-container .sessions .add-btn {
-  padding: 3px 6px;
-  background-color: #FFF;
-  color: #2B4F82;
-  border-radius: 5px;
-  border: 2px solid #2B4F82;
-  font-size: 12px;
-  font-weight: bold;
-  float: right;
-  cursor: pointer;
-}
-.details-content .session-details-container .sessions .add-btn .fa-plus {
-  margin-right: 5px;
-}
-.details-content .session-details-container .sessions .add-btn:hover {
-  background-color: #1d3557;
-  border: 2px solid #1d3557;
-  color: #FFF;
-}
-.details-content .session-details-container .sessions .session-label {
-  font-weight: bold;
-}
-.details-content .session-details-container .sessions .session {
-  display: flex;
-  align-items: center;
-  background-color: #2b4f820d;
-  border-radius: 5px;
-  margin: 5px 0;
-  padding: 10px;
-}
-.details-content .session-details-container .sessions .inactive {
-  color: #ccc;
 }
 
 /*# sourceMappingURL=create_session.css.map */

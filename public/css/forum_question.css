@@ -733,6 +733,9 @@ footer p {
 .forum-container .answer .answer-row .vote .val {
   font-size: 20px;
 }
+.forum-container .answer .answer-row .vote .val-unit {
+  font-size: 15px;
+}
 .forum-container .answer .answer-row .answer-content {
   margin-left: 30px;
 }

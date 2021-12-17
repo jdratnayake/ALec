@@ -724,6 +724,9 @@ footer p {
 .forum-container .discussion-list .discussion-table-container .discussion-table .table-row .reply-count .vote .val {
   font-size: 20px;
 }
+.forum-container .discussion-list .discussion-table-container .discussion-table .table-row .reply-count .vote .val-unit {
+  font-size: 15px;
+}
 .forum-container .discussion-list .discussion-table-container .discussion-table .col-1 {
   flex-basis: 40%;
   margin: auto;
