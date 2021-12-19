@@ -55,7 +55,7 @@ $errors = $data["errors"];
                     echo
                     "
                     <div class='session' onclick=\"window.location='http://localhost/ALec/viewSession/index/{$row['session_id']}' \">
-                        <span>{$row['session_name']}</span>
+                        <span class='session-name'>{$row['session_name']}</span>
                         <span>
                             <i class='fa fa-eye publish-status' aria-hidden='true'></i>
                             <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
@@ -83,7 +83,7 @@ $errors = $data["errors"];
                     echo
                     "
                     <div class='session' onclick=\"window.location='http://localhost/ALec/viewSession/index/{$row['session_id']}' \">
-                        <span>{$row['session_name']}</span>
+                        <span class='session-name'>{$row['session_name']}</span>
                         <span>
                             <i class='fa fa-eye publish-status' aria-hidden='true'></i>
                             <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
@@ -147,18 +147,20 @@ $errors = $data["errors"];
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
 
-            <?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-            <?php linkPhp("notificationView"); ?>
+    <?php linkPhp("notificationView"); ?>
 
-            <?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-            <?php linkJS("notification") ?>
+    <?php linkJS("notification") ?>
 
-            <?php linkJS("displaySessions"); ?>
+    <?php linkJS("displaySessions"); ?>
 
-            <?php linkJS("addSessionModal"); ?>
+    <?php linkJS("addSessionModal"); ?>
 
 </body>
 

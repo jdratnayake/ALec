@@ -658,6 +658,9 @@ footer p {
   padding: 20px 10px;
   justify-content: space-between;
 }
+.details-content .session-details-container .sessions .session .session-name {
+  cursor: pointer;
+}
 .details-content .session-details-container .sessions .session .publish-status {
   cursor: pointer;
 }

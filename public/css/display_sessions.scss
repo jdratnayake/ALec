@@ -70,6 +70,10 @@ $light_color: #FFF;
         padding: 20px 10px;
         justify-content: space-between;
 
+        .session-name{
+          cursor: pointer;
+        }
+
         .publish-status {
           cursor: pointer
         }
