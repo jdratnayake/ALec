@@ -21,11 +21,12 @@ $light_color: #FFF;
     padding: 6px 12px;
     width: fit-content;
     cursor: pointer;
+    height: 38px;
 
     p {
-      position: fixed;
-      left: 545px;
-      top: 19%;
+      position: relative;
+      left: 133px;
+      bottom: 34px;
       background-color: red;
       color: white;
       height: 20px;
