@@ -611,8 +611,11 @@ footer p {
   margin: auto auto 30px auto;
   overflow: hidden;
 }
+.details-content .header-container h2 {
+  margin: 0 10px;
+}
 .details-content .header-container header {
-  margin: 20px 10px;
+  margin: 10px 10px 20px 10px;
   align-items: center;
   display: flex;
 }

@@ -28,6 +28,9 @@
 
     <div class="details-content">
         <div class="header-container">
+            <h2>
+                DATA STRUCTURES AND ALGORITHMS - I
+            </h2>
             <header>Session 01 - 2021/10/01
                 <i class="fa fa-circle" id="active-status" aria-hidden="true"></i>
             </header>
