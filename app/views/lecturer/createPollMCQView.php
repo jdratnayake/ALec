@@ -1,6 +1,8 @@
 <?php
 $sessionId = $data["bread"]["sessionDetails"]["session_id"];
 $sessionName = $data["bread"]["sessionDetails"]["session_name"];
+
+$errors = $data["errors"];
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +46,7 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
                 <div class="content">
 
 
-                    <input type="hidden" id="question-type" value="<?php echo $data["questionType"] ?>">
+                    <input type="hidden" name="question-type" id="question-type" value="<?php echo $data["questionType"] ?>">
 
                     <div class="first-row">
                         <!--            option selection button-->
@@ -59,53 +61,51 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
                     </div>
 
                     <!--            mcq type poll questions-->
-                    <div class="mcq" id="div-mcq">
+                    <div class="mcq" id="div-mcq" style="display: none">
                         <label for="question"></label>
                         <input type="text" class="session question" placeholder="Enter your question here..." name="question">
-                        <div class="error"></div>
+                        <div class="error"><?php echo $errors["question"]; ?></div>
 
                         <label for="answer-1"></label>
                         <input type="text" class="session" placeholder="Enter your answer here..." name="answer-1">
-                        <div class="error"></div>
+                        <div class="error"><?php echo $errors["answer-1"]; ?></div>
 
                         <label for="answer-2"></label>
                         <input type="text" class="session" placeholder="Enter your answer here..." name="answer-2">
-                        <div class="error"></div>
+                        <div class="error"><?php echo $errors["answer-2"]; ?></div>
 
                         <label for="answer-3"></label>
                         <input type="text" class="session" placeholder="Enter your answer here..." name="answer-3">
-                        <div class="error"></div>
+                        <div class="error"><?php echo $errors["answer-3"]; ?></div>
 
                         <label for="answer-4"></label>
                         <input type="text" class="session" placeholder="Enter your answer here..." name="answer-4">
-                        <div class="error"></div>
+                        <div class="error"><?php echo $errors["answer-4"]; ?></div>
 
                         <label for="answer-5"></label>
                         <input type="text" class="session" placeholder="Enter your answer here..." name="answer-5">
-                        <div class="error"></div>
+                        <div class="error"><?php echo $errors["answer-5"]; ?></div>
                     </div>
 
                     <!--            true false type poll questions-->
                     <div class="tf" id="div-tf" style="display: none">
                         <label for="question"></label>
-                        <input type="text" class="session question" placeholder="Enter your question here..." id="question">
-                        <div class="error"></div>
+                        <input type="text" class="session question" placeholder="Enter your question here..." name="tf-question">
+                        <div class="error"><?php echo $errors["tf-question"]; ?></div>
 
                         <label for="true"></label>
-                        <input type="text" class="session" value="True" name="answer-1" readonly>
-                        <div class="error"></div>
+                        <input type="text" class="session" value="True" name="tf-answer-1" readonly>
 
                         <label for="false"></label>
-                        <input type="text" class="session" value="False" name="answer-2" readonly>
-                        <div class="error"></div>
+                        <input type="text" class="session" value="False" name="tf-answer-2" readonly>
                     </div>
                 </div>
-            </form>
 
-            <div class="button-container">
-                <!--        Save Session Button-->
-                <button type="button" value="Create Session" class="save-btn">Save Question</button>
-            </div>
+                <div class="button-container">
+                    <!--        Save Session Button-->
+                    <button type="submit" value="Create Session" class="save-btn">Save Question</button>
+                </div>
+            </form>
         </div>
     </div>
 
