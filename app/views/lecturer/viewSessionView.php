@@ -105,7 +105,7 @@
                 <span class="session inactive">No questions to show</span>
             </div>
             <div class="sessions">
-                <span class="session-label"><a href="#">Live Forum</a></span>
+                <span class="session-label link-label"><a href="#">Live Forum</a></span>
                 <span class="session">
                     No questions to show
                     <span class="vote">

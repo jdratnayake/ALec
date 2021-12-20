@@ -97,6 +97,12 @@ $light_color: #FFF;
         }
       }
 
+      .link-label{
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+
       .session {
         display: flex;
         align-items: center;

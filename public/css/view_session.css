@@ -678,6 +678,9 @@ footer p {
 .details-content .session-details-container .sessions .session-label a {
   text-decoration: none;
 }
+.details-content .session-details-container .sessions .link-label:hover {
+  text-decoration: underline;
+}
 .details-content .session-details-container .sessions .session {
   display: flex;
   align-items: center;
