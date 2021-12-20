@@ -101,7 +101,7 @@
             <div class="sessions">
                 <span class="session-label">Poll Questions</span>
                 <!--        Add Quick Question Button-->
-                <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+                <button type="button" value="Add" class="add-btn" onclick="location.href='<?php echo BASEURL . "/createPoll/index/{$data["sessionData"]["session_id"]}" ?>'"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
                 <span class="session inactive">No questions to show</span>
             </div>
             <div class="sessions">
