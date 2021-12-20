@@ -43,7 +43,7 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
                     <img <?php srcIMG("mcq_icon.png"); ?> src="" alt="">
                     <label for="mcq">MCQ</label>
                 </div>
-                <div class="col">
+                <div class="col" onclick="window.location='<?php echo BASEURL . "/createPoll/openText/{$sessionId}"; ?>' ">
                     <img <?php srcIMG("textanswer-icon.png"); ?> src="" alt="">
                     <label for="open-text">OPEN_TEXT</label>
                 </div>

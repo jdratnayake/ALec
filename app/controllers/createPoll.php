@@ -112,4 +112,46 @@ class CreatePoll extends AlecFramework
         $data["errors"] = $errors;
         $this->view("lecturer/createPollMCQView", $data);
     }
+
+    public function openText($sessionId)
+    {
+        $data["bread"]["sessionDetails"] = $this->createPollModel->getSessionDetails($sessionId);
+
+        $errors["duration"] = "";
+        $errors["question"] = "";
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $question = $_POST["question"];
+            $duration = $_POST["quiz-dur"];;
+
+
+
+            if (empty($duration)) $errors["duration"] = "Duration is required";
+            if (empty($question)) $errors["question"] = "Question is required";
+
+
+            /* Count number of validation failures */
+            $numberOfErrors = 0;
+            foreach ($errors as $key => $value) {
+
+                if ($value != "") {
+                    $numberOfErrors++;
+                }
+            }
+
+            if ($numberOfErrors == 0) {
+                $quizDur = explode(":", $duration);
+
+                $durHr = $quizDur[0];
+                $durMin = $quizDur[1];
+                $durSec = $quizDur[2];
+
+
+                $this->createPollModel->addQuestion($sessionId, "open", $question, $durHr, $durMin, $durSec);
+            }
+        }
+
+        $data["errors"] = $errors;
+        $this->view("lecturer/createPollOpenTextView", $data);
+    }
 }
