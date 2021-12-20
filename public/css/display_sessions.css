@@ -660,6 +660,10 @@ footer p {
 }
 .details-content .session-details-container .sessions .session .session-name {
   cursor: pointer;
+  color: #0275d8;
+}
+.details-content .session-details-container .sessions .session .session-name:hover {
+  text-decoration: underline;
 }
 .details-content .session-details-container .sessions .session .publish-status {
   cursor: pointer;
