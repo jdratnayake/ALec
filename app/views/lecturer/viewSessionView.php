@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    <input type="hidden" id="session-id" value="<?php echo $data["sessionData"]["session_id"]; ?>">
+
     <?php linkPhp("navigationBarLecturer"); ?>
 
     <!--    breadcrumb-->
@@ -29,23 +31,51 @@
     <div class="details-content">
         <div class="header-container">
             <h2>
-                DATA STRUCTURES AND ALGORITHMS - I
+                <?php echo $data["sessionData"]["course_name"]; ?>
             </h2>
-            <header>Session 01 - 2021/10/01
-                <i class="fa fa-circle" id="active-status" aria-hidden="true"></i>
+            <header>
+                <?php echo $data["sessionData"]["session_name"]; ?>
+
+                <?php
+                if ($data["sessionData"]["status"] == "T") {
+                    echo "<i class='fa fa-circle' id='active-status' aria-hidden='true' style='display: block'></i>";
+                } else
+                    echo "<i class='fa fa-circle' id='active-status' aria-hidden='true' style='display: none'></i>";
+                ?>
             </header>
         </div>
         <div class="button-container">
-            <!--        Start Session Button-->
-            <button type="button" value="Start Session" class="main-btn" id="start-session" style="display: none">
-                <i class="fa fa-play" aria-hidden="true"></i>
-                Start Session
-            </button>
-            <!--        End Session Button-->
-            <button type="button" value="End Session" class="main-btn" id="end-session" style="display: block">
-                <i class="fa fa-stop" aria-hidden="true"></i>
-                End Session
-            </button>
+            <?php
+            if ($data["sessionData"]["status"] == "T") {
+                echo
+                "
+                <!--        End Session Button-->
+                <button type='button' value='End Session' class='main-btn' id='end-session' style='display: block'>
+                    <i class='fa fa-stop' aria-hidden='true'></i>
+                    End Session
+                </button>
+                <!--        Start Session Button-->
+                <button type='button' value='Start Session' class='main-btn' id='start-session' style='display: none'>
+                    <i class='fa fa-play' aria-hidden='true'></i>
+                    Start Session
+                </button>
+                ";
+            } else {
+                echo
+                "
+                <!--        End Session Button-->
+                <button type='button' value='End Session' class='main-btn' id='end-session' style='display: none'>
+                    <i class='fa fa-stop' aria-hidden='true'></i>
+                    End Session
+                </button>
+                <!--        Start Session Button-->
+                <button type='button' value='Start Session' class='main-btn' id='start-session' style='display: block'>
+                    <i class='fa fa-play' aria-hidden='true'></i>
+                    Start Session
+                </button>
+                ";
+            }
+            ?>
 
         </div>
         <div class="session-details-container">
