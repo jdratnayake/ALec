@@ -26,6 +26,8 @@ class CreatePoll extends AlecFramework
         //Form submission - START
         $errors = array();
 
+        $errors["duration"] = "";
+
         //Mcq
         $errors["question"] = "";
         $errors["answer-1"] = "";
@@ -41,15 +43,19 @@ class CreatePoll extends AlecFramework
             // var_dump($_POST);
             // return 0;
             $questionType = $_POST["question-type"];
+            $duration = $_POST["quiz-dur"];;
+
             $data["questionType"] = $questionType;
+
+            if (empty($duration)) $errors["duration"] = "Duration is required";
 
             if ($questionType == "mcq") {
                 $question = $_POST["question"];
                 $answer1 = $_POST["answer-1"];
                 $answer2 = $_POST["answer-2"];
-                $answer3 = $_POST["answer-3"];
-                $answer4 = $_POST["answer-4"];
-                $answer5 = $_POST["answer-5"];
+                // $answer3 = $_POST["answer-3"];
+                // $answer4 = $_POST["answer-4"];
+                // $answer5 = $_POST["answer-5"];
 
                 //Empty check
                 if (empty($question)) $errors["question"] = "Question is required";
@@ -74,6 +80,30 @@ class CreatePoll extends AlecFramework
             }
 
             if ($numberOfErrors == 0) {
+                $quizDur = explode(":", $duration);
+
+                $durHr = $quizDur[0];
+                $durMin = $quizDur[1];
+                $durSec = $quizDur[2];
+
+                if ($questionType == "mcq") {
+                    $questionId = $this->createPollModel->addQuestion($sessionId, "mcq", $question, $durHr, $durMin, $durSec);
+                    $this->createPollModel->addAnswer($questionId, $sessionId, $answer1);
+                    $this->createPollModel->addAnswer($questionId, $sessionId, $answer2);
+
+                    for ($i = 3; $i <= 5; $i++) {
+                        if (!empty($_POST["answer-{$i}"])) {
+                            $answer = $_POST["answer-{$i}"];
+                            $this->createPollModel->addAnswer($questionId, $sessionId, $answer);
+                        } else {
+                            break;
+                        }
+                    }
+                } else if ($questionType == "open") {
+                    $questionId = $this->createPollModel->addQuestion($sessionId, "mcq-tf", $question, $durHr, $durMin, $durSec);
+                    $this->createPollModel->addAnswer($questionId, $sessionId, "TRUE");
+                    $this->createPollModel->addAnswer($questionId, $sessionId, "FALSE");
+                }
             }
         }
 
