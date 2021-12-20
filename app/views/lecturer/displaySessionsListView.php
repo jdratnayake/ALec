@@ -54,8 +54,12 @@ $errors = $data["errors"];
                 while ($row = mysqli_fetch_assoc($data["activeSessions"])) {
                     echo
                     "
-                    <div class='session' onclick=\"window.location='http://localhost/ALec/viewSession/index/{$row['session_id']}' \">
-                        <span class='session-name'>{$row['session_name']}</span>
+                    <div class='session'>
+                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}'>
+                            <span class='session-name'>
+                                {$row['session_name']}
+                            </span>
+                        </a>
                         <span>
                             <i class='fa fa-eye publish-status' aria-hidden='true'></i>
                             <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
@@ -82,8 +86,12 @@ $errors = $data["errors"];
                 while ($row = mysqli_fetch_assoc($data["inActiveSessions"])) {
                     echo
                     "
-                    <div class='session' onclick=\"window.location='http://localhost/ALec/viewSession/index/{$row['session_id']}' \">
-                        <span class='session-name'>{$row['session_name']}</span>
+                    <div class='session'>
+                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}'>
+                            <span class='session-name'>
+                                {$row['session_name']}
+                            </span>
+                        </a>
                         <span>
                             <i class='fa fa-eye publish-status' aria-hidden='true'></i>
                             <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
