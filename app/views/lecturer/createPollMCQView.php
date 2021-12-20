@@ -57,7 +57,7 @@ $errors = $data["errors"];
                         <div class="time-input">
                             <label for="time-picker">Time:</label>
                             <input type="text" name="quiz-dur" id="time-picker" class="form-control" placeholder="hrs:mins:secs" />
-                            <div class="error"><?php echo $errors["duration"]; ?></div>
+                            <div class="error time-error"><?php echo $errors["duration"]; ?></div>
                         </div>
                     </div>
 

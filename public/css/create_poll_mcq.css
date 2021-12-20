@@ -304,6 +304,7 @@ header {
   color: red;
   font-size: 80%;
   font-weight: normal;
+  margin-left: 20px;
 }
 
 .home-content-expand {
@@ -672,21 +673,25 @@ footer p {
   border-radius: 5px;
   padding: 5px 10px;
 }
+.details-content .container .content .first-row .time-input .time-error {
+  margin-left: 52px;
+}
 .details-content .container .content .mcq, .details-content .container .content .tf {
   width: 100%;
+}
+.details-content .container .content .mcq .error:first-child {
+  margin-bottom: 15px;
+  background-color: #4caf50;
 }
 .details-content .container .content .session {
   display: flex;
   align-items: center;
   background-color: #2b4f820d;
   border-radius: 5px;
-  margin: 5px auto;
+  margin: 10px auto 2px auto;
   padding: 10px;
   width: 95%;
   border: none;
-}
-.details-content .container .content .question {
-  margin-bottom: 15px;
 }
 .details-content .container .button-container {
   display: flex;

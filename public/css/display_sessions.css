@@ -304,6 +304,7 @@ header {
   color: red;
   font-size: 80%;
   font-weight: normal;
+  margin-left: 20px;
 }
 
 .home-content-expand {
@@ -661,6 +662,7 @@ footer p {
 .details-content .session-details-container .sessions .session .session-name {
   cursor: pointer;
   color: #0275d8;
+  text-decoration: none;
 }
 .details-content .session-details-container .sessions .session .session-name:hover {
   text-decoration: underline;

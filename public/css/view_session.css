@@ -304,6 +304,7 @@ header {
   color: red;
   font-size: 80%;
   font-weight: normal;
+  margin-left: 20px;
 }
 
 .home-content-expand {
@@ -697,6 +698,11 @@ footer p {
 }
 .details-content .session-details-container .sessions .session .vote .fa-thumbs-o-up {
   font-size: 24px;
+  cursor: pointer;
+}
+.details-content .session-details-container .sessions .session .vote .fa-thumbs-o-up:hover {
+  color: #0000ee;
+  transform: scale(1.2);
 }
 .details-content .session-details-container .sessions .session .vote .votes-count {
   font-size: small;

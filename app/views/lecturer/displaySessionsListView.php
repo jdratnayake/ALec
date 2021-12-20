@@ -55,8 +55,8 @@ $errors = $data["errors"];
                     echo
                     "
                     <div class='session'>
-                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}'>
-                            <span class='session-name'>
+                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                            <span>
                                 {$row['session_name']}
                             </span>
                         </a>
@@ -87,8 +87,8 @@ $errors = $data["errors"];
                     echo
                     "
                     <div class='session'>
-                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}'>
-                            <span class='session-name'>
+                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                            <span>
                                 {$row['session_name']}
                             </span>
                         </a>
