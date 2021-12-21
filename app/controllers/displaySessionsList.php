@@ -50,4 +50,9 @@ class DisplaySessionsList extends AlecFramework
 
         $this->view("lecturer/displaySessionsListView", $data);
     }
+
+    public function changeSessionsStatus($sessionId, $status)
+    {
+        $this->displaySessionsListModel->changeSessionStatus($sessionId, $status);
+    }
 }

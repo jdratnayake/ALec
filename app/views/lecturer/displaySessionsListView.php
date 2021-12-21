@@ -47,27 +47,33 @@ $errors = $data["errors"];
 
         <div class="session-details-container">
             <!--    Division of Active sessions-->
-            <div class="sessions">
-                <span class="session-label">Active</span>
+            <div class="sessions"">
+                <span class=" session-label">Active</span>
 
-                <?php
-                while ($row = mysqli_fetch_assoc($data["activeSessions"])) {
-                    echo
-                    "
-                    <div class='session'>
-                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                <div id="active-sessions">
+
+                    <?php
+                    while ($row = mysqli_fetch_assoc($data["activeSessions"])) {
+                        echo
+                        "
+                        <div class='session'>
+                            <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                                <span>
+                                    {$row['session_name']}
+                                </span>
+                            </a>
                             <span>
-                                {$row['session_name']}
+                                <input type='hidden' class='course-identity' value='{$row['course_id']}'>
+                                <input type='hidden' value='{$row['session_id']}'>
+                                <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                                <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
                             </span>
-                        </a>
-                        <span>
-                            <i class='fa fa-eye publish-status' aria-hidden='true'></i>
-                            <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
-                        </span>
-                    </div>
-                    ";
-                }
-                ?>
+                        </div>
+                        ";
+                    }
+                    ?>
+
+                </div>
 
                 <!-- <div class='session'>
                     <span>Session 1</span>
@@ -82,24 +88,28 @@ $errors = $data["errors"];
             <div class="sessions">
                 <span class="session-label">Recent</span>
 
-                <?php
-                while ($row = mysqli_fetch_assoc($data["inActiveSessions"])) {
-                    echo
-                    "
-                    <div class='session'>
-                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                <div id="inactive-sessions">
+                    <?php
+                    while ($row = mysqli_fetch_assoc($data["inActiveSessions"])) {
+                        echo
+                        "
+                        <div class='session'>
+                            <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                                <span>
+                                    {$row['session_name']}
+                                </span>
+                            </a>
                             <span>
-                                {$row['session_name']}
+                                <input type='hidden' class='course-identity' value='{$row['course_id']}'>
+                                <input type='hidden' value='{$row['session_id']}'>
+                                <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
+                                <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
                             </span>
-                        </a>
-                        <span>
-                            <i class='fa fa-eye publish-status' aria-hidden='true'></i>
-                            <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
-                        </span>
-                    </div>
-                    ";
-                }
-                ?>
+                        </div>
+                        ";
+                    }
+                    ?>
+                </div>
 
                 <!-- <div class='session'>
                     <span>Session 1</span>

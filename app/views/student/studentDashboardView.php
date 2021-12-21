@@ -23,7 +23,7 @@
 
     <div class="navigation-item-container">
 
-        <div class="navigation-tab">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/courseSelectionSessions/index'; ?>' ">
             <div class="row">
                 <i class="fa fa-server"></i>
             </div>
