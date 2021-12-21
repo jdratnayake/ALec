@@ -693,6 +693,9 @@ footer p {
   width: 95%;
   border: none;
 }
+.details-content .container .content textarea {
+  overflow: auto;
+}
 .details-content .container .button-container {
   display: flex;
   justify-content: flex-end;
@@ -716,5 +719,45 @@ footer p {
   background-color: #1d3557;
   border: 2px solid #1d3557;
 }
+
+/*--------------------------EDIT POLL QUIZ VIEW STYLES - START-------------------------------*/
+.session input {
+  width: 96%;
+  margin-right: 10px;
+}
+.session .fa-times {
+  cursor: pointer;
+}
+.session .fa-times:hover {
+  color: #dd5555;
+}
+
+.mcq .button-set {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-start;
+  padding: 5px 20px;
+}
+.mcq .button-set .dlt {
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #FFF;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background-color: #dd5555;
+  border: 2px solid #dd5555;
+}
+.mcq .button-set .dlt i {
+  margin-right: 5px;
+}
+.mcq .button-set .dlt:hover {
+  color: #dd5555;
+  border: 2px solid #dd5555;
+  background-color: #f7d4d4a1;
+}
+
+/*--------------------------EDIT POLL QUIZ VIEW STYLES - END-------------------------------*/
 
 /*# sourceMappingURL=create_poll_mcq.css.map */
