@@ -63,6 +63,7 @@ $errors = $data["errors"];
                                 </span>
                             </a>
                             <span>
+                                <input type='hidden' class='course-identity' value='{$row['course_id']}'>
                                 <input type='hidden' value='{$row['session_id']}'>
                                 <i class='fa fa-eye publish-status' aria-hidden='true'></i>
                                 <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
@@ -99,6 +100,8 @@ $errors = $data["errors"];
                                 </span>
                             </a>
                             <span>
+                                <input type='hidden' class='course-identity' value='{$row['course_id']}'>
+                                <input type='hidden' value='{$row['session_id']}'>
                                 <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
                                 <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
                             </span>

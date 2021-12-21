@@ -12,7 +12,7 @@ class DisplaySessionsListModel extends Database
 
     public function getActiveSessions($userId)
     {
-        $query = "SELECT session_id, session_name FROM session WHERE lecturer_id='$userId' AND status='T' ORDER BY create_date DESC";
+        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='T' ORDER BY create_date DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
@@ -20,7 +20,7 @@ class DisplaySessionsListModel extends Database
 
     public function getNotActiveSessions($userId)
     {
-        $query = "SELECT session_id, session_name FROM session WHERE lecturer_id='$userId' AND status='F' ORDER BY create_date DESC";
+        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='F' ORDER BY create_date DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
