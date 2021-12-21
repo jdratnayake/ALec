@@ -79,9 +79,9 @@
 
         </div>
         <div class="session-details-container">
-            <div class="sessions">
+            <!-- <div class="sessions">
                 <span class="session-label">Quick Questions</span>
-                <!--        Add Quick Question Button-->
+
                 <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
                 <span class="session">
                     What's the best piece of advice you've ever been given?
@@ -90,19 +90,60 @@
                         <i class="fa fa-eye-slash publish-status" aria-hidden="true" style="display: none"></i>
                     </span>
                 </span>
-                <span class="session">
+                <span class='session'>
                     What's the best piece of advice?
                     <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
+                        <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
+                        <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
                     </span>
                 </span>
-            </div>
+            </div> -->
+
             <div class="sessions">
                 <span class="session-label">Poll Questions</span>
                 <!--        Add Quick Question Button-->
                 <button type="button" value="Add" class="add-btn" onclick="location.href='<?php echo BASEURL . "/createPoll/index/{$data["sessionData"]["session_id"]}" ?>'"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
-                <span class="session inactive">No questions to show</span>
+
+                <?php
+                if (mysqli_num_rows($data["questionDetails"]) == 0) {
+                    echo
+                    "
+                    <span class='session inactive'>No questions to show</span>
+                    ";
+                }
+
+                while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+                    echo
+                    "
+                    <span class='session'>
+                    {$row['question']}
+                        <span class='status-symbols'>
+                        <input type='hidden' value='{$row['status']}'>
+                        <input type='hidden' value='{$row['question_no']}'>
+                    ";
+
+                    if ($row["status"] == "T") {
+                        echo
+                        "
+                        <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                        <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
+                        ";
+                    } else {
+                        echo
+                        "
+                        <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
+                        <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
+                        ";
+                    }
+
+                    echo
+                    "
+                        </span>
+                    </span>
+                    ";
+                }
+                ?>
+
             </div>
             <div class="sessions">
                 <span class="session-label link-label"><a href="#">Live Forum</a></span>
@@ -126,6 +167,8 @@
     <?php linkJS("notification") ?>
 
     <?php linkJS("viewSession"); ?>
+
+    <?php linkJS("viewSessionQuestion"); ?>
 
 </body>
 

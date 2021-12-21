@@ -12,11 +12,19 @@ class ViewSession extends AlecFramework
     public function index($sessionId)
     {
         $data["sessionData"] = $this->viewSessionModel->getSessionDetails($sessionId);
+        $data["questionDetails"] = $this->viewSessionModel->getSessionQuestions($sessionId);
+
         $this->view("lecturer/viewSessionView", $data);
     }
 
+    //Change session status
     public function changeStatus($sessionId, $status)
     {
         $this->viewSessionModel->setStatus($sessionId, $status);
+    }
+
+    public function changeQuestionStatus($sessionId, $questionId, $status)
+    {
+        $this->viewSessionModel->setQuestionStatus($sessionId, $questionId, $status);
     }
 }

@@ -16,4 +16,25 @@ class ViewSessionModel extends Database
 
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function setQuestionStatus($sessionId, $questionId, $status)
+    {
+        if ($status == "T") {
+            $query = "UPDATE session_question SET status='F' WHERE session_id='$sessionId'";
+            mysqli_query($GLOBALS["db"], $query);
+
+            $query = "UPDATE session_question SET status='T' WHERE session_id='$sessionId' AND question_no='$questionId'";
+            mysqli_query($GLOBALS["db"], $query);
+        } else if ($status == "F") {
+            $query = "UPDATE session_question SET status='F' WHERE session_id='$sessionId' AND question_no='$questionId'";
+            mysqli_query($GLOBALS["db"], $query);
+        }
+    }
+
+    public function getSessionQuestions($sessionId)
+    {
+        $query = "SELECT question_no, question, status FROM session_question WHERE session_id='$sessionId'";
+
+        return mysqli_query($GLOBALS["db"], $query);
+    }
 }
