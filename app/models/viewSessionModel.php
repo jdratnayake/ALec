@@ -37,4 +37,11 @@ class ViewSessionModel extends Database
 
         return mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function getSessionForumQuestions($sessionId)
+    {
+        $query = "SELECT question_id, question, points FROM session_forum_question WHERE session_id='$sessionId'";
+
+        return mysqli_query($GLOBALS["db"], $query);
+    }
 }

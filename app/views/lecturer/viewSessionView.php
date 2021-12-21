@@ -147,13 +147,37 @@
             </div>
             <div class="sessions">
                 <span class="session-label link-label"><a href="#">Live Forum</a></span>
-                <span class="session">
+
+                <?php
+                if (mysqli_num_rows($data["forumQuestionDetails"]) == 0) {
+                    echo
+                    "
+                    <span class='session inactive'>No questions to show</span>
+                    ";
+                }
+
+                while ($row = mysqli_fetch_assoc($data["forumQuestionDetails"])) {
+                    echo
+                    "
+                    <span class='session'>
+                        {$row['question']}
+                        <span class='vote'>
+                            <i class='fa fa-thumbs-o-up' aria-hidden='true'></i>
+                            <span class='votes-count'>{$row['points']}</span>
+                        </span>
+                    </span>
+                    ";
+                }
+                ?>
+
+                <!-- <span class='session inactive'>No questions to show</span> -->
+                <!-- <span class="session">
                     No questions to show
                     <span class="vote">
                         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                         <span class="votes-count">2</span>
                     </span>
-                </span>
+                </span> -->
             </div>
         </div>
     </div>

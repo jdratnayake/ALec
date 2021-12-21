@@ -13,6 +13,7 @@ class ViewSession extends AlecFramework
     {
         $data["sessionData"] = $this->viewSessionModel->getSessionDetails($sessionId);
         $data["questionDetails"] = $this->viewSessionModel->getSessionQuestions($sessionId);
+        $data["forumQuestionDetails"] = $this->viewSessionModel->getSessionForumQuestions($sessionId);
 
         $this->view("lecturer/viewSessionView", $data);
     }
