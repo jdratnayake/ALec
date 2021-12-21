@@ -16,9 +16,10 @@ $light_color: #FFF;
   overflow: hidden;
 
   .header-container {
-    h2{
+    h2 {
       margin: 0 10px;
     }
+
     header {
       margin: 10px 10px 20px 10px;
       align-items: center;
@@ -97,8 +98,8 @@ $light_color: #FFF;
         }
       }
 
-      .link-label{
-        &:hover{
+      .link-label {
+        &:hover {
           text-decoration: underline;
         }
       }
@@ -110,7 +111,60 @@ $light_color: #FFF;
         border-radius: 5px;
         margin: 5px 0;
         padding: 10px;
-        justify-content: space-between;
+        height: 50px;
+
+        .fa-ellipsis-v {
+          width: 20px;
+          font-size: 12px;
+          cursor: pointer;
+        }
+
+        .option-selection {
+          display: none;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          border-radius: 6px;
+          height: fit-content;
+          width: 60px;
+          background: #fff;
+          line-height: 20px;
+          text-align: left;
+          padding: 0 8px;
+          box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+          transition: 0s;
+          cursor: pointer;
+          z-index: 10;
+          left: 298px;
+          font-size: 12px;
+        }
+
+        .option-selection::after {
+          content: "";
+          position: absolute;
+          top: 85%;
+          left: 100%;
+          margin-top: -5px;
+          border-width: 5px;
+          border-style: solid;
+          box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+          z-index: 120;
+          border-color: transparent transparent transparent #2b4f82;
+        }
+
+        .question {
+          width: 95%;
+          cursor: pointer;
+          color: #0275d8;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .publish-status {
+          cursor: pointer
+        }
 
         .vote {
           display: flex;
@@ -121,19 +175,15 @@ $light_color: #FFF;
             font-size: 24px;
             cursor: pointer;
 
-            &:hover{
+            &:hover {
               color: #0000ee;
-              transform:scale(1.2);
+              transform: scale(1.2);
             }
           }
 
           .votes-count {
             font-size: small;
           }
-        }
-
-        .publish-status {
-          cursor: pointer
         }
       }
 
