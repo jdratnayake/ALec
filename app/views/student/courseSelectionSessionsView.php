@@ -18,60 +18,69 @@
 
 <body>
 
-<?php linkPhp("navigationBarStudent"); ?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
-<?php
-//
-//if ($data["userType"] == "lec") {
-//    linkPhp("navigationBarLecturer");
-//} else if ($data["userType"] == "stu") {
-//    linkPhp("navigationBarStudent");
-//}
-//
-//?>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li>Sessions</li>
+    </ul>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-    <li>Sessions</li>
-</ul>
+    <div class="details-content">
+        <div class="container">
 
-<div class="details-content">
-    <div class="container">
-        <div class="row">
-            SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I
-            <i class="fa fa-circle" aria-hidden="true"></i>
+            <input type="hidden" id="active-course-ids" value="<?php echo $data["activeCourseIds"]; ?>">
+
+            <?php
+
+            while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
+                $className = "course-id-{$row['course_id']}";
+
+                echo
+                "
+                <div class='row {$className}'>
+                    {$row['course_name']}
+                ";
+
+                if (!empty($row['active_session_id'])) {
+                    echo
+                    "
+                    <i class='fa fa-circle' aria-hidden='true'></i>
+                    ";
+                } else {
+                    echo
+                    "
+                    <i class='fa fa-circle' aria-hidden='true' style='display: none'></i>
+                    ";
+                }
+
+                echo
+                "
+                </div>
+                ";
+            }
+
+            ?>
+
+            <!-- <div class='row'>
+                SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I
+                <i class='fa fa-circle' aria-hidden='true'></i>
+            </div>
+            <div class='row'>SCS 1201 - DATA STRUCTURES AND ALGORITHMS - II</div> -->
+
         </div>
-        <div class="row">SCS 1201 - DATA STRUCTURES AND ALGORITHMS - II</div>
-        <div class="row">SCS 2201 - DATA STRUCTURES AND ALGORITHMS - III</div>
-        <div class="row">SCS 1204 - OPERATING SYSTEMS - I</div>
-        <div class="row">
-            SCS 2205 - AUTOMATA THEORY - I
-            <i class="fa fa-circle" aria-hidden="true"></i>
-        </div>
-        <div class="row">SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I</div>
     </div>
-</div>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-<?php linkPhp("notificationView"); ?>
+    <?php linkPhp("notificationView"); ?>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-<?php linkJS("notification") ?>
+    <?php linkJS("notification") ?>
+
+    <?php linkJS("courseSelectionSessions") ?>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
