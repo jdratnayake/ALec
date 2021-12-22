@@ -659,6 +659,8 @@ footer p {
   margin: 10px auto;
   /*--------------------- Time progress bar styles - start ----------------------------*/
   /*--------------------- Time progress bar styles - end ----------------------------*/
+  /*--------------------- Message styles - start ----------------------------*/
+  /*--------------------- Message styles - end ----------------------------*/
 }
 .details-content .container .content .bar-div {
   margin: 5px auto;
@@ -694,7 +696,7 @@ footer p {
   margin-bottom: 5px;
   margin-left: 15px;
 }
-.details-content .container .button-container {
+.details-content .container .content .button-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -702,7 +704,7 @@ footer p {
   margin: 10px auto;
   padding: 10px;
 }
-.details-content .container .button-container .save-btn {
+.details-content .container .content .button-container .save-btn {
   padding: 6px 36px;
   background-color: #2B4F82;
   color: #FFF;
@@ -713,9 +715,23 @@ footer p {
   cursor: pointer;
   margin: 5px;
 }
-.details-content .container .button-container .save-btn:hover {
+.details-content .container .content .button-container .save-btn:hover {
   background-color: #1d3557;
   border: 2px solid #1d3557;
+}
+.details-content .container .content .content-message {
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+}
+.details-content .container .content .content-message .fa-spinner {
+  font-size: 40px;
+  color: grey;
+  align-self: center;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=display_Poll_MCQ.css.map */

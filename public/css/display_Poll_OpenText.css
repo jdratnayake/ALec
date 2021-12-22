@@ -639,6 +639,8 @@ footer p {
   height: 100%;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  /*--------------------- Message styles - start ----------------------------*/
+  /*--------------------- Message styles - end ----------------------------*/
 }
 .details-content .container .heading {
   background-color: #2B4F82;
@@ -717,6 +719,20 @@ footer p {
 .details-content .container .button-container .save-btn:hover {
   background-color: #1d3557;
   border: 2px solid #1d3557;
+}
+.details-content .container .content-message {
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+}
+.details-content .container .content-message .fa-spinner {
+  font-size: 40px;
+  color: grey;
+  align-self: center;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=display_Poll_OpenText.css.map */

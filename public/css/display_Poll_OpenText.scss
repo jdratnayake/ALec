@@ -138,6 +138,26 @@ $light_color: #FFF;
         }
       }
     }
+
+    /*--------------------- Message styles - start ----------------------------*/
+
+    .content-message {
+      color: grey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 3rem;
+
+      .fa-spinner {
+        font-size: 40px;
+        color: grey;
+        align-self: center;
+        margin-bottom: 1rem;
+      }
+    }
+
+    /*--------------------- Message styles - end ----------------------------*/
   }
 }
 
