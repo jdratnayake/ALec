@@ -20,5 +20,9 @@ class EditPoolQuestionModel extends Database
 
     public function getAnswers($questionNo)
     {
+        $query = "SELECT choice_id, choice_name FROM session_answer WHERE question_no='$questionNo' ORDER BY choice_id";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
     }
 }

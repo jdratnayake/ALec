@@ -12,6 +12,7 @@ class EditPoolQuestion extends AlecFramework
     public function index($questionNo)
     {
         $data["questionDetails"] = $this->editPoolQuestionModel->getQuestionDetails($questionNo);
+        $data["answerDetails"] = $this->editPoolQuestionModel->getAnswers($questionNo);
 
         $sessionId = $data["questionDetails"]["session_id"];
         $data["bread"]["sessionDetails"] = $this->editPoolQuestionModel->getSessionDetails($sessionId);

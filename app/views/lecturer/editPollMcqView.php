@@ -42,8 +42,11 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
                 </div>
                 <div class="content">
 
-                    <input type="hidden" name="question-type" id="question-type" value="">
+                    <!-- Question id and type -->
+                    <input type="hidden" name="question-id" id="question-id" value="<?php echo $data["questionDetails"]["question_no"]; ?>">
+                    <input type="hidden" name="question-type" id="question-type" value="<?php echo $data["questionDetails"]["question_type"]; ?>">
 
+                    <!-- Duration -->
                     <div class="first-row" style="justify-content: flex-end;">
                         <div class="time-input">
                             <label for="time-picker">Time:</label>
@@ -52,43 +55,45 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
                         </div>
                     </div>
 
-                    <!--            mcq type poll questions-->
+                    <!-- Question Content -->
                     <div class="mcq" id="div-mcq">
+
+                        <!-- Question -->
                         <label for="question"></label>
-                        <textarea class="session question" name="question" id="question" rows="3"><?php echo $data["questionDetails"]["question"]; ?>
-                    </textarea>
+                        <textarea class="session question" name="question" id="question" rows="3"><?php echo $data["questionDetails"]["question"]; ?></textarea>
                         <div class="error"></div>
+
+                        <!-- Delete Question  -->
                         <div class='button-set'>
                             <button type='button' class='dlt' onclick=''>
                                 <i class='fa fa-trash' aria-hidden='true'></i>Delete Question
                             </button>
                         </div>
 
-                        <div class="session">
-                            <label for="answer-1"></label>
-                            <input type="text" value="Union" name="answer-1" id="answer-1">
+                        <!-- Answers - Begin -->
+                        <?php
+
+                        while ($row = mysqli_fetch_assoc($data["answerDetails"])) {
+                            echo
+                            "
+                            <div class='session'>
+                            <label for='answer-2'></label>
+                            <input type='text' value='{$row["choice_name"]}' name='answer-2' id='answer-2'>
                             <i class='fa fa-times' aria-hidden='true'></i>
-                        </div>
-                        <div class="session">
-                            <label for="answer-2"></label>
-                            <input type="text" value="Union" name="answer-2" id="answer-2">
+                            </div>
+                            ";
+                        }
+
+                        ?>
+                        <!-- Answers - End -->
+
+
+                        <!-- <div class='session'>
+                            <label for='answer-2'></label>
+                            <input type='text' value='Union' name='answer-2' id='answer-2'>
                             <i class='fa fa-times' aria-hidden='true'></i>
-                        </div>
-                        <div class="session">
-                            <label for="answer-3"></label>
-                            <input type="text" value="Concatenation" name="answer-3" id="answer-3">
-                            <i class='fa fa-times' aria-hidden='true'></i>
-                        </div>
-                        <div class="session">
-                            <label for="answer-4"></label>
-                            <input type="text" value="Kleene*" name="answer-4" id="answer-4">
-                            <i class='fa fa-times' aria-hidden='true'></i>
-                        </div>
-                        <div class="session">
-                            <label for="answer-5"></label>
-                            <input type="text" placeholder="Enter your answer here..." name="answer-5" id="answer-5">
-                            <i class='fa fa-times' aria-hidden='true'></i>
-                        </div>
+                        </div> -->
+
                     </div>
                 </div>
 
@@ -108,9 +113,9 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 
     <?php linkJS("notification") ?>
 
-    <?php linkJS("createPollMcq"); ?>
-
     <?php linkJS("timePickerQuiz"); ?>
+
+    <?php linkJS("editPollMcq") ?>
 
 </body>
 
