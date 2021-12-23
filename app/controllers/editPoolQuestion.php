@@ -17,11 +17,11 @@ class EditPoolQuestion extends AlecFramework
         $data["bread"]["sessionDetails"] = $this->editPoolQuestionModel->getSessionDetails($sessionId);
 
         if ($data["questionDetails"]["question_type"] == "mcq") {
-            $this->view("lecturer/editPollMCQ", $data);
+            $this->view("lecturer/editPollMcqView", $data);
         } else if ($data["questionDetails"]["question_type"] == "mcq-tf") {
-            $this->view("lecturer/editPollMCQTF", $data);
+            $this->view("lecturer/editPollMcqTfView", $data);
         } else if ($data["questionDetails"]["question_type"] == "open") {
-            $this->view("lecturer/editPollOpenText", $data);
+            $this->view("lecturer/editPollOpenTextView", $data);
         }
     }
 }
