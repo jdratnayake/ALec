@@ -13,7 +13,7 @@ $(document).ready(function () {
                 const activeCourseIdList = $("#active-course-ids").val();
 
                 if (response != activeCourseIdList) {
-                    hideAllIcons();
+                    hideAllCourses();
 
                     $("#active-course-ids").val(response);
                     response = response.trim().split("_");
@@ -26,12 +26,12 @@ $(document).ready(function () {
     function updateIcons(courseId) {
         const className = `.course-id-${courseId}`;
 
-        $(className).children().show();
+        $(className).show();
     }
 
-    function hideAllIcons() {
+    function hideAllCourses() {
         $('.row').each(function (i, obj) {
-            $(obj).children().hide();
+            $(obj).hide();
         });
     }
 
