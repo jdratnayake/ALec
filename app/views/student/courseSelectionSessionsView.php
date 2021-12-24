@@ -39,12 +39,12 @@
                 if (!empty($row['active_session_id'])) {
                     echo
                     "
-                    <div class='row {$className}'>
+                    <div class='row {$className}' onclick=\"window.location='http://localhost/ALec/attemptPoolQuestion/index/{$row['course_id']}' \">
                     ";
                 } else {
                     echo
                     "
-                    <div class='row {$className}' style='display: none'>
+                    <div class='row {$className}' style='display: none' onclick=\"window.location='http://localhost/ALec/attemptPoolQuestion/index/{$row['course_id']}' \">
                     ";
                 }
 

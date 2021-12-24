@@ -1,7 +1,6 @@
 $(document).ready(function () {
     setInterval(checkIconStatus, 3000);
 
-
     function checkIconStatus() {
         $.ajax({
             type: "GET",

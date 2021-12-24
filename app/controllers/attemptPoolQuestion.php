@@ -9,7 +9,7 @@ class AttemptPoolQuestion extends AlecFramework
         $this->attemptPoolQuestionModel = $this->model("attemptPoolQuestionModel");
     }
 
-    public function index($sessionId)
+    public function index($courseId)
     {
     }
 }
