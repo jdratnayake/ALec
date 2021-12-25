@@ -40,21 +40,24 @@
             <!-- If question available then display the question -->
             <?php
             if (!empty($data["sessionDetails"]["active_question_id"])) {
-                $type = $data["question"]["question_type"];
+                $question = $data["question"];
+                $type = $question["question_type"];
                 echo
                 "
+                <input type='hidden' id='total-time' value='{$question['total_duration']}'>
+                <input type='hidden' id='close-time' value='{$question['cancel_time']}'>
                 <div class='content'>
                 <div class='bar-div'>
-                    <div id='time-bar' class='time-bar' style='width: 100%'></div>
+                    <div id='time-bar' class='time-bar'></div>
                 </div>
                 <div class='time-div'>
-                    <p id='time-display'>60</p>
-                    <p> secs remaining</p>
+                    <p id='time-display'></p>
+                    <p> remaining</p>
                 </div>
 
                 <div class='questions-container'>
                     <span class='question'>
-                        {$data["question"]["question"]}
+                        {$question["question"]}
                     </span>
                 ";
 

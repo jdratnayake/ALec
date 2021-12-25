@@ -20,7 +20,7 @@ class AttemptPoolQuestionModel extends Database
 
     public function getQuestion($sessionId)
     {
-        $query = "SELECT question_no, question_type, question, duration FROM session INNER JOIN session_question ON active_question_id=question_no WHERE session.session_id='$sessionId'";
+        $query = "SELECT question_no, question_type, question, ADDTIME(published_time, duration) AS cancel_time, TIME_TO_SEC(duration) AS total_duration FROM session INNER JOIN session_question ON active_question_id=question_no WHERE session.session_id='$sessionId'";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result);
