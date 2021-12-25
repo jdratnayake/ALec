@@ -66,7 +66,7 @@
                     echo
                     "
                     <span class='answer'>
-                        <input type='radio' id='answer-1' name='answer'>
+                        <input type='radio' onclick='setAnswer(this)' id='answer-1' name='answer' value='{$row['choice_id']}'>
                         <label for='answer-1'>{$row['choice_name']}</label>
                     </span>
                     ";
@@ -77,7 +77,12 @@
                 </div>
 
                 <div class='button-container'>
-                    <button type='button' value='Create Session' class='save-btn'>Done</button>
+                    <form method='POST' action='http://localhost/ALec/displayPoll/index' id='poll-form'>
+                        <input type='hidden' id='question-id' name='question-id' value='{$question['question_no']}'>
+                        <input type='hidden' id='question-type' name='question-type' value='{$type}'>
+                        <input type='hidden' id='answer-id' name='answer-id' value=''>
+                        <button type='submit' value='Create Session' class='save-btn'>Done</button>
+                    </form>
                 </div>
                 </div>
                 ";
@@ -170,6 +175,7 @@
 
     <?php linkJS("timeBar"); ?>
 
+    <?php linkJS("attemptPoolQuestion"); ?>
 </body>
 
 </html>
