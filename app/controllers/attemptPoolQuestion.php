@@ -13,6 +13,8 @@ class AttemptPoolQuestion extends AlecFramework
     {
         $sessionId = $this->attemptPoolQuestionModel->getSessionId($courseId);
         $data["sessionDetails"] = $this->attemptPoolQuestionModel->getSessionDetails($sessionId);
+        $data["question"] = $this->attemptPoolQuestionModel->getQuestion($sessionId);
+        $data["answers"] = $this->attemptPoolQuestionModel->getAnswers($sessionId);
 
         $this->view("student/attemptPoolQuestionView", $data);
     }
