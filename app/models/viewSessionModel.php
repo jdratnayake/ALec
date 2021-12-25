@@ -23,10 +23,10 @@ class ViewSessionModel extends Database
             $query = "UPDATE session_question SET status='F' WHERE session_id='$sessionId'";
             mysqli_query($GLOBALS["db"], $query);
 
-            $query = "UPDATE session_question SET status='T' WHERE session_id='$sessionId' AND question_no='$questionId'";
+            $query = "UPDATE session_question SET status='T', published_time=NOW() WHERE session_id='$sessionId' AND question_no='$questionId'";
             mysqli_query($GLOBALS["db"], $query);
         } else if ($status == "F") {
-            $query = "UPDATE session_question SET status='F' WHERE session_id='$sessionId' AND question_no='$questionId'";
+            $query = "UPDATE session_question SET status='F', published_time=NULL WHERE session_id='$sessionId' AND question_no='$questionId'";
             mysqli_query($GLOBALS["db"], $query);
         }
     }
