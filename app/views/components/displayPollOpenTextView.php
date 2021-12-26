@@ -62,12 +62,20 @@
                 <label for="question">What was your dream job as a child?</label>
                 <input type="text" class="question" placeholder="Enter your answer here..." id="question">
             </div>
+
+            <div class="button-container">
+                <!--        Save Session Button-->
+                <button type="button" value="Create Session" class="save-btn">Done</button>
+            </div>
         </div>
 
-        <div class="button-container">
-            <!--        Save Session Button-->
-            <button type="button" value="Create Session" class="save-btn">Done</button>
+        <div class="content">
+            <div class="content-message">
+                <i class="fa fa-spinner" aria-hidden="true"></i>
+                No active polls to show
+            </div>
         </div>
+
     </div>
 </div>
 

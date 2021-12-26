@@ -46,13 +46,18 @@ $light_color: #FFF;
 
         img {
           width: 120px;
-          padding-bottom: 10px;
           cursor: pointer;
+          &:hover{
+            -webkit-transform: scale(1.1);
+            box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+            border-radius: 60px;
+          }
         }
 
         label {
           font-weight: 500;
           color: $main_color;
+          margin-top: 10px;
         }
       }
     }

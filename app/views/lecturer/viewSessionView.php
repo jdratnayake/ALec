@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    <input type="hidden" id="session-id" value="<?php echo $data["sessionData"]["session_id"]; ?>">
+
     <?php linkPhp("navigationBarLecturer"); ?>
 
     <!--    breadcrumb-->
@@ -28,58 +30,165 @@
 
     <div class="details-content">
         <div class="header-container">
-            <header>Session 01 - 2021/10/01
-                <i class="fa fa-circle" id="active-status" aria-hidden="true"></i>
+            <h2>
+                <?php echo $data["sessionData"]["course_name"]; ?>
+            </h2>
+            <header>
+                <?php echo $data["sessionData"]["session_name"]; ?>
+
+                <?php
+                if ($data["sessionData"]["status"] == "T") {
+                    echo "<i class='fa fa-circle' id='active-status' aria-hidden='true' style='display: block'></i>";
+                } else
+                    echo "<i class='fa fa-circle' id='active-status' aria-hidden='true' style='display: none'></i>";
+                ?>
             </header>
         </div>
         <div class="button-container">
-            <!--        Start Session Button-->
-            <button type="button" value="Start Session" class="main-btn" id="start-session" style="display: none">
-                <i class="fa fa-play" aria-hidden="true"></i>
-                Start Session
-            </button>
-            <!--        End Session Button-->
-            <button type="button" value="End Session" class="main-btn" id="end-session" style="display: block">
-                <i class="fa fa-stop" aria-hidden="true"></i>
-                End Session
-            </button>
+            <?php
+            if ($data["sessionData"]["status"] == "T") {
+                echo
+                "
+                <!--        End Session Button-->
+                <button type='button' value='End Session' class='main-btn' id='end-session' style='display: block'>
+                    <i class='fa fa-stop' aria-hidden='true'></i>
+                    End Session
+                </button>
+                <!--        Start Session Button-->
+                <button type='button' value='Start Session' class='main-btn' id='start-session' style='display: none'>
+                    <i class='fa fa-play' aria-hidden='true'></i>
+                    Start Session
+                </button>
+                ";
+            } else {
+                echo
+                "
+                <!--        End Session Button-->
+                <button type='button' value='End Session' class='main-btn' id='end-session' style='display: none'>
+                    <i class='fa fa-stop' aria-hidden='true'></i>
+                    End Session
+                </button>
+                <!--        Start Session Button-->
+                <button type='button' value='Start Session' class='main-btn' id='start-session' style='display: block'>
+                    <i class='fa fa-play' aria-hidden='true'></i>
+                    Start Session
+                </button>
+                ";
+            }
+            ?>
 
         </div>
         <div class="session-details-container">
-            <div class="sessions">
-                <span class="session-label">Quick Questions</span>
-                <!--        Add Quick Question Button-->
-                <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
-                <span class="session">
-                    What's the best piece of advice you've ever been given?
-                    <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true" style="display: none"></i>
-                    </span>
+            <!-- <div class="sessions">
+            <span class="session-label">Quick Questions</span>
+
+            <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+            <span class="session">
+                What's the best piece of advice you've ever been given?
+                <span>
+                    <i class="fa fa-eye publish-status" aria-hidden="true"></i>
+                    <i class="fa fa-eye-slash publish-status" aria-hidden="true" style="display: none"></i>
                 </span>
-                <span class="session">
-                    What's the best piece of advice?
-                    <span>
-                        <i class="fa fa-eye publish-status" aria-hidden="true" style="display: none"></i>
-                        <i class="fa fa-eye-slash publish-status" aria-hidden="true"></i>
-                    </span>
+            </span>
+            <span class='session'>
+                What's the best piece of advice?
+                <span>
+                    <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
+                    <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
                 </span>
-            </div>
+            </span>
+        </div> -->
+
             <div class="sessions">
                 <span class="session-label">Poll Questions</span>
                 <!--        Add Quick Question Button-->
-                <button type="button" value="Add" class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
-                <span class="session inactive">No questions to show</span>
+                <button type="button" value="Add" class="add-btn" onclick="location.href='<?php echo BASEURL . "/createPoll/index/{$data["sessionData"]["session_id"]}" ?>'">
+                    <i class="fa fa-plus" aria-hidden="true"></i>Add
+                </button>
+
+                <?php
+                if (mysqli_num_rows($data["questionDetails"]) == 0) {
+                    echo
+                    "
+                    <span class='session inactive'>No questions to show</span>
+                    ";
+                }
+
+                while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+                    echo
+                    "
+                    <span class='session'>
+                    <i class='fa fa-ellipsis-v' aria-hidden='true'></i>
+                    <span class='option-selection'>
+                        <div id='option'>
+                            <a href='http://localhost/ALec/editPoolQuestion/index/{$row['question_no']}'>
+                                <span>edit</span> 
+                            </a>
+                            <span>delete</span>
+                        </div>
+                    </span>
+                    <span class='question'>{$row['question']}</span>
+                        <span class='status-symbols'>
+                        <input type='hidden' value='{$row['status']}'>
+                        <input type='hidden' value='{$row['question_no']}'>
+                    ";
+
+                    if ($row["status"] == "T") {
+                        echo
+                        "
+                        <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                        <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
+                        ";
+                    } else {
+                        echo
+                        "
+                        <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
+                        <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
+                        ";
+                    }
+
+                    echo
+                    "
+                        </span>
+                    </span>
+                    ";
+                }
+                ?>
+
             </div>
             <div class="sessions">
-                <span class="session-label"><a href="#">Live Forum</a></span>
-                <span class="session">
-                    No questions to show
-                    <span class="vote">
-                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                        <span class="votes-count">2</span>
+                <span class="session-label link-label"><a href="#">Live Forum</a></span>
+
+                <?php
+                if (mysqli_num_rows($data["forumQuestionDetails"]) == 0) {
+                    echo
+                    "
+                    <span class='session inactive'>No questions to show</span>
+                    ";
+                }
+
+                while ($row = mysqli_fetch_assoc($data["forumQuestionDetails"])) {
+                    echo
+                    "
+                    <span class='session'>
+                        {$row['question']}
+                        <span class='vote'>
+                            <i class='fa fa-thumbs-o-up' aria-hidden='true'></i>
+                            <span class='votes-count'>{$row['points']}</span>
+                        </span>
                     </span>
+                    ";
+                }
+                ?>
+
+                <!-- <span class='session inactive'>No questions to show</span> -->
+                <!-- <span class="session">
+                No questions to show
+                <span class="vote">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    <span class="votes-count">2</span>
                 </span>
+            </span> -->
             </div>
         </div>
     </div>
@@ -93,6 +202,10 @@
     <?php linkJS("notification") ?>
 
     <?php linkJS("viewSession"); ?>
+
+    <?php linkJS("viewSessionQuestion"); ?>
+
+    <?php linkJS("viewSessionOptionSelection"); ?>
 
 </body>
 

@@ -12,7 +12,7 @@ class DisplaySessionsListModel extends Database
 
     public function getActiveSessions($userId)
     {
-        $query = "SELECT session_id, session_name FROM session WHERE lecturer_id='$userId' AND status='T' ORDER BY create_date DESC";
+        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='T' ORDER BY create_date DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
@@ -20,7 +20,7 @@ class DisplaySessionsListModel extends Database
 
     public function getNotActiveSessions($userId)
     {
-        $query = "SELECT session_id, session_name FROM session WHERE lecturer_id='$userId' AND status='F' ORDER BY create_date DESC";
+        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='F' ORDER BY create_date DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
@@ -36,5 +36,24 @@ class DisplaySessionsListModel extends Database
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result)["session_id"];
+    }
+
+    public function changeSessionStatus($sessionId, $status)
+    {
+        if ($status == "T") {
+            //Get course id
+            $query = "SELECT course_id FROM session WHERE session_id='$sessionId'";
+            $result = mysqli_query($GLOBALS["db"], $query);
+            $courseId = mysqli_fetch_assoc($result)["course_id"];
+
+            $query = "UPDATE session SET status='F' WHERE course_id='$courseId'";
+            mysqli_query($GLOBALS["db"], $query);
+
+            $query = "UPDATE session SET status='T' WHERE session_id='$sessionId'";
+            mysqli_query($GLOBALS["db"], $query);
+        } else if ($status == "F") {
+            $query = "UPDATE session SET status='F' WHERE session_id='$sessionId'";
+            mysqli_query($GLOBALS["db"], $query);
+        }
     }
 }

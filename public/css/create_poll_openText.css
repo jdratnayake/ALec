@@ -304,6 +304,7 @@ header {
   color: red;
   font-size: 80%;
   font-weight: normal;
+  margin-left: 20px;
 }
 
 .home-content-expand {
@@ -685,5 +686,12 @@ footer p {
   background-color: #1d3557;
   border: 2px solid #1d3557;
 }
+
+/*--------------------------EDIT POLL QUIZ VIEW STYLES - START-------------------------------*/
+.session input {
+  width: 100%;
+}
+
+/*--------------------------EDIT POLL QUIZ VIEW STYLES - END-------------------------------*/
 
 /*# sourceMappingURL=create_poll_openText.css.map */

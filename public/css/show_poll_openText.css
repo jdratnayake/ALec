@@ -304,6 +304,7 @@ header {
   color: red;
   font-size: 80%;
   font-weight: normal;
+  margin-left: 20px;
 }
 
 .home-content-expand {
@@ -608,7 +609,7 @@ footer p {
   padding: 1rem;
   width: 50%;
   height: fit-content;
-  margin: 5% auto;
+  margin: 2% auto;
 }
 .details-content .controller-container {
   background-color: rgba(2, 117, 216, 0.25);
@@ -616,12 +617,13 @@ footer p {
   margin: 20px 0;
   padding: 6px 12px;
   width: fit-content;
+  height: 38px;
   cursor: pointer;
 }
 .details-content .controller-container p {
-  position: fixed;
-  left: 605px;
-  top: 19%;
+  position: relative;
+  left: 133px;
+  bottom: 34px;
   background-color: red;
   color: white;
   height: 20px;
