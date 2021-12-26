@@ -19,7 +19,11 @@ class DisplayPoll extends AlecFramework
 
             if ($type == "mcq" or $type == "mcq-tf") {
                 $this->displayPollModel->insertMcqAttempt($userId, $questionId, $answer);
-                $this->view("student/showPollAnswerMcqView");
+
+                $data["question"] = $this->displayPollModel->getQuestion($questionId);
+                $data["answers"] = $this->displayPollModel->getAnswers($questionId);
+
+                $this->view("student/showPollAnswerMcqView", $data);
             } else if ($type == "open") {
                 $this->displayPollModel->insertOpenAttempt($userId, $questionId, $answer);
                 $this->view("student/showPollAnswerOpenTextView");

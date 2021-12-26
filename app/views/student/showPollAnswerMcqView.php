@@ -18,120 +18,105 @@
 
 <body>
 
-<?php
-//
-//if ($data["userType"] == "lec") {
-//    linkPhp("navigationBarLecturer");
-//} else if ($data["userType"] == "stu") {
-//    linkPhp("navigationBarStudent");
-//}
-//
-//?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-    <li><a href="#">Sessions</a></li>
-    <li><a href="#">New Poll Question</a></li>
-    <li><a href="#">Create MCQ Question</a></li>
-    <li>Preview Poll</li>
-</ul>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li><a href="#">Sessions</a></li>
+        <li><a href="#">New Poll Question</a></li>
+        <li><a href="#">Create MCQ Question</a></li>
+        <li>Preview Poll</li>
+    </ul>
 
-<div class="details-content">
+    <div class="details-content">
 
-    <div class="controller-container">
-        Go to Live Forum
-        <p>3</p>
-    </div>
+        <div class="controller-container">
+            Go to Live Forum
+            <p>3</p>
+        </div>
 
-    <div class="container">
-        <div class="heading"></div>
+        <div class="container">
+            <div class="heading"></div>
 
-        <div class="content">
-            <div class="questions-container">
-                <span class="participant-row">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    55
-                </span>
-                <span class="question">
-                    Which is not a property of a transaction?
-                </span>
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress pressed" style="width: 8%">Inclusion</div>
+            <div class="content">
+                <div class="questions-container">
+                    <span class="participant-row">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        55
+                    </span>
+                    <span class="question">
+                        Which is not a property of a transaction?
+                    </span>
+                    <div class="row">
+                        <div class="answer">
+                            <div class="answer-progress pressed" style="width: 8%">Inclusion</div>
+                        </div>
+                        8%
                     </div>
-                    8%
-                </div>
 
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress" style="width: 83%">Atomicity</div>
+                    <div class="row">
+                        <div class="answer">
+                            <div class="answer-progress" style="width: 83%">Atomicity</div>
+                        </div>
+                        83%
                     </div>
-                    83%
-                </div>
 
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress" style="width: 2%">Consistency</div>
+                    <div class="row">
+                        <div class="answer">
+                            <div class="answer-progress" style="width: 2%">Consistency</div>
+                        </div>
+                        2%
                     </div>
-                    2%
-                </div>
 
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress" style="width: 1%">Durability</div>
+                    <div class="row">
+                        <div class="answer">
+                            <div class="answer-progress" style="width: 1%">Durability</div>
+                        </div>
+                        1%
                     </div>
-                    1%
-                </div>
 
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress" style="width: 0">Durability</div>
+                    <div class="row">
+                        <div class="answer">
+                            <div class="answer-progress" style="width: 0">Durability</div>
+                        </div>
+                        0%
                     </div>
-                    0%
+
                 </div>
+            </div>
+
+            <div class="button-container">
+                <!--        Save Session Button-->
+                <!--            --><?php
+                                    //
+                                    //            if ($data["userType"] == "lec") {
+                                    //                
+                                    ?>
+                <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
+                <!--                --><?php
+                                        //            } else if ($data["userType"] == "stu") {
+                                        //                
+                                        ?>
+                <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
+                <!--                --><?php
+                                        //            }
+                                        //
+                                        //            
+                                        ?>
 
             </div>
         </div>
-
-        <div class="button-container">
-            <!--        Save Session Button-->
-            <!--            --><?php
-            //
-            //            if ($data["userType"] == "lec") {
-            //                ?>
-            <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
-            <!--                --><?php
-            //            } else if ($data["userType"] == "stu") {
-            //                ?>
-            <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
-            <!--                --><?php
-            //            }
-            //
-            //            ?>
-
-        </div>
     </div>
-</div>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-<?php linkPhp("notificationView"); ?>
+    <?php linkPhp("notificationView"); ?>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-<?php linkJS("notification") ?>
+    <?php linkJS("notification") ?>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
