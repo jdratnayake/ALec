@@ -31,6 +31,9 @@ class ViewSessionModel extends Database
         } else if ($status == "F") {
             $query = "UPDATE session_question SET status='F', published_time=NULL WHERE session_id='$sessionId' AND question_no='$questionId'";
             mysqli_query($GLOBALS["db"], $query);
+
+            //Delete the schedule
+            $this->dropSchedule($sessionId, $questionId);
         }
     }
 
@@ -49,6 +52,12 @@ class ViewSessionModel extends Database
         DO
         UPDATE session_question SET status='F' WHERE question_no='$questionId'
         ";
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function dropSchedule($sessionId, $questionId)
+    {
+        $query = "DROP EVENT IF EXISTS session_question_event_{$sessionId}_{$questionId}";
         mysqli_query($GLOBALS["db"], $query);
     }
 
