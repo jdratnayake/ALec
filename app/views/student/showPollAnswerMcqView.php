@@ -1,3 +1,9 @@
+<?php
+$courseId = $data["bread"]["sessionDetails"]["course_id"];
+$sessionName = $data["bread"]["sessionDetails"]["session_name"];
+$questionCount = $data["question"]["question_count"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,9 +29,14 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-        <li><a href="#">Sessions</a></li>
-        <li><a href="#">New Poll Question</a></li>
-        <li><a href="#">Create MCQ Question</a></li>
+
+        <?php
+        echo
+        "
+        <li><a href='http://localhost/ALec/attemptPoolQuestion/index/{$courseId}'>$sessionName</a></li>
+        ";
+        ?>
+
         <li>Preview Poll</li>
     </ul>
 
@@ -41,47 +52,54 @@
 
             <div class="content">
                 <div class="questions-container">
-                    <span class="participant-row">
-                        <i class="fa fa-users" aria-hidden="true"></i>
+                    <!-- <span class='participant-row'>
+                        <i class='fa fa-users' aria-hidden='true'></i>
                         55
                     </span>
-                    <span class="question">
+                    <span class='question'>
                         Which is not a property of a transaction?
-                    </span>
-                    <div class="row">
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 8%">Inclusion</div>
+                    </span> -->
+
+                    <!-- <div class='row'>
+                        <div class='answer'>
+                            <div class='answer-progress pressed' style='width: 8%'>Inclusion</div>
                         </div>
                         8%
-                    </div>
+                    </div> -->
 
-                    <div class="row">
-                        <div class="answer">
-                            <div class="answer-progress" style="width: 83%">Atomicity</div>
-                        </div>
-                        83%
-                    </div>
+                    <!-- Echo question -->
+                    <?php
+                    echo
+                    "
+                        <span class='participant-row'>
+                            <i class='fa fa-users' aria-hidden='true'></i>
+                            {$data["question"]["question_count"]}
+                        </span>
+                        <span class='question'>
+                            {$data["question"]["question"]}
+                        </span>
+                    ";
+                    ?>
 
-                    <div class="row">
-                        <div class="answer">
-                            <div class="answer-progress" style="width: 2%">Consistency</div>
-                        </div>
-                        2%
-                    </div>
+                    <!-- Echo answers -->
+                    <?php
+                    while ($row = mysqli_fetch_assoc($data["answers"])) {
+                        $precentage = $row["answer_count"] * 100 / $questionCount;
+                        $precentage = round($precentage, 2);
 
-                    <div class="row">
-                        <div class="answer">
-                            <div class="answer-progress" style="width: 1%">Durability</div>
+                        echo
+                        "
+                        <div class='row'>
+                            <div class='answer'>
+                                <div class='answer-progress pressed' style='width: {$precentage}%'>
+                                    {$row["choice_name"]}
+                                </div>
+                            </div>
+                            {$precentage}%
                         </div>
-                        1%
-                    </div>
-
-                    <div class="row">
-                        <div class="answer">
-                            <div class="answer-progress" style="width: 0">Durability</div>
-                        </div>
-                        0%
-                    </div>
+                        ";
+                    }
+                    ?>
 
                 </div>
             </div>

@@ -1,7 +1,6 @@
 const answerTag = document.getElementById("answer-id");
 const form = document.getElementById("poll-form");
 
-
 function setAnswer(inputTag) {
     answerTag.value = inputTag.value
 }

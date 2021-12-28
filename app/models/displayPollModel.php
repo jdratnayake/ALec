@@ -15,17 +15,25 @@ class DisplayPollModel extends Database
         mysqli_query($GLOBALS["db"], $query);
     }
 
-    public function getQuestion($questionId)
+    public function getCourseId($questionId)
     {
-        $query = "SELECT question_no, question_type, question FROM session_question WHERE question_no='$questionId'";
+        $query = "SELECT course_id, session_name FROM session INNER JOIN session_question ON session.session_id=session_question.session_id WHERE question_no='$questionId'";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result);
     }
 
-    public function getAnswers($questionId)
+    public function getQuestion($questionId)
     {
-        $query = "SELECT choice_id, choice_name FROM session_answer WHERE question_no='$questionId' ORDER BY choice_id";
+        $query = "SELECT question_no, question_type, question, question_count FROM session_question WHERE question_no='$questionId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function getMcqAnswers($questionId)
+    {
+        $query = "SELECT choice_id, choice_name, answer_count FROM session_answer WHERE question_no='$questionId' ORDER BY choice_id";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return $result;

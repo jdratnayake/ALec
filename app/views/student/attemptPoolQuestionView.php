@@ -42,73 +42,85 @@
             if (!empty($data["sessionDetails"]["active_question_id"])) {
                 $question = $data["question"];
                 $type = $question["question_type"];
+
                 echo
                 "
                 <input type='hidden' id='total-time' value='{$question['total_duration']}'>
                 <input type='hidden' id='close-time' value='{$question['cancel_time']}'>
                 <div class='content'>
-                <div class='bar-div'>
-                    <div id='time-bar' class='time-bar'></div>
-                </div>
-                <div class='time-div'>
-                    <p id='time-display'></p>
-                    <p> remaining</p>
-                </div>
+                    <div class='bar-div'>
+                        <div id='time-bar' class='time-bar'></div>
+                    </div>
+                    <div class='time-div'>
+                        <p id='time-display'></p>
+                        <p> remaining</p>
+                    </div>
 
-                <div class='questions-container'>
-                    <span class='question'>
-                        {$question["question"]}
-                    </span>
+                    <div class='questions-container'>
                 ";
 
-
-                while ($row = mysqli_fetch_assoc($data["answers"])) {
+                if ($type == "mcq" or $type == "mcq-tf") {
                     echo
                     "
-                    <span class='answer'>
-                        <input type='radio' onclick='setAnswer(this)' id='answer-1' name='answer' value='{$row['choice_id']}'>
-                        <label for='answer-1'>{$row['choice_name']}</label>
-                    </span>
+                        <span class='question'>
+                            {$question["question"]}
+                        </span>
+                    ";
+
+                    while ($row = mysqli_fetch_assoc($data["answers"])) {
+                        echo
+                        "
+                        <span class='answer'>
+                            <input type='radio' onclick='setAnswer(this)' id='answer-1' name='answer' value='{$row['choice_id']}'>
+                            <label for='answer-1'>{$row['choice_name']}</label>
+                        </span>
+                        ";
+                    }
+                } else if ($type == "open") {
+                    echo
+                    "
+                    <label for='question'>{$question["question"]}</label>
+                    <input type='text' class='question' placeholder='Enter your answer here...' id='question' onclick='setAnswer(this)'>
                     ";
                 }
 
                 echo
                 "
-                </div>
+                    </div>
 
-                <div class='button-container'>
-                    <form method='POST' action='http://localhost/ALec/displayPoll/index' id='poll-form'>
-                        <input type='hidden' id='question-id' name='question-id' value='{$question['question_no']}'>
-                        <input type='hidden' id='question-type' name='question-type' value='{$type}'>
-                        <input type='hidden' id='answer-id' name='answer-id' value=''>
-                        <button type='submit' value='Create Session' class='save-btn'>Done</button>
-                    </form>
-                </div>
+                    <div class='button-container'>
+                        <form method='POST' action='http://localhost/ALec/displayPoll/index' id='poll-form'>
+                            <input type='hidden' id='question-id' name='question-id' value='{$question['question_no']}'>
+                            <input type='hidden' id='question-type' name='question-type' value='{$type}'>
+                            <input type='hidden' id='answer-id' name='answer-id' value=''>
+                            <button type='submit' value='Create Session' class='save-btn'>Done</button>
+                        </form>
+                    </div>
                 </div>
                 ";
-                if ($type == "mcq" or $type == "mcq-tf") {
-                } else if ($type == "open") {
-                }
+
 
                 echo
                 "
                 <div class='content' id='session-question-status' style='display: none'>
-                ";
-            } else {
-                echo
-                "
-                <div class='content' id='session-question-status'>
-                ";
-            }
-
-            echo
-            "
                     <div class='content-message'>
                         <i class='fa fa-spinner' aria-hidden='true'></i>
                         No active polls to show
                     </div>
                 </div>
-            ";
+                ";
+            } else {
+                echo
+                "
+                <div class='content' id='session-question-status'>
+                    <div class='content-message'>
+                        <i class='fa fa-spinner' aria-hidden='true'></i>
+                        No active polls to show
+                    </div>
+                </div>
+                ";
+            }
+
             ?>
 
             <!-- <div class='content'>
