@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const sessionId = $("#js-session-id").val();
+    const sessionId = $("#new-session-id").val();
 
     setInterval(getActiveQuestionId, 3000);
 
@@ -16,19 +16,19 @@ $(document).ready(function () {
     }
 
     function check(newQuestionId) {
-        const questionId = $("#js-question-id").val();
+        let questionId = $("#new-question-id").val();
 
-        // console.log(newQuestionId + " " + questionId);
-        if (newQuestionId == "") {
-            deleteExistQuestion();
-        }
-        else if (questionId != newQuestionId) {
+        if (questionId != newQuestionId) {
             //change current question id
-            $("#js-question-id").val(newQuestionId);
+            $("#new-question-id").val(newQuestionId);
 
+            autoSubmit();
             deleteExistQuestion();
-            $("#session-question-status").remove();
-            renderQuestion();
+
+            if (newQuestionId != "") {
+                $("#session-question-status").remove();
+                renderQuestion();
+            }
         }
     }
 
@@ -38,6 +38,16 @@ $(document).ready(function () {
         $("#js-question-id").val("");
         $("#question-content").remove();
         $("#session-question-status").show();
+    }
+
+    function autoSubmit() {
+        if ($("#question-type").val() == "open") {
+            $("#answer-id").val($("#open-question").val());
+        }
+
+        if ($("#answer-id").val() != "") {
+            $("#poll-form").submit();
+        }
     }
 
     function renderQuestion() {

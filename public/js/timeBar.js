@@ -1,13 +1,12 @@
-const closeTime = document.getElementById("close-time").value;
-const totalTime = document.getElementById("total-time").value;
-const timeBar = document.getElementById("time-bar");
-
-var countDownDate = new Date(closeTime).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(countDownFunction, 1000);
 
 function countDownFunction() {
+    const closeTime = document.getElementById("close-time").value;
+    const totalTime = document.getElementById("total-time").value;
+    var countDownDate = new Date(closeTime).getTime();
+
     // Get today's date and time
     var now = new Date().getTime();
 
@@ -18,8 +17,8 @@ function countDownFunction() {
     if (distance < 0) {
         document.getElementById("time-bar").style.width = '0%';
         document.getElementById("time-display").innerHTML = "0h 0m 0s";
-        clearInterval(x);
-        // document.getElementById("form").submit();
+        // clearInterval(x);
+        // document.getElementById("poll-form").submit();
     } else {
         // Time calculations for days, hours, minutes and seconds
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));

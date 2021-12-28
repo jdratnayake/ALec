@@ -29,8 +29,8 @@
     <div class="details-content">
 
         <!-- Details needs for realtime updates -->
-        <input type="hidden" id="js-session-id" value="<?php echo $data["sessionDetails"]["session_id"]; ?>">
-        <input type="hidden" id="js-question-id" value="<?php echo $data["sessionDetails"]["active_question_id"]; ?>">
+        <input type="hidden" name="js-session-id" id="new-session-id" value="<?php echo $data["sessionDetails"]["session_id"]; ?>">
+        <input type="hidden" name="new-question-id" id="new-question-id" value="<?php echo $data["sessionDetails"]["active_question_id"]; ?>">
 
         <div class="controller-container">
             Go to Live Forum

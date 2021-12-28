@@ -6,6 +6,7 @@ function setAnswer(inputTag) {
     answerTag.value = inputTag.value
 }
 
+
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
