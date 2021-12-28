@@ -80,7 +80,7 @@
                     echo
                     "
                     <label for='question'>{$question["question"]}</label>
-                    <input type='text' class='question' placeholder='Enter your answer here...' id='question' onclick='setAnswer(this)'>
+                    <input type='text' class='question' placeholder='Enter your answer here...' id='open-question'>
                     ";
                 }
 
