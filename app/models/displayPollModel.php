@@ -38,4 +38,12 @@ class DisplayPollModel extends Database
 
         return $result;
     }
+
+    public function getOpenAnswers($questionId)
+    {
+        $query = "SELECT answer, COUNT(answer) AS answer_count FROM session_open_attempt WHERE question_no='$questionId' GROUP BY answer ORDER BY answer_count, answer";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
+    }
 }

@@ -44,7 +44,7 @@ class ViewSessionModel extends Database
         //Set schedule
         $query =
             "
-        CREATE EVENT session_question_event_{$sessionId}
+        CREATE EVENT session_question_event_{$sessionId}_{$questionId}
         ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL $duration SECOND
         DO
         UPDATE session_question SET status='F' WHERE question_no='$questionId'

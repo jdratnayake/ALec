@@ -1,3 +1,9 @@
+<?php
+$courseId = $data["bread"]["sessionDetails"]["course_id"];
+$sessionName = $data["bread"]["sessionDetails"]["session_name"];
+$questionCount = $data["question"]["question_count"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,210 +24,115 @@
 
 <body>
 
-<?php linkPhp("navigationBarStudent"); ?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
-<?php
-//
-//    if ($data["userType"] == "lec") {
-//        linkPhp("navigationBarLecturer");
-//    } else if ($data["userType"] == "stu") {
-//        linkPhp("navigationBarStudent");
-//    }
-//
-//?>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-    <li><a href="#">Sessions</a></li>
-    <li><a href="#">New Poll Question</a></li>
-    <li><a href="#">Create MCQ Question</a></li>
-    <li>Preview Poll</li>
-</ul>
+        <?php
+        echo
+        "
+        <li><a href='http://localhost/ALec/attemptPoolQuestion/index/{$courseId}'>$sessionName</a></li>
+        ";
+        ?>
 
-<div class="details-content">
+        <li>Preview Poll</li>
+    </ul>
 
-    <div class="controller-container">
-        Go to Live Forum
-        <p>3</p>
-    </div>
+    <div class="details-content">
 
-    <div class="container">
-        <div class="heading"></div>
+        <div class="controller-container">
+            Go to Live Forum
+            <p>3</p>
+        </div>
 
-        <div class="content">
-            <div class="questions-container">
-                <span class="participant-row">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    55
-                </span>
-                <span class="question">
-                    What was your dream job as a child?
-                </span>
-                <div class="answer-container">
+        <div class="container">
+            <div class="heading"></div>
 
-                    <div class="row">
-                        <div class="answer-label">DOCTOR</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 90%"></div>
-                        </div>
-                        <div class="percentage">90%</div>
-                    </div>
-                    <div class="row">
-                        <div class="answer-label">DOCTOR</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 80%"></div>
-                        </div>
-                        <div class="percentage">80%</div>
-                    </div>
+            <div class="content">
+                <div class="questions-container">
+                    <!-- <span class="participant-row">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        55
+                    </span>
+                    <span class="question">
+                        What was your dream job as a child?
+                    </span> -->
 
-                    <div class="row">
-                        <div class="answer-label">SOFTWARE ENGINEER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 70%"></div>
-                        </div>
-                        <div class="percentage">70%</div>
-                    </div>
-                    <div class="row">
-                        <div class="answer-label">SOFTWARE ENGINEER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 70%"></div>
-                        </div>
-                        <div class="percentage">70%</div>
-                    </div>
+                    <!-- Echo question -->
+                    <?php
+                    echo
+                    "
+                        <span class='participant-row'>
+                            <i class='fa fa-users' aria-hidden='true'></i>
+                            {$data["question"]["question_count"]}
+                        </span>
+                        <span class='question'>
+                            {$data["question"]["question"]}
+                        </span>
+                    ";
+                    ?>
 
-                    <div class="row">
-                        <div class="answer-label">LAWYER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 65%"></div>
-                        </div>
-                        <div class="percentage">65%</div>
-                    </div>
-                    <div class="row">
-                        <div class="answer-label">LAWYER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 65%"></div>
-                        </div>
-                        <div class="percentage">65%</div>
-                    </div>
+                    <div class="answer-container">
 
-                    <div class="row">
-                        <div class="answer-label">PILOT</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 60%"></div>
-                        </div>
-                        <div class="percentage">60%</div>
-                    </div>
-                    <div class="row">
-                        <div class="answer-label">PILOT</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 60%"></div>
-                        </div>
-                        <div class="percentage">60%</div>
-                    </div>
+                        <?php
 
-                    <div class="row">
-                        <div class="answer-label">ENGINE DRIVER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 15%"></div>
-                        </div>
-                        <div class="percentage">15%</div>
-                    </div>
-                    <div class="row">
-                        <div class="answer-label">ENGINE DRIVER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 15%"></div>
-                        </div>
-                        <div class="percentage">15%</div>
-                    </div>
+                        while ($row = mysqli_fetch_assoc($data["answers"])) {
+                            $precentage = $row["answer_count"] * 100 / $questionCount;
+                            $precentage = round($precentage, 2);
 
-                    <div class="row">
-                        <div class="answer-label">AIRCRAFT ENGINEER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 10%"></div>
-                        </div>
-                        <div class="percentage">10%</div>
-                    </div>
-                    <div class="row">
-                        <div class="answer-label">AIRCRAFT ENGINEER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 10%"></div>
-                        </div>
-                        <div class="percentage">10%</div>
-                    </div>
+                            echo
+                            "
+                            <div class='row'>
+                                <div class='answer-label'>{$row["answer"]}</div>
+                                <div class='answer'>
+                                    <div class='answer-progress pressed' style='width: {$precentage}%'></div>
+                                </div>
+                                <div class='percentage'>{$precentage}%</div>
+                            </div>
+                            ";
+                        }
 
-                    <div class="row">
-                        <div class="answer-label">DANCER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 8%"></div>
-                        </div>
-                        <div class="percentage">8%</div>
-                    </div>
-                    <div class="row">
-                        <div class="answer-label">DANCER</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 8%"></div>
-                        </div>
-                        <div class="percentage">8%</div>
-                    </div>
+                        ?>
 
-                    <div class="row">
-                        <div class="answer-label">POET</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 2%"></div>
-                        </div>
-                        <div class="percentage">2%</div>
-                    </div>
-                    <div class="row">
-                        <div class="answer-label">POET</div>
-                        <div class="answer">
-                            <div class="answer-progress pressed" style="width: 2%"></div>
-                        </div>
-                        <div class="percentage">2%</div>
+
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="button-container">
-            <!--        Save Session Button-->
-            <button type="button" value="Create Session" class="save-btn">Done</button>
-            <!--            --><?php
-            //
-            //            if ($data["userType"] == "lec") {
-            //                ?>
-            <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
-            <!--                --><?php
-            //            } else if ($data["userType"] == "stu") {
-            //                ?>
-            <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
-            <!--                --><?php
-            //            }
-            //
-            //            ?>
+            <div class="button-container">
+                <!--        Save Session Button-->
+                <button type="button" value="Create Session" class="save-btn">Done</button>
+                <!--            --><?php
+                                    //
+                                    //            if ($data["userType"] == "lec") {
+                                    //                
+                                    ?>
+                <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
+                <!--                --><?php
+                                        //            } else if ($data["userType"] == "stu") {
+                                        //                
+                                        ?>
+                <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
+                <!--                --><?php
+                                        //            }
+                                        //
+                                        //            
+                                        ?>
 
+            </div>
         </div>
     </div>
-</div>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-<?php linkPhp("notificationView"); ?>
+    <?php linkPhp("notificationView"); ?>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-<?php linkJS("notification") ?>
+    <?php linkJS("notification") ?>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
