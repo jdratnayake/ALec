@@ -28,6 +28,10 @@
 
     <div class="details-content">
 
+        <!-- Details needs for realtime updates -->
+        <input type="hidden" id="js-session-id" value="<?php echo $data["sessionDetails"]["session_id"]; ?>">
+        <input type="hidden" id="js-question-id" value="<?php echo $data["sessionDetails"]["active_question_id"]; ?>">
+
         <div class="controller-container">
             Go to Live Forum
             <p>3</p>
@@ -45,9 +49,10 @@
 
                 echo
                 "
-                <input type='hidden' id='total-time' value='{$question['total_duration']}'>
-                <input type='hidden' id='close-time' value='{$question['cancel_time']}'>
-                <div class='content'>
+                <div class='content' id='question-content'>
+                    <input type='hidden' id='total-time' value='{$question['total_duration']}'>
+                    <input type='hidden' id='close-time' value='{$question['cancel_time']}'>
+
                     <div class='bar-div'>
                         <div id='time-bar' class='time-bar'></div>
                     </div>
@@ -123,57 +128,6 @@
 
             ?>
 
-            <!-- <div class='content'>
-                <div class='bar-div'>
-                    <div id='time-bar' class='time-bar' style='width: 100%'></div>
-                </div>
-                <div class='time-div'>
-                    <p id='time-display'>60</p>
-                    <p> secs remaining</p>
-                </div>
-
-                <div class='questions-container'>
-                    <span class='question'>
-                        Which is not a property of a transaction?
-                    </span>
-                    <span class='answer'>
-                        <input type='radio' id='answer-1' name='answer'>
-                        <label for='answer-1'>Atomicity</label>
-                    </span>
-                    <span class='answer'>
-                        <input type='radio' id='answer-2' name='answer'>
-                        <label for='answer-2'>Inclusion</label>
-                    </span>
-                    <span class='answer'>
-                        <input type='radio' id='answer-3' name='answer'>
-                        <label for='answer-3'>Consistency</label>
-                    </span>
-                </div>
-
-                <div class='button-container'>
-                    <button type='button' value='Create Session' class='save-btn'>Done</button>
-                </div>
-            </div> -->
-
-            <!-- <div class='content'>
-                <div class='bar-div'>
-                    <div id='time-bar' class='time-bar' style='width: 100%'></div>
-                </div>
-                <div class='time-div'>
-                    <p id='time-display'>60</p>
-                    <p> secs remaining</p>
-                </div>
-
-                <div class='questions-container'>
-                    <label for='question'>What was your dream job as a child?</label>
-                    <input type='text' class='question' placeholder='Enter your answer here...' id='question'>
-                </div>
-
-                <div class='button-container'>
-                    <button type='button' value='Create Session' class='save-btn'>Done</button>
-                </div>
-            </div> -->
-
         </div>
     </div>
 
@@ -188,6 +142,9 @@
     <?php linkJS("timeBar"); ?>
 
     <?php linkJS("attemptPoolQuestion"); ?>
+
+    <?php linkJS("attemptPoolQuestionValidation"); ?>
+
 </body>
 
 </html>

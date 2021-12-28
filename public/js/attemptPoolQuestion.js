@@ -1,19 +1,54 @@
-const answerTag = document.getElementById("answer-id");
-const typeTag = document.getElementById("question-type");
-const form = document.getElementById("poll-form");
+$(document).ready(function () {
+    const sessionId = $("#js-session-id").val();
 
-function setAnswer(inputTag) {
-    answerTag.value = inputTag.value
-}
+    setInterval(getActiveQuestionId, 3000);
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
+    function getActiveQuestionId() {
+        $.ajax({
+            type: "GET",
 
-    if (typeTag.value == "open") {
-        answerTag.value = document.getElementById("open-question").value
+            url: "http://localhost/ALec/attemptPoolQuestion/getActiveQuestionId/" + sessionId,
+            dataType: "html",
+            success: function (response) {
+                check(response);
+            }
+        })
     }
 
-    if (answerTag.value != "") {
-        form.submit();
+    function check(newQuestionId) {
+        const questionId = $("#js-question-id").val();
+
+        // console.log(newQuestionId + " " + questionId);
+        if (newQuestionId == "") {
+            deleteExistQuestion();
+        }
+        else if (questionId != newQuestionId) {
+            //change current question id
+            $("#js-question-id").val(newQuestionId);
+
+            deleteExistQuestion();
+            $("#session-question-status").remove();
+            renderQuestion();
+        }
+    }
+
+
+
+    function deleteExistQuestion() {
+        $("#js-question-id").val("");
+        $("#question-content").remove();
+        $("#session-question-status").show();
+    }
+
+    function renderQuestion() {
+        $.ajax({
+            type: "GET",
+
+            url: "http://localhost/ALec/attemptPoolQuestion/getActiveQuestion/" + sessionId,
+            dataType: "html",
+            success: function (response) {
+                $(response).insertAfter(".heading");
+            }
+        })
     }
 });
