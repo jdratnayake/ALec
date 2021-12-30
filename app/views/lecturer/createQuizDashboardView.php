@@ -97,9 +97,9 @@
     <?php linkPhp("footer"); ?>
 
 
-    <?php linkJS("create_quiz"); ?>
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
     <?php linkJS("notification") ?>
+    <?php linkJS("create_quiz"); ?>
     <?php linkJS("createQuizTopic"); ?>
     <?php linkJS("timePickerQuiz"); ?>
     <?php linkJS("createQuizValidation"); ?>

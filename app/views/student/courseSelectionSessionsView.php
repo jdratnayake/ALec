@@ -36,26 +36,22 @@
             while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
                 $className = "course-id-{$row['course_id']}";
 
-                echo
-                "
-                <div class='row {$className}'>
-                    {$row['course_name']}
-                ";
-
                 if (!empty($row['active_session_id'])) {
                     echo
                     "
-                    <i class='fa fa-circle' aria-hidden='true'></i>
+                    <div class='row {$className}' onclick=\"window.location='http://localhost/ALec/attemptPoolQuestion/index/{$row['course_id']}' \">
                     ";
                 } else {
                     echo
                     "
-                    <i class='fa fa-circle' aria-hidden='true' style='display: none'></i>
+                    <div class='row {$className}' style='display: none' onclick=\"window.location='http://localhost/ALec/attemptPoolQuestion/index/{$row['course_id']}' \">
                     ";
                 }
 
                 echo
                 "
+                    {$row['course_name']}
+                    <i class='fa fa-circle' aria-hidden='true'></i>
                 </div>
                 ";
             }
