@@ -1,0 +1,21 @@
+Admin
+
+1. displayAllBadges
+2. displayCourseBadges
+
+Lecturer
+
+1. viewRespondents
+
+Components
+
+1. displayPollMcqView
+2. displayPollOpenTextView
+3. errorMessage
+4. sessionLiveForum
+5. showPollAnswer-mcq
+6. showPollAnswer-openText
+
+All
+
+1. leaderboard
