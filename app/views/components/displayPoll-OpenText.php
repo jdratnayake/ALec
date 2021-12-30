@@ -69,7 +69,7 @@
             </div>
         </div>
 
-        <div class="content">
+        <div class="content" style="display: none">
             <div class="content-message">
                 <i class="fa fa-spinner" aria-hidden="true"></i>
                 No active polls to show

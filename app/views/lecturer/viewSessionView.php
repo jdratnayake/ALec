@@ -76,6 +76,11 @@
                 ";
         }
         ?>
+        <!--        Delete Session Button-->
+        <button type='button' value='Delete Session' class='main-btn dlt-btn' id='delete-session' style='display: block'>
+            <i class='fa fa-trash' aria-hidden='true'></i>
+            Delete Session
+        </button>
 
     </div>
     <div class="session-details-container">
