@@ -32,7 +32,7 @@
         <input type="hidden" name="js-session-id" id="new-session-id" value="<?php echo $data["sessionDetails"]["session_id"]; ?>">
         <input type="hidden" name="new-question-id" id="new-question-id" value="<?php echo $data["sessionDetails"]["active_question_id"]; ?>">
 
-        <div class="controller-container">
+        <div class="controller-container" onclick="window.location='<?php echo BASEURL . '/sessionLiveForumStudent/index/' . $data['sessionDetails']['session_id']; ?>' ">
             Go to Live Forum
             <p>3</p>
         </div>
