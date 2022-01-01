@@ -1,20 +1,24 @@
-const answerTag = document.getElementById("answer-id");
-const typeTag = document.getElementById("question-type");
-const form = document.getElementById("poll-form");
+let setAnswer;
 
-function setAnswer(inputTag) {
-    answerTag.value = inputTag.value
-}
+$(document).ready(function () {
+    document.addEventListener('submit', function (e) {
+        console.log("Hi");
 
+        const type = $("#question-type").val();
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
+        if (type == "open") {
+            const answer = $("#open-question").val();
+            $("#answer-id").val(answer);
+        }
 
-    if (typeTag.value == "open") {
-        answerTag.value = document.getElementById("open-question").value
-    }
+        if ($("#answer-id").val() != "") {
+            $(e).submit()
+        }
+    });
 
-    if (answerTag.value != "") {
-        form.submit();
+    setAnswer = function (answerTag) {
+        const answerId = $(answerTag).val();
+
+        $("#answer-id").val(answerId);
     }
 });
