@@ -127,14 +127,15 @@
                 }
 
                 while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+                    $questionLink = "'" . "viewSession/deleteSessionQuestion/" . $data["sessionData"]["session_id"] . "/" . $row['question_no'] . "'";
+
                     echo
                     "
                     <span class='session'>
                     <i class='fa fa-ellipsis-v' aria-hidden='true'></i>
                     <span class='option-selection'>
                         <div id='option'>
-                            <span>edit</span>
-                            <span>delete</span>
+                            <span onclick=\"deleteFunction($questionLink)\">Delete</span>
                         </div>
                     </span>
                     <span class='question'>{$row['question']}</span>

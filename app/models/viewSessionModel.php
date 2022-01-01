@@ -81,4 +81,11 @@ class ViewSessionModel extends Database
 
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function deleteSessionQuestion($questionId)
+    {
+        $query = "DELETE FROM session_question WHERE question_no='$questionId'";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }

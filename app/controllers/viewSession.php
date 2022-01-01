@@ -34,4 +34,10 @@ class ViewSession extends AlecFramework
         $this->viewSessionModel->deleteSession($sessionId);
         $this->redirect("displaySessionsList/index");
     }
+
+    public function deleteSessionQuestion($sessionId, $questionId)
+    {
+        $this->viewSessionModel->deleteSessionQuestion($questionId);
+        $this->redirect("viewSession/index/{$sessionId}");
+    }
 }
