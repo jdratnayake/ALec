@@ -28,4 +28,10 @@ class ViewSession extends AlecFramework
     {
         $this->viewSessionModel->setQuestionStatus($sessionId, $questionId, $status);
     }
+
+    public function deleteSession($sessionId)
+    {
+        $this->viewSessionModel->deleteSession($sessionId);
+        $this->redirect("displaySessionsList/index");
+    }
 }

@@ -11,6 +11,8 @@
     <!-- CSS File HOME-->
     <?php linkCSS("view_session"); ?>
 
+    <?php linkCSS("success_message"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
 
@@ -77,7 +79,12 @@
             }
             ?>
             <!--        Delete Session Button-->
-            <button type='button' value='Delete Session' class='main-btn dlt-btn' id='delete-session' style='display: block'>
+
+            <?php
+            $link = "'" . "viewSession/deleteSession/" . $data["sessionData"]["session_id"] . "'";
+            ?>
+
+            <button type='button' value='Delete Session' class='main-btn dlt-btn' id='delete-session' style='display: block' <?php echo 'onclick="deleteFunction(' . $link . ')"'; ?>>
                 <i class='fa fa-trash' aria-hidden='true'></i>
                 Delete Session
             </button>
@@ -209,6 +216,8 @@
     <?php linkJS("viewSessionQuestion"); ?>
 
     <?php linkJS("viewSessionOptionSelection"); ?>
+
+    <?php linkJS("deleteMessage"); ?>
 
 </body>
 
