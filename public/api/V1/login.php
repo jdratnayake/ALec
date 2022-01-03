@@ -15,7 +15,7 @@
 			echo "No Access";
 		}
 		else{
-			echo "Success,".$row['user_id'].",".$row['user_type'];
+			echo "Success,".$row['user_id'].",".$row['user_type'].",".$row['status'];
 		}
 	}
 	else{
