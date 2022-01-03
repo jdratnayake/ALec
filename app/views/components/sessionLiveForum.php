@@ -36,37 +36,57 @@
     <div class="header-container">
         <header>Live Forum</header>
     </div>
-    <div class="questions">
+    <div class="questions-container">
         <div class="question">
-            What's the best piece of advice you've ever been given?
+            <span class="text">
+                What's the best piece of advice you've ever been given?
+                <span class="name">Kamalini Anagarasa</span>
+                <span class="name">1.30 pm</span>
+            </span>
             <span class="vote">
                     <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                     <span class="votes-count">8</span>
             </span>
         </div>
         <div class="question">
-            What’s your favorite flower or plant?
+            <span class="text">
+                What’s your favorite flower or plant?
+                <span class="name">Janitha Ratnayake</span>
+                <span class="name">1.28 pm</span>
+            </span>
             <span class="vote">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                 <span class="votes-count">6</span>
             </span>
         </div>
         <div class="question">
-            What did you eat for breakfast?
+            <span class="text">
+                What did you eat for breakfast?
+                <span class="name">Pansilu Gunaratna</span>
+                <span class="name">1.28 pm</span>
+            </span>
             <span class="vote">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                 <span class="votes-count">5</span>
             </span>
         </div>
         <div class="question">
-            Best book you’ve ever read?
+            <span class="text">
+                Best book you’ve ever read?
+                <span class="name">Sumudu Wathsala</span>
+                <span class="name">1.27 pm</span>
+            </span>
             <span class="vote">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                 <span class="votes-count">1</span>
             </span>
         </div>
         <div class="question">
-            If you could learn one new personal skill, what would it be?
+            <span class="text">
+                If you could learn one new personal skill, what would it be?
+                <span class="name">Charitha Banadara</span>
+                <span class="name">1.23 pm</span>
+            </span>
             <span class="vote">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                 <span class="votes-count">0</span>

@@ -130,8 +130,6 @@
 
     <?php linkJS("notification") ?>
 
-    <?php linkJS("notification") ?>
-
     <?php linkJS("basic") ?>
 
     <?php linkJS("slideShow"); ?>

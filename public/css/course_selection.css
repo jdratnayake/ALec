@@ -304,6 +304,7 @@ header {
   color: red;
   font-size: 80%;
   font-weight: normal;
+  margin-left: 20px;
 }
 
 .home-content-expand {
@@ -609,6 +610,8 @@ footer p {
   width: 50%;
   height: fit-content;
   margin: 10% auto;
+  /*--------------------- Message styles - start ----------------------------*/
+  /*--------------------- Message styles - end ----------------------------*/
 }
 .details-content .container {
   width: 100%;
@@ -630,6 +633,41 @@ footer p {
 }
 .details-content .container .row:hover {
   background-color: rgba(137, 186, 255, 0.12);
+}
+.details-content .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+}
+.details-content .content .heading {
+  background-color: #2B4F82;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 12px 12px 0 0;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.details-content .content .content-message {
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+}
+.details-content .content .content-message .fa-spinner {
+  font-size: 40px;
+  color: grey;
+  align-self: center;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=course_selection.css.map */

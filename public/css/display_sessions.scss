@@ -70,6 +70,16 @@ $light_color: #FFF;
         padding: 20px 10px;
         justify-content: space-between;
 
+        .session-name{
+          cursor: pointer;
+          color: #0275d8;
+          text-decoration: none;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+
         .publish-status {
           cursor: pointer
         }

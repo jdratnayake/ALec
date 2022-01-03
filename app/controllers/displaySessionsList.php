@@ -41,6 +41,7 @@ class DisplaySessionsList extends AlecFramework
 
             if ($numberOfErrors == 0) {
                 $sessionId = $this->displaySessionsListModel->createSession($sessionName, $userId, $courseId);
+
                 $this->redirect("viewSession/index/{$sessionId}");
             }
         }
@@ -49,5 +50,10 @@ class DisplaySessionsList extends AlecFramework
         // Register session - END
 
         $this->view("lecturer/displaySessionsListView", $data);
+    }
+
+    public function changeSessionsStatus($sessionId, $status)
+    {
+        $this->displaySessionsListModel->changeSessionStatus($sessionId, $status);
     }
 }

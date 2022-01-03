@@ -47,7 +47,7 @@
     <div class="container">
         <div class="heading">
         </div>
-        <div class="content">
+        <div class="content" style="display: none">
             <div class="bar-div">
                 <div id="time-bar" class="time-bar" style="width: 100%"></div>
             </div>
@@ -81,12 +81,20 @@
                     <label for="answer-5">Durability</label>
                 </span>
             </div>
+
+            <div class="button-container">
+                <!--        Save Session Button-->
+                <button type="button" value="Create Session" class="save-btn">Done</button>
+            </div>
         </div>
 
-        <div class="button-container">
-            <!--        Save Session Button-->
-            <button type="button" value="Create Session" class="save-btn">Done</button>
+        <div class="content">
+            <div class="content-message">
+                <i class="fa fa-spinner" aria-hidden="true"></i>
+                No active polls to show
+            </div>
         </div>
+
     </div>
 </div>
 

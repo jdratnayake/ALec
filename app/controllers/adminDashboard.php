@@ -103,9 +103,13 @@ class AdminDashboard extends AlecFramework
                         $data[2] = trim($data[2]);
                         $data[3] = trim($data[3]);
 
+                        $randomName = $this->getRandomName();
+                        $randomFirstName = explode(" ", $randomName)[0];
+                        $randomLastName = explode(" ", $randomName)[1];
+
                         $password = password_hash($data["3"], PASSWORD_DEFAULT);
 
-                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, $type);
+                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, $type, $randomFirstName, $randomLastName);
                     }
                 }
 
@@ -124,9 +128,13 @@ class AdminDashboard extends AlecFramework
                         $data[2] = trim($data[2]);
                         $data[3] = trim($data[3]);
 
+                        $randomName = $this->getRandomName();
+                        $randomFirstName = explode(" ", $randomName)[0];
+                        $randomLastName = explode(" ", $randomName)[1];
+
                         $password = password_hash($data["3"], PASSWORD_DEFAULT);
 
-                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, $type);
+                        $this->registerModel->addUser($data["2"], $data["3"], $data["0"], $data["1"], $password, $type, $randomFirstName, $randomLastName);
                     }
                 }
 
@@ -407,5 +415,33 @@ class AdminDashboard extends AlecFramework
 
             $this->redirect("adminDashboard/index");
         }
+    }
+
+    public function getRandomName()
+    {
+        $fNameFile = fopen("download_data/firstNames.txt", "r") or die("Unable To Open File!");
+        $lNameFile = fopen("download_data/lastNames.txt", "r") or die("Unable To Open File!");
+
+        $firstNames = array();
+        $lastNames = array();
+
+        while (!feof($fNameFile)) {
+            array_push($firstNames, str_replace(' ', '', fgets($fNameFile)));
+            array_push($lastNames, str_replace(' ', '', fgets($lNameFile)));
+        }
+
+        fclose($fNameFile);
+        fclose($lNameFile);
+
+        $count = 1;
+
+        do {
+            $num1 = mt_rand() % 100;
+            $num2 = mt_rand() % 100;
+            $name = $firstNames[$num1] . " " . $lastNames[$num2];
+            $count++;
+        } while (($this->registerModel->checkRandomName($firstNames[$num1], $lastNames[$num2])) && ($count <= 100));
+
+        return $name;
     }
 }

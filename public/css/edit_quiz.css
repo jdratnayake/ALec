@@ -304,6 +304,7 @@ header {
   color: red;
   font-size: 80%;
   font-weight: normal;
+  margin-left: 20px;
 }
 
 .home-content-expand {
@@ -663,7 +664,7 @@ footer p {
 }
 .form-content .details .all-questions .question-container li .fa-times:hover {
   cursor: pointer;
-  color: #f7d4d4a1;
+  color: #dd5555;
 }
 .form-content .details .all-questions .question-container .answer {
   border-radius: 290486px;
