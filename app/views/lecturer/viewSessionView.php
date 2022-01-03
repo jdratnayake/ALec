@@ -11,6 +11,8 @@
     <!-- CSS File HOME-->
     <?php linkCSS("view_session"); ?>
 
+    <?php linkCSS("success_message"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
 
@@ -76,6 +78,16 @@
                 ";
             }
             ?>
+            <!--        Delete Session Button-->
+
+            <?php
+            $link = "'" . "viewSession/deleteSession/" . $data["sessionData"]["session_id"] . "'";
+            ?>
+
+            <button type='button' value='Delete Session' class='main-btn dlt-btn' id='delete-session' style='display: block' <?php echo 'onclick="deleteFunction(' . $link . ')"'; ?>>
+                <i class='fa fa-trash' aria-hidden='true'></i>
+                Delete Session
+            </button>
 
         </div>
         <div class="session-details-container">
@@ -115,16 +127,15 @@
                 }
 
                 while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+                    $questionLink = "'" . "viewSession/deleteSessionQuestion/" . $data["sessionData"]["session_id"] . "/" . $row['question_no'] . "'";
+
                     echo
                     "
                     <span class='session'>
                     <i class='fa fa-ellipsis-v' aria-hidden='true'></i>
                     <span class='option-selection'>
                         <div id='option'>
-                            <a href='http://localhost/ALec/editPoolQuestion/index/{$row['question_no']}'>
-                                <span>edit</span> 
-                            </a>
-                            <span>delete</span>
+                            <span onclick=\"deleteFunction($questionLink)\">Delete</span>
                         </div>
                     </span>
                     <span class='question'>{$row['question']}</span>
@@ -206,6 +217,8 @@
     <?php linkJS("viewSessionQuestion"); ?>
 
     <?php linkJS("viewSessionOptionSelection"); ?>
+
+    <?php linkJS("deleteMessage"); ?>
 
 </body>
 

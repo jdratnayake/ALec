@@ -6,6 +6,6 @@ $(document).ready(function () {
             $(this).next().show();
         }
 
-        console.log($(this).next().css('display'));
+        // console.log($(this).next().css('display'));
     });
 });

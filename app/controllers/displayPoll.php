@@ -19,11 +19,31 @@ class DisplayPoll extends AlecFramework
 
             if ($type == "mcq" or $type == "mcq-tf") {
                 $this->displayPollModel->insertMcqAttempt($userId, $questionId, $answer);
-                $this->view("student/showPollAnswerMcqView");
             } else if ($type == "open") {
+                $answer = strtoupper($answer);
+                $answer = trim($answer, " ");
+
                 $this->displayPollModel->insertOpenAttempt($userId, $questionId, $answer);
-                $this->view("student/showPollAnswerOpenTextView");
             }
+
+            $this->redirect("displayPoll/display/{$type}/{$questionId}");
+        }
+    }
+
+    public function display($type, $questionId)
+    {
+        $data["bread"]["sessionDetails"] = $this->displayPollModel->getCourseId($questionId);
+
+        $data["question"] = $this->displayPollModel->getQuestion($questionId);
+
+        if ($type == "mcq" or $type == "mcq-tf") {
+            $data["answers"] = $this->displayPollModel->getMcqAnswers($questionId);
+
+            $this->view("student/showPollAnswerMcqView", $data);
+        } else if ($type == "open") {
+            $data["answers"] = $this->displayPollModel->getOpenAnswers($questionId);
+
+            $this->view("student/showPollAnswerOpenTextView", $data);
         }
     }
 }

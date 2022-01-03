@@ -1,3 +1,9 @@
+<?php
+$courseId = $data["bread"]["sessionDetails"]["course_id"];
+$sessionName = $data["bread"]["sessionDetails"]["session_name"];
+$questionCount = $data["question"]["question_count"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,120 +24,117 @@
 
 <body>
 
-<?php
-//
-//if ($data["userType"] == "lec") {
-//    linkPhp("navigationBarLecturer");
-//} else if ($data["userType"] == "stu") {
-//    linkPhp("navigationBarStudent");
-//}
-//
-//?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-    <li><a href="#">Sessions</a></li>
-    <li><a href="#">New Poll Question</a></li>
-    <li><a href="#">Create MCQ Question</a></li>
-    <li>Preview Poll</li>
-</ul>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
 
-<div class="details-content">
+        <?php
+        echo
+        "
+        <li><a href='http://localhost/ALec/attemptPoolQuestion/index/{$courseId}'>$sessionName</a></li>
+        ";
+        ?>
 
-    <div class="controller-container">
-        Go to Live Forum
-        <p>3</p>
-    </div>
+        <li>Preview Poll</li>
+    </ul>
 
-    <div class="container">
-        <div class="heading"></div>
+    <div class="details-content">
 
-        <div class="content">
-            <div class="questions-container">
-                <span class="participant-row">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    55
-                </span>
-                <span class="question">
-                    Which is not a property of a transaction?
-                </span>
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress pressed" style="width: 8%">Inclusion</div>
-                    </div>
-                    8%
+        <div class="controller-container">
+            Go to Live Forum
+            <p>3</p>
+        </div>
+
+        <div class="container">
+            <div class="heading"></div>
+
+            <div class="content">
+                <div class="questions-container">
+                    <!-- <span class='participant-row'>
+                        <i class='fa fa-users' aria-hidden='true'></i>
+                        55
+                    </span>
+                    <span class='question'>
+                        Which is not a property of a transaction?
+                    </span> -->
+
+                    <!-- <div class='row'>
+                        <div class='answer'>
+                            <div class='answer-progress pressed' style='width: 8%'>Inclusion</div>
+                        </div>
+                        8%
+                    </div> -->
+
+                    <!-- Echo question -->
+                    <?php
+                    echo
+                    "
+                        <span class='participant-row'>
+                            <i class='fa fa-users' aria-hidden='true'></i>
+                            {$data["question"]["question_count"]}
+                        </span>
+                        <span class='question'>
+                            {$data["question"]["question"]}
+                        </span>
+                    ";
+                    ?>
+
+                    <!-- Echo answers -->
+                    <?php
+                    while ($row = mysqli_fetch_assoc($data["answers"])) {
+                        $precentage = $row["answer_count"] * 100 / $questionCount;
+                        $precentage = round($precentage, 2);
+
+                        echo
+                        "
+                        <div class='row'>
+                            <div class='answer'>
+                                <div class='answer-progress pressed' style='width: {$precentage}%'>
+                                    {$row["choice_name"]}
+                                </div>
+                            </div>
+                            {$precentage}%
+                        </div>
+                        ";
+                    }
+                    ?>
+
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress" style="width: 83%">Atomicity</div>
-                    </div>
-                    83%
-                </div>
-
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress" style="width: 2%">Consistency</div>
-                    </div>
-                    2%
-                </div>
-
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress" style="width: 1%">Durability</div>
-                    </div>
-                    1%
-                </div>
-
-                <div class="row">
-                    <div class="answer">
-                        <div class="answer-progress" style="width: 0">Durability</div>
-                    </div>
-                    0%
-                </div>
+            <div class="button-container">
+                <!--        Save Session Button-->
+                <!--            --><?php
+                                    //
+                                    //            if ($data["userType"] == "lec") {
+                                    //                
+                                    ?>
+                <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
+                <!--                --><?php
+                                        //            } else if ($data["userType"] == "stu") {
+                                        //                
+                                        ?>
+                <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
+                <!--                --><?php
+                                        //            }
+                                        //
+                                        //            
+                                        ?>
 
             </div>
         </div>
-
-        <div class="button-container">
-            <!--        Save Session Button-->
-            <!--            --><?php
-            //
-            //            if ($data["userType"] == "lec") {
-            //                ?>
-            <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
-            <!--                --><?php
-            //            } else if ($data["userType"] == "stu") {
-            //                ?>
-            <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
-            <!--                --><?php
-            //            }
-            //
-            //            ?>
-
-        </div>
     </div>
-</div>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-<?php linkPhp("notificationView"); ?>
+    <?php linkPhp("notificationView"); ?>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-<?php linkJS("notification") ?>
+    <?php linkJS("notification") ?>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-

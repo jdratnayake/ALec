@@ -19,7 +19,7 @@ $light_color: #FFF;
     height: 100%;
     border-radius: 0 0 12px 12px;
 
-    .row{
+    .row {
       border: 1px solid rgba(43, 79, 130, 0.2);
       padding: 5px 10px;
       border-bottom-width: 2px;
@@ -28,15 +28,58 @@ $light_color: #FFF;
       border-radius: 20px;
       text-align: center;
 
-      .fa-circle{
+      .fa-circle {
         color: red;
         margin-left: 30px;
       }
 
-      &:hover{
+      &:hover {
         background-color: rgb(137 186 255 / 12%);
       }
     }
   }
+
+  /*--------------------- Message styles - start ----------------------------*/
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+
+    .heading {
+      background-color: $main_color;
+      color: $light_color;
+      padding: 10px;
+      border-radius: 12px 12px 0 0;
+      text-align: left;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .content-message {
+      color: grey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 3rem;
+
+      .fa-spinner {
+        font-size: 40px;
+        color: grey;
+        align-self: center;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  /*--------------------- Message styles - end ----------------------------*/
 }
 

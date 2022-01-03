@@ -51,7 +51,7 @@ $light_color: #FFF;
     }
   }
 
-  .questions {
+  .questions-container {
     padding-bottom: 2rem;
     margin-left: 10px;
 
@@ -64,6 +64,14 @@ $light_color: #FFF;
       padding: 10px;
       justify-content: space-between;
 
+      .text{
+        cursor: default;
+        display: grid;
+        .name{
+          color: grey;
+          font-size: 12px;
+        }
+      }
       .vote {
         display: flex;
         flex-direction: column;

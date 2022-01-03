@@ -18,64 +18,73 @@
 
 <body>
 
-    <?php linkPhp("navigationBarStudent"); ?>
+<?php linkPhp("navigationBarStudent"); ?>
 
-    <!--    breadcrumb-->
-    <ul class="breadcrumb">
-        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-        <li>Sessions</li>
-    </ul>
+<!--    breadcrumb-->
+<ul class="breadcrumb">
+    <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+    <li>Sessions</li>
+</ul>
 
-    <div class="details-content">
-        <div class="container">
+<div class="details-content">
+    <div class="container">
 
-            <input type="hidden" id="active-course-ids" value="<?php echo $data["activeCourseIds"]; ?>">
+        <input type="hidden" id="active-course-ids" value="<?php echo $data["activeCourseIds"]; ?>">
 
-            <?php
+        <?php
 
-            while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
-                $className = "course-id-{$row['course_id']}";
+        while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
+            $className = "course-id-{$row['course_id']}";
 
-                if (!empty($row['active_session_id'])) {
-                    echo
-                    "
-                    <div class='row {$className}' onclick=\"window.location='http://localhost/ALec/attemptPoolQuestion/index/{$row['course_id']}' \">
-                    ";
-                } else {
-                    echo
-                    "
-                    <div class='row {$className}' style='display: none' onclick=\"window.location='http://localhost/ALec/attemptPoolQuestion/index/{$row['course_id']}' \">
-                    ";
-                }
-
+            if (!empty($row['active_session_id'])) {
                 echo
                 "
+                    <div class='row {$className}' onclick=\"window.location='http://localhost/ALec/attemptPoolQuestion/index/{$row['course_id']}' \">
+                    ";
+            } else {
+                echo
+                "
+                    <div class='row {$className}' style='display: none' onclick=\"window.location='http://localhost/ALec/attemptPoolQuestion/index/{$row['course_id']}' \">
+                    ";
+            }
+
+            echo
+            "
                     {$row['course_name']}
                     <i class='fa fa-circle' aria-hidden='true'></i>
                 </div>
                 ";
-            }
+        }
 
-            ?>
+        ?>
 
-            <!-- <div class='row'>
-                SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I
-                <i class='fa fa-circle' aria-hidden='true'></i>
-            </div>
-            <div class='row'>SCS 1201 - DATA STRUCTURES AND ALGORITHMS - II</div> -->
-
+        <!-- <div class='row'>
+            SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I
+            <i class='fa fa-circle' aria-hidden='true'></i>
         </div>
+        <div class='row'>SCS 1201 - DATA STRUCTURES AND ALGORITHMS - II</div> -->
+
     </div>
 
-    <?php linkPhp("footer"); ?>
 
-    <?php linkPhp("notificationView"); ?>
+    <div class="container content">
+        <div class="heading"></div>
+        <div class="content-message">
+            <i class="fa fa-spinner" aria-hidden="true"></i>
+            No active sessions to show
+        </div>
+    </div>
+</div>
 
-    <?php linkJS("lib/jquery-3.6.0.min"); ?>
+<?php linkPhp("footer"); ?>
 
-    <?php linkJS("notification") ?>
+<?php linkPhp("notificationView"); ?>
 
-    <?php linkJS("courseSelectionSessions") ?>
+<?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+<?php linkJS("notification") ?>
+
+<?php linkJS("courseSelectionSessions") ?>
 
 </body>
 

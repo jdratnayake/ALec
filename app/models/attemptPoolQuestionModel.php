@@ -33,4 +33,13 @@ class AttemptPoolQuestionModel extends Database
 
         return $result;
     }
+
+    //Functions that are need for realtime question update
+    public function getActiveQuestionId($sessionId)
+    {
+        $query = "SELECT active_question_id FROM session WHERE session_id='$sessionId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["active_question_id"];
+    }
 }

@@ -643,11 +643,11 @@ footer p {
   font-size: 20px;
   color: #2B4F82;
 }
-.details-content .questions {
+.details-content .questions-container {
   padding-bottom: 2rem;
   margin-left: 10px;
 }
-.details-content .questions .question {
+.details-content .questions-container .question {
   display: flex;
   align-items: center;
   background-color: #2b4f820d;
@@ -656,16 +656,24 @@ footer p {
   padding: 10px;
   justify-content: space-between;
 }
-.details-content .questions .question .vote {
+.details-content .questions-container .question .text {
+  cursor: default;
+  display: grid;
+}
+.details-content .questions-container .question .text .name {
+  color: grey;
+  font-size: 12px;
+}
+.details-content .questions-container .question .vote {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.details-content .questions .question .vote .fa-thumbs-o-up {
+.details-content .questions-container .question .vote .fa-thumbs-o-up {
   font-size: 24px;
   cursor: pointer;
 }
-.details-content .questions .question .vote .votes-count {
+.details-content .questions-container .question .vote .votes-count {
   font-size: small;
 }
 .details-content .new-question {
