@@ -38,19 +38,6 @@ class DisplaySessionsListModel extends Database
         return mysqli_fetch_assoc($result)["session_id"];
     }
 
-    public function initiateSessionForumReadCountStudent($courseId, $sessionId)
-    {
-        $query = "SELECT student_id FROM course_registration_stu WHERE course_id='$courseId'";
-        $result = mysqli_query($GLOBALS["db"], $query);
-
-        while ($row = mysqli_fetch_assoc($result)) {
-            $studentId = $row["student_id"];
-
-            $query = "INSERT INTO session_forum_question_read_count(session_id, student_id) VALUES('$sessionId', '$studentId')";
-            mysqli_query($GLOBALS["db"], $query);
-        }
-    }
-
     public function changeSessionStatus($sessionId, $status)
     {
         if ($status == "T") {

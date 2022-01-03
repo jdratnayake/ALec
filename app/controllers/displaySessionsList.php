@@ -42,8 +42,6 @@ class DisplaySessionsList extends AlecFramework
             if ($numberOfErrors == 0) {
                 $sessionId = $this->displaySessionsListModel->createSession($sessionName, $userId, $courseId);
 
-                $this->displaySessionsListModel->initiateSessionForumReadCountStudent($courseId, $sessionId);
-
                 $this->redirect("viewSession/index/{$sessionId}");
             }
         }
