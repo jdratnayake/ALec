@@ -41,6 +41,7 @@
             <span class="text">
                 What's the best piece of advice you've ever been given?
                 <span class="name">Kamalini Anagarasa</span>
+                <span class="name">1.30 pm</span>
             </span>
             <span class="vote">
                     <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
@@ -50,7 +51,8 @@
         <div class="question">
             <span class="text">
                 What’s your favorite flower or plant?
-                <span class="name">Kamalini Anagarasa</span>
+                <span class="name">Janitha Ratnayake</span>
+                <span class="name">1.28 pm</span>
             </span>
             <span class="vote">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
@@ -60,7 +62,8 @@
         <div class="question">
             <span class="text">
                 What did you eat for breakfast?
-                <span class="name">Kamalini Anagarasa</span>
+                <span class="name">Pansilu Gunaratna</span>
+                <span class="name">1.28 pm</span>
             </span>
             <span class="vote">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
@@ -70,7 +73,8 @@
         <div class="question">
             <span class="text">
                 Best book you’ve ever read?
-                <span class="name">Kamalini Anagarasa</span>
+                <span class="name">Sumudu Wathsala</span>
+                <span class="name">1.27 pm</span>
             </span>
             <span class="vote">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
@@ -80,7 +84,8 @@
         <div class="question">
             <span class="text">
                 If you could learn one new personal skill, what would it be?
-                <span class="name">Kamalini Anagarasa</span>
+                <span class="name">Charitha Banadara</span>
+                <span class="name">1.23 pm</span>
             </span>
             <span class="vote">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
