@@ -606,20 +606,30 @@ footer p {
 /*FOOTER - END*/
 /*==============================================================================*/
 .details-content {
-  padding: 1rem;
+  padding: 16px;
   width: 70%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
-  height: 80%;
+  height: fit-content;
   overflow: hidden;
 }
 .details-content .header-container header {
   margin-left: 25px;
 }
-.details-content .header-container .course-label {
-  font-weight: 400;
-  color: #2B4F82;
+.details-content .header-container .course-selection .course-dropdown {
+  cursor: pointer;
+  display: block;
+  padding: 6px 12px;
+  color: rgba(0, 0, 0, 0.85);
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   margin-left: 25px;
+}
+.details-content .header-container .course-selection .course-dropdown:hover {
+  box-shadow: 0 0 5px #7697b3;
 }
 .details-content .button-container {
   display: flex;
@@ -641,14 +651,19 @@ footer p {
   background-color: #1d3557;
   border: 2px solid #1d3557;
 }
+.details-content .course-label {
+  font-weight: 400;
+  color: #2B4F82;
+  margin-left: 25px;
+  margin-bottom: 16px;
+}
 .details-content .badge-details-container {
-  height: 70vh;
+  height: 71vh;
   overflow: auto;
 }
 .details-content .badge-details-container .badges {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-bottom: 8rem;
 }
 .details-content .badge-details-container .badges .badge {
   display: flex;

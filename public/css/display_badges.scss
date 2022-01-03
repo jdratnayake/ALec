@@ -9,21 +9,34 @@ $main_color: $theme_second;
 $light_color: #FFF;
 
 .details-content {
-    padding: 1rem;
+    padding: 16px;
     width: 70%;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
     margin: auto auto 30px auto;
-    height: 80%;
+    height: fit-content;
     overflow: hidden;
 
     .header-container{
         header{
             margin-left: 25px;
         }
-        .course-label{
-            font-weight: 400;
-            color: #2B4F82;
-            margin-left: 25px;
+        .course-selection{
+            .course-dropdown{
+                cursor: pointer;
+                display: block;
+                padding: 6px 12px;
+                color: rgba(0, 0, 0, 0.85);
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-bottom-width: 2px;
+                border-radius: 4px;
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                margin-left: 25px;
+
+                &:hover{
+                    box-shadow: 0 0 5px #7697b3;
+                }
+            }
         }
     }
 
@@ -50,14 +63,20 @@ $light_color: #FFF;
         }
     }
 
+    .course-label{
+        font-weight: 400;
+        color: #2B4F82;
+        margin-left: 25px;
+        margin-bottom: 16px;
+    }
+
     .badge-details-container{
-        height: 70vh;
+        height: 71vh;
         overflow: auto;
 
         .badges{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            padding-bottom: 8rem;
 
             .badge{
                 display: flex;

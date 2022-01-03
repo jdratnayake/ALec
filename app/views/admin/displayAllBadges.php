@@ -28,11 +28,20 @@
 <div class="details-content">
     <div class="header-container">
         <header>Badges</header>
-        <h3 class="course-label">SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I</h3>
+        <div class="course-selection">
+            <label for="course-selection"></label>
+            <select name="course-selection" id="course-selection" class="course-dropdown">
+                <option value="No course selected" selected>--No course selected--</option>
+                <option value="course-1">SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I</option>
+                <option value="course-2">SCS 1209 - DATA STRUCTURES AND ALGORITHMS - II</option>
+            </select>
+        </div>
     </div>
     <div class="button-container">
         <button type="button" value="Add Badge" class="add-btn">Add Badge</button>
     </div>
+
+    <h3 class="course-label">SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I</h3>
     <div class="badge-details-container">
         <div class="badges">
             <div class="badge">
