@@ -34,7 +34,7 @@
 
         <div class="controller-container" onclick="window.location='<?php echo BASEURL . '/sessionLiveForumStudent/index/' . $data['sessionDetails']['session_id']; ?>' ">
             Go to Live Forum
-            <p>3</p>
+            <!-- <p>3</p> -->
         </div>
 
         <div class="container">

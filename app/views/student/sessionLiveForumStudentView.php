@@ -1,6 +1,9 @@
 <?php
 $sessionId = $data["bread"]["sessionDetails"]["session_id"];
 $sessionName = $data["bread"]["sessionDetails"]["session_name"];
+
+$courseId = $data["bread"]["sessionDetails"]["course_id"];
+
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +35,7 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
         <?php
         echo
         "
-        <li><a href='http://localhost/ALec/attemptPoolQuestion/index/{$sessionId}'>{$sessionName}</a></li>
+        <li><a href='http://localhost/ALec/attemptPoolQuestion/index/{$courseId}'>{$sessionName}</a></li>
         ";
         ?>
 
@@ -40,8 +43,8 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
     </ul>
 
     <div class="details-content">
-        <p class="q-count">3</p>
-        <div class="controller-container">
+        <!-- <p class="q-count">3</p> -->
+        <div class="controller-container" onclick="window.location='<?php echo BASEURL . '/attemptPoolQuestion/index/' . $courseId; ?>' ">
             Go to Polls
         </div>
 
