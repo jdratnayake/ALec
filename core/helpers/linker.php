@@ -28,6 +28,13 @@ function srcIMG($imgPath)
     echo $url;
 }
 
+//Return image path
+function srcBadgeIMG($imgPath)
+{
+    $url = "src='" . BASEURL . "/public/badge_pic/" . $imgPath . "'";
+    return $url;
+}
+
 //To link profile pictures
 function srcProfileIMG($imgPath)
 {

@@ -1,17 +1,32 @@
 <?php
 
-class CreateBadge extends AlecFramework
+class Badge extends AlecFramework
 {
     public function __construct()
     {
         $this->authorization("admin");
         $this->helper("linker");
-        $this->createBadgeModel = $this->model("createBadgeModel");
+        $this->badgeModel = $this->model("badgeModel");
     }
 
-    public function index()
+    public function index($courseId = "")
     {
-        $data["courseDetails"] = $this->createBadgeModel->getCourses();
+        $data["courseDetailsDropdown"] = $this->badgeModel->getCourses();
+
+        if (empty($courseId)) {
+            $data["emptySignal"] = 1;
+        } else {
+            $data["emptySignal"] = 0;
+            $data["courseDetails"] = $this->badgeModel->getCourseDetails($courseId);
+            $data["badgeDetails"] = $this->badgeModel->getBadgeDetails($courseId);
+        }
+
+        $this->view("admin/badgesDisplayView", $data);
+    }
+
+    public function create()
+    {
+        $data["courseDetails"] = $this->badgeModel->getCourses();
 
         $errors = array();
         $errors["courseName"] = "";
@@ -20,6 +35,10 @@ class CreateBadge extends AlecFramework
         $errors["image"] = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // var_dump($_POST);
+            // var_dump($_FILES);
+            // return 0;
+
             //Badge Details
             $courseIdList = $this->getCourseIdList($_POST["course-id-list"]);
             $badgeName = $_POST["badge-name"];
@@ -64,28 +83,30 @@ class CreateBadge extends AlecFramework
 
                 $allowed = array("image/jpeg", "image/jpg", "image/png");
                 if (!in_array($fileType, $allowed)) {
-                    $errors[] = 'Only jpeg, jpg, and png files are allowed.';
+                    $imageErrors[] = 'Only jpeg, jpg, and png files are allowed.';
                 }
 
                 if ($fileSize > 5000000) {
-                    $errors[] = 'File size should be less than 5MB.';
+                    $imageError[] = 'File size should be less than 5MB.';
                 }
 
-                if (empty($errors)) {
+                if (empty($imageError)) {
                     $file_uploaded = move_uploaded_file($tempName, $fileName);
                 }
 
                 if ($file_uploaded) {
                     foreach ($courseIdList as $courseId) {
-                        $this->createBadgeModel->insertBadge($badgeName, $badgeDescription, $badgePoints, $courseId, $tempFileName);
+                        $this->badgeModel->insertBadge($badgeName, $badgeDescription, $badgePoints, $courseId, $tempFileName);
                     }
                 }
+
+                $this->redirect("badge/index/{$courseId}");
             }
         }
 
         $data["errors"] = $errors;
 
-        $this->view("admin/createBadgeView", $data);
+        $this->view("admin/badgeCreateView", $data);
     }
 
     public function getCourseIdList($idString)

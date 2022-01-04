@@ -1,6 +1,6 @@
 <?php
 
-class CreateBadgeModel extends Database
+class BadgeModel extends Database
 {
     public function getCourses()
     {
@@ -31,5 +31,21 @@ class CreateBadgeModel extends Database
             $query = "INSERT INTO badge VALUES('NULL', '$name', '$description', '$points', '$courseId', '$imageUrl')";
             mysqli_query($GLOBALS["db"], $query);
         }
+    }
+
+    public function getCourseDetails($courseId)
+    {
+        $query = "SELECT course_id, course_name FROM course WHERE course_id='$courseId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function getBadgeDetails($courseId)
+    {
+        $query = "SELECT badge_id, badge_name, badge_image FROM badge WHERE course_id='$courseId' ORDER BY badge_name";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
     }
 }
