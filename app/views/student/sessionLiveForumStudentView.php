@@ -72,7 +72,7 @@ $errors = $data["errors"];
                         <span class='name'>{$row['post_time']}</span>
                     </span>
                     <span class='vote'>
-                        <i class='fa fa-thumbs-o-up' aria-hidden='true'></i>
+                        <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
                         <span class='votes-count'>{$row['points']}</span>
                     </span>
                 </div>
