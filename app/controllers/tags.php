@@ -170,4 +170,17 @@ class Tags extends AlecFramework
 
         echo $output;
     }
+
+    public function openTag($tagId)
+    {
+        $userId = $this->getSession("userId");
+        $data["userId"] = $userId;
+        $data["tagDetails"] = $this->tagsModel->getTagDetails($tagId);
+        $tagName = $data["tagDetails"]["tag_name"];
+
+        $data["topicDiscussionDetails"] =
+            $this->tagsModel->getTopicDiscussionDetailsSingleTag($userId, $tagName);
+
+        $this->view("student/tagSingleView", $data);
+    }
 }

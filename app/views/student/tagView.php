@@ -34,7 +34,7 @@
     <!--    breadcrumb-->
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/studentDashboard/index">Home</a></li>
-        <li><a href="#">Tags</a></li>
+        <li>Tags</li>
     </ul>
 
     <div class="forum-container center">
@@ -42,14 +42,14 @@
             <header>Tags</header>
         </div>
 
-<!--        <span class="container-label">All Tags</span>-->
+        <!--        <span class="container-label">All Tags</span>-->
         <div class="tags-container">
             <?php
             while ($row = mysqli_fetch_assoc($data["tagNames"])) {
                 echo
                 "
                 <p class='tag-element'>
-                {$row["tag_name"]}
+                <a href='http://localhost/ALec/tags/openTag/{$row["tag_id"]}'> {$row["tag_name"]} </a>
                 <input type='hidden' value='{$row["tag_id"]}'>
                 <i class='fa fa-times' aria-hidden='true'></i>
                 </p>

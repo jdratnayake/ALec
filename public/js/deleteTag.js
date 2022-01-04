@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $(".tag-element").click(function () {
-        const tagId = $(this).find("input").val();
+    $(".fa-times").click(function () {
+        const tagId = $(this).parent().find("input").val();
 
         const link = "tags/deleteTag/" + tagId;
 

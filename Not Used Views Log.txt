@@ -9,7 +9,6 @@ Lecturer
 
 Student
 
-1. openTagView
 
 Components
 
