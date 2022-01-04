@@ -42,7 +42,7 @@
             <header>Tags</header>
         </div>
 
-        <span class="container-label">All Tags</span>
+<!--        <span class="container-label">All Tags</span>-->
         <div class="tags-container">
             <?php
             while ($row = mysqli_fetch_assoc($data["tagNames"])) {

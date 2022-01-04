@@ -613,6 +613,7 @@ footer p {
 
 .forum-container {
   width: 90%;
+  display: grid;
   /*--------------------------MODAL STYLES - START------------------------- */
   /*--------------------------MODAL STYLES - END------------------------- */
   /*--------------------------SEARCH BAR - START------------------------- */
@@ -658,6 +659,7 @@ footer p {
   font-size: 15px;
   margin: 10px 0 40px 5px;
   cursor: pointer;
+  width: fit-content;
 }
 .forum-container button .button-title .space-tag {
   display: inline;

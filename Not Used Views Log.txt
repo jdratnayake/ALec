@@ -7,6 +7,10 @@ Lecturer
 
 1. viewRespondents
 
+Student
+
+1. openTagView
+
 Components
 
 1. displayPollMcqView
