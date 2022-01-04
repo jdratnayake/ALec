@@ -13,6 +13,9 @@ class sessionLiveForumStudent extends AlecFramework
     {
         $data["bread"]["sessionDetails"] = $this->sessionLiveForumStudentModel->getSessionDetails($sessionId);
 
+        $data["userId"] = $this->getSession("userId");
+        $data["questionDetails"] = $this->sessionLiveForumStudentModel->getForumQuestionDetails($sessionId);
+
         $errors = array();
         $errors["question"] = "";
 

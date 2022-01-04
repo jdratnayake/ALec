@@ -1,4 +1,5 @@
 <?php
+$userId = $data["userId"];
 $sessionId = $data["bread"]["sessionDetails"]["session_id"];
 $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 $courseId = $data["bread"]["sessionDetails"]["course_id"];
@@ -52,61 +53,46 @@ $errors = $data["errors"];
             <header>Live Forum</header>
         </div>
         <div class="questions-container">
-            <div class="question">
-                <span class="text">
+            <?php
+
+            while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+
+                if ($row['student_id'] != $userId && $row['random_status']) {
+                    $name = $row["random_name"];
+                } else {
+                    $name = $row["name"];
+                }
+
+                echo
+                "
+                <div class='question'>
+                    <span class='text'>
+                        {$row['question']}
+                        <span class='name'>{$name}</span>
+                        <span class='name'>{$row['post_time']}</span>
+                    </span>
+                    <span class='vote'>
+                        <i class='fa fa-thumbs-o-up' aria-hidden='true'></i>
+                        <span class='votes-count'>{$row['points']}</span>
+                    </span>
+                </div>
+                ";
+            }
+
+            ?>
+
+            <!-- <div class='question'>
+                <span class='text'>
                     What's the best piece of advice you've ever been given?
-                    <span class="name">Kamalini Anagarasa</span>
-                    <span class="name">1.30 pm</span>
+                    <span class='name'>Kamalini Anagarasa</span>
+                    <span class='name'>1.30 pm</span>
                 </span>
-                <span class="vote">
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <span class="votes-count">8</span>
+                <span class='vote'>
+                    <i class='fa fa-thumbs-o-up' aria-hidden='true'></i>
+                    <span class='votes-count'>8</span>
                 </span>
-            </div>
-            <div class="question">
-                <span class="text">
-                    What’s your favorite flower or plant?
-                    <span class="name">Janitha Ratnayake</span>
-                    <span class="name">1.28 pm</span>
-                </span>
-                <span class="vote">
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <span class="votes-count">6</span>
-                </span>
-            </div>
-            <div class="question">
-                <span class="text">
-                    What did you eat for breakfast?
-                    <span class="name">Pansilu Gunaratna</span>
-                    <span class="name">1.28 pm</span>
-                </span>
-                <span class="vote">
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <span class="votes-count">5</span>
-                </span>
-            </div>
-            <div class="question">
-                <span class="text">
-                    Best book you’ve ever read?
-                    <span class="name">Sumudu Wathsala</span>
-                    <span class="name">1.27 pm</span>
-                </span>
-                <span class="vote">
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <span class="votes-count">1</span>
-                </span>
-            </div>
-            <div class="question">
-                <span class="text">
-                    If you could learn one new personal skill, what would it be?
-                    <span class="name">Charitha Banadara</span>
-                    <span class="name">1.23 pm</span>
-                </span>
-                <span class="vote">
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <span class="votes-count">0</span>
-                </span>
-            </div>
+            </div> -->
+
         </div>
 
         <form action="<?php echo BASEURL . "/sessionLiveForumStudent/index/{$sessionId}" ?>" method="POST" id="liveForum-form">
