@@ -612,6 +612,8 @@ footer p {
   margin: auto auto 30px auto;
   height: fit-content;
   overflow: hidden;
+  /*--------------------- Message styles - start ----------------------------*/
+  /*--------------------- Message styles - end ----------------------------*/
 }
 .details-content .header-container header {
   margin-left: 25px;
@@ -658,21 +660,38 @@ footer p {
   margin-bottom: 16px;
 }
 .details-content .badge-details-container {
-  height: 71vh;
+  height: 70vh;
   overflow: auto;
 }
-.details-content .badge-details-container .badges {
+.details-content .badge-details-container .badge-details .badges {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.details-content .badge-details-container .badges .badge {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
-.details-content .badge-details-container .badges .badge img {
-  width: 10rem;
+.details-content .badge-details-container .badge-details .badges .badge {
+  display: grid;
+  width: 90%;
   margin: 10px;
+  justify-content: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  padding: 10px 0;
+}
+.details-content .badge-details-container .badge-details .badges .badge img {
+  width: 10rem;
+  justify-self: center;
+}
+.details-content .content-message {
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+}
+.details-content .content-message .fa-spinner {
+  font-size: 40px;
+  color: grey;
+  align-self: center;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=display_badges.css.map */

@@ -71,24 +71,50 @@ $light_color: #FFF;
     }
 
     .badge-details-container{
-        height: 71vh;
+        height: 70vh;
         overflow: auto;
 
-        .badges{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .badge-details{
+            .badges{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
 
-            .badge{
-                display: flex;
-                align-items: center;
-                margin-right: 20px;
-
-                img{
-                    width: 10rem;
+                .badge{
+                    display: grid;
+                    width: 90%;
                     margin: 10px;
+                    justify-content: center;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+                    padding: 10px 0;
+
+                    img{
+                        width: 10rem;
+                        justify-self: center;
+                    }
                 }
             }
         }
     }
+
+
+    /*--------------------- Message styles - start ----------------------------*/
+
+    .content-message {
+        color: grey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 3rem;
+
+        .fa-spinner {
+            font-size: 40px;
+            color: grey;
+            align-self: center;
+            margin-bottom: 1rem;
+        }
+    }
+
+    /*--------------------- Message styles - end ----------------------------*/
 }
 

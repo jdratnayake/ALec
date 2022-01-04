@@ -41,33 +41,42 @@
         <button type="button" value="Add Badge" class="add-btn">Add Badge</button>
     </div>
 
-    <h3 class="course-label">SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I</h3>
     <div class="badge-details-container">
-        <div class="badges">
-            <div class="badge">
-                <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge Image">
-                <span>Questioner of the year - 2021</span>
+        <h3 class="course-label">SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I</h3>
+        <div class="badge-details">
+            <div class="badges">
+                <div class="badge">
+                    <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge Image">
+                    <span>Questioner of the year - 2021</span>
+                </div>
+                <div class="badge">
+                    <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge Image">
+                    <span>Respondent of the year - 2021</span>
+                </div>
+                <div class="badge">
+                    <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge Image">
+                    <span>Questioner of the week - 14</span>
+                </div>
+                <div class="badge">
+                    <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge Image">
+                    <span>Respondent of the week - 12</span>
+                </div>
+                <div class="badge">
+                    <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge Image">
+                    <span>Questioner of the month - Nov</span>
+                </div>
+                <div class="badge">
+                    <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge Image">
+                    <span>Respondent of the month - Feb</span>
+                </div>
             </div>
-            <div class="badge">
-                <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge Image">
-                <span>Respondent of the year - 2021</span>
-            </div>
-            <div class="badge">
-                <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge Image">
-                <span>Questioner of the week - 14</span>
-            </div>
-            <div class="badge">
-                <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge Image">
-                <span>Respondent of the week - 12</span>
-            </div>
-            <div class="badge">
-                <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge Image">
-                <span>Questioner of the month - Nov</span>
-            </div>
-            <div class="badge">
-                <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge Image">
-                <span>Respondent of the month - Feb</span>
-            </div>
+        </div>
+    </div>
+
+    <div class="content" style="display: none">
+        <div class="content-message">
+            <i class="fa fa-spinner" aria-hidden="true"></i>
+            No course selected
         </div>
     </div>
 </div>
