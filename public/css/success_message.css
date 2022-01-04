@@ -8,17 +8,16 @@
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   perspective: 40px;
-  position: absolute;
+  position: fixed;
   left: 35%;
   z-index: 5;
   display: block;
 }
 
 .close-btn {
-  background-color: white;
   top: -4%;
   right: -3%;
-  color: darkgray;
+  color: #305890;
   font-size: 2rem;
   cursor: pointer;
   position: absolute;

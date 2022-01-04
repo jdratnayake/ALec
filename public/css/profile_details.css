@@ -606,37 +606,58 @@ footer p {
 /*FOOTER - END*/
 /*==============================================================================*/
 .details-content {
-  padding: 1rem;
-  width: 80%;
+  width: 70%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: 5% auto auto auto;
-  background-color: #b7c8d64a;
   overflow-y: hidden;
 }
-
-header {
-  background-color: #b7c8d64a;
-}
-
-.left-bar {
-  margin-top: 20px;
-  height: 100%;
+.details-content .user-details-container .header-bar {
   float: left;
-  width: 240px;
+  width: 100%;
+  background-color: #274774;
+  border-radius: 8px 8px 0 0;
 }
-.left-bar img {
-  width: 90%;
-  margin: 0;
-  border-radius: 5px;
+.details-content .user-details-container .header-bar img {
+  width: 25vh;
+  height: 25vh;
+  margin: 30px;
+  border-radius: 120px;
+  vertical-align: middle;
+  border: 3px solid white;
 }
-
-.buttons {
-  margin-top: 10px;
+.details-content .user-details-container .header-bar .bio {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #FFF;
+  width: 15rem;
 }
-.buttons button {
-  width: 90%;
-  height: 40px;
-  margin-top: 10px;
+.details-content .user-details-container .header-bar .bio span:first-child {
+  font-weight: bold;
+  font-size: larger;
+}
+.details-content .user-details-container .details-container {
+  margin-top: 20px;
+  width: 100%;
+  float: right;
+  overflow: hidden;
+  display: grid;
+  padding: 0 1rem;
+}
+.details-content .user-details-container .details-container .heading {
+  font-weight: bold;
+  border-bottom: 2px solid #2B4F82;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.details-content .user-details-container .details-container .buttons {
+  margin: 10px 0;
+  display: inline;
+  justify-self: end;
+}
+.details-content .user-details-container .details-container .buttons button {
+  width: fit-content;
+  padding: 6px 12px;
   background-color: #2B4F82;
   color: #FFF;
   border-radius: 5px;
@@ -646,94 +667,90 @@ header {
   box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   cursor: pointer;
 }
-.buttons button:hover {
+.details-content .user-details-container .details-container .buttons button:hover {
   background-color: #1d3557;
   border: 2px solid #1d3557;
 }
-.buttons button:nth-child(2) {
+.details-content .user-details-container .details-container .buttons button:nth-child(2) {
   background-color: #dd5555;
   border: 2px solid #dd5555;
   color: white;
 }
-.buttons button:nth-child(2):hover {
+.details-content .user-details-container .details-container .buttons button:nth-child(2):hover {
   background-color: #f7d4d4a1;
   color: #dd5555;
 }
-
-.right-bar {
-  margin-top: 20px;
-  height: 100%;
-  width: 72%;
-  float: right;
-  overflow: hidden;
-  display: grid;
+.details-content .user-details-container .details-container .horizontal-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  height: 25vh;
 }
-
-.bio {
+.details-content .user-details-container .details-container .horizontal-container .pvt-details, .details-content .user-details-container .details-container .horizontal-container .course-details {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  color: #504f4f;
-  width: 15rem;
-}
-.bio span:first-child {
-  color: black;
-  font-weight: bold;
-  font-size: larger;
-}
-
-.pvt-details, .course-details, .badges {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid #d0d0d0;
   background-color: #FFF;
 }
-.pvt-details span:first-child, .course-details span:first-child, .badges span:first-child {
-  font-weight: bold;
-  border-bottom: 2px solid #2B4F82;
-  width: inherit;
-  margin-bottom: 1rem;
-}
-.pvt-details:hover, .course-details:hover, .badges:hover {
+.details-content .user-details-container .details-container .horizontal-container .pvt-details:hover, .details-content .user-details-container .details-container .horizontal-container .course-details:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border: 1px solid #2B4F82;
 }
-
-.course-details {
-  height: 240px;
+.details-content .user-details-container .details-container .horizontal-container .pvt-details {
+  width: 38%;
+}
+.details-content .user-details-container .details-container .horizontal-container .course-details {
+  width: 60%;
+}
+.details-content .user-details-container .details-container .horizontal-container .course-details .course-content {
+  height: 95%;
   overflow: auto;
+  width: 100%;
+  display: grid;
 }
-
-.badges {
-  overflow: scroll;
-  overflow-x: hidden;
-  display: block;
-}
-.badges span:first-child {
-  display: block;
-  margin: 0;
-}
-.badges span {
+.details-content .user-details-container .details-container .badge-details {
   display: inline-flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #d0d0d0;
+  background-color: #FFF;
+}
+.details-content .user-details-container .details-container .badge-details:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border: 1px solid #2B4F82;
+}
+.details-content .user-details-container .details-container .badge-details .badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  padding-top: 10px;
+}
+.details-content .user-details-container .details-container .badge-details .badges .badge {
+  display: grid;
+  width: 95%;
   margin: 10px;
-  align-content: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  padding: 10px 0 0 0;
+  justify-items: center;
 }
-.badges i {
-  color: black;
-  font-size: 30px;
-  margin-right: 10px;
-}
-
-.badge-image {
+.details-content .user-details-container .details-container .badge-details .badges .badge img {
   width: 10rem;
-  margin: 5px;
+  justify-self: center;
+}
+.details-content .user-details-container .details-container .badge-details .badges .badge .issuer {
+  background-color: #2b4f82;
+  color: #FFF;
+  padding: 5px 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
 }
 
 /*--------------------------MODAL STYLES START------------------------- */

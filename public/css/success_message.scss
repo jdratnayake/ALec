@@ -19,17 +19,16 @@ $success_font: 'Lato', sans-serif;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   perspective: 40px;
-  position: absolute;
+  position: fixed;
   left: 35%;
   z-index: 5;
   display: block;
 }
 
 .close-btn {
-  background-color: white;
   top: -4%;
   right: -3%;
-  color: darkgray;
+  color: $action_button;
   font-size: 2rem;
   cursor: pointer;
   position: absolute;
@@ -132,7 +131,7 @@ $success_font: 'Lato', sans-serif;
 
 //Confirmation message styles
 
-.button-boxes{
+.button-boxes {
   position: absolute;
   top: 73%;
   width: 100%;
@@ -140,7 +139,7 @@ $success_font: 'Lato', sans-serif;
   justify-content: center;
 }
 
-.confirm-btn{
+.confirm-btn {
   width: 150px;
   margin: 0 5px;
   padding: 10px 0;
@@ -159,9 +158,10 @@ $success_font: 'Lato', sans-serif;
   }
 }
 
-.cancel-btn{
+.cancel-btn {
   background-color: $cancel_button;
-  &:hover{
+
+  &:hover {
     background-color: $cancel_button_hover;
   }
 }

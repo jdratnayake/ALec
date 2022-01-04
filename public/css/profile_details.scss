@@ -8,172 +8,200 @@
 $main_color: $theme_second;
 $light_color: #FFF;
 $background_color: #b7c8d64a;
-
 $modal_color: $theme_hover;
 $modal_color_hover: $theme;
 
 .details-content {
-  padding: 1rem;
-  width: 80%;
+  width: 70%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: 5% auto auto auto;
-  background-color: $background_color;
   overflow-y: hidden;
-}
 
-header {
-  background-color: $background_color;
-}
+  .user-details-container {
+    .header-bar {
+      float: left;
+      width: 100%;
+      background-color: #274774;
+      border-radius: 8px 8px 0 0;
 
-.left-bar {
-  margin-top: 20px;
-  height: 100%;
-  float: left;
-  //width: 13.5rem;
-  width: 240px;
+      img {
+        width: 25vh;
+        height: 25vh;
+        margin: 30px;
+        border-radius: 120px;
+        vertical-align: middle;
+        border: 3px solid white;
+      }
 
-  img {
-    width: 90%;
-    margin: 0;
-    border-radius: 5px;
-  }
-}
+      .bio {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: $light_color;
+        width: 15rem;
 
-.buttons {
-  margin-top: 10px;
+        span:first-child {
+          font-weight: bold;
+          font-size: larger;
+        }
+      }
+    }
 
-  button {
-    width: 90%;
-    height: 40px;
-    margin-top: 10px;
-    background-color: $main_color;
-    color: $light_color;
-    border-radius: 5px;
-    border: 2px solid $main_color;
-    font-size: large;
-    font-weight: 400;
-    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    cursor: pointer;
+    .details-container {
+      margin-top: 20px;
+      width: 100%;
+      float: right;
+      overflow: hidden;
+      display: grid;
+      padding: 0 1rem;
 
-    &:hover {
-      background-color: $theme_second_hover;
-      border: 2px solid $theme_second_hover;
+      .heading {
+        font-weight: bold;
+        border-bottom: 2px solid $main_color;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .buttons {
+        margin: 10px 0;
+        display: inline;
+        justify-self: end;
+
+        button {
+          width: fit-content;
+          padding: 6px 12px;
+          background-color: $main_color;
+          color: $light_color;
+          border-radius: 5px;
+          border: 2px solid $main_color;
+          font-size: large;
+          font-weight: 400;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $theme_second_hover;
+            border: 2px solid $theme_second_hover;
+          }
+        }
+
+        button:nth-child(2) {
+          background-color: $delete_button;
+          border: $delete_button_border;
+          color: $delete_button_color;
+
+          &:hover {
+            background-color: $delete_button_hover;
+            color: $delete_button_hover_color;
+          }
+        }
+      }
+
+      .horizontal-container {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        height: 25vh;
+
+        .pvt-details, .course-details {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          border: 1px solid #d0d0d0;
+          background-color: $light_color;
+
+          &:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            border: 1px solid $main_color;
+          }
+        }
+
+        .pvt-details {
+          width: 38%;
+        }
+
+        .course-details {
+          width: 60%;
+
+          .course-content {
+            height: 95%;
+            overflow: auto;
+            width: 100%;
+            display: grid;
+          }
+        }
+      }
+
+      .badge-details {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #d0d0d0;
+        background-color: $light_color;
+
+        &:hover {
+          box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          border: 1px solid $main_color;
+        }
+
+        .badges {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          width: 100%;
+          padding-top: 10px;
+
+          .badge {
+            display: grid;
+            width: 95%;
+            margin: 10px;
+            box-shadow: rgb(99 99 99 / 20%) 0 2px 8px 0;
+            padding: 10px 0 0 0;
+            justify-items: center;
+
+            img {
+              width: 10rem;
+              justify-self: center;
+            }
+
+            .issuer {
+              background-color: #2b4f82;
+              color: #FFF;
+              padding: 5px 0;
+              width: 100%;
+              text-align: center;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
     }
   }
-
-  button:nth-child(2) {
-    background-color: $delete_button;
-    border: $delete_button_border;
-    color: $delete_button_color;
-
-    &:hover {
-      background-color: $delete_button_hover;
-      color: $delete_button_hover_color;
-    }
-  }
-}
-
-.right-bar {
-  margin-top: 20px;
-  height: 100%;
-  //width: 73%;
-  width: 72%;
-  float: right;
-  overflow: hidden;
-  display: grid;
-}
-
-.bio {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: #504f4f;
-  width: 15rem;
-
-
-  span:first-child {
-    color: black;
-    font-weight: bold;
-    font-size: larger;
-  }
-}
-
-.pvt-details, .course-details, .badges {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #d0d0d0;
-  background-color: $light_color;
-
-  span:first-child {
-    font-weight: bold;
-    border-bottom: 2px solid $main_color;
-    width: inherit;
-    margin-bottom: 1rem;
-  }
-
-  &:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    border: 1px solid $main_color;
-  }
-}
-
-.course-details{
-  height: 240px;
-  overflow: auto;
-}
-
-.badges {
-  overflow: scroll;
-  overflow-x: hidden;
-  display: block;
-
-  span:first-child {
-    display: block;
-    margin: 0;
-  }
-
-  span {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px;
-    align-content: center;
-  }
-
-  i {
-    color: black;
-    font-size: 30px;
-    margin-right: 10px;
-  }
-}
-
-.badge-image{
-  width: 10rem;
-  margin: 5px;
 }
 
 /*--------------------------MODAL STYLES START------------------------- */
 
-.modal-content{
+.modal-content {
   padding-bottom: 56px;
-  .modal-body{
+
+  .modal-body {
     margin-top: 20px;
 
-    .assigned-courses{
+    .assigned-courses {
       margin: 20px 0;
 
-      .assigned-course{
+      .assigned-course {
         background-color: #325c9733;
         border: 2px solid white;
         border-radius: 16px;
         padding: 6px 12px;
 
-        .remove-course{
+        .remove-course {
           float: right;
           cursor: pointer;
         }
@@ -181,9 +209,9 @@ header {
     }
   }
 
-  .selection-box{
-    border:1px solid lightgrey;
-    border-bottom-width:2px;
+  .selection-box {
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
     border-radius: 4px;
     width: 100%;
     margin-top: 5px;
@@ -192,14 +220,15 @@ header {
   }
 }
 
-.fa-trash{
+.fa-trash {
   color: $delete_button;
-  &:hover{
+
+  &:hover {
     color: #c21e1e;
   }
 }
 
-.apply-button{
+.apply-button {
   width: 20%;
   height: 40px;
   margin-right: 18px;
