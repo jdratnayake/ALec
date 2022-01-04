@@ -674,6 +674,7 @@ footer p {
   justify-content: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
   padding: 10px 0;
+  text-align: center;
 }
 .details-content .badge-details-container .badge-details .badges .badge img {
   width: 10rem;
