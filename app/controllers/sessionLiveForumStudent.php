@@ -11,10 +11,12 @@ class sessionLiveForumStudent extends AlecFramework
 
     public function index($sessionId)
     {
+        $userId = $this->getSession("userId");
+
         $data["bread"]["sessionDetails"] = $this->sessionLiveForumStudentModel->getSessionDetails($sessionId);
 
-        $data["userId"] = $this->getSession("userId");
-        $data["questionDetails"] = $this->sessionLiveForumStudentModel->getForumQuestionDetails($sessionId);
+        $data["userId"] = $userId;
+        $data["questionDetails"] = $this->sessionLiveForumStudentModel->getForumQuestionDetails($sessionId, $userId);
 
         $errors = array();
         $errors["question"] = "";
@@ -24,7 +26,7 @@ class sessionLiveForumStudent extends AlecFramework
             // return 0;
 
             $question = $_POST["new-question"];
-            $studentId = $this->getSession("userId");
+            $studentId = $userId;
 
             if (empty($question)) $errors["question"] = "Question is required";
 
