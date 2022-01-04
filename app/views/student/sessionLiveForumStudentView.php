@@ -1,9 +1,9 @@
 <?php
 $sessionId = $data["bread"]["sessionDetails"]["session_id"];
 $sessionName = $data["bread"]["sessionDetails"]["session_name"];
-
 $courseId = $data["bread"]["sessionDetails"]["course_id"];
 
+$errors = $data["errors"];
 ?>
 
 <!DOCTYPE html>
@@ -109,19 +109,22 @@ $courseId = $data["bread"]["sessionDetails"]["course_id"];
             </div>
         </div>
 
-        <div class="new-question">
-            <!--        Toggle button to toggle between real name and random name-->
-            <div class="toggle-btn">
-                <span class="toggle-label">Stay Anonymous</span>
-                <label for="name-toggle" class="switch">
-                    <input type="checkbox" id="name-toggle" name="name-toggle">
-                    <span class="slider round"></span>
-                </label>
+        <form action="<?php echo BASEURL . "/sessionLiveForumStudent/index/{$sessionId}" ?>" method="POST" id="liveForum-form">
+            <div class="new-question">
+                <!--        Toggle button to toggle between real name and random name-->
+                <div class="toggle-btn">
+                    <span class="toggle-label">Stay Anonymous</span>
+                    <label for="name-toggle" class="switch">
+                        <input type="checkbox" id="name-toggle" name="name-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <label for="new-question"></label>
+                <input type="text" name="new-question" id="new-question" placeholder="Add your question here... &#xF040;" onfocusout="questionValidation()">
+                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                <div class="error"><?php echo $errors["question"]; ?></div>
             </div>
-            <label for="new-question"></label>
-            <input type="text" name="new-question" id="new-question" placeholder="Add your question here... &#xF040;">
-            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-        </div>
+        </form>
     </div>
 
     <?php linkPhp("footer"); ?>
@@ -131,6 +134,8 @@ $courseId = $data["bread"]["sessionDetails"]["course_id"];
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
+
+    <?php linkJS("sessionLiveForumStudentValidation") ?>
 
 </body>
 
