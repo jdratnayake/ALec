@@ -42,4 +42,13 @@ class sessionLiveForumStudentModel extends Database
 
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function getQuestionIds($sessionId)
+    {
+        $query = "SELECT question_id FROM session_forum_question WHERE session_id='$sessionId' ORDER BY points DESC, post_time";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
+    }
 }

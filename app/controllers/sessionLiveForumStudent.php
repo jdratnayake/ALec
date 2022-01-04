@@ -16,6 +16,7 @@ class sessionLiveForumStudent extends AlecFramework
         $data["bread"]["sessionDetails"] = $this->sessionLiveForumStudentModel->getSessionDetails($sessionId);
 
         $data["userId"] = $userId;
+        $data["questionIdArray"] = $this->createQuestionIdArray($sessionId);
         $data["questionDetails"] = $this->sessionLiveForumStudentModel->getForumQuestionDetails($sessionId, $userId);
 
         $errors = array();
@@ -57,5 +58,65 @@ class sessionLiveForumStudent extends AlecFramework
         $userId = $this->getSession("userId");
 
         $this->sessionLiveForumStudentModel->changeVote($questionId, $userId);
+    }
+
+    function createQuestionIdArray($sessionId)
+    {
+        $questionIds = $this->sessionLiveForumStudentModel->getQuestionIds($sessionId);
+
+        $questionIdArray = "";
+
+        while ($row = mysqli_fetch_assoc($questionIds)) {
+            $questionIdArray .= "_" . $row["question_id"];
+        }
+
+        $questionIdArray = trim($questionIdArray, "_");
+
+        return $questionIdArray;
+    }
+
+    function getQuestionIdArray($sessionId)
+    {
+        echo $this->createQuestionIdArray($sessionId);
+    }
+
+    function createForumQuestions($sessionId)
+    {
+        $userId = $this->getSession("userId");
+        $questionDetails = $this->sessionLiveForumStudentModel->getForumQuestionDetails($sessionId, $userId);
+        $output = "";
+
+        while ($row = mysqli_fetch_assoc($questionDetails)) {
+
+            if ($row['student_id'] != $userId && $row['random_status']) {
+                $name = $row["random_name"];
+            } else {
+                $name = $row["name"];
+            }
+
+            if ($row['vote_status'] != "") {
+                $styleName = "style='color: orange;'";
+            } else {
+                $styleName = "";
+            }
+
+            $output .=
+                "
+            <div class='question'>
+                <input type='hidden' value='{$row['question_id']}'>
+                <span class='text'>
+                    {$row['question']}
+                    <span class='name'>{$name}</span>
+                    <span class='name'>{$row['post_time']}</span>
+                </span>
+                <span class='vote'>
+                    <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true' {$styleName}></i>
+                    <span class='votes-count'>{$row['points']}</span>
+                </span>
+            </div>
+            ";
+        }
+
+        echo $output;
     }
 }

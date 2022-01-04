@@ -26,6 +26,9 @@ $errors = $data["errors"];
 </head>
 
 <body>
+    <input type="hidden" id="session-id" value='<?php echo $sessionId; ?>'>
+    <input type="hidden" id="questionIdArray" value='<?php echo $data["questionIdArray"]; ?>'>
+
     <?php linkPhp("navigationBarLecturer"); ?>
 
     <!--    breadcrumb-->
@@ -54,6 +57,7 @@ $errors = $data["errors"];
             <header>Live Forum</header>
         </div>
         <div class="questions-container">
+
             <?php
 
             while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
@@ -133,6 +137,7 @@ $errors = $data["errors"];
 
     <?php linkJS("likeUnlikeForumQuestion") ?>
 
+    <?php linkJS("sessionLiveForumStudentQuestionsUpdate") ?>
 
 </body>
 

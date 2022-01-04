@@ -2,13 +2,9 @@ let liked = "rgb(255, 165, 0)";
 let unliked = "rgb(0, 0, 0)";
 
 $(document).ready(function () {
-    $(".vote-highlight").click(function () {
-        const colorValue = $(this).css("color");
-
+    $(document).delegate('.vote-highlight', 'click', function () {
         changeVote(this);
-
         changeColor(this);
-
     });
 
     function changeColor(element) {
