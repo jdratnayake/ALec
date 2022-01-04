@@ -138,7 +138,7 @@
                             <span onclick=\"deleteFunction($questionLink)\">Delete</span>
                         </div>
                     </span>
-                    <span class='question'>{$row['question']}</span>
+                    <span class='question'" . "onclick=\"window.location='http://localhost/ALec/showPollAnswer/index/{$row['question_no']}'\"" . ">{$row['question']}</span>
                         <span class='status-symbols'>
                         <input type='hidden' value='{$row['status']}'>
                         <input type='hidden' value='{$row['question_no']}'>

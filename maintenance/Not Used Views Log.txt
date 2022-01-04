@@ -10,12 +10,8 @@ Student
 
 Components
 
-1. displayPollMcqView
-2. displayPollOpenTextView
 3. errorMessage
 4. sessionLiveForum
-5. showPollAnswer-mcq
-6. showPollAnswer-openText
 
 All
 
