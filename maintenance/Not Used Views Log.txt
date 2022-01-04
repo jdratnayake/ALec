@@ -1,7 +1,6 @@
 Admin
 
 1. displayAllBadges
-2. displayCourseBadges
 
 Lecturer
 
