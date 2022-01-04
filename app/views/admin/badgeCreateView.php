@@ -132,8 +132,7 @@ $errors = $data["errors"];
 
     <?php linkJS("fileUpload") ?>
 
-    <?php //linkJS("badgeValidation") 
-    ?>
+    <?php linkJS("badgeValidation") ?>
 
 </body>
 

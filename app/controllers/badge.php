@@ -9,12 +9,16 @@ class Badge extends AlecFramework
         $this->badgeModel = $this->model("badgeModel");
     }
 
-    public function index($badgeId = "")
+    public function index($courseId = "")
     {
-        if (empty($badgeId)) {
+        $data["courseDetailsDropdown"] = $this->badgeModel->getCourses();
+
+        if (empty($courseId)) {
             $data["emptySignal"] = 1;
         } else {
             $data["emptySignal"] = 0;
+            $data["courseDetails"] = $this->badgeModel->getCourseDetails($courseId);
+            $data["badgeDetails"] = $this->badgeModel->getBadgeDetails($courseId);
         }
 
         $this->view("admin/badgesDisplayView", $data);
@@ -79,14 +83,14 @@ class Badge extends AlecFramework
 
                 $allowed = array("image/jpeg", "image/jpg", "image/png");
                 if (!in_array($fileType, $allowed)) {
-                    $errors[] = 'Only jpeg, jpg, and png files are allowed.';
+                    $imageErrors[] = 'Only jpeg, jpg, and png files are allowed.';
                 }
 
                 if ($fileSize > 5000000) {
-                    $errors[] = 'File size should be less than 5MB.';
+                    $imageError[] = 'File size should be less than 5MB.';
                 }
 
-                if (empty($errors)) {
+                if (empty($imageError)) {
                     $file_uploaded = move_uploaded_file($tempName, $fileName);
                 }
 
