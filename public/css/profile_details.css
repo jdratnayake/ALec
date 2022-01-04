@@ -684,7 +684,7 @@ footer p {
   margin: 20px 0;
   display: flex;
   justify-content: space-between;
-  height: 25vh;
+  height: 180px;
 }
 .details-content .user-details-container .details-container .horizontal-container .pvt-details, .details-content .user-details-container .details-container .horizontal-container .course-details {
   display: inline-flex;
@@ -707,7 +707,6 @@ footer p {
   width: 60%;
 }
 .details-content .user-details-container .details-container .horizontal-container .course-details .course-content {
-  height: 95%;
   overflow: auto;
   width: 100%;
   display: grid;

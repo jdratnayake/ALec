@@ -101,7 +101,7 @@ $modal_color_hover: $theme;
         margin: 20px 0;
         display: flex;
         justify-content: space-between;
-        height: 25vh;
+        height: 180px;
 
         .pvt-details, .course-details {
           display: inline-flex;
@@ -127,7 +127,6 @@ $modal_color_hover: $theme;
           width: 60%;
 
           .course-content {
-            height: 95%;
             overflow: auto;
             width: 100%;
             display: grid;
