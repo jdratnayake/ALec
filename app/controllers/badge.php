@@ -1,17 +1,28 @@
 <?php
 
-class CreateBadge extends AlecFramework
+class Badge extends AlecFramework
 {
     public function __construct()
     {
         $this->authorization("admin");
         $this->helper("linker");
-        $this->createBadgeModel = $this->model("createBadgeModel");
+        $this->badgeModel = $this->model("badgeModel");
     }
 
-    public function index()
+    public function index($badgeId = "")
     {
-        $data["courseDetails"] = $this->createBadgeModel->getCourses();
+        if (empty($badgeId)) {
+            $data["emptySignal"] = 1;
+        } else {
+            $data["emptySignal"] = 0;
+        }
+
+        $this->view("admin/badgesDisplayView", $data);
+    }
+
+    public function create()
+    {
+        $data["courseDetails"] = $this->badgeModel->getCourses();
 
         $errors = array();
         $errors["courseName"] = "";
@@ -20,6 +31,10 @@ class CreateBadge extends AlecFramework
         $errors["image"] = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // var_dump($_POST);
+            // var_dump($_FILES);
+            // return 0;
+
             //Badge Details
             $courseIdList = $this->getCourseIdList($_POST["course-id-list"]);
             $badgeName = $_POST["badge-name"];
@@ -77,15 +92,17 @@ class CreateBadge extends AlecFramework
 
                 if ($file_uploaded) {
                     foreach ($courseIdList as $courseId) {
-                        $this->createBadgeModel->insertBadge($badgeName, $badgeDescription, $badgePoints, $courseId, $tempFileName);
+                        $this->badgeModel->insertBadge($badgeName, $badgeDescription, $badgePoints, $courseId, $tempFileName);
                     }
                 }
+
+                $this->redirect("badge/index/{$courseId}");
             }
         }
 
         $data["errors"] = $errors;
 
-        $this->view("admin/createBadgeView", $data);
+        $this->view("admin/badgeCreateView", $data);
     }
 
     public function getCourseIdList($idString)

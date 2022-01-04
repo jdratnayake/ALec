@@ -35,7 +35,7 @@ $errors = $data["errors"];
         <header>Create Badge</header>
 
         <!-- Badge details -->
-        <form action="<?php echo BASEURL . "/createBadge/index" ?>" method="post" class="details" enctype="multipart/form-data" id="registerBadgeForm" onsubmit="validateAll()">
+        <form action="<?php echo BASEURL . "/badge/create" ?>" method="post" class="details" enctype="multipart/form-data" id="registerBadgeForm" onsubmit="validateAll()">
 
             <div id="input-list">
                 <!-- select course drop down list -->
@@ -66,10 +66,10 @@ $errors = $data["errors"];
 
                 <div class="course-display">
                     <div class="form-line">
-                    <!-- List of selected courses-->
-                    <ul style="list-style-type: none" class="selected-courses" id="selected-courses">
+                        <!-- List of selected courses-->
+                        <ul style="list-style-type: none" class="selected-courses" id="selected-courses">
 
-                    </ul>
+                        </ul>
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@ $errors = $data["errors"];
                     <div class="form-line">
                         <label for="badge-points" class="form-control-label">Badge points</label>
                         <input type="number" class="form-control form-input" id="badge-points" name="badge-points" min="0" max="100" step="10" placeholder="Enter no.of points for the badge" value="0">
-<!--                        <input type="number" class="form-control form-input" placeholder="Enter no.of points for the badge" name="badge-points" id="badge-points" value="0" onfocusout="validatePoints()">-->
+                        <!--                        <input type="number" class="form-control form-input" placeholder="Enter no.of points for the badge" name="badge-points" id="badge-points" value="0" onfocusout="validatePoints()">-->
                     </div>
                     <div class="error"><?php echo $errors["points"] ?></div>
                 </div>
@@ -132,7 +132,8 @@ $errors = $data["errors"];
 
     <?php linkJS("fileUpload") ?>
 
-    <?php linkJS("badgeValidation") ?>
+    <?php //linkJS("badgeValidation") 
+    ?>
 
 </body>
 

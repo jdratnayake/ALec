@@ -1,6 +1,5 @@
 Admin
 
-1. displayAllBadges
 
 Lecturer
 

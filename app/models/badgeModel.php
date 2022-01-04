@@ -1,6 +1,6 @@
 <?php
 
-class CreateBadgeModel extends Database
+class BadgeModel extends Database
 {
     public function getCourses()
     {
