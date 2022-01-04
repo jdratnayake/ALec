@@ -77,9 +77,13 @@ $light_color: #FFF;
         flex-direction: column;
         align-items: center;
 
-        .fa-thumbs-o-up {
+        .vote-highlight{
           font-size: 24px;
           cursor: pointer;
+
+          &:hover {
+            transform: scale(1.2);
+          }
         }
 
         .votes-count {

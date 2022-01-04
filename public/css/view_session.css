@@ -753,12 +753,11 @@ footer p {
   flex-direction: column;
   align-items: center;
 }
-.details-content .session-details-container .sessions .session .vote .fa-thumbs-o-up {
+.details-content .session-details-container .sessions .session .vote .vote-highlight {
   font-size: 24px;
   cursor: pointer;
 }
-.details-content .session-details-container .sessions .session .vote .fa-thumbs-o-up:hover {
-  color: #0000ee;
+.details-content .session-details-container .sessions .session .vote .vote-highlight:hover {
   transform: scale(1.2);
 }
 .details-content .session-details-container .sessions .session .vote .votes-count {

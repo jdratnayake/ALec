@@ -44,7 +44,7 @@
                 <span class="name">1.30 pm</span>
             </span>
             <span class="vote">
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    <i class="fa fa-thumbs-o-up vote-highlight" aria-hidden="true"></i>
                     <span class="votes-count">8</span>
             </span>
         </div>
@@ -55,7 +55,7 @@
                 <span class="name">1.28 pm</span>
             </span>
             <span class="vote">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                <i class="fa fa-thumbs-o-up vote-highlight" aria-hidden="true"></i>
                 <span class="votes-count">6</span>
             </span>
         </div>
@@ -66,7 +66,7 @@
                 <span class="name">1.28 pm</span>
             </span>
             <span class="vote">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                <i class="fa fa-thumbs-o-up vote-highlight" aria-hidden="true"></i>
                 <span class="votes-count">5</span>
             </span>
         </div>
@@ -77,7 +77,7 @@
                 <span class="name">1.27 pm</span>
             </span>
             <span class="vote">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                <i class="fa fa-thumbs-o-up vote-highlight" aria-hidden="true"></i>
                 <span class="votes-count">1</span>
             </span>
         </div>
@@ -88,7 +88,7 @@
                 <span class="name">1.23 pm</span>
             </span>
             <span class="vote">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                <i class="fa fa-thumbs-o-up vote-highlight" aria-hidden="true"></i>
                 <span class="votes-count">0</span>
             </span>
         </div>
@@ -116,6 +116,8 @@
 <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
 <?php linkJS("notification") ?>
+
+<?php linkJS("likeUnlikeForumQuestion") ?>
 
 </body>
 

@@ -669,9 +669,12 @@ footer p {
   flex-direction: column;
   align-items: center;
 }
-.details-content .questions-container .question .vote .fa-thumbs-o-up {
+.details-content .questions-container .question .vote .vote-highlight {
   font-size: 24px;
   cursor: pointer;
+}
+.details-content .questions-container .question .vote .vote-highlight:hover {
+  transform: scale(1.2);
 }
 .details-content .questions-container .question .vote .votes-count {
   font-size: small;
