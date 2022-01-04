@@ -110,22 +110,16 @@
                     <li class="table-header">
                         <div class="col col-1">Discussion</div>
                         <div class="col col-2">Started by</div>
-                        <div class="col col-3">Last post</div>
+                        <div class="col col-3">Course Name</div>
                     </li>
 
                     <?php
                     while ($row = mysqli_fetch_assoc($data["topicDiscussionDetails"])) {
-                        $replyRow = mysqli_fetch_assoc($data["replyDiscussionDetails"]);
 
                         $name = $row["name"];
-                        $replyName = $replyRow["name"];
 
                         if ($row["user_type"] === "stu" and $row["user_id"] !== $data["userId"] and $row["random_status"] === "T") {
                             $name = $row["random_name"];
-                        }
-
-                        if ($replyRow["user_type"] === "stu" and $replyRow["user_id"] !== $data["userId"] and $replyRow["random_status"] === "T") {
-                            $replyName = $replyRow["random_name"];
                         }
 
                         echo
@@ -151,18 +145,8 @@
                             </div>
                         </div>
 
-                        <div class='col col-3' data-label='Last post'>
-                            <div class='profile_img_info'>
-                                <div class='img'>
-                                    <img src='http://localhost/ALec/public/img/profile_pic.svg' alt='profile_pic'>
-                                </div>
-                                <div class='info'>
-                                    <p class='name'>{$replyName}</p>
-                                    <p class='place'>
-                                        {$replyRow['post_time']}
-                                    </p>
-                                </div>
-                            </div>
+                        <div class='col col-3' data-label='Course Name'>
+                                {$row['course_name']}
                         </div>
                     </li>
                         ";
