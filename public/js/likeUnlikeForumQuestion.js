@@ -1,11 +1,48 @@
-let liked = "grey";
-let unliked = "black";
+let liked = "rgb(255, 165, 0)";
+let unliked = "rgb(0, 0, 0)";
 
-for (let i = 0; i < document.getElementsByClassName("vote").length; i++) {
-    document.getElementsByClassName("vote-highlight")[i].addEventListener("click",()=>{
-        if(document.getElementsByClassName("vote-highlight")[i].style.color === liked)
-            document.getElementsByClassName("vote-highlight")[i].style.color = unliked;
-        else
-            document.getElementsByClassName("vote-highlight")[i].style.color = liked;
-    })
-}
+$(document).ready(function () {
+    $(".vote-highlight").click(function () {
+        const colorValue = $(this).css("color");
+
+        changeVote(this);
+
+        changeColor(this);
+
+    });
+
+    function changeColor(element) {
+        const colorValue = $(element).css("color");
+
+        if (colorValue == unliked) {
+            $(element).css("color", liked);
+        } else if (colorValue == liked) {
+            $(element).css("color", unliked);
+        }
+    }
+
+    function changeVote(element) {
+        const colorValue = $(element).css("color");
+        const questionId = $(element).parent().parent().children().first().val();
+
+        //Change Number - START
+        const pointsTag = $(element).next();
+        var points = parseInt(pointsTag.text());
+
+        if (colorValue == unliked) {
+            points++;
+        } else if (colorValue == liked) {
+            points--;
+        }
+
+        pointsTag.text(points);
+        //Change Number - END
+
+        $.ajax({
+            type: "GET",
+
+            url: "http://localhost/ALec/sessionLiveForumStudent/changeVote/" + questionId
+        })
+    }
+
+});

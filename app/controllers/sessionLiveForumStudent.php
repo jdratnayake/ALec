@@ -51,4 +51,11 @@ class sessionLiveForumStudent extends AlecFramework
 
         $this->view("student/sessionLiveForumStudentView", $data);
     }
+
+    function changeVote($questionId)
+    {
+        $userId = $this->getSession("userId");
+
+        $this->sessionLiveForumStudentModel->changeVote($questionId, $userId);
+    }
 }

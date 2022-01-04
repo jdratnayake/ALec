@@ -44,6 +44,7 @@ $errors = $data["errors"];
     </ul>
 
     <div class="details-content">
+
         <!-- <p class="q-count">3</p> -->
         <div class="controller-container" onclick="window.location='<?php echo BASEURL . '/attemptPoolQuestion/index/' . $courseId; ?>' ">
             Go to Polls
@@ -63,16 +64,23 @@ $errors = $data["errors"];
                     $name = $row["name"];
                 }
 
+                if ($row['vote_status'] != "") {
+                    $styleName = "style='color: orange;'";
+                } else {
+                    $styleName = "";
+                }
+
                 echo
                 "
                 <div class='question'>
+                    <input type='hidden' value='{$row['question_id']}'>
                     <span class='text'>
                         {$row['question']}
                         <span class='name'>{$name}</span>
                         <span class='name'>{$row['post_time']}</span>
                     </span>
                     <span class='vote'>
-                        <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                        <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true' {$styleName}></i>
                         <span class='votes-count'>{$row['points']}</span>
                     </span>
                 </div>
@@ -122,6 +130,9 @@ $errors = $data["errors"];
     <?php linkJS("notification") ?>
 
     <?php linkJS("sessionLiveForumStudentValidation") ?>
+
+    <?php linkJS("likeUnlikeForumQuestion") ?>
+
 
 </body>
 
