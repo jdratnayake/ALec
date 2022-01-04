@@ -26,6 +26,7 @@ $errors = $data["errors"];
     <!--    breadcrumb-->
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/badge/index">Badges</a></li>
         <li>Create Badge</li>
     </ul>
 
