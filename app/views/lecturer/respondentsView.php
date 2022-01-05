@@ -1,7 +1,7 @@
 <?php
 $sessionId = $data["bread"]["sessionDetails"]["session_id"];
+$questionId = $data["bread"]["sessionDetails"]["question_no"];
 $sessionName = $data["bread"]["sessionDetails"]["session_name"];
-$questionCount = $data["question"]["question_count"];
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ $questionCount = $data["question"]["question_count"];
     <title>Preview Poll</title>
 
     <!-- CSS File HOME-->
-    <?php linkCSS("show_poll_openText"); ?>
+    <?php linkCSS("view_respondents"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
@@ -39,63 +39,56 @@ $questionCount = $data["question"]["question_count"];
         ";
         ?>
 
-        <li>Preview Poll</li>
+        <?php
+        echo
+        "
+        <li><a href='http://localhost/ALec/showPollAnswer/index/{$questionId}'>Preview Poll</a></li>
+        ";
+        ?>
+
+        <li>Respondents</li>
     </ul>
 
     <div class="details-content">
-
         <div class="container">
             <div class="heading"></div>
 
             <div class="content">
                 <div class="questions-container">
-
-                    <?php
-                    echo
-                    "
-                        <span class='participant-row'>
-                            <i class='fa fa-users' aria-hidden='true'></i>
-                            {$data["question"]["question_count"]}
-                        </span>
-                        <span class='question'>
-                            {$data["question"]["question"]}
-                        </span>
-                    ";
-                    ?>
-
+                    <span class="question">
+                        <?php echo $data["question"]["question"]; ?>
+                    </span>
+                    <span class="question">
+                        Answer : <b><?php echo $data["answer"]["choice"]; ?></b>
+                    </span>
+                    <span class="question">
+                        Respondents:
+                    </span>
                     <div class="answer-container">
 
                         <?php
 
-                        while ($row = mysqli_fetch_assoc($data["answers"])) {
-                            $precentage = $row["answer_count"] * 100 / $questionCount;
-                            $precentage = round($precentage, 2);
-
+                        while ($row = mysqli_fetch_assoc($data["respondentsDetails"])) {
                             echo
                             "
-                            <div class='row' onclick=\"window.location='" . BASEURL . "/showPollAnswer/displayRespondents/open/{$row["attempt_no"]}" . "'\">
-                                <div class='answer-label'>{$row["answer"]}</div>
-                                <div class='answer'>
-                                    <div class='answer-progress pressed' style='width: {$precentage}%'></div>
-                                </div>
-                                <div class='percentage'>{$precentage}%</div>
-                            </div>
+                            <div class='row'>{$row["index_no"]}</div>
                             ";
                         }
 
                         ?>
 
+                        <!-- <div class='row'>D.S.SENANAYAKE</div> -->
 
                     </div>
                 </div>
             </div>
 
             <div class="button-container">
-                <button type="button" value="Create Session" class="save-btn" onclick="location.href='<?php echo BASEURL . "/viewSession/index/{$sessionId}" ?>'">
-                    Done
+                <!--        Save Session Button-->
+                <button type="button" value="Create Session" class="save-btn" onclick="location.href='<?php echo BASEURL . "/showPollAnswer/index/{$questionId}" ?>'">
+                    Back to results
                 </button>
             </div>
-
         </div>
     </div>
 

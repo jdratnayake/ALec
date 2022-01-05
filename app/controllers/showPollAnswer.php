@@ -26,4 +26,16 @@ class ShowPollAnswer extends AlecFramework
             $this->view("lecturer/showPollAnswerOpenTextView", $data);
         }
     }
+
+    public function displayRespondents($type, $choiceId)
+    {
+        $data["bread"]["sessionDetails"] = $this->showPollAnswer->getSessionDetailsForResponses($type, $choiceId);
+        $questionId = $data["bread"]["sessionDetails"]["question_no"];
+
+        $data["question"] = $this->showPollAnswer->getQuestion($questionId);
+        $data["answer"] = $this->showPollAnswer->getAnswer($type, $choiceId);
+        $data["respondentsDetails"] = $this->showPollAnswer->getRespondents($type, $choiceId);
+
+        $this->view("lecturer/respondentsView", $data);
+    }
 }
