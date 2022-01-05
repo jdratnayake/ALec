@@ -9,14 +9,20 @@ class ShowPollAnswer extends AlecFramework
         $this->showPollAnswer = $this->model("ShowPollAnswerModel");
     }
 
-    public function index($questionNo)
+    public function index($questionId)
     {
-        $data["questionDetails"] = $this->showPollAnswer->getQuestionDetails($questionNo);
-        $questionType = $data["questionDetails"]["question_type"];
+        $data["bread"]["sessionDetails"] = $this->showPollAnswer->getSessionDetails($questionId);
+        $data["question"] = $this->showPollAnswer->getQuestion($questionId);
 
-        if ($questionType == "mcq" || $questionType == "mcq-tf") {
+        $type = $data["question"]["question_type"];
+
+        if ($type == "mcq" || $type == "mcq-tf") {
+            $data["answers"] = $this->showPollAnswer->getMcqAnswers($questionId);
+
             $this->view("lecturer/showPollAnswerMcqView", $data);
-        } else if ($questionType == "open") {
+        } else if ($type == "open") {
+            $data["answers"] = $this->showPollAnswer->getOpenAnswers($questionId);
+
             $this->view("lecturer/showPollAnswerOpenTextView", $data);
         }
     }
