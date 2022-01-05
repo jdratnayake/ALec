@@ -61,7 +61,7 @@ $light_color: #FFF;
       }
     }
 
-    .dlt-btn{
+    .dlt-btn {
       background-color: $delete_button;
       color: $delete_button_color;
       border: 2px solid $delete_button;
@@ -123,7 +123,8 @@ $light_color: #FFF;
         border-radius: 5px;
         margin: 5px 0;
         padding: 10px;
-        height: 50px;
+        height: 55px;
+        justify-content: space-between;
 
         .fa-ellipsis-v {
           width: 20px;
