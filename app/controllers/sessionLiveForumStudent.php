@@ -15,10 +15,6 @@ class sessionLiveForumStudent extends AlecFramework
 
         $data["bread"]["sessionDetails"] = $this->sessionLiveForumStudentModel->getSessionDetails($sessionId);
 
-        $data["userId"] = $userId;
-        $data["questionIdArray"] = $this->createQuestionIdArray($sessionId);
-        $data["questionDetails"] = $this->sessionLiveForumStudentModel->getForumQuestionDetails($sessionId, $userId);
-
         $errors = array();
         $errors["question"] = "";
 
@@ -49,6 +45,10 @@ class sessionLiveForumStudent extends AlecFramework
         }
 
         $data["errors"] = $errors;
+
+        $data["userId"] = $userId;
+        $data["questionIdArray"] = $this->createQuestionIdArray($sessionId);
+        $data["questionDetails"] = $this->sessionLiveForumStudentModel->getForumQuestionDetails($sessionId, $userId);
 
         $this->view("student/sessionLiveForumStudentView", $data);
     }
@@ -88,7 +88,7 @@ class sessionLiveForumStudent extends AlecFramework
 
         while ($row = mysqli_fetch_assoc($questionDetails)) {
 
-            if ($row['student_id'] != $userId && $row['random_status']) {
+            if ($row['student_id'] != $userId && $row['random_status'] == "T") {
                 $name = $row["random_name"];
             } else {
                 $name = $row["name"];

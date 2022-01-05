@@ -39,7 +39,7 @@ class ShowPollAnswerModel extends Database
     public function getSessionDetailsForResponses($type, $choiceId)
     {
         if ($type == "mcq") {
-            $query = "SELECT session.session_id, session.session_name, session_answer.question_no FROM session_mcq_attempt INNER JOIN session_answer ON session_mcq_attempt.choice_id=session_answer.choice_id INNER JOIN session ON session_answer.session_id=session.session_id WHERE session_mcq_attempt.choice_id='$choiceId'";
+            $query = "SELECT session.session_id, session.session_name, session_answer.question_no FROM session_answer INNER JOIN session ON session_answer.session_id=session.session_id WHERE session_answer.choice_id='$choiceId'";
         } else if ($type == "open") {
             $query = "SELECT session.session_id, session.session_name, session_open_attempt.question_no FROM session_open_attempt INNER JOIN session_question ON session_open_attempt.question_no=session_question.question_no INNER JOIN session ON session_question.session_id=session.session_id WHERE attempt_no='$choiceId'";
         }

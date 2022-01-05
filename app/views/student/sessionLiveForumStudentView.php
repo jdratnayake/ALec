@@ -62,7 +62,7 @@ $errors = $data["errors"];
 
             while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
 
-                if ($row['student_id'] != $userId && $row['random_status']) {
+                if ($row['student_id'] != $userId && $row['random_status'] == "T") {
                     $name = $row["random_name"];
                 } else {
                     $name = $row["name"];
@@ -137,7 +137,8 @@ $errors = $data["errors"];
 
     <?php linkJS("likeUnlikeForumQuestion") ?>
 
-    <?php linkJS("sessionLiveForumStudentQuestionsUpdate") ?>
+    <?php linkJS("sessionLiveForumStudentQuestionsUpdate")
+    ?>
 
 </body>
 
