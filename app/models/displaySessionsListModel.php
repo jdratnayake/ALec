@@ -26,6 +26,26 @@ class DisplaySessionsListModel extends Database
         return $result;
     }
 
+    public function getActiveSessionsSearch($userId, $searchValue)
+    {
+        $searchValue = mysqli_real_escape_string($GLOBALS["db"], $searchValue);
+
+        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='T' AND session_name LIKE '$searchValue' ORDER BY create_date DESC";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
+    }
+
+    public function getNotActiveSessionsSearch($userId, $searchValue)
+    {
+        $searchValue = mysqli_real_escape_string($GLOBALS["db"], $searchValue);
+
+        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='F' AND session_name LIKE '$searchValue' ORDER BY create_date DESC";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
+    }
+
 
     public function createSession($sessionName, $userId, $courseId)
     {

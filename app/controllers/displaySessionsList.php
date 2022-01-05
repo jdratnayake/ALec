@@ -56,4 +56,77 @@ class DisplaySessionsList extends AlecFramework
     {
         $this->displaySessionsListModel->changeSessionStatus($sessionId, $status);
     }
+
+    public function sessionSearch()
+    {
+        $userId = $this->getSession("userId");
+        // var_dump($_POST);
+        $searchValue = $_POST["search-tag"];
+        $searchValue = "%" . $searchValue . "%";
+
+        $data["activeSessions"] = $this->displaySessionsListModel->getActiveSessionsSearch($userId, $searchValue);
+        $data["inActiveSessions"] = $this->displaySessionsListModel->getNotActiveSessionsSearch($userId, $searchValue);
+
+        $output = " <div class='sessions''>
+                        <span class=' session-label'>Active</span>
+
+                        <div id='active-sessions'>";
+
+
+
+        while ($row = mysqli_fetch_assoc($data["activeSessions"])) {
+            $output .=
+                "
+                            <div class='session'>
+                                <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                                    <span>
+                                        {$row['session_name']}
+                                    </span>
+                                </a>
+                                <span>
+                                    <input type='hidden' class='course-identity' value='{$row['course_id']}'>
+                                    <input type='hidden' value='{$row['session_id']}'>
+                                    <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                                    <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
+                                </span>
+                            </div>
+                            ";
+        }
+
+        $output .= "     </div>
+
+                    </div>";
+
+        $output .= " <div class='sessions''>
+                        <span class=' session-label'>Recent</span>
+
+                        <div id='inactive-sessions'>";
+
+
+
+        while ($row = mysqli_fetch_assoc($data["inActiveSessions"])) {
+            $output .=
+                "
+                            <div class='session'>
+                                <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                                    <span>
+                                        {$row['session_name']}
+                                    </span>
+                                </a>
+                                <span>
+                                    <input type='hidden' class='course-identity' value='{$row['course_id']}'>
+                                    <input type='hidden' value='{$row['session_id']}'>
+                                    <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
+                                    <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
+                                </span>
+                            </div>
+                            ";
+        }
+
+        $output .= "     </div>
+
+                    </div>";
+
+        echo $output;
+    }
 }

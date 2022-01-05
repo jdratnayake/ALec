@@ -37,9 +37,10 @@ $errors = $data["errors"];
         </div>
         <div class="button-container">
             <!--    Search bar     -->
-            <form method="POST" action="<?php echo BASEURL . "/displaySessionsList/index" ?>" class="search-bar" id="search">
+            <form method="POST" class="search-bar" id="session-search">
                 <label for="search-tag"></label>
-                <input type="text" placeholder="Search.. &#xF002;" name="search" id="search-tag" style="font-family: FontAwesome, Poppins,sans-serif; font-style: normal; font-size: 15px">
+
+                <input type="text" placeholder="Search.. &#xF002;" name="search-tag" id="search-tag" style="font-family: FontAwesome, Poppins,sans-serif; font-style: normal; font-size: 15px">
             </form>
             <!--        Add Session Button-->
             <button type="button" value="Add New Session" class="add-btn" id="add-session-btn">Add New Session</button>
@@ -179,6 +180,8 @@ $errors = $data["errors"];
     <?php linkJS("displaySessions"); ?>
 
     <?php linkJS("addSessionModal"); ?>
+
+    <?php linkJS("displaySessionsListSearch"); ?>
 
 </body>
 
