@@ -11,8 +11,11 @@ class AttemptPoolQuestion extends AlecFramework
 
     public function index($courseId)
     {
+        $userId = $this->getSession("userId");
+
         $sessionId = $this->attemptPoolQuestionModel->getSessionId($courseId);
         $data["sessionDetails"] = $this->attemptPoolQuestionModel->getSessionDetails($sessionId);
+        $data["questionStatus"] = $this->attemptPoolQuestionModel->getActiveQuestionId($userId, $sessionId);
         $data["question"] = $this->attemptPoolQuestionModel->getQuestion($sessionId);
         $data["answers"] = $this->attemptPoolQuestionModel->getAnswers($sessionId);
 
@@ -23,7 +26,9 @@ class AttemptPoolQuestion extends AlecFramework
 
     public function getActiveQuestionId($sessionId)
     {
-        echo $this->attemptPoolQuestionModel->getActiveQuestionId($sessionId);
+        $userId = $this->getSession("userId");
+
+        echo $this->attemptPoolQuestionModel->getActiveQuestionId($userId, $sessionId);
     }
 
     public function getActiveQuestion($sessionId)

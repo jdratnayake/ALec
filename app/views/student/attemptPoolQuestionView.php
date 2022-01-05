@@ -43,7 +43,7 @@
 
             <!-- If question available then display the question -->
             <?php
-            if (!empty($data["sessionDetails"]["active_question_id"])) {
+            if (!empty($data["questionStatus"])) {
                 $question = $data["question"];
                 $type = $question["question_type"];
 
