@@ -18,6 +18,12 @@ $(document).ready(function () {
                     response = response.trim().split("_");
                     response.forEach(updateIcons);
                 }
+
+                if (response == "") {
+                    $("#session-empty-content").show();
+                } else {
+                    $("#session-empty-content").hide();
+                }
             }
         })
     }
