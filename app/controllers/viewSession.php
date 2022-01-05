@@ -40,4 +40,14 @@ class ViewSession extends AlecFramework
         $this->viewSessionModel->deleteSessionQuestion($questionId);
         $this->redirect("viewSession/index/{$sessionId}");
     }
+
+    public function sessionForum($sessionId)
+    {
+        $data["bread"]["sessionDetails"] = $this->viewSessionModel->getSessionDetails($sessionId);
+
+        $data["forumQuestionDetails"] = $this->viewSessionModel->getSessionForumQuestions($sessionId);
+        $data["questionDetails"] = $this->viewSessionModel->getForumQuestionDetails($sessionId);
+
+        $this->view("lecturer/sessionLiveForumLecturerView", $data);
+    }
 }

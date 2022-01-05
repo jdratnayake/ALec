@@ -70,7 +70,7 @@ class ViewSessionModel extends Database
 
     public function getSessionForumQuestions($sessionId)
     {
-        $query = "SELECT question_id, question, points FROM session_forum_question WHERE session_id='$sessionId'";
+        $query = "SELECT question_id, question, points FROM session_forum_question WHERE session_id='$sessionId' ORDER BY points DESC, post_time LIMIT 2";
 
         return mysqli_query($GLOBALS["db"], $query);
     }
@@ -87,5 +87,14 @@ class ViewSessionModel extends Database
         $query = "DELETE FROM session_question WHERE question_no='$questionId'";
 
         mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function getForumQuestionDetails($sessionId)
+    {
+        $query = "SELECT session_forum_question.question_id, session_forum_question.student_id, question, points, TIME_FORMAT(post_time, '%h.%i %p') AS post_time, random_status, CONCAT(first_name, ' ', last_name) AS name FROM session_forum_question INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id WHERE session_id='$sessionId' ORDER BY points DESC, post_time";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
     }
 }

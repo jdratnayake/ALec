@@ -3,7 +3,6 @@ Admin
 
 Lecturer
 
-1. viewRespondents
 
 Student
 
@@ -11,7 +10,6 @@ Student
 Components
 
 3. errorMessage
-4. sessionLiveForum
 
 All
 

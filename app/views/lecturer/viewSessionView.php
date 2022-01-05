@@ -168,7 +168,7 @@
 
             </div>
             <div class="sessions">
-                <span class="session-label link-label"><a href="#">Live Forum</a></span>
+                <span class="session-label link-label"><a href="<?php echo BASEURL . "/viewSession/sessionForum/{$data["sessionData"]["session_id"]}" ?>">Live Forum</a></span>
 
                 <?php
                 if (mysqli_num_rows($data["forumQuestionDetails"]) == 0) {
