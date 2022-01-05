@@ -1,5 +1,6 @@
 <?php
 $courseId = $data["bread"]["sessionDetails"]["course_id"];
+$sessionId = $data["bread"]["sessionDetails"]["session_id"];
 $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 $questionCount = $data["question"]["question_count"];
 ?>
@@ -42,9 +43,9 @@ $questionCount = $data["question"]["question_count"];
 
     <div class="details-content">
 
-        <div class="controller-container">
+        <div class="controller-container" onclick="window.location='<?php echo BASEURL . '/sessionLiveForumStudent/index/' . $sessionId; ?>' ">
             Go to Live Forum
-            <p>3</p>
+            <!-- <p>3</p> -->
         </div>
 
         <div class="container">

@@ -17,7 +17,7 @@ class DisplayPollModel extends Database
 
     public function getCourseId($questionId)
     {
-        $query = "SELECT course_id, session_name FROM session INNER JOIN session_question ON session.session_id=session_question.session_id WHERE question_no='$questionId'";
+        $query = "SELECT course_id, session_name, session_question.session_id FROM session INNER JOIN session_question ON session.session_id=session_question.session_id WHERE question_no='$questionId'";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result);
