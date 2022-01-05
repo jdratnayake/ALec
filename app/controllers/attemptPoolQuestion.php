@@ -22,6 +22,13 @@ class AttemptPoolQuestion extends AlecFramework
         $this->view("student/attemptPoolQuestionView", $data);
     }
 
+    public function checkSessionStatus($sessionId)
+    {
+        $status = $this->attemptPoolQuestionModel->getSessionDetails($sessionId)["status"];
+
+        echo $status;
+    }
+
     //Functions that are need for realtime question update
 
     public function getActiveQuestionId($sessionId)

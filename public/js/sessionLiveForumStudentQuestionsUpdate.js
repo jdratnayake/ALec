@@ -12,6 +12,8 @@ $(document).ready(function () {
             dataType: "html",
 
             success: function (response) {
+                checkSessionStatus(sessionId);
+
                 if (response != questionIdArray) {
                     $("#questionIdArray").val(response);
                     updateQuestions();

@@ -133,6 +133,8 @@ $errors = $data["errors"];
 
     <?php linkJS("notification") ?>
 
+    <?php linkJS("sessionStatusCheck"); ?>
+
     <?php linkJS("sessionLiveForumStudentValidation") ?>
 
     <?php linkJS("likeUnlikeForumQuestion") ?>

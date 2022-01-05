@@ -190,6 +190,8 @@
 
     <?php linkJS("notification") ?>
 
+    <?php linkJS("sessionStatusCheck"); ?>
+
     <?php linkJS("timeBar"); ?>
 
     <?php linkJS("attemptPoolQuestion"); ?>

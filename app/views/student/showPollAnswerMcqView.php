@@ -25,6 +25,8 @@ $questionCount = $data["question"]["question_count"];
 
 <body>
 
+    <input type="hidden" id="session-id" value='<?php echo $sessionId; ?>'>
+
     <?php linkPhp("navigationBarStudent"); ?>
 
     <!--    breadcrumb-->
@@ -135,6 +137,10 @@ $questionCount = $data["question"]["question_count"];
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
+
+    <?php linkJS("sessionStatusCheck"); ?>
+
+    <?php linkJS("showPollAnswer"); ?>
 
 </body>
 

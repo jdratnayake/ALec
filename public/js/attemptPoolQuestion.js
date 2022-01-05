@@ -4,12 +4,15 @@ $(document).ready(function () {
     setInterval(getActiveQuestionId, 3000);
 
     function getActiveQuestionId() {
+
+
         $.ajax({
             type: "GET",
 
             url: "http://localhost/ALec/attemptPoolQuestion/getActiveQuestionId/" + sessionId,
             dataType: "html",
             success: function (response) {
+                checkSessionStatus(sessionId);
                 check(response);
             }
         })
