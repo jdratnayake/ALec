@@ -12,7 +12,11 @@ class ViewSessionModel extends Database
 
     public function setStatus($sessionId, $status)
     {
-        $query = "UPDATE session SET status='$status' WHERE session_id='$sessionId'";
+        if ($status == "F") {
+            $query = "UPDATE session SET status='$status', active_question_id=NULL WHERE session_id='$sessionId'";
+        } else {
+            $query = "UPDATE session SET status='$status' WHERE session_id='$sessionId'";
+        }
 
         mysqli_query($GLOBALS["db"], $query);
     }

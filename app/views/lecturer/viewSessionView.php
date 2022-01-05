@@ -220,8 +220,6 @@
 
     <?php linkJS("deleteMessage"); ?>
 
-    <?php linkJS("likeUnlikeForumQuestion") ?>
-
 </body>
 
 </html>
