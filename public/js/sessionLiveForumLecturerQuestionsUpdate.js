@@ -8,7 +8,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
 
-            url: "http://localhost/ALec/sessionLiveForumStudent/getQuestionIdArray/" + sessionId,
+            url: "http://localhost/ALec/viewSession/getQuestionIdArray/" + sessionId,
             dataType: "html",
 
             success: function (response) {
@@ -26,7 +26,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
 
-            url: "http://localhost/ALec/sessionLiveForumStudent/createForumQuestions/" + sessionId,
+            url: "http://localhost/ALec/viewSession/createForumQuestions/" + sessionId,
             dataType: "html",
 
             success: function (response) {

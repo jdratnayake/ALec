@@ -22,6 +22,9 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 </head>
 
 <body>
+    <input type="hidden" id="session-id" value='<?php echo $sessionId; ?>'>
+    <input type="hidden" id="questionIdArray" value='<?php echo $data["questionIdArray"]; ?>'>
+
     <?php linkPhp("navigationBarLecturer"); ?>
 
     <!--    breadcrumb-->
@@ -82,6 +85,8 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
+
+    <?php linkJS("sessionLiveForumLecturerQuestionsUpdate") ?>
 
 </body>
 
