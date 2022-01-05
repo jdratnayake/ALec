@@ -98,4 +98,9 @@ class ViewSession extends AlecFramework
 
         echo $output;
     }
+
+    public function checkSessionActiveQuestion($sessionId)
+    {
+        echo $this->viewSessionModel->getSessionActiveQuestion($sessionId);
+    }
 }

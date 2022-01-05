@@ -110,4 +110,13 @@ class ViewSessionModel extends Database
 
         return $result;
     }
+
+    public function getSessionActiveQuestion($sessionId)
+    {
+        $query = "SELECT active_question_id FROM session WHERE session_id='$sessionId'";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["active_question_id"];
+    }
 }

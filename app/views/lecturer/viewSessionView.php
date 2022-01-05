@@ -216,6 +216,8 @@
 
     <?php linkJS("viewSessionQuestion"); ?>
 
+    <?php linkJS("viewSessionQuestionDisable"); ?>
+
     <?php linkJS("viewSessionOptionSelection"); ?>
 
     <?php linkJS("deleteMessage"); ?>
