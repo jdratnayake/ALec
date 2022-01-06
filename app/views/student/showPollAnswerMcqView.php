@@ -31,7 +31,7 @@ $questionCount = $data["question"]["question_count"];
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
-        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/studentDashboard/index">Home</a></li>
 
         <?php
         echo
