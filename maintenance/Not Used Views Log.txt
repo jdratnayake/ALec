@@ -1,5 +1,6 @@
 Admin
 
+    1. userProfileView_LECview.php
 
 Lecturer
 
@@ -9,8 +10,8 @@ Student
 
 Components
 
-3. errorMessage
+    3. errorMessage
 
 All
 
-1. leaderboard
+    1. leaderboard
