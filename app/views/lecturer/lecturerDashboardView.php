@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <div class="navigation-tab">
+        <div class="navigation-tab"  onclick="window.location='<?php echo BASEURL . '/leaderboard/index'; ?>' ">
             <div class="row">
                 <i class="fas fa-medal"></i>
             </div>
