@@ -57,8 +57,6 @@ class CourseDetailsModel extends Database
     {
         $data = mysqli_real_escape_string($GLOBALS["db"], $data);
 
-        $data = str_replace('_', ' ', $data);
-
         $query = "SELECT course.course_id, course.course_name, course.year, COUNT(course_registration_stu.course_id) AS count 
             FROM course LEFT JOIN course_registration_stu 
             ON course.course_id=course_registration_stu.course_id 
