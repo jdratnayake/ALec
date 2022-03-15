@@ -33,7 +33,7 @@
         </header>
 
         <!-- Quiz basic details -->
-        <form class="details" method="post" action='<?php echo BASEURL . "/createQuizDashboard/index"; ?>'>
+        <form class="details" id="create-quiz-form" method="post" action='<?php echo BASEURL . "/createQuizDashboard/index"; ?>'>
             <div>
                 <!-- select course drop down list -->
                 <div class="form-group details">
@@ -62,7 +62,7 @@
 
                 <!-- quiz details-->
                 <div class="form-group">
-                    <label for="quiz-name">Quiz name</label>
+                    <label for="quiz-name">Quiz Name</label>
                     <input type="text" class="form-control form-name cursor-change" placeholder="Enter quiz name" name="quiz-name" id="quiz-name">
 
                     <div class="error"></div>
@@ -84,6 +84,8 @@
 
             <!-- Add Question Button -->
             <input type="button" class="add" id="add-question" value="+ Add Question" />
+
+
 
             <div class="button-set">
                 <input type="submit" id="draf-quiz" name="draft-quiz" class="finish" value="Save as Draft">
