@@ -290,6 +290,46 @@ header {
 /*NAVIGATION BAR - END*/
 /*==============================================================================*/
 /*==============================================================================*/
+/*USER-TYPE CONTAINER - START*/
+/*==============================================================================*/
+.user-type-container {
+  position: fixed;
+  top: 32px;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  border: none;
+  border-radius: 0;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms opacity ease;
+  z-index: 10;
+  flex-direction: column;
+}
+.user-type-container .image-container {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #964ba1;
+  align-items: center;
+}
+.user-type-container .image-container .fa-user {
+  font-size: 20px;
+}
+.user-type-container .user-type-label {
+  font-size: 10px;
+  color: black;
+}
+
+/*==============================================================================*/
+/*USER-TYPE CONTAINER - END*/
+/*==============================================================================*/
+/*==============================================================================*/
 /*HOME CONTENT - START*/
 /*==============================================================================*/
 .home-content {
@@ -651,24 +691,37 @@ footer p {
   margin-left: 10px;
 }
 .details-content .session-details-container .sessions .session {
-  display: flex;
+  display: grid;
+  justify-items: start;
   align-items: center;
   background-color: #2b4f820d;
   border-radius: 5px;
   margin: 5px 0;
   padding: 20px 10px;
-  justify-content: space-between;
 }
-.details-content .session-details-container .sessions .session .session-name {
-  cursor: pointer;
-  color: #0275d8;
-  text-decoration: none;
+.details-content .session-details-container .sessions .session .session-details {
+  width: 100%;
 }
-.details-content .session-details-container .sessions .session .session-name:hover {
+.details-content .session-details-container .sessions .session .session-details .session-name {
+  width: 95%;
+  float: left;
+}
+.details-content .session-details-container .sessions .session .session-details .session-name:hover {
   text-decoration: underline;
+}
+.details-content .session-details-container .sessions .session .session-details .eye {
+  width: 5%;
+  float: right;
 }
 .details-content .session-details-container .sessions .session .publish-status {
   cursor: pointer;
+}
+.details-content .session-details-container .sessions .session .session-created-date {
+  text-decoration: none;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  line-height: 15px;
 }
 
 /*==============================================================================*/
