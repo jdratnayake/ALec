@@ -1,4 +1,4 @@
-<!--User profile view of Lecturer-->
+<!--User profile view of Admin-->
 
 <?php
 $assignedCourses = "";
@@ -58,18 +58,27 @@ printSucessMsg($data["success"]); ?>
             <div class="modal-content">
                 <div class="modal-header">
                     <span id="close" class="close">&times;</span>
-                    <h2>Badge Selection</h2>
+                    <h2>Course Selection</h2>
                 </div>
 
                 <div class="modal-body">
-                    <label for="badges"><strong>Select Badge:</strong></label>
-                    <select name="badge" id="badges" class="selection-box">
-                        <option value="default" selected>Select a badge</option>
-                        <option value="sub1">Best Respondent - 2021</option>
-                        <option value="sub2">Best Questioner - 2021</option>
+                    <label for="courses"><strong>Select Course:</strong></label>
+                    <select name="course" id="courses" class="selection-box">
+                        <option value="default" selected>Select a course</option>
+
+                        <?php
+                        while ($row = mysqli_fetch_assoc($data["unAssignedCourseDetails"])) {
+                            echo
+                            "
+                                <option value='{$row['course_id']}'>{$row['course_name']}</option>
+                                ";
+                        }
+                        ?>
+
+                        <!-- <option value="sub1">SCS 1201 - Data Structures and Algorithms - I</option> -->
                     </select>
 
-                    <!--                    List of assigned badges-->
+                    <!--                    List of assigned courses-->
                     <ul style="list-style-type:none;" class="assigned-courses">
                         <?php
                         $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
@@ -110,7 +119,23 @@ printSucessMsg($data["success"]); ?>
         <!-- Details Container include small separate boxes of button content, user details, assigned courses and badges earned-->
         <div class="details-container">
             <div class="buttons">
-                <button id="modal-btn">Award Badge</button>
+                <?php
+                echo " <button type='button' name='edit-user' value='Edit user' onclick=location.href='";
+                echo BASEURL . '/userEdit/index/' . $data["userDetails"]["user_id"];
+                echo "'>";
+                echo "Edit User</button>";
+                ?>
+
+                <?php
+                $link = "'" . "userProfile/deleteUser/" . $data["userDetails"]["user_id"] . "'";
+
+                echo " <button type='button' name='dlt-user' value='Delete user' ";
+                echo 'onclick="deleteFunction(' . $link . ')"';
+                echo "'>";
+                echo "Delete User</button>";
+                ?>
+
+                <button id="modal-btn">Assign Courses</button>
             </div>
 
             <div class="horizontal-container">
