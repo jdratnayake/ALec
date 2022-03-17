@@ -324,6 +324,7 @@ header {
 .user-type-container .user-type-label {
   font-size: 10px;
   color: black;
+  cursor: default;
 }
 
 /*==============================================================================*/
