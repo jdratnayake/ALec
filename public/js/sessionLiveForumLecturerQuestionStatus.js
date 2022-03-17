@@ -1,9 +1,7 @@
 $(document).ready(function () {
 
-    $(".fa-check-circle").click(function () {
+    $(document).on('click', '.fa-check-circle', function () {
         const questionId = $(this).parent().parent().children(":first").val();
-
-        console.log(questionId)
 
         //Indicate UnSolved
         if ($(this).hasClass("resolved")) {
