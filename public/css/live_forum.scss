@@ -136,6 +136,15 @@ $light_color: #FFF;
             transform: scale(1.2);
           }
         }
+
+        .resolved-label {
+          font-size: 12px;
+          cursor: default;
+        }
+
+        .resolved-label-hide {
+          display: none;
+        }
       }
     }
   }

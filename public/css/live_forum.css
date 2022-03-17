@@ -757,6 +757,13 @@ footer p {
 .details-content .questions-container .question .vote .resolved:hover {
   transform: scale(1.2);
 }
+.details-content .questions-container .question .vote .resolved-label {
+  font-size: 12px;
+  cursor: default;
+}
+.details-content .questions-container .question .vote .resolved-label-hide {
+  display: none;
+}
 .details-content .new-question {
   display: flex;
   padding-bottom: 2rem;
