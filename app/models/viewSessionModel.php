@@ -81,7 +81,7 @@ class ViewSessionModel extends Database
 
     public function getSessionForumQuestions($sessionId)
     {
-        $query = "SELECT question_id, question, points FROM session_forum_question WHERE session_id='$sessionId' ORDER BY points DESC, post_time LIMIT 2";
+        $query = "SELECT question_id, question, points FROM session_forum_question WHERE session_id='$sessionId'  AND resolved_status='0' ORDER BY points DESC, post_time LIMIT 2";
 
         return mysqli_query($GLOBALS["db"], $query);
     }

@@ -14,6 +14,7 @@ class ViewSession extends AlecFramework
         $data["sessionData"] = $this->viewSessionModel->getSessionDetails($sessionId);
         $data["questionDetails"] = $this->viewSessionModel->getSessionQuestions($sessionId);
         $data["forumQuestionDetails"] = $this->viewSessionModel->getSessionForumQuestions($sessionId);
+        $data["questionIdArray"] = $this->createQuestionIdArray($sessionId, 2);
 
         $this->view("lecturer/viewSessionView", $data);
     }
@@ -53,9 +54,13 @@ class ViewSession extends AlecFramework
         $this->view("lecturer/sessionLiveForumLecturerView", $data);
     }
 
-    function createQuestionIdArray($sessionId)
+    function createQuestionIdArray($sessionId, $version = "1")
     {
-        $questionIds = $this->viewSessionModel->getQuestionIds($sessionId);
+        if ($version == "1") {
+            $questionIds = $this->viewSessionModel->getQuestionIds($sessionId);
+        } else if ($version == "2") {
+            $questionIds = $this->viewSessionModel->getSessionForumQuestions($sessionId);
+        }
 
         $questionIdArray = "";
 
@@ -68,9 +73,9 @@ class ViewSession extends AlecFramework
         return $questionIdArray;
     }
 
-    function getQuestionIdArray($sessionId)
+    function getQuestionIdArray($sessionId, $version = "1")
     {
-        echo $this->createQuestionIdArray($sessionId);
+        echo $this->createQuestionIdArray($sessionId, $version);
     }
 
     function createForumQuestions($sessionId)
@@ -104,6 +109,51 @@ class ViewSession extends AlecFramework
                     </span>
                 </div>
                 ";
+        }
+
+        echo $output;
+    }
+
+    function createForumQuestionsForViewSession($sessionId)
+    {
+        $output = "";
+
+        $questionDetails = $this->viewSessionModel->getSessionForumQuestions($sessionId);
+
+        $className = "style='display:none'";
+
+        if (mysqli_num_rows($questionDetails) == 0) {
+            $className = "";
+        }
+
+
+        $output .=
+            "
+            <span class='session-label link-label'>
+                <a href='" . BASEURL . "/viewSession/sessionForum/{$sessionId}'>
+                    Live Forum
+                </a>
+            </span>
+
+            <span class='session inactive' {$className}>No questions to show</span>
+        ";
+
+
+        while ($row = mysqli_fetch_assoc($questionDetails)) {
+            $output .=
+                "
+            <span class='session'>
+                {$row['question']}
+                <span class='vote'>
+                    <!--
+                    <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                    <span class='votes-count'>{$row['points']}</span>
+                    -->
+                    <input type='hidden' value='{$row['question_id']}'>
+                    <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                </span>
+            </span>
+            ";
         }
 
         echo $output;
