@@ -45,7 +45,8 @@ class ViewSession extends AlecFramework
     {
         $data["bread"]["sessionDetails"] = $this->viewSessionModel->getSessionDetails($sessionId);
 
-        $data["forumQuestionDetails"] = $this->viewSessionModel->getSessionForumQuestions($sessionId);
+        $data["resolvedCount"] = $this->viewSessionModel->getResolvedCount($sessionId);
+        $data["unResolvedCount"] = $this->viewSessionModel->getUnResolvedCount($sessionId);
         $data["questionDetails"] = $this->viewSessionModel->getForumQuestionDetails($sessionId);
         $data["questionIdArray"] = $this->createQuestionIdArray($sessionId);
 

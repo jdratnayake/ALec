@@ -22,52 +22,52 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 </head>
 
 <body>
-<input type="hidden" id="session-id" value='<?php echo $sessionId; ?>'>
-<input type="hidden" id="questionIdArray" value='<?php echo $data["questionIdArray"]; ?>'>
+    <input type="hidden" id="session-id" value='<?php echo $sessionId; ?>'>
+    <input type="hidden" id="questionIdArray" value='<?php echo $data["questionIdArray"]; ?>'>
 
-<?php linkPhp("navigationBarLecturer"); ?>
+    <?php linkPhp("navigationBarLecturer"); ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/lecturerDashboard">Home</a></li>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard">Home</a></li>
 
-    <li><a href="http://localhost/ALec/displaySessionsList/index">Sessions</a></li>
-
-    <?php
-    echo
-    "
-        <li><a href='http://localhost/ALec/viewSession/index/{$sessionId}'>$sessionName</a></li>
-        ";
-    ?>
-
-    <li>Live Forum</li>
-</ul>
-
-<div class="details-content">
-
-    <div class="header-container">
-        <header>Live Forum</header>
-    </div>
-
-    <div class="questions-container">
-
-        <div class="stat-container">
-            <div class="resolved stat-box">
-                <span>Resolved</span>
-                <span>2</span>
-            </div>
-            <div class="unresolved stat-box">
-                <span>Unresolved</span>
-                <span>5</span>
-            </div>
-        </div>
+        <li><a href="http://localhost/ALec/displaySessionsList/index">Sessions</a></li>
 
         <?php
+        echo
+        "
+        <li><a href='http://localhost/ALec/viewSession/index/{$sessionId}'>$sessionName</a></li>
+        ";
+        ?>
 
-        while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+        <li>Live Forum</li>
+    </ul>
 
-            echo
-            "
+    <div class="details-content">
+
+        <div class="header-container">
+            <header>Live Forum</header>
+        </div>
+
+        <div class="questions-container">
+
+            <div class="stat-container">
+                <div class="resolved stat-box">
+                    <span>Resolved</span>
+                    <span><?php echo $data["resolvedCount"]; ?></span>
+                </div>
+                <div class="unresolved stat-box">
+                    <span>Unresolved</span>
+                    <span><?php echo $data["unResolvedCount"]; ?></span>
+                </div>
+            </div>
+
+            <?php
+
+            while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+
+                echo
+                "
                 <div class='question'>
                     <input type='hidden' value='{$row['question_id']}'>
                     <span class='text'>
@@ -82,23 +82,23 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
                     </span>
                 </div>
                 ";
-        }
+            }
 
-        ?>
+            ?>
+
+        </div>
 
     </div>
 
-</div>
+    <?php linkPhp("footer"); ?>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("notificationView"); ?>
 
-<?php linkPhp("notificationView"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("notification") ?>
 
-<?php linkJS("notification") ?>
-
-<?php linkJS("sessionLiveForumLecturerQuestionsUpdate") ?>
+    <?php linkJS("sessionLiveForumLecturerQuestionsUpdate") ?>
 
 </body>
 
