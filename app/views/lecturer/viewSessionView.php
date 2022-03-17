@@ -45,11 +45,13 @@
                 echo "<i class='fa fa-circle' id='active-status' aria-hidden='true' style='display: none'></i>";
             ?>
 
-            <!--        Add to Course Page Button-->
-            <button type='button' value='Add to Course Page' class='export-btn' id='end-session' style='display: block'>
-                Add to Course Page
-            </button>
         </header>
+
+        <!--        Add to Course Page Button-->
+        <button type='button' value='Add to Course Page' class='export-btn' id='end-session' style='display: block'>
+            Add to Course Page
+        </button>
+
     </div>
     <div class="button-container">
         <?php
@@ -192,11 +194,14 @@
                     <span class='session'>
                         {$row['question']}
                         <span class='vote'>
-                            <!--
-                            <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
-                            <span class='votes-count'>{$row['points']}</span>
-                            -->
-                            <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                            <div class='col'>
+                                <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                                <span class='resolved-label'>Resolved</span>
+                            </div>
+                            <div class='col'>
+                                <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                                <span class='votes-count'>{$row['points']}</span>
+                            </div>
                         </span>
                     </span>
                     ";
@@ -207,8 +212,14 @@
             <!-- <span class="session">
             No questions to show
             <span class="vote">
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                <span class="votes-count">2</span>
+                <div class='col'>
+                    <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                    <span class='resolved-label'>Resolved</span>
+                </div>
+                <div class='col'>
+                    <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                    <span class='votes-count'>2</span>
+                </div>
             </span>
         </span> -->
         </div>

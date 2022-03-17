@@ -23,7 +23,7 @@ $light_color: #FFF;
     header {
       margin: 10px 10px 20px 10px;
       align-items: center;
-      display: grid;
+      display: flex;
     }
 
     .fa-circle {
@@ -42,6 +42,7 @@ $light_color: #FFF;
       font-weight: 400;
       cursor: pointer;
       width: fit-content;
+      margin: 0 10px 10px 10px;
 
       &:hover {
         background-color: rgba(43, 79, 130, 0.30);
@@ -196,29 +197,41 @@ $light_color: #FFF;
         }
 
         .vote {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          display: inherit;
+          width: 110px;
 
-          .vote-highlight {
-            font-size: 24px;
-            cursor: pointer;
+          .col {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
 
-            &:hover {
-              transform: scale(1.2);
+            .vote-highlight {
+              font-size: 24px;
+              cursor: pointer;
+
+              &:hover {
+                transform: scale(1.2);
+              }
             }
-          }
 
-          .votes-count {
-            font-size: small;
-          }
+            .votes-count {
+              font-size: small;
+            }
 
-          .check-resolved {
-            font-size: 24px;
-            cursor: pointer;
+            .check-resolved {
+              font-size: 24px;
+              cursor: pointer;
 
-            &:hover {
-              transform: scale(1.2);
+              &:hover {
+                transform: scale(1.2);
+              }
+            }
+
+            .resolved-label {
+              font-size: 12px;
+              cursor: default;
             }
           }
         }

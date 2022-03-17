@@ -659,7 +659,7 @@ footer p {
 .details-content .header-container header {
   margin: 10px 10px 20px 10px;
   align-items: center;
-  display: grid;
+  display: flex;
 }
 .details-content .header-container .fa-circle {
   font-size: 20px;
@@ -676,6 +676,7 @@ footer p {
   font-weight: 400;
   cursor: pointer;
   width: fit-content;
+  margin: 0 10px 10px 10px;
 }
 .details-content .header-container .export-btn:hover {
   background-color: rgba(43, 79, 130, 0.3);
@@ -805,26 +806,36 @@ footer p {
   cursor: pointer;
 }
 .details-content .session-details-container .sessions .session .vote {
+  display: inherit;
+  width: 110px;
+}
+.details-content .session-details-container .sessions .session .vote .col {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 50%;
 }
-.details-content .session-details-container .sessions .session .vote .vote-highlight {
+.details-content .session-details-container .sessions .session .vote .col .vote-highlight {
   font-size: 24px;
   cursor: pointer;
 }
-.details-content .session-details-container .sessions .session .vote .vote-highlight:hover {
+.details-content .session-details-container .sessions .session .vote .col .vote-highlight:hover {
   transform: scale(1.2);
 }
-.details-content .session-details-container .sessions .session .vote .votes-count {
+.details-content .session-details-container .sessions .session .vote .col .votes-count {
   font-size: small;
 }
-.details-content .session-details-container .sessions .session .vote .check-resolved {
+.details-content .session-details-container .sessions .session .vote .col .check-resolved {
   font-size: 24px;
   cursor: pointer;
 }
-.details-content .session-details-container .sessions .session .vote .check-resolved:hover {
+.details-content .session-details-container .sessions .session .vote .col .check-resolved:hover {
   transform: scale(1.2);
+}
+.details-content .session-details-container .sessions .session .vote .col .resolved-label {
+  font-size: 12px;
+  cursor: default;
 }
 .details-content .session-details-container .sessions .inactive {
   color: #ccc;

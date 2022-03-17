@@ -728,40 +728,46 @@ footer p {
   font-size: 12px;
 }
 .details-content .questions-container .question .vote {
+  display: inherit;
+  width: 110px;
+}
+.details-content .questions-container .question .vote .col {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 50%;
 }
-.details-content .questions-container .question .vote .vote-highlight {
+.details-content .questions-container .question .vote .col .vote-highlight {
   font-size: 24px;
   cursor: pointer;
 }
-.details-content .questions-container .question .vote .vote-highlight:hover {
+.details-content .questions-container .question .vote .col .vote-highlight:hover {
   transform: scale(1.2);
 }
-.details-content .questions-container .question .vote .votes-count {
+.details-content .questions-container .question .vote .col .votes-count {
   font-size: small;
 }
-.details-content .questions-container .question .vote .check-resolved {
+.details-content .questions-container .question .vote .col .check-resolved {
   font-size: 24px;
   cursor: pointer;
 }
-.details-content .questions-container .question .vote .check-resolved:hover {
+.details-content .questions-container .question .vote .col .check-resolved:hover {
   transform: scale(1.2);
 }
-.details-content .questions-container .question .vote .resolved {
+.details-content .questions-container .question .vote .col .resolved {
   font-size: 24px;
   cursor: pointer;
   color: #ccc;
 }
-.details-content .questions-container .question .vote .resolved:hover {
+.details-content .questions-container .question .vote .col .resolved:hover {
   transform: scale(1.2);
 }
-.details-content .questions-container .question .vote .resolved-label {
+.details-content .questions-container .question .vote .col .resolved-label {
   font-size: 12px;
   cursor: default;
 }
-.details-content .questions-container .question .vote .resolved-label-hide {
+.details-content .questions-container .question .vote .col .resolved-label-hide {
   display: none;
 }
 .details-content .new-question {

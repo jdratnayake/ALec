@@ -101,49 +101,56 @@ $light_color: #FFF;
       }
 
       .vote {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: inherit;
+        width: 110px;
 
-        .vote-highlight {
-          font-size: 24px;
-          cursor: pointer;
+        .col {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          width: 50%;
 
-          &:hover {
-            transform: scale(1.2);
+          .vote-highlight {
+            font-size: 24px;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(1.2);
+            }
           }
-        }
 
-        .votes-count {
-          font-size: small;
-        }
-
-        .check-resolved {
-          font-size: 24px;
-          cursor: pointer;
-
-          &:hover {
-            transform: scale(1.2);
+          .votes-count {
+            font-size: small;
           }
-        }
 
-        .resolved {
-          font-size: 24px;
-          cursor: pointer;
-          color: #ccc;
+          .check-resolved {
+            font-size: 24px;
+            cursor: pointer;
 
-          &:hover {
-            transform: scale(1.2);
+            &:hover {
+              transform: scale(1.2);
+            }
           }
-        }
 
-        .resolved-label {
-          font-size: 12px;
-          cursor: default;
-        }
+          .resolved {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ccc;
 
-        .resolved-label-hide {
-          display: none;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+
+          .resolved-label {
+            font-size: 12px;
+            cursor: default;
+          }
+
+          .resolved-label-hide {
+            display: none;
+          }
         }
       }
     }
