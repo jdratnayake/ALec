@@ -104,7 +104,7 @@ class ViewSessionModel extends Database
 
     public function getQuestionIds($sessionId)
     {
-        $query = "SELECT question_id FROM session_forum_question WHERE session_id='$sessionId' ORDER BY points DESC, post_time";
+        $query = "SELECT question_id FROM session_forum_question WHERE session_id='$sessionId' ORDER BY resolved_status ASC, points DESC, post_time";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
