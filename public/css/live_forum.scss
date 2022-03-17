@@ -126,6 +126,16 @@ $light_color: #FFF;
             transform: scale(1.2);
           }
         }
+
+        .resolved {
+          font-size: 24px;
+          cursor: pointer;
+          color: #ccc;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
       }
     }
   }
