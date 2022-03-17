@@ -759,9 +759,9 @@ footer p {
 /*SLIDE SHOW - END*/
 /*==============================================================================*/
 .navigation-item-container {
-  display: flex;
+  display: inline-flex;
   justify-content: space-evenly;
-  width: calc(100% - 240px);
+  width: calc(100% - 85px);
   margin: 3rem auto;
 }
 
@@ -773,6 +773,7 @@ footer p {
   text-align: center;
   cursor: pointer;
   border-radius: 10px;
+  margin: 0 2px;
 }
 
 /* navigation tab hover settings */
