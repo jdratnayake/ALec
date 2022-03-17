@@ -720,6 +720,16 @@ footer p {
 .details-content .questions-container .question .vote .votes-count {
   font-size: small;
 }
+.details-content .questions-container .question .vote .check-resolved {
+  font-size: 24px;
+  cursor: pointer;
+}
+.details-content .questions-container .question .vote .check-resolved:hover {
+  transform: scale(1.2);
+}
+.details-content .questions-container .question .vote .check-resolved ::after {
+  color: #ccc;
+}
 .details-content .new-question {
   display: flex;
   padding-bottom: 2rem;
