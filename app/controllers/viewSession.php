@@ -79,22 +79,31 @@ class ViewSession extends AlecFramework
         $output = "";
 
         while ($row = mysqli_fetch_assoc($questionDetails)) {
+            $iconClassName = "check-resolved";
+            $labelClassName = "resolved-label-hide";
+
+            if ($row["resolved_status"] == "1") {
+                $iconClassName = "resolved";
+                $labelClassName = "";
+            }
 
             $output .=
                 "
-            <div class='question'>
-                <input type='hidden' value='{$row['question_id']}'>
-                <span class='text'>
-                    {$row['question']}
-                    <span class='name'>{$row["name"]}</span>
-                    <span class='name'>{$row['post_time']}</span>
-                </span>
-                <span class='vote'>
-                    <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
-                    <span class='votes-count'>{$row['points']}</span>
-                </span>
-            </div>
-            ";
+                <div class='question'>
+                    <input type='hidden' value='{$row['question_id']}'>
+                    <span class='text'>
+                        {$row['question']}
+                        <span class='name'>{$row["name"]}</span>
+                        <span class='name'>{$row['post_time']}</span>
+                    </span>
+                    <span class='vote'>
+                        <!--<i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                        <span class='votes-count'>{$row['points']}</span> -->
+                        <i class='fa fa-check-circle $iconClassName' aria-hidden='true'></i>
+                        <span class='resolved-label $labelClassName'>Resolved</span>
+                    </span>
+                </div>
+                ";
         }
 
         echo $output;
