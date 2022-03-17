@@ -705,6 +705,9 @@ footer p {
 .details-content .session-details-container .sessions .session .session-details .session-name {
   width: 95%;
   float: left;
+  text-decoration: none;
+  cursor: pointer;
+  color: #0275d8;
 }
 .details-content .session-details-container .sessions .session .session-details .session-name:hover {
   text-decoration: underline;

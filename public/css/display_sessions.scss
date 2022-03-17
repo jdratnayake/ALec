@@ -76,6 +76,9 @@ $light_color: #FFF;
           .session-name {
             width: 95%;
             float: left;
+            text-decoration: none;
+            cursor: pointer;
+            color: #0275d8;
 
             &:hover {
               text-decoration: underline;
