@@ -44,6 +44,11 @@
             } else
                 echo "<i class='fa fa-circle' id='active-status' aria-hidden='true' style='display: none'></i>";
             ?>
+
+            <!--        Add to Course Page Button-->
+            <button type='button' value='Add to Course Page' class='export-btn' id='end-session' style='display: block'>
+                Add to Course Page
+            </button>
         </header>
     </div>
     <div class="button-container">
