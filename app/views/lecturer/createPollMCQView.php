@@ -34,7 +34,7 @@ $errors = $data["errors"];
     echo "<li><a href='http://localhost/ALec/viewSession/index/$sessionId'>$sessionName</a></li>";
     echo "<li><a href='http://localhost/ALec/createPoll/index/$sessionId'>New Poll Question</a></li>";
     ?>
-    <li>MCQ</li>
+    <li>Single Choice Poll Question</li>
 </ul>
 
 <div class="details-content">
@@ -108,6 +108,13 @@ $errors = $data["errors"];
 
                     <label for="false"></label>
                     <input type="text" class="session" value="False" name="tf-answer-2" readonly id="false">
+                </div>
+
+                <div class="answer" style="width: 100%">
+                    <label for="correct-answer"></label>
+                    <input type="text" class="session" placeholder="Enter correct answer here..." name="correct-answer"
+                           id="correct-answer" style="background-color: rgba(118,151,179,0.3)">
+                    <div class="error"></div>
                 </div>
             </div>
 
