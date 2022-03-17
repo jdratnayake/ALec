@@ -145,12 +145,14 @@ class ViewSession extends AlecFramework
             <span class='session'>
                 {$row['question']}
                 <span class='vote'>
-                    <!--
-                    <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
-                    <span class='votes-count'>{$row['points']}</span>
-                    -->
-                    <input type='hidden' value='{$row['question_id']}'>
-                    <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                    <div class='col'>
+                        <input type='hidden' value='{$row['question_id']}'>
+                        <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                    </div>
+                    <div class='col'>
+                        <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                        <span class='votes-count'>{$row['points']}</span>
+                    </div>
                 </span>
             </span>
             ";
