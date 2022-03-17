@@ -36,9 +36,3 @@ $(document).ready(function () {
         })
     }
 })
-
-for (let i = 0; i < document.getElementsByClassName("check-resolved").length; i++) {
-    document.getElementsByClassName('check-resolved')[i].addEventListener("click", () => {
-        document.getElementsByClassName('check-resolved')[i].style.color = "#ccc";
-    })
-}

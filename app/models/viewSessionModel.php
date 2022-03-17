@@ -41,6 +41,13 @@ class ViewSessionModel extends Database
         }
     }
 
+    public function setQuestionResolveStatus($questionId, $status)
+    {
+        $query = "UPDATE session_forum_question SET resolved_status='$status' WHERE question_id='$questionId'";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
     public function setSchedule($sessionId, $questionId)
     {
         //Get duration
@@ -95,7 +102,7 @@ class ViewSessionModel extends Database
 
     public function getForumQuestionDetails($sessionId)
     {
-        $query = "SELECT session_forum_question.question_id, session_forum_question.student_id, question, points, TIME_FORMAT(post_time, '%h.%i %p') AS post_time, random_status, CONCAT(first_name, ' ', last_name) AS name FROM session_forum_question INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id WHERE session_id='$sessionId' ORDER BY resolved_status ASC, points DESC, post_time";
+        $query = "SELECT session_forum_question.question_id, session_forum_question.student_id, question, points, TIME_FORMAT(post_time, '%h.%i %p') AS post_time, random_status, resolved_status, CONCAT(first_name, ' ', last_name) AS name FROM session_forum_question INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id WHERE session_id='$sessionId' ORDER BY resolved_status ASC, points DESC, post_time";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 

@@ -104,4 +104,9 @@ class ViewSession extends AlecFramework
     {
         echo $this->viewSessionModel->getSessionActiveQuestion($sessionId);
     }
+
+    public function changeQuestionResolveStatus($questionId, $status)
+    {
+        $this->viewSessionModel->setQuestionResolveStatus($questionId, $status);
+    }
 }
