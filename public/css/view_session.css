@@ -660,8 +660,13 @@ footer p {
   margin: 10px 10px 20px 10px;
   align-items: center;
   display: flex;
+  cursor: default;
 }
-.details-content .header-container .fa-circle {
+.details-content .header-container header .fa-pencil {
+  font-size: 25px;
+  margin: 0 8px 0 0;
+}
+.details-content .header-container header .fa-circle {
   font-size: 20px;
   margin-left: 10px;
   color: #4caf50;

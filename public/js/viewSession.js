@@ -33,16 +33,15 @@ for (let i = 0; i < document.getElementsByClassName("check-resolved").length; i+
 }
 
 // let start = document.getElementById("start-session");
-// let end = document.getElementById("end-session");
+let end = document.getElementById("end-session");
 // let active_status = document.getElementById("active-status");
 
 // start.addEventListener("click", () => {
 //     control_session();
 // });
-// end.addEventListener("click", () => {
-//     document.getElementById("active-status").style.display = "none";
-//     control_session();
-// });
+end.addEventListener("click", () => {
+    document.getElementById("end-box").style.display = "block";
+});
 
 // for (let i = 0; i < document.getElementsByClassName("session").length; i++) {
 //     document.getElementsByClassName("fa-eye")[i].addEventListener("click", () => {

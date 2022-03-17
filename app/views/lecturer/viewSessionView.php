@@ -36,6 +36,9 @@
             <?php echo $data["sessionData"]["course_name"]; ?>
         </h2>
         <header>
+
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+
             <?php echo $data["sessionData"]["session_name"]; ?>
 
             <?php
@@ -48,7 +51,7 @@
         </header>
 
         <!--        Add to Course Page Button-->
-        <button type='button' value='Add to Course Page' class='export-btn' id='end-session' style='display: block'>
+        <button type='button' value='Add to Course Page' class='export-btn' id='course-page-btn' style='display: block'>
             Add to Course Page
         </button>
 
@@ -147,7 +150,7 @@
                             <span onclick=\"deleteFunction($questionLink)\">Delete</span>
                         </div>
                     </span>
-                    <span class='question'" . "onclick=\"window.location='http://localhost/ALec/showPollAnswer/index/{$row['question_no']}'\"" . ">{$row['question']}</span>
+                    <span class='question'" . " onclick=\"window.location='http://localhost/ALec/showPollAnswer/index/{$row['question_no']}'\"" . ">{$row['question']}</span>
                         <span class='status-symbols'>
                         <input type='hidden' value='{$row['status']}'>
                         <input type='hidden' value='{$row['question_no']}'>
@@ -224,6 +227,22 @@
         </span> -->
         </div>
     </div>
+
+    <!-- End session confirmation model -->
+    <div class="message-container" id="end-box" style="display: none">
+        <div class="face error-msg"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+        <div class="message-content">
+            <h1 class="alert error-msg tag-txt">Warning!</h1>
+            <p class="message-txt">Are you sure you want to end the session?
+        </div>
+        <div class="button-boxes">
+            <button class="red-btn confirm-btn"><span class="tag-txt"
+                                                      onclick="location.href='http://localhost/ALec/${link}'">
+                Yes, end</span></button>
+            <button class="red-btn confirm-btn cancel-btn" id="delete-close-btn" onclick=""><span class="tag-txt">
+                    No, cancel</span></button>
+        </div>
+    </div>
 </div>
 
 <?php linkPhp("footer"); ?>
@@ -243,6 +262,8 @@
 <?php linkJS("viewSessionOptionSelection"); ?>
 
 <?php linkJS("deleteMessage"); ?>
+
+<?php linkJS("endMessage"); ?>
 
 </body>
 
