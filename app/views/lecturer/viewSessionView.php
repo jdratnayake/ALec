@@ -20,7 +20,6 @@
 
 <body>
     <input type="hidden" id="session-id" value="<?php echo $data["sessionData"]["session_id"]; ?>">
-    <input type="hidden" id="questionIdArray" value='<?php echo $data["questionIdArray"]; ?>'>
 
     <?php linkPhp("navigationBarLecturer"); ?>
 
@@ -37,6 +36,9 @@
                 <?php echo $data["sessionData"]["course_name"]; ?>
             </h2>
             <header>
+
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+
                 <?php echo $data["sessionData"]["session_name"]; ?>
 
                 <?php
@@ -46,11 +48,13 @@
                     echo "<i class='fa fa-circle' id='active-status' aria-hidden='true' style='display: none'></i>";
                 ?>
 
-                <!--        Add to Course Page Button-->
-                <button type='button' value='Add to Course Page' class='export-btn' id='end-session' style='display: block'>
-                    Add to Course Page
-                </button>
             </header>
+
+            <!--        Add to Course Page Button-->
+            <button type='button' value='Add to Course Page' class='export-btn' id='course-page-btn' style='display: block'>
+                Add to Course Page
+            </button>
+
         </div>
         <div class="button-container">
             <?php
@@ -144,7 +148,7 @@
                             <span onclick=\"deleteFunction($questionLink)\">Delete</span>
                         </div>
                     </span>
-                    <span class='question'" . "onclick=\"window.location='http://localhost/ALec/showPollAnswer/index/{$row['question_no']}'\"" . ">{$row['question']}</span>
+                    <span class='question'" . " onclick=\"window.location='http://localhost/ALec/showPollAnswer/index/{$row['question_no']}'\"" . ">{$row['question']}</span>
                         <span class='status-symbols'>
                         <input type='hidden' value='{$row['status']}'>
                         <input type='hidden' value='{$row['question_no']}'>
@@ -202,12 +206,14 @@
                     <span class='session'>
                         {$row['question']}
                         <span class='vote'>
-                            <!--
-                            <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
-                            <span class='votes-count'>{$row['points']}</span>
-                            -->
-                            <input type='hidden' value='{$row['question_id']}'>
-                            <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                            <div class='col'>
+                                <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                                <span class='resolved-label'>Resolved</span>
+                            </div>
+                            <div class='col'>
+                                <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                                <span class='votes-count'>{$row['points']}</span>
+                            </div>
                         </span>
                     </span>
                     ";
@@ -216,6 +222,39 @@
 
             </div>
         </div>
+    </div>
+    =======
+    <!-- <span class='session inactive'>No questions to show</span> -->
+    <!-- <span class="session">
+            No questions to show
+            <span class="vote">
+                <div class='col'>
+                    <i class='fa fa-check-circle check-resolved' aria-hidden='true'></i>
+                    <span class='resolved-label'>Resolved</span>
+                </div>
+                <div class='col'>
+                    <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                    <span class='votes-count'>2</span>
+                </div>
+            </span>
+        </span> -->
+    </div>
+    </div>
+
+    <!-- End session confirmation model -->
+    <div class="message-container" id="end-box" style="display: none">
+        <div class="face error-msg"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+        <div class="message-content">
+            <h1 class="alert error-msg tag-txt">Warning!</h1>
+            <p class="message-txt">Are you sure you want to end the session?
+        </div>
+        <div class="button-boxes">
+            <button class="red-btn confirm-btn"><span class="tag-txt" onclick="location.href='http://localhost/ALec/${link}'">
+                    Yes, end</span></button>
+            <button class="red-btn confirm-btn cancel-btn" id="delete-close-btn" onclick=""><span class="tag-txt">
+                    No, cancel</span></button>
+        </div>
+    </div>
     </div>
 
     <?php linkPhp("footer"); ?>
@@ -239,6 +278,8 @@
     <?php linkJS("viewSessionViewQuestionStatus") ?>
 
     <?php linkJS("deleteMessage"); ?>
+
+    <?php linkJS("endMessage"); ?>
 
 </body>
 

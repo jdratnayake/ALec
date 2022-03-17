@@ -84,8 +84,6 @@
         </div>
         <span class="user-type-label">Lecturer</span>
     </div>
-
-    <div class="home-content">
-        <!-- USER-TYPE-DISPLAY - END -->
+    <!-- USER-TYPE-DISPLAY - END -->
 
     <div class="home-content">

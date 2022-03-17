@@ -22,42 +22,42 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 </head>
 
 <body>
-    <?php linkPhp("navigationBarLecturer"); ?>
+<?php linkPhp("navigationBarLecturer"); ?>
 
-    <!--    breadcrumb-->
-    <ul class="breadcrumb">
-        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-        <?php
-        echo "<li><a href='http://localhost/ALec/viewSession/index/{$sessionId}'>{$sessionName}</a></li>";
-        ?>
-        <li>New Poll Question</li>
-    </ul>
+<!--    breadcrumb-->
+<ul class="breadcrumb">
+    <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+    <?php
+    echo "<li><a href='http://localhost/ALec/viewSession/index/{$sessionId}'>{$sessionName}</a></li>";
+    ?>
+    <li>New Poll Question</li>
+</ul>
 
-    <div class="details-content">
-        <div class="container">
-            <div class="heading">
-                Create Poll
+<div class="details-content">
+    <div class="container">
+        <div class="heading">
+            Create Poll
+        </div>
+        <div class="content">
+            <div class="col" onclick="window.location='<?php echo BASEURL . "/createPoll/mcq/{$sessionId}"; ?>' ">
+                <img <?php srcIMG("mcq_icon.png"); ?> src="" alt="">
+                <label for="mcq">Single Choice</label>
             </div>
-            <div class="content">
-                <div class="col" onclick="window.location='<?php echo BASEURL . "/createPoll/mcq/{$sessionId}"; ?>' ">
-                    <img <?php srcIMG("mcq_icon.png"); ?> src="" alt="">
-                    <label for="mcq">MCQ</label>
-                </div>
-                <div class="col" onclick="window.location='<?php echo BASEURL . "/createPoll/openText/{$sessionId}"; ?>' ">
-                    <img <?php srcIMG("textanswer-icon.png"); ?> src="" alt="">
-                    <label for="open-text">OPEN_TEXT</label>
-                </div>
+            <div class="col" onclick="window.location='<?php echo BASEURL . "/createPoll/openText/{$sessionId}"; ?>' ">
+                <img <?php srcIMG("textanswer-icon.png"); ?> src="" alt="">
+                <label for="open-text">Open Text</label>
             </div>
         </div>
     </div>
+</div>
 
-    <?php linkPhp("footer"); ?>
+<?php linkPhp("footer"); ?>
 
-    <?php linkPhp("notificationView"); ?>
+<?php linkPhp("notificationView"); ?>
 
-    <?php linkJS("lib/jquery-3.6.0.min"); ?>
+<?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("notification") ?>
+<?php linkJS("notification") ?>
 
 </body>
 

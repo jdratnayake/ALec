@@ -773,6 +773,7 @@ footer p {
   text-align: center;
   cursor: pointer;
   border-radius: 10px;
+  margin: 0 2px;
 }
 
 /* navigation tab hover settings */
@@ -870,5 +871,42 @@ footer p {
 /*==============================================================================*/
 /*YEAR SELECTION - END*/
 /*==============================================================================*/
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 1270px) {
+  .navigation-item-container {
+    width: calc(100% - 160px);
+    display: grid;
+    gap: 25px 0;
+    grid-template-columns: auto auto auto;
+  }
+
+  .navigation-tab {
+    width: 155px;
+    height: 150px;
+    margin: 0 2px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .navigation-item-container {
+    width: calc(100% - 160px);
+  }
+
+  .navigation-tab {
+    width: 155px;
+    height: 150px;
+    margin: 0 2px;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .navigation-item-container {
+    width: calc(100% - 160px);
+  }
+
+  .navigation-tab {
+    width: 165px;
+    height: 160px;
+    margin: 0 2px;
+  }
+}
 
 /*# sourceMappingURL=home.css.map */

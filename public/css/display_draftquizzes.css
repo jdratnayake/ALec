@@ -651,48 +651,24 @@ footer p {
   width: 70%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
+  height: 80%;
   overflow: hidden;
 }
-.details-content .header-container h2 {
-  margin: 0 10px;
-}
 .details-content .header-container header {
-  margin: 10px 10px 20px 10px;
-  align-items: center;
-  display: flex;
-  cursor: default;
+  margin: 20px 10px;
 }
-.details-content .header-container header .fa-pencil {
-  font-size: 25px;
-  margin: 0 8px 0 0;
-}
-.details-content .header-container header .fa-circle {
-  font-size: 20px;
-  margin-left: 10px;
-  color: #4caf50;
-}
-.details-content .header-container .export-btn {
-  padding: 2px 8px;
-  background-color: rgba(43, 79, 130, 0.15);
-  color: #2B4F82;
-  border-radius: 5px;
-  border: 1px solid #2B4F82;
-  font-size: 12px;
+.details-content .header-container .course-label {
   font-weight: 400;
-  cursor: pointer;
-  width: fit-content;
-  margin: 0 10px 10px 10px;
-}
-.details-content .header-container .export-btn:hover {
-  background-color: rgba(43, 79, 130, 0.3);
+  color: #2B4F82;
+  margin-left: 25px;
 }
 .details-content .button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
   align-items: center;
-  margin: 20px 0;
 }
-.details-content .button-container .main-btn {
+.details-content .button-container .add-btn {
   padding: 6px 12px;
   background-color: #2B4F82;
   color: #FFF;
@@ -701,149 +677,78 @@ footer p {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-left: 5px;
-  display: block;
 }
-.details-content .button-container .main-btn .fa-play, .details-content .button-container .main-btn .fa-stop {
-  margin-right: 5px;
-}
-.details-content .button-container .main-btn:hover {
+.details-content .button-container .add-btn:hover {
   background-color: #1d3557;
   border: 2px solid #1d3557;
 }
-.details-content .button-container .dlt-btn {
-  background-color: #dd5555;
-  color: white;
-  border: 2px solid #dd5555;
+.details-content .draft-details-container {
+  height: 60vh;
+  overflow: auto;
 }
-.details-content .button-container .dlt-btn:hover {
-  background-color: #f7d4d4a1;
-  border: 2px solid #dd5555;
-  color: #dd5555;
-}
-.details-content .session-details-container .sessions {
+.details-content .draft-details-container .drafts {
+  display: grid;
   padding-bottom: 2rem;
   margin-left: 10px;
 }
-.details-content .session-details-container .sessions .add-btn {
-  padding: 3px 6px;
-  background-color: #FFF;
-  color: #2B4F82;
-  border-radius: 5px;
-  border: 2px solid #2B4F82;
-  font-size: 12px;
-  font-weight: bold;
-  float: right;
-  cursor: pointer;
-}
-.details-content .session-details-container .sessions .add-btn .fa-plus {
-  margin-right: 5px;
-}
-.details-content .session-details-container .sessions .add-btn:hover {
-  background-color: #1d3557;
-  border: 2px solid #1d3557;
-  color: #FFF;
-}
-.details-content .session-details-container .sessions .session-label {
-  font-weight: bold;
-}
-.details-content .session-details-container .sessions .session-label a {
-  text-decoration: none;
-}
-.details-content .session-details-container .sessions .link-label:hover {
-  text-decoration: underline;
-}
-.details-content .session-details-container .sessions .session {
-  display: flex;
+.details-content .draft-details-container .drafts .draft {
+  display: grid;
+  justify-items: start;
   align-items: center;
   background-color: #2b4f820d;
   border-radius: 5px;
   margin: 5px 0;
-  padding: 10px;
-  height: 55px;
-  justify-content: space-between;
+  padding: 20px 10px;
 }
-.details-content .session-details-container .sessions .session .fa-ellipsis-v {
-  width: 20px;
-  font-size: 12px;
-  cursor: pointer;
+.details-content .draft-details-container .drafts .draft .draft-details {
+  width: 100%;
 }
-.details-content .session-details-container .sessions .session .option-selection {
-  display: none;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  border-radius: 6px;
-  height: fit-content;
-  width: 60px;
-  background: #fff;
-  line-height: 20px;
-  text-align: left;
-  padding: 0 8px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transition: 0s;
-  cursor: pointer;
-  z-index: 10;
-  left: 298px;
-  font-size: 12px;
-}
-.details-content .session-details-container .sessions .session .option-selection::after {
-  content: "";
-  position: absolute;
-  top: 85%;
-  left: 100%;
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  z-index: 120;
-  border-color: transparent transparent transparent #2b4f82;
-}
-.details-content .session-details-container .sessions .session .question {
+.details-content .draft-details-container .drafts .draft .draft-details .draft-name {
   width: 95%;
+  float: left;
+  text-decoration: none;
   cursor: pointer;
   color: #0275d8;
-  text-decoration: none;
 }
-.details-content .session-details-container .sessions .session .question:hover {
+.details-content .draft-details-container .drafts .draft .draft-details .draft-name:hover {
   text-decoration: underline;
 }
-.details-content .session-details-container .sessions .session .publish-status {
+.details-content .draft-details-container .drafts .draft .draft-details .eye {
+  width: 5%;
+  float: right;
+}
+.details-content .draft-details-container .drafts .draft .publish-status {
   cursor: pointer;
 }
-.details-content .session-details-container .sessions .session .vote {
-  display: inherit;
-  width: 110px;
-}
-.details-content .session-details-container .sessions .session .vote .col {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-}
-.details-content .session-details-container .sessions .session .vote .col .vote-highlight {
-  font-size: 24px;
-  cursor: pointer;
-}
-.details-content .session-details-container .sessions .session .vote .col .vote-highlight:hover {
-  transform: scale(1.2);
-}
-.details-content .session-details-container .sessions .session .vote .col .votes-count {
-  font-size: small;
-}
-.details-content .session-details-container .sessions .session .vote .col .check-resolved {
-  font-size: 24px;
-  cursor: pointer;
-}
-.details-content .session-details-container .sessions .session .vote .col .check-resolved:hover {
-  transform: scale(1.2);
-}
-.details-content .session-details-container .sessions .session .vote .col .resolved-label {
-  font-size: 12px;
+.details-content .draft-details-container .drafts .draft .draft-created-date {
+  text-decoration: none;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  line-height: 15px;
   cursor: default;
 }
-.details-content .session-details-container .sessions .inactive {
-  color: #ccc;
+
+/*==============================================================================*/
+/*SEARCH BAR - START*/
+/*==============================================================================*/
+.search-bar {
+  width: 450px;
+  margin-left: 10px;
 }
 
-/*# sourceMappingURL=view_session.css.map */
+form.search-bar input[type=text] {
+  padding: 5px 20px;
+  font-size: 17px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  float: left;
+  width: 85%;
+  background: #f1f1f1;
+}
+
+/*==============================================================================*/
+/*SEARCH BAR - END*/
+/*==============================================================================*/
+
+/*# sourceMappingURL=display_draftquizzes.css.map */

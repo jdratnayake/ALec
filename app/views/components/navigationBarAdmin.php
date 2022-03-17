@@ -62,6 +62,6 @@
         </div>
         <span class="user-type-label">Admin</span>
     </div>
+    <!-- USER-TYPE-DISPLAY - END -->
 
     <div class="home-content">
-    <!-- USER-TYPE-DISPLAY - END -->
