@@ -805,6 +805,13 @@ footer p {
 .details-content .session-details-container .sessions .session .vote .votes-count {
   font-size: small;
 }
+.details-content .session-details-container .sessions .session .vote .check-resolved {
+  font-size: 24px;
+  cursor: pointer;
+}
+.details-content .session-details-container .sessions .session .vote .check-resolved:hover {
+  transform: scale(1.2);
+}
 .details-content .session-details-container .sessions .inactive {
   color: #ccc;
 }

@@ -196,6 +196,15 @@ $light_color: #FFF;
           .votes-count {
             font-size: small;
           }
+
+          .check-resolved {
+            font-size: 24px;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
         }
       }
 

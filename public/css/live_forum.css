@@ -749,9 +749,6 @@ footer p {
 .details-content .questions-container .question .vote .check-resolved:hover {
   transform: scale(1.2);
 }
-.details-content .questions-container .question .vote .check-resolved ::after {
-  color: #ccc;
-}
 .details-content .new-question {
   display: flex;
   padding-bottom: 2rem;
