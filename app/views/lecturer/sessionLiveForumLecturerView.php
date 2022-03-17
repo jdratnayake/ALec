@@ -51,6 +51,17 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 
     <div class="questions-container">
 
+        <div class="stat-container">
+            <div class="resolved stat-box">
+                <span>Resolved</span>
+                <span>2</span>
+            </div>
+            <div class="unresolved stat-box">
+                <span>Unresolved</span>
+                <span>5</span>
+            </div>
+        </div>
+
         <?php
 
         while ($row = mysqli_fetch_assoc($data["questionDetails"])) {

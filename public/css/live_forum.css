@@ -688,6 +688,28 @@ footer p {
   padding-bottom: 2rem;
   margin-left: 10px;
 }
+.details-content .questions-container .stat-container {
+  border: none;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.details-content .questions-container .stat-container .stat-box {
+  color: black;
+  display: grid;
+  justify-items: center;
+  width: 102px;
+}
+.details-content .questions-container .stat-container .resolved {
+  background-color: rgba(118, 151, 179, 0.4);
+  border-radius: 5px 0 0 5px;
+}
+.details-content .questions-container .stat-container .unresolved {
+  background-color: rgba(118, 151, 179, 0.65);
+  border-radius: 0 5px 5px 0;
+}
 .details-content .questions-container .question {
   display: flex;
   align-items: center;
