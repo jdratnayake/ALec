@@ -79,9 +79,7 @@ if ($questionCount == 0) {
                         "
                         <div class='row' onclick=\"window.location='" . BASEURL . "/showPollAnswer/displayRespondents/mcq/{$row["choice_id"]}" . "'\">
                             <div class='answer'>
-                                <div class='answer-progress pressed' style='width: {$precentage}%'>
-                                    {$row["choice_name"]}
-                                </div>
+                                <div class='answer-progress pressed' style='width: {$precentage}%'><span>{$row["choice_name"]}</span></div>
                             </div>
                             {$precentage}%
                         </div>
