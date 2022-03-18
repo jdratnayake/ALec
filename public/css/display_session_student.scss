@@ -1,0 +1,88 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+//LOCAL VARIABLES
+$main_color: $theme_second;
+$light_color: #FFF;
+
+.details-content {
+  padding: 1rem;
+  width: 70%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  margin: auto auto 30px auto;
+  height: 80%;
+  overflow: hidden;
+
+  .header-container {
+    header {
+      margin: 20px 10px;
+    }
+  }
+
+  .sessions-container {
+    height: 60vh;
+    overflow: auto;
+
+    .sessions {
+      display: grid;
+      margin-left: 10px;
+
+      .session {
+        display: grid;
+        justify-items: start;
+        align-items: center;
+        background-color: #2b4f820d;
+        border-radius: 5px;
+        margin: 5px 0;
+        padding: 20px 10px;
+
+        .session-name {
+          width: 95%;
+          float: left;
+          text-decoration: none;
+          color: #2f4b6c;
+          font-weight: 500;
+          font-size: 20px;
+        }
+
+        .session-created-date {
+          text-decoration: none;
+          font-size: 10px;
+          margin: 0;
+          padding: 0;
+          line-height: 15px;
+          cursor: default;
+        }
+
+        hr {
+          height: 2px;
+          width: 100%;
+          border-width: 0;
+          color: #184e7740;
+          background-color: #184e7740;
+          margin-bottom: 10px;
+        }
+
+        .session-details {
+          width: 100%;
+
+          ul {
+            list-style-type: none;
+
+            li {
+              line-height: 2;
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
