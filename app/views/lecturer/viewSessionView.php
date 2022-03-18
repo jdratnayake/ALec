@@ -37,7 +37,7 @@
             </h2>
             <header>
 
-                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-pencil" aria-hidden="true" id="edit-name"></i>
 
                 <?php echo $data["sessionData"]["session_name"]; ?>
 
@@ -239,6 +239,41 @@
             </span>
         </span> -->
 
+    <!-- The Modal -->
+    <div id="edit-name-model" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Rename Session</h2>
+            </div>
+
+        <div class="modal-body">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="date-group">
+                <label for="fName">First Name :</label>
+                <input type="text" id="fName" name="fName" value="Session 1" class="" disabled>
+            </div>
+<!--            <input type="submit" value="Save" name="submit" class="upload-btn" id="save-btn">-->
+<!--            <input type="submit" value="Cancel" name="cancel" class="upload-btn" id="cancel-btn">-->
+            <div class="save-buttons">
+                <button id="btn-save" type="submit" value="Save" class="buttons" style="display: none">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>Save
+                </button>
+                <button id="btn-cancel" type="reset" value="Cancel" class="buttons cancel" style="display: none">
+                    <i class="fa fa-ban" aria-hidden="true"></i>Cancel
+                </button>
+            </div>
+
+            <button class="buttons" id="btn-edit">
+                <i class="fa fa-pencil" aria-hidden="true"></i>Edit
+            </button>
+        </form>
+    </div>
+    </div>
+</div>
+
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notificationView"); ?>
@@ -260,6 +295,8 @@
     <?php linkJS("viewSessionViewQuestionStatus") ?>
 
     <?php linkJS("deleteMessage"); ?>
+
+    <?php linkJS("editProfile"); ?>
 
 </body>
 

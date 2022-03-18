@@ -150,8 +150,8 @@ printSucessMsg($data["success"]); ?>
                 </form>
             </div>
         </div>
-
     </div>
+
 </div>
 
 <?php linkPhp("notificationView"); ?>
