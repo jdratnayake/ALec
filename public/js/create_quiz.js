@@ -42,13 +42,7 @@ addQuestion = function () {
 <div class='question' id='${questionCount}'>
 
             <div class="form-header">
-                <span class="close">
-                    <button type="button" class="close-btn finish">
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                        Remove Question
-                    </button>
-                </span>
-
+                
                 <h4 class="heading">Question ${questionCount}</h4> 
 
                 <input type="hidden" name="type" value="${questionCount}" class="hidden_quiz_no"> 
@@ -63,7 +57,14 @@ addQuestion = function () {
                     <input type="radio" name="q${questionCount}_type" value="value_short" class="short option-input radio" id="short_${questionCount}">
                     <label for="short_${questionCount}">Short Answer</label>
    
-                </div> 
+                </div>
+                
+                <span class="close">
+                    <button type="button" class="close-btn finish">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                        Remove Question
+                    </button>
+                </span>
             </div>  
                     
             <!-- Question type - MCQ -->
