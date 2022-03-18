@@ -21,16 +21,32 @@ $light_color: #FFF;
       margin: 20px 10px;
     }
 
-    .course-label {
-      font-weight: 400;
-      color: #2B4F82;
-      margin-left: 25px;
+    .course-selection {
+      margin-bottom: 5px;
+
+      .course-dropdown {
+        cursor: pointer;
+        display: block;
+        padding: 6px 12px;
+        color: rgba(0, 0, 0, 0.85);
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-bottom-width: 2px;
+        border-radius: 4px;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        margin-left: 10px;
+        min-width: 470px;
+
+        &:hover {
+          box-shadow: 0 0 5px #7697b3;
+        }
+      }
     }
   }
 
   .button-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: 2rem;
     align-items: center;
 
@@ -57,7 +73,6 @@ $light_color: #FFF;
 
     .drafts {
       display: grid;
-      padding-bottom: 2rem;
       margin-left: 10px;
 
       .draft {
@@ -83,15 +98,6 @@ $light_color: #FFF;
               text-decoration: underline;
             }
           }
-
-          .eye {
-            width: 5%;
-            float: right;
-          }
-        }
-
-        .publish-status {
-          cursor: pointer
         }
 
         .draft-created-date {
@@ -106,27 +112,3 @@ $light_color: #FFF;
     }
   }
 }
-
-/*==============================================================================*/
-/*SEARCH BAR - START*/
-/*==============================================================================*/
-
-.search-bar {
-  width: 450px;
-  margin-left: 10px;
-}
-
-form.search-bar input[type=text] {
-  padding: 5px 20px;
-  font-size: 17px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  float: left;
-  width: 85%;
-  background: #f1f1f1;
-}
-
-/*==============================================================================*/
-/*SEARCH BAR - END*/
-/*==============================================================================*/
-
