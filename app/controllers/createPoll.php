@@ -30,6 +30,7 @@ class CreatePoll extends AlecFramework
 
         //Mcq
         $errors["question"] = "";
+        $errors["answer"] = "";
         $errors["answer-1"] = "";
         $errors["answer-2"] = "";
         $errors["answer-3"] = "";
@@ -44,18 +45,19 @@ class CreatePoll extends AlecFramework
             // return 0;
             $questionType = $_POST["question-type"];
             $duration = $_POST["quiz-dur"];;
+            $answer = $_POST["correct-answer"];
 
             $data["questionType"] = $questionType;
 
             if (empty($duration)) $errors["duration"] = "Duration is required";
+            if (empty($answer)) $errors["answer"] = "Correct answer is required";
 
             if ($questionType == "mcq") {
                 $question = $_POST["question"];
+
+                //Becase there must atleast two answers in a question
                 $answer1 = $_POST["answer-1"];
                 $answer2 = $_POST["answer-2"];
-                // $answer3 = $_POST["answer-3"];
-                // $answer4 = $_POST["answer-4"];
-                // $answer5 = $_POST["answer-5"];
 
                 //Empty check
                 if (empty($question)) $errors["question"] = "Question is required";
@@ -87,7 +89,7 @@ class CreatePoll extends AlecFramework
                 $durSec = $quizDur[2];
 
                 if ($questionType == "mcq") {
-                    $questionId = $this->createPollModel->addQuestion($sessionId, "mcq", $question, $durHr, $durMin, $durSec);
+                    $questionId = $this->createPollModel->addQuestion($sessionId, "mcq", $question, $answer, $durHr, $durMin, $durSec);
                     $this->createPollModel->addAnswer($questionId, $sessionId, $answer1);
                     $this->createPollModel->addAnswer($questionId, $sessionId, $answer2);
 
@@ -100,7 +102,7 @@ class CreatePoll extends AlecFramework
                         }
                     }
                 } else if ($questionType == "open") {
-                    $questionId = $this->createPollModel->addQuestion($sessionId, "mcq-tf", $question, $durHr, $durMin, $durSec);
+                    $questionId = $this->createPollModel->addQuestion($sessionId, "mcq-tf", $question, $answer, $durHr, $durMin, $durSec);
                     $this->createPollModel->addAnswer($questionId, $sessionId, "TRUE");
                     $this->createPollModel->addAnswer($questionId, $sessionId, "FALSE");
                 }
@@ -119,15 +121,16 @@ class CreatePoll extends AlecFramework
 
         $errors["duration"] = "";
         $errors["question"] = "";
+        $errors["answer"] = "";
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $question = $_POST["question"];
-            $duration = $_POST["quiz-dur"];;
-
-
+            $duration = $_POST["quiz-dur"];
+            $answer = $_POST["correct-answer"];
 
             if (empty($duration)) $errors["duration"] = "Duration is required";
             if (empty($question)) $errors["question"] = "Question is required";
+            if (empty($answer)) $errors["answer"] = "Correct answer is required";
 
 
             /* Count number of validation failures */
@@ -147,7 +150,7 @@ class CreatePoll extends AlecFramework
                 $durSec = $quizDur[2];
 
 
-                $this->createPollModel->addQuestion($sessionId, "open", $question, $durHr, $durMin, $durSec);
+                $this->createPollModel->addQuestion($sessionId, "open", $question, $answer, $durHr, $durMin, $durSec);
             }
         }
 

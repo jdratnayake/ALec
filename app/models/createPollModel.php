@@ -10,17 +10,18 @@ class CreatePollModel extends Database
         return mysqli_fetch_assoc($result);
     }
 
-    public function addQuestion($sessionId, $type, $question, $durHr, $durMin, $durSec)
+    public function addQuestion($sessionId, $type, $question, $answer, $durHr, $durMin, $durSec)
     {
         $type = mysqli_real_escape_string($GLOBALS["db"], $type);
         $question = mysqli_real_escape_string($GLOBALS["db"], $question);
+        $answer = mysqli_real_escape_string($GLOBALS["db"], $answer);
         $durHr = mysqli_real_escape_string($GLOBALS["db"], $durHr);
         $durMin = mysqli_real_escape_string($GLOBALS["db"], $durMin);
         $durSec = mysqli_real_escape_string($GLOBALS["db"], $durSec);
 
         $dur = "{$durHr}:{$durMin}:{$durSec}";
 
-        $query = "INSERT INTO session_question(session_id, question_type, question, duration) VALUES('$sessionId', '$type', '$question', '$dur')";
+        $query = "INSERT INTO session_question(session_id, question_type, question, answer, duration) VALUES('$sessionId', '$type', '$question', '$answer', '$dur')";
         mysqli_query($GLOBALS["db"], $query);
 
         $query = "SELECT question_no FROM session_question ORDER BY question_no DESC LIMIT 1";
