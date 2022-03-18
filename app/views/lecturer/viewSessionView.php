@@ -223,7 +223,7 @@
             </div>
         </div>
     </div>
-    =======
+
     <!-- <span class='session inactive'>No questions to show</span> -->
     <!-- <span class="session">
             No questions to show
@@ -238,23 +238,30 @@
                 </div>
             </span>
         </span> -->
-    </div>
-    </div>
+
 
     <!-- End session confirmation model -->
     <div class="message-container" id="end-box" style="display: none">
-        <div class="face error-msg"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+        <div class="face error-msg">
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+        </div>
+
         <div class="message-content">
             <h1 class="alert error-msg tag-txt">Warning!</h1>
-            <p class="message-txt">Are you sure you want to end the session?
+            <p class="message-txt">Are you sure you want to end the session?</p>
         </div>
         <div class="button-boxes">
-            <button class="red-btn confirm-btn"><span class="tag-txt" onclick="location.href='http://localhost/ALec/${link}'">
-                    Yes, end</span></button>
-            <button class="red-btn confirm-btn cancel-btn" id="delete-close-btn" onclick=""><span class="tag-txt">
-                    No, cancel</span></button>
+            <button class="red-btn confirm-btn">
+                <span class="tag-txt" onclick="location.href='http://localhost/ALec/${link}'">
+                    Yes, end
+                </span>
+            </button>
+            <button class="red-btn confirm-btn cancel-btn" id="delete-close-btn" onclick="">
+                <span class="tag-txt">
+                    No, cancel
+                </span>
+            </button>
         </div>
-    </div>
     </div>
 
     <?php linkPhp("footer"); ?>
