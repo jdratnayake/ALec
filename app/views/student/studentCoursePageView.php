@@ -34,7 +34,7 @@
             $temp = explode("-", $row["course_name"]);
 
             echo "
-            <a href='" . BASEURL . "/lecturerTopicPage/index/{$row["course_id"]}" . "' style='text-decoration: none;'>
+            <a href='" . BASEURL . "/studentTopicPage/index/{$row["course_id"]}" . "' style='text-decoration: none;'>
             <div class='card'>
                 <div class='face face1'>
                     <div class='content'>
@@ -80,8 +80,8 @@
     <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
-	
-	<?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
 

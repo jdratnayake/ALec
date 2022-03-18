@@ -41,7 +41,7 @@ $errors = $data["errors"];
         <div class="container">
             <form action="<?php echo BASEURL . "/createPoll/mcq/$sessionId" ?>" method="POST">
                 <div class="heading">
-                    Multiple Choice Poll Question
+                    Single Choice Poll Question
                 </div>
                 <div class="content">
 
