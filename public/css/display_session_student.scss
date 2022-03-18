@@ -75,10 +75,13 @@ $light_color: #FFF;
 
             li {
               line-height: 2;
-              text-decoration: none;
 
-              &:hover {
-                text-decoration: underline;
+              a {
+                text-decoration: none;
+
+                &:hover {
+                  text-decoration: underline;
+                }
               }
             }
           }

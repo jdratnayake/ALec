@@ -707,9 +707,11 @@ footer p {
 }
 .details-content .sessions-container .sessions .session .session-details ul li {
   line-height: 2;
+}
+.details-content .sessions-container .sessions .session .session-details ul li a {
   text-decoration: none;
 }
-.details-content .sessions-container .sessions .session .session-details ul li:hover {
+.details-content .sessions-container .sessions .session .session-details ul li a:hover {
   text-decoration: underline;
 }
 
