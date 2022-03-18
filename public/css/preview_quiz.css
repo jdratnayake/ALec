@@ -696,7 +696,7 @@ footer p {
 /*==============================================================================*/
 /*BUTTON STYLES - START*/
 /*==============================================================================*/
-.edit, .done, .dlt {
+.edit, .dlt {
   cursor: pointer;
   font-size: 16px;
   color: white;
@@ -705,7 +705,7 @@ footer p {
   font-weight: bold;
   border-radius: 5px;
 }
-.edit:hover, .done:hover, .dlt:hover {
+.edit:hover, .dlt:hover {
   border: 2px solid #1d3557;
   color: white;
   background-color: #1d3557;
@@ -737,9 +737,35 @@ footer p {
   padding-right: 10px;
 }
 
-.done {
-  width: 100%;
+.pub-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 18px;
+}
+.pub-button-container .done {
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  background-color: #2B4F82;
+  border: 2px solid #2B4F82;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 50%;
   padding: 10px 50px;
+}
+.pub-button-container .done:hover {
+  border: 2px solid #1d3557;
+  color: white;
+  background-color: #1d3557;
+}
+.pub-button-container .red-done {
+  background-color: #dd5555;
+  border: 2px solid #dd5555;
+}
+.pub-button-container .red-done:hover {
+  background-color: #f7d4d4a1;
+  border: 2px solid #dd5555;
+  color: #dd5555;
 }
 
 /*==============================================================================*/
