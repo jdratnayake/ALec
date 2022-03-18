@@ -62,7 +62,7 @@
                 echo
                 "
                 <!--        End Session Button-->
-                <button type='button' value='End Session' class='main-btn' id='end-session' style='display: block'>
+                <button type='button' value='End Session' class='main-btn' id='end-session' style='display: block' onclick='endFunction()'>
                     <i class='fa fa-stop' aria-hidden='true'></i>
                     End Session
                 </button>
@@ -76,7 +76,7 @@
                 echo
                 "
                 <!--        End Session Button-->
-                <button type='button' value='End Session' class='main-btn' id='end-session' style='display: none'>
+                <button type='button' value='End Session' class='main-btn' id='end-session' style='display: none' onclick='endFunction()'>
                     <i class='fa fa-stop' aria-hidden='true'></i>
                     End Session
                 </button>
@@ -239,31 +239,6 @@
             </span>
         </span> -->
 
-
-    <!-- End session confirmation model -->
-    <div class="message-container" id="end-box" style="display: none">
-        <div class="face error-msg">
-            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-        </div>
-
-        <div class="message-content">
-            <h1 class="alert error-msg tag-txt">Warning!</h1>
-            <p class="message-txt">Are you sure you want to end the session?</p>
-        </div>
-        <div class="button-boxes">
-            <button class="red-btn confirm-btn">
-                <span class="tag-txt" onclick="location.href='http://localhost/ALec/${link}'">
-                    Yes, end
-                </span>
-            </button>
-            <button class="red-btn confirm-btn cancel-btn" id="delete-close-btn" onclick="">
-                <span class="tag-txt">
-                    No, cancel
-                </span>
-            </button>
-        </div>
-    </div>
-
     <?php linkPhp("footer"); ?>
 
     <?php linkPhp("notificationView"); ?>
@@ -285,8 +260,6 @@
     <?php linkJS("viewSessionViewQuestionStatus") ?>
 
     <?php linkJS("deleteMessage"); ?>
-
-    <?php linkJS("endMessage"); ?>
 
 </body>
 
