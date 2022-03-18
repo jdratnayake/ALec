@@ -119,20 +119,23 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
                     <h2>Quiz details</h2>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo BASEURL . "/previewQuiz/submit/{$data['quizDetails']['quiz_id']}"; ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo BASEURL . "/previewQuiz/submit/{$data['quizDetails']['quiz_id']}"; ?>" method="post" enctype="multipart/form-data" id="published-form">
                         <div class="date-group">
                             <label for="publishdatetime">Publish date and time:</label>
                             <input type="datetime-local" id="publishdatetime" name="publishdatetime">
+                            <div class="error"></div>
                         </div>
                         <div class="date-group">
                             <label for="closedatetime">Close date and time:</label>
                             <input type="datetime-local" id="closedatetime" name="closedatetime">
+                            <div class="error"></div>
                         </div>
                         <span>
                             <label for="time-picker">Quiz Duration</label>
                             <input type="text" name="time-picker" id="time-picker" class="form-control" placeholder="hrs:mins:secs" />
+                            <div class="error"></div>
                         </span>
-                        <input type="submit" value="Save" name="submit" class="upload-btn">
+                        <input type="submit" value="Save" name="submit" class="upload-btn" id="upload-btn">
                     </form>
                 </div>
             </div>
@@ -143,14 +146,16 @@ $courseName = explode("-", $data["bread"]["courseDetails"]["course_name"])[0];
     <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
-	
-	<?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
 
     <?php linkJS("previewQuiz"); ?>
 
     <?php linkJS("timePicker") ?>
+
+    <?php linkJS("quizScheduleValidation") ?>
 
     <?php linkJS("deleteMessage"); ?>
 
