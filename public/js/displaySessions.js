@@ -5,8 +5,8 @@ $(document).ready(function () {
         $(this).hide();
         $(this).next().show();
 
-        $(this).parent().parent().clone().prependTo("#inactive-sessions");
-        $(this).parent().parent().remove();
+        $(this).parent().parent().parent().clone().prependTo("#inactive-sessions");
+        $(this).parent().parent().parent().remove();
 
         const sessionId = $(this).prev().val();
 
@@ -36,13 +36,13 @@ $(document).ready(function () {
             if (courseId == currentCourseId && sessionId != currentSessionId) {
                 $(obj).next().next().hide()
                 $(obj).next().next().next().show()
-                $(obj).parent().parent().clone().prependTo("#inactive-sessions");
-                $(obj).parent().parent().remove();
+                $(obj).parent().parent().parent().clone().prependTo("#inactive-sessions");
+                $(obj).parent().parent().parent().remove();
             }
         });
 
-        $(this).parent().parent().clone().prependTo("#active-sessions");
-        $(this).parent().parent().remove();
+        $(this).parent().parent().parent().clone().prependTo("#active-sessions");
+        $(this).parent().parent().parent().remove();
 
         $.ajax({
             type: "GET",
@@ -52,22 +52,3 @@ $(document).ready(function () {
         })
     })
 });
-
-// for (let i = 0; i < document.getElementsByClassName("session").length; i++) {
-//     document.getElementsByClassName("fa-eye")[i].addEventListener("click", () => {
-//         shift(i);
-//     });
-//     document.getElementsByClassName("fa-eye-slash")[i].addEventListener("click", () => {
-//         shift(i);
-//     });
-// }
-
-// function shift(i) {
-//     if (document.getElementsByClassName("fa-eye")[i].style.display === "block") {
-//         document.getElementsByClassName("fa-eye")[i].style.display = "none";
-//         document.getElementsByClassName("fa-eye-slash")[i].style.display = "block";
-//     } else {
-//         document.getElementsByClassName("fa-eye")[i].style.display = "block";
-//         document.getElementsByClassName("fa-eye-slash")[i].style.display = "none";
-//     }
-// }

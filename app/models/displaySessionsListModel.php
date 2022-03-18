@@ -12,7 +12,7 @@ class DisplaySessionsListModel extends Database
 
     public function getActiveSessions($userId)
     {
-        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='T' ORDER BY create_date DESC";
+        $query = "SELECT session_id, session_name, course_id, DATE_FORMAT(create_date, '%M %d %Y') AS date FROM session WHERE lecturer_id='$userId' AND status='T' ORDER BY create_date DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
@@ -20,7 +20,7 @@ class DisplaySessionsListModel extends Database
 
     public function getNotActiveSessions($userId)
     {
-        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='F' ORDER BY create_date DESC";
+        $query = "SELECT session_id, session_name, course_id, DATE_FORMAT(create_date, '%M %d %Y') AS date FROM session WHERE lecturer_id='$userId' AND status='F' ORDER BY create_date DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
@@ -30,7 +30,7 @@ class DisplaySessionsListModel extends Database
     {
         $searchValue = mysqli_real_escape_string($GLOBALS["db"], $searchValue);
 
-        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='T' AND session_name LIKE '$searchValue' ORDER BY create_date DESC";
+        $query = "SELECT session_id, session_name, course_id, DATE_FORMAT(create_date, '%M %d %Y') AS date FROM session WHERE lecturer_id='$userId' AND status='T' AND session_name LIKE '$searchValue' ORDER BY create_date DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
@@ -40,7 +40,7 @@ class DisplaySessionsListModel extends Database
     {
         $searchValue = mysqli_real_escape_string($GLOBALS["db"], $searchValue);
 
-        $query = "SELECT session_id, session_name, course_id FROM session WHERE lecturer_id='$userId' AND status='F' AND session_name LIKE '$searchValue' ORDER BY create_date DESC";
+        $query = "SELECT session_id, session_name, course_id, DATE_FORMAT(create_date, '%M %d %Y') AS date FROM session WHERE lecturer_id='$userId' AND status='F' AND session_name LIKE '$searchValue' ORDER BY create_date DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
