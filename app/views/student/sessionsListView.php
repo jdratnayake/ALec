@@ -29,8 +29,9 @@
 
 <div class="details-content">
     <div class="header-container">
-        <header>Sessions - SCS 1212 Automata Theory</header>
-        <span></span>
+        <header>Sessions
+            <span class="sub-header" style="font-size: 25px;color: rgba(25,52,93,0.8);">SCS 1212 Automata Theory</span>
+        </header>
     </div>
 
     <div class="sessions-container">
@@ -42,11 +43,11 @@
                 <span class='session-created-date'>17/03/2022</span>
                 <hr>
                 <div class='session-details'>
-                    <ul>
+                    <ol>
                         <li><a href="">Is this a DFA or NFA?</a></li>
                         <li><a href="">Which of the following does not represents the given language?
                                 Language: {0,01}</a></li>
-                    </ul>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -59,10 +60,10 @@
                 <hr>
 
                 <div class='session-details'>
-                    <ul>
+                    <ol>
                         <li><a href="">Poll 1</a></li>
                         <li><a href="">Poll 2</a></li>
-                    </ul>
+                    </ol>
                 </div>
             </div>
         </div>

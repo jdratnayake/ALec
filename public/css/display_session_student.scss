@@ -19,6 +19,12 @@ $light_color: #FFF;
   .header-container {
     header {
       margin: 20px 10px;
+      display: grid;
+
+      .sub-header{
+        font-size: 25px;
+        color: rgba(25,52,93,0.8);
+      }
     }
   }
 
@@ -70,11 +76,12 @@ $light_color: #FFF;
         .session-details {
           width: 100%;
 
-          ul {
-            list-style-type: none;
+          ol {
+            margin-left: 15px;
 
             li {
               line-height: 2;
+              color: #883291;
 
               a {
                 text-decoration: none;
