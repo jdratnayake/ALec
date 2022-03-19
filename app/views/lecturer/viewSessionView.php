@@ -270,11 +270,13 @@
                 <form action="<?php echo BASEURL . '/viewSession/updateSessionName/' . $data["sessionData"]["session_id"]; ?>" method="post" id="renameForm">
                     <div class="date-group">
                         <label for="sessionName">Session Name :</label>
-                        <input type="text" id="sessionName" name="sessionName" value="<?php echo $data["sessionData"]["session_name"]; ?>" class="name-input" onfocusout="sessionNameValidityCheck()">
-                        <div class="error"></div>
 
-                        <input type="submit" value="Save" name="submit" class="upload-btn" id="save-btn">
+                        <div class="right-side">
+                            <input type="text" id="sessionName" name="sessionName" value="<?php echo $data["sessionData"]["session_name"]; ?>" class="name-input" onfocusout="sessionNameValidityCheck()">
+                            <div class="error"></div>
+                        </div>
                     </div>
+                    <input type="submit" value="Save" name="submit" class="upload-btn" id="save-btn">
                 </form>
             </div>
         </div>

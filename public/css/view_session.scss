@@ -309,37 +309,46 @@ $modal_color: $theme_hover;
       justify-items: center;
 
       .date-group {
-        margin: 15px 0;
         display: flex;
-        align-items: center;
+        padding-bottom: 1rem;
+        margin-left: 10px;
+        justify-content: space-between;
 
-
-        .name-input {
-          border: 1px solid $modal_color;
-          border-radius: 5px;
-          padding: 2px 15px;
-          margin: 2px;
-          width: 250px;
+        .session-label {
+          width: 130px;
         }
+        .right-side {
+          display: grid;
 
-        .upload-btn {
-          background-color: $modal_color;
-          border: 1px solid $modal_color;
-          color: white;
-          padding: 2px 40px;
-          text-align: center;
-          cursor: pointer;
-          border-radius: 5px;
-          font-weight: 600;
-          font-size: 15px;
-
-          &:hover {
-            background-color: $theme;
-            color: white;
+          .name-input {
+            border: 1px solid $modal_color;
+            border-radius: 5px;
+            padding: 2px 15px;
+            margin: 2px;
+            width: 250px;
+          }
+          .error {
+            margin-left: 2px;
           }
         }
       }
 
+      .upload-btn {
+        background-color: $modal_color;
+        border: 1px solid $modal_color;
+        color: white;
+        padding: 2px 40px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 15px;
+
+        &:hover {
+          background-color: $theme;
+          color: white;
+        }
+      }
     }
   }
 }
