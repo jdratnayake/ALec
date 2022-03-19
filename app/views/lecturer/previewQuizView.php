@@ -131,20 +131,26 @@ printSucessMsg($data["success"]); ?>
                 <form action="<?php echo BASEURL . "/previewQuiz/submit/{$data['quizDetails']['quiz_id']}"; ?>"
                       method="post" enctype="multipart/form-data" id="published-form">
                     <div class="date-group">
-                        <label for="publishdatetime">Publish date and time:</label>
-                        <input type="datetime-local" id="publishdatetime" name="publishdatetime">
-                        <div class="error"></div>
+                        <label class="input-label" for="publishdatetime">Publish date and time:</label>
+                        <div class="right-side">
+                            <input class="input" type="datetime-local" id="publishdatetime" name="publishdatetime">
+                            <div class="error"></div>
+                        </div>
                     </div>
                     <div class="date-group">
-                        <label for="closedatetime">Close date and time:</label>
-                        <input type="datetime-local" id="closedatetime" name="closedatetime">
-                        <div class="error"></div>
+                        <label class="input-label" for="closedatetime">Close date and time:</label>
+                        <div class="right-side">
+                            <input class="input" type="datetime-local" id="closedatetime" name="closedatetime">
+                            <div class="error"></div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="time-picker">Quiz Duration</label>
-                        <input type="text" name="time-picker" id="time-picker" class="form-control"
-                               placeholder="hrs:mins:secs"/>
-                        <div class="error"></div>
+                    <div class="date-group">
+                        <label class="input-label" for="time-picker">Quiz Duration</label>
+                        <div class="right-side">
+                            <input type="text" name="time-picker" id="time-picker" class="input form-control"
+                                   placeholder="hrs:mins:secs"/>
+                            <div class="error"></div>
+                        </div>
                     </div>
                     <input type="submit" value="Save" name="submit" class="upload-btn" id="upload-btn">
                 </form>

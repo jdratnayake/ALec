@@ -822,13 +822,26 @@ footer p {
   justify-items: center;
 }
 .modal-content .modal-body form .date-group {
-  margin-bottom: 10px;
+  display: flex;
+  padding-bottom: 1rem;
+  margin-left: 10px;
+  justify-content: space-between;
 }
-.modal-content .modal-body form .date-group input {
+.modal-content .modal-body form .date-group .input-label {
+  width: 200px;
+}
+.modal-content .modal-body form .date-group .right-side {
+  display: grid;
+}
+.modal-content .modal-body form .date-group .right-side .input {
   border: 1px solid #325C97;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 2px 15px;
   margin: 2px;
+  width: 230px;
+}
+.modal-content .modal-body form .date-group .right-side .error {
+  margin-left: 2px;
 }
 .modal-content .modal-body form .upload-btn {
   background-color: #325C97;

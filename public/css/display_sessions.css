@@ -783,9 +783,15 @@ form.search-bar input[type=text] {
   margin-left: 10px;
   justify-content: space-between;
 }
-.modal .modal-content .session-details .session-name-container label {
+.modal .modal-content .session-details .session-name-container .session-label {
   width: 140px;
   font-weight: bold;
+}
+.modal .modal-content .session-details .session-name-container .right-side {
+  display: grid;
+}
+.modal .modal-content .session-details .session-name-container .right-side .error {
+  margin-left: 2px;
 }
 .modal .modal-content .session-details .session-name-container .input {
   width: 25rem;

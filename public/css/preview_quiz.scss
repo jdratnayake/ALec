@@ -200,13 +200,31 @@ $modal_color: $theme_hover;
       justify-items: center;
 
       .date-group {
-        margin-bottom: 10px;
+        //margin-bottom: 10px;
+        display: flex;
+        //align-items: center;
+        padding-bottom: 1rem;
+        margin-left: 10px;
+        justify-content: space-between;
 
-        input {
-          border: 1px solid $modal_color;
-          border-radius: 8px;
-          padding: 2px 15px;
-          margin: 2px;
+        .input-label {
+          width: 200px;
+        }
+
+        .right-side{
+          display: grid;
+
+          .input {
+            border: 1px solid $modal_color;
+            border-radius: 5px;
+            padding: 2px 15px;
+            margin: 2px;
+            width: 230px;
+          }
+
+          .error {
+            margin-left: 2px;
+          }
         }
       }
 
