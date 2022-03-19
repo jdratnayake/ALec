@@ -187,4 +187,9 @@ class ViewSession extends AlecFramework
 
         $this->redirect("viewSession/index/{$sessionId}");
     }
+
+    public function updateSessionQuestionStatus($sessionId, $status)
+    {
+        $this->viewSessionModel->updateSessionQuestionStatus($sessionId, $status);
+    }
 }

@@ -4,7 +4,7 @@ class ViewSessionModel extends Database
 {
     public function getSessionDetails($sessionId)
     {
-        $query = "SELECT session_id, session_name, status, DATE(create_date), course_name FROM session INNER JOIN course ON session.course_id=course.course_id WHERE session_id='$sessionId'";
+        $query = "SELECT session_id, session_name, status, question_status, DATE(create_date), course_name FROM session INNER JOIN course ON session.course_id=course.course_id WHERE session_id='$sessionId'";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return mysqli_fetch_assoc($result);
@@ -150,6 +150,14 @@ class ViewSessionModel extends Database
         $sessionName = mysqli_real_escape_string($GLOBALS["db"], $sessionName);
 
         $query = "UPDATE session SET session_name='$sessionName' WHERE session_id='$sessionId'";
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function updateSessionQuestionStatus($sessionId, $status)
+    {
+        $status = mysqli_real_escape_string($GLOBALS["db"], $status);
+
+        $query = "UPDATE session SET question_status='$status' WHERE session_id='$sessionId'";
         mysqli_query($GLOBALS["db"], $query);
     }
 }
