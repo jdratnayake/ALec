@@ -69,7 +69,7 @@ $courseCode = explode("-", $courseDetails["course_name"])[0];
 
                     echo
                     "
-                    <li><a href=''>{$newRow['question']}</a></li>
+                    <li><a href='http://localhost/ALec/myCourseSessionsList/review/{$newRow['question_no']}'>{$newRow['question']}</a></li>
                     ";
                 }
 

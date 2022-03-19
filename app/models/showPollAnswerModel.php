@@ -4,7 +4,7 @@ class ShowPollAnswerModel extends Database
 {
     public function getSessionDetails($questionId)
     {
-        $query = "SELECT session.session_id, session_name FROM session INNER JOIN session_question ON session.session_id=session_question.session_id WHERE question_no='$questionId'";
+        $query = "SELECT session.session_id, session_name, course_id FROM session INNER JOIN session_question ON session.session_id=session_question.session_id WHERE question_no='$questionId'";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result);
