@@ -65,16 +65,16 @@
         </button>
     </div>
 
-    <div class="draft-details-container">
-<!--        <div class='drafts'>-->
-<!--            <div class='draft'>-->
-<!--                <div class='draft-details'>-->
-<!--                    <a href='' class='draft-name'><span>Quiz 1</span>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <span class='draft-created-date'>17/03/2022</span>-->
-<!--            </div>-->
-<!--        </div>-->
+    <div class="draft-details-container" style="display: none">
+        <!--        <div class='drafts'>-->
+        <!--            <div class='draft'>-->
+        <!--                <div class='draft-details'>-->
+        <!--                    <a href='' class='draft-name'><span>Quiz 1</span>-->
+        <!--                    </a>-->
+        <!--                </div>-->
+        <!--                <span class='draft-created-date'>17/03/2022</span>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
 
     <div class='content-message'>
