@@ -255,7 +255,7 @@
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="date-group">
                     <label for="fName">First Name :</label>
-                    <input type="text" id="fName" name="fName" value="Session 1" class="name-input" disabled>
+                    <input type="text" id="fName" name="fName" value="Session 1" class="name-input">
                     <input type="submit" value="Save" name="submit" class="upload-btn" id="save-btn">
                 </div>
             </form>
@@ -284,8 +284,6 @@
 <?php linkJS("viewSessionViewQuestionStatus") ?>
 
 <?php linkJS("deleteMessage"); ?>
-
-<?php linkJS("editProfile"); ?>
 
 </body>
 

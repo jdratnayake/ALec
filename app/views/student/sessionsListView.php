@@ -29,7 +29,8 @@
 
 <div class="details-content">
     <div class="header-container">
-        <header>Sessions</header>
+        <header>Sessions - SCS 1212 Automata Theory</header>
+        <span></span>
     </div>
 
     <div class="sessions-container">
