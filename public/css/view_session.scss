@@ -296,33 +296,37 @@ $modal_color: $theme_hover;
       justify-items: center;
 
       .date-group {
-        margin-bottom: 10px;
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
 
-        input {
+
+        .name-input {
           border: 1px solid $modal_color;
-          border-radius: 8px;
+          border-radius: 5px;
           padding: 2px 15px;
           margin: 2px;
+          width: 250px;
         }
-      }
 
-      .upload-btn {
-        background-color: $modal_color;
-        border: 2px solid $modal_color;
-        color: white;
-        padding: 8px 40px;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 10px;
-        font-weight: 600;
-        margin-top: 25px;
-        font-size: 15px;
-
-        &:hover {
-          background-color: $theme;
+        .upload-btn {
+          background-color: $modal_color;
+          border: 1px solid $modal_color;
           color: white;
+          padding: 2px 40px;
+          text-align: center;
+          cursor: pointer;
+          border-radius: 5px;
+          font-weight: 600;
+          font-size: 15px;
+
+          &:hover {
+            background-color: $theme;
+            color: white;
+          }
         }
       }
+
     }
   }
 }
@@ -341,33 +345,6 @@ $modal_color: $theme_hover;
   text-decoration: none;
   cursor: pointer;
 }
-
-  .buttons {
-    padding: 2px 8px;
-    margin-top: 10px;
-    background-color: $main_color;
-    color: $light_color;
-    border-radius: 5px;
-    border: 2px solid $main_color;
-    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    cursor: pointer;
-
-    i{margin-right: 5px;}
-
-    &:hover {
-      background-color: $theme_second_hover;
-      border: 2px solid $theme_second_hover;
-    }
-
-  }
-  .cancel{
-    background-color: darkgrey;
-    border-color: darkgrey;
-    &:hover{
-      background-color: #818080;
-      border-color: #818080;
-    }
-  }
 
 
 /*==============================================================================*/

@@ -898,27 +898,29 @@ footer p {
   justify-items: center;
 }
 .modal-content .modal-body form .date-group {
-  margin-bottom: 10px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
 }
-.modal-content .modal-body form .date-group input {
+.modal-content .modal-body form .date-group .name-input {
   border: 1px solid #325C97;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 2px 15px;
   margin: 2px;
+  width: 250px;
 }
-.modal-content .modal-body form .upload-btn {
+.modal-content .modal-body form .date-group .upload-btn {
   background-color: #325C97;
-  border: 2px solid #325C97;
+  border: 1px solid #325C97;
   color: white;
-  padding: 8px 40px;
+  padding: 2px 40px;
   text-align: center;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: 600;
-  margin-top: 25px;
   font-size: 15px;
 }
-.modal-content .modal-body form .upload-btn:hover {
+.modal-content .modal-body form .date-group .upload-btn:hover {
   background-color: #19345d;
   color: white;
 }
@@ -936,33 +938,6 @@ footer p {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}
-
-.buttons {
-  padding: 2px 8px;
-  margin-top: 10px;
-  background-color: #2B4F82;
-  color: #FFF;
-  border-radius: 5px;
-  border: 2px solid #2B4F82;
-  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  cursor: pointer;
-}
-.buttons i {
-  margin-right: 5px;
-}
-.buttons:hover {
-  background-color: #1d3557;
-  border: 2px solid #1d3557;
-}
-
-.cancel {
-  background-color: darkgrey;
-  border-color: darkgrey;
-}
-.cancel:hover {
-  background-color: #818080;
-  border-color: #818080;
 }
 
 /*==============================================================================*/
