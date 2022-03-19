@@ -144,4 +144,12 @@ class ViewSessionModel extends Database
 
         return mysqli_fetch_assoc($result)["count"];
     }
+
+    public function updateSessionName($sessionId, $sessionName)
+    {
+        $sessionName = mysqli_real_escape_string($GLOBALS["db"], $sessionName);
+
+        $query = "UPDATE session SET session_name='$sessionName' WHERE session_id='$sessionId'";
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }

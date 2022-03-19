@@ -174,4 +174,17 @@ class ViewSession extends AlecFramework
     {
         $this->viewSessionModel->setQuestionResolveStatus($questionId, $status);
     }
+
+    public function updateSessionName($sessionId)
+    {
+        // print_r($_POST);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $sessionName = $_POST["sessionName"];
+
+            $this->viewSessionModel->updateSessionName($sessionId, $sessionName);
+        }
+
+        $this->redirect("viewSession/index/{$sessionId}");
+    }
 }
