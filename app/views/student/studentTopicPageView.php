@@ -16,33 +16,32 @@
 
 <body>
 
-<?php linkPhp("navigationBarStudent") ?>
+    <?php linkPhp("navigationBarStudent") ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb" style="margin-left: 5%">
-    <li><a href="http://localhost/ALec/studentDashboard/index">Home</a></li>
-    <li><a href="http://localhost/ALec/studentCoursePage/index">My Course</a></li>
-    <li><?php echo explode("-", $data["courseDetails"]["course_name"])[0]; ?></li>
-</ul>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb" style="margin-left: 5%">
+        <li><a href="http://localhost/ALec/studentDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/studentCoursePage/index">My Course</a></li>
+        <li><?php echo explode("-", $data["courseDetails"]["course_name"])[0]; ?></li>
+    </ul>
 
-<div class="topic-container center">
-    <header><?php echo $data["courseDetails"]["course_name"]; ?></header>
+    <div class="topic-container center">
+        <header><?php echo $data["courseDetails"]["course_name"]; ?></header>
 
-    <p>
-        <?php echo $data["courseDetails"]["course_description"]; ?>
-    </p>
+        <p>
+            <?php echo $data["courseDetails"]["course_description"]; ?>
+        </p>
 
-    <button class="add-topic" type="button" value="add-topic"
-            onclick="location.href=''">
-        Review Sessions
-    </button>
+        <button class="add-topic" type="button" value="add-topic" onclick="location.href='<?php echo BASEURL . "/myCourseSessionsList/index/{$data["bread"]["courseId"]}" ?>'">
+            Review Sessions
+        </button>
 
-    <?php
+        <?php
 
-    while ($row = mysqli_fetch_assoc($data["topicDetails"])) {
-        echo
+        while ($row = mysqli_fetch_assoc($data["topicDetails"])) {
+            echo
 
-        "<div class='topic'>
+            "<div class='topic'>
                 <button class='collapsible'>
                     <span>
                         {$row['topic_name']}
@@ -53,12 +52,12 @@
                 <p class='quiz-head'>Quizzes</p>
                 <ul>";
 
-        $count = mysqli_fetch_assoc($data["topicQuizSummary"])["count"];
+            $count = mysqli_fetch_assoc($data["topicQuizSummary"])["count"];
 
-        for ($i = 0; $i < $count; $i++) {
-            $rowQuiz = mysqli_fetch_assoc($data["quizDetails"]);
+            for ($i = 0; $i < $count; $i++) {
+                $rowQuiz = mysqli_fetch_assoc($data["quizDetails"]);
 
-            echo
+                echo
                 "
                 <li>
                     <div class='tooltip'>
@@ -66,27 +65,27 @@
                     </div>
                 </li>
                 ";
-        }
+            }
 
-        echo "</ul>
+            echo "</ul>
             </div>
             </div>";
-    }
+        }
 
-    ?>
+        ?>
 
-</div>
+    </div>
 
 
-<?php linkPhp("notificationView"); ?>
+    <?php linkPhp("notificationView"); ?>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-<?php linkJS("notification") ?>
+    <?php linkJS("notification") ?>
 
-<?php linkJS("topic_page"); ?>
+    <?php linkJS("topic_page"); ?>
 
 </body>
 
