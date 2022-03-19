@@ -12,7 +12,7 @@ class ShowPollAnswerModel extends Database
 
     public function getQuestion($questionId)
     {
-        $query = "SELECT question_no, question_type, question, question_count FROM session_question WHERE question_no='$questionId'";
+        $query = "SELECT question_no, question_type, question, answer, question_count FROM session_question WHERE question_no='$questionId'";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result);
