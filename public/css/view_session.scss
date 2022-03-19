@@ -51,9 +51,22 @@ $modal_color: $theme_hover;
       cursor: pointer;
       width: fit-content;
       margin: 0 10px 10px 10px;
+      display: block;
 
       &:hover {
         background-color: rgba(43, 79, 130, 0.30);
+      }
+    }
+
+    .rmv-btn {
+      background-color: rgba(221, 85, 85, 0.15);
+      color: $delete_button;
+      border-color: $delete_button;
+
+      &:hover {
+        background-color: rgba(221, 85, 85, 0.30);
+        border-color: $delete_button;
+        color: $delete_button;
       }
     }
   }

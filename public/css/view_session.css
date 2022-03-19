@@ -683,9 +683,20 @@ footer p {
   cursor: pointer;
   width: fit-content;
   margin: 0 10px 10px 10px;
+  display: block;
 }
 .details-content .header-container .export-btn:hover {
   background-color: rgba(43, 79, 130, 0.3);
+}
+.details-content .header-container .rmv-btn {
+  background-color: rgba(221, 85, 85, 0.15);
+  color: #dd5555;
+  border-color: #dd5555;
+}
+.details-content .header-container .rmv-btn:hover {
+  background-color: rgba(221, 85, 85, 0.3);
+  border-color: #dd5555;
+  color: #dd5555;
 }
 .details-content .button-container {
   display: flex;
