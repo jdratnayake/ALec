@@ -42,7 +42,7 @@
             </div>
             <div class="dropdown-content" id="dropdown-content">
                 <a class="option-btn" onclick="window.location='<?php echo BASEURL . '/createQuizDashboard/index'; ?>' ">Create Quiz</a>
-                <a class="option-btn">Drafts</a>
+                <a class="option-btn" onclick="window.location='<?php echo BASEURL . '/quizDraft/index'; ?>' ">Drafts</a>
             </div>
         </div>
 
@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <div class="navigation-tab"  onclick="window.location='<?php echo BASEURL . '/leaderboard/index'; ?>' ">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/leaderboard/index'; ?>' ">
             <div class="row">
                 <i class="fas fa-medal"></i>
             </div>
