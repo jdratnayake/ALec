@@ -755,11 +755,17 @@ footer p {
 }
 .details-content .container .button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 98%;
   margin: 10px auto;
   padding: 10px;
+}
+.details-content .container .button-container .answer {
+  margin-left: 8px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: #867f7f;
 }
 .details-content .container .button-container .save-btn {
   padding: 6px 36px;

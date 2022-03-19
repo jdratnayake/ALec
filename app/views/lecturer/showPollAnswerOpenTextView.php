@@ -91,6 +91,7 @@ $questionCount = $data["question"]["question_count"];
             </div>
 
             <div class="button-container">
+                <div class="answer">Answer: Finite Automata</div>
                 <button type="button" value="Create Session" class="save-btn" onclick="location.href='<?php echo BASEURL . "/viewSession/index/{$sessionId}" ?>'">
                     Done
                 </button>
