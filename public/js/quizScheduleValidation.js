@@ -22,36 +22,47 @@ $(document).ready(function () {
 
     //Check empty values
     checkEmpty = function () {
+        let errorCount = 0;
+
         const publishDatetime = $("#publishdatetime").val();
         const closeDatetime = $("#closedatetime").val();
         const duration = $("#time-picker").val();
 
         if (!Date.parse(publishDatetime) || 0) {
             $("#publishdatetime").next().text("Publish Date & Time is required");
-            return false;
+            errorCount++;
+        } else {
+            $("#publishdatetime").next().text("");
         }
 
-        $("#publishdatetime").next().text("");
 
         if (!Date.parse(closeDatetime) || 0) {
             $("#closedatetime").next().text("Close Date & Time is required");
-            return false;
+            errorCount++;
+        } else {
+            $("#closedatetime").next().text("");
         }
 
-        $("#closedatetime").next().text("");
 
         if (duration == "" || duration == "0:0:0") {
             $("#time-picker").next().text("Duration is required");
+            errorCount++;
+        } else {
+            $("#time-picker").next().text("");
+        }
+
+        if (errorCount == 0) {
+            return true;
+        } else {
             return false;
         }
 
-        $("#time-picker").next().text("");
-
-        return true;
     }
 
     //Check entered date is greater than or equal to current date
     checkInvalidDate = function () {
+        let errorCount = 0;
+
         const currentDatetime = new Date();
         const publishDatetime = new Date($("#publishdatetime").val());
         const closeDatetime = new Date($("#closedatetime").val());
@@ -59,20 +70,25 @@ $(document).ready(function () {
         //Publish date
         if (publishDatetime < currentDatetime) {
             $("#publishdatetime").next().text("Invalid Publish Date & Time");
-            return false;
+            errorCount++;
+        } else {
+            $("#publishdatetime").next().text("");
         }
 
-        $("#publishdatetime").next().text("");
 
         //Close date
         if (closeDatetime < currentDatetime) {
             $("#closedatetime").next().text("Invalid Close Date & Time");
-            return false;
+            errorCount++;
+        } else {
+            $("#closedatetime").next().text("");
         }
 
-        $("#closedatetime").next().text("");
-
-        return true;
+        if (errorCount == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //Check that close date > publish date
