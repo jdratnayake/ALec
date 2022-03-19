@@ -653,6 +653,8 @@ footer p {
   margin: auto auto 30px auto;
   height: 80%;
   overflow: hidden;
+  /*--------------------- Message styles - start ----------------------------*/
+  /*--------------------- Message styles - end ----------------------------*/
 }
 .details-content .header-container header {
   margin: 20px 10px;
@@ -697,7 +699,7 @@ footer p {
   border: 2px solid #1d3557;
 }
 .details-content .draft-details-container {
-  height: 60vh;
+  height: 70vh;
   overflow: auto;
 }
 .details-content .draft-details-container .drafts {
@@ -733,6 +735,20 @@ footer p {
   padding: 0;
   line-height: 15px;
   cursor: default;
+}
+.details-content .content-message {
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+}
+.details-content .content-message .fa-spinner {
+  font-size: 40px;
+  color: grey;
+  align-self: center;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=display_draft_quizzes.css.map */
