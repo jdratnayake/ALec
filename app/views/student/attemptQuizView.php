@@ -165,6 +165,9 @@
                     echo "</li>";
                 }
 
+                $questionIdString = trim($questionIdString, "_");
+                $questionTypeString = trim($questionTypeString, "_");
+
                 echo "<input type='hidden' name='questionIdString' value='" . $questionIdString . "'>";
                 echo "<input type='hidden' name='questionTypeString' value='" . $questionTypeString . "'>";
 
@@ -207,8 +210,8 @@
     <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
-	
-	<?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
 

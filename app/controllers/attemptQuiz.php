@@ -24,15 +24,15 @@ class AttemptQuiz extends AlecFramework
 
     public function submit($quizId)
     {
+        // print_r($_POST);
+        // return 0;
+
         $totakMarks = 0;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //Preprocess - START
             $questionIdString = $_POST["questionIdString"];
             $questionTypeString = $_POST["questionTypeString"];
-
-            $questionIdString = trim($questionIdString, "_");
-            $questionTypeString = trim($questionTypeString, "_");
 
             $questionIdString = explode("_", $questionIdString);
             $questionTypeString = explode("_", $questionTypeString);
@@ -48,10 +48,13 @@ class AttemptQuiz extends AlecFramework
             for ($i = 0; $i < sizeof($questionIdString); $i++) {
                 $questionId = $questionIdString[$i];
                 $questionType = $questionTypeString[$i];
+                $questionMarks = 0;
 
                 if ($questionType == "mcq-s") {
-                    $choiceId = $_POST[$questionId];
-                    $questionMarks = $this->attemptQuizMarksModel->getChoiceMark($choiceId);
+                    if (isset($_POST[$questionId])) {
+                        $choiceId = $_POST[$questionId];
+                        $questionMarks = $this->attemptQuizMarksModel->getChoiceMark($choiceId);
+                    }
                 } else if ($questionType == "mcq-m") {
                     $choiceIdList = $this->attemptQuizMarksModel->getChoiceIds($questionId);
 
@@ -62,6 +65,9 @@ class AttemptQuiz extends AlecFramework
                             $questionMarks += $this->attemptQuizMarksModel->getChoiceMark($row["choice_id"]);
                         }
                     }
+
+                    echo $questionMarks;
+                    return 0;
                 } else if ($questionType == "short ans") {
                     $choiceName = $this->attemptQuizMarksModel->getShortAnswerChoice($questionId);
                     $choiceName = strtolower($choiceName);
