@@ -726,6 +726,31 @@ footer p {
 .details-content .user-details-container .details-container .left-bar .pvt-details .form-group input {
   width: -webkit-fill-available;
 }
+.details-content .user-details-container .details-container .left-bar .pvt-details .buttons {
+  padding: 2px 8px;
+  margin-top: 10px;
+  background-color: #2B4F82;
+  color: #FFF;
+  border-radius: 5px;
+  border: 2px solid #2B4F82;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+}
+.details-content .user-details-container .details-container .left-bar .pvt-details .buttons i {
+  margin-right: 5px;
+}
+.details-content .user-details-container .details-container .left-bar .pvt-details .buttons:hover {
+  background-color: #1d3557;
+  border: 2px solid #1d3557;
+}
+.details-content .user-details-container .details-container .left-bar .pvt-details .cancel {
+  background-color: darkgrey;
+  border-color: darkgrey;
+}
+.details-content .user-details-container .details-container .left-bar .pvt-details .cancel:hover {
+  background-color: #818080;
+  border-color: #818080;
+}
 .details-content .user-details-container .details-container .left-bar .miscel {
   height: 130px;
 }
@@ -777,109 +802,6 @@ footer p {
 .details-content .user-details-container .details-container .right-bar .course-details:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border: 1px solid #2B4F82;
-}
-
-.left-bar {
-  margin-top: 20px;
-  height: 100%;
-  float: left;
-  width: 38%;
-}
-.left-bar img {
-  width: 112%;
-  margin: 0;
-  border-radius: 5px;
-}
-
-.buttons {
-  padding: 2px 8px;
-  margin-top: 10px;
-  background-color: #2B4F82;
-  color: #FFF;
-  border-radius: 5px;
-  border: 2px solid #2B4F82;
-  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  cursor: pointer;
-}
-.buttons i {
-  margin-right: 5px;
-}
-.buttons:hover {
-  background-color: #1d3557;
-  border: 2px solid #1d3557;
-}
-
-.cancel {
-  background-color: darkgrey;
-  border-color: darkgrey;
-}
-.cancel:hover {
-  background-color: #818080;
-  border-color: #818080;
-}
-
-.right-bar {
-  margin-top: 20px;
-  width: 60%;
-  float: right;
-  overflow: hidden;
-  display: grid;
-}
-
-.bio {
-  margin-top: 5px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: #504f4f;
-  width: 15rem;
-}
-.bio span:first-child {
-  font-weight: bold;
-  font-size: larger;
-}
-
-.pvt-details, .course-details, .miscel {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #d0d0d0;
-  background-color: #FFF;
-}
-.pvt-details span:first-child, .course-details span:first-child, .miscel span:first-child {
-  font-weight: bold;
-  border-bottom: 2px solid #2B4F82;
-  margin-bottom: 1rem;
-}
-.pvt-details:hover, .course-details:hover, .miscel:hover {
-  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  border: 1px solid #2B4F82;
-}
-
-.miscel {
-  height: 130px;
-}
-
-.course-details {
-  overflow-y: auto;
-  height: 359px;
-}
-
-.pvt-details .form-group {
-  width: 100%;
-  display: flex;
-  margin-bottom: 5px;
-}
-.pvt-details .form-group label {
-  font-weight: bold;
-  width: 155px;
-}
-.pvt-details .form-group input {
-  width: -webkit-fill-available;
 }
 
 /*# sourceMappingURL=edit_profile.css.map */
