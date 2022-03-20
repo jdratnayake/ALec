@@ -647,10 +647,16 @@ footer p {
 /*FOOTER - END*/
 /*==============================================================================*/
 .form-content {
-  margin: 10% auto;
+  margin: 8% auto;
+  padding: 16px;
+  width: 51%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
 }
 .form-content header {
-  text-align: left;
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 5px solid #2B4F82;
+  margin-bottom: 20px;
 }
 .form-content .quizCompleted {
   width: 100%;

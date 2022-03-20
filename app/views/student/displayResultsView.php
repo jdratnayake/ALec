@@ -10,7 +10,7 @@
 
     <title>ALec</title>
 
-    <?php linkCSS("attempt_quiz") ?>
+    <?php linkCSS("display_results") ?>
 
 </head>
 
@@ -43,6 +43,12 @@
         </p>
         <br>
         <!--/resultTitleBlock-->
+
+        <!--successRateBlock-->
+        <p class="rate">
+            Success Rate: 76.3%
+        </p>
+        <!--/successRateBlock-->
 
     </div>
     <!--/quizCompetedResult-->
