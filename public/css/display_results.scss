@@ -1,0 +1,35 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+.form-content {
+  margin: 8% auto;
+  padding: 16px;
+  width: 51%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+
+  header {
+    text-align: center;
+    padding-bottom: 16px;
+    border-bottom: 5px solid $main_color;
+    margin-bottom: 20px;
+  }
+
+  .quizCompleted {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+
+    .icon {
+      color: #FF5252;
+      font-size: 5rem;
+
+      .is-active {
+        color: #00E676;
+      }
+    }
+  }
+
+}
