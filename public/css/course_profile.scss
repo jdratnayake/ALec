@@ -47,8 +47,8 @@ header {
     }
   }
 }
-
-.buttons-right, .buttons-left {
+//, .buttons-left
+.buttons-right {
   margin-top: 10px;
   float: right;
   display: inline-flex;
@@ -69,6 +69,27 @@ header {
     &:hover {
       background-color: $theme_second_hover;
       border: 2px solid $theme_second_hover;
+    }
+  }
+}
+
+.buttons-left {
+  button {
+    margin-right: 5px;
+    width: 160px;
+    padding: 5px;
+    background-color: rgba(43, 79, 130, 0.15);
+    color: $main_color;
+    border-radius: 5px;
+    border: 2px solid $main_color;
+    font-size: large;
+    font-weight: 400;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(43, 79, 130, 0.25);
+      //border: 2px solid $theme_second_hover;
     }
   }
 }

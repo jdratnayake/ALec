@@ -668,12 +668,12 @@ footer p {
   color: #dd5555;
 }
 
-.buttons-right, .buttons-left {
+.buttons-right {
   margin-top: 10px;
   float: right;
   display: inline-flex;
 }
-.buttons-right button, .buttons-left button {
+.buttons-right button {
   margin-right: 5px;
   width: 160px;
   padding: 5px;
@@ -686,9 +686,26 @@ footer p {
   box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   cursor: pointer;
 }
-.buttons-right button:hover, .buttons-left button:hover {
+.buttons-right button:hover {
   background-color: #1d3557;
   border: 2px solid #1d3557;
+}
+
+.buttons-left button {
+  margin-right: 5px;
+  width: 160px;
+  padding: 5px;
+  background-color: rgba(43, 79, 130, 0.15);
+  color: #2B4F82;
+  border-radius: 5px;
+  border: 2px solid #2B4F82;
+  font-size: large;
+  font-weight: 400;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+}
+.buttons-left button:hover {
+  background-color: rgba(43, 79, 130, 0.25);
 }
 
 .user-details-container {
