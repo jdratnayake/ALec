@@ -26,29 +26,51 @@
 
         <!-- quizCompletedIcon: Achievement Icon -->
         <span class="icon">
-                <!--                <i class="fa" :class="score()>3?'fa-check-circle-o is-active':'fa-times-circle'"></i>-->
-            <!--      if(score<4): <i class="fa fa-times-circle is-active"></i>-->
-            <!--            else-->
-                <i class="fa fa-check-circle-o is-active"></i>
+                <i class="fa fa-check-circle-o"></i>
             </span>
 
-        <!--resultTitleBlock-->
         <h2 class="title">
-            You did a good job!
-            <!--            You did {{ (score()>7?'an amazing':(score()<4?'a poor':'a good')) }} job!-->
+            Quiz successfully completed!
         </h2>
         <p class="subtitle">
             Total score: 6/10
-            <!--            Total score: {{ score() }} / {{ quiz.questions.length }}-->
         </p>
-        <br>
-        <!--/resultTitleBlock-->
 
-        <!--successRateBlock-->
-        <p class="rate">
-            Success Rate: 76.3%
-        </p>
-        <!--/successRateBlock-->
+        <div class="scores">
+            <table>
+                <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Marks</th>
+                    <th>Success Rate</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Question 1</td>
+                    <td>2.5</td>
+                    <td>98.00%</td>
+                </tr>
+                <tr>
+                    <td>Question 2</td>
+                    <td>0</td>
+                    <td>1.20%</td>
+                </tr>
+                <tr>
+                    <td>Question 3</td>
+                    <td>2</td>
+                    <td>67.15%</td>
+                </tr>
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3"> Total Marks = 6</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+
 
     </div>
     <!--/quizCompetedResult-->
@@ -62,8 +84,6 @@
 <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
 <?php linkJS("notification") ?>
-
-<?php linkJS("attemptQuiz"); ?>
 
 </body>
 
