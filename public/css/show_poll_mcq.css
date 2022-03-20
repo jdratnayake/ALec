@@ -735,8 +735,17 @@ footer p {
   padding: 6px 12px;
   height: 35px;
 }
+.details-content .container .content .questions-container .row .answer .answer-progress::before {
+  content: attr(data-label);
+  display: flex;
+  position: absolute;
+}
 .details-content .container .content .questions-container .row .answer .pressed {
   background-color: rgba(43, 79, 130, 0.6);
+}
+.details-content .container .content .questions-container .row .percentage {
+  width: 60px;
+  padding-left: 8px;
 }
 .details-content .container .button-container {
   display: flex;

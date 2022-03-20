@@ -103,9 +103,20 @@ $light_color: #FFF;
               height: 35px;
             }
 
+            .answer-progress::before {
+              content: attr(data-label);
+              display: flex;
+              position: absolute;
+            }
+
             .pressed {
               background-color: rgba(43, 79, 130, 0.6);
             }
+          }
+
+          .percentage {
+            width: 60px;
+            padding-left: 8px;
           }
         }
       }

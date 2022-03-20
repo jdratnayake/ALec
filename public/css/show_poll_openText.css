@@ -749,9 +749,8 @@ footer p {
   background-color: rgba(43, 79, 130, 0.6);
 }
 .details-content .container .content .questions-container .answer-container .row .percentage {
-  width: 5%;
-  display: flex;
-  justify-content: flex-end;
+  width: 60px;
+  padding-left: 8px;
 }
 .details-content .container .button-container {
   display: flex;

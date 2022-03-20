@@ -30,35 +30,35 @@ if ($questionCount == 0) {
 
 <body>
 
-    <?php linkPhp("navigationBarLecturer"); ?>
+<?php linkPhp("navigationBarLecturer"); ?>
 
-    <!--    breadcrumb-->
-    <ul class="breadcrumb">
-        <li><a href="http://localhost/ALec/lecturerDashboard">Home</a></li>
+<!--    breadcrumb-->
+<ul class="breadcrumb">
+    <li><a href="http://localhost/ALec/lecturerDashboard">Home</a></li>
 
-        <li><a href="http://localhost/ALec/displaySessionsList/index">Sessions</a></li>
+    <li><a href="http://localhost/ALec/displaySessionsList/index">Sessions</a></li>
 
-        <?php
-        echo
-        "
+    <?php
+    echo
+    "
         <li><a href='http://localhost/ALec/viewSession/index/{$sessionId}'>$sessionName</a></li>
         ";
-        ?>
+    ?>
 
-        <li>Preview Poll</li>
-    </ul>
+    <li>Preview Poll</li>
+</ul>
 
-    <div class="details-content">
+<div class="details-content">
 
-        <div class="container">
-            <div class="heading"></div>
+    <div class="container">
+        <div class="heading"></div>
 
-            <div class="content">
-                <div class="questions-container">
+        <div class="content">
+            <div class="questions-container">
 
-                    <?php
-                    echo
-                    "
+                <?php
+                echo
+                "
                         <span class='participant-row'>
                             <i class='fa fa-users' aria-hidden='true'></i>
                             {$data["question"]["question_count"]}
@@ -67,46 +67,47 @@ if ($questionCount == 0) {
                             {$data["question"]["question"]}
                         </span>
                     ";
-                    ?>
+                ?>
 
-                    <!-- Echo answers -->
-                    <?php
-                    while ($row = mysqli_fetch_assoc($data["answers"])) {
-                        $precentage = $row["answer_count"] * 100 / $questionCount;
-                        $precentage = round($precentage, 2);
+                <!-- Echo answers -->
+                <?php
+                while ($row = mysqli_fetch_assoc($data["answers"])) {
+                    $precentage = $row["answer_count"] * 100 / $questionCount;
+                    $precentage = round($precentage, 2);
 
-                        echo
+                    echo
                         "
                         <div class='row' onclick=\"window.location='" . BASEURL . "/showPollAnswer/displayRespondents/mcq/{$row["choice_id"]}" . "'\">
                             <div class='answer'>
-                                <div class='answer-progress pressed' style='width: {$precentage}%'><span>{$row["choice_name"]}</span></div>
+                                <div class='answer-progress pressed' data-label='{$row["choice_name"]}' style='width: {$precentage}%'></div>
                             </div>
-                            {$precentage}%
+                            <div class='percentage'>{$precentage}%</div>
                         </div>
                         ";
-                    }
-                    ?>
+                }
+                ?>
 
-                </div>
-            </div>
-
-            <div class="button-container">
-                <div class="answer">Answer: <?php echo $data["question"]["answer"]; ?></div>
-
-                <button type="button" value="Create Session" class="save-btn" onclick="location.href='<?php echo BASEURL . "/viewSession/index/{$sessionId}" ?>'">
-                    Done
-                </button>
             </div>
         </div>
+
+        <div class="button-container">
+            <div class="answer">Answer: <?php echo $data["question"]["answer"]; ?></div>
+
+            <button type="button" value="Create Session" class="save-btn"
+                    onclick="location.href='<?php echo BASEURL . "/viewSession/index/{$sessionId}" ?>'">
+                Done
+            </button>
+        </div>
     </div>
+</div>
 
-    <?php linkPhp("footer"); ?>
+<?php linkPhp("footer"); ?>
 
-    <?php linkPhp("notificationView"); ?>
+<?php linkPhp("notificationView"); ?>
 
-    <?php linkJS("lib/jquery-3.6.0.min"); ?>
+<?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("notification") ?>
+<?php linkJS("notification") ?>
 
 </body>
 
