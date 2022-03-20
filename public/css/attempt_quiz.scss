@@ -123,27 +123,5 @@ $light: white;
 
 /* --------------BUTTON STYLES END----------------*/
 
-/* --------------QUIZ COMPLETED START----------------*/
 
-#result {
-  display: none;
-}
-
-.quizCompleted {
-  //display: none;
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-
-  .icon {
-    color: #FF5252;
-    font-size: 5rem;
-
-    .is-active {
-      color: #00E676;
-    }
-  }
-}
-
-/* --------------QUIZ COMPLETED END----------------*/
 

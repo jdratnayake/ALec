@@ -740,24 +740,5 @@ footer p {
 }
 
 /* --------------BUTTON STYLES END----------------*/
-/* --------------QUIZ COMPLETED START----------------*/
-#result {
-  display: none;
-}
-
-.quizCompleted {
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-}
-.quizCompleted .icon {
-  color: #FF5252;
-  font-size: 5rem;
-}
-.quizCompleted .icon .is-active {
-  color: #00E676;
-}
-
-/* --------------QUIZ COMPLETED END----------------*/
 
 /*# sourceMappingURL=attempt_quiz.css.map */
