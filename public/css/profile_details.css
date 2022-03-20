@@ -697,8 +697,8 @@ footer p {
   justify-self: end;
 }
 .details-content .user-details-container .details-container .buttons button {
-  width: fit-content;
-  padding: 6px 12px;
+  width: 160px;
+  padding: 6px 0;
   background-color: #2B4F82;
   color: #FFF;
   border-radius: 5px;

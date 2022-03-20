@@ -110,6 +110,8 @@ printSucessMsg($data["success"]); ?>
         <!-- Details Container include small separate boxes of button content, user details, assigned courses and badges earned-->
         <div class="details-container">
             <div class="buttons">
+                <button id="edit-btn">Edit User</button>
+                <button id="delete-btn">Delete User</button>
                 <button id="modal-btn">Award Badge</button>
             </div>
 
