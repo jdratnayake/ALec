@@ -11,28 +11,25 @@ $light_color: #FFF;
 .details-content {
   padding: 1rem;
   width: 80%;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
   height: 80%;
-  background-color: #b7c8d64a;
   overflow-y: hidden;
 }
 
 header {
-  background-color: $main_color;
-  color: $light_color;
-  padding: 15px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: auto;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
+  //background-color: $main_color;
+  //color: $light_color;
+  //padding: 15px;
+  //text-align: center;
+  //font-size: 30px;
+  //font-weight: bold;
+  //margin: auto;
+  //width: 100%;
+  //box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  //border-radius: 5px;
 }
 
 .buttons-right {
-  display: inline-grid;
 
   button {
     margin-top: 10px;
@@ -53,11 +50,12 @@ header {
 
 .buttons-right, .buttons-left {
   margin-top: 10px;
-  width: max-content;
   float: right;
+  display: inline-flex;
 
   button {
-    width: 10rem;
+    margin-right: 5px;
+    width: 160px;
     padding: 5px;
     background-color: $main_color;
     color: $light_color;
@@ -73,17 +71,11 @@ header {
       border: 2px solid $theme_second_hover;
     }
   }
-
-  .buttons-left {
-    display: inline-flex;
-
-    button {
-      margin-right: 5px;
-    }
-  }
 }
 
-.user-details-container{height: 70vh;}
+.user-details-container {
+  height: 70vh;
+}
 
 .top {
   margin-top: 10px;
@@ -94,7 +86,7 @@ header {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding: 10px;
+  margin-top: 5%;
 }
 
 .head {
@@ -115,8 +107,8 @@ header {
   margin: 10px 0;
   border: 1px solid #d0d0d0;
   background-color: $light_color;
-  overflow-y:auto;
-  height: 50vh;
+  overflow-y: auto;
+  min-height: 39vh;
 
   .content {
     display: inline-grid;
@@ -130,6 +122,7 @@ header {
     margin: 10px;
     align-content: center;
   }
+
   a {
     margin: 10px;
   }
