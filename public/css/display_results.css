@@ -724,7 +724,7 @@ footer p {
 }
 .form-content .quizCompleted .scores table tfoot {
   font-size: 0.8em;
-  background-color: #123566;
+  background-color: #30c58f;
 }
 .form-content .quizCompleted .scores table tfoot tr {
   border-top: 2px solid #2e63e7;
@@ -734,6 +734,29 @@ footer p {
   text-align: center;
   line-height: 15px;
   padding: 15px 20px;
+}
+.form-content .quizCompleted .button-container {
+  width: 100%;
+  display: flex;
+  padding: 10px 0;
+  justify-content: flex-end;
+}
+.form-content .quizCompleted .button-container a {
+  padding: 10px 50px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  background-color: #2B4F82;
+  border: 2px solid #2B4F82;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+.form-content .quizCompleted .button-container a:hover {
+  border: 2px solid #1d3557;
+  color: white;
+  background-color: #1d3557;
 }
 
 /*# sourceMappingURL=display_results.css.map */
