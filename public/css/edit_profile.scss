@@ -10,32 +10,174 @@ $light_color: #FFF;
 $background_color: #b7c8d64a;
 
 .details-content {
-  padding: 1rem;
   width: 68%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: 5% auto auto auto;
-  background-color: $background_color;
   overflow-y: hidden;
+
+  .user-details-container {
+    .header-bar {
+      float: left;
+      width: 100%;
+      background-color: #274774;
+      border-radius: 8px 8px 0 0;
+
+      img {
+        width: 25vh;
+        height: 25vh;
+        margin: 30px;
+        border-radius: 120px;
+        vertical-align: middle;
+        border: 3px solid white;
+      }
+
+      .bio {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: $light_color;
+        width: 15rem;
+
+        span:first-child {
+          font-weight: bold;
+          font-size: larger;
+        }
+      }
+    }
+
+    .button-container {
+      padding: 0 1rem;
+
+      .buttons {
+        padding: 2px 8px;
+        margin-top: 10px;
+        background-color: $main_color;
+        color: $light_color;
+        border-radius: 5px;
+        border: 2px solid $main_color;
+        box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        cursor: pointer;
+
+        i {
+          margin-right: 5px;
+        }
+
+        &:hover {
+          background-color: $theme_second_hover;
+          border: 2px solid $theme_second_hover;
+        }
+
+      }
+
+      .cancel {
+        background-color: darkgrey;
+        border-color: darkgrey;
+
+        &:hover {
+          background-color: #818080;
+          border-color: #818080;
+        }
+      }
+    }
+
+    .details-container {
+      padding: 0 1rem;
+
+      .left-bar {
+        margin-top: 20px;
+        height: 100%;
+        float: left;
+        width: 38%;
+
+        .pvt-details {
+          .form-group {
+            width: 100%;
+            display: flex;
+            margin-bottom: 5px;
+
+            label {
+              font-weight: bold;
+              width: 155px;
+            }
+
+            input {
+              width: -webkit-fill-available;
+            }
+          }
+        }
+
+        .miscel {
+          height: 130px;
+        }
+
+        .pvt-details, .miscel {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          border: 1px solid #d0d0d0;
+          background-color: $light_color;
+
+          span:first-child {
+            font-weight: bold;
+            border-bottom: 2px solid $main_color;
+            margin-bottom: 1rem;
+          }
+
+          &:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            border: 1px solid $main_color;
+          }
+        }
+      }
+
+      .right-bar {
+        margin-top: 20px;
+        width: 60%;
+        float: right;
+        overflow: hidden;
+        display: grid;
+
+        .course-details {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          border: 1px solid #d0d0d0;
+          background-color: $light_color;
+          overflow-y: auto;
+          height: 359px;
+
+          span:first-child {
+            font-weight: bold;
+            border-bottom: 2px solid $main_color;
+            margin-bottom: 1rem;
+          }
+
+          &:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            border: 1px solid $main_color;
+          }
+        }
+      }
+    }
+  }
 }
 
-header {
-  background-color: $background_color;
-//  color: $light_color;
-//  padding: 15px;
-//  text-align: center;
-//  font-size: 30px;
-//  font-weight: bold;
-//  margin: auto;
-//  width: 100%;
-//  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-//  border-radius: 5px;
-}
+//----------------------------------------------------------------------
 
 .left-bar {
   margin-top: 20px;
   height: 100%;
   float: left;
-  width: 25%;
+  //width: 25%;
+  width: 38%;
 
   img {
     width: 112%;
@@ -45,27 +187,31 @@ header {
 }
 
 .buttons {
-    padding: 2px 8px;
-    margin-top: 10px;
-    background-color: $main_color;
-    color: $light_color;
-    border-radius: 5px;
-    border: 2px solid $main_color;
-    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    cursor: pointer;
+  padding: 2px 8px;
+  margin-top: 10px;
+  background-color: $main_color;
+  color: $light_color;
+  border-radius: 5px;
+  border: 2px solid $main_color;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
 
-    i{margin-right: 5px;}
+  i {
+    margin-right: 5px;
+  }
 
-    &:hover {
-      background-color: $theme_second_hover;
-      border: 2px solid $theme_second_hover;
-    }
+  &:hover {
+    background-color: $theme_second_hover;
+    border: 2px solid $theme_second_hover;
+  }
 
 }
-.cancel{
+
+.cancel {
   background-color: darkgrey;
   border-color: darkgrey;
-  &:hover{
+
+  &:hover {
     background-color: #818080;
     border-color: #818080;
   }
@@ -73,7 +219,8 @@ header {
 
 .right-bar {
   margin-top: 20px;
-  width: 70%;
+  //width: 70%;
+  width: 60%;
   float: right;
   overflow: hidden;
   display: grid;
@@ -87,15 +234,14 @@ header {
   color: #504f4f;
   width: 15rem;
 
-
   span:first-child {
-    color: black;
+    //color: black;
     font-weight: bold;
     font-size: larger;
   }
 }
 
-.pvt-details, .course-details, .miscel{
+.pvt-details, .course-details, .miscel {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -117,27 +263,35 @@ header {
     border: 1px solid $main_color;
   }
 }
-.miscel{
+
+.miscel {
   height: 130px;
 }
 
-.course-details{
+.course-details {
   overflow-y: auto; //show the scrollbar only if the content overflows
-  height: 265px;
+  //height: 265px;
+  height: 359px;
 }
 
-.pvt-details{
-  .form-group{
+.pvt-details {
+  .form-group {
     width: 100%;
     display: flex;
     margin-bottom: 5px;
 
-    label{
+    label {
       font-weight: bold;
       width: 155px;
     }
-    input{width: -webkit-fill-available;}
+
+    input {
+      width: -webkit-fill-available;
+    }
   }
 }
+
+//----------------------------------------------------------------------
+
 
 
