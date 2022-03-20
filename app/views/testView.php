@@ -19,24 +19,35 @@
 
 <body>
 
-<?php linkPhp("navigationBarLecturer") ?>
+    <?php linkPhp("navigationBarLecturer") ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-    <li></li>
-</ul>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li></li>
+    </ul>
 
-<div class="details-container">
-    <header>Poll Statistics</header>
+    <input type="hidden" id="quizSummary-label" value="<?php echo $data["quizSummary"]["label"]; ?>">
+    <input type="hidden" id="quizSummary-data" value="<?php echo $data["quizSummary"]["data"]; ?>">
 
-    <img <?php srcIMG("stat.jpg"); ?> alt="Statistics graph" class="graph-image">
+    <?php
 
-</div>
+    ?>
 
-<?php linkPhp("footer"); ?>
+    <div class="details-container">
+        <header>Poll Statistics</header>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+        <canvas id="myChart" style="width:70%;max-width:500px"></canvas>
+
+    </div>
+
+    <?php linkPhp("footer"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("lib/chart.min"); ?>
+
+    <?php linkJS("temp"); ?>
 
 </body>
 
