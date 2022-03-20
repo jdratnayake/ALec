@@ -43,7 +43,7 @@ class AttemptQuiz extends AlecFramework
             $sucessRateArray = array();
 
             $totalMarks = 0;
-            $attemptCount = $this->attemptQuizMarksModel->getAttemptCount($quizId) + 1;
+            $attemptCount = $this->attemptQuizMarksModel->getAttemptCount($quizId);
 
             for ($i = 0; $i < sizeof($questionIdString); $i++) {
                 $questionId = $questionIdString[$i];
@@ -66,8 +66,8 @@ class AttemptQuiz extends AlecFramework
                         }
                     }
 
-                    echo $questionMarks;
-                    return 0;
+                    // echo $questionMarks;
+                    // return 0;
                 } else if ($questionType == "short ans") {
                     $choiceName = $this->attemptQuizMarksModel->getShortAnswerChoice($questionId);
                     $choiceName = strtolower($choiceName);
@@ -103,16 +103,21 @@ class AttemptQuiz extends AlecFramework
                 array_push($questionMarksArray, $questionMarks);
             }
 
+            //Calculate the average mark
+            $averageMark = $totakMarks / sizeof($questionIdString);
+
             //Insert student attempt record
             $userId = $this->getSession("userId");
-            $this->attemptQuizMarksModel->updateAttempt($userId, $quizId, $totakMarks);
+            $this->attemptQuizMarksModel->updateAttempt($userId, $quizId, $averageMark);
 
             //Output - Testing
-            var_dump($questionIdString);
-            echo "<br><br><br>";
-            var_dump($sucessRateArray);
-            echo "<br><br><br>";
-            var_dump($questionMarksArray);
+            // var_dump($questionIdString);
+            // echo "<br><br><br>";
+            // var_dump($sucessRateArray);
+            // echo "<br><br><br>";
+            // var_dump($questionMarksArray);
+
+            $this->view("student/displayResultsView");
         }
     }
 }
