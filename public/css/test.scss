@@ -1,0 +1,22 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+.details-container {
+  width: 92%;
+  margin: 5% auto auto 10%;
+
+  header {
+    margin-left: 50px;
+  }
+
+  .graph-image {
+    margin-left: 50px;
+    width: 30%;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
+
