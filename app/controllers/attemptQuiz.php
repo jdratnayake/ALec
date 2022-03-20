@@ -110,14 +110,12 @@ class AttemptQuiz extends AlecFramework
             $userId = $this->getSession("userId");
             $this->attemptQuizMarksModel->updateAttempt($userId, $quizId, $averageMark);
 
-            //Output - Testing
-            // var_dump($questionIdString);
-            // echo "<br><br><br>";
-            // var_dump($sucessRateArray);
-            // echo "<br><br><br>";
-            // var_dump($questionMarksArray);
+            //Output
+            $data["questionIdArray"] = $questionIdString;
+            $data["sucessRateArray"] = $sucessRateArray;
+            $data["questionMarksArray"] = $questionMarksArray;
 
-            $this->view("student/displayResultsView");
+            $this->view("student/displayResultsView", $data);
         }
     }
 }
