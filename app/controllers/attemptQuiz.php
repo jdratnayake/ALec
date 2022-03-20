@@ -27,6 +27,11 @@ class AttemptQuiz extends AlecFramework
         // print_r($_POST);
         // return 0;
 
+        //Validity Check
+        if (!($this->attemptCheck($quizId))) {
+            $this->redirect("studentDashboard/index");
+        }
+
         $totakMarks = 0;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -104,18 +109,33 @@ class AttemptQuiz extends AlecFramework
             }
 
             //Calculate the average mark
-            $averageMark = $totakMarks / sizeof($questionIdString);
+            $averageMark = round($totakMarks / sizeof($questionIdString), 2);
 
             //Insert student attempt record
             $userId = $this->getSession("userId");
             $this->attemptQuizMarksModel->updateAttempt($userId, $quizId, $averageMark);
 
             //Output
+            $data["averageMark"] = $averageMark;
             $data["questionIdArray"] = $questionIdString;
-            $data["sucessRateArray"] = $sucessRateArray;
             $data["questionMarksArray"] = $questionMarksArray;
+            $data["sucessRateArray"] = $sucessRateArray;
 
             $this->view("student/displayResultsView", $data);
+        }
+    }
+
+    public function attemptCheck($quizId)
+    {
+        $userId = $this->getSession("userId");
+
+        if (
+            $this->attemptQuizViewModel->quizExpireCheck($quizId) &&
+            $this->attemptQuizViewModel->quizAttemptCheck($userId, $quizId)
+        ) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

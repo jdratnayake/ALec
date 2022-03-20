@@ -48,4 +48,28 @@ class AttemptQuizViewModel extends Database
             return date("Y/m/d H:i:s", strtotime($time));
         }
     }
+
+    public function quizExpireCheck($quizId)
+    {
+        $query = "SELECT * FROM quiz WHERE quiz_id='$quizId' AND NOW() >= published_date AND NOW() < close_date";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function quizAttemptCheck($userId, $quizId)
+    {
+        $query = "SELECT * FROM quiz_attempt WHERE student_id='$userId' AND quiz_id='$quizId' AND marks='-1'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
