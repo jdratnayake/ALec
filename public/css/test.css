@@ -650,88 +650,88 @@ footer p {
   width: 90%;
   display: inline-flex;
 }
-.details-container .col-1 {
+.details-container .col1 {
   width: 15%;
   background-color: #e7e9eb;
   overflow: scroll;
   line-height: 2;
   padding-top: 20px;
 }
-.details-container .col-1 li {
+.details-container .col1 li {
   padding-left: 35px;
 }
-.details-container .col-1 li a {
+.details-container .col1 li a {
   text-decoration: none;
 }
-.details-container .col-1 li:hover {
+.details-container .col1 li:hover {
   background-color: #cccccc;
 }
-.details-container .col-2 {
+.details-container .col2 {
   width: 70%;
   padding-left: 30px;
   margin-bottom: 30px;
 }
-.details-container .col-2 .chart-container {
+.details-container .col2 .chart-container {
   width: 80%;
 }
-.details-container .col-2 .chart-container .chart {
+.details-container .col2 .chart-container .chart {
   width: 30%;
   max-width: 1000px;
   margin-top: 30px;
 }
-.details-container .col-2 .table-container {
+.details-container .col2 .table-container {
   width: 80%;
 }
-.details-container .col-2 .table-container table {
+.details-container .col2 .table-container table {
   width: 100%;
   margin-top: 50px;
 }
-.details-container .col-2 .table-container table th, .details-container .col-2 .table-container table td {
+.details-container .col2 .table-container table th, .details-container .col2 .table-container table td {
   text-align: center;
 }
-.details-container .col-2 .table-container table thead {
+.details-container .col2 .table-container table thead {
   line-height: 12px;
   background: #3f8cb9;
   text-transform: uppercase;
 }
-.details-container .col-2 .table-container table thead th {
+.details-container .col2 .table-container table thead th {
   color: #fff;
   padding: 10px;
   letter-spacing: 1px;
   vertical-align: bottom;
 }
-.details-container .col-2 .table-container table thead th:nth-child(1) {
+.details-container .col2 .table-container table thead th:nth-child(1) {
   width: 25%;
 }
-.details-container .col-2 .table-container table thead th:nth-child(2) {
+.details-container .col2 .table-container table thead th:nth-child(2) {
   width: 50%;
   text-align: left;
   padding-left: 20px;
 }
-.details-container .col-2 .table-container table thead th:nth-child(3) {
+.details-container .col2 .table-container table thead th:nth-child(3) {
   width: 25%;
 }
-.details-container .col-2 .table-container table tbody {
+.details-container .col2 .table-container table tbody {
   font-size: 1em;
   line-height: 15px;
 }
-.details-container .col-2 .table-container table tbody tr {
+.details-container .col2 .table-container table tbody tr {
   border-top: 2px solid rgba(109, 176, 231, 0.8);
   transition: background 0.6s, color 0.6s;
 }
-.details-container .col-2 .table-container table tbody tr:nth-child(even) {
+.details-container .col2 .table-container table tbody tr:nth-child(even) {
   background: rgba(255, 255, 255, 0.2);
 }
-.details-container .col-2 .table-container table tbody td {
+.details-container .col2 .table-container table tbody td {
   padding: 12px;
   background-color: aliceblue;
 }
-.details-container .col-2 .table-container table tbody td:nth-child(2) {
+.details-container .col2 .table-container table tbody td:nth-child(2) {
   text-align: left;
   padding-left: 20px;
   font-weight: 700;
 }
-.details-container .col-2 .table-container table tbody td:nth-child(3) {
+.details-container .col2 .table-container table tbody td:nth-child(3) {
   background: rgba(109, 176, 231, 0.35);
 }
 

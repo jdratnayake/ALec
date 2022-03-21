@@ -27,16 +27,15 @@
     <li>Results</li>
 </ul>
 
-<input type="hidden" id="quizSummary-label" value="<?php echo $data["quizSummary"]["label"]; ?>">
-<input type="hidden" id="quizSummary-data" value="<?php echo $data["quizSummary"]["data"]; ?>">
-
-<input type="hidden" id="quizQuestionSummary-label" value="<?php echo $data["quizQuestionSummary"]["label"]; ?>">
-<input type="hidden" id="quizQuestionSummary-data" value="<?php echo $data["quizQuestionSummary"]["data"]; ?>">
-
-
 <div class="details-container">
 
-    <div class="col-1">
+    <input type="hidden" id="quizSummary-label" value="<?php echo $data["quizSummary"]["label"]; ?>">
+    <input type="hidden" id="quizSummary-data" value="<?php echo $data["quizSummary"]["data"]; ?>">
+
+    <input type="hidden" id="quizQuestionSummary-label" value="<?php echo $data["quizQuestionSummary"]["label"]; ?>">
+    <input type="hidden" id="quizQuestionSummary-data" value="<?php echo $data["quizQuestionSummary"]["data"]; ?>">
+
+    <div class="col1">
         <ul style="list-style-type:none">
             <li><a href="">Quiz 1</a></li>
             <li><a href="">Quiz 2</a></li>
@@ -47,7 +46,7 @@
         </ul>
     </div>
 
-    <div class="col-2" style="">
+    <div class="col2" style="">
         <header>Poll Statistics</header>
         <div class="chart-container">
             <canvas class="chart" id="myChartQuiz"></canvas>
