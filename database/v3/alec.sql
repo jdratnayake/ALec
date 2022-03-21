@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2022 at 08:13 AM
+-- Generation Time: Mar 19, 2022 at 12:40 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -709,9 +709,9 @@ CREATE TABLE `quiz` (
 --
 
 INSERT INTO `quiz` (`quiz_id`, `quiz_name`, `status`, `create_date`, `published_date`, `close_date`, `duration`, `lecturer_id`, `topic_id`) VALUES
-(121, 'Quiz 1', 'publish', '2021-11-11 18:21:25', '2022-03-20 14:05:00', '2022-03-26 14:03:00', '00:10:00', 883, 31),
+(121, 'Quiz 1', 'publish', '2021-11-11 18:21:25', '2021-12-22 20:00:00', '2021-12-22 20:30:00', '00:10:00', 883, 31),
 (122, 'Operating System MCQ', 'create', '2021-12-23 07:34:14', NULL, NULL, '00:02:00', 883, 31),
-(127, 'Test 1', 'publish', '2022-03-15 12:23:23', '2022-03-26 21:49:00', '2022-04-06 21:49:00', '00:00:00', 883, 32),
+(127, 'Test 1', 'publish', '2022-03-15 12:23:23', '2022-03-19 13:22:00', '2022-03-22 13:22:00', '00:10:00', 883, 32),
 (128, 'Test 2', 'create', '2022-03-15 12:26:20', NULL, NULL, '01:00:00', 883, 32),
 (130, 'Test 3', 'create', '2022-03-15 12:30:15', NULL, NULL, '00:05:00', 883, 32),
 (132, 'MM Quiz 1', 'create', '2022-03-15 13:24:13', NULL, NULL, '00:01:00', 883, 32);
@@ -726,7 +726,7 @@ CREATE TABLE `quiz_attempt` (
   `student_id` int(11) NOT NULL,
   `quiz_id` int(11) NOT NULL,
   `attempt_time` datetime NOT NULL,
-  `marks` decimal(11,2) NOT NULL DEFAULT -1.00 COMMENT '-1 = Not Submitted'
+  `marks` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -734,7 +734,7 @@ CREATE TABLE `quiz_attempt` (
 --
 
 INSERT INTO `quiz_attempt` (`student_id`, `quiz_id`, `attempt_time`, `marks`) VALUES
-(1497, 121, '2022-03-21 00:05:54', '42.00');
+(1497, 121, '2021-12-01 20:44:11', 0);
 
 -- --------------------------------------------------------
 
@@ -755,9 +755,9 @@ CREATE TABLE `quiz_question` (
 --
 
 INSERT INTO `quiz_question` (`question_no`, `quiz_id`, `question`, `question_type`, `success_rate`) VALUES
-(186, 121, 'Which of the following is not an operating system?', 'mcq-s', 100),
-(188, 121, 'Data types of the python?', 'mcq-m', 25),
-(189, 121, 'What is the maximum length of the filename in DOS?', 'short ans', 0),
+(186, 121, 'Which of the following is not an operating system?', 'mcq-s', 300),
+(188, 121, 'Data types of the python?', 'mcq-m', 250),
+(189, 121, 'What is the maximum length of the filename in DOS?', 'short ans', 100),
 (190, 122, 'What else is a command interpreter called?', 'mcq-s', 0),
 (191, 122, '', '', 0),
 (192, 122, '', '', 0),
@@ -1216,7 +1216,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `tele`, `pass`, `user_type`, `status`, `img`) VALUES
 (125, 'Admin', 'ALec', 'admin@gmail.com', NULL, '$2y$10$2fesqGM.4S/tdKmFW8McTeFqoZkrCCgo3zWlof14u2YWQ0JQmvv/i', 'admin', '1', NULL),
-(883, 'Lec Lec', 'ALec', 'lec@gmail.com', '', '$2y$10$Z7vr34tDRAF7dSx2BdwqQeECPxQULDgrqcgV.Fu1DGat6d24ICiv2', 'lec', '1', NULL),
+(883, 'Lec', 'ALec', 'lec@gmail.com', NULL, '$2y$10$Z7vr34tDRAF7dSx2BdwqQeECPxQULDgrqcgV.Fu1DGat6d24ICiv2', 'lec', '1', NULL),
 (885, 'Dulitha', 'Ratnayake', 'janithadevinratnayake@gmail.com', NULL, '$2y$10$e48D8MvUZWtMTzo6r0bONem2jkj.763msstAdrlhPyihAORqQ/uCq', 'lec', '1', NULL),
 (1494, 'Pansilu', 'Gunaratne', 'pansilugunaratne8@gmail.com', NULL, '$2y$10$ogqdBAZzuKtXY.HoEImM/.JHU6vsD3BMzZTcqsmYiGPtFVqPZhsZS', 'stu', '1', NULL),
 (1495, 'Anuruddha', 'Ratnayake', 'dulitharatnayakestock@gmail.com', NULL, '$2y$10$Af2oXZENPfOhxDrIQfr.YONF0TgkGu.bS8yUNaCkFgaq7PTlbKWne', 'lec', '1', NULL),
