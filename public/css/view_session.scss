@@ -164,42 +164,10 @@ $modal_color: $theme_hover;
         height: 55px;
         justify-content: space-between;
 
-        .fa-ellipsis-v {
-          width: 20px;
-          font-size: 12px;
+        .fa-trash {
+          color: #d81111;
+          padding-right: 12px;
           cursor: pointer;
-        }
-
-        .option-selection {
-          display: none;
-          position: absolute;
-          transform: translate(-50%, -50%);
-          border-radius: 6px;
-          height: fit-content;
-          width: 60px;
-          background: #fff;
-          line-height: 20px;
-          text-align: left;
-          padding: 0 8px;
-          box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
-          transition: 0s;
-          cursor: pointer;
-          z-index: 10;
-          left: 298px;
-          font-size: 12px;
-        }
-
-        .option-selection::after {
-          content: "";
-          position: absolute;
-          top: 85%;
-          left: 100%;
-          margin-top: -5px;
-          border-width: 5px;
-          border-style: solid;
-          box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
-          z-index: 120;
-          border-color: transparent transparent transparent #2b4f82;
         }
 
         .question {
@@ -317,6 +285,7 @@ $modal_color: $theme_hover;
         .session-label {
           width: 130px;
         }
+
         .right-side {
           display: grid;
 
@@ -327,6 +296,7 @@ $modal_color: $theme_hover;
             margin: 2px;
             width: 250px;
           }
+
           .error {
             margin-left: 2px;
           }
