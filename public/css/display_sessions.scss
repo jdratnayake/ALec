@@ -79,6 +79,7 @@ $light_color: #FFF;
             text-decoration: none;
             cursor: pointer;
             color: #0275d8;
+            font-size: 20px;
 
             &:hover {
               text-decoration: underline;
@@ -93,6 +94,12 @@ $light_color: #FFF;
 
         .publish-status {
           cursor: pointer
+        }
+
+        .session-course {
+          font-size: 16px;
+          color: #4caf50;
+          cursor: default;
         }
 
         .session-created-date {

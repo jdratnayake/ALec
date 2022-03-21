@@ -709,6 +709,7 @@ footer p {
   text-decoration: none;
   cursor: pointer;
   color: #0275d8;
+  font-size: 20px;
 }
 .details-content .session-details-container .sessions .session .session-details .session-name:hover {
   text-decoration: underline;
@@ -719,6 +720,11 @@ footer p {
 }
 .details-content .session-details-container .sessions .session .publish-status {
   cursor: pointer;
+}
+.details-content .session-details-container .sessions .session .session-course {
+  font-size: 16px;
+  color: #4caf50;
+  cursor: default;
 }
 .details-content .session-details-container .sessions .session .session-created-date {
   text-decoration: none;

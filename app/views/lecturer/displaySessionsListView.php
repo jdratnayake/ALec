@@ -73,6 +73,7 @@ $errors = $data["errors"];
                                     <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
                                 </span>
                             </div>
+                            <span class='session-course'>Data Structures and Algorithms - I</span>
                             <span class='session-created-date' style='text-decoration: none; font-size: 10px'>
                                 {$row['date']}
                             </span>
@@ -108,6 +109,7 @@ $errors = $data["errors"];
                                 <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
                             </span>
                         </div>
+                        <span class='session-course'>Operating Systems - I</span>
                             <span class='session-created-date' style='text-decoration: none; font-size: 10px'>
                                 {$row['date']}
                             </span>    
