@@ -30,6 +30,9 @@
     <input type="hidden" id="quizSummary-label" value="<?php echo $data["quizSummary"]["label"]; ?>">
     <input type="hidden" id="quizSummary-data" value="<?php echo $data["quizSummary"]["data"]; ?>">
 
+    <input type="hidden" id="quizQuestionSummary-label" value="<?php echo $data["quizQuestionSummary"]["label"]; ?>">
+    <input type="hidden" id="quizQuestionSummary-data" value="<?php echo $data["quizQuestionSummary"]["data"]; ?>">
+
     <?php
 
     ?>
@@ -37,7 +40,9 @@
     <div class="details-container">
         <header>Poll Statistics</header>
 
-        <canvas id="myChart" style="width:70%;max-width:500px"></canvas>
+        <canvas id="myChartQuiz" style="width:50%;max-width:1000px"></canvas>
+
+        <canvas id="myChartQuizQuestion" style="width:50%;max-width:1000px"></canvas>
 
     </div>
 

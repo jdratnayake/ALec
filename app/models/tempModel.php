@@ -30,4 +30,20 @@ SELECT '90-100' AS name, COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$qui
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
     }
+
+    public function getQuizAttemptCount($quizId)
+    {
+        $query = "SELECT COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$quizId'";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return mysqli_fetch_assoc($result)["count"];
+    }
+
+    public function getQuizQuestionSummary($quizId)
+    {
+        $query = "SELECT question_no, question, success_rate FROM quiz_question WHERE quiz_id='$quizId' ORDER BY question_no";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
+    }
 }

@@ -1,7 +1,7 @@
-const quizSummary_label = document.getElementById("quizSummary-label").value.split(" ");
-const quizSummary_data = document.getElementById("quizSummary-data").value.split(" ");
+const quizSummary_label = document.getElementById("quizSummary-label").value.split("_");
+const quizSummary_data = document.getElementById("quizSummary-data").value.split("_");
 
-new Chart(document.getElementById("myChart"), {
+new Chart("myChartQuiz", {
     type: 'bar',
     data: {
         labels: quizSummary_label,
@@ -40,3 +40,50 @@ new Chart(document.getElementById("myChart"), {
         }
     }
 });
+
+
+
+const quizQuestionSummary_label = document.getElementById("quizQuestionSummary-label").value.split("_");
+const quizQuestionSummary_data = document.getElementById("quizQuestionSummary-data").value.split("_");
+
+const labels = quizQuestionSummary_label;
+const data = {
+    labels: labels,
+    datasets: [
+        {
+            label: '',
+            data: quizQuestionSummary_data,
+            borderColor: ['rgba(255, 172, 190, 0.2)'],
+            backgroundColor: ['rgba(255, 172, 190, 1)'],
+            order: 1
+        },
+        {
+            label: '',
+            data: quizQuestionSummary_data,
+            borderColor: ['rgba(93, 166, 216, 1)'],
+            backgroundColor: ['rgba(93, 166, 216, 1)'],
+            type: 'line',
+            order: 0
+        }
+    ]
+};
+
+const config = {
+    type: 'bar',
+    data: data,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false,
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Chart.js Combined Line/Bar Chart'
+            }
+        }
+    },
+};
+
+new Chart("myChartQuizQuestion", config);
