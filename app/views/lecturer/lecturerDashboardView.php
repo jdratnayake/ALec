@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        <div class="navigation-tab">
+        <div class="navigation-tab" onclick="window.location='<?php echo BASEURL . '/review/index'; ?>' ">
             <div class="row">
                 <i class="fas fa-chart-bar"></i>
             </div>

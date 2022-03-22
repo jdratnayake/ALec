@@ -39,7 +39,7 @@
                     <span class="tooltip">My Courses</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/review/index'; ?>">
                         <i class="fas fa-chart-bar"></i>
                         <span class="links_name">Review</span>
                     </a>

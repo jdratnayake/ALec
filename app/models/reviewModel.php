@@ -1,7 +1,26 @@
 <?php
 
-class TempModel extends Database
+class ReviewModel extends Database
 {
+    // reviewQuizListView - START
+    public function getEnrolledCourses($userId)
+    {
+        $query = "SELECT course.course_id, course_name FROM course INNER JOIN course_registration_lec ON course.course_id=course_registration_lec.course_id WHERE lecturer_id='$userId' ORDER BY course.course_id";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
+    }
+
+    public function getQuizDetails($userId)
+    {
+        $query = "SELECT quiz_id, quiz_name, course.course_id, course_name, DATE_FORMAT(quiz.create_date, '%M %d %Y') AS date FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id INNER JOIN course ON course_topic.course_id=course.course_id WHERE quiz.lecturer_id='$userId' ORDER BY quiz.create_date DESC";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
+    }
+    // reviewQuizListView - END
+
+    // reviewQuizView - START
     public function getQuizSummary($quizId)
     {
         $query =
@@ -46,4 +65,5 @@ SELECT '90-100' AS name, COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$qui
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
     }
+    // reviewQuizView - END
 }
