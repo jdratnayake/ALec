@@ -11,9 +11,14 @@ class ReviewModel extends Database
         return $result;
     }
 
-    public function getQuizDetails($userId)
+    public function getQuizDetails($userId, $courseId = "0")
     {
-        $query = "SELECT quiz_id, quiz_name, course.course_id, course_name, DATE_FORMAT(quiz.create_date, '%M %d %Y') AS date FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id INNER JOIN course ON course_topic.course_id=course.course_id WHERE quiz.lecturer_id='$userId' ORDER BY quiz.create_date DESC";
+        if ($courseId == "0") {
+            $query = "SELECT quiz_id, quiz_name, course.course_id, course_name, DATE_FORMAT(quiz.create_date, '%M %d %Y') AS date FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id INNER JOIN course ON course_topic.course_id=course.course_id WHERE quiz.lecturer_id='$userId' ORDER BY quiz.create_date DESC";
+        } else {
+            $query = "SELECT quiz_id, quiz_name, course.course_id, course_name, DATE_FORMAT(quiz.create_date, '%M %d %Y') AS date FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id INNER JOIN course ON course_topic.course_id=course.course_id WHERE quiz.lecturer_id='$userId' AND course.course_id='$courseId' ORDER BY quiz.create_date DESC";
+        }
+
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return $result;

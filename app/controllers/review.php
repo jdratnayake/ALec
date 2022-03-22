@@ -18,6 +18,32 @@ class Review extends AlecFramework
         $this->view("lecturer/reviewQuizListView", $data);
     }
 
+    public function updateQuizList($courseId)
+    {
+        $userId = $this->getSession("userId");
+
+        $quizDetails = $this->reviewModel->getQuizDetails($userId, $courseId);
+
+        $output = "";
+
+        while ($row = mysqli_fetch_assoc($quizDetails)) {
+            $output .=
+                "
+            <div class='quiz'>
+                <div class='quiz-details'>
+                    <a href='http://localhost/ALec/review/quizReview/{$row['quiz_id']}' class='quiz-name'><span>{$row['quiz_name']}</span></a>
+                </div>
+                <div class='quiz-course'>{$row['course_name']}</div>
+                <span class='quiz-created-date' style='text-decoration: none; font-size: 10px'>
+                {$row['date']}
+                </span>
+            </div>
+            ";
+        }
+
+        echo $output;
+    }
+
     public function quizReview($quizId)
     {
         // Quiz summary - START
