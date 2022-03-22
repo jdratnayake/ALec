@@ -9,7 +9,7 @@
     <title>ALec</title>
 
     <!-- CSS File HOME-->
-    <?php linkCSS("test"); ?>
+    <?php linkCSS("review_quiz"); ?>
 
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
@@ -22,7 +22,7 @@
     <?php linkPhp("navigationBarLecturer") ?>
 
     <!--    breadcrumb-->
-    <ul class="breadcrumb" style="margin-bottom: 0">
+    <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/review/index">Review</a></li>
         <li>Results</li>
@@ -36,27 +36,18 @@
         <input type="hidden" id="quizQuestionSummary-label" value="<?php echo $data["quizQuestionSummary"]["label"]; ?>">
         <input type="hidden" id="quizQuestionSummary-data" value="<?php echo $data["quizQuestionSummary"]["data"]; ?>">
 
-        <div class="col1">
-            <ul style="list-style-type:none">
-                <li><a href="">Quiz 1</a></li>
-                <li><a href="">Quiz 2</a></li>
-                <li><a href="">Quiz 3</a></li>
-                <li><a href="">Quiz 4</a></li>
-                <li><a href="">Quiz 1</a></li>
-                <li><a href="">Quiz 2</a></li>
-            </ul>
-        </div>
-
         <div class="col2">
             <header>Poll Statistics</header>
             <div class="chart-container">
+                <span class="chart-heading">Marks of Students</span>
                 <canvas class="chart" id="myChartQuiz"></canvas>
 
+                <span class="chart-heading">Success Rates of Questions</span>
                 <canvas class="chart" id="myChartQuizQuestion"></canvas>
             </div>
 
             <div class="table-container">
-                <table>
+                <table class="table-content">
                     <thead>
                         <tr>
                             <th>Index No.</th>
