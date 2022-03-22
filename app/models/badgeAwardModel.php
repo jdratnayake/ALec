@@ -24,4 +24,18 @@ class BadgeAwardModel extends Database
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
     }
+
+    public function awardBadge($lecturerId, $studentId, $badgeId)
+    {
+        $query = "INSERT INTO badge_assign(student_id, badge_id, lecturer_id) VALUES('$studentId', '$badgeId', '$lecturerId')";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function removeBadge($lecturerId, $studentId, $badgeId)
+    {
+        $query = "DELETE FROM badge_assign WHERE student_id='$studentId' AND badge_id='$badgeId' AND lecturer_id='$lecturerId'";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }

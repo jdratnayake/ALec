@@ -1,7 +1,3 @@
-<?php
-$assignedCourses = "";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +57,7 @@ $assignedCourses = "";
                     <div class="modal-body">
                         <label for="badges"><strong>Select Badge:</strong></label>
                         <select name="badge" id="badges" class="selection-box">
-                            <option value="0" selected>Select a badge</option>
+                            <option value="0" selected>Select a Badge</option>
 
                             <?php
 
@@ -81,8 +77,6 @@ $assignedCourses = "";
                             <?php
 
                             while ($row = mysqli_fetch_assoc($data["lecturerAssignedBadgeDetails"])) {
-                                //$assignedCourses = $assignedCourses . " " . $row['course_id'];
-
                                 echo
                                 "
                                 <li class='assigned-course'>
@@ -175,8 +169,6 @@ $assignedCourses = "";
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
-
-    <?php linkJS("successMessage"); ?>
 
     <?php linkJS("badgeAwardView"); ?>
 </body>

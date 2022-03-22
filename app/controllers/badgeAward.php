@@ -31,4 +31,18 @@ class BadgeAward extends AlecFramework
 
         $this->view("lecturer/badgeAwardView", $data);
     }
+
+    public function awardBadge($studentId, $badgeId)
+    {
+        $lecturerId = $this->getSession("userId");
+
+        $this->badgeAwardModel->awardBadge($lecturerId, $studentId, $badgeId);
+    }
+
+    public function removeBadge($studentId, $badgeId)
+    {
+        $lecturerId = $this->getSession("userId");
+
+        $this->badgeAwardModel->removeBadge($lecturerId, $studentId, $badgeId);
+    }
 }
