@@ -16,4 +16,12 @@ class BadgeAwardModel extends Database
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
     }
+
+    public function getUnawardedBadgeDetails($studentId, $lecturerId)
+    {
+        $query = "";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
+    }
 }
