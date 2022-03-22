@@ -91,6 +91,8 @@
 
     <?php linkJS("notification") ?>
 
+    <?php linkJS("reviewQuizListView") ?>
+
 </body>
 
 </html>
