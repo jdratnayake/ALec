@@ -290,6 +290,47 @@ header {
 /*NAVIGATION BAR - END*/
 /*==============================================================================*/
 /*==============================================================================*/
+/*USER-TYPE CONTAINER - START*/
+/*==============================================================================*/
+.user-type-container {
+  position: fixed;
+  top: 32px;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  border: none;
+  border-radius: 0;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms opacity ease;
+  z-index: 10;
+  flex-direction: column;
+}
+.user-type-container .image-container {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #964ba1;
+  align-items: center;
+}
+.user-type-container .image-container .fa-user {
+  font-size: 20px;
+}
+.user-type-container .user-type-label {
+  font-size: 10px;
+  color: black;
+  cursor: default;
+}
+
+/*==============================================================================*/
+/*USER-TYPE CONTAINER - END*/
+/*==============================================================================*/
+/*==============================================================================*/
 /*HOME CONTENT - START*/
 /*==============================================================================*/
 .home-content {
@@ -708,17 +749,22 @@ footer p {
   background-color: rgba(43, 79, 130, 0.6);
 }
 .details-content .container .content .questions-container .answer-container .row .percentage {
-  width: 5%;
-  display: flex;
-  justify-content: flex-end;
+  width: 60px;
+  padding-left: 8px;
 }
 .details-content .container .button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 98%;
   margin: 10px auto;
   padding: 10px;
+}
+.details-content .container .button-container .answer {
+  margin-left: 8px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: #867f7f;
 }
 .details-content .container .button-container .save-btn {
   padding: 6px 36px;

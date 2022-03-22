@@ -5,19 +5,17 @@ document.getElementById("search").addEventListener('submit', function (event) {
 $(document).ready(function () {
     // LIVE SEARCH START
 
-    function loadData(data) {
-        data = data.trim().replace(/ /g, "_");
+    function loadData() {
+        const formData = $("#search").serialize();
 
-        $.ajax({
-            type: "GET",
-
-            url: "http://localhost/ALec/courseDetails/search/" + data,
-            dataType: "html",
-
-            success: function (response) {
+        $.post(
+            "http://localhost/ALec/courseDetails/search/",
+            formData,
+            function (response) {
                 $("#table-content").html(response);
             }
-        })
+        );
+
     }
 
     $("#search-tag").keyup(function () {
@@ -25,7 +23,7 @@ $(document).ready(function () {
 
         if (search !== "") {
             // console.log(search);
-            loadData(search);
+            loadData();
         }
     });
 

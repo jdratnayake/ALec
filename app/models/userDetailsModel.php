@@ -145,7 +145,6 @@ class userDetailsModel extends Database
     public function getSearchResults($data)
     {
         $data = mysqli_real_escape_string($GLOBALS["db"], $data);
-        $data = str_replace('_', ' ', $data);
 
         $query = "SELECT user_id, first_name, last_name, user_type FROM user WHERE first_name LIKE '%$data%' OR
         last_name LIKE '%$data%'

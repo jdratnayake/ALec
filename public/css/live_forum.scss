@@ -55,6 +55,32 @@ $light_color: #FFF;
     padding-bottom: 2rem;
     margin-left: 10px;
 
+    .stat-container {
+      border: none;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+
+      .stat-box {
+        color: black;
+        display: grid;
+        justify-items: center;
+        width: 102px;
+      }
+
+      .resolved {
+        background-color: rgba(118, 151, 179, 0.40);
+        border-radius: 5px 0 0 5px;
+      }
+
+      .unresolved {
+        background-color: rgba(118, 151, 179, 0.65);
+        border-radius: 0 5px 5px 0;
+      }
+    }
+
     .question {
       display: flex;
       align-items: center;
@@ -64,30 +90,67 @@ $light_color: #FFF;
       padding: 10px;
       justify-content: space-between;
 
-      .text{
+      .text {
         cursor: default;
         display: grid;
-        .name{
+
+        .name {
           color: grey;
           font-size: 12px;
         }
       }
+
       .vote {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: inherit;
+        width: 110px;
 
-        .vote-highlight{
-          font-size: 24px;
-          cursor: pointer;
+        .col {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          width: 50%;
 
-          &:hover {
-            transform: scale(1.2);
+          .vote-highlight {
+            font-size: 24px;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(1.2);
+            }
           }
-        }
 
-        .votes-count {
-          font-size: small;
+          .votes-count {
+            font-size: small;
+          }
+
+          .check-resolved {
+            font-size: 24px;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+
+          .resolved {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ccc;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+
+          .resolved-label {
+            font-size: 12px;
+            cursor: default;
+          }
+
+          .resolved-label-hide {
+            display: none;
+          }
         }
       }
     }

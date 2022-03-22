@@ -34,7 +34,7 @@ $errors = $data["errors"];
         echo "<li><a href='http://localhost/ALec/viewSession/index/{$sessionId}'>{$sessionName}</a></li>";
         echo "<li><a href='http://localhost/ALec/createPoll/index/{$sessionId}'>New Poll Question</a></li>";
         ?>
-        <li>OPEN_TEXT</li>
+        <li>Open Text Poll Question</li>
     </ul>
 
     <div class="details-content">
@@ -56,6 +56,12 @@ $errors = $data["errors"];
                         <label for="question"></label>
                         <input type="text" class="session" placeholder="Enter your question here..." name="question">
                         <div class="error"><?php echo $errors["question"]; ?></div>
+                    </div>
+                    <div class="div-question">
+                        <!--            open text poll answer-->
+                        <label for="answer"></label>
+                        <input type="text" class="session" placeholder="Enter correct answer here..." name="correct-answer" style="background-color: rgba(118,151,179,0.3)">
+                        <div class="error"><?php echo $errors["answer"]; ?></div>
                     </div>
                 </div>
 

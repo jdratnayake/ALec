@@ -51,9 +51,28 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 
         <div class="questions-container">
 
+            <div class="stat-container">
+                <div class="resolved stat-box">
+                    <span>Resolved</span>
+                    <span><?php echo $data["resolvedCount"]; ?></span>
+                </div>
+                <div class="unresolved stat-box">
+                    <span>Unresolved</span>
+                    <span><?php echo $data["unResolvedCount"]; ?></span>
+                </div>
+            </div>
+
             <?php
 
             while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+
+                $iconClassName = "check-resolved";
+                $labelClassName = "resolved-label-hide";
+
+                if ($row["resolved_status"] == "1") {
+                    $iconClassName = "resolved";
+                    $labelClassName = "";
+                }
 
                 echo
                 "
@@ -65,8 +84,14 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
                         <span class='name'>{$row['post_time']}</span>
                     </span>
                     <span class='vote'>
-                        <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
-                        <span class='votes-count'>{$row['points']}</span>
+                        <div class='col'>
+                            <i class='fa fa-check-circle $iconClassName' aria-hidden='true'></i>
+                            <span class='resolved-label $labelClassName'>Resolved</span>
+                        </div>
+                        <div class='col'>
+                            <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true'></i>
+                            <span class='votes-count'>{$row['points']}</span>
+                        </div>
                     </span>
                 </div>
                 ";
@@ -86,7 +111,10 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
 
     <?php linkJS("notification") ?>
 
-    <?php linkJS("sessionLiveForumLecturerQuestionsUpdate") ?>
+    <?php linkJS("sessionLiveForumLecturerQuestionsUpdate")
+    ?>
+
+    <?php linkJS("sessionLiveForumLecturerQuestionStatus") ?>
 
 </body>
 

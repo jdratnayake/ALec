@@ -77,19 +77,24 @@ class DisplaySessionsList extends AlecFramework
         while ($row = mysqli_fetch_assoc($data["activeSessions"])) {
             $output .=
                 "
-                            <div class='session'>
-                                <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
-                                    <span>
-                                        {$row['session_name']}
-                                    </span>
-                                </a>
-                                <span>
-                                    <input type='hidden' class='course-identity' value='{$row['course_id']}'>
-                                    <input type='hidden' value='{$row['session_id']}'>
-                                    <i class='fa fa-eye publish-status' aria-hidden='true'></i>
-                                    <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
-                                </span>
-                            </div>
+                <div class='session'>
+                    <div class='session-details'>
+                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                            <span>
+                                {$row['session_name']}
+                            </span>
+                        </a>
+                        <span class='eye'>
+                            <input type='hidden' class='course-identity' value='{$row['course_id']}'>
+                            <input type='hidden' value='{$row['session_id']}'>
+                            <i class='fa fa-eye publish-status' aria-hidden='true'></i>
+                            <i class='fa fa-eye-slash publish-status' aria-hidden='true' style='display: none'></i>
+                        </span>
+                    </div>
+                    <span class='session-created-date' style='text-decoration: none; font-size: 10px'>
+                        {$row['date']}
+                    </span>
+                </div>
                             ";
         }
 
@@ -107,19 +112,24 @@ class DisplaySessionsList extends AlecFramework
         while ($row = mysqli_fetch_assoc($data["inActiveSessions"])) {
             $output .=
                 "
-                            <div class='session'>
-                                <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
-                                    <span>
-                                        {$row['session_name']}
-                                    </span>
-                                </a>
-                                <span>
-                                    <input type='hidden' class='course-identity' value='{$row['course_id']}'>
-                                    <input type='hidden' value='{$row['session_id']}'>
-                                    <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
-                                    <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
-                                </span>
-                            </div>
+                <div class='session'>
+                    <div class='session-details'>
+                        <a href='http://localhost/ALec/viewSession/index/{$row['session_id']}' class='session-name'>
+                            <span>
+                                {$row['session_name']}
+                            </span>
+                        </a>
+                        <span>
+                            <input type='hidden' class='course-identity' value='{$row['course_id']}'>
+                            <input type='hidden' value='{$row['session_id']}'>
+                            <i class='fa fa-eye publish-status' aria-hidden='true' style='display: none'></i>
+                            <i class='fa fa-eye-slash publish-status' aria-hidden='true'></i>
+                        </span>
+                    </div>
+                    <span class='session-created-date' style='text-decoration: none; font-size: 10px'>
+                        {$row['date']}
+                    </span>    
+                </div>
                             ";
         }
 

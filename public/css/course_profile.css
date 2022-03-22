@@ -290,6 +290,47 @@ header {
 /*NAVIGATION BAR - END*/
 /*==============================================================================*/
 /*==============================================================================*/
+/*USER-TYPE CONTAINER - START*/
+/*==============================================================================*/
+.user-type-container {
+  position: fixed;
+  top: 32px;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  border: none;
+  border-radius: 0;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms opacity ease;
+  z-index: 10;
+  flex-direction: column;
+}
+.user-type-container .image-container {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #964ba1;
+  align-items: center;
+}
+.user-type-container .image-container .fa-user {
+  font-size: 20px;
+}
+.user-type-container .user-type-label {
+  font-size: 10px;
+  color: black;
+  cursor: default;
+}
+
+/*==============================================================================*/
+/*USER-TYPE CONTAINER - END*/
+/*==============================================================================*/
+/*==============================================================================*/
 /*HOME CONTENT - START*/
 /*==============================================================================*/
 .home-content {
@@ -608,29 +649,11 @@ footer p {
 .details-content {
   padding: 1rem;
   width: 80%;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto auto 30px auto;
   height: 80%;
-  background-color: #b7c8d64a;
   overflow-y: hidden;
 }
 
-header {
-  background-color: #2B4F82;
-  color: #FFF;
-  padding: 15px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: auto;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-}
-
-.buttons-right {
-  display: inline-grid;
-}
 .buttons-right button {
   margin-top: 10px;
 }
@@ -645,13 +668,14 @@ header {
   color: #dd5555;
 }
 
-.buttons-right, .buttons-left {
+.buttons-right {
   margin-top: 10px;
-  width: max-content;
   float: right;
+  display: inline-flex;
 }
-.buttons-right button, .buttons-left button {
-  width: 10rem;
+.buttons-right button {
+  margin-right: 5px;
+  width: 160px;
   padding: 5px;
   background-color: #2B4F82;
   color: #FFF;
@@ -662,15 +686,26 @@ header {
   box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   cursor: pointer;
 }
-.buttons-right button:hover, .buttons-left button:hover {
+.buttons-right button:hover {
   background-color: #1d3557;
   border: 2px solid #1d3557;
 }
-.buttons-right .buttons-left, .buttons-left .buttons-left {
-  display: inline-flex;
-}
-.buttons-right .buttons-left button, .buttons-left .buttons-left button {
+
+.buttons-left button {
   margin-right: 5px;
+  width: 160px;
+  padding: 5px;
+  background-color: rgba(43, 79, 130, 0.15);
+  color: #2B4F82;
+  border-radius: 5px;
+  border: 2px solid #2B4F82;
+  font-size: large;
+  font-weight: 400;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+}
+.buttons-left button:hover {
+  background-color: rgba(43, 79, 130, 0.25);
 }
 
 .user-details-container {
@@ -686,7 +721,7 @@ header {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding: 10px;
+  margin-top: 5%;
 }
 
 .head {
@@ -708,7 +743,7 @@ header {
   border: 1px solid #d0d0d0;
   background-color: #FFF;
   overflow-y: auto;
-  height: 50vh;
+  min-height: 39vh;
 }
 .bottom .content {
   display: inline-grid;

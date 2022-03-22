@@ -1,9 +1,25 @@
+let submitForm = document.getElementById("create-quiz-form");
+
 $(document).ready(function () {
 
     // courseName();
     // topicName();
     // quizName();
     // duration();
+
+    document.getElementById("create-quiz").addEventListener("click", function (event) {
+        event.preventDefault();
+
+        courseName()
+        topicName()
+        quizName()
+        duration()
+        questionName()
+
+        if (courseName() && topicName() && quizName() && duration()) {
+            submitForm.submit();
+        }
+    });
 
     //Increament question count
     $("#add-question").click(function () {
@@ -29,6 +45,7 @@ $(document).ready(function () {
             return false;
         }
 
+        $("#course").parent(".form-group").find(".error").text("");
         return true;
     }
 
@@ -40,6 +57,7 @@ $(document).ready(function () {
             return false;
         }
 
+        $("#topic").parent(".form-group").find(".error").text("");
         return true;
     }
 
@@ -51,17 +69,19 @@ $(document).ready(function () {
             return false;
         }
 
+        $("#quiz-name").parent(".form-group").find(".error").text("");
         return true;
     }
 
     function duration() {
         const value = $("#time-picker").val();
 
-        if (value == "") {
+        if (value == "" || value == "0:0:0") {
             $("#time-picker").parent(".form-group").find(".error").text("Duration must not be empty");
             return false;
         }
 
+        $("#time-picker").parent(".form-group").find(".error").text("");
         return true;
     }
 });

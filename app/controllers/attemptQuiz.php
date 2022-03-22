@@ -24,15 +24,20 @@ class AttemptQuiz extends AlecFramework
 
     public function submit($quizId)
     {
+        // print_r($_POST);
+        // return 0;
+
+        //Validity Check
+        if (!($this->attemptCheck($quizId))) {
+            $this->redirect("studentDashboard/index");
+        }
+
         $totakMarks = 0;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //Preprocess - START
             $questionIdString = $_POST["questionIdString"];
             $questionTypeString = $_POST["questionTypeString"];
-
-            $questionIdString = trim($questionIdString, "_");
-            $questionTypeString = trim($questionTypeString, "_");
 
             $questionIdString = explode("_", $questionIdString);
             $questionTypeString = explode("_", $questionTypeString);
@@ -43,15 +48,18 @@ class AttemptQuiz extends AlecFramework
             $sucessRateArray = array();
 
             $totalMarks = 0;
-            $attemptCount = $this->attemptQuizMarksModel->getAttemptCount($quizId) + 1;
+            $attemptCount = $this->attemptQuizMarksModel->getAttemptCount($quizId);
 
             for ($i = 0; $i < sizeof($questionIdString); $i++) {
                 $questionId = $questionIdString[$i];
                 $questionType = $questionTypeString[$i];
+                $questionMarks = 0;
 
                 if ($questionType == "mcq-s") {
-                    $choiceId = $_POST[$questionId];
-                    $questionMarks = $this->attemptQuizMarksModel->getChoiceMark($choiceId);
+                    if (isset($_POST[$questionId])) {
+                        $choiceId = $_POST[$questionId];
+                        $questionMarks = $this->attemptQuizMarksModel->getChoiceMark($choiceId);
+                    }
                 } else if ($questionType == "mcq-m") {
                     $choiceIdList = $this->attemptQuizMarksModel->getChoiceIds($questionId);
 
@@ -62,6 +70,9 @@ class AttemptQuiz extends AlecFramework
                             $questionMarks += $this->attemptQuizMarksModel->getChoiceMark($row["choice_id"]);
                         }
                     }
+
+                    // echo $questionMarks;
+                    // return 0;
                 } else if ($questionType == "short ans") {
                     $choiceName = $this->attemptQuizMarksModel->getShortAnswerChoice($questionId);
                     $choiceName = strtolower($choiceName);
@@ -97,16 +108,34 @@ class AttemptQuiz extends AlecFramework
                 array_push($questionMarksArray, $questionMarks);
             }
 
+            //Calculate the average mark
+            $averageMark = round($totakMarks / sizeof($questionIdString), 2);
+
             //Insert student attempt record
             $userId = $this->getSession("userId");
-            $this->attemptQuizMarksModel->updateAttempt($userId, $quizId, $totakMarks);
+            $this->attemptQuizMarksModel->updateAttempt($userId, $quizId, $averageMark);
 
-            //Output - Testing
-            var_dump($questionIdString);
-            echo "<br><br><br>";
-            var_dump($sucessRateArray);
-            echo "<br><br><br>";
-            var_dump($questionMarksArray);
+            //Output
+            $data["averageMark"] = $averageMark;
+            $data["questionIdArray"] = $questionIdString;
+            $data["questionMarksArray"] = $questionMarksArray;
+            $data["sucessRateArray"] = $sucessRateArray;
+
+            $this->view("student/displayResultsView", $data);
+        }
+    }
+
+    public function attemptCheck($quizId)
+    {
+        $userId = $this->getSession("userId");
+
+        if (
+            $this->attemptQuizViewModel->quizExpireCheck($quizId) &&
+            $this->attemptQuizViewModel->quizAttemptCheck($userId, $quizId)
+        ) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

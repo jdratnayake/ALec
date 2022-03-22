@@ -4,7 +4,8 @@ class Notification extends AlecFramework
 {
     public function __construct()
     {
-        $this->authorization("admin", "lec", "stu");
+        //Do not use authorization function here (Do not work when logout)
+        //$this->authorization("admin", "lec", "stu");
         $this->helper("linker");
         $this->notificationModel = $this->model("notificationModel");
     }
@@ -20,7 +21,12 @@ class Notification extends AlecFramework
     {
         $userId = $this->getSession("userId");
 
-        echo $this->notificationModel->getNotificationCount($userId);
+        //Determine Logout
+        if (!isset($userId)) {
+            echo "-1";
+        } else {
+            echo $this->notificationModel->getNotificationCount($userId);
+        }
     }
 
     public function updateNotification()
