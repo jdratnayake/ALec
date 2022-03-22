@@ -28,7 +28,7 @@
         $questionId = "";
     }
 	
-	$sql = "SELECT question_no, question_type, question FROM session_question WHERE question_no='$questionId'";
+	$sql = "SELECT question_no, question_type, question, published_time, duration FROM session_question WHERE question_no='$questionId'";
 	
 	$result = mysqli_query($conn, $sql);
 	
