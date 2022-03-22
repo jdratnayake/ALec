@@ -34,9 +34,8 @@ $assignedCourses = "";
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">
-        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-        <li><a href="http://localhost/ALec/userDetails/index">User Details</a></li>
-        <li>User Profile</li>
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li>Student Profile</li>
     </ul>
 
     <div class="details-content">
@@ -46,7 +45,7 @@ $assignedCourses = "";
                 <img <?php srcIMG("user_avatar.png"); ?> alt="User image">
                 <div class="bio">
                     <span><?php echo $data["userDetails"]["name"]; ?></span>
-                    <span><?php echo $data["userDetails"]["type"]; ?></span>
+                    <span><?php echo "Student"; ?></span>
                     <span><?php echo $data["userDetails"]["regNo"]; ?></span>
                 </div>
             </div>
@@ -110,8 +109,6 @@ $assignedCourses = "";
             <!-- Details Container include small separate boxes of button content, user details, assigned courses and badges earned-->
             <div class="details-container">
                 <div class="buttons">
-                    <button id="edit-btn">Edit User</button>
-                    <button id="delete-btn">Delete User</button>
                     <button id="modal-btn">Award Badge</button>
                 </div>
 
@@ -142,47 +139,30 @@ $assignedCourses = "";
 
                 </div>
 
-                <!--                --><?php
-                                        //                $image1 = srcIMG("BadgeQuestioner.png");
-                                        //                if ($data["userDetails"]["type"] == "Student") {
-                                        //                    echo "<div class='badges'>";
-                                        //                    echo "<span>Badges</span>";
-                                        //
-                                        //                    while ($row = mysqli_fetch_assoc($data["badgeDetails"])) {
-                                        //                        echo '<span> <i class="fa fa-certificate" aria-hidden="true"></i>';
-                                        //                        echo "<span>" . $row['badge_name'] . "</span>";
-                                        //                        echo " <img  $image1 alt='Badge image' class='badge-image'> ";
-                                        //                        echo "</span>";
-                                        //                    }
-                                        //
-                                        //                    echo "</div>";
-                                        //                }
-                                        //                
-                                        ?>
-
                 <div class="badge-details">
                     <span class="heading">Badges</span>
                     <div class="badges">
-                        <div class="badge">
-                            <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge Image" class="badge-image">
+
+                        <?php
+                        while ($row = mysqli_fetch_assoc($data["badgeDetails"])) {
+
+                            echo
+                            "
+                            <div class='badge'>
+                            <img src='http://localhost/ALec/public/badge_pic/{$row['badge_image']}' alt='Badge Image' class='badge-image'>
+                            <span>{$row['badge_name']}</span>
+                            <span class='issuer'>{$row['lec_name']}</span>
+                            </div>
+                            ";
+                        }
+                        ?>
+
+                        <!-- <div class='badge'>
+                            <img <?php srcIMG('BadgeRespondent.png'); ?> alt='Badge Image' class='badge-image'>
                             <span>Respondent of the week - 12</span>
-                            <span class="issuer">Dr. D. K. Fernando</span>
-                        </div>
-                        <div class="badge">
-                            <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge image" class="badge-image">
-                            <span>Respondent of the week - 12</span>
-                            <span class="issuer">Dr. Kasun De Soyza</span>
-                        </div>
-                        <div class="badge">
-                            <img <?php srcIMG("BadgeRespondent.png"); ?> alt="Badge Image" class="badge-image">
-                            <span>Respondent of the week - 12</span>
-                            <span class="issuer">Mrs. Hirasha Pooliyadda</span>
-                        </div>
-                        <div class="badge">
-                            <img <?php srcIMG("BadgeQuestioner.png"); ?> alt="Badge image" class="badge-image">
-                            <span>Respondent of the week - 12</span>
-                            <span class="issuer">Dr. D. K. Fernando</span>
-                        </div>
+                            <span class='issuer'>Dr. D. K. Fernando</span>
+                        </div> -->
+
                     </div>
                 </div>
 
@@ -200,8 +180,6 @@ $assignedCourses = "";
     <?php linkJS("notification") ?>
 
     <?php linkJS("successMessage"); ?>
-
-    <?php linkJS("deleteMessage"); ?>
 
     <?php linkJS("userProfileModal"); ?>
 </body>
