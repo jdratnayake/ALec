@@ -25,7 +25,7 @@
     <ul class="breadcrumb">
         <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
         <li><a href="http://localhost/ALec/review/index">Review</a></li>
-        <li>Results</li>
+        <li><?php echo $data["bread"]["quizName"]; ?></li>
     </ul>
 
     <div class="details-container">
@@ -56,16 +56,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+
+                        <?php
+                        while ($row = mysqli_fetch_assoc($data["studentsResults"])) {
+                            echo
+                            "
+                            <tr>
+                                <td>{$row['index_no']}</td>
+                                <td>{$row['name']}</td>
+                                <td>{$row['marks']}%</td>
+                            </tr>
+                            ";
+                        }
+                        ?>
+
+                        <!-- <tr>
                             <td>19000472</td>
                             <td>Pansilu Gunaratne</td>
                             <td>64.00%</td>
-                        </tr>
-                        <tr>
-                            <td>19001428</td>
-                            <td>Janitha Ratnayake</td>
-                            <td>98.00%</td>
-                        </tr>
+                        </tr> -->
 
                     </tbody>
                 </table>

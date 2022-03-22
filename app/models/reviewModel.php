@@ -2,6 +2,15 @@
 
 class ReviewModel extends Database
 {
+    public function getQuizName($quizId)
+    {
+        $query = "SELECT quiz_name FROM quiz WHERE quiz_id='$quizId'";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["quiz_name"];
+    }
+
     // reviewQuizListView - START
     public function getEnrolledCourses($userId)
     {
@@ -71,4 +80,12 @@ SELECT '90-100' AS name, COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$qui
         return $result;
     }
     // reviewQuizView - END
+
+    public function getStudentsResults($quizId)
+    {
+        $query = "SELECT user.user_id, index_no, CONCAT(first_name, ' ', last_name) AS name, marks FROM quiz_attempt INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id WHERE quiz_id = '$quizId' ORDER BY quiz_attempt.attempt_time";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+        return $result;
+    }
 }
