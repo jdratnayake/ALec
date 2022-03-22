@@ -17,9 +17,9 @@ class BadgeAwardModel extends Database
         return $result;
     }
 
-    public function getUnawardedBadgeDetails($studentId, $lecturerId)
+    public function getUnawardedBadgeDetails($courseId, $studentId)
     {
-        $query = "";
+        $query = "SELECT badge_id, badge_name FROM badge WHERE course_id ='$courseId' AND badge_id NOT IN(SELECT badge_id FROM badge_assign WHERE student_id='$studentId')";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;

@@ -32,6 +32,7 @@ class ShowPollAnswer extends AlecFramework
         $data["bread"]["sessionDetails"] = $this->showPollAnswer->getSessionDetailsForResponses($type, $choiceId);
         $questionId = $data["bread"]["sessionDetails"]["question_no"];
 
+        $data["courseId"] = $data["bread"]["sessionDetails"]["course_id"];
         $data["question"] = $this->showPollAnswer->getQuestion($questionId);
         $data["answer"] = $this->showPollAnswer->getAnswer($type, $choiceId);
         $data["respondentsDetails"] = $this->showPollAnswer->getRespondents($type, $choiceId);

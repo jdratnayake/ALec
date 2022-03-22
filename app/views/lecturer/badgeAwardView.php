@@ -1,8 +1,5 @@
 <?php
 $assignedCourses = "";
-
-$courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +61,19 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
                     <div class="modal-body">
                         <label for="badges"><strong>Select Badge:</strong></label>
                         <select name="badge" id="badges" class="selection-box">
-                            <option value="default" selected>Select a badge</option>
-                            <option value="sub1">Best Respondent - 2021</option>
-                            <option value="sub2">Best Questioner - 2021</option>
+                            <option value="0" selected>Select a badge</option>
+
+                            <?php
+
+                            while ($row = mysqli_fetch_assoc($data["unawardedBadgeDetails"])) {
+                                echo
+                                "
+                                <option value='{$row['badge_id']}'>{$row['badge_name']}</option>
+                                ";
+                            }
+
+                            ?>
+
                         </select>
 
                         <!--                    List of assigned badges-->
@@ -125,9 +132,10 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
                         <div class="course-content">
                             <?php
 
-                            foreach ($courseDetails as $row) {
+                            while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
                                 echo "<span>{$row['course_name']}</span>";
                             }
+
                             ?>
                         </div>
                     </div>
@@ -170,7 +178,7 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
 
     <?php linkJS("successMessage"); ?>
 
-    <?php linkJS("userProfileModal"); ?>
+    <?php linkJS("badgeAwardView"); ?>
 </body>
 
 </html>
