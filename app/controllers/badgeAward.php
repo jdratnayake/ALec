@@ -37,6 +37,19 @@ class BadgeAward extends AlecFramework
         $lecturerId = $this->getSession("userId");
 
         $this->badgeAwardModel->awardBadge($lecturerId, $studentId, $badgeId);
+
+        $badgeDetail = $this->badgeAwardModel->getSpecificBadgeDetail($lecturerId, $studentId, $badgeId);
+
+        $output =
+            "
+            <div class='badge'>
+                <img src='http://localhost/ALec/public/badge_pic/{$badgeDetail['badge_image']}' alt='Badge Image' class='badge-image'>
+                <span>{$badgeDetail['badge_name']}</span>
+                <span class='issuer'>{$badgeDetail['lec_name']}</span>
+            </div>
+        ";
+
+        echo $output;
     }
 
     public function removeBadge($studentId, $badgeId)

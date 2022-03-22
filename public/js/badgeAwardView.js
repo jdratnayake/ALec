@@ -50,7 +50,6 @@ $(document).ready(function () {
         document.body.insertAdjacentHTML('afterbegin', output);
     }
 
-    // START
     deleteBadgeConfirm = function (badgeId, badgeName) {
         const studentId = $("#student-id").val();
 
@@ -77,7 +76,6 @@ $(document).ready(function () {
     deleteCloseMessage = function () {
         $("#delete-box").remove();
     }
-    // END
 
     $('#badges').on('change', function () {
         if ($(this).find('option:selected').html() != "Select a Badge") {
@@ -88,7 +86,11 @@ $(document).ready(function () {
             $.ajax({
                 type: "GET",
 
-                url: "http://localhost/ALec/badgeAward/awardBadge/" + studentId + "/" + badgeId
+                url: "http://localhost/ALec/badgeAward/awardBadge/" + studentId + "/" + badgeId,
+
+                success: function (response) {
+                    $(".badges").append(response);
+                }
             })
 
             const newTag = `
