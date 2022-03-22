@@ -16,7 +16,8 @@ class BadgeAward extends AlecFramework
 
         $data["success"] = "";
 
-        $data["userId"] = $studentId;
+        $data["studentId"] = $studentId;
+        $data["lecturerId"] = $this->getSession("userId");
         $data["userDetails"] = $this->userProfileModel->getUserDetails($studentId);
         $data["userDetails"]["randomName"] = $this->userProfileModel->getRandomName($studentId);
         $data["userDetails"]["type"] = $type;
@@ -25,6 +26,7 @@ class BadgeAward extends AlecFramework
         $data["courseDetails"] = $this->userProfileModel->getCourseDetails($studentId, $type);
 
         $data["badgeDetails"] = $this->badgeAwardModel->getBadgeDetails($studentId);
+        $data["lecturerAssignedBadgeDetails"] = $this->badgeAwardModel->getBadgeDetails($studentId, $data["lecturerId"]);
 
         $this->view("lecturer/badgeAwardView", $data);
     }

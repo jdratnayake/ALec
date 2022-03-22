@@ -1,7 +1,8 @@
-<!--User profile view of Lecturer-->
-
 <?php
 $assignedCourses = "";
+
+$courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -71,35 +72,29 @@ $assignedCourses = "";
                         <!--                    List of assigned badges-->
                         <ul style="list-style-type:none;" class="assigned-courses">
                             <?php
-                            $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
 
-                            foreach ($courseDetails as $row) {
-                                $assignedCourses = $assignedCourses . " " . $row['course_id'];
+                            while ($row = mysqli_fetch_assoc($data["lecturerAssignedBadgeDetails"])) {
+                                //$assignedCourses = $assignedCourses . " " . $row['course_id'];
 
                                 echo
                                 "
                                 <li class='assigned-course'>
-                                    <input type='hidden' class='course-id' value='{$row['course_id']}'>
-                                    <span class='course-name'> {$row['course_name']} </span>
+                                    <input type='hidden' class='course-id' value='{$row['badge_id']}'>
+                                    <span class='course-name'> {$row['badge_name']} </span>
                                     <span class='remove-course'><i class='fa fa-trash' aria-hidden='true'></i></span>
                                 </li>
-                                ";
+                                    ";
                             }
                             ?>
 
-                            <!--                        <i class="fa fa-trash" aria-hidden="true"></i>-->
-
-                            <!-- <li class="assigned-course">SCS 2214 - Information system security
-                            <span class="remove-course">&times;</span>
-                        </li> -->
                         </ul>
 
                     </div>
 
-                    <!-- Store user ID -->
-                    <input type="hidden" id="user-id" value="<?php echo $data["userId"]; ?>">
-                    <!-- Store user type -->
-                    <input type="hidden" id="user-type" value="<?php echo $data["userDetails"]["type"]; ?>">
+
+                    <input type="hidden" id="student-id" value="<?php echo $data["studentId"]; ?>">
+                    <input type="hidden" id="lecturer-id" value="<?php echo $data["lecturerId"]; ?>">
+
                     <!-- Okay button in delete -->
                     <input type="button" value="Okay" class="apply-button">
                 </div>
@@ -144,24 +139,18 @@ $assignedCourses = "";
                     <div class="badges">
 
                         <?php
-                        while ($row = mysqli_fetch_assoc($data["badgeDetails"])) {
 
+                        while ($row = mysqli_fetch_assoc($data["badgeDetails"])) {
                             echo
                             "
                             <div class='badge'>
-                            <img src='http://localhost/ALec/public/badge_pic/{$row['badge_image']}' alt='Badge Image' class='badge-image'>
-                            <span>{$row['badge_name']}</span>
-                            <span class='issuer'>{$row['lec_name']}</span>
+                                <img src='http://localhost/ALec/public/badge_pic/{$row['badge_image']}' alt='Badge Image' class='badge-image'>
+                                <span>{$row['badge_name']}</span>
+                                <span class='issuer'>{$row['lec_name']}</span>
                             </div>
                             ";
                         }
                         ?>
-
-                        <!-- <div class='badge'>
-                            <img <?php srcIMG('BadgeRespondent.png'); ?> alt='Badge Image' class='badge-image'>
-                            <span>Respondent of the week - 12</span>
-                            <span class='issuer'>Dr. D. K. Fernando</span>
-                        </div> -->
 
                     </div>
                 </div>
