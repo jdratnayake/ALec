@@ -43,6 +43,7 @@ class BadgeAward extends AlecFramework
         $output =
             "
             <div class='badge'>
+                <input type='hidden' class='badge-id' value='{$badgeDetail['badge_id']}'>
                 <img src='http://localhost/ALec/public/badge_pic/{$badgeDetail['badge_image']}' alt='Badge Image' class='badge-image'>
                 <span>{$badgeDetail['badge_name']}</span>
                 <span class='issuer'>{$badgeDetail['lec_name']}</span>

@@ -146,6 +146,7 @@
                             echo
                             "
                             <div class='badge'>
+                                <input type='hidden' class='badge-id' value='{$row['badge_id']}'>
                                 <img src='http://localhost/ALec/public/badge_pic/{$row['badge_image']}' alt='Badge Image' class='badge-image'>
                                 <span>{$row['badge_name']}</span>
                                 <span class='issuer'>{$row['lec_name']}</span>

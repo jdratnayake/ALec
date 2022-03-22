@@ -70,6 +70,14 @@ $(document).ready(function () {
             }
         });
 
+        $('.badge-id').each(function () {
+            const id = $(this).val();
+
+            if (id === badgeId) {
+                $(this).parent().remove();
+            }
+        });
+
         $("#delete-box").remove();
     }
 
