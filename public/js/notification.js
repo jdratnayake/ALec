@@ -55,12 +55,17 @@ $(document).ready(function () {
             url: "http://localhost/ALec/notification/notificationCount/",
             dataType: "html",
             success: function (response) {
-                if (response == "0") {
-                    $(".active-status").hide();
+
+                if (response != "-1") {
+                    if (response == "0") {
+                        $(".active-status").hide();
+                    } else {
+                        $(".active-status").show();
+                    }
+                    $(".active-status").html(response);
                 } else {
-                    $(".active-status").show();
+                    location.reload();
                 }
-                $(".active-status").html(response);
             }
         })
     }

@@ -62,28 +62,79 @@ $light_color: #FFF;
       margin-left: 10px;
 
       .session {
-        display: flex;
+        display: grid;
+        justify-items: start;
         align-items: center;
         background-color: #2b4f820d;
         border-radius: 5px;
         margin: 5px 0;
         padding: 20px 10px;
-        justify-content: space-between;
 
-        .session-name{
-          cursor: pointer;
-          color: #0275d8;
-          text-decoration: none;
+        .session-details {
+          width: 100%;
 
-          &:hover{
-            text-decoration: underline;
+          .session-name {
+            width: 95%;
+            float: left;
+            text-decoration: none;
+            cursor: pointer;
+            color: #0275d8;
+            font-size: 20px;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .eye {
+            width: 5%;
+            float: right;
           }
         }
 
         .publish-status {
           cursor: pointer
         }
+
+        .session-course {
+          font-size: 16px;
+          color: #4caf50;
+          cursor: default;
+        }
+
+        .session-created-date {
+          text-decoration: none;
+          font-size: 10px;
+          margin: 0;
+          padding: 0;
+          line-height: 15px;
+          cursor: default;
+        }
       }
+
+      //.session {
+      //  display: flex;
+      //  align-items: center;
+      //  background-color: #2b4f820d;
+      //  border-radius: 5px;
+      //  margin: 5px 0;
+      //  padding: 20px 10px;
+      //  justify-content: space-between;
+      //
+      //  .session-name{
+      //    cursor: pointer;
+      //    color: #0275d8;
+      //    text-decoration: none;
+      //
+      //    &:hover{
+      //      text-decoration: underline;
+      //    }
+      //  }
+      //
+      //  .publish-status {
+      //    cursor: pointer
+      //  }
+      //}
     }
   }
 }
@@ -115,8 +166,8 @@ form.search-bar input[type=text] {
 /*ADD SESSION MODAL - START*/
 /*==============================================================================*/
 
-.modal{
-  .modal-content{
+.modal {
+  .modal-content {
     .modal-button-container {
       display: flex;
       justify-content: flex-end;
@@ -150,9 +201,18 @@ form.search-bar input[type=text] {
         margin-left: 10px;
         justify-content: space-between;
 
-        label {
+
+        .session-label {
           width: 140px;
           font-weight: bold;
+        }
+
+        .right-side {
+          display: grid;
+
+          .error {
+            margin-left: 2px;
+          }
         }
 
         .input {

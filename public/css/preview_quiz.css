@@ -290,6 +290,47 @@ header {
 /*NAVIGATION BAR - END*/
 /*==============================================================================*/
 /*==============================================================================*/
+/*USER-TYPE CONTAINER - START*/
+/*==============================================================================*/
+.user-type-container {
+  position: fixed;
+  top: 32px;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  border: none;
+  border-radius: 0;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms opacity ease;
+  z-index: 10;
+  flex-direction: column;
+}
+.user-type-container .image-container {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #964ba1;
+  align-items: center;
+}
+.user-type-container .image-container .fa-user {
+  font-size: 20px;
+}
+.user-type-container .user-type-label {
+  font-size: 10px;
+  color: black;
+  cursor: default;
+}
+
+/*==============================================================================*/
+/*USER-TYPE CONTAINER - END*/
+/*==============================================================================*/
+/*==============================================================================*/
 /*HOME CONTENT - START*/
 /*==============================================================================*/
 .home-content {
@@ -655,7 +696,7 @@ footer p {
 /*==============================================================================*/
 /*BUTTON STYLES - START*/
 /*==============================================================================*/
-.edit, .done, .dlt {
+.edit, .dlt {
   cursor: pointer;
   font-size: 16px;
   color: white;
@@ -664,7 +705,7 @@ footer p {
   font-weight: bold;
   border-radius: 5px;
 }
-.edit:hover, .done:hover, .dlt:hover {
+.edit:hover, .dlt:hover {
   border: 2px solid #1d3557;
   color: white;
   background-color: #1d3557;
@@ -696,9 +737,35 @@ footer p {
   padding-right: 10px;
 }
 
-.done {
-  width: 100%;
+.pub-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 18px;
+}
+.pub-button-container .done {
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  background-color: #2B4F82;
+  border: 2px solid #2B4F82;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 50%;
   padding: 10px 50px;
+}
+.pub-button-container .done:hover {
+  border: 2px solid #1d3557;
+  color: white;
+  background-color: #1d3557;
+}
+.pub-button-container .red-done {
+  background-color: #dd5555;
+  border: 2px solid #dd5555;
+}
+.pub-button-container .red-done:hover {
+  background-color: #f7d4d4a1;
+  border: 2px solid #dd5555;
+  color: #dd5555;
 }
 
 /*==============================================================================*/
@@ -755,13 +822,26 @@ footer p {
   justify-items: center;
 }
 .modal-content .modal-body form .date-group {
-  margin-bottom: 10px;
+  display: flex;
+  padding-bottom: 1rem;
+  margin-left: 10px;
+  justify-content: space-between;
 }
-.modal-content .modal-body form .date-group input {
+.modal-content .modal-body form .date-group .input-label {
+  width: 200px;
+}
+.modal-content .modal-body form .date-group .right-side {
+  display: grid;
+}
+.modal-content .modal-body form .date-group .right-side .input {
   border: 1px solid #325C97;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 2px 15px;
   margin: 2px;
+  width: 230px;
+}
+.modal-content .modal-body form .date-group .right-side .error {
+  margin-left: 2px;
 }
 .modal-content .modal-body form .upload-btn {
   background-color: #325C97;

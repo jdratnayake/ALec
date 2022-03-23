@@ -55,5 +55,13 @@
     </div>
     <!-- NAVIGATION BAR - END -->
 
+    <!-- USER-TYPE-DISPLAY - START -->
+    <div class="user-type-container">
+        <div class="image-container">
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <span class="user-type-label">Admin</span>
+    </div>
+    <!-- USER-TYPE-DISPLAY - END -->
 
     <div class="home-content">

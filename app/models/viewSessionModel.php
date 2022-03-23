@@ -4,7 +4,7 @@ class ViewSessionModel extends Database
 {
     public function getSessionDetails($sessionId)
     {
-        $query = "SELECT session_id, session_name, status, DATE(create_date), course_name FROM session INNER JOIN course ON session.course_id=course.course_id WHERE session_id='$sessionId'";
+        $query = "SELECT session_id, session_name, status, question_status, DATE(create_date), course_name FROM session INNER JOIN course ON session.course_id=course.course_id WHERE session_id='$sessionId'";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return mysqli_fetch_assoc($result);
@@ -41,6 +41,13 @@ class ViewSessionModel extends Database
         }
     }
 
+    public function setQuestionResolveStatus($questionId, $status)
+    {
+        $query = "UPDATE session_forum_question SET resolved_status='$status' WHERE question_id='$questionId'";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
     public function setSchedule($sessionId, $questionId)
     {
         //Get duration
@@ -74,7 +81,7 @@ class ViewSessionModel extends Database
 
     public function getSessionForumQuestions($sessionId)
     {
-        $query = "SELECT question_id, question, points FROM session_forum_question WHERE session_id='$sessionId' ORDER BY points DESC, post_time LIMIT 2";
+        $query = "SELECT question_id, question, points FROM session_forum_question WHERE session_id='$sessionId'  AND resolved_status='0' ORDER BY points DESC, post_time LIMIT 2";
 
         return mysqli_query($GLOBALS["db"], $query);
     }
@@ -95,7 +102,7 @@ class ViewSessionModel extends Database
 
     public function getForumQuestionDetails($sessionId)
     {
-        $query = "SELECT session_forum_question.question_id, session_forum_question.student_id, question, points, TIME_FORMAT(post_time, '%h.%i %p') AS post_time, random_status, CONCAT(first_name, ' ', last_name) AS name FROM session_forum_question INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id WHERE session_id='$sessionId' ORDER BY points DESC, post_time";
+        $query = "SELECT session_forum_question.question_id, session_forum_question.student_id, question, points, TIME_FORMAT(post_time, '%h.%i %p') AS post_time, random_status, resolved_status, CONCAT(first_name, ' ', last_name) AS name FROM session_forum_question INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id WHERE session_id='$sessionId' ORDER BY resolved_status ASC, points DESC, post_time";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
@@ -104,7 +111,7 @@ class ViewSessionModel extends Database
 
     public function getQuestionIds($sessionId)
     {
-        $query = "SELECT question_id FROM session_forum_question WHERE session_id='$sessionId' ORDER BY points DESC, post_time";
+        $query = "SELECT question_id FROM session_forum_question WHERE session_id='$sessionId' ORDER BY resolved_status ASC, points DESC, post_time";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
@@ -118,5 +125,39 @@ class ViewSessionModel extends Database
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result)["active_question_id"];
+    }
+
+    public function getResolvedCount($sessionId)
+    {
+        $query = "SELECT COUNT(question_id) AS count FROM session_forum_question WHERE session_id='$sessionId' AND resolved_status='1'";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["count"];
+    }
+
+    public function getUnResolvedCount($sessionId)
+    {
+        $query = "SELECT COUNT(question_id) AS count FROM session_forum_question WHERE session_id='$sessionId' AND resolved_status='0'";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["count"];
+    }
+
+    public function updateSessionName($sessionId, $sessionName)
+    {
+        $sessionName = mysqli_real_escape_string($GLOBALS["db"], $sessionName);
+
+        $query = "UPDATE session SET session_name='$sessionName' WHERE session_id='$sessionId'";
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function updateSessionQuestionStatus($sessionId, $status)
+    {
+        $status = mysqli_real_escape_string($GLOBALS["db"], $status);
+
+        $query = "UPDATE session SET question_status='$status' WHERE session_id='$sessionId'";
+        mysqli_query($GLOBALS["db"], $query);
     }
 }

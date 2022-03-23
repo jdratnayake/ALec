@@ -290,6 +290,47 @@ header {
 /*NAVIGATION BAR - END*/
 /*==============================================================================*/
 /*==============================================================================*/
+/*USER-TYPE CONTAINER - START*/
+/*==============================================================================*/
+.user-type-container {
+  position: fixed;
+  top: 32px;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  border: none;
+  border-radius: 0;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms opacity ease;
+  z-index: 10;
+  flex-direction: column;
+}
+.user-type-container .image-container {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #964ba1;
+  align-items: center;
+}
+.user-type-container .image-container .fa-user {
+  font-size: 20px;
+}
+.user-type-container .user-type-label {
+  font-size: 10px;
+  color: black;
+  cursor: default;
+}
+
+/*==============================================================================*/
+/*USER-TYPE CONTAINER - END*/
+/*==============================================================================*/
+/*==============================================================================*/
 /*HOME CONTENT - START*/
 /*==============================================================================*/
 .home-content {
@@ -732,6 +773,7 @@ footer p {
   text-align: center;
   cursor: pointer;
   border-radius: 10px;
+  margin: 0 2px;
 }
 
 /* navigation tab hover settings */
@@ -829,5 +871,42 @@ footer p {
 /*==============================================================================*/
 /*YEAR SELECTION - END*/
 /*==============================================================================*/
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 1270px) {
+  .navigation-item-container {
+    width: calc(100% - 160px);
+    display: grid;
+    gap: 25px 0;
+    grid-template-columns: auto auto auto;
+  }
+
+  .navigation-tab {
+    width: 155px;
+    height: 150px;
+    margin: 0 2px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .navigation-item-container {
+    width: calc(100% - 160px);
+  }
+
+  .navigation-tab {
+    width: 155px;
+    height: 150px;
+    margin: 0 2px;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .navigation-item-container {
+    width: calc(100% - 160px);
+  }
+
+  .navigation-tab {
+    width: 165px;
+    height: 160px;
+    margin: 0 2px;
+  }
+}
 
 /*# sourceMappingURL=home.css.map */

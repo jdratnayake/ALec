@@ -12,49 +12,49 @@
     <?php linkCSS("leaderboard"); ?>
 
     <!-- Shortcut Icon -->
-    <link rel="shortcut icon" href="/public/img/logo1.jpg">
+    <?php shortIcon("logo1.jpg"); ?>
 
     <!-- **********CSS END********** -->
 </head>
 
 <body>
 
-    <?php linkPhp("navigationBarLecturer") ?>
+<?php linkPhp("navigationBarLecturer") ?>
 
-    <!--    breadcrumb-->
-    <ul class="breadcrumb">
-        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-        <li>Leaderboard</li>
-    </ul>
+<!--    breadcrumb-->
+<ul class="breadcrumb">
+    <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+    <li>Leaderboard</li>
+</ul>
 
-    <div class="table-container">
+<div class="table-container">
 
-        <header>Leaderboard</header>
+    <header>Leaderboard</header>
 
-<!--        --><?php
-//            while ($row = mysqli_fetch_assoc($data["studentDetails"])){
-//                echo $row["index_no"] . " - ";
-//                echo $row["full_name"] . "<br>";
-//            };
-//        ?>
+    <!--        --><?php
+    //            while ($row = mysqli_fetch_assoc($data["studentDetails"])){
+    //                echo $row["index_no"] . " - ";
+    //                echo $row["full_name"] . "<br>";
+    //            };
+    //        ?>
 
-        <table class="content-table">
-            <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Registration No</th>
-                <th>Name</th>
-                <th>Points</th>
-                <th>Badges</th>
-            </tr>
-            </thead>
+    <table class="content-table">
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Registration No</th>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Badges</th>
+        </tr>
+        </thead>
 
-                    <tbody>
+        <tbody>
 
-                    <?php
-                    $i = 1;
-                    while ($row = mysqli_fetch_assoc($data["studentDetails"])){
-                        echo "
+        <?php
+        $i = 1;
+        while ($row = mysqli_fetch_assoc($data["studentDetails"])) {
+            echo "
                         <tr>
                             <td>$i</td>
                             <td>{$row["index_no"]}</td>
@@ -67,33 +67,33 @@
                             </td>
                         </tr>
                         ";
-                        $i++;
-                    };
-                    ?>
+            $i++;
+        }
+        ?>
 
-<!--                        <tr class="active-row">-->
-<!--                            <td>2</td>-->
-<!--                            <td>2019/CS/142</td>-->
-<!--                            <td>Janitha Ratnayake</td>-->
-<!--                            <td>100</td>-->
-<!--                            <td>-->
-<!--                                <button type="button" class="button">-->
-<!--                                    <span class="button__text">View</span>-->
-<!--                                </button>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-                    </tbody>
+        <!--                        <tr class="active-row">-->
+        <!--                            <td>2</td>-->
+        <!--                            <td>2019/CS/142</td>-->
+        <!--                            <td>Janitha Ratnayake</td>-->
+        <!--                            <td>100</td>-->
+        <!--                            <td>-->
+        <!--                                <button type="button" class="button">-->
+        <!--                                    <span class="button__text">View</span>-->
+        <!--                                </button>-->
+        <!--                            </td>-->
+        <!--                        </tr>-->
+        </tbody>
 
-                </table>
-            </div>
+    </table>
+</div>
 
-    <?php linkPhp("footer"); ?>
+<?php linkPhp("footer"); ?>
 
 <!--    --><?php //linkPhp("notification");?>
-	
-	<?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("notification") ?>
+<?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+<?php linkJS("notification") ?>
 
 </body>
 

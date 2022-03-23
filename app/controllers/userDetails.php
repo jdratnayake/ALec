@@ -25,8 +25,10 @@ class userDetails extends AlecFramework
         echo $this->userModel->getFilteredUserDetailsByYear($year, $page);
     }
 
-    public function search($data)
+    public function search()
     {
+        $data = $_POST["search-tag"];
+
         echo $this->userModel->getSearchResults($data);
     }
 

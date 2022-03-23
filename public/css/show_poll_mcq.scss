@@ -88,21 +88,43 @@ $light_color: #FFF;
           flex-wrap: nowrap;
           align-items: center;
           justify-content: space-between;
+          cursor: pointer;
 
           .answer {
             margin: 5px 0;
             border: 1px solid rgba(43, 79, 130, 0.2);
             border-radius: 20px;
             width: 93%;
+            height: 35px;
 
             .answer-progress {
               background-color: rgba(43, 79, 130, 0.3);
               border-radius: 20px;
               padding: 6px 12px;
+              height: 35px;
+            }
+
+            .answer-progress::before {
+              content: attr(data-label);
+              display: flex;
+              position: absolute;
             }
 
             .pressed {
               background-color: rgba(43, 79, 130, 0.6);
+            }
+
+            &:hover {
+              background-color: rgba(114, 173, 223, 0.2);
+            }
+          }
+
+          .percentage {
+            width: 60px;
+            padding-left: 8px;
+
+            &:hover {
+              color: #72addf;
             }
           }
         }
@@ -111,11 +133,18 @@ $light_color: #FFF;
 
     .button-container {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
       width: 98%;
       margin: 10px auto;
       padding: 10px;
+
+      .answer {
+        margin-left: 8px;
+        margin-top: 35px;
+        margin-bottom: 15px;
+        color: #867f7f;
+      }
 
       .save-btn {
         padding: 6px 36px;

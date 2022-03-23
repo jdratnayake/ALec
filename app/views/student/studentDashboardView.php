@@ -84,7 +84,7 @@
 
     <div class="active-quizzes-container">
         <ul class="quiz-table">
-            <h3>Active quizzes</h3>
+            <h3>Active Quizzes</h3>
             <li class="table-header">
                 <div class="col col-1">Quiz topic</div>
                 <div class="col col-2">Start time</div>

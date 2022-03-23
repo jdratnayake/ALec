@@ -7,6 +7,7 @@
 //LOCAL VARIABLES
 $main_color: $theme_second;
 $light_color: #FFF;
+$modal_color: $theme_hover;
 
 .details-content {
   padding: 1rem;
@@ -24,12 +25,49 @@ $light_color: #FFF;
       margin: 10px 10px 20px 10px;
       align-items: center;
       display: flex;
+      cursor: default;
+
+      .fa-pencil {
+        font-size: 25px;
+        margin: 0 8px 0 0;
+        cursor: pointer;
+      }
+
+      .fa-circle {
+        font-size: 20px;
+        margin-left: 10px;
+        color: #4caf50;
+      }
     }
 
-    .fa-circle {
-      font-size: 20px;
-      margin-left: 10px;
-      color: #4caf50;
+    .export-btn {
+      padding: 2px 8px;
+      background-color: rgba(43, 79, 130, 0.15);
+      color: #2B4F82;
+      border-radius: 5px;
+      border: 1px solid #2B4F82;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+      width: fit-content;
+      margin: 0 10px 10px 10px;
+      display: block;
+
+      &:hover {
+        background-color: rgba(43, 79, 130, 0.30);
+      }
+    }
+
+    .rmv-btn {
+      background-color: rgba(221, 85, 85, 0.15);
+      color: $delete_button;
+      border-color: $delete_button;
+
+      &:hover {
+        background-color: rgba(221, 85, 85, 0.30);
+        border-color: $delete_button;
+        color: $delete_button;
+      }
     }
   }
 
@@ -126,42 +164,10 @@ $light_color: #FFF;
         height: 55px;
         justify-content: space-between;
 
-        .fa-ellipsis-v {
-          width: 20px;
-          font-size: 12px;
+        .fa-trash {
+          color: #d81111;
+          padding-right: 12px;
           cursor: pointer;
-        }
-
-        .option-selection {
-          display: none;
-          position: absolute;
-          transform: translate(-50%, -50%);
-          border-radius: 6px;
-          height: fit-content;
-          width: 60px;
-          background: #fff;
-          line-height: 20px;
-          text-align: left;
-          padding: 0 8px;
-          box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
-          transition: 0s;
-          cursor: pointer;
-          z-index: 10;
-          left: 298px;
-          font-size: 12px;
-        }
-
-        .option-selection::after {
-          content: "";
-          position: absolute;
-          top: 85%;
-          left: 100%;
-          margin-top: -5px;
-          border-width: 5px;
-          border-style: solid;
-          box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
-          z-index: 120;
-          border-color: transparent transparent transparent #2b4f82;
         }
 
         .question {
@@ -180,21 +186,42 @@ $light_color: #FFF;
         }
 
         .vote {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          display: inherit;
+          width: 110px;
 
-          .vote-highlight {
-            font-size: 24px;
-            cursor: pointer;
+          .col {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
 
-            &:hover {
-              transform: scale(1.2);
+            .vote-highlight {
+              font-size: 24px;
+              cursor: pointer;
+
+              &:hover {
+                transform: scale(1.2);
+              }
             }
-          }
 
-          .votes-count {
-            font-size: small;
+            .votes-count {
+              font-size: small;
+            }
+
+            .check-resolved {
+              font-size: 24px;
+              cursor: pointer;
+
+              &:hover {
+                transform: scale(1.2);
+              }
+            }
+
+            .resolved-label {
+              font-size: 12px;
+              cursor: default;
+            }
           }
         }
       }
@@ -205,4 +232,114 @@ $light_color: #FFF;
     }
   }
 }
+
+/*==============================================================================*/
+/*MODAL - START*/
+/*==============================================================================*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 40%;
+
+  .modal-header {
+    padding: 8px 16px;
+    background-color: $modal_color;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+
+    form {
+      padding: 16px 0;
+      display: inline-grid;
+      justify-content: center;
+      justify-items: center;
+
+      .date-group {
+        display: flex;
+        padding-bottom: 1rem;
+        margin-left: 10px;
+        justify-content: space-between;
+
+        .session-label {
+          width: 130px;
+        }
+
+        .right-side {
+          display: grid;
+
+          .name-input {
+            border: 1px solid $modal_color;
+            border-radius: 5px;
+            padding: 2px 15px;
+            margin: 2px;
+            width: 250px;
+          }
+
+          .error {
+            margin-left: 2px;
+          }
+        }
+      }
+
+      .upload-btn {
+        background-color: $modal_color;
+        border: 1px solid $modal_color;
+        color: white;
+        padding: 2px 40px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 15px;
+
+        &:hover {
+          background-color: $theme;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*==============================================================================*/
+/*MODAL - END*/
+/*==============================================================================*/
 

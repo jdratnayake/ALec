@@ -34,8 +34,10 @@ class CourseDetails extends AlecFramework
         echo $this->courseDetailsModel->ajaxGetCourseDetails($year);
     }
 
-    public function search($data)
+    public function search()
     {
+        $data = $_POST["search-tag"];
+
         echo $this->courseDetailsModel->getSearchResults($data);
     }
 }

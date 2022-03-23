@@ -2,6 +2,7 @@
 .message-container {
   font-family: "Lato", sans-serif;
   margin: 10% auto;
+  top: 10%;
   width: 560px;
   height: 290px;
   background-color: white;

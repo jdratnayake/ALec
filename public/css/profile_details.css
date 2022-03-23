@@ -290,6 +290,47 @@ header {
 /*NAVIGATION BAR - END*/
 /*==============================================================================*/
 /*==============================================================================*/
+/*USER-TYPE CONTAINER - START*/
+/*==============================================================================*/
+.user-type-container {
+  position: fixed;
+  top: 32px;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  border: none;
+  border-radius: 0;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms opacity ease;
+  z-index: 10;
+  flex-direction: column;
+}
+.user-type-container .image-container {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #964ba1;
+  align-items: center;
+}
+.user-type-container .image-container .fa-user {
+  font-size: 20px;
+}
+.user-type-container .user-type-label {
+  font-size: 10px;
+  color: black;
+  cursor: default;
+}
+
+/*==============================================================================*/
+/*USER-TYPE CONTAINER - END*/
+/*==============================================================================*/
+/*==============================================================================*/
 /*HOME CONTENT - START*/
 /*==============================================================================*/
 .home-content {
@@ -650,14 +691,17 @@ footer p {
   width: 100%;
   margin-bottom: 1rem;
 }
+.details-content .user-details-container .details-container .detail {
+  margin-bottom: 5px;
+}
 .details-content .user-details-container .details-container .buttons {
   margin: 10px 0;
   display: inline;
   justify-self: end;
 }
 .details-content .user-details-container .details-container .buttons button {
-  width: fit-content;
-  padding: 6px 12px;
+  width: 160px;
+  padding: 6px 0;
   background-color: #2B4F82;
   color: #FFF;
   border-radius: 5px;
@@ -684,7 +728,7 @@ footer p {
   margin: 20px 0;
   display: flex;
   justify-content: space-between;
-  height: 180px;
+  max-height: 228px;
 }
 .details-content .user-details-container .details-container .horizontal-container .pvt-details, .details-content .user-details-container .details-container .horizontal-container .course-details {
   display: inline-flex;

@@ -1,47 +1,88 @@
-class UI {
-    //Add Question
-    static addQuestion() {
-        let id = document.getElementById('form');
-        let row = document.createElement('div');
-        id.append(row);
-        row.setAttribute('class', 'question');
-        row.innerHTML = `
-<!--            <span class="close rounded black close-btn"></span>-->
-<!--            <button class="close close-btn finish"><i class="fa fa-times" aria-hidden="true"></i>Remove question</button>-->
-            <span class="close">
-            <button class="close-btn finish"><i class="fa fa-times" aria-hidden="true"></i>Remove question</button>
-            </span>
-            <div class="form-header">
-                <h4 class="heading">Question 1</h4> 
+let questionCount = 0;
 
-                <input type="hidden" name="type" value="1" class="hidden_quiz_no"> 
+let addQuestion;
+
+$(document).ready(function () {
+    //Initialize First Question
+    addQuestion();
+
+    //Event Listener to Add Question
+    $("#add-question").click(function () {
+        addQuestion();
+    });
+
+    //Event Listener to Remove Question
+    $(document).on('click', '.close-btn', function () {
+        questionCount--;
+        $(this).parent().parent().parent().remove();
+    });
+
+    //Event Listener to Toggle between MCQ and Short Ans
+    $(document).on('click', '.option-input', function () {
+        let preQuestionType = $(this).parent().children(":first").val();
+        let questionType = $(this).val();
+
+        if (preQuestionType !== questionType) {
+            if (questionType == "value_mcq") {
+                $(this).parent().parent().next().show();
+                $(this).parent().parent().next().next().hide();
+            } else if (questionType == "value_short") {
+                $(this).parent().parent().next().hide();
+                $(this).parent().parent().next().next().show();
+            }
+
+            $(this).parent().children(":first").val(questionType)
+        }
+    });
+})
+
+addQuestion = function () {
+    questionCount++;
+    let htmlContent = `
+<div class='question' id='${questionCount}'>
+
+            <div class="form-header">
+                
+                <h4 class="heading">Question ${questionCount}</h4> 
+
+                <input type="hidden" name="type" value="${questionCount}" class="hidden_quiz_no"> 
 
                 <!-- Select question type -->
                 <div class="radio-inline">
-                <input type="radio" value="value_mcq" class="mcq option-input radio" checked="checked">
-                <label>MCQ</label>
-                <input type="radio" value="value_short" class="short option-input radio">
-                <label> Short Answer</label>
+                    <input type="hidden" value="value_mcq">
+
+                    <input type="radio" name="q${questionCount}_type" value="value_mcq" class="mcq option-input radio" id="mcq_${questionCount}" checked/>
+                    <label for="mcq_${questionCount}">MCQ</label>
+                    
+                    <input type="radio" name="q${questionCount}_type" value="value_short" class="short option-input radio" id="short_${questionCount}">
+                    <label for="short_${questionCount}">Short Answer</label>
    
-                </div> 
+                </div>
+                
+                <span class="close">
+                    <button type="button" class="close-btn finish">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                        Remove Question
+                    </button>
+                </span>
             </div>  
                     
             <!-- Question type - MCQ -->
-            <div class="question-content mcq" id="mcq_1">
+            <div class="question-content mcq" id="mcq_${questionCount}">
                 <div class="form-group">
-                    <textarea class="form-control mcq" rows="4" placeholder="Enter your question here"></textarea>
+                    <textarea name="q${questionCount}_mcq" class="form-control mcq" rows="4" placeholder="Enter your question here"></textarea>
                 </div>
         
 <!--            check whether multiple answers or not-->
-                <input type="hidden" class="check_hidden" value ="false">
-                <input type="checkbox" class="check" value = "true">
+                <input type="hidden" class="check_hidden" name="quiz_${questionCount}_check" value ="false">
+                <input type="checkbox" class="check" name="quiz_${questionCount}_check" value = "true">
                 <label>multiple answers</label><br>
                 
                 <!-- Answers list - START -->
                 <!-- Answer 01 -->
                 <div class="form-group">
-                        <input type="text" class="form-answer mcq1" placeholder="Enter your answer here">
-                        <select class="points mcq1">
+                        <input type="text" class="form-answer mcq1" name="q${questionCount}_answer1" placeholder="Enter your answer here">
+                    <select class="points mcq1" name="q${questionCount}_answer1_point">
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
@@ -61,8 +102,8 @@ class UI {
         
                 <!-- Answer 02 -->
                 <div class="form-group">
-                    <input type="text" class="form-answer mcq2" placeholder="Enter your answer here">
-                    <select class="points mcq2">
+                    <input type="text" class="form-answer mcq2" name="q${questionCount}_answer2" placeholder="Enter your answer here">
+                    <select class="points mcq2" name="q${questionCount}_answer2_point">
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
@@ -82,8 +123,8 @@ class UI {
         
                 <!-- Answer 03 -->
                 <div class="form-group">
-                    <input type="text" class="form-answer mcq3" placeholder="Enter your answer here">
-                    <select class="points mcq3">
+                    <input type="text" class="form-answer mcq3" name="q${questionCount}_answer3" placeholder="Enter your answer here">
+                    <select class="points mcq3" name="q${questionCount}_answer3_point">
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
@@ -103,8 +144,8 @@ class UI {
         
                 <!-- Answer 04 -->
                 <div class="form-group">
-                    <input type="text" class="form-answer mcq4" placeholder="Enter your answer here">
-                    <select class="points mcq4">
+                    <input type="text" class="form-answer mcq4" name="q${questionCount}_answer4" placeholder="Enter your answer here">
+                    <select class="points mcq4" name="q${questionCount}_answer4_point">
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
@@ -124,8 +165,8 @@ class UI {
         
                 <!-- Answer 05 -->
                 <div class="form-group">
-                    <input type="text" class="form-answer mcq5" placeholder="Enter your answer here">
-                    <select class="points mcq5">
+                    <input type="text" class="form-answer mcq5" name="q${questionCount}_answer5" placeholder="Enter your answer here">
+                    <select class="points mcq5" name="q${questionCount}_answer5_point">
                         <option value="100"> 100% </option>
                         <option value="75"> 75% </option>
                         <option value="50"> 50% </option>
@@ -146,104 +187,21 @@ class UI {
             </div>
         
         <!-- Question type - Short answer -->
-            <div class="question-content short-ans" id="shortans_1">
+            <div class="question-content short-ans" id="short-ans_${questionCount}">
                 <div class="form-group">
-                    <textarea class="form-control short" placeholder="Enter your question here" rows="5"></textarea>
+                    <textarea name="q${questionCount}_short" class="form-control short" placeholder="Enter your question here" rows="5"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-answer short" placeholder="Enter answer here">
-                    <select class="points short">
+                    <input type="text" class="form-answer short" name="q${questionCount}_shortanswer" placeholder="Enter answer here">
+                    <select class="points short" name="q${questionCount}_shortanswer_point">
                         <option value="100"> 100% </option>
                     </select>
                     <label>points</label>
                 </div>
             </div>
-         
+</div>
          `;
-        for (let i = 1; i <= document.getElementsByClassName('question').length; i++) {
-            let el = document.getElementsByClassName('question')[i - 1];
-            el.setAttribute('id', i);
-            UI.changeAttributes(i);
-        }
-    }
 
-    //Remove Question
-    static removeQuestion(id) {
-        if (id.classList.contains('close-btn')) {
-            id.parentElement.parentElement.remove();
-        }
-        let len = document.getElementsByClassName('question').length;
-        for (let i = 1; i <= len; i++) {
-            let el = document.getElementsByClassName('question')[i - 1];
-            el.setAttribute('id', i);
-            UI.changeAttributes(i);
-        }
-    }
-
-    //Change Attributes
-    static changeAttributes(i) {
-        //Change Question no txt
-        document.querySelectorAll('h4.heading')[i - 1].innerHTML = 'Question ' + i;
-        //Set hidden attribute value
-        document.querySelectorAll('.hidden_quiz_no')[i - 1].setAttribute('value', i);
-        //Set Radio button values
-        document.querySelectorAll('.radio-inline .mcq')[i - 1].setAttribute('name', 'q' + i + '_type');
-        document.querySelectorAll('.radio-inline .short')[i - 1].setAttribute('name', 'q' + i + '_type');
-        document.querySelectorAll('.question-content.mcq')[i - 1].setAttribute('id', 'mcq_' + i);
-        document.querySelectorAll('.question-content.short-ans')[i - 1].setAttribute('id', 'shortans_' + i);
-        //Set MCQ and Short Ans names
-        document.querySelectorAll('textarea.mcq')[i - 1].setAttribute('name', 'q' + i + '_mcq');
-        document.querySelectorAll('textarea.short')[i - 1].setAttribute('name', 'q' + i + '_short');
-        //mcq Answers Change names
-        //Ans 01
-        document.querySelectorAll('.form-answer.mcq1')[i - 1].setAttribute('name', 'q' + i + '_answer1');
-        document.querySelectorAll('.points.mcq1')[i - 1].setAttribute('name', 'q' + i + '_answer1_point');
-        //Ans 02
-        document.querySelectorAll('.form-answer.mcq2')[i - 1].setAttribute('name', 'q' + i + '_answer2');
-        document.querySelectorAll('.points.mcq2')[i - 1].setAttribute('name', 'q' + i + '_answer2_point');
-        //Ans 03
-        document.querySelectorAll('.form-answer.mcq3')[i - 1].setAttribute('name', 'q' + i + '_answer3');
-        document.querySelectorAll('.points.mcq3')[i - 1].setAttribute('name', 'q' + i + '_answer3_point');
-        //Ans 04
-        document.querySelectorAll('.form-answer.mcq4')[i - 1].setAttribute('name', 'q' + i + '_answer4');
-        document.querySelectorAll('.points.mcq4')[i - 1].setAttribute('name', 'q' + i + '_answer4_point');
-        //Ans 05
-        document.querySelectorAll('.form-answer.mcq5')[i - 1].setAttribute('name', 'q' + i + '_answer5');
-        document.querySelectorAll('.points.mcq5')[i - 1].setAttribute('name', 'q' + i + '_answer5_point');
-        //Short Ans
-        document.querySelectorAll('.form-answer.short')[i - 1].setAttribute('name', 'q' + i + '_shortanswer');
-        document.querySelectorAll('.points.short')[i - 1].setAttribute('name', 'q' + i + '_shortanswer_point');
-
-        //Multiple Choice
-        document.querySelectorAll('.check_hidden')[i - 1].setAttribute('name', 'quiz_' + i + '_check');
-        document.querySelectorAll('.check')[i - 1].setAttribute('name', 'quiz_' + i + '_check');
-
-        document.querySelectorAll('.check_hidden')[i - 1].disabled = !!document.querySelectorAll('.check')[i - 1].checked;
-    }
+    $("#form").append(htmlContent);
 }
-
-//Initialize First Question
-UI.addQuestion();
-
-//Event Listener to Add Question
-document.getElementById('add-question').addEventListener('click', () => {
-    UI.addQuestion();
-}
-);
-//Event Listener to Remove Question
-document.getElementById('form').addEventListener('click', (e) => {
-    UI.removeQuestion(e.target);
-}
-);
-//Event Listener to Toggle between MCQ and Short Ans
-document.querySelector('#form').addEventListener('click', (e) => {
-    if (e.target.classList.contains('mcq')) {
-        document.getElementById('shortans_' + e.target.parentElement.parentElement.parentElement.id).style.display = "none";
-        document.getElementById('mcq_' + e.target.parentElement.parentElement.parentElement.id).style.display = "block";
-    } else if (e.target.classList.contains('short')) {
-        document.getElementById('mcq_' + e.target.parentElement.parentElement.parentElement.id).style.display = "none";
-        document.getElementById('shortans_' + e.target.parentElement.parentElement.parentElement.id).style.display = "block";
-    }
-}
-);

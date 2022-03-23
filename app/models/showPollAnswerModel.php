@@ -4,7 +4,7 @@ class ShowPollAnswerModel extends Database
 {
     public function getSessionDetails($questionId)
     {
-        $query = "SELECT session.session_id, session_name FROM session INNER JOIN session_question ON session.session_id=session_question.session_id WHERE question_no='$questionId'";
+        $query = "SELECT session.session_id, session_name, course_id FROM session INNER JOIN session_question ON session.session_id=session_question.session_id WHERE question_no='$questionId'";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result);
@@ -12,7 +12,7 @@ class ShowPollAnswerModel extends Database
 
     public function getQuestion($questionId)
     {
-        $query = "SELECT question_no, question_type, question, question_count FROM session_question WHERE question_no='$questionId'";
+        $query = "SELECT question_no, question_type, question, answer, question_count FROM session_question WHERE question_no='$questionId'";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return mysqli_fetch_assoc($result);
@@ -39,9 +39,9 @@ class ShowPollAnswerModel extends Database
     public function getSessionDetailsForResponses($type, $choiceId)
     {
         if ($type == "mcq") {
-            $query = "SELECT session.session_id, session.session_name, session_answer.question_no FROM session_answer INNER JOIN session ON session_answer.session_id=session.session_id WHERE session_answer.choice_id='$choiceId'";
+            $query = "SELECT session.session_id, session.session_name, session_answer.question_no, session.course_id FROM session_answer INNER JOIN session ON session_answer.session_id=session.session_id WHERE session_answer.choice_id='$choiceId'";
         } else if ($type == "open") {
-            $query = "SELECT session.session_id, session.session_name, session_open_attempt.question_no FROM session_open_attempt INNER JOIN session_question ON session_open_attempt.question_no=session_question.question_no INNER JOIN session ON session_question.session_id=session.session_id WHERE attempt_no='$choiceId'";
+            $query = "SELECT session.session_id, session.session_name, session_open_attempt.question_no, session.course_id FROM session_open_attempt INNER JOIN session_question ON session_open_attempt.question_no=session_question.question_no INNER JOIN session ON session_question.session_id=session.session_id WHERE attempt_no='$choiceId'";
         }
 
 

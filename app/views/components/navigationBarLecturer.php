@@ -39,7 +39,7 @@
                     <span class="tooltip">My Courses</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/review/index'; ?>">
                         <i class="fas fa-chart-bar"></i>
                         <span class="links_name">Review</span>
                     </a>
@@ -77,5 +77,13 @@
     </div>
     <!-- NAVIGATION BAR - END -->
 
+    <!-- USER-TYPE-DISPLAY - START -->
+    <div class="user-type-container">
+        <div class="image-container">
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <span class="user-type-label">Lecturer</span>
+    </div>
+    <!-- USER-TYPE-DISPLAY - END -->
 
     <div class="home-content">
