@@ -28,3 +28,16 @@ window.addEventListener("click", (event) => {
     }
 });
 
+
+//Disable cancel button
+document.getElementById("model-cancel-btn").addEventListener("click", function (event) {
+    event.preventDefault()
+});
+
+//Hide modal when cancel button is clicked
+function hideModal() {
+    for (let i = 0; i < document.getElementsByClassName("modal").length; i++) {
+        document.getElementsByClassName("modal")[i].style.display = "none";
+        console.log("Hi");
+    }
+}

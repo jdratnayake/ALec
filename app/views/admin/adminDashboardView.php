@@ -114,7 +114,7 @@
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <div class="button-set">
                             <input type="submit" value="Create Accounts" name="submit" class="upload-btn">
-                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                            <button type="button" value="submit" class="upload-btn cancel" id="model-cancel-btn" onclick="hideModal()">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -159,7 +159,7 @@
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <div class="button-set">
                             <input type="submit" value="Delete Accounts" name="submit" class="upload-btn">
-                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                            <button type="button" value="submit" class="upload-btn cancel" id="model-cancel-btn" onclick="hideModal()">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -218,7 +218,7 @@
 
                         <div class="button-set">
                             <input id="manage-users-btn" type="submit" value="Remove Students" name="submit" class="assign-btn">
-                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                            <button type="button" value="submit" class="upload-btn cancel" id="model-cancel-btn" onclick="hideModal()">Cancel</button>
                         </div>
 
                         <div class="modal-body enrollment-file-upload" id="file-mode-div" style="display: none;">
