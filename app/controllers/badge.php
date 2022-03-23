@@ -100,7 +100,11 @@ class Badge extends AlecFramework
                     }
                 }
 
-                $this->redirect("badge/index/{$courseId}");
+                if ($courseId == "all") {
+                    $this->redirect("badge/index");
+                } else {
+                    $this->redirect("badge/index/{$courseId}");
+                }
             }
         }
 
