@@ -2,13 +2,13 @@
 
 class ReviewModel extends Database
 {
-    public function getQuizName($quizId)
+    public function getQuizNameAndCourseID($quizId)
     {
-        $query = "SELECT quiz_name FROM quiz WHERE quiz_id='$quizId'";
+        $query = "SELECT quiz_name, course_id FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id WHERE quiz_id='$quizId'";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
-        return mysqli_fetch_assoc($result)["quiz_name"];
+        return mysqli_fetch_assoc($result);
     }
 
     // reviewQuizListView - START
