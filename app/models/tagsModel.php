@@ -12,6 +12,7 @@ class TagsModel extends Database
 
     public function getTopicDiscussionDetails($userId, $topicSearchValues, $topicSubjectValues, $replySearchValues)
     {
+        //if random status true, then display random name
         $query = "SELECT DISTINCT forum_topic.topic_id, subject, DATE_FORMAT(forum_topic.post_time, '%d %M %Y') AS post_time, 
         CONCAT(first_name, ' ', last_name) AS name, forum_topic.random_status, CONCAT(random_first_name, ' ', random_last_name) AS random_name, user.user_id, user_type, forum_name AS course_name
         FROM forum_topic
