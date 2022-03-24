@@ -792,6 +792,9 @@ footer p {
 .details-content .session-details-container .sessions .session .publish-status {
   cursor: pointer;
 }
+.details-content .session-details-container .sessions .session .test {
+  max-width: 830px;
+}
 .details-content .session-details-container .sessions .session .vote {
   display: inherit;
   width: 110px;

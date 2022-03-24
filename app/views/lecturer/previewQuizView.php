@@ -63,6 +63,13 @@ printSucessMsg($data["success"]); ?>
         <h2><?php echo $data["quizDetails"]["quiz_name"]; ?></h2>
     </div>
 
+    <!--    Quiz details-->
+    <div class="date">
+        <div class="start-date"><span>Start date: </span><span>2022 Jan 12</span></div>
+        <div class="end-date"><span>End date: </span><span>2022 Jan 15</span></div>
+        <div class="dur"><span>Duration: </span><span>20:00min</span></div>
+    </div>
+
     <!-- Quiz questions and answers container -->
     <div class="details">
         <ol class="all-questions">

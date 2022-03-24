@@ -659,6 +659,13 @@ footer p {
   border-bottom: 5px solid #2B4F82;
   margin-bottom: 20px;
 }
+.form-content .date {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.form-content .date span:first-child {
+  font-weight: bold;
+}
 .form-content .quiz-name {
   text-align: left;
   margin-bottom: 25px;

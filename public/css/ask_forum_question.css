@@ -651,7 +651,7 @@ footer p {
   width: 80%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   margin: auto;
-  height: 75%;
+  min-height: 450px;
 }
 .forum-container form {
   margin-top: 40px;

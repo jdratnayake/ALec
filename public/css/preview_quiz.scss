@@ -25,6 +25,15 @@ $modal_color: $theme_hover;
     margin-bottom: 20px;
   }
 
+  .date {
+    font-size: 15px;
+    margin-bottom: 15px;
+
+    span:first-child {
+      font-weight: bold;
+    }
+  }
+
   .quiz-name {
     text-align: left;
     margin-bottom: 25px;

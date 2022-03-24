@@ -722,6 +722,7 @@ footer p {
 .details-content .questions-container .question .text {
   cursor: default;
   display: grid;
+  max-width: 830px;
 }
 .details-content .questions-container .question .text .name {
   color: grey;
