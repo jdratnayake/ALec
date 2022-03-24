@@ -57,8 +57,17 @@ $light_color: #FFF;
           max-height: 320px;
           padding-right: 10px;
 
-          .row {
-            width: 100%;
+          a {
+            text-decoration: none;
+            cursor: pointer;
+
+            .row {
+              width: 100%;
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }

@@ -71,7 +71,7 @@ $sessionName = $data["bread"]["sessionDetails"]["session_name"];
                         while ($row = mysqli_fetch_assoc($data["respondentsDetails"])) {
                             echo
                             "
-                            <a href='" . BASEURL . "/badgeAward/index/" . $row["user_id"] . "'><div class='row'>{$row["index_no"]}</div></a>
+                            <a href='" . BASEURL . "/badgeAward/index/" . $data["courseId"] . "/" . $row["user_id"] . "'><div class='row'>{$row["index_no"]}</div></a>
                             ";
                         }
 

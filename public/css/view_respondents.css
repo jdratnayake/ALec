@@ -693,8 +693,15 @@ footer p {
   max-height: 320px;
   padding-right: 10px;
 }
-.details-content .container .content .questions-container .answer-container .row {
+.details-content .container .content .questions-container .answer-container a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.details-content .container .content .questions-container .answer-container a .row {
   width: 100%;
+}
+.details-content .container .content .questions-container .answer-container a:hover {
+  text-decoration: underline;
 }
 .details-content .container .button-container {
   display: flex;

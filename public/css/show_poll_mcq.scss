@@ -88,6 +88,7 @@ $light_color: #FFF;
           flex-wrap: nowrap;
           align-items: center;
           justify-content: space-between;
+          cursor: pointer;
 
           .answer {
             margin: 5px 0;
@@ -112,11 +113,19 @@ $light_color: #FFF;
             .pressed {
               background-color: rgba(43, 79, 130, 0.6);
             }
+
+            &:hover {
+              background-color: rgba(114, 173, 223, 0.2);
+            }
           }
 
           .percentage {
             width: 60px;
             padding-left: 8px;
+
+            &:hover {
+              color: #72addf;
+            }
           }
         }
       }

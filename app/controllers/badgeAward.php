@@ -10,7 +10,7 @@ class BadgeAward extends AlecFramework
         $this->userProfileModel = $this->model("userProfileModel");
     }
 
-    public function index($studentId)
+    public function index($courseId, $studentId)
     {
         $type = "stu";
 
@@ -26,8 +26,37 @@ class BadgeAward extends AlecFramework
         $data["courseDetails"] = $this->userProfileModel->getCourseDetails($studentId, $type);
 
         $data["badgeDetails"] = $this->badgeAwardModel->getBadgeDetails($studentId);
+        $data["unawardedBadgeDetails"] = $this->badgeAwardModel->getUnawardedBadgeDetails($courseId, $studentId);
         $data["lecturerAssignedBadgeDetails"] = $this->badgeAwardModel->getBadgeDetails($studentId, $data["lecturerId"]);
 
         $this->view("lecturer/badgeAwardView", $data);
+    }
+
+    public function awardBadge($studentId, $badgeId)
+    {
+        $lecturerId = $this->getSession("userId");
+
+        $this->badgeAwardModel->awardBadge($lecturerId, $studentId, $badgeId);
+
+        $badgeDetail = $this->badgeAwardModel->getSpecificBadgeDetail($lecturerId, $studentId, $badgeId);
+
+        $output =
+            "
+            <div class='badge'>
+                <input type='hidden' class='badge-id' value='{$badgeDetail['badge_id']}'>
+                <img src='http://localhost/ALec/public/badge_pic/{$badgeDetail['badge_image']}' alt='Badge Image' class='badge-image'>
+                <span>{$badgeDetail['badge_name']}</span>
+                <span class='issuer'>{$badgeDetail['lec_name']}</span>
+            </div>
+        ";
+
+        echo $output;
+    }
+
+    public function removeBadge($studentId, $badgeId)
+    {
+        $lecturerId = $this->getSession("userId");
+
+        $this->badgeAwardModel->removeBadge($lecturerId, $studentId, $badgeId);
     }
 }

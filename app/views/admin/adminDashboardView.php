@@ -104,7 +104,7 @@
                     <br><br>
                     <p>
                         Use this format to enter details using .txt file<br>
-                        &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
+                        &emsp;FirstName LastName EmailAddress <span id="regNo">LecturerNo</span><br>
                         &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
                         <strong>Note:</strong>Each user should be in a newline<br><br>
                     </p>
@@ -114,7 +114,7 @@
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <div class="button-set">
                             <input type="submit" value="Create Accounts" name="submit" class="upload-btn">
-                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                            <button type="button" value="submit" class="upload-btn cancel" onclick="hideModal()">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -148,7 +148,7 @@
                     <br><br>
                     <p>
                         Use this format to enter details using .txt file<br>
-                        &emsp;<span id="regNo-del">IndexNo</span><br>
+                        &emsp;<span id="regNo-del">LecturerNo</span><br>
                         &emsp;eg: 19001411<br><br>
                         <strong>Note:</strong>Each user should be in a newline<br><br>
                     </p>
@@ -159,7 +159,7 @@
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <div class="button-set">
                             <input type="submit" value="Delete Accounts" name="submit" class="upload-btn">
-                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                            <button type="button" value="submit" class="upload-btn cancel" onclick="hideModal()">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -217,8 +217,8 @@
                         </div>
 
                         <div class="button-set">
-                            <input id="manage-users-btn" type="submit" value="Remove Students" name="submit" class="assign-btn">
-                            <button type="submit" value="submit" class="upload-btn cancel" onclick="">Cancel</button>
+                            <input id="manage-users-btn" type="submit" value="Assign Students" name="submit" class="assign-btn">
+                            <button type="button" value="submit" class="upload-btn cancel" id="model-cancel-btn" onclick="hideModal()">Cancel</button>
                         </div>
 
                         <div class="modal-body enrollment-file-upload" id="file-mode-div" style="display: none;">
@@ -237,7 +237,7 @@
                             Upload file:
                             <input type="hidden" name="upload-user-type" value="2">
                             <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Enroll users" name="submit" class="upload-btn">
+                            <input id="manage-users-file-btn" type="submit" value="Assign users" name="submit" class="upload-btn">
 
                         </div>
 
@@ -277,13 +277,9 @@
         <span class="dot"></span>
     </div>
 
-    <?php linkPhp("notificationView"); ?>
-
     <?php linkPhp("footer"); ?>
 
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
-
-    <?php linkJS("notification") ?>
 
     <?php linkJS("adminDashboard"); ?>
 
@@ -294,8 +290,6 @@
     <?php linkJS("dashboardToolkit"); ?>
 
     <?php linkJS("adminDashboardCourseDisplay"); ?>
-
-    <?php linkJS("adminDashboardModal"); ?>
 
     <?php linkJS("successMessage"); ?>
 </body>

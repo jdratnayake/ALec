@@ -44,6 +44,8 @@
         <?php
 
         while ($row = mysqli_fetch_assoc($data["topicDetails"])) {
+            $questionLink = "'" . "lecturerTopicPage/deleteTopic/" . $row['topic_id'] . "'";
+
             echo
 
             "<div class='topic'>
@@ -55,7 +57,7 @@
                 <div class='content'>
                 <div class='button-set'>
                     <button class='edit-btn'><i class='fa fa-pencil' aria-hidden='true'></i>Edit topic</button>
-                    <button class='dlt-btn'><i class='fa fa-trash' aria-hidden='true'></i>Delete topic</button>
+                    <button class='dlt-btn' onclick=\"deleteFunction($questionLink)\"><i class='fa fa-trash' aria-hidden='true'></i>Delete topic</button>
                 </div>
                 <p class='quiz-head'>Quizzes</p>
                 <ul>";
@@ -137,14 +139,16 @@
     <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
-	
-	<?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
 
     <?php linkJS("topic_page"); ?>
 
     <?php linkJS("successMessage"); ?>
+
+    <?php linkJS("deleteMessage"); ?>
 
 </body>
 

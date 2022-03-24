@@ -734,6 +734,9 @@ footer p {
   width: 25%;
   font-size: 15px;
 }
+.details-content .container .content .questions-container .answer-container .row .answer-label:hover {
+  color: #72addf;
+}
 .details-content .container .content .questions-container .answer-container .row .answer {
   margin: 5px 0;
   border: 1px solid rgba(43, 79, 130, 0.2);
@@ -748,9 +751,15 @@ footer p {
 .details-content .container .content .questions-container .answer-container .row .answer .pressed {
   background-color: rgba(43, 79, 130, 0.6);
 }
+.details-content .container .content .questions-container .answer-container .row .answer:hover {
+  background-color: rgba(114, 173, 223, 0.2);
+}
 .details-content .container .content .questions-container .answer-container .row .percentage {
   width: 60px;
   padding-left: 8px;
+}
+.details-content .container .content .questions-container .answer-container .row .percentage:hover {
+  color: #72addf;
 }
 .details-content .container .button-container {
   display: flex;

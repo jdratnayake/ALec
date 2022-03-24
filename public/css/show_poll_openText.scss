@@ -100,6 +100,10 @@ $light_color: #FFF;
             .answer-label {
               width: 25%;
               font-size: 15px;
+
+              &:hover {
+                color: #72addf;
+              }
             }
 
             .answer {
@@ -117,11 +121,19 @@ $light_color: #FFF;
               .pressed {
                 background-color: rgba(43, 79, 130, 0.6);
               }
+
+              &:hover {
+                background-color: rgba(114, 173, 223, 0.2);
+              }
             }
 
             .percentage {
               width: 60px;
               padding-left: 8px;
+
+              &:hover {
+                color: #72addf;
+              }
             }
           }
         }

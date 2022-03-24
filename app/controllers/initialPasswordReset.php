@@ -22,8 +22,6 @@ class InitialPasswordReset extends AlecFramework
     public function changePassword($userId)
     {
         if ($_SERVER["REQUEST_METHOD"] = "POST") {
-            $errors["password1"] = "";
-
             $password1 = $_POST["password1"];
             $password2 = $_POST["password2"];
 
@@ -34,7 +32,7 @@ class InitialPasswordReset extends AlecFramework
                 $errors["password1"] = "Password is required";
             }
 
-            if (empty($password1)) {
+            if (empty($password2)) {
                 $errors["password2"] = "Confirm Password is required";
             } else if ($password1 != $password2) {
                 $errors["password2"] = "Password Mismatched";

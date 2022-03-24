@@ -35,7 +35,7 @@
             <!--    Search bar     -->
             <form class="search-bar" id="search">
                 <label for="search-tag"></label>
-                <input type="text" placeholder="Search.. &#xF002;" name="search-tag" id="search-tag" style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
+                <input type="text" placeholder="Search by name.. &#xF002;" name="search-tag" id="search-tag" style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
             </form>
 
             <!--    Select user type-->
@@ -103,11 +103,7 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkPhp("notificationView"); ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
-
-    <?php linkJS("notification") ?>
 
     <?php linkJS("userDetails"); ?>
 

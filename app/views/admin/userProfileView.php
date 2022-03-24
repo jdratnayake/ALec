@@ -79,14 +79,31 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
                 <div class="horizontal-container">
                     <div class="pvt-details">
                         <span class="heading">User Details</span>
-                        <span><strong>Full Name : </strong><?php echo $data["userDetails"]["name"]; ?></span>
+                        <span><strong>Full Name : </strong></span>
+                        <span class="detail"><?php echo $data["userDetails"]["name"]; ?></span>
+
                         <?php
                         if ($data["userDetails"]["type"] == "Student") {
-                            echo "<span><strong>Given Name : </strong> {$data["userDetails"]["randomName"]} </span>";
+                            echo "<span><strong>Given Name : </strong></span>
+                                    <span>{$data["userDetails"]["randomName"]} </span>";
                         }
                         ?>
-                        <span><strong>Email : </strong><?php echo $data["userDetails"]["email"]; ?></span>
-                        <span><strong>Telephone No : </strong><?php echo $data["userDetails"]["tele"]; ?></span>
+
+                        <span><strong>Email : </strong></span>
+                        <span class="detail"><?php echo $data["userDetails"]["email"]; ?></span>
+
+                        <?php
+                        if ($data["userDetails"]["type"] == "Student") {
+                            echo "<span><strong>Index No : </strong></span>
+                                    <span>{$data["userDetails"]["regNo"]} </span>";
+                        } else {
+                            echo "<span><strong>Employee No : </strong></span>
+                                    <span>{$data["userDetails"]["regNo"]} </span>";
+                        }
+                        ?>
+
+                        <span><strong>Telephone No : </strong></span>
+                        <span class="detail"><?php echo $data["userDetails"]["tele"]; ?></span>
                     </div>
 
                     <div class="course-details">
@@ -173,11 +190,7 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkPhp("notificationView"); ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
-
-    <?php linkJS("notification") ?>
 
     <?php linkJS("successMessage"); ?>
 

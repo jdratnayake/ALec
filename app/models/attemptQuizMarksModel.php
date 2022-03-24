@@ -61,5 +61,7 @@ class AttemptQuizMarksModel extends Database
         $query = "UPDATE quiz_attempt SET marks='$marks' WHERE student_id='$userId' AND quiz_id='$quizId'";
 
         mysqli_query($GLOBALS["db"], $query);
+
+        $this->insertMarks($userId, "quiz", $marks, $userId, $quizId);
     }
 }

@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>ALec</title>
-	
-	<!-- Shortcut Icon -->
+
+    <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
 
     <?php linkCSS('add_new_course'); ?>
@@ -58,7 +58,7 @@
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Edit">
                     </div>
                 </form>
                 <!-- FORM END -->
@@ -68,13 +68,9 @@
         </div>
     </div>
 
-    <?php linkPhp("notificationView"); ?>
-
     <?php linkPhp("footer"); ?>
-	
-	<?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("notification") ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("corseRegisterValidation"); ?>
 

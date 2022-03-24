@@ -20,7 +20,7 @@ class LecturerTopicPageModel extends Database
 
     public function getQuizCount($courseId)
     {
-        $query = "SELECT course_topic.topic_id, COUNT(quiz_id) AS count FROM course_topic LEFT JOIN quiz ON course_topic.topic_id=quiz.topic_id WHERE course_id='$courseId' GROUP BY course_topic.topic_id ORDER BY course_topic.topic_id";
+        $query = "SELECT course_topic.topic_id, COUNT(quiz_id) AS count FROM course_topic LEFT JOIN quiz ON course_topic.topic_id=quiz.topic_id AND status<>'draft' WHERE course_id='$courseId' GROUP BY course_topic.topic_id ORDER BY course_topic.topic_id";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return $result;
@@ -28,9 +28,23 @@ class LecturerTopicPageModel extends Database
 
     public function getQuizDetails($courseId)
     {
-        $query = "SELECT quiz_id, quiz_name FROM course_topic INNER JOIN quiz ON course_topic.topic_id=quiz.topic_id WHERE course_id='$courseId' ORDER BY course_topic.topic_id, create_date";
+        $query = "SELECT quiz_id, quiz_name FROM course_topic INNER JOIN quiz ON course_topic.topic_id=quiz.topic_id WHERE course_id='$courseId' AND status<>'draft' ORDER BY course_topic.topic_id, create_date";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return $result;
+    }
+
+    public function getCourseId($topicId)
+    {
+        $query = "SELECT course_id FROM course_topic WHERE topic_id='$topicId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["course_id"];
+    }
+
+    public function deleteTopic($topicId)
+    {
+        $query = "DELETE FROM course_topic WHERE topic_id='$topicId'";
+        mysqli_query($GLOBALS["db"], $query);
     }
 }

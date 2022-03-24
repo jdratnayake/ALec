@@ -1,10 +1,3 @@
-<?php
-$assignedCourses = "";
-
-$courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,9 +57,19 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
                     <div class="modal-body">
                         <label for="badges"><strong>Select Badge:</strong></label>
                         <select name="badge" id="badges" class="selection-box">
-                            <option value="default" selected>Select a badge</option>
-                            <option value="sub1">Best Respondent - 2021</option>
-                            <option value="sub2">Best Questioner - 2021</option>
+                            <option value="0" selected>Select a Badge</option>
+
+                            <?php
+
+                            while ($row = mysqli_fetch_assoc($data["unawardedBadgeDetails"])) {
+                                echo
+                                "
+                                <option value='{$row['badge_id']}'>{$row['badge_name']}</option>
+                                ";
+                            }
+
+                            ?>
+
                         </select>
 
                         <!--                    List of assigned badges-->
@@ -74,8 +77,6 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
                             <?php
 
                             while ($row = mysqli_fetch_assoc($data["lecturerAssignedBadgeDetails"])) {
-                                //$assignedCourses = $assignedCourses . " " . $row['course_id'];
-
                                 echo
                                 "
                                 <li class='assigned-course'>
@@ -125,9 +126,10 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
                         <div class="course-content">
                             <?php
 
-                            foreach ($courseDetails as $row) {
+                            while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
                                 echo "<span>{$row['course_name']}</span>";
                             }
+
                             ?>
                         </div>
                     </div>
@@ -144,6 +146,7 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
                             echo
                             "
                             <div class='badge'>
+                                <input type='hidden' class='badge-id' value='{$row['badge_id']}'>
                                 <img src='http://localhost/ALec/public/badge_pic/{$row['badge_image']}' alt='Badge Image' class='badge-image'>
                                 <span>{$row['badge_name']}</span>
                                 <span class='issuer'>{$row['lec_name']}</span>
@@ -168,9 +171,7 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
 
     <?php linkJS("notification") ?>
 
-    <?php linkJS("successMessage"); ?>
-
-    <?php linkJS("userProfileModal"); ?>
+    <?php linkJS("badgeAwardView"); ?>
 </body>
 
 </html>

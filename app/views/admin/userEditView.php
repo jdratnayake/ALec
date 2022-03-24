@@ -89,7 +89,7 @@
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Edit">
                     </div>
                 </form>
                 <!-- LECTURER FORM END -->
@@ -126,7 +126,7 @@
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Edit">
                     </div>
                 </form>
                 <!-- STUDENT FORM END -->
@@ -148,15 +148,9 @@
     }
     ?>
 
-
-
-    <?php linkPhp("notificationView"); ?>
-
     <?php linkPhp("footer"); ?>
-	
-	<?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("notification") ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("userEditView"); ?>
 

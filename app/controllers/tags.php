@@ -27,13 +27,14 @@ class Tags extends AlecFramework
             $tagName = $row["tag_name"];
 
             $topicSearchValues = $topicSearchValues . " question LIKE '%" . $tagName . "%' OR";
-            $topicSubjectValues = $topicSubjectValues . " subject LIKE '%" . $tagName . "%' OR";
+            $topicSubjectValues = $topicSubjectValues . " subject LIKE '%" . $tagName . "%' OR"; //whether tag name included in the discussion topic
 
             $replySearchValues = $replySearchValues . " reply LIKE '%" . $tagName . "%' OR";
         }
 
         $topicSearchValues = trim($topicSearchValues, " ");
         $topicSearchValues = trim($topicSearchValues, "OR");
+
         $topicSubjectValues = trim($topicSubjectValues, " ");
         $topicSubjectValues = trim($topicSubjectValues, "OR");
 

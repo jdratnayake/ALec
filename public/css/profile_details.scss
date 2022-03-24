@@ -62,6 +62,10 @@ $modal_color_hover: $theme;
         margin-bottom: 1rem;
       }
 
+      .detail {
+        margin-bottom: 5px;
+      }
+
       .buttons {
         margin: 10px 0;
         display: inline;
@@ -101,7 +105,7 @@ $modal_color_hover: $theme;
         margin: 20px 0;
         display: flex;
         justify-content: space-between;
-        height: 180px;
+        max-height: 228px;
 
         .pvt-details, .course-details {
           display: inline-flex;

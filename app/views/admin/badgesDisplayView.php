@@ -11,6 +11,8 @@
     <!-- CSS File HOME-->
     <?php linkCSS("display_badges"); ?>
 
+    <?php linkCSS("success_message"); ?>
+
     <!-- Shortcut Icon -->
     <?php shortIcon("logo1.jpg"); ?>
 
@@ -77,9 +79,12 @@
                     <div class='badges'>";
 
             while ($row = mysqli_fetch_assoc($data["badgeDetails"])) {
+                $questionLink = "'" . "badge/delete/" . $data["courseDetails"]["course_id"] . "/" . $row['badge_id'] . "'";
+
                 echo
                 "
                         <div class='badge'>
+                        <i class='fa fa-trash' aria-hidden='true' onclick=\"deleteFunction($questionLink)\"></i>
                             <img " . srcBadgeIMG($row["badge_image"]) . " alt='Badge Image'>
                             <span>{$row["badge_name"]}</span>
                         </div>
@@ -110,13 +115,11 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkPhp("notificationView"); ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <?php linkJS("notification") ?>
-
     <?php linkJS("badgesDisplay") ?>
+
+    <?php linkJS("deleteMessage"); ?>
 
 </body>
 

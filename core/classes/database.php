@@ -17,4 +17,28 @@ class Database
             die("ERROR: Could not connect. " . mysqli_connect_errno());
         }
     }
+
+    public function insertMarks($studentId, $type, $marks, ...$ids)
+    {
+        $uniqueIdString = $this->createIdString($ids);
+
+        $query = "INSERT INTO student_marks_log(student_id, type, marks, unique_ids) VALUES('$studentId', '$type', '$marks', '$uniqueIdString')";
+
+        mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function deleteMarks()
+    {
+    }
+
+    public function createIdString($ids)
+    {
+        $output = "";
+
+        foreach ($ids as $id) {
+            $output .= "_" . strval($id);
+        }
+
+        return trim($output, "_");
+    }
 }

@@ -100,13 +100,24 @@ class Badge extends AlecFramework
                     }
                 }
 
-                $this->redirect("badge/index/{$courseId}");
+                if ($courseId == "all") {
+                    $this->redirect("badge/index");
+                } else {
+                    $this->redirect("badge/index/{$courseId}");
+                }
             }
         }
 
         $data["errors"] = $errors;
 
         $this->view("admin/badgeCreateView", $data);
+    }
+
+    public function delete($courseId, $badgeId)
+    {
+        $this->badgeModel->deleteBadge($badgeId);
+
+        $this->redirect("badge/index/{$courseId}");
     }
 
     public function getCourseIdList($idString)

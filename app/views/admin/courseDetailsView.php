@@ -39,8 +39,8 @@
             <!--    Search bar     -->
             <form class="search-bar" id="search">
                 <label for="search"></label>
-                <input type="text" placeholder="Search.." name="search-tag" id="search-tag">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Search by course name.. &#xF002;" name="search-tag" id="search-tag" style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
+<!--                <button type="submit"><i class="fa fa-search"></i></button>-->
             </form>
 
             <!--    Add user button-->
@@ -104,11 +104,7 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkPhp("notificationView"); ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
-
-    <?php linkJS("notification") ?>
 
     <?php linkJS("courseDetails"); ?>
 
