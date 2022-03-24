@@ -148,7 +148,7 @@
                     <br><br>
                     <p>
                         Use this format to enter details using .txt file<br>
-                        &emsp;<span id="regNo-del">IndexNo</span><br>
+                        &emsp;<span id="regNo-del">LecturerNo</span><br>
                         &emsp;eg: 19001411<br><br>
                         <strong>Note:</strong>Each user should be in a newline<br><br>
                     </p>
