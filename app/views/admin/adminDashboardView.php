@@ -104,7 +104,7 @@
                     <br><br>
                     <p>
                         Use this format to enter details using .txt file<br>
-                        &emsp;FirstName LastName EmailAddress <span id="regNo">IndexNo</span><br>
+                        &emsp;FirstName LastName EmailAddress <span id="regNo">LecturerNo</span><br>
                         &emsp;eg: Surani Ratnayake suraniratnayake@gmail.com 19001411<br><br>
                         <strong>Note:</strong>Each user should be in a newline<br><br>
                     </p>
