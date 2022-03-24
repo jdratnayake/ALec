@@ -80,6 +80,7 @@
                 echo
                 "
                         <div class='badge'>
+                        <i class='fa fa-trash' aria-hidden='true'></i>
                             <img " . srcBadgeIMG($row["badge_image"]) . " alt='Badge Image'>
                             <span>{$row["badge_name"]}</span>
                         </div>

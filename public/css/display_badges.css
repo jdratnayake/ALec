@@ -708,11 +708,18 @@ footer p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+.details-content .badge-details-container .badge-details .badges .fa-trash {
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+  color: #dd5555;
+  margin-right: 8px;
+  cursor: pointer;
+}
 .details-content .badge-details-container .badge-details .badges .badge {
   display: grid;
   width: 90%;
   margin: 10px;
-  justify-content: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
   padding: 10px 0;
   text-align: center;
