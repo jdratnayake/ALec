@@ -51,16 +51,16 @@ class Login extends AlecFramework
                     $this->setSession("type", $user["user_type"]);
 
                     if ($status == "1") {
-                        //Specify redirect path after sucessful login
+                        //Specify redirect path after successful login
                         $this->redirect("dashboard");
                     }
                 } else {
-                    //If login password is not matched
+                    //If login password is mismatched
                     $data["email"] = $email;
-                    $errors["password"] = "Invaild Login ! - Wrong User Name OR Password";
+                    $errors["password"] = "Invalid Login ! - Wrong User Name OR Password";
                 }
             } else {
-                /* Regenerate Login Page With Errors */
+                // Regenerate Login Page With Errors
                 $data['errors'] = $errors;
                 $this->view("loginView", $data);
             }

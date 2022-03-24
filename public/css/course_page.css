@@ -732,6 +732,7 @@ footer p {
 .card-container .card .face.face1 .content h3 {
   font-size: 1.3em;
   font-weight: 400;
+  max-width: 250px;
 }
 
 /* .card-container .card .face.face1 .content h3:hover{

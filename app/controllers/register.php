@@ -67,7 +67,7 @@ class Register extends AlecFramework
       }
 
       if ($numberOfErrors == 0) {
-        //Encrypy password
+        //Encrypt password
         $passwordEncrypt = password_hash($password, PASSWORD_DEFAULT);
 
         if ($type == 2) {
@@ -75,7 +75,7 @@ class Register extends AlecFramework
           $this->registerModel->addUser($email, $regNo, $fName, $lName, $passwordEncrypt, $type);
         } else if ($type == 3) {
           $randomName = $this->getRandomName();
-          $randomFirstName = explode(" ", $randomName)[0];
+          $randomFirstName = explode(" ", $randomName)[0]; //break the string into an array from the separator
           $randomLastName = explode(" ", $randomName)[1];
           $this->registerModel->addUser($email, $regNo, $fName, $lName, $passwordEncrypt, $type, $randomFirstName, $randomLastName);
         }
@@ -132,9 +132,9 @@ class Register extends AlecFramework
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Successful Message Example</title>
+  <title>Registration Successful Message</title>
 
-  <meta name="author" content="Codeconvey" />
+  <meta name="author" content="Codeconvey"/>
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
