@@ -103,11 +103,7 @@
 
     <?php linkPhp("footer"); ?>
 
-    <?php linkPhp("notificationView"); ?>
-
     <?php linkJS("lib/jquery-3.6.0.min"); ?>
-
-    <?php linkJS("notification") ?>
 
     <?php linkJS("userDetails"); ?>
 
