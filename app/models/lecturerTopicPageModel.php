@@ -33,4 +33,18 @@ class LecturerTopicPageModel extends Database
 
         return $result;
     }
+
+    public function getCourseId($topicId)
+    {
+        $query = "SELECT course_id FROM course_topic WHERE topic_id='$topicId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["course_id"];
+    }
+
+    public function deleteTopic($topicId)
+    {
+        $query = "DELETE FROM course_topic WHERE topic_id='$topicId'";
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }
