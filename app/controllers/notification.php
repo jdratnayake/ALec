@@ -91,6 +91,7 @@ class Notification extends AlecFramework
             $notificationId = $row["notification_id"];
             $path = $row["url"];
             $id = "notification-" . $notificationId;
+            $time = $row["difference"];
 
             $output .=
                 "
@@ -100,7 +101,7 @@ class Notification extends AlecFramework
                 <div class='text'>
                     <span><b>{$message}</b></span> <br>
                     <span>{$courseName}</span> <br>
-                    <span>13 hours ago</span>
+                    <span>{$time} ago</span>
                 </div>
                 <div class='read-status' id='{$id}'>
                 ";
