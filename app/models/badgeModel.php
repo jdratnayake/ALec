@@ -48,4 +48,10 @@ class BadgeModel extends Database
 
         return $result;
     }
+
+    public function deleteBadge($badgeId)
+    {
+        $query = "DELETE FROM badge WHERE badge_id='$badgeId'";
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }
