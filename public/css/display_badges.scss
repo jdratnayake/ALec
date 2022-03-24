@@ -80,11 +80,20 @@ $light_color: #FFF;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
 
+        .fa-trash {
+          float: right;
+          display: flex;
+          justify-content: flex-end;
+          color: $delete_button;
+          margin-right: 8px;
+          cursor: pointer;
+        }
+
         .badge {
           display: grid;
           width: 90%;
           margin: 10px;
-          justify-content: center;
+          //justify-content: center;
           box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
           padding: 10px 0;
           text-align: center;
