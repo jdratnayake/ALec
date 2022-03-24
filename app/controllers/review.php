@@ -46,7 +46,8 @@ class Review extends AlecFramework
 
     public function quizReview($quizId)
     {
-        $data["bread"]["quizName"] = $this->reviewModel->getQuizName($quizId);
+        $quizDetails = $this->reviewModel->getQuizNameAndCourseID($quizId);
+        $data["bread"]["quizName"] = $quizDetails["quiz_name"];
 
         // Quiz summary - START
         $quizSummary = $this->reviewModel->getQuizSummary($quizId);
@@ -80,6 +81,8 @@ class Review extends AlecFramework
                 $i++;
             }
         }
+
+        $data["courseId"] = $quizDetails["course_id"];
 
         $data["quizQuestionSummary"]["label"] = trim($labelQuistionString, "_");
         $data["quizQuestionSummary"]["data"] = trim($valueQuistionString, "_");

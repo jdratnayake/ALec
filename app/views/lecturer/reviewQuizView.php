@@ -59,9 +59,11 @@
 
                         <?php
                         while ($row = mysqli_fetch_assoc($data["studentsResults"])) {
+                            $link = BASEURL . "/badgeAward/index/" . $data["courseId"] . "/" . $row['user_id'];
+
                             echo
                             "
-                            <tr>
+                            <tr onclick=\"window.location='{$link}';\">
                                 <td>{$row['index_no']}</td>
                                 <td>{$row['name']}</td>
                                 <td>{$row['marks']}%</td>

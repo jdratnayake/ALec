@@ -31,4 +31,12 @@ class LecturerTopicPage extends AlecFramework
 
         $this->view("lecturer/lecturerTopicPageView", $data);
     }
+
+    public function deleteTopic($topicId)
+    {
+        $courseId = $this->lecturerTopicPageModel->getCourseId($topicId);
+        $this->lecturerTopicPageModel->deleteTopic($topicId);
+
+        $this->redirect("lecturerTopicPage/index/{$courseId}");
+    }
 }

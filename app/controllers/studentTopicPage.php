@@ -13,12 +13,14 @@ class StudentTopicPage extends AlecFramework
 
     public function index($courseId)
     {
+        $userId = $this->getSession("userId");
+
         $data["bread"]["courseId"] = $courseId;
 
         $data["courseDetails"] = $this->lecturerTopicPageModel->getCourseDetails($courseId);
         $data["topicDetails"] = $this->lecturerTopicPageModel->getTopicDetails($courseId);
-        $data["topicQuizSummary"] = $this->lecturerTopicPageModel->getQuizCount($courseId);
-        $data["quizDetails"] = $this->lecturerTopicPageModel->getQuizDetails($courseId);
+        $data["topicQuizSummary"] = $this->studentTopicPageModel->getQuizCount($courseId, $userId);
+        $data["quizDetails"] = $this->studentTopicPageModel->getQuizDetails($courseId, $userId);
 
         $this->view("student/studentTopicPageView", $data);
     }
