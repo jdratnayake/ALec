@@ -93,6 +93,7 @@ $light_color: #FFF;
       .text {
         cursor: default;
         display: grid;
+        max-width: 830px;
 
         .name {
           color: grey;

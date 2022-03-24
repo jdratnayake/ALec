@@ -228,7 +228,8 @@ What's the best piece of advice?
                 echo
                 "
                     <span class='session'>
-                        {$row['question']}
+                       
+                        <span class='text'>{$row['question']}</span>
                         <span class='vote'>
                             <div class='col'>
                                 <input type='hidden' value='{$row['question_id']}'>
