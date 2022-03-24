@@ -43,16 +43,28 @@ $(document).ready(function () {
         $('#file-mode-div').hide();
         $('#year-mode-div').show();
         $('#manage-users-btn').show();
+        $('#model-cancel-btn').show();
     });
 
     $('#file-mode').click(function () {
         $('#year-mode-div').hide();
         $('#file-mode-div').show();
         $('#manage-users-btn').hide();
+        $('#model-cancel-btn').hide();
     });
 
     $("#btn-create-download-enrollment").click(function (event) {
         event.preventDefault();
+    });
+
+    $('#assign-users').click(function () {
+        $("#manage-users-btn").prop("value", "Assign Students");
+        $("#manage-users-file-btn").prop("value", "Assign Students");
+    });
+
+    $('#delete-users').click(function () {
+        $("#manage-users-btn").prop("value", "Remove Students");
+        $("#manage-users-file-btn").prop("value", "Remove Students");
     });
 });
 // Manage Students Enrolment - END

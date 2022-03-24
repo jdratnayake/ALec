@@ -114,7 +114,7 @@
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <div class="button-set">
                             <input type="submit" value="Create Accounts" name="submit" class="upload-btn">
-                            <button type="button" value="submit" class="upload-btn cancel" id="model-cancel-btn" onclick="hideModal()">Cancel</button>
+                            <button type="button" value="submit" class="upload-btn cancel" onclick="hideModal()">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -159,7 +159,7 @@
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <div class="button-set">
                             <input type="submit" value="Delete Accounts" name="submit" class="upload-btn">
-                            <button type="button" value="submit" class="upload-btn cancel" id="model-cancel-btn" onclick="hideModal()">Cancel</button>
+                            <button type="button" value="submit" class="upload-btn cancel" onclick="hideModal()">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -217,7 +217,7 @@
                         </div>
 
                         <div class="button-set">
-                            <input id="manage-users-btn" type="submit" value="Remove Students" name="submit" class="assign-btn">
+                            <input id="manage-users-btn" type="submit" value="Assign Students" name="submit" class="assign-btn">
                             <button type="button" value="submit" class="upload-btn cancel" id="model-cancel-btn" onclick="hideModal()">Cancel</button>
                         </div>
 
@@ -237,7 +237,7 @@
                             Upload file:
                             <input type="hidden" name="upload-user-type" value="2">
                             <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Enroll users" name="submit" class="upload-btn">
+                            <input id="manage-users-file-btn" type="submit" value="Assign users" name="submit" class="upload-btn">
 
                         </div>
 
@@ -290,8 +290,6 @@
     <?php linkJS("dashboardToolkit"); ?>
 
     <?php linkJS("adminDashboardCourseDisplay"); ?>
-
-    <?php linkJS("adminDashboardModal"); ?>
 
     <?php linkJS("successMessage"); ?>
 </body>
