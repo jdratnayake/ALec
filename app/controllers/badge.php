@@ -113,6 +113,13 @@ class Badge extends AlecFramework
         $this->view("admin/badgeCreateView", $data);
     }
 
+    public function delete($courseId, $badgeId)
+    {
+        $this->badgeModel->deleteBadge($badgeId);
+
+        $this->redirect("badge/index/{$courseId}");
+    }
+
     public function getCourseIdList($idString)
     {
         $outputArr = array();
