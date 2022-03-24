@@ -1,23 +1,34 @@
+let courseName;
+let topicName;
+let quizName;
+let duration;
 let submitForm = document.getElementById("create-quiz-form");
 
 $(document).ready(function () {
 
-    // courseName();
-    // topicName();
-    // quizName();
-    // duration();
-
     document.getElementById("create-quiz").addEventListener("click", function (event) {
-        event.preventDefault();
-
-        courseName()
-        topicName()
-        quizName()
-        duration()
-        questionName()
+        courseName();
+        topicName();
+        quizName();
+        duration();
 
         if (courseName() && topicName() && quizName() && duration()) {
             submitForm.submit();
+        } else {
+            event.preventDefault();
+        }
+    });
+
+    document.getElementById("draf-quiz").addEventListener("click", function (event) {
+        courseName();
+        topicName();
+        quizName();
+        duration();
+
+        if (courseName() && topicName() && quizName() && duration()) {
+            submitForm.submit();
+        } else {
+            event.preventDefault();
         }
     });
 
@@ -37,7 +48,7 @@ $(document).ready(function () {
 
     });
 
-    function courseName() {
+    courseName = function () {
         const value = $("#course").val();
 
         if (value == "null") {
@@ -49,7 +60,7 @@ $(document).ready(function () {
         return true;
     }
 
-    function topicName() {
+    topicName = function () {
         const value = $("#topic").val();
 
         if (value == "null") {
@@ -61,7 +72,7 @@ $(document).ready(function () {
         return true;
     }
 
-    function quizName() {
+    quizName = function () {
         const value = $("#quiz-name").val();
 
         if (value == "") {
@@ -73,7 +84,7 @@ $(document).ready(function () {
         return true;
     }
 
-    function duration() {
+    duration = function () {
         const value = $("#time-picker").val();
 
         if (value == "" || value == "0:0:0") {

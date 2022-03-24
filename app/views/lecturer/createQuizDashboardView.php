@@ -38,7 +38,7 @@
                 <!-- select course drop down list -->
                 <div class="form-group details">
                     <label for="course">Course</label>
-                    <select name="course" id="course" class="form-control">
+                    <select name="course" id="course" class="form-control" onfocusout="courseName()">
                         <option value="null" selected>Select your course</option>
                         <?php
                         while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
@@ -53,7 +53,7 @@
                 <div class="form-group details">
                     <!--        select topic drop down list -->
                     <label for="topic"> Topic:</label>
-                    <select name="topic" id="topic" class="form-control">
+                    <select name="topic" id="topic" class="form-control" onfocusout="topicName()">
                         <option value="null" selected>Select your topic</option>
                     </select>
 
@@ -63,7 +63,7 @@
                 <!-- quiz details-->
                 <div class="form-group">
                     <label for="quiz-name">Quiz Name</label>
-                    <input type="text" class="form-control form-name cursor-change" placeholder="Enter quiz name" name="quiz-name" id="quiz-name">
+                    <input type="text" class="form-control form-name cursor-change" placeholder="Enter quiz name" name="quiz-name" id="quiz-name" onfocusout="quizName()">
 
                     <div class="error"></div>
                 </div>
@@ -88,8 +88,8 @@
 
 
             <div class="button-set">
-                <input type="submit" id="draf-quiz" name="draft-quiz" class="finish" value="Save as Draft">
-                <input type="submit" id="create-quiz" name="create-quiz" class="finish" value="Create Quiz">
+                <input type="submit" id="draf-quiz" name="draft-quiz" class="finish" value="Save as Draft" />
+                <input type="submit" id="create-quiz" name="create-quiz" class="finish" value="Create Quiz" />
             </div>
         </form>
     </div>

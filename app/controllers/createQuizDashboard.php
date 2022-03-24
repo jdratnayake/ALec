@@ -14,6 +14,7 @@ class CreateQuizDashboard extends AlecFramework
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // var_dump($_POST);
             // return true;
+
             if (isset($_POST["create-quiz"])) {
                 $status = "create";
             } else if (isset($_POST["draft-quiz"])) {
