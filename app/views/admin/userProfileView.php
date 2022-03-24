@@ -81,14 +81,27 @@ $courseDetails = mysqli_fetch_all($data["courseDetails"], MYSQLI_ASSOC);
                         <span class="heading">User Details</span>
                         <span><strong>Full Name : </strong></span>
                         <span class="detail"><?php echo $data["userDetails"]["name"]; ?></span>
+
                         <?php
                         if ($data["userDetails"]["type"] == "Student") {
                             echo "<span><strong>Given Name : </strong></span>
                                     <span>{$data["userDetails"]["randomName"]} </span>";
                         }
                         ?>
+
                         <span><strong>Email : </strong></span>
                         <span class="detail"><?php echo $data["userDetails"]["email"]; ?></span>
+
+                        <?php
+                        if ($data["userDetails"]["type"] == "Student") {
+                            echo "<span><strong>Index No : </strong></span>
+                                    <span>{$data["userDetails"]["regNo"]} </span>";
+                        } else {
+                            echo "<span><strong>Employee No : </strong></span>
+                                    <span>{$data["userDetails"]["regNo"]} </span>";
+                        }
+                        ?>
+
                         <span><strong>Telephone No : </strong></span>
                         <span class="detail"><?php echo $data["userDetails"]["tele"]; ?></span>
                     </div>
