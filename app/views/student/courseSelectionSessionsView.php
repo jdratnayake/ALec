@@ -57,15 +57,12 @@
                 echo
                 "
                     {$row['course_name']}
-                    <i class='fa fa-circle' aria-hidden='true'></i>
+                    
                 </div>
                 ";
             }
 
             ?>
-
-            <div class='row'>SCS 1201 - DATA STRUCTURES AND ALGORITHMS - I<i class='fa fa-circle' aria-hidden='true'></i></div>
-            <div class='row disable'>SCS 1201 - DATA STRUCTURES AND ALGORITHMS - II</div>
 
         </div>
 
