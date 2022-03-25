@@ -22,7 +22,7 @@ class PreviewQuizModel extends Database
 
     public function getQuizDetails($quizId)
     {
-        $query = "SELECT quiz_id, quiz_name, HOUR(duration) AS hr, MINUTE(duration) AS min, SECOND(duration) AS sec FROM quiz WHERE quiz_id='$quizId' LIMIT 1";
+        $query = "SELECT quiz_id, quiz_name, HOUR(duration) AS hr, MINUTE(duration) AS min, SECOND(duration) AS sec, DATE_FORMAT(published_date, '%Y %M %d, %h:%i %p') AS start_date, DATE_FORMAT(close_date, '%Y %M %d, %h:%i %p') AS close_date, TIME_FORMAT(duration, '%Hh %im %ssec') AS duration FROM quiz WHERE quiz_id='$quizId' LIMIT 1";
 
         $result = mysqli_query($GLOBALS["db"], $query);
 
@@ -67,5 +67,24 @@ class PreviewQuizModel extends Database
         mysqli_query($GLOBALS["db"], $query);
 
         return $courseId;
+    }
+
+    public function checkQuizPublishStatus($quizId)
+    {
+        $query = "SELECT * FROM quiz WHERE quiz_id='$quizId' AND published_date IS NOT NULL AND close_date IS NOT NULL AND close_date > NOW()";
+
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        if (mysqli_num_rows($result) == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function setUnpublish($quizId)
+    {
+        $query = "UPDATE quiz SET status='create', published_date=NULL, close_date=NULL WHERE quiz_id='$quizId'";
+        mysqli_query($GLOBALS["db"], $query);
     }
 }
