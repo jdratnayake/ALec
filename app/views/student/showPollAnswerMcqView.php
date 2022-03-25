@@ -94,8 +94,7 @@ $questionCount = $data["question"]["question_count"];
                         "
                         <div class='row'>
                             <div class='answer'>
-                                <div class='answer-progress pressed' style='width: {$precentage}%'>
-                                    {$row["choice_name"]}
+                                <div class='answer-progress pressed' data-label='{$row["choice_name"]}' style='width: {$precentage}%'>
                                 </div>
                             </div>
                             {$precentage}%
@@ -107,25 +106,8 @@ $questionCount = $data["question"]["question_count"];
                 </div>
             </div>
 
-            <div class="button-container">
-                <!--        Save Session Button-->
-                <!--            --><?php
-                                    //
-                                    //            if ($data["userType"] == "lec") {
-                                    //                
-                                    ?>
-                <!--                <button type="button" value="Create Session" class="save-btn">Done</button>-->
-                <!--                --><?php
-                                        //            } else if ($data["userType"] == "stu") {
-                                        //                
-                                        ?>
-                <!--                <button type="button" value="Create Session" class="save-btn" style="display: none">Done</button>-->
-                <!--                --><?php
-                                        //            }
-                                        //
-                                        //            
-                                        ?>
-
+            <div class="single-button-container">
+                <button type="button" value="Create Session" class="save-btn" onclick="">Done</button>
             </div>
         </div>
     </div>

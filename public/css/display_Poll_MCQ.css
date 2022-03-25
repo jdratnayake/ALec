@@ -732,6 +732,7 @@ footer p {
 }
 .details-content .container .content .questions-container .question {
   margin: 10px 0;
+  width: 95%;
 }
 .details-content .container .content .questions-container .answer {
   margin-bottom: 5px;
