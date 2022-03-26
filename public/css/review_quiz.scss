@@ -74,11 +74,17 @@ $table_color: $table_head;
             border-bottom: 1px solid #dddddd;
 
             &:hover{
-              background-color: #fff;
+              background-color: #01447e26;
+              cursor: pointer;
             }
           }
           tr:nth-of-type(even) {
             background-color: #f3f3f3;
+
+            &:hover{
+              background-color: #01447e26;
+              cursor: pointer;
+            }
           }
           tr:last-of-type {
             border-bottom: 2px solid $table_color;

@@ -14,7 +14,9 @@ class ReviewModel extends Database
     // reviewQuizListView - START
     public function getEnrolledCourses($userId)
     {
-        $query = "SELECT course.course_id, course_name FROM course INNER JOIN course_registration_lec ON course.course_id=course_registration_lec.course_id WHERE lecturer_id='$userId' ORDER BY course.course_id";
+        $query = "SELECT course.course_id, course_name FROM course 
+                    INNER JOIN course_registration_lec ON course.course_id=course_registration_lec.course_id 
+                    WHERE lecturer_id='$userId' ORDER BY course.course_id";
         $result = mysqli_query($GLOBALS["db"], $query);
 
         return $result;
@@ -23,9 +25,14 @@ class ReviewModel extends Database
     public function getQuizDetails($userId, $courseId = "0")
     {
         if ($courseId == "0") {
-            $query = "SELECT quiz_id, quiz_name, course.course_id, course_name, DATE_FORMAT(quiz.create_date, '%M %d %Y') AS date FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id INNER JOIN course ON course_topic.course_id=course.course_id WHERE quiz.lecturer_id='$userId' ORDER BY quiz.create_date DESC";
+            $query = "SELECT quiz_id, quiz_name, course.course_id, course_name, DATE_FORMAT(quiz.create_date, '%M %d %Y') AS date 
+                FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id 
+                INNER JOIN course ON course_topic.course_id=course.course_id WHERE quiz.lecturer_id='$userId' ORDER BY quiz.create_date DESC";
         } else {
-            $query = "SELECT quiz_id, quiz_name, course.course_id, course_name, DATE_FORMAT(quiz.create_date, '%M %d %Y') AS date FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id INNER JOIN course ON course_topic.course_id=course.course_id WHERE quiz.lecturer_id='$userId' AND course.course_id='$courseId' ORDER BY quiz.create_date DESC";
+            $query = "SELECT quiz_id, quiz_name, course.course_id, course_name, DATE_FORMAT(quiz.create_date, '%M %d %Y') AS date 
+                FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id 
+                INNER JOIN course ON course_topic.course_id=course.course_id WHERE quiz.lecturer_id='$userId' AND course.course_id='$courseId' 
+                ORDER BY quiz.create_date DESC";
         }
 
         $result = mysqli_query($GLOBALS["db"], $query);
@@ -83,7 +90,9 @@ SELECT '90-100' AS name, COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$qui
 
     public function getStudentsResults($quizId)
     {
-        $query = "SELECT user.user_id, index_no, CONCAT(first_name, ' ', last_name) AS name, marks FROM quiz_attempt INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id WHERE quiz_id = '$quizId' ORDER BY quiz_attempt.attempt_time";
+        $query = "SELECT user.user_id, index_no, CONCAT(first_name, ' ', last_name) AS name, marks FROM quiz_attempt 
+                    INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id 
+                        WHERE quiz_id = '$quizId' ORDER BY quiz_attempt.attempt_time";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
