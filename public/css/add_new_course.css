@@ -707,7 +707,7 @@ footer p {
   width: 100%;
   margin-top: 40px;
 }
-.home-content .form-inner form .field input, .home-content .form-inner form .field textarea, .home-content .form-inner form .field-long input, .home-content .form-inner form .field-long textarea {
+.home-content .form-inner form .field input, .home-content .form-inner form .field textarea, .home-content .form-inner form .field select, .home-content .form-inner form .field-long input, .home-content .form-inner form .field-long textarea, .home-content .form-inner form .field-long select {
   height: 100%;
   width: 100%;
   outline: none;
@@ -718,11 +718,11 @@ footer p {
   font-size: 17px;
   transition: all 0.3s ease;
 }
-.home-content .form-inner form .field input::placeholder, .home-content .form-inner form .field textarea::placeholder, .home-content .form-inner form .field-long input::placeholder, .home-content .form-inner form .field-long textarea::placeholder {
+.home-content .form-inner form .field input::placeholder, .home-content .form-inner form .field textarea::placeholder, .home-content .form-inner form .field select::placeholder, .home-content .form-inner form .field-long input::placeholder, .home-content .form-inner form .field-long textarea::placeholder, .home-content .form-inner form .field-long select::placeholder {
   color: #999;
   transition: all 0.3s ease;
 }
-.home-content .form-inner form .field input:focus::placeholder, .home-content .form-inner form .field textarea:focus::placeholder, .home-content .form-inner form .field-long input:focus::placeholder, .home-content .form-inner form .field-long textarea:focus::placeholder {
+.home-content .form-inner form .field input:focus::placeholder, .home-content .form-inner form .field textarea:focus::placeholder, .home-content .form-inner form .field select:focus::placeholder, .home-content .form-inner form .field-long input:focus::placeholder, .home-content .form-inner form .field-long textarea:focus::placeholder, .home-content .form-inner form .field-long select:focus::placeholder {
   color: #b3b3b3;
 }
 .home-content form .btn {
