@@ -105,8 +105,12 @@ $questionCount = $data["question"]["question_count"];
             </div>
 
             <div class="button-container">
-
+                <div class="answer"></div>
+                <button type="button" value="Create Session" class="save-btn" onclick="location.href='<?php echo BASEURL . "/attemptPoolQuestion/index/{$courseId}" ?>'">
+                    Done
+                </button>
             </div>
+
         </div>
     </div>
 
