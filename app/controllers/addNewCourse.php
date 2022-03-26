@@ -21,7 +21,7 @@ class AddNewCourse extends AlecFramework
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = $_POST["c_name"];
             $description = $_POST["c_desc"];
-            $year = $_POST["c_year"];
+            $year = $_POST["year-selection"];
 
             //Empty check
             if (empty($name)) $errors["name"] = "Course Name is required";
