@@ -42,9 +42,9 @@
         <div class="year-selection">
             <label for="year-selection">Year:</label>
             <select name="year-selection" id="year-selection" class="year-dropdown">
-                <option value='1' selected>Year 1</option>
+                <option value='1'>Year 1</option>
                 <option value='2'>Year 2</option>
-                <option value='3'>Year 3</option>
+                <option value='3' selected>Year 3</option>
                 <option value='4'>Year 4</option>
             </select>
         </div>
@@ -77,7 +77,7 @@
                             <td>{$row["name"]}</td>
                             <td>{$row["marks"]}</td>
                             <td>
-                                <button type='button' class='button'>
+                                <button type='button' class='button' onclick=\"location.href='http://localhost/ALec/leaderboard/studentBadge/{$row["user_id"]}'\">
                                     <span class='button__text'>View</span>
                                 </button>
                             </td>
