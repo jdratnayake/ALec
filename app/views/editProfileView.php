@@ -18,7 +18,17 @@
 
 <body>
 
-    <?php linkPhp("navigationBarLecturer"); ?>
+    <?php
+
+    if ($data["userDetails"]["user_type"] == "admin") {
+        linkPhp("navigationBarAdmin");
+    } else if ($data["userDetails"]["user_type"] == "Lecturer") {
+        linkPhp("navigationBarLecturer");
+    } else if ($data["userDetails"]["user_type"] == "Student") {
+        linkPhp("navigationBarStudent");
+    }
+
+    ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">

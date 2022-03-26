@@ -78,7 +78,7 @@
     <!-- NAVIGATION BAR - END -->
 
     <!-- USER-TYPE-DISPLAY - START -->
-    <div class="user-type-container">
+    <div class="user-type-container" onclick="<?php echo "location.href='" . BASEURL . "/editProfile/index" . "'"; ?>">
         <div class="image-container">
             <i class="fa fa-user" aria-hidden="true"></i>
         </div>
