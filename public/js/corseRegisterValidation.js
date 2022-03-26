@@ -3,7 +3,7 @@ let invalidColor = '#f44336';
 
 let courseName = document.getElementById("c_name");
 let courseDescription = document.getElementById("c_desc");
-let courseYear = document.getElementById("c_year");
+let courseYear = document.getElementById("year-selection");
 let regiter = document.getElementById("registerForm");
 
 regiter.addEventListener('submit', function (event) {
@@ -176,7 +176,6 @@ function validateCourseName() {
 }
 
 function validateCourseDescription() {
-    console.log("hi");
     if (!meetLength(courseDescription, 0, 2000)) {
         return false;
     }
