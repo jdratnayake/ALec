@@ -53,7 +53,7 @@
                     <span class="tooltip">Forum</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL . '/leaderboard/index'; ?>">
                         <i class="fas fa-medal"></i>
                         <span class="links_name">Leaderboard</span>
                     </a>
