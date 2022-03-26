@@ -35,6 +35,10 @@ class BadgeAwardModel extends Database
 
     public function awardBadge($lecturerId, $studentId, $badgeId)
     {
+        //Add badge marks to student log
+        $marks = $this->getBadgeMarks($badgeId);
+        $this->insertMarks($studentId, "badge", $marks);
+
         $query = "INSERT INTO badge_assign(student_id, badge_id, lecturer_id) VALUES('$studentId', '$badgeId', '$lecturerId')";
 
         mysqli_query($GLOBALS["db"], $query);
@@ -42,8 +46,20 @@ class BadgeAwardModel extends Database
 
     public function removeBadge($lecturerId, $studentId, $badgeId)
     {
+        //Add badge marks to student log
+        $marks = $this->getBadgeMarks($badgeId);
+        $this->insertMarks($studentId, "badge", -$marks);
+
         $query = "DELETE FROM badge_assign WHERE student_id='$studentId' AND badge_id='$badgeId' AND lecturer_id='$lecturerId'";
 
         mysqli_query($GLOBALS["db"], $query);
+    }
+
+    public function getBadgeMarks($badgeId)
+    {
+        $query = "SELECT points FROM badge WHERE badge_id='$badgeId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["points"];
     }
 }
