@@ -712,10 +712,15 @@ footer p {
   border-bottom: 1px solid #dddddd;
 }
 .details-container .col2 .table-container .table-content tbody tr:hover {
-  background-color: #fff;
+  background-color: #01447e26;
+  cursor: pointer;
 }
 .details-container .col2 .table-container .table-content tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
+}
+.details-container .col2 .table-container .table-content tbody tr:nth-of-type(even):hover {
+  background-color: #01447e26;
+  cursor: pointer;
 }
 .details-container .col2 .table-container .table-content tbody tr:last-of-type {
   border-bottom: 2px solid #274774;
