@@ -732,7 +732,7 @@ footer p {
   margin: 20px 0;
   display: flex;
   justify-content: space-between;
-  max-height: 280px;
+  max-height: 340px;
 }
 .details-content .user-details-container .details-container .horizontal-container .pvt-details, .details-content .user-details-container .details-container .horizontal-container .course-details {
   display: inline-flex;
