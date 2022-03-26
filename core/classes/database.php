@@ -18,27 +18,21 @@ class Database
         }
     }
 
-    public function insertMarks($studentId, $type, $marks, ...$ids)
+    public function insertMarks($studentId, $type, $marks)
     {
-        $uniqueIdString = $this->createIdString($ids);
-
-        $query = "INSERT INTO student_marks_log(student_id, type, marks, unique_ids) VALUES('$studentId', '$type', '$marks', '$uniqueIdString')";
+        $query = "INSERT INTO student_marks_log(student_id, type, marks) VALUES('$studentId', '$type', '$marks')";
 
         mysqli_query($GLOBALS["db"], $query);
     }
 
-    public function deleteMarks()
-    {
-    }
+    // public function createIdString($ids)
+    // {
+    //     $output = "";
 
-    public function createIdString($ids)
-    {
-        $output = "";
+    //     foreach ($ids as $id) {
+    //         $output .= "_" . strval($id);
+    //     }
 
-        foreach ($ids as $id) {
-            $output .= "_" . strval($id);
-        }
-
-        return trim($output, "_");
-    }
+    //     return trim($output, "_");
+    // }
 }
