@@ -7,7 +7,7 @@
 
 	$arr = null;
 
-	$sql = "SELECT question_no, question_type, question FROM session_question WHERE session_id='$sessionId' 
+	$sql = "SELECT question_no, question_type, question, answer FROM session_question WHERE session_id='$sessionId' 
 			AND (question_no IN(SELECT question_no FROM session_mcq_attempt WHERE student_id='$userId') 
 			OR question_no IN(SELECT question_no FROM session_open_attempt WHERE student_id='$userId'))";
 
