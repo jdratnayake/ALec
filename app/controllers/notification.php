@@ -134,4 +134,32 @@ class Notification extends AlecFramework
 
         return $output;
     }
+
+    public function updateNavigationBar()
+    {
+        $userId = $this->getSession("userId");
+        $type = $this->getSession("type");
+        $details = $this->notificationModel->getUserDetails($userId);
+
+        $name = $details["name"];
+        $img = $details["img"];
+        $type = ($type == "lec") ? "Lecturer" : "Student";
+
+        if (empty($img)) {
+            $img = "user_avatar.png";
+        } else {
+            $img = "../pic_data/{$img}";
+        }
+
+        $output =
+            "
+            <img src='http://localhost/ALec/public/img/{$img}' alt=''>
+            <div class='name_job'>
+                <div class='name' onclick=''>{$name}</div>
+                <div class='job'>{$type}</div>
+            </div>
+            ";
+
+        echo $output;
+    }
 }

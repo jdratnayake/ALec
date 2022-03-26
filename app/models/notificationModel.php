@@ -51,4 +51,12 @@ class NotificationModel extends Database
 
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function getUserDetails($userId)
+    {
+        $query = "SELECT CONCAT(first_name, ' ', last_name) AS name, img FROM user WHERE user_id='$userId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result);
+    }
 }

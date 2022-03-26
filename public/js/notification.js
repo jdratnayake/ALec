@@ -2,6 +2,17 @@ let readNotification;
 let goToPage;
 
 $(document).ready(function () {
+    //Update dashboard
+    $.ajax({
+        type: "GET",
+
+        url: "http://localhost/ALec/notification/updateNavigationBar/",
+        dataType: "html",
+        success: function (response) {
+            $(".profile_details").html(response);
+        }
+    })
+
     //Initially update the unread message count
     getUnReadCount()
 
