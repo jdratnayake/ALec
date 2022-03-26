@@ -19,7 +19,7 @@ class PasswordRecovery extends AlecFramework
       if (empty($email)) {
         $errors["email"] = "Email is required";
       } else if (!($this->passwordRecoveryModel->emailCheck($email))) {
-        $errors["email"] = "Email is not exists";
+        $errors["email"] = "Email does not exist";
       }
 
       $numberOfErrors = 0;
@@ -180,7 +180,7 @@ class PasswordRecovery extends AlecFramework
     }
 
     #lower-side {
-      padding: 0px 32px 80px 32px;
+      padding: 0 32px 80px 32px;
       background: #fff;
       display: block;
       border-bottom-right-radius: 8px;
@@ -189,7 +189,7 @@ class PasswordRecovery extends AlecFramework
 
     #message {
         margin-top: 20px;
-      margin-bottom: 0px;
+      margin-bottom: 0;
       color: #000000;
       letter-spacing: 1px;
 	  font-size: 60px;
@@ -203,9 +203,9 @@ class PasswordRecovery extends AlecFramework
       color: #fff;
       margin-top: 10px;
       padding: .8em 3em;
-      -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
-      -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
-      box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+      -webkit-box-shadow: 0 15px 30px rgba(50, 50, 50, 0.21);
+      -moz-box-shadow: 0 15px 30px rgba(50, 50, 50, 0.21);
+      box-shadow: 0 15px 30px rgba(50, 50, 50, 0.21);
       border-radius: 25px;
       -webkit-transition: all .4s ease;
       -moz-transition: all .4s ease;
@@ -215,9 +215,9 @@ class PasswordRecovery extends AlecFramework
     }
 
     #contBtn:hover {
-      -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
-      -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
-      box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+      -webkit-box-shadow: 0 15px 30px rgba(50, 50, 50, 0.41);
+      -moz-box-shadow: 0 15px 30px rgba(50, 50, 50, 0.41);
+      box-shadow: 0 15px 30px rgba(50, 50, 50, 0.41);
       -webkit-transition: all .4s ease;
       -moz-transition: all .4s ease;
       -o-transition: all .4s ease;

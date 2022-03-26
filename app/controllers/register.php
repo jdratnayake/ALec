@@ -46,14 +46,14 @@ class Register extends AlecFramework
 
       //Unique check
       if ($this->registerModel->emailCheck($email)) {
-        $errors["email"] = "Email is already exists";
+        $errors["email"] = "Email already exists";
       }
 
       if ($this->registerModel->userNoCheck($type, $regNo)) {
         if ($type == 2) {
-          $errors["regNo"] = "Registration No is already exists";
+          $errors["regNo"] = "Registration No already exists";
         } else if ($type == 3) {
-          $errors["regNo"] = "Index No is already exists";
+          $errors["regNo"] = "Index No already exists";
         }
       }
 
@@ -204,9 +204,9 @@ class Register extends AlecFramework
       color: #fff;
       margin-top: 10px;
       padding: .8em 3em;
-      -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
-      -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
-      box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+      -webkit-box-shadow: 0 15px 30px rgba(50, 50, 50, 0.21);
+      -moz-box-shadow: 0 15px 30px rgba(50, 50, 50, 0.21);
+      box-shadow: 0 15px 30px rgba(50, 50, 50, 0.21);
       border-radius: 25px;
       -webkit-transition: all .4s ease;
       -moz-transition: all .4s ease;
@@ -216,9 +216,9 @@ class Register extends AlecFramework
     }
 
     #contBtn:hover {
-      -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
-      -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
-      box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+      -webkit-box-shadow: 0 15px 30px rgba(50, 50, 50, 0.41);
+      -moz-box-shadow: 0 15px 30px rgba(50, 50, 50, 0.41);
+      box-shadow: 0 15px 30px rgba(50, 50, 50, 0.41);
       -webkit-transition: all .4s ease;
       -moz-transition: all .4s ease;
       -o-transition: all .4s ease;
