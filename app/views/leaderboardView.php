@@ -19,56 +19,63 @@
 
 <body>
 
-<?php linkPhp("navigationBarLecturer") ?>
+    <?php
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-    <li>Leaderboard</li>
-</ul>
+    if ($data["userType"] == "stu") {
+        linkPhp("navigationBarStudent");
+    } else if ($data["userType"] == "lec") {
+        linkPhp("navigationBarLecturer");
+    }
 
-<div class="table-container">
+    ?>
 
-    <header>Leaderboard</header>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li>Leaderboard</li>
+    </ul>
 
-    <div class="year-selection">
-        <label for="year-selection">Year:</label>
-        <select name="year-selection" id="year-selection" class="year-dropdown">
-            <option value='0'>--All years--</option>
-            <option value='1'>Year 1</option>
-            <option value='2'>Year 2</option>
-        </select>
-    </div>
+    <div class="table-container">
 
-    <!--        --><?php
-    //            while ($row = mysqli_fetch_assoc($data["studentDetails"])){
-    //                echo $row["index_no"] . " - ";
-    //                echo $row["full_name"] . "<br>";
-    //            };
-    //        ?>
+        <header>Leaderboard</header>
 
-    <table class="content-table">
-        <thead>
-        <tr>
-            <th>Rank</th>
-            <th>Registration No</th>
-            <th>Name</th>
-            <th>Points</th>
-            <th>Badges</th>
-        </tr>
-        </thead>
+        <div class="year-selection">
+            <label for="year-selection">Year:</label>
+            <select name="year-selection" id="year-selection" class="year-dropdown">
+                <option value='1' selected>Year 1</option>
+                <option value='2'>Year 2</option>
+                <option value='3'>Year 3</option>
+                <option value='4'>Year 4</option>
+            </select>
+        </div>
 
-        <tbody>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Index No</th>
+                    <th>Name</th>
+                    <th>Points</th>
+                    <th>Badges</th>
+                </tr>
+            </thead>
 
-        <?php
-        $i = 1;
-        while ($row = mysqli_fetch_assoc($data["studentDetails"])) {
-            echo "
+            <tbody id="leaderboard-content">
+
+                <?php
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($data["studentDetails"])) {
+
+                    if (empty($row["marks"])) {
+                        $row["marks"] = 0;
+                    }
+
+                    echo "
                         <tr>
                             <td>$i</td>
                             <td>{$row["index_no"]}</td>
-                            <td>{$row["full_name"]}</td>
-                            <td>100</td>
+                            <td>{$row["name"]}</td>
+                            <td>{$row["marks"]}</td>
                             <td>
                                 <button type='button' class='button'>
                                     <span class='button__text'>View</span>
@@ -76,33 +83,35 @@
                             </td>
                         </tr>
                         ";
-            $i++;
-        }
-        ?>
+                    $i++;
+                }
+                ?>
 
-        <!--                        <tr class="active-row">-->
-        <!--                            <td>2</td>-->
-        <!--                            <td>2019/CS/142</td>-->
-        <!--                            <td>Janitha Ratnayake</td>-->
-        <!--                            <td>100</td>-->
-        <!--                            <td>-->
-        <!--                                <button type="button" class="button">-->
-        <!--                                    <span class="button__text">View</span>-->
-        <!--                                </button>-->
-        <!--                            </td>-->
-        <!--                        </tr>-->
-        </tbody>
+                <!--                        <tr class="active-row">-->
+                <!--                            <td>2</td>-->
+                <!--                            <td>2019/CS/142</td>-->
+                <!--                            <td>Janitha Ratnayake</td>-->
+                <!--                            <td>100</td>-->
+                <!--                            <td>-->
+                <!--                                <button type="button" class="button">-->
+                <!--                                    <span class="button__text">View</span>-->
+                <!--                                </button>-->
+                <!--                            </td>-->
+                <!--                        </tr>-->
+            </tbody>
 
-    </table>
-</div>
+        </table>
+    </div>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("footer"); ?>
 
-<!--    --><?php //linkPhp("notification");?>
+    <?php linkPhp("notificationView"); ?>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-<?php linkJS("notification") ?>
+    <?php linkJS("notification") ?>
+
+    <?php linkJS("leaderboard") ?>
 
 </body>
 
