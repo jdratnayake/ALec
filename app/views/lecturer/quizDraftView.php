@@ -17,81 +17,85 @@
 </head>
 
 <body>
-<?php linkPhp("navigationBarLecturer"); ?>
+    <?php linkPhp("navigationBarLecturer"); ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
-    <li>Drafts</li>
-</ul>
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/lecturerDashboard/index">Home</a></li>
+        <li>Drafts</li>
+    </ul>
 
-<div class="details-content">
-    <div class="header-container">
-        <header>Drafts</header>
+    <div class="details-content">
+        <div class="header-container">
+            <header>Drafts</header>
 
-        <!--        Course selection drop down-->
-        <div class="course-selection">
-            <label for="course-selection"></label>
-            <select name="course-selection" id="course-selection" class="course-dropdown">
-                <option value='0'>--No course selected--</option>
+            <!--        Course selection drop down-->
+            <div class="course-selection">
+                <label for="course-selection"></label>
+                <select name="course-selection" id="course-selection" class="course-dropdown">
+                    <option value='0'>--No course selected--</option>
 
-                <?php
+                    <?php
 
-                while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
-                    echo
-                    "
+                    while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
+                        echo
+                        "
                         <option value='{$row['course_id']}'>{$row['course_name']}</option>
                         ";
-                }
+                    }
 
-                ?>
+                    ?>
 
-            </select>
+                </select>
+            </div>
+
+            <!--        Topic selection drop down-->
+            <div class="course-selection">
+                <label for="topic-selection"></label>
+                <select name="topic-selection" id="topic-selection" class="course-dropdown">
+                    <option value='0'>--No topic selected--</option>
+                </select>
+            </div>
         </div>
 
-        <!--        Topic selection drop down-->
-        <div class="course-selection">
-            <label for="topic-selection"></label>
-            <select name="topic-selection" id="topic-selection" class="course-dropdown">
-                <option value='0'>--No topic selected--</option>
-            </select>
+        <div class="button-container">
+            <!--        Add draft Button-->
+            <button type="button" value="Add New Quiz" class="add-btn" id="add-quiz-btn" onclick="<?php echo "location.href='" . BASEURL . "/createQuizDashboard/index/" . "'"; ?>">Add New Quiz
+            </button>
         </div>
+
+        <div class="draft-details-container" style="display: none">
+            <div class='drafts'>
+                <div class='draft'>
+                    <div class='draft-details'>
+                        <a href='' class='draft-name'><span>Quiz 1</span>
+                        </a>
+                    </div>
+                    <span class='draft-created-date'>17/03/2022</span>
+                </div>
+            </div>
+        </div>
+
+        <div class='content-message' id="no-course-selected">
+            <i class='fa fa-spinner' aria-hidden='true'></i>
+            No course selected
+        </div>
+
+        <div class='content-message' id="no-draft-quiz-selected" style="display: none">
+            <i class='fa fa-spinner' aria-hidden='true'></i>
+            No drafted quiz available
+        </div>
+
     </div>
+    <?php linkPhp("footer"); ?>
 
-    <div class="button-container">
-        <!--        Add draft Button-->
-        <button type="button" value="Add New Quiz" class="add-btn" id="add-quiz-btn"
-                onclick="<?php echo "location.href='" . BASEURL . "/createQuizDashboard/index/" . "'"; ?>">Add New Quiz
-        </button>
-    </div>
+    <?php linkPhp("notificationView"); ?>
 
-    <div class="draft-details-container" style="display: none">
-        <!--        <div class='drafts'>-->
-        <!--            <div class='draft'>-->
-        <!--                <div class='draft-details'>-->
-        <!--                    <a href='' class='draft-name'><span>Quiz 1</span>-->
-        <!--                    </a>-->
-        <!--                </div>-->
-        <!--                <span class='draft-created-date'>17/03/2022</span>-->
-        <!--            </div>-->
-        <!--        </div>-->
-    </div>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-    <div class='content-message'>
-        <i class='fa fa-spinner' aria-hidden='true'></i>
-        No course selected
-    </div>
+    <?php linkJS("notification") ?>
 
-</div>
-<?php linkPhp("footer"); ?>
-
-<?php linkPhp("notificationView"); ?>
-
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
-
-<?php linkJS("notification") ?>
-
-<?php linkJS("quizDraftView") ?>
+    <?php linkJS("quizDraftView") ?>
 
 </body>
 

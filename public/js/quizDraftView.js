@@ -5,6 +5,9 @@ $(document).ready(function () {
     $('#course-selection').change(function () {
         const courseId = $(this).val();
 
+        $("#no-course-selected").hide();
+
+
         updateQuizes();
 
         $.ajax({
@@ -34,7 +37,16 @@ $(document).ready(function () {
             url: "http://localhost/ALec/quizDraft/draftQuiz/" + courseId + "/" + topicId,
             dataType: "html",
             success: function (response) {
-                $(".draft-details-container").html(response);
+
+                if (response == "") {
+                    console.log("Hi");
+                    $(".draft-details-container").hide();
+                    $("#no-draft-quiz-selected").show();
+                } else {
+                    $(".no-draft-quiz-selected").hide();
+                    $(".draft-details-container").show();
+                    $(".draft-details-container").html(response);
+                }
             }
         })
     }
