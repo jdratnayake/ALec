@@ -118,11 +118,27 @@ class LecturerForumTopicDiscussionModel extends Database
         return $topicId;
     }
 
+    public function getStudentId($replyId)
+    {
+        $query = "SELECT user_id FROM forum_reply WHERE reply_id='$replyId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["user_id"];
+    }
+
     public function changeMarksReply($userId, $replyId, $signal)
     {
+        //Forum reply marks
+        $marks = 20;
+        $studentId = $this->getStudentId($replyId);
+
         if ($signal == "0") {
+            $this->insertMarks($studentId, "forumReply", -$marks);
+
             $query = "DELETE FROM forum_reply_points WHERE lecturer_id='$userId' AND reply_id='$replyId'";
         } else if ($signal == "1") {
+            $this->insertMarks($studentId, "forumReply", $marks);
+
             $query = "INSERT INTO forum_reply_points(lecturer_id, reply_id, time) VALUES('$userId', '$replyId', NOW())";
         }
 
