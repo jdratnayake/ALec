@@ -56,7 +56,7 @@
                 </button>
                 <div class='content'>
                 <div class='button-set'>
-                    <button class='edit-btn'><i class='fa fa-pencil' aria-hidden='true'></i>Edit topic</button>
+                    <button class='edit-btn' id='edit-name' onclick=\"openEditTopicModal({$row['topic_id']}, '{$row['topic_name']}')\"><i class='fa fa-pencil' aria-hidden='true'></i>Edit topic</button>
                     <button class='dlt-btn' onclick=\"deleteFunction($questionLink)\"><i class='fa fa-trash' aria-hidden='true'></i>Delete topic</button>
                 </div>
                 <p class='quiz-head'>Quizzes</p>
@@ -134,6 +134,32 @@
 
     </div>
 
+    <!-- The Modal -->
+    <div id="edit-name-model" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Edit Topic</h2>
+            </div>
+
+            <div class="modal-body">
+                <form action="" method="post" id="editTopic">
+                    <div class="date-group">
+                        <label for="topicName">Topic Name :</label>
+
+                        <div class="right-side">
+                            <input type="text" id="topicName" name="topicName" value="" class="name-input"">
+                            <div class=" error">
+                        </div>
+                    </div>
+            </div>
+            <input type="submit" value="Save" name="submit" class="upload-btn" id="save-btn">
+            </form>
+        </div>
+    </div>
+    </div>
 
 
     <?php linkPhp("notificationView"); ?>
@@ -149,6 +175,8 @@
     <?php linkJS("successMessage"); ?>
 
     <?php linkJS("deleteMessage"); ?>
+
+    <?php linkJS("topicRenameValidation"); ?>
 
 </body>
 

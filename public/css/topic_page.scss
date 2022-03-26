@@ -10,6 +10,7 @@ $blue_var_2: $theme_second;
 $blue_var_3: #007ab3;
 $blue_var_4: #008bcc;
 $light_color: #FFFFFF;
+$modal_color: #325C97;
 
 .center {
   margin: auto;
@@ -254,3 +255,115 @@ $light_color: #FFFFFF;
 }
 
 /* ----------------------TOOLTIP ON EDIT QUIZ AND VIEW QUIZ END------------------------- */
+
+
+/*==============================================================================*/
+/*MODAL - START*/
+/*==============================================================================*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 40%;
+
+  .modal-header {
+    padding: 8px 16px;
+    background-color: $modal_color;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+
+    form {
+      padding: 16px 0;
+      display: inline-grid;
+      justify-content: center;
+      justify-items: center;
+
+      .date-group {
+        display: flex;
+        padding-bottom: 1rem;
+        margin-left: 10px;
+        justify-content: space-between;
+
+        .session-label {
+          width: 130px;
+        }
+
+        .right-side {
+          display: grid;
+
+          .name-input {
+            border: 1px solid $modal_color;
+            border-radius: 5px;
+            padding: 2px 15px;
+            margin: 2px;
+            width: 250px;
+          }
+
+          .error {
+            margin-left: 2px;
+          }
+        }
+      }
+
+      .upload-btn {
+        background-color: $modal_color;
+        border: 1px solid $modal_color;
+        color: white;
+        padding: 2px 40px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 15px;
+
+        &:hover {
+          background-color: $theme;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*==============================================================================*/
+/*MODAL - END*/
+/*==============================================================================*/
+

@@ -4,6 +4,10 @@
 //LOCAL VARIABLES
 $login_theme_color: $theme;
 
+body {
+    overflow: hidden;
+}
+
 .wave{
     position: fixed;
     height: 100%;

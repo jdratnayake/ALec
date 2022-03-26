@@ -310,9 +310,14 @@ $sidebar_max_len: 240px;
     justify-content: center;
     background-color: #964ba1;
     align-items: center;
+    cursor: pointer;
 
     .fa-user {
       font-size: 20px;
+    }
+
+    &:hover {
+      background-color: #64326c;
     }
   }
 

@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <?php linkPhp("navigationBarAdmin"); ?>
+    <?php linkPhp("navigationBarLecturer"); ?>
 
     <?php linkPhp("successMessage");
     printSucessMsg($data["success"]); ?>

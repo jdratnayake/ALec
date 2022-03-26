@@ -62,6 +62,6 @@ class AttemptQuizMarksModel extends Database
 
         mysqli_query($GLOBALS["db"], $query);
 
-        $this->insertMarks($userId, "quiz", $marks, $userId, $quizId);
+        $this->insertMarks($userId, "quiz", $marks);
     }
 }

@@ -317,9 +317,13 @@ header {
   justify-content: center;
   background-color: #964ba1;
   align-items: center;
+  cursor: pointer;
 }
 .user-type-container .image-container .fa-user {
   font-size: 20px;
+}
+.user-type-container .image-container:hover {
+  background-color: #64326c;
 }
 .user-type-container .user-type-label {
   font-size: 10px;
@@ -754,7 +758,7 @@ footer p {
 .details-content .container .content .questions-container .row .percentage:hover {
   color: #72addf;
 }
-.details-content .container .button-container {
+.details-content .container .button-container, .details-content .container .single-button-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -762,13 +766,13 @@ footer p {
   margin: 10px auto;
   padding: 10px;
 }
-.details-content .container .button-container .answer {
+.details-content .container .button-container .answer, .details-content .container .single-button-container .answer {
   margin-left: 8px;
   margin-top: 35px;
   margin-bottom: 15px;
   color: #867f7f;
 }
-.details-content .container .button-container .save-btn {
+.details-content .container .button-container .save-btn, .details-content .container .single-button-container .save-btn {
   padding: 6px 36px;
   background-color: #2B4F82;
   color: #FFF;
@@ -779,9 +783,12 @@ footer p {
   cursor: pointer;
   margin: 5px;
 }
-.details-content .container .button-container .save-btn:hover {
+.details-content .container .button-container .save-btn:hover, .details-content .container .single-button-container .save-btn:hover {
   background-color: #1d3557;
   border: 2px solid #1d3557;
+}
+.details-content .container .single-button-container {
+  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=show_poll_mcq.css.map */

@@ -39,4 +39,19 @@ class LecturerTopicPage extends AlecFramework
 
         $this->redirect("lecturerTopicPage/index/{$courseId}");
     }
+
+    public function updateTopicName($topicId)
+    {
+        // print_r($_POST);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $topicName = $_POST["topicName"];
+
+            $this->lecturerTopicPageModel->editTopic($topicId, $topicName);
+        }
+
+        $courseId = $this->lecturerTopicPageModel->getCourseId($topicId);
+
+        $this->redirect("lecturerTopicPage/index/{$courseId}");
+    }
 }

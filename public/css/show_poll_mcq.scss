@@ -131,7 +131,7 @@ $light_color: #FFF;
       }
     }
 
-    .button-container {
+    .button-container, .single-button-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -162,6 +162,10 @@ $light_color: #FFF;
           border: 2px solid $theme_second_hover;
         }
       }
+    }
+
+    .single-button-container {
+      justify-content: flex-end;
     }
   }
 }

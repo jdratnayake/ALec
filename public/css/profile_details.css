@@ -317,9 +317,13 @@ header {
   justify-content: center;
   background-color: #964ba1;
   align-items: center;
+  cursor: pointer;
 }
 .user-type-container .image-container .fa-user {
   font-size: 20px;
+}
+.user-type-container .image-container:hover {
+  background-color: #64326c;
 }
 .user-type-container .user-type-label {
   font-size: 10px;
@@ -728,7 +732,7 @@ footer p {
   margin: 20px 0;
   display: flex;
   justify-content: space-between;
-  max-height: 228px;
+  max-height: 280px;
 }
 .details-content .user-details-container .details-container .horizontal-container .pvt-details, .details-content .user-details-container .details-container .horizontal-container .course-details {
   display: inline-flex;

@@ -29,7 +29,7 @@ $errors = $data["errors"];
     <input type="hidden" id="session-id" value='<?php echo $sessionId; ?>'>
     <input type="hidden" id="questionIdArray" value='<?php echo $data["questionIdArray"]; ?>'>
 
-    <?php linkPhp("navigationBarLecturer"); ?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
     <!--    breadcrumb-->
     <ul class="breadcrumb">

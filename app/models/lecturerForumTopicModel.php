@@ -47,13 +47,29 @@ class LecturerForumTopicModel extends Database
         return $output;
     }
 
+    public function getStudentId($topicId)
+    {
+        $query = "SELECT user_id FROM forum_topic WHERE topic_id='$topicId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result)["user_id"];
+    }
+
     // 0 = remove marks
     // 1 = add marks
     public function changeMarksTopic($userId, $topicId, $signal)
     {
+        //Forum topic marks
+        $marks = 20;
+        $studentId = $this->getStudentId($topicId);
+
         if ($signal == "0") {
+            $this->insertMarks($studentId, "forumTopic", -$marks);
+
             $query = "DELETE FROM forum_topic_points WHERE lecturer_id='$userId' AND topic_id='$topicId'";
         } else if ($signal == "1") {
+            $this->insertMarks($studentId, "forumTopic", $marks);
+
             $query = "INSERT INTO forum_topic_points(lecturer_id, topic_id, time) VALUES('$userId', '$topicId', NOW())";
         }
 

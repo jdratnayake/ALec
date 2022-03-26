@@ -317,9 +317,13 @@ header {
   justify-content: center;
   background-color: #964ba1;
   align-items: center;
+  cursor: pointer;
 }
 .user-type-container .image-container .fa-user {
   font-size: 20px;
+}
+.user-type-container .image-container:hover {
+  background-color: #64326c;
 }
 .user-type-container .user-type-label {
   font-size: 10px;
@@ -646,6 +650,28 @@ footer p {
 /*==============================================================================*/
 /*FOOTER - END*/
 /*==============================================================================*/
+.year-selection {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.year-selection .year-dropdown {
+  cursor: pointer;
+  display: block;
+  padding: 6px 12px;
+  color: rgba(0, 0, 0, 0.85);
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-left: 15px;
+  min-width: 200px;
+}
+.year-selection .year-dropdown:hover {
+  box-shadow: 0 0 5px #7697b3;
+}
+
 /*==============================================================================*/
 /*LEADERBOARD TABLE - START*/
 /*==============================================================================*/

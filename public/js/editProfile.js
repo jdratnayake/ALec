@@ -15,6 +15,12 @@ $(document).ready(function () {
         })
     });
 
+    $("#btn-cancel").click(function (event) {
+        $(this).hide();
+        $("#btn-edit").show();
+        $("#btn-save").hide();
+    });
+
     $("input[type=reset]").click(function (event) {
         $("#btn-edit").show();
         $("#btn-save").hide();

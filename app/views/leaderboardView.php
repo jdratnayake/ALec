@@ -31,6 +31,15 @@
 
     <header>Leaderboard</header>
 
+    <div class="year-selection">
+        <label for="year-selection">Year:</label>
+        <select name="year-selection" id="year-selection" class="year-dropdown">
+            <option value='0'>--All years--</option>
+            <option value='1'>Year 1</option>
+            <option value='2'>Year 2</option>
+        </select>
+    </div>
+
     <!--        --><?php
     //            while ($row = mysqli_fetch_assoc($data["studentDetails"])){
     //                echo $row["index_no"] . " - ";

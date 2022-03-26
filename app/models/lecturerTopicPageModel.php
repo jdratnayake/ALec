@@ -47,4 +47,10 @@ class LecturerTopicPageModel extends Database
         $query = "DELETE FROM course_topic WHERE topic_id='$topicId'";
         mysqli_query($GLOBALS["db"], $query);
     }
+
+    public function editTopic($topicId, $topicName)
+    {
+        $query = "UPDATE course_topic SET topic_name='$topicName' WHERE topic_id='$topicId'";
+        mysqli_query($GLOBALS["db"], $query);
+    }
 }

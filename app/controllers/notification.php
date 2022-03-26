@@ -91,6 +91,7 @@ class Notification extends AlecFramework
             $notificationId = $row["notification_id"];
             $path = $row["url"];
             $id = "notification-" . $notificationId;
+            $time = $row["difference"];
 
             $output .=
                 "
@@ -100,7 +101,7 @@ class Notification extends AlecFramework
                 <div class='text'>
                     <span><b>{$message}</b></span> <br>
                     <span>{$courseName}</span> <br>
-                    <span>13 hours ago</span>
+                    <span>{$time} ago</span>
                 </div>
                 <div class='read-status' id='{$id}'>
                 ";
@@ -132,5 +133,41 @@ class Notification extends AlecFramework
         ";
 
         return $output;
+    }
+
+    public function updateNavigationBar()
+    {
+        $userId = $this->getSession("userId");
+        $type = $this->getSession("type");
+        $details = $this->notificationModel->getUserDetails($userId);
+
+        $name = $details["name"];
+        $img = $details["img"];
+
+        if ($type == "lec") {
+            $type = "Lecturer";
+        } else if ($type == "stu") {
+            $type = "Student";
+        } else if ($type == "admin") {
+            $type = "Admin";
+        }
+
+
+        if (empty($img)) {
+            $img = "user_avatar.png";
+        } else {
+            $img = "../pic_data/{$img}";
+        }
+
+        $output =
+            "
+            <img src='http://localhost/ALec/public/img/{$img}' alt=''>
+            <div class='name_job'>
+                <div class='name' onclick=''>{$name}</div>
+                <div class='job'>{$type}</div>
+            </div>
+            ";
+
+        echo $output;
     }
 }
