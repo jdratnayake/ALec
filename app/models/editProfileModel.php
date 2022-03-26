@@ -12,6 +12,9 @@ class editProfileModel extends Database
             $query = "SELECT first_name, last_name, email, tele, user_type, index_no AS reg_no, img FROM user 
             INNER JOIN student ON student.user_id=user.user_id
             WHERE user.user_id='$userId' LIMIT 1";
+        } else if ($type == "admin") {
+            $query = "SELECT first_name, last_name, email, tele, user_type, '' AS reg_no, img FROM user 
+            WHERE user.user_id='$userId' LIMIT 1";
         }
 
         $result = mysqli_query($GLOBALS["db"], $query);
@@ -41,11 +44,15 @@ class editProfileModel extends Database
     {
         if ($type == "lec") {
             $query = "SELECT course_name FROM course_registration_lec INNER JOIN course ON course.course_id=course_registration_lec.course_id WHERE lecturer_id='$userId' GROUP BY course_name";
+            $result = mysqli_query($GLOBALS["db"], $query);
         } else if ($type == "stu") {
             $query = "SELECT course_name FROM course_registration_stu INNER JOIN course ON course.course_id=course_registration_stu.course_id WHERE student_id='$userId' GROUP BY course_name";
+            $result = mysqli_query($GLOBALS["db"], $query);
+        } else {
+            $result = false;
         }
 
-        $result = mysqli_query($GLOBALS["db"], $query);
+
 
         return $result;
     }

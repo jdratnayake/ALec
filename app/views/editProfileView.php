@@ -113,12 +113,16 @@
                     <div class="course-details">
                         <span>Course Details</span>
                         <?php
-                        while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
-                            echo
-                            "
-                        <span>{$row["course_name"]}</span>
-                        ";
+
+                        if ($data["courseDetails"] != false) {
+                            while ($row = mysqli_fetch_assoc($data["courseDetails"])) {
+                                echo
+                                "
+                                <span>{$row["course_name"]}</span>
+                                ";
+                            }
                         }
+
                         ?>
                     </div>
                 </div>

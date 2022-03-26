@@ -143,7 +143,15 @@ class Notification extends AlecFramework
 
         $name = $details["name"];
         $img = $details["img"];
-        $type = ($type == "lec") ? "Lecturer" : "Student";
+
+        if ($type == "lec") {
+            $type = "Lecturer";
+        } else if ($type == "stu") {
+            $type = "Student";
+        } else if ($type == "admin") {
+            $type = "Admin";
+        }
+
 
         if (empty($img)) {
             $img = "user_avatar.png";
