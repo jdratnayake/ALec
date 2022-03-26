@@ -6,41 +6,40 @@
 	$question_no = $_GET["question_id"];
 	$session_id = $_GET["session_id"];
 
-	$sql = "SELECT active_question_id FROM session WHERE session_id=$session_id;";
+	$sql = "SELECT status FROM session_question WHERE question_no=$question_no;";
 
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	
+	//$st = $row['status'];
+	//echo $st;
+	//str_replace('"', '', $st)
 	
-	if($row['active_question_id']){
-		if(str_replace('"', '', $question_no)==$row['active_question_id']){
-			$sqlf = "UPDATE session_question SET status = 'F' WHERE question_no = $question_no;";
+	if($row['status']){
+		if($row['status'] == 'F'){
+			$sqlf = "UPDATE session_question SET status='F' WHERE session_id= $session_id";
+            mysqli_query($conn, $sqlf);
+
+            $sqlf = "UPDATE session_question SET status='T', published_time=NOW() WHERE session_id= $session_id AND question_no= $question_no";
 			$resultf = mysqli_query($conn, $sqlf);
+			
 			if($resultf){
-				echo "Question Disabled";
+				echo "Question Enabled";
 			}
 			else{echo "Error";}
 		}
-		else{
-			$qu_id = $row['active_question_id'];
-			$sqlf = "UPDATE session_question SET status = 'F' WHERE question_no = $qu_id;";
-			$resultf = mysqli_query($conn, $sqlf);
-			$sqlt = "UPDATE session_question SET status = 'T' WHERE question_no = $question_no;";
+		else if($row['status'] == 'T'){
+			$sqlt = "UPDATE session_question SET status='F', published_time=NULL WHERE session_id= $session_id AND question_no= $question_no";
 			$resultt = mysqli_query($conn, $sqlt);
-			
+			//echo $sqlt;
 			if($resultt){
-				echo "Question Started";
+				echo "Question Disabled";
 			}
 			else{echo "Error";}
 		}	
 	}
 	else{
-		$sqlt = "UPDATE session_question SET status = 'T' WHERE question_no = $question_no;";
-		$resultt = mysqli_query($conn, $sqlt);
-		if($resultt){
-			echo "Question Started";
-		}
-		else{echo "Error";}
+		echo "Error";
 	}
 	
 	mysqli_close($conn);
