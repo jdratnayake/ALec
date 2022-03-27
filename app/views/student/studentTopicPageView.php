@@ -29,7 +29,7 @@
         <header><?php echo $data["courseDetails"]["course_name"]; ?></header>
 
         <p>
-            <?php echo $data["courseDetails"]["course_description"]; ?>
+            <?php echo nl2br($data["courseDetails"]["course_description"]); ?>
         </p>
 
         <button class="add-topic" type="button" value="add-topic" onclick="location.href='<?php echo BASEURL . "/myCourseSessionsList/index/{$data["bread"]["courseId"]}" ?>'">
