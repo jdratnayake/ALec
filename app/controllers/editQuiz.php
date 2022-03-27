@@ -36,7 +36,7 @@ class EditQuiz extends AlecFramework
 
                 // Determine mcq question type - START
                 $question = $_POST["q_$row[question_no]"];
-                $type = "mcq-s";
+                $type = $row["question_type"];
 
                 if (isset($_POST["check_$row[question_no]"])) {
                     $type = "mcq-m";
