@@ -10,6 +10,7 @@ class MyCourseSessionsList extends AlecFramework
         $this->showPollAnswer = $this->model("showPollAnswerModel");
     }
 
+    // Display polls of the session
     public function index($courseId)
     {
         $data["bread"]["courseDetails"] = $this->myCourseSessionsListModel->getCourseDetils($courseId);
@@ -20,6 +21,7 @@ class MyCourseSessionsList extends AlecFramework
         $this->view("student/myCourseSessionsListView", $data);
     }
 
+    // Display poll results with the correct answer
     public function review($questionId)
     {
         $data["bread"]["sessionDetails"] = $this->showPollAnswer->getSessionDetails($questionId);

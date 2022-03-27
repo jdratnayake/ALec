@@ -2,11 +2,12 @@ let count = 1;
 
 $(document).ready(function () {
 
-
+    // Add new question
     $("#add-question").click(function () {
         $(".all-questions").append(questionType + getMcqQuestion());
     });
 
+    // Change the question structure acording to the question type
     $("body").on("change", "input[name=type]:radio", function () {
 
         const value = $(this).val();
@@ -31,6 +32,7 @@ $(document).ready(function () {
     });
 });
 
+// Hold question type structure
 const questionType =
     `
 <div class="new-question-container">   
@@ -42,6 +44,7 @@ const questionType =
     </div> 
 `;
 
+// Return mcq structure
 function getMcqQuestion() {
     const num = parseInt($("#new-question-count").val()) + 1;
 
@@ -100,6 +103,7 @@ function getMcqQuestion() {
 `;
 }
 
+// Return short answer structure
 function getShortAnswer() {
     const num = parseInt($("#new-question-count").val()) + 1;
 
@@ -135,6 +139,7 @@ function getShortAnswer() {
     `;
 }
 
+// Delete a new question
 function deleteNewQuestion(e) {
     const num = parseInt($("#new-question-count").val()) - 1;
 
@@ -143,10 +148,12 @@ function deleteNewQuestion(e) {
     $(e).closest('.new-question-container').remove();
 }
 
+// Delete a pre exist question
 function deleteOldQuestion(e) {
     $(e).closest('.question-container').remove();
 }
 
+// Delete a pre exist answer
 function deleteOldAnswer(e) {
     $(e).closest('.answer').remove();
 }

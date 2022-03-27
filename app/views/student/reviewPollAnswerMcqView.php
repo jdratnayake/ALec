@@ -74,6 +74,7 @@ if ($questionCount == 0) {
                     <!-- Echo answers -->
                     <?php
                     while ($row = mysqli_fetch_assoc($data["answers"])) {
+                        // Calculate the precentage
                         $precentage = $row["answer_count"] * 100 / $questionCount;
                         $precentage = round($precentage, 2);
 

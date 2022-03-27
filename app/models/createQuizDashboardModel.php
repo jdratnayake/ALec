@@ -2,6 +2,7 @@
 
 class createQuizDashboardModel extends Database
 {
+    // Return enrolled course details of a lecturer
     public function getCourseDetails($userId)
     {
         $query = "SELECT course.course_id, course_name FROM course INNER JOIN course_registration_lec ON
@@ -11,6 +12,7 @@ class createQuizDashboardModel extends Database
         return $result;
     }
 
+    // Return topics of a particular course
     public function getTopicDetails($courseId)
     {
         $query = "SELECT topic_id, topic_name FROM course_topic WHERE course_id='$courseId'";
@@ -25,6 +27,7 @@ class createQuizDashboardModel extends Database
         return $output;
     }
 
+    // Insert quiz details
     public function insertQuizData($quizName, $status, $durHr, $durMin, $lecturerId, $topicId)
     {
         $quizName = mysqli_real_escape_string($GLOBALS["db"], $quizName);
@@ -46,6 +49,7 @@ class createQuizDashboardModel extends Database
         return mysqli_fetch_assoc($result)["quiz_id"];
     }
 
+    // Insert quiz questions
     public function insertQuizQuestion($quizId, $question, $questionType)
     {
         $quizId = mysqli_real_escape_string($GLOBALS["db"], $quizId);
@@ -63,6 +67,7 @@ class createQuizDashboardModel extends Database
         return mysqli_fetch_assoc($result)["question_no"];
     }
 
+    // Insert quiz choices
     public function insertChoice($questionId, $quizId, $choice, $points)
     {
         $questionId = mysqli_real_escape_string($GLOBALS["db"], $questionId);

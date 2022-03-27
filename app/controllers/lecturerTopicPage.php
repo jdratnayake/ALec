@@ -11,6 +11,7 @@ class LecturerTopicPage extends AlecFramework
         $this->lecturerTopicPageModel = $this->model("lecturerTopicPageModel");
     }
 
+    // Display course page with topics
     public function index($courseId)
     {
         $data["success"] = "";
@@ -32,6 +33,7 @@ class LecturerTopicPage extends AlecFramework
         $this->view("lecturer/lecturerTopicPageView", $data);
     }
 
+    // Delete a topic
     public function deleteTopic($topicId)
     {
         $courseId = $this->lecturerTopicPageModel->getCourseId($topicId);
@@ -40,6 +42,7 @@ class LecturerTopicPage extends AlecFramework
         $this->redirect("lecturerTopicPage/index/{$courseId}");
     }
 
+    // Edit a topic
     public function updateTopicName($topicId)
     {
         // print_r($_POST);
@@ -50,6 +53,7 @@ class LecturerTopicPage extends AlecFramework
             $this->lecturerTopicPageModel->editTopic($topicId, $topicName);
         }
 
+        // Get course id to move to another page
         $courseId = $this->lecturerTopicPageModel->getCourseId($topicId);
 
         $this->redirect("lecturerTopicPage/index/{$courseId}");

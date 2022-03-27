@@ -2,6 +2,7 @@
 
 class AttemptQuizMarksModel extends Database
 {
+    // Return points of the quiz question choice
     public function getChoiceMark($choiceId)
     {
         $choiceId = mysqli_real_escape_string($GLOBALS["db"], $choiceId);
@@ -13,6 +14,7 @@ class AttemptQuizMarksModel extends Database
         return mysqli_fetch_assoc($result)["points"];
     }
 
+    // Return choice ids of a question
     public function getChoiceIds($questionId)
     {
         $questionId = mysqli_real_escape_string($GLOBALS["db"], $questionId);
@@ -23,6 +25,7 @@ class AttemptQuizMarksModel extends Database
         return $reuslt;
     }
 
+    // Return short answer choice
     public function getShortAnswerChoice($questionId)
     {
         $questionId = mysqli_real_escape_string($GLOBALS["db"], $questionId);
@@ -34,12 +37,14 @@ class AttemptQuizMarksModel extends Database
         return mysqli_fetch_assoc($result)["choice_name"];
     }
 
+    // Update success rate of the question
     public function updateSucessRate($questionId, $sucessRate)
     {
         $query = "UPDATE quiz_question SET success_rate='$sucessRate' WHERE question_no='$questionId'";
         mysqli_query($GLOBALS["db"], $query);
     }
 
+    // Get attempted count of a quiz
     public function getAttemptCount($quizId)
     {
         $query = "SELECT COUNT($quizId) AS total FROM quiz_attempt WHERE quiz_id='$quizId'";
@@ -48,6 +53,7 @@ class AttemptQuizMarksModel extends Database
         return mysqli_fetch_assoc($result)["total"];
     }
 
+    // Return old success rate of the question
     public function getSucessRate($questionId)
     {
         $query = "SELECT success_rate FROM quiz_question WHERE question_no='$questionId'";
@@ -56,6 +62,7 @@ class AttemptQuizMarksModel extends Database
         return mysqli_fetch_assoc($result)["success_rate"];
     }
 
+    // Update student attempt
     public function updateAttempt($userId, $quizId, $marks)
     {
         $query = "UPDATE quiz_attempt SET marks='$marks' WHERE student_id='$userId' AND quiz_id='$quizId'";

@@ -12,6 +12,7 @@ class PreviewQuiz extends AlecFramework
         $this->previewQuizModel = $this->model("previewQuizModel");
     }
 
+    // Preview quiz
     public function index($quizId)
     {
         $data["success"] = "";
@@ -37,6 +38,7 @@ class PreviewQuiz extends AlecFramework
         $this->view("lecturer/previewQuizView", $data);
     }
 
+    // Schedule the quiz
     public function submit($quizId)
     {
         // var_dump($_POST);
@@ -57,6 +59,7 @@ class PreviewQuiz extends AlecFramework
         $this->redirect("previewQuiz/index/{$quizId}");
     }
 
+    // Delete the quiz
     public function delete($quizId)
     {
         $courseId = $this->previewQuizModel->deleteQuiz($quizId);
@@ -64,6 +67,7 @@ class PreviewQuiz extends AlecFramework
         $this->redirect("lecturerTopicPage/index/{$courseId}");
     }
 
+    // Unpublish the quiz
     public function unpublish($quizId)
     {
         $this->previewQuizModel->setUnpublish($quizId);

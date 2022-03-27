@@ -28,25 +28,31 @@ class EditQuiz extends AlecFramework
 
             while ($row = mysqli_fetch_assoc($quizQuestionSummary)) {
 
+                // Check that old questions are exist if not delete them from the database
                 if (!isset($_POST["q_$row[question_no]"])) {
                     $this->editQuizModel->deleteQuestion($row["question_no"]);
                     continue;
                 }
 
+                // Determine mcq question type - START
                 $question = $_POST["q_$row[question_no]"];
                 $type = "mcq-s";
 
                 if (isset($_POST["check_$row[question_no]"])) {
                     $type = "mcq-m";
                 }
+                // Determine mcq question type - END
 
+                // Update the question
                 $this->editQuizModel->updateQuestion($row["question_no"], $question, $type);
 
+                // Answer count
                 $count = $row["count"];
 
                 for ($i = 1; $i <= $count; $i++) {
                     $choiceRow = mysqli_fetch_assoc($quizQuestionChoices);
 
+                    // Check that old choice is exist if not delete them from the database
                     if (!isset($_POST["choice_$choiceRow[choice_id]"])) {
                         $this->editQuizModel->deleteAnswer($choiceRow["choice_id"]);
                         continue;
@@ -55,12 +61,14 @@ class EditQuiz extends AlecFramework
                     $choice = $_POST["choice_$choiceRow[choice_id]"];
                     $points = $_POST["points_$choiceRow[choice_id]"];
 
+                    // Update choice
                     $this->editQuizModel->updateChoice($choiceRow["choice_id"], $choice, $points);
                 }
             }
 
             $count = $_POST["new-question-count"];
 
+            // Add new questions
             for ($i = 1; $i <= $count; $i++) {
                 $question = $_POST["q_{$i}"];
                 $type = $_POST["{$i}_type"];
