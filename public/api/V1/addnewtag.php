@@ -7,10 +7,12 @@
 	$student_id = $_POST["student_id"];
 	
 	
-	$sql = "INSERT INTO tag(tag_id,tag_name, student_id) VALUES(DEFAULT,'$tag_name', '$student_id')";";
+	$sql = "INSERT INTO tag(tag_id,tag_name, student_id) VALUES(DEFAULT,'$tag_name', '$student_id')";
 	$result = mysqli_query($conn, $sql);
 	
-	
+	if($result){
+		echo "Success";
+	}
 	
 	mysqli_close($conn);
-	?>
+?>
