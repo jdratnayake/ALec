@@ -2,7 +2,7 @@
 let validColor = '#38d39f';
 let invalidColor = '#f44336';
 
-//Input fileds and form field
+//Input fields and form field
 let email = document.getElementById('email');
 let password = document.getElementById('password');
 let loginForm = document.getElementById('loginForm');
@@ -79,7 +79,7 @@ function validateEmail() {
 }
 /* EMAIL VALIDATION END */
 
-/* PASSWORD VALIDATION END */
+/* PASSWORD VALIDATION START */
 function checkPasswordEmpty(field) {
     let iconField = document.getElementById('icon-password');
     let lineField = document.getElementById('div-password');
@@ -131,4 +131,4 @@ function validateLoginPassword() {
     setValid(iconField, lineField, messageFiled);
     return true;
 }
-/* PASSWORD VALIDATION START */
+/* PASSWORD VALIDATION END */
