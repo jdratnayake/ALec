@@ -21,7 +21,7 @@ function sessionNameValidityCheck() {
         return false;
     }
 
-    if (!sessionName.match(/^[a-zA-Z0-9 ]*$/gm)) {
+    if (sessionName.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/)) {
         setErrorTag("Topic name must not contain any special letters");
         return false;
     }
