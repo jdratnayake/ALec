@@ -5,9 +5,10 @@
 	$topic_ID = $_POST["topic_ID"];
 	$reply = $_POST["reply"];
 	$user_ID = $_POST["user_ID"];
+	$randomStatus = $_POST["rst"];
 	
-	$sql = "INSERT INTO forum_reply (topic_id, reply_id, reply, post_time, user_id) 
-			VALUES ('$topic_ID', DEFAULT , '$reply', NOW(), '$user_ID');";
+	$sql = "INSERT INTO forum_reply (topic_id, reply_id, reply, post_time, user_id, random_status) 
+			VALUES ('$topic_ID', DEFAULT , '$reply', NOW(), '$user_ID', '$randomStatus');";
 	$result = mysqli_query($conn, $sql);
 	
 	if($result){
