@@ -2,6 +2,7 @@
 
 class AddNewCourseModel extends Database
 {
+    // Check uniqueness of the entered course name
     public function nameCheck($name)
     {
         $name = mysqli_real_escape_string($GLOBALS["db"], $name);
@@ -11,6 +12,7 @@ class AddNewCourseModel extends Database
         return mysqli_fetch_assoc($result);
     }
 
+    // Insert the data of new course and returns course id
     public function addCourse($name, $description, $year)
     {
         $name = mysqli_real_escape_string($GLOBALS["db"], $name);
@@ -27,6 +29,7 @@ class AddNewCourseModel extends Database
         return  mysqli_fetch_assoc($result)["course_id"];
     }
 
+    // Create a forum for newly created course
     public function addForum($name, $courseId)
     {
         $name = mysqli_real_escape_string($GLOBALS["db"], $name);

@@ -22,7 +22,7 @@ window.addEventListener("click", (event) => {
 
 $(document).ready(function () {
 
-
+    // Click delete icon of the badge
     $(document.body).on('click', '.remove-course', function () {
 
         const badgeId = $(this).parent().find('.course-id').val();
@@ -31,6 +31,7 @@ $(document).ready(function () {
         deleteBadgeMessage(badgeId, badgeName);
     })
 
+    // Badge delete pop up message
     function deleteBadgeMessage(badgeId, badgeName) {
         const output = `
             <div class="message-container" id="delete-box">
@@ -59,9 +60,11 @@ $(document).ready(function () {
             url: "http://localhost/ALec/badgeAward/removeBadge/" + studentId + "/" + badgeId
         })
 
+        // Add removed badge to the drop down
         const newTag = "<option value='" + badgeId + "'>" + badgeName + "</option>";
         $("#badges").append(newTag);
 
+        // Remove badge label from the modal
         $('.course-id').each(function () {
             const id = $(this).val();
 
@@ -70,6 +73,7 @@ $(document).ready(function () {
             }
         });
 
+        // Remove badge from the "badges"
         $('.badge-id').each(function () {
             const id = $(this).val();
 
@@ -78,13 +82,16 @@ $(document).ready(function () {
             }
         });
 
+        // Remove delete message
         $("#delete-box").remove();
     }
 
+    // Remove delete message when cancel button is clicked
     deleteCloseMessage = function () {
         $("#delete-box").remove();
     }
 
+    // Award a badge [This is triggred when drop-down changed]
     $('#badges').on('change', function () {
         if ($(this).find('option:selected').html() != "Select a Badge") {
 
@@ -97,6 +104,7 @@ $(document).ready(function () {
                 url: "http://localhost/ALec/badgeAward/awardBadge/" + studentId + "/" + badgeId,
 
                 success: function (response) {
+                    // Add badge to the "Badges division" 
                     $(".badges").append(response);
                 }
             })
@@ -108,8 +116,10 @@ $(document).ready(function () {
             <span class='remove-course'><i class='fa fa-trash' aria-hidden='true'></i></span>
             </li>`;
 
+            // Add badge label to the modal
             $(".assigned-courses").append(newTag);
 
+            // Remove badge from the drop down
             $(this).find('option:selected').remove();
 
             addBadgeMessage()
@@ -117,6 +127,7 @@ $(document).ready(function () {
         // console.log();
     });
 
+    // Display badge award successful message
     function addBadgeMessage() {
         const output = `
             <div class='message-container' id='success-box'>
@@ -134,14 +145,17 @@ $(document).ready(function () {
         document.body.insertAdjacentHTML('afterbegin', output);
     }
 
+    // Remove sucess message when close button is clicked
     $('body').on('click', '#close-btn', function () {
         $("#success-box").remove();
     });
 
+    // Remove sucess message when continue button is clicked
     $('body').on('click', '#continue-button', function () {
         $("#success-box").remove();
     });
 
+    // Hide the badge modal when apply button is clicked
     $(".apply-button").click(function () {
         $("#course-selection-modal").hide();
     });

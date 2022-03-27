@@ -16,22 +16,28 @@ class BadgeAward extends AlecFramework
 
         $data["success"] = "";
 
+        // User profile details - START
         $data["studentId"] = $studentId;
         $data["lecturerId"] = $this->getSession("userId");
         $data["userDetails"] = $this->userProfileModel->getUserDetails($studentId);
         $data["userDetails"]["randomName"] = $this->userProfileModel->getRandomName($studentId);
         $data["userDetails"]["type"] = $type;
         $data["userDetails"]["regNo"] = $this->userProfileModel->getRegistrationNo($studentId, $type);
+        // User profile details - END
+
 
         $data["courseDetails"] = $this->userProfileModel->getCourseDetails($studentId, $type);
 
+        // Badge details - START
         $data["badgeDetails"] = $this->badgeAwardModel->getBadgeDetails($studentId);
         $data["unawardedBadgeDetails"] = $this->badgeAwardModel->getUnawardedBadgeDetails($courseId, $studentId);
         $data["lecturerAssignedBadgeDetails"] = $this->badgeAwardModel->getBadgeDetails($studentId, $data["lecturerId"]);
+        // Badge details - END
 
         $this->view("lecturer/badgeAwardView", $data);
     }
 
+    // Award the badge and return the badge details
     public function awardBadge($studentId, $badgeId)
     {
         $lecturerId = $this->getSession("userId");
@@ -53,6 +59,7 @@ class BadgeAward extends AlecFramework
         echo $output;
     }
 
+    // Remove the badge
     public function removeBadge($studentId, $badgeId)
     {
         $lecturerId = $this->getSession("userId");

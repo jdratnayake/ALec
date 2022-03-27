@@ -36,6 +36,7 @@ $(document).ready(function () {
     });
 })
 
+// Return question string
 addQuestion = function () {
     questionCount++;
     let htmlContent = `

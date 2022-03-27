@@ -39,6 +39,7 @@
                     //Question array
                     $questionArray = array();
 
+                    //Replace comma's with a unicode
                     $question = str_replace("'", "&#39;", $questionRow["question"]);
                     $question = str_replace('"', "&#34;", $question);
 

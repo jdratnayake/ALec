@@ -2,6 +2,7 @@
 
 class CourseDetailsModel extends Database
 {
+    // Get course details by considering acedemic year
     public function getCourseDetails($year)
     {
         if ($year == "all") {
@@ -19,6 +20,7 @@ class CourseDetailsModel extends Database
         return $result;
     }
 
+    // Get course details by considering acedemic year and process the results
     public function ajaxGetCourseDetails($year)
     {
         if ($year == "all") {
@@ -53,6 +55,7 @@ class CourseDetailsModel extends Database
         return $output;
     }
 
+    // Input is compare with course name, course_description and year respectively
     public function getSearchResults($data)
     {
         $data = mysqli_real_escape_string($GLOBALS["db"], $data);

@@ -1,3 +1,4 @@
+// Quiz results - START
 const quizSummary_label = document.getElementById("quizSummary-label").value.split("_");
 const quizSummary_data = document.getElementById("quizSummary-data").value.split("_");
 
@@ -54,9 +55,10 @@ const quizConfig = {
 };
 
 new Chart("myChartQuiz", quizConfig);
+// Quiz results - END
 
 
-
+// Quiz question success rate - START
 const quizQuestionSummary_label = document.getElementById("quizQuestionSummary-label").value.split("_");
 const quizQuestionSummary_data = document.getElementById("quizQuestionSummary-data").value.split("_");
 
@@ -101,3 +103,4 @@ const config = {
 };
 
 new Chart("myChartQuizQuestion", config);
+// Quiz question success rate - END

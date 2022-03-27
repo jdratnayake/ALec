@@ -40,13 +40,13 @@
             <form class="search-bar" id="search">
                 <label for="search"></label>
                 <input type="text" placeholder="Search by course name.. &#xF002;" name="search-tag" id="search-tag" style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
-<!--                <button type="submit"><i class="fa fa-search"></i></button>-->
             </form>
 
             <!--    Add user button-->
             <button class="add-button" onclick="location.href='<?php echo BASEURL . '/addNewCourse/index' ?>'">Add New Course</button>
         </div>
 
+        <!-- courseDetails.js is used to update the view accroding to the acedemic year -->
         <div class="year-selection" id="year-selection">
             <label for="year">Select the year</label>
             <select name="year" id="year">

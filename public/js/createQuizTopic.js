@@ -1,3 +1,5 @@
+// Render topic when course is selected
+
 $(document).ready(function () {
     $("#course").change(function () {
         const temp = $("#course").val();

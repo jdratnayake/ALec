@@ -9,7 +9,8 @@ class Review extends AlecFramework
         $this->reviewModel = $this->model("reviewModel");
     }
 
-    public function index($courseId = 0)
+    //Display results of the quizzes
+    public function index()
     {
         $userId = $this->getSession("userId");
 
@@ -18,6 +19,7 @@ class Review extends AlecFramework
         $this->view("lecturer/reviewQuizListView", $data);
     }
 
+    //Display results of the quizzes according to a specific course [Dropdown]
     public function updateQuizList($courseId)
     {
         $userId = $this->getSession("userId");
@@ -44,6 +46,7 @@ class Review extends AlecFramework
         echo $output;
     }
 
+    // Display results and charts of a specific quiz
     public function quizReview($quizId)
     {
         $quizDetails = $this->reviewModel->getQuizNameAndCourseID($quizId);

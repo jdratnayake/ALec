@@ -48,12 +48,6 @@
                     </div>
 
                     <div class="field">
-                        <!--                        <label for="c_year"></label>-->
-                        <!--                        <input type="text" placeholder="Year" name="c_year" id="c_year" onfocusout="validateCourseYear()">-->
-                        <!--                        <div class="error" id="error">-->
-                        <?php //echo $errors["year"]; 
-                        ?>
-                        <!--</div>-->
 
                         <label for="year-selection"></label>
                         <select name="year-selection" id="year-selection" class="year-dropdown" placeholder="Year">
@@ -64,16 +58,8 @@
                             <option value='4'>Year 4</option>
                         </select>
                         <div class="error" id="error"></div>
-                    </div>
 
-                    <!--                    <div class="year-selection">-->
-                    <!--                        <label for="year-selection">Year:</label>-->
-                    <!--                        <select name="year-selection" id="year-selection" class="year-dropdown">-->
-                    <!--                            <option value='0'>--All years--</option>-->
-                    <!--                            <option value='1'>Year 1</option>-->
-                    <!--                            <option value='2'>Year 2</option>-->
-                    <!--                        </select>-->
-                    <!--                    </div>-->
+                    </div>
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
@@ -81,7 +67,6 @@
                     </div>
                 </form>
                 <!-- FORM END -->
-
 
             </div>
         </div>

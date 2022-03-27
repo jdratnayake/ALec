@@ -9,6 +9,8 @@ class Badge extends AlecFramework
         $this->badgeModel = $this->model("badgeModel");
     }
 
+    // Display badges of courses
+    // Initially no course is selected
     public function index($courseId = "")
     {
         $data["courseDetailsDropdown"] = $this->badgeModel->getCourses();
@@ -120,6 +122,7 @@ class Badge extends AlecFramework
         $this->redirect("badge/index/{$courseId}");
     }
 
+    // Process the badge id string and return it as an array
     public function getCourseIdList($idString)
     {
         $outputArr = array();

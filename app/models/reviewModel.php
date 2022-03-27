@@ -2,6 +2,7 @@
 
 class ReviewModel extends Database
 {
+    // Return quiz name and course id by using quiz id
     public function getQuizNameAndCourseID($quizId)
     {
         $query = "SELECT quiz_name, course_id FROM quiz INNER JOIN course_topic ON quiz.topic_id=course_topic.topic_id WHERE quiz_id='$quizId'";
@@ -12,6 +13,8 @@ class ReviewModel extends Database
     }
 
     // reviewQuizListView - START
+
+    // Returns enrolled course details
     public function getEnrolledCourses($userId)
     {
         $query = "SELECT course.course_id, course_name FROM course 
@@ -22,6 +25,7 @@ class ReviewModel extends Database
         return $result;
     }
 
+    // Returns created quiz details of a particular lecturer
     public function getQuizDetails($userId, $courseId = "0")
     {
         if ($courseId == "0") {
@@ -39,9 +43,12 @@ class ReviewModel extends Database
 
         return $result;
     }
+
     // reviewQuizListView - END
 
     // reviewQuizView - START
+
+    // Return quiz results
     public function getQuizSummary($quizId)
     {
         $query =
@@ -71,6 +78,7 @@ SELECT '90-100' AS name, COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$qui
         return $result;
     }
 
+    // Return total attempt count of a quiz
     public function getQuizAttemptCount($quizId)
     {
         $query = "SELECT COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$quizId'";
@@ -79,6 +87,7 @@ SELECT '90-100' AS name, COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$qui
         return mysqli_fetch_assoc($result)["count"];
     }
 
+    // Return success rate of each question in quiz
     public function getQuizQuestionSummary($quizId)
     {
         $query = "SELECT question_no, question, success_rate FROM quiz_question WHERE quiz_id='$quizId' ORDER BY question_no";
@@ -88,6 +97,7 @@ SELECT '90-100' AS name, COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$qui
     }
     // reviewQuizView - END
 
+    // Retruns results table of student for a particular quiz
     public function getStudentsResults($quizId)
     {
         $query = "SELECT user.user_id, index_no, CONCAT(first_name, ' ', last_name) AS name, marks FROM quiz_attempt 

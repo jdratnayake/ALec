@@ -1,4 +1,6 @@
 <?php
+// Success message status
+// 1 = Course Created Successfully
 
 class CourseDetails extends AlecFramework
 {
@@ -11,6 +13,7 @@ class CourseDetails extends AlecFramework
 
     public function index($year = "all")
     {
+        // Success message name selection - START
         $successSignal = $this->getSession("successMessageStatus");
 
         if (isset($successSignal) and $successSignal == "1") {
@@ -19,11 +22,9 @@ class CourseDetails extends AlecFramework
         } else {
             $data["success"] = "";
         }
+        // Success message name selection - END
 
-        //Testing - START
-        // var_dump($_SESSION);
-        //Testing - END
-
+        // Get course details
         $data["courseDetails"] = $this->courseDetailsModel->getCourseDetails($year);
 
         $this->view("admin/courseDetailsView", $data);

@@ -12,10 +12,10 @@ class ManageUser extends AlecFramework
         $this->manageUserModel = $this->model("manageUserModel");
     }
 
-    //Not Assigned Users Controller
+    //User assign controller (display the view)
     public function index($courseId, $type = "lec")
     {
-
+        // Success message name selection - START
         $data["success"] = "";
 
         $successSignal = $this->getSession("successMessageStatus");
@@ -29,6 +29,7 @@ class ManageUser extends AlecFramework
 
             $this->unsetSession("successMessageStatus");
         }
+        // Success message name selection - END
 
         $data["type"] = $type;
         $data["courseId"] = $courseId;
@@ -43,9 +44,10 @@ class ManageUser extends AlecFramework
         }
     }
 
-    //Assigned Users Controller
+    //User remove controller (display the view)
     public function assignUser($courseId, $type = "lec")
     {
+        // Success message name selection - START
         $data["success"] = "";
 
         $successSignal = $this->getSession("successMessageStatus");
@@ -59,6 +61,7 @@ class ManageUser extends AlecFramework
 
             $this->unsetSession("successMessageStatus");
         }
+        // Success message name selection - END
 
         $data["type"] = $type;
         $data["courseId"] = $courseId;
@@ -73,6 +76,7 @@ class ManageUser extends AlecFramework
         }
     }
 
+    // Assign a particular user to the course
     public function assign($courseId, $type = "lec", $userId)
     {
         $this->manageUserModel->assignUser($courseId, $type, $userId);
@@ -80,6 +84,7 @@ class ManageUser extends AlecFramework
         $this->redirect("manageUser/index/{$courseId}/{$type}");
     }
 
+    // Remove particular user from the course
     public function remove($courseId, $type = "lec", $userId)
     {
         $this->manageUserModel->removeUser($courseId, $type, $userId);
@@ -87,6 +92,7 @@ class ManageUser extends AlecFramework
         $this->redirect("manageUser/assignUser/{$courseId}/{$type}");
     }
 
+    // Search the details of the users
     public function search($operation, $type, $courseId, $data)
     {
         if (!empty($operation) and !empty($type)) {

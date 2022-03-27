@@ -15,13 +15,14 @@ class CreateQuizDashboard extends AlecFramework
             // var_dump($_POST);
             // return true;
 
+            // Determine quiz is drafted or complete
             if (isset($_POST["create-quiz"])) {
                 $status = "create";
             } else if (isset($_POST["draft-quiz"])) {
                 $status = "draft";
             }
 
-
+            // Question count
             $count = $_POST["type"];
 
             $quizName = $_POST["quiz-name"];
@@ -43,6 +44,7 @@ class CreateQuizDashboard extends AlecFramework
             $quizId = $this->createQuizDashboardModel->insertQuizData($quizName, $status, $durHr, $durMin, $lecturerId, $topicId);
             // echo "<h1 align = 'center'>" . $quizId . "</h1>";
 
+            // Insert questions
             for ($questionNo = 1; $questionNo <= $count; $questionNo++) {
                 $question = "";
                 $questionType = $_POST["q{$questionNo}_type"];
@@ -68,6 +70,7 @@ class CreateQuizDashboard extends AlecFramework
                 if ($questionType == "mcq-s" || $questionType == "mcq-m") {
                     $choiceNo = 1;
 
+                    // Insert choices
                     while (
                         isset($_POST["q{$questionNo}_answer{$choiceNo}"]) and
                         !empty($_POST["q{$questionNo}_answer{$choiceNo}"])
@@ -109,6 +112,7 @@ class CreateQuizDashboard extends AlecFramework
         $this->view("lecturer/createQuizDashboardView", $data);
     }
 
+    // Return topics of particular course
     public function topic($courseId)
     {
         echo $this->createQuizDashboardModel->getTopicDetails($courseId);

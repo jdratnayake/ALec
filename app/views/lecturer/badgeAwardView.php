@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <!-- Course Selection Modal -->
+            <!-- Badge Selection Modal -->
             <div id="course-selection-modal" class="modal">
 
                 <!-- Modal content -->

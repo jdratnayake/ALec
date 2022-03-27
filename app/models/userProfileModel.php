@@ -4,6 +4,7 @@ use function PHPSTORM_META\type;
 
 class UserProfileModel extends Database
 {
+    // Return user type
     public function getType($user_id)
     {
         $query = "SELECT user_type FROM user WHERE user_id='$user_id'";
@@ -15,6 +16,7 @@ class UserProfileModel extends Database
         }
     }
 
+    // Return user details
     public function getUserDetails($user_id)
     {
         $query = "SELECT user_id, concat(first_name, ' ', last_name) AS name, tele, email FROM user 
@@ -27,6 +29,7 @@ class UserProfileModel extends Database
         }
     }
 
+    // Return the random name of the user
     public function getRandomName($user_id)
     {
         $query = "SELECT CONCAT(random_first_name, ' ', random_last_name) AS name FROM student WHERE user_id='$user_id' LIMIT 1";
@@ -35,6 +38,7 @@ class UserProfileModel extends Database
         return mysqli_fetch_assoc($result)["name"];
     }
 
+    // Return registration no [Employee no / Index no] of the user
     public function getRegistrationNo($user_id, $type)
     {
         if ($type == "lec") {
@@ -56,6 +60,7 @@ class UserProfileModel extends Database
         }
     }
 
+    // Return course enrollement details of user [Lecturer / Student]
     public function getCourseDetails($user_id, $type)
     {
         if ($type == "lec") {
@@ -73,6 +78,7 @@ class UserProfileModel extends Database
         return $result;
     }
 
+    // Return course details of a user which is not enrolled
     public function getUnAssignedCourseDetails($user_id, $type)
     {
         if ($type == "lec") {
@@ -90,6 +96,7 @@ class UserProfileModel extends Database
         return $result;
     }
 
+    // Returns assigned badge details of a student
     public function getBadgeDetails($user_id)
     {
         //badge

@@ -2,6 +2,7 @@
 
 class EditQuizModel extends Database
 {
+    // Return course details
     public function getCourseDetails($quizId)
     {
         $query = "SELECT course.course_id, course_name FROM course INNER JOIN course_topic ON course.course_id=course_topic.course_id INNER JOIN quiz ON quiz.topic_id=course_topic.topic_id WHERE quiz_id='$quizId' LIMIT 1";
@@ -11,6 +12,7 @@ class EditQuizModel extends Database
         return mysqli_fetch_assoc($result);
     }
 
+    // Return quiz question details with answer count
     public function getQuizQuestionsSummary($quizId)
     {
         $query = "SELECT quiz_question.question_no, question, question_type, COUNT(choice_id) AS count FROM quiz_question INNER JOIN question_choice ON quiz_question.question_no=question_choice.question_no WHERE quiz_question.quiz_id='$quizId' GROUP BY quiz_question.question_no ORDER BY quiz_question.question_no";
@@ -19,6 +21,7 @@ class EditQuizModel extends Database
         return $result;
     }
 
+    // Return quiz question choices
     public function getQuizQuestionChoices($quizId)
     {
         $query = "SELECT choice_id, choice_name, points FROM question_choice WHERE quiz_id='$quizId' ORDER BY question_no, choice_id;";
@@ -27,6 +30,7 @@ class EditQuizModel extends Database
         return $result;
     }
 
+    // Update quiz question
     public function updateQuestion($questionId, $question, $questionType)
     {
         $query = "UPDATE quiz_question
@@ -36,6 +40,7 @@ class EditQuizModel extends Database
         mysqli_query($GLOBALS["db"], $query);
     }
 
+    // Update quiz question choice
     public function updateChoice($choiceId, $choice, $points)
     {
         $query = "UPDATE question_choice
@@ -45,6 +50,7 @@ class EditQuizModel extends Database
         mysqli_query($GLOBALS["db"], $query);
     }
 
+    // Insert a new quiz question
     public function insertQuizQuestion($quizId, $question, $questionType)
     {
         $quizId = mysqli_real_escape_string($GLOBALS["db"], $quizId);
@@ -62,6 +68,7 @@ class EditQuizModel extends Database
         return mysqli_fetch_assoc($result)["question_no"];
     }
 
+    // Insert choices of the new quiz question
     public function insertChoice($questionId, $quizId, $choice, $points)
     {
         $questionId = mysqli_real_escape_string($GLOBALS["db"], $questionId);
@@ -75,19 +82,21 @@ class EditQuizModel extends Database
         mysqli_query($GLOBALS["db"], $query);
     }
 
+    // Delete pre exist question
     public function deleteQuestion($questionId)
     {
         $query = "DELETE FROM quiz_question WHERE question_no='$questionId'";
         mysqli_query($GLOBALS["db"], $query);
     }
 
+    // Delete pre exist answer
     public function deleteAnswer($choiceId)
     {
         $query = "DELETE FROM question_choice WHERE choice_id='$choiceId'";
         mysqli_query($GLOBALS["db"], $query);
     }
 
-    //Update quiz status - Update drafted quizzes
+    //Update quiz status [Update drafted quizzes]
     public function updateQuizStatus($quizId)
     {
         $query = "UPDATE quiz SET status='create' WHERE quiz_id='$quizId'";

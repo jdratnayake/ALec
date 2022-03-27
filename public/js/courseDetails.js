@@ -4,7 +4,6 @@ document.getElementById("search").addEventListener('submit', function (event) {
 
 $(document).ready(function () {
     // LIVE SEARCH START
-
     function loadData() {
         const formData = $("#search").serialize();
 
@@ -26,7 +25,6 @@ $(document).ready(function () {
             loadData();
         }
     });
-
     // LIVE SEARCH END
 
     $("#year").change(function () {
@@ -37,9 +35,6 @@ $(document).ready(function () {
 
             url: "http://localhost/ALec/courseDetails/ajaxCourseDetails/" + temp,
             dataType: "html",
-            // data: {
-            //     courseId: temp
-            // },
             success: function (response) {
                 $("#table-content").html(response);
             }
