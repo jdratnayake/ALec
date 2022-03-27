@@ -146,7 +146,6 @@
                     <div class='vote'>
                     
                         <input type='hidden' value='54'>
-                        <i class='fa fa-caret-up' aria-hidden='true'></i>
                         <div class='val'>{$row["points"]}</div>
                         <div class='val-unit'>pts</div>
                 
@@ -195,8 +194,8 @@
     <?php linkPhp("notificationView"); ?>
 
     <?php linkPhp("footer"); ?>
-	
-	<?php linkJS("lib/jquery-3.6.0.min"); ?>
+
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
     <?php linkJS("notification") ?>
 
