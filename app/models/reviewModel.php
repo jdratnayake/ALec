@@ -102,7 +102,7 @@ SELECT '90-100' AS name, COUNT(*) AS count FROM quiz_attempt WHERE quiz_id='$qui
     {
         $query = "SELECT user.user_id, index_no, CONCAT(first_name, ' ', last_name) AS name, marks FROM quiz_attempt 
                     INNER JOIN user ON student_id=user.user_id INNER JOIN student ON student_id=student.user_id 
-                        WHERE quiz_id = '$quizId' ORDER BY quiz_attempt.attempt_time";
+                        WHERE quiz_id = '$quizId' ORDER BY marks DESC";
 
         $result = mysqli_query($GLOBALS["db"], $query);
         return $result;
