@@ -14,17 +14,20 @@ regiter.addEventListener('submit', function (event) {
     }
 })
 
+// Check the validity of form at once
 function validateAll() {
     validateCourseName();
     validateCourseDescription();
     validateCourseYear();
 }
 
+// Change input box color to green
 function setValid(field) {
     field.style.borderColor = validColor;
     field.nextElementSibling.innerHTML = "";
 }
 
+// Change input box color to red
 function setInvalid(field, message) {
     field.style.borderColor = invalidColor;
     field.nextElementSibling.innerHTML = message;
@@ -50,6 +53,7 @@ function checkIfEmpty(field) {
 }
 // EMPTY CHECK END
 
+// Check that entered string is in the given range
 function meetLength(field, minLength, maxLength) {
     if (field.value.length >= minLength && field.value.length < maxLength) {
         setValid(field);
@@ -69,6 +73,7 @@ function meetLength(field, minLength, maxLength) {
     }
 }
 
+// Check that entered string has the specified length
 function fixedLength(field, length) {
     if (field.value.length === length) {
         setValid(field);
@@ -83,6 +88,7 @@ function fixedLength(field, length) {
     }
 }
 
+// process the regex matching
 function matchWithRegEx(regEx, field, message) {
     if (field.value.match(regEx)) {
         setValid(field);
@@ -93,6 +99,7 @@ function matchWithRegEx(regEx, field, message) {
     }
 }
 
+// process different regex matching
 function containsCharacters(field, code) {
     let regEx;
 
@@ -146,11 +153,12 @@ function containsCharacters(field, code) {
             return matchWithRegEx(regEx, field, `${field.getAttribute("placeholder")} must contain only letters`);
 
         case 8:
+            //No white space
             regEx = /^\S+$/;
             return matchWithRegEx(regEx, field, `${field.getAttribute("placeholder")} must not contain white spaces`);
 
         case 9:
-
+            //No special characters
             regEx = /^[\w\-\s]+$/;
             return matchWithRegEx(regEx, field, `${field.getAttribute("placeholder")} must not contain special characters`);
 
@@ -159,6 +167,7 @@ function containsCharacters(field, code) {
     }
 }
 
+// Validate the entered course name
 function validateCourseName() {
     if (checkIfEmpty(courseName)) {
         return false;
@@ -175,6 +184,7 @@ function validateCourseName() {
     return true;
 }
 
+// Validate the entered course description
 function validateCourseDescription() {
     if (!meetLength(courseDescription, 0, 2000)) {
         return false;
@@ -183,6 +193,7 @@ function validateCourseDescription() {
     return true;
 }
 
+// Validate the selected course year
 function validateCourseYear() {
     if (checkIfEmpty(courseYear)) {
         return false;

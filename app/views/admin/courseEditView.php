@@ -52,9 +52,10 @@
 
                     <div class="field">
                         <label for="c_year"></label>
-                        <input type="text" placeholder="Year" name="c_year" id="c_year" value='<?php echo $data["courseDetails"]["year"]; ?>' onfocusout="validateCourseYear()">
+                        <input type="text" placeholder="Year" name="c_year" id="year-selection" value='<?php echo $data["courseDetails"]["year"]; ?>' onfocusout="validateCourseYear()">
                         <div class="error" id="error"><?php echo $errors["year"]; ?></div>
                     </div>
+
 
                     <div class="field btn">
                         <div class="btn-layer"></div>
@@ -77,3 +78,7 @@
 </body>
 
 </html>
+
+<!-- <script>
+    document.getElementById('year-selection').value = '4';
+</script> -->

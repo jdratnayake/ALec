@@ -2,6 +2,7 @@
 
 class CourseEditModel extends Database
 {
+    // Returns course name
     public function getCourseDetails($courseId)
     {
         $query = "SELECT * FROM course WHERE course_id='$courseId' LIMIT 1";
@@ -10,6 +11,7 @@ class CourseEditModel extends Database
         return mysqli_fetch_assoc($row);
     }
 
+    // Check the uniqueness of course name
     public function nameCheck($name, $courseId)
     {
         $name = mysqli_real_escape_string($GLOBALS["db"], $name);
@@ -20,6 +22,7 @@ class CourseEditModel extends Database
         return mysqli_fetch_assoc($result);
     }
 
+    // Update the details of a given course
     public function updateCourse($id, $name, $description, $year)
     {
         $id = mysqli_real_escape_string($GLOBALS["db"], $id);

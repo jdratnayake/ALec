@@ -2,6 +2,7 @@
 
 class ManageUserModel extends Database
 {
+    // Return course details
     public function getCourseName($courseId)
     {
         $query = "SELECT course_name FROM course WHERE course_id='$courseId'";
@@ -10,6 +11,7 @@ class ManageUserModel extends Database
         return mysqli_fetch_assoc($result)["course_name"];
     }
 
+    // Return currently not assigned users details
     public function getNotAssignUserDetails($courseId, $type)
     {
         if ($type == "lec") {
@@ -23,6 +25,7 @@ class ManageUserModel extends Database
         return $result;
     }
 
+    // Return currently assigned users details
     public function getAssignUserDetails($courseId, $type)
     {
         if ($type == "lec") {
@@ -36,6 +39,7 @@ class ManageUserModel extends Database
         return $result;
     }
 
+    // Assign a user to a course
     public function assignUser($courseId, $type, $userId)
     {
         if ($type == "lec") {
@@ -47,6 +51,7 @@ class ManageUserModel extends Database
         mysqli_query($GLOBALS["db"], $query);
     }
 
+    // Remove a user from course
     public function removeUser($courseId, $type, $userId)
     {
         if ($type == "lec") {
@@ -58,6 +63,7 @@ class ManageUserModel extends Database
         mysqli_query($GLOBALS["db"], $query);
     }
 
+    // Returns the details of  assigned or noi assigned users details
     public function getSearchResults($data, $operation, $type, $courseId)
     {
         $data = mysqli_real_escape_string($GLOBALS["db"], $data);

@@ -1,7 +1,9 @@
+// Display delete message
 function deleteFunction(link) {
     document.body.insertAdjacentHTML('afterbegin', deleteMessage(link));
 }
 
+// Returns the delete message
 function deleteMessage(link) {
     const output = `
         <div class="message-container" id="delete-box">
@@ -22,6 +24,7 @@ function deleteMessage(link) {
     return output;
 }
 
+// remove the delete message
 function deleteCloseMessage() {
     document.getElementById("delete-box").remove();
 }

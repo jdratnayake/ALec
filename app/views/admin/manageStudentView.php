@@ -50,7 +50,7 @@
             <input type="hidden" id="course-id" value="<?php echo $data['courseId']; ?>">
             <label for="search"></label>
             <input type="text" placeholder="Search by name.. &#xF002;" name="search" id="search" style="font-family: FontAwesome, Arial,sans-serif; font-style: normal">
-<!--            <button type="submit"><i class="fa fa-search"></i></button>-->
+            <!--            <button type="submit"><i class="fa fa-search"></i></button>-->
         </form>
 
     </div>
