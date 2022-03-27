@@ -21,7 +21,6 @@ class EditQuiz extends AlecFramework
 
     public function submit($quizId)
     {
-        // var_dump($_POST);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $quizQuestionSummary = $this->editQuizModel->getQuizQuestionsSummary($quizId);
             $quizQuestionChoices = $this->editQuizModel->getQuizQuestionChoices($quizId);
@@ -40,6 +39,8 @@ class EditQuiz extends AlecFramework
 
                 if (isset($_POST["check_$row[question_no]"])) {
                     $type = "mcq-m";
+                } else if ($type != "short ans") {
+                    $type = "mcq-s";
                 }
                 // Determine mcq question type - END
 
