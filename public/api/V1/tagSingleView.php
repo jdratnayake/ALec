@@ -3,6 +3,7 @@
  require "db.php";
  
  $userId = $_GET["userId"];
+ $tagName = $_GET["tagName"];
  $questionSearchValues = " question LIKE '%" . $tagName . "%'";
  $subjectSearchValues = " subject LIKE '%" . $tagName . "%'";
  $replySearchValues = " reply LIKE '%" . $tagName . "%'";
