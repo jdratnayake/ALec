@@ -2,6 +2,7 @@
 
 class BadgeModel extends Database
 {
+    // Return course details
     public function getCourses()
     {
         $query = "SELECT course_id, course_name FROM course ORDER BY course_name";
@@ -10,6 +11,25 @@ class BadgeModel extends Database
         return $result;
     }
 
+    // Return a specific course detail
+    public function getCourseDetails($courseId)
+    {
+        $query = "SELECT course_id, course_name FROM course WHERE course_id='$courseId'";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return mysqli_fetch_assoc($result);
+    }
+
+    // Return badge details of a specific course
+    public function getBadgeDetails($courseId)
+    {
+        $query = "SELECT badge_id, badge_name, badge_image FROM badge WHERE course_id='$courseId' ORDER BY badge_name";
+        $result = mysqli_query($GLOBALS["db"], $query);
+
+        return $result;
+    }
+
+    // Insert badge details
     public function insertBadge($name, $description, $points, $courseId, $imageUrl)
     {
         $name = mysqli_real_escape_string($GLOBALS["db"], $name);
@@ -33,22 +53,7 @@ class BadgeModel extends Database
         }
     }
 
-    public function getCourseDetails($courseId)
-    {
-        $query = "SELECT course_id, course_name FROM course WHERE course_id='$courseId'";
-        $result = mysqli_query($GLOBALS["db"], $query);
-
-        return mysqli_fetch_assoc($result);
-    }
-
-    public function getBadgeDetails($courseId)
-    {
-        $query = "SELECT badge_id, badge_name, badge_image FROM badge WHERE course_id='$courseId' ORDER BY badge_name";
-        $result = mysqli_query($GLOBALS["db"], $query);
-
-        return $result;
-    }
-
+    // Delete a badge
     public function deleteBadge($badgeId)
     {
         $query = "DELETE FROM badge WHERE badge_id='$badgeId'";

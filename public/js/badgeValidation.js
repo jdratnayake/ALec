@@ -16,6 +16,7 @@ regiter.addEventListener('submit', function (event) {
     }
 })
 
+// Validate all at once
 function validateAll() {
     validateCourse();
     validateBadgeName();
@@ -45,6 +46,7 @@ function validateBadgeName() {
     return true
 }
 
+// Points range validation is done using html [IMPORTANT]
 function validatePoints() {
     if (points.value == "0") {
         points.parentElement.nextElementSibling.innerHTML = "Points must not be zero";

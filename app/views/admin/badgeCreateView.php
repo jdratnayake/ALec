@@ -59,6 +59,8 @@ $errors = $data["errors"];
                             ?>
 
                         </select>
+
+                        <!-- This is used to send selected course id's to controller -->
                         <input type="hidden" id="course-id-list" value="" name="course-id-list">
                     </div>
 

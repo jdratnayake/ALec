@@ -1,11 +1,4 @@
 $(document).ready(function () {
-    //Increament Badge Points By 10
-    // $("#badge-points").bind('keyup mouseup', function () {
-    //     let value = parseInt($("#badge-points").val());
-    //     value += 9;
-    //     $("#badge-points").val(value);
-    // });
-
     //Remove Course
     $(document.body).on('click', '.remove-course', function () {
         const optionValue = $(this).parent().find('.course-id').val();
@@ -13,14 +6,18 @@ $(document).ready(function () {
 
         const newTag = `<option value="${optionValue}">${optionName}</option>`;
 
+        // Insert course to the drop down
         $("#course").append(newTag);
 
 
         if (optionValue == "all") {
+            // Empty the course id's
             $("#course-id-list").val("");
         }
         else {
             let courses = $("#course-id-list").val();
+
+            // Remove course id from course id list
             courses = courses.replace(optionValue, "");
             $("#course-id-list").val(courses);
         }
@@ -46,11 +43,11 @@ $(document).ready(function () {
                 `;
                 $("#selected-courses").html(allTag);
 
-                //Insert value to the input tag
+                // Insert course to the input tag (course id list)
                 $("#course-id-list").val("all");
             }
             else if (inputTagValue != "all") {
-                //Insert selected course id
+                // Append selected course id
                 const selectedCourseId = $('#course').val();
                 $("#course-id-list").val($("#course-id-list").val() + " " + selectedCourseId);
 
@@ -65,6 +62,8 @@ $(document).ready(function () {
                 `;;
 
                 $("#selected-courses").append(newTag);
+
+                // Remove course from drop-down
                 $(this).find('option:selected').remove();
             }
         }
