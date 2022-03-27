@@ -110,8 +110,10 @@ class sessionLiveForumStudent extends AlecFramework
                     <span class='name'>{$row['post_time']}</span>
                 </span>
                 <span class='vote'>
-                    <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true' {$styleName}></i>
-                    <span class='votes-count'>{$row['points']}</span>
+                    <div class='col'>
+                        <i class='fa fa-thumbs-o-up vote-highlight' aria-hidden='true' {$styleName}></i>
+                        <span class='votes-count'>{$row['points']}</span>
+                    </div>
                 </span>
             </div>
             ";

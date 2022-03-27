@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     function changeVote(element) {
         const colorValue = $(element).css("color");
-        const questionId = $(element).parent().parent().children().first().val();
+        const questionId = $(element).parent().parent().parent().children().first().val();
 
         //Change Number - START
         const pointsTag = $(element).next();

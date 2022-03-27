@@ -26,57 +26,56 @@ $errors = $data["errors"];
 </head>
 
 <body>
-<input type="hidden" id="session-id" value='<?php echo $sessionId; ?>'>
-<input type="hidden" id="questionIdArray" value='<?php echo $data["questionIdArray"]; ?>'>
+    <input type="hidden" id="session-id" value='<?php echo $sessionId; ?>'>
+    <input type="hidden" id="questionIdArray" value='<?php echo $data["questionIdArray"]; ?>'>
 
-<?php linkPhp("navigationBarStudent"); ?>
+    <?php linkPhp("navigationBarStudent"); ?>
 
-<!--    breadcrumb-->
-<ul class="breadcrumb">
-    <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
-    <li><a href="http://localhost/ALec/courseSelectionSessions/index">Sessions</a></li>
-
-    <?php
-    echo
-    "
-        <li><a href='http://localhost/ALec/attemptPoolQuestion/index/{$courseId}'>{$sessionName}</a></li>
-        ";
-    ?>
-
-    <li>Live Forum</li>
-</ul>
-
-<div class="details-content">
-
-    <!-- <p class="q-count">3</p> -->
-    <div class="controller-container"
-         onclick="window.location='<?php echo BASEURL . '/attemptPoolQuestion/index/' . $courseId; ?>' ">
-        Go to Polls
-    </div>
-
-    <div class="header-container">
-        <header>Live Forum</header>
-    </div>
-    <div class="questions-container">
+    <!--    breadcrumb-->
+    <ul class="breadcrumb">
+        <li><a href="http://localhost/ALec/adminDashboard/index">Home</a></li>
+        <li><a href="http://localhost/ALec/courseSelectionSessions/index">Sessions</a></li>
 
         <?php
+        echo
+        "
+        <li><a href='http://localhost/ALec/attemptPoolQuestion/index/{$courseId}'>{$sessionName}</a></li>
+        ";
+        ?>
 
-        while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+        <li>Live Forum</li>
+    </ul>
 
-            if ($row['student_id'] != $userId && $row['random_status'] == "T") {
-                $name = $row["random_name"];
-            } else {
-                $name = $row["name"];
-            }
+    <div class="details-content">
 
-            if ($row['vote_status'] != "") {
-                $styleName = "style='color: orange;'";
-            } else {
-                $styleName = "";
-            }
+        <!-- <p class="q-count">3</p> -->
+        <div class="controller-container" onclick="window.location='<?php echo BASEURL . '/attemptPoolQuestion/index/' . $courseId; ?>' ">
+            Go to Polls
+        </div>
 
-            echo
-            "
+        <div class="header-container">
+            <header>Live Forum</header>
+        </div>
+        <div class="questions-container">
+
+            <?php
+
+            while ($row = mysqli_fetch_assoc($data["questionDetails"])) {
+
+                if ($row['student_id'] != $userId && $row['random_status'] == "T") {
+                    $name = $row["random_name"];
+                } else {
+                    $name = $row["name"];
+                }
+
+                if ($row['vote_status'] != "") {
+                    $styleName = "style='color: orange;'";
+                } else {
+                    $styleName = "";
+                }
+
+                echo
+                "
                 <div class='question'>
                     <input type='hidden' value='{$row['question_id']}'>
                     <span class='text'>
@@ -92,11 +91,11 @@ $errors = $data["errors"];
                     </span>
                 </div>
                 ";
-        }
+            }
 
-        ?>
+            ?>
 
-        <!-- <div class='question'>
+            <!-- <div class='question'>
             <span class='text'>
                 What's the best piece of advice you've ever been given?
                 <span class='name'>Kamalini Anagarasa</span>
@@ -108,44 +107,42 @@ $errors = $data["errors"];
             </span>
         </div> -->
 
+        </div>
+
+        <form action="<?php echo BASEURL . "/sessionLiveForumStudent/index/{$sessionId}" ?>" method="POST" id="liveForum-form">
+            <div class="new-question">
+                <!--        Toggle button to toggle between real name and random name-->
+                <div class="toggle-btn">
+                    <span class="toggle-label">Stay Anonymous</span>
+                    <label for="name-toggle" class="switch">
+                        <input type="checkbox" id="name-toggle" name="name-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <label for="new-question"></label>
+                <input type="text" name="new-question" id="new-question" placeholder="Add your question here... &#xF040;" onfocusout="questionValidation()">
+                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                <div class="error"><?php echo $errors["question"]; ?></div>
+            </div>
+        </form>
     </div>
 
-    <form action="<?php echo BASEURL . "/sessionLiveForumStudent/index/{$sessionId}" ?>" method="POST"
-          id="liveForum-form">
-        <div class="new-question">
-            <!--        Toggle button to toggle between real name and random name-->
-            <div class="toggle-btn">
-                <span class="toggle-label">Stay Anonymous</span>
-                <label for="name-toggle" class="switch">
-                    <input type="checkbox" id="name-toggle" name="name-toggle">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <label for="new-question"></label>
-            <input type="text" name="new-question" id="new-question" placeholder="Add your question here... &#xF040;"
-                   onfocusout="questionValidation()">
-            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-            <div class="error"><?php echo $errors["question"]; ?></div>
-        </div>
-    </form>
-</div>
+    <?php linkPhp("footer"); ?>
 
-<?php linkPhp("footer"); ?>
+    <?php linkPhp("notificationView"); ?>
 
-<?php linkPhp("notificationView"); ?>
+    <?php linkJS("lib/jquery-3.6.0.min"); ?>
 
-<?php linkJS("lib/jquery-3.6.0.min"); ?>
+    <?php linkJS("notification") ?>
 
-<?php linkJS("notification") ?>
+    <?php linkJS("sessionStatusCheck"); ?>
 
-<?php linkJS("sessionStatusCheck"); ?>
+    <?php linkJS("sessionLiveForumStudentValidation") ?>
 
-<?php linkJS("sessionLiveForumStudentValidation") ?>
+    <?php linkJS("likeUnlikeForumQuestion") ?>
 
-<?php linkJS("likeUnlikeForumQuestion") ?>
-
-<?php linkJS("sessionLiveForumStudentQuestionsUpdate")
-?>
+    <?php linkJS("sessionLiveForumStudentQuestionsUpdate")
+    ?>
 
 </body>
 
