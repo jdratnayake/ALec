@@ -55,60 +55,6 @@
                 </div>
             </div>
 
-            <!-- Course Selection Modal -->
-            <div id="course-selection-modal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span id="close" class="close">&times;</span>
-                        <h2>Badge Selection</h2>
-                    </div>
-
-                    <div class="modal-body">
-                        <label for="badges"><strong>Select Badge:</strong></label>
-                        <select name="badge" id="badges" class="selection-box">
-                            <option value="0" selected>Select a Badge</option>
-
-                            <?php
-
-                            while ($row = mysqli_fetch_assoc($data["unawardedBadgeDetails"])) {
-                                echo
-                                "
-                                <option value='{$row['badge_id']}'>{$row['badge_name']}</option>
-                                ";
-                            }
-
-                            ?>
-
-                        </select>
-
-                        <!--                    List of assigned badges-->
-                        <ul style="list-style-type:none;" class="assigned-courses">
-                            <?php
-
-                            while ($row = mysqli_fetch_assoc($data["lecturerAssignedBadgeDetails"])) {
-                                echo
-                                "
-                                <li class='assigned-course'>
-                                    <input type='hidden' class='course-id' value='{$row['badge_id']}'>
-                                    <span class='course-name'> {$row['badge_name']} </span>
-                                    <span class='remove-course'><i class='fa fa-trash' aria-hidden='true'></i></span>
-                                </li>
-                                    ";
-                            }
-                            ?>
-
-                        </ul>
-
-                    </div>
-
-                    <!-- Okay button in delete -->
-                    <input type="button" value="Okay" class="apply-button">
-                </div>
-
-            </div>
-
             <!-- Details Container include small separate boxes of button content, user details, assigned courses and badges earned-->
             <div class="details-container">
 
