@@ -1,0 +1,64 @@
+@import "./0_global_variables.scss";
+
+/*==============================================================================*/
+/*BREADCRUMB - START*/
+/*==============================================================================*/
+
+ul.breadcrumb {
+    padding: 4px 16px;
+    list-style: none;
+    background-color: #eeeeee61;
+    margin-bottom: 30px;
+    margin-left: 0!important;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+/*==============================================================================*/
+/*BREADCRUMB - END*/
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*FOOTER - START*/
+/*==============================================================================*/
+
+footer{
+    width: 100%;
+    background: $footer_color;
+    color: $footer_fontcolor;
+    display: grid;
+    place-items: center;
+    /* padding: 2em;  */
+    /* font-size: 1.2rem; */
+}
+
+footer p{
+    padding:0;
+    margin: 1em 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.sticky-footer{
+    position: sticky;
+    top: 100%;
+}
+
+/*==============================================================================*/
+/*FOOTER - END*/
+/*==============================================================================*/

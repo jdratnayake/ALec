@@ -1,0 +1,252 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+$button_color: $theme_second;
+$box-border: #19345d9e;
+$border_grey: lightgrey;
+
+.forum-container{
+  padding: 1rem;
+  width: 80%;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  margin: auto auto 30px auto;
+  height: 87%;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  h2{
+    color: $theme;
+    text-align: left;
+    margin: 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .input-box{
+    textarea{
+      max-width: -webkit-fill-available;
+      margin-bottom: 5px;
+      padding: 5px;
+      border: 1px solid $border_grey;
+      border-radius: 4px;
+    }
+  }
+
+  .question, .answer{
+    margin: 30px 0;
+    width: 90%;
+    border: 3px solid $box-border;
+    padding: 10px;
+    border-radius: 8px;
+
+    /*==============================================================================*/
+    /*PROFILE CARD - START*/
+    /*==============================================================================*/
+
+    .profile_img_info {
+      display: flex;
+      margin-bottom: 20px;
+
+      .img {
+        width: 60px;
+
+        img {
+          width: 100%;
+          display: block;
+          vertical-align: middle;
+          border-style: none;
+        }
+      }
+
+      .info {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 10px;
+
+        .name {
+          font-size: 15px;
+          font-weight: 700;
+          margin-bottom: 5px;
+        }
+      }
+
+      .place {
+        font-weight: 300;
+      }
+    }
+
+    /*==============================================================================*/
+    /*PROFILE CARD - END*/
+    /*==============================================================================*/
+
+    .button-set{
+      float: right;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      .action-button{
+        border: 2px solid $action_button;
+        border-radius: 5px;
+        float: right;
+        padding: 4px 10px;
+        background-color: $action_button;
+        color: white;
+        margin-left: 5px;
+        cursor: pointer;
+
+        &:hover{
+          background-color: $theme;
+          border-color: $theme ;
+        }
+      }
+      .delete{
+        background-color: $delete_button;
+        border: $delete_button_border;
+
+        &:hover{
+          background-color: $delete_button_hover;
+          color: $delete_button_hover_color;
+          border: $delete_button_border;
+        }
+      }
+      .cancel{
+        background-color: $cancel_button;
+        border-color: $cancel_button;
+        //color: white;
+
+        &:hover{
+          background-color: $cancel_button_hover;
+          border-color: $cancel_button_hover;
+          //color: $delete_button_hover_color;
+          //border: $delete_button_border;
+        }
+      }
+    }
+
+    .input-btns{
+      float: right;
+    }
+  }
+  .question{
+
+    .question-content{
+      margin-left: 64px;
+    }
+  }
+  .answer{
+    margin-left: 10%;
+
+    .answer-row{
+      display: flex;
+      align-items: center;
+
+      .vote{
+        display: grid;
+        align-content: center;
+        font-size: 30px;
+        justify-items: center;
+        margin-left: 16px;
+
+        .fa-caret-up{
+          color: darkgray;
+          cursor: pointer;
+        }
+        .val{
+          font-size: 20px;
+        }
+        .val-unit{
+          font-size: 15px;
+        }
+      }
+
+      .answer-content{
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+/* --------------TOGGLE BUTTON STYLES START----------------*/
+
+.toggle-btn{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.toggle-btn .toggle-label{
+  margin-right: 8px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $button_color;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $button_color;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* --------------TOGGLE BUTTON STYLES END----------------*/
+
+
+

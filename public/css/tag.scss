@@ -1,0 +1,310 @@
+@import "./0_global_variables.scss";
+@import "./1_main.scss";
+@import "./2_navigation_bar.scss";
+@import "./3_notification.scss";
+@import "./4_footer.scss";
+
+$button_color: #305890;
+$table_heading_color: $table_head;
+$light_color: #FFF;
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.forum-container {
+  width: 90%;
+  display: grid;
+
+  .forum-message {
+
+    p {
+      margin: 20px 0;
+    }
+  }
+
+  .container-label {
+    margin: 10px;
+    font-weight: 500;
+    color: $button_color;
+  }
+
+  .tags-container {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    p {
+      margin: 5px;
+      width: fit-content;
+      border: 1px solid rgba(48, 88, 144, 0.3);
+      padding: 2px 10px;
+      border-radius: 20px;
+
+      i {
+        margin-left: 5px;
+        font-size: 12px;
+        color: rgba(84, 110, 122, 0.5);
+        cursor: pointer;
+      }
+    }
+  }
+
+
+  button {
+    background-color: $light_color;
+    border: 2px solid $button_color;
+    color: $button_color;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 10px 0 40px 5px;
+    cursor: pointer;
+    width: fit-content;
+
+    .button-title {
+      .space-tag {
+        display: inline;
+        padding: 0 5px;
+      }
+    }
+
+    &:hover {
+      background-color: $button_color;
+      color: $light_color;
+    }
+  }
+
+
+  /*--------------------------MODAL STYLES - START------------------------- */
+
+  .modal-content{
+    width: 35%;
+
+    .modal-body{
+      width: 100%;
+
+      .input-row{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 5px;
+        width: 100%;
+
+        .tag-input-label{
+          width: 140px;
+          font-weight: 500;
+        }
+        .tag-input{
+          border: 1px solid #ccc;
+          border-bottom-width: 2px;
+          padding: 6px 12px;
+          border-radius: 5px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /*--------------------------MODAL STYLES - END------------------------- */
+
+
+  /*--------------------------SEARCH BAR - START------------------------- */
+
+  .search-bar {
+    width: 450px;
+    margin-bottom: 50px;
+  }
+
+  form.search-bar input[type=text] {
+    padding: 5px 20px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    float: left;
+    width: 85%;
+    background: #f1f1f1;
+  }
+
+  /*--------------------------SEARCH BAR - END------------------------- */
+
+  .discussion-list {
+
+    .discussion-table-container {
+      .discussion-table-container {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .discussion-table {
+        li {
+          border-radius: 3px;
+          padding: 25px 0;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 25px;
+        }
+
+        .table-header {
+          background-color: $table_head;
+          color: $light_color;
+          font-size: 14px;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+
+          .reply {
+            text-align: center;
+          }
+        }
+
+        .table-row {
+          background-color: #ffffff;
+          box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+
+          /*==============================================================================*/
+          /*PROFILE CARD - START*/
+          /*==============================================================================*/
+
+          .profile_img_info {
+            display: flex;
+
+            .img {
+              width: 100px;
+
+              img {
+                width: 100%;
+                display: block;
+              }
+            }
+
+            .info {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              margin-left: 10px;
+
+              .name {
+                font-size: 15px;
+                font-weight: 700;
+                margin-bottom: 5px;
+              }
+            }
+
+            .place {
+              font-weight: 300;
+            }
+          }
+
+          /*==============================================================================*/
+          /*PROFILE CARD - END*/
+          /*==============================================================================*/
+
+          a {
+            text-decoration: none;
+            color: $theme;
+            font-weight: 500;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .reply-count {
+            text-align: center;
+
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+
+            .vote {
+              display: grid;
+              align-content: center;
+              font-size: 30px;
+              padding-left: 5px;
+
+              .fa-caret-up {
+                color: darkgray;
+                cursor: pointer;
+              }
+
+              .val {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+
+        .col-1 {
+          flex-basis: 40%;
+          margin: auto;
+          width: 60%;
+          padding: 0 0 0 10px;
+        }
+
+        .col-2 {
+          flex-basis: 26%;
+          margin: auto;
+          width: 60%;
+          padding: 0;
+        }
+
+        .col-3 {
+          flex-basis: 26%;
+          margin: auto;
+          width: 60%;
+          padding: 0;
+        }
+
+        .col-4 {
+          flex-basis: 6%;
+          margin: auto;
+          width: 60%;
+          padding: 0;
+        }
+
+        @media all and (max-width: 767px) {
+          .table-header {
+            display: none;
+          }
+
+          li {
+            display: block;
+          }
+          .col {
+
+            flex-basis: 100%;
+
+          }
+          .col {
+            display: flex;
+            padding: 10px 0;
+
+            &:before {
+              color: $table_heading_color;
+              padding-right: 10px;
+              content: attr(data-label);
+              flex-basis: 50%;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+

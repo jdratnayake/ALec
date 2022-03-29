@@ -1,0 +1,250 @@
+@import "./0_global_variables.scss";
+
+$main_color: $theme_second;
+
+/*==============================================================================*/
+/*POP UP - START*/
+/*==============================================================================*/
+.pop-up {
+  display: none;
+  position: fixed;
+  bottom: $footer_height;
+  right: 0;
+  background-color: white;
+  width: 375px;
+  height: 576px;
+  border-radius: 10px;
+  margin: 20px;
+  border: 1px solid #ddd;
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5px 5px 10px;
+
+    .pop-up-heading {
+      font-weight: bold;
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  }
+
+  .heading-divider {
+    background-color: #ccc;
+  }
+
+  .notification-details {
+    overflow: auto;
+    height: 496px;
+
+    .notes {
+      padding-top: 10px;
+
+      .note-label {
+        margin: 5px 20px;
+        color: darkgrey;
+      }
+
+      .note {
+        padding: 5px 20px;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          background-color: rgb(137 186 255 / 12%);
+        }
+
+        img {
+          width: 50px;
+        }
+
+        .text {
+          font-size: 12px;
+          padding: 10px;
+          width: 275px;
+          cursor: pointer;
+        }
+
+        .read-status {
+          font-size: 10px;
+          color: #1b83cd;
+          width: 25px;
+          text-align: right;
+
+          .fa-circle {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.show {
+  display: block;
+  z-index: 10;
+}
+
+/*==============================================================================*/
+/*POP UP - END*/
+/*==============================================================================*/
+
+
+/*==============================================================================*/
+/*NOTIFICATION CONTAINER - START*/
+/*==============================================================================*/
+
+.active-status {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  z-index: 12;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 60px + $footer_height;
+  right: 20px;
+  height: 20px;
+  width: fit-content;
+  padding: 0 6px;
+}
+
+.notification-container {
+  position: fixed;
+  bottom: 24px + $footer_height;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  background-color: $theme;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, .05);
+  transition: 200ms opacity ease;
+  z-index: 10;
+}
+
+.bell-notification {
+  font-size: 20px;
+}
+
+.hide {
+  opacity: 0.3;
+}
+
+/*==============================================================================*/
+/*NOTIFICATION CONTAINER - END*/
+/*==============================================================================*/
+
+
+/*==============================================================================*/
+/*TOGGLE BUTTON STYLES - START*/
+/*==============================================================================*/
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.toggle-btn .toggle-label {
+  margin-right: 8px;
+  font-size: small;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $main_color;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $main_color;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*==============================================================================*/
+/*TOGGLE BUTTON STYLES - END*/
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*TOOLTIP STYLES - START*/
+/*==============================================================================*/
+
+.notes .note .read-status .tooltip {
+  display: none;
+  position: static;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 25px;
+  width: 80px;
+  background: #fff;
+  line-height: 25px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  cursor: pointer;
+}
+
+.notes .note .read-status:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+
+/*==============================================================================*/
+/*TOOLTIP STYLES - END*/
+/*==============================================================================*/

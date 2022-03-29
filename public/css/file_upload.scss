@@ -1,0 +1,72 @@
+@import "0_global_variables.scss";
+@import "./1_main.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+//$font_color: #fff;
+$font_color: $theme;
+$second: #fff;
+
+.drag-area{
+    background: $second;
+    border: 2px dashed $font_color;
+    height: 50%;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.drag-area.active{
+    //border: 2px solid $font_color;
+    border: none;
+}
+.drag-area .icon{
+    font-size: 100px;
+    color: $font_color;
+}
+.drag-area header{
+    font-size: 30px;
+    font-weight: 500;
+    color: $font_color;
+}
+.drag-area span{
+    font-size: 25px;
+    font-weight: 500;
+    color: $font_color;
+    margin-bottom: 10px;
+}
+.drag-area button{
+    padding: 6px 24px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: $font_color;
+    color: $second;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.drag-area .input-img{
+    height: 50%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.drag-area .image-close{
+    color: #19345d;
+    z-index: 10;
+    align-self: flex-end;
+    padding: 0;
+    border: none;
+    background-color: white;
+    margin: 0;
+    font-size: 30px;
+    &:hover{
+        background-color: $second;
+        color: $font_color;
+        border-color: $font_color;
+    }
+}
